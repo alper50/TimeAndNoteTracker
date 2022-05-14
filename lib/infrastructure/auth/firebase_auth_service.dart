@@ -16,7 +16,7 @@ class FirebaseAuthService implements IAuthMethods {
   FirebaseAuthService(this._firebaseAuth, this._googleSignIn);
   @override
   Future<Option<User>> getSignedInUser() async {
-    final String userId = await _firebaseAuth.currentUser!.getIdToken();
+    final String? userId = await _firebaseAuth.currentUser?.getIdToken();
     return optionOf(User(id: userId));
   }
 

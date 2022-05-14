@@ -8,23 +8,70 @@ import 'package:timenotetracker/domain/auth/auth_value_objects.dart';
 part 'register_and_login_event.dart';
 part 'register_and_login_state.dart';
 part 'register_and_login_bloc.freezed.dart';
+
 @injectable
 class RegisterAndLoginBloc
     extends Bloc<RegisterAndLoginEvent, RegisterAndLoginState> {
   final IAuthMethods _authMethods;
   RegisterAndLoginBloc(this._authMethods)
       : super(RegisterAndLoginState.initial()) {
-    on<RegisterAndLoginEvent>((event, emit) {
-      event.map(
+    on<RegisterAndLoginEvent>((event, emit) async {
+      await event.map(
         registerWithEmailAndPassword: (e) async {
-          _performActionOnRegisterAndLogin(
-              _authMethods.registerWithEmailAndPassword);
+          Either<AuthFailure, Unit>? failureOrSucces;
+
+          final isEmailValid = state.email.isValid();
+          final isPasswordValid = state.password.isValid();
+
+          if (isPasswordValid && isEmailValid) {
+            emit(
+              state.copyWith(
+                isSubmitting: true,
+                authFailureOrSuccessOption: none(),
+              ),
+            );
+
+            failureOrSucces = await _authMethods.registerWithEmailAndPassword(
+              emailAddress: state.email,
+              password: state.password,
+            );
+          }
+          emit(
+            state.copyWith(
+              isSubmitting: false,
+              showErrorMessage: true,
+              authFailureOrSuccessOption: optionOf(failureOrSucces),
+            ),
+          );
         },
-        loginWithEmailAndPassword: (e) {
-          _performActionOnRegisterAndLogin(
-              _authMethods.loginWithEmailAndPassword);
+        loginWithEmailAndPassword: (e) async {
+          Either<AuthFailure, Unit>? failureOrSucces;
+
+          final isEmailValid = state.email.isValid();
+          final isPasswordValid = state.password.isValid();
+
+          if (isPasswordValid && isEmailValid) {
+            emit(
+              state.copyWith(
+                isSubmitting: true,
+                authFailureOrSuccessOption: none(),
+              ),
+            );
+
+            failureOrSucces = await _authMethods.loginWithEmailAndPassword(
+              emailAddress: state.email,
+              password: state.password,
+            );
+          }
+          emit(
+            state.copyWith(
+              isSubmitting: false,
+              showErrorMessage: true,
+              authFailureOrSuccessOption: optionOf(failureOrSucces),
+            ),
+          );
         },
-        loginWithGoogle: (e) async* {
+        loginWithGoogle: (e) async {
           emit(
             state.copyWith(
               isSubmitting: true,
@@ -61,36 +108,5 @@ class RegisterAndLoginBloc
         },
       );
     });
-  }
-
-  Stream<RegisterAndLoginState> _performActionOnRegisterAndLogin(
-      Future<Either<AuthFailure, Unit>> Function(
-              {required EmailAddress emailAddress, required Password password})
-          forwardedFunction) async* {
-    Either<AuthFailure, Unit>? failureOrSucces;
-
-    final isEmailValid = state.email.isValid();
-    final isPasswordValid = state.password.isValid();
-
-    if (isPasswordValid && isEmailValid) {
-      emit(
-        state.copyWith(
-          isSubmitting: true,
-          authFailureOrSuccessOption: none(),
-        ),
-      );
-
-      failureOrSucces = await forwardedFunction(
-        emailAddress: state.email,
-        password: state.password,
-      );
-    }
-    emit(
-      state.copyWith(
-        isSubmitting: false,
-        showErrorMessage: true,
-        authFailureOrSuccessOption: optionOf(failureOrSucces),
-      ),
-    );
   }
 }
