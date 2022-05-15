@@ -1,10 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:timenotetracker/domain/auth/auth_failure.dart';
 import 'package:timenotetracker/domain/auth/auth_value_objects.dart';
-import 'package:timenotetracker/domain/auth/user_model.dart';
 
 abstract class IAuthMethods {
-  Future<Option<User>> getSignedInUser();
+  Future<Option<String>> getSignedInUser(); // TODO return type should be user model and uniqe ıd needs to be implemented
 
   //we are returning unit if everything is right
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({

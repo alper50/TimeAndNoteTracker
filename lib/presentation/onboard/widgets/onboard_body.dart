@@ -24,14 +24,10 @@ class OnboardBody extends StatelessWidget {
 const List onboards = <OnboardBody>[
   OnboardBody(
     title: 'Take Notes',
-    assetPath: 'assets/lottie/task.json',
-  ),
-  OnboardBody(
-    title: 'Take Notes',
-    assetPath: 'assets/lottie/task.json',
-  ),
-  OnboardBody(
-    title: 'Take Notes',
     assetPath: 'assets/lottie/time.json',
+  ),
+  OnboardBody(
+    title: 'Take Notes',
+    assetPath: 'assets/lottie/task.json',
   ),
 ];

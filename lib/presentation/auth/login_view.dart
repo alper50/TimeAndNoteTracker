@@ -7,7 +7,8 @@ import 'package:timenotetracker/presentation/auth/widgets/my_auth_button.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
 
 class LoginView extends StatelessWidget {
-  const LoginView({Key? key}) : super(key: key);
+   LoginView({Key? key}) : super(key: key);
+   final FocusNode passFocus = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -77,6 +78,7 @@ class LoginView extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   TextFormField(
+                    focusNode: passFocus,
                     decoration: const InputDecoration(
                       prefixIcon: Icon(Icons.lock),
                       labelText: 'Password',
@@ -104,6 +106,7 @@ class LoginView extends StatelessWidget {
                     state: state,
                     title: 'Login',
                     onpressed: () {
+                      passFocus.unfocus();
                       context.read<RegisterAndLoginBloc>().add(
                           RegisterAndLoginEvent.loginWithEmailAndPassword());
                     },

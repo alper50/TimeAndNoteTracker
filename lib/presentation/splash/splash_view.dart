@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
 import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
 
 class SplashView extends StatefulWidget {
@@ -34,7 +35,9 @@ class _SplashPageState extends State<SplashView> {
             });
       },
       child: Scaffold(
-        appBar: AppBar(),
+        body: Center(
+          child: LottieBuilder.asset('assets/lottie/splash.json'),
+        ),
       ),
     );
   }
