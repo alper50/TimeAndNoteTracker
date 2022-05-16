@@ -8,7 +8,7 @@ import 'package:timenotetracker/domain/auth/auth_failure.dart';
 import 'package:timenotetracker/domain/auth/user_model.dart';
 
 // IAuthMethods is a abstract class so when we call IAuthMethods in DI we need to return FirebaseAuthService
-@LazySingleton(as: IAuthMethods) 
+@LazySingleton(as: IAuthMethods)
 class FirebaseAuthService implements IAuthMethods {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
@@ -75,7 +75,6 @@ class FirebaseAuthService implements IAuthMethods {
 
       await _firebaseAuth.signInWithCredential(googleCredential);
       return right(unit);
-
     } on FirebaseAuthException catch (_) {
       return left(const AuthFailure.serverError());
     }
@@ -89,15 +88,14 @@ class FirebaseAuthService implements IAuthMethods {
 
   @override
   Future<Either<AuthFailure, Unit>> forgotPassword(
-      {required EmailAddress emailAddress}) {
-    // TODO: implement forgotPassword
-    throw UnimplementedError();
-  }
+      {required EmailAddress emailAddress}) async {
+    final validEmail = emailAddress.getValueOrCrash();
 
-  @override
-  Future<Either<AuthFailure, Unit>> resetPassword(
-      {required Password password}) {
-    // TODO: implement resetPassword
-    throw UnimplementedError();
+    try {
+      await _firebaseAuth.sendPasswordResetEmail(email: validEmail);
+      return right(unit);
+    } on FirebaseAuthException catch (e) {
+      return left(const AuthFailure.serverError());
+    }
   }
 }

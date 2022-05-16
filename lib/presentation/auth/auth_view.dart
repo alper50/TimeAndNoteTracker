@@ -11,9 +11,9 @@ class AuthenticationView extends StatelessWidget {
   AuthenticationView({Key? key}) : super(key: key);
 
   final List<Widget> _tabbarViews = [
-    const RegisterView(),
+     RegisterView(),
      LoginView(),
-    const ForgotPasswordView()
+     ForgotPasswordView()
   ];
 
   @override

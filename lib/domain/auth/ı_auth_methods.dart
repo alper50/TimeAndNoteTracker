@@ -18,6 +18,5 @@ abstract class IAuthMethods {
   });
   Future<Either<AuthFailure, Unit>> signInWithGoogle();
   Future<Either<AuthFailure, Unit>> forgotPassword({required EmailAddress emailAddress});
-  Future<Either<AuthFailure, Unit>> resetPassword({required Password password});
   Future<void> signOut();
 }

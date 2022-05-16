@@ -14,22 +14,24 @@ class OnboardView extends StatefulWidget {
 class _OnboardViewState extends State<OnboardView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ConcentricPageView(
-        colors: [
-          MyColors.primaryColor,
-          MyColors.secondaryColor,
-        ],
-        physics: NeverScrollableScrollPhysics(),
-        onFinish: (){
-          AutoRouter.of(context).replaceNamed('/splash-view'); // TODO change path to the auth
-        },
-        itemCount: onboards.length,
-        itemBuilder: (int index) {
-          return Center(
-            child: onboards[index],
-          );
-        },
+    return SafeArea(
+      child: Scaffold(
+        body: ConcentricPageView(
+          colors: [
+            MyColors.primaryColor,
+            MyColors.secondaryColor,
+          ],
+          physics: NeverScrollableScrollPhysics(),
+          onFinish: (){
+            AutoRouter.of(context).replaceNamed('/splash-view'); // TODO change path to the auth
+          },
+          itemCount: onboards.length,
+          itemBuilder: (int index) {
+            return Center(
+              child: onboards[index],
+            );
+          },
+        ),
       ),
     );
   }
