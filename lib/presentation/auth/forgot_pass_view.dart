@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:timenotetracker/application/auth/bloc/forgot_password_bloc.dart';
+import 'package:timenotetracker/application/auth/forgotPasswordBloc/forgot_password_bloc.dart';
 import 'package:timenotetracker/injection.dart';
-import 'package:timenotetracker/presentation/auth/widgets/my_auth_button.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
 
 class ForgotPasswordView extends StatelessWidget {

@@ -38,8 +38,6 @@ class LoginView extends StatelessWidget {
             },
           ),
         );
-
-        // TODO: implement listener
       },
       builder: (context, state) {
         return Scaffold(

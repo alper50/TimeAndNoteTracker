@@ -21,8 +21,6 @@ mixin _$RegisterAndLoginEvent {
     required TResult Function() registerWithEmailAndPassword,
     required TResult Function() loginWithEmailAndPassword,
     required TResult Function() loginWithGoogle,
-    required TResult Function(String password) resetPassword,
-    required TResult Function(String email) forgotPassword,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
   }) =>
@@ -32,8 +30,6 @@ mixin _$RegisterAndLoginEvent {
     TResult Function()? registerWithEmailAndPassword,
     TResult Function()? loginWithEmailAndPassword,
     TResult Function()? loginWithGoogle,
-    TResult Function(String password)? resetPassword,
-    TResult Function(String email)? forgotPassword,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
   }) =>
@@ -43,8 +39,6 @@ mixin _$RegisterAndLoginEvent {
     TResult Function()? registerWithEmailAndPassword,
     TResult Function()? loginWithEmailAndPassword,
     TResult Function()? loginWithGoogle,
-    TResult Function(String password)? resetPassword,
-    TResult Function(String email)? forgotPassword,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     required TResult orElse(),
@@ -57,8 +51,6 @@ mixin _$RegisterAndLoginEvent {
     required TResult Function(LoginWithEmailAndPassword value)
         loginWithEmailAndPassword,
     required TResult Function(LoginWithGoogle value) loginWithGoogle,
-    required TResult Function(ResetPassword value) resetPassword,
-    required TResult Function(ForgotPassword value) forgotPassword,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
   }) =>
@@ -70,8 +62,6 @@ mixin _$RegisterAndLoginEvent {
     TResult Function(LoginWithEmailAndPassword value)?
         loginWithEmailAndPassword,
     TResult Function(LoginWithGoogle value)? loginWithGoogle,
-    TResult Function(ResetPassword value)? resetPassword,
-    TResult Function(ForgotPassword value)? forgotPassword,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
   }) =>
@@ -83,8 +73,6 @@ mixin _$RegisterAndLoginEvent {
     TResult Function(LoginWithEmailAndPassword value)?
         loginWithEmailAndPassword,
     TResult Function(LoginWithGoogle value)? loginWithGoogle,
-    TResult Function(ResetPassword value)? resetPassword,
-    TResult Function(ForgotPassword value)? forgotPassword,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     required TResult orElse(),
@@ -157,8 +145,6 @@ class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
     required TResult Function() registerWithEmailAndPassword,
     required TResult Function() loginWithEmailAndPassword,
     required TResult Function() loginWithGoogle,
-    required TResult Function(String password) resetPassword,
-    required TResult Function(String email) forgotPassword,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
   }) {
@@ -171,8 +157,6 @@ class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
     TResult Function()? registerWithEmailAndPassword,
     TResult Function()? loginWithEmailAndPassword,
     TResult Function()? loginWithGoogle,
-    TResult Function(String password)? resetPassword,
-    TResult Function(String email)? forgotPassword,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
   }) {
@@ -185,8 +169,6 @@ class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
     TResult Function()? registerWithEmailAndPassword,
     TResult Function()? loginWithEmailAndPassword,
     TResult Function()? loginWithGoogle,
-    TResult Function(String password)? resetPassword,
-    TResult Function(String email)? forgotPassword,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     required TResult orElse(),
@@ -205,8 +187,6 @@ class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
     required TResult Function(LoginWithEmailAndPassword value)
         loginWithEmailAndPassword,
     required TResult Function(LoginWithGoogle value) loginWithGoogle,
-    required TResult Function(ResetPassword value) resetPassword,
-    required TResult Function(ForgotPassword value) forgotPassword,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
   }) {
@@ -221,8 +201,6 @@ class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
     TResult Function(LoginWithEmailAndPassword value)?
         loginWithEmailAndPassword,
     TResult Function(LoginWithGoogle value)? loginWithGoogle,
-    TResult Function(ResetPassword value)? resetPassword,
-    TResult Function(ForgotPassword value)? forgotPassword,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
   }) {
@@ -237,8 +215,6 @@ class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
     TResult Function(LoginWithEmailAndPassword value)?
         loginWithEmailAndPassword,
     TResult Function(LoginWithGoogle value)? loginWithGoogle,
-    TResult Function(ResetPassword value)? resetPassword,
-    TResult Function(ForgotPassword value)? forgotPassword,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     required TResult orElse(),
@@ -300,8 +276,6 @@ class _$LoginWithEmailAndPassword implements LoginWithEmailAndPassword {
     required TResult Function() registerWithEmailAndPassword,
     required TResult Function() loginWithEmailAndPassword,
     required TResult Function() loginWithGoogle,
-    required TResult Function(String password) resetPassword,
-    required TResult Function(String email) forgotPassword,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
   }) {
@@ -314,8 +288,6 @@ class _$LoginWithEmailAndPassword implements LoginWithEmailAndPassword {
     TResult Function()? registerWithEmailAndPassword,
     TResult Function()? loginWithEmailAndPassword,
     TResult Function()? loginWithGoogle,
-    TResult Function(String password)? resetPassword,
-    TResult Function(String email)? forgotPassword,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
   }) {
@@ -328,8 +300,6 @@ class _$LoginWithEmailAndPassword implements LoginWithEmailAndPassword {
     TResult Function()? registerWithEmailAndPassword,
     TResult Function()? loginWithEmailAndPassword,
     TResult Function()? loginWithGoogle,
-    TResult Function(String password)? resetPassword,
-    TResult Function(String email)? forgotPassword,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     required TResult orElse(),
@@ -348,8 +318,6 @@ class _$LoginWithEmailAndPassword implements LoginWithEmailAndPassword {
     required TResult Function(LoginWithEmailAndPassword value)
         loginWithEmailAndPassword,
     required TResult Function(LoginWithGoogle value) loginWithGoogle,
-    required TResult Function(ResetPassword value) resetPassword,
-    required TResult Function(ForgotPassword value) forgotPassword,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
   }) {
@@ -364,8 +332,6 @@ class _$LoginWithEmailAndPassword implements LoginWithEmailAndPassword {
     TResult Function(LoginWithEmailAndPassword value)?
         loginWithEmailAndPassword,
     TResult Function(LoginWithGoogle value)? loginWithGoogle,
-    TResult Function(ResetPassword value)? resetPassword,
-    TResult Function(ForgotPassword value)? forgotPassword,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
   }) {
@@ -380,8 +346,6 @@ class _$LoginWithEmailAndPassword implements LoginWithEmailAndPassword {
     TResult Function(LoginWithEmailAndPassword value)?
         loginWithEmailAndPassword,
     TResult Function(LoginWithGoogle value)? loginWithGoogle,
-    TResult Function(ResetPassword value)? resetPassword,
-    TResult Function(ForgotPassword value)? forgotPassword,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     required TResult orElse(),
@@ -441,8 +405,6 @@ class _$LoginWithGoogle implements LoginWithGoogle {
     required TResult Function() registerWithEmailAndPassword,
     required TResult Function() loginWithEmailAndPassword,
     required TResult Function() loginWithGoogle,
-    required TResult Function(String password) resetPassword,
-    required TResult Function(String email) forgotPassword,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
   }) {
@@ -455,8 +417,6 @@ class _$LoginWithGoogle implements LoginWithGoogle {
     TResult Function()? registerWithEmailAndPassword,
     TResult Function()? loginWithEmailAndPassword,
     TResult Function()? loginWithGoogle,
-    TResult Function(String password)? resetPassword,
-    TResult Function(String email)? forgotPassword,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
   }) {
@@ -469,8 +429,6 @@ class _$LoginWithGoogle implements LoginWithGoogle {
     TResult Function()? registerWithEmailAndPassword,
     TResult Function()? loginWithEmailAndPassword,
     TResult Function()? loginWithGoogle,
-    TResult Function(String password)? resetPassword,
-    TResult Function(String email)? forgotPassword,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     required TResult orElse(),
@@ -489,8 +447,6 @@ class _$LoginWithGoogle implements LoginWithGoogle {
     required TResult Function(LoginWithEmailAndPassword value)
         loginWithEmailAndPassword,
     required TResult Function(LoginWithGoogle value) loginWithGoogle,
-    required TResult Function(ResetPassword value) resetPassword,
-    required TResult Function(ForgotPassword value) forgotPassword,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
   }) {
@@ -505,8 +461,6 @@ class _$LoginWithGoogle implements LoginWithGoogle {
     TResult Function(LoginWithEmailAndPassword value)?
         loginWithEmailAndPassword,
     TResult Function(LoginWithGoogle value)? loginWithGoogle,
-    TResult Function(ResetPassword value)? resetPassword,
-    TResult Function(ForgotPassword value)? forgotPassword,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
   }) {
@@ -521,8 +475,6 @@ class _$LoginWithGoogle implements LoginWithGoogle {
     TResult Function(LoginWithEmailAndPassword value)?
         loginWithEmailAndPassword,
     TResult Function(LoginWithGoogle value)? loginWithGoogle,
-    TResult Function(ResetPassword value)? resetPassword,
-    TResult Function(ForgotPassword value)? forgotPassword,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     required TResult orElse(),
@@ -536,346 +488,6 @@ class _$LoginWithGoogle implements LoginWithGoogle {
 
 abstract class LoginWithGoogle implements RegisterAndLoginEvent {
   const factory LoginWithGoogle() = _$LoginWithGoogle;
-}
-
-/// @nodoc
-abstract class $ResetPasswordCopyWith<$Res> {
-  factory $ResetPasswordCopyWith(
-          ResetPassword value, $Res Function(ResetPassword) then) =
-      _$ResetPasswordCopyWithImpl<$Res>;
-  $Res call({String password});
-}
-
-/// @nodoc
-class _$ResetPasswordCopyWithImpl<$Res>
-    extends _$RegisterAndLoginEventCopyWithImpl<$Res>
-    implements $ResetPasswordCopyWith<$Res> {
-  _$ResetPasswordCopyWithImpl(
-      ResetPassword _value, $Res Function(ResetPassword) _then)
-      : super(_value, (v) => _then(v as ResetPassword));
-
-  @override
-  ResetPassword get _value => super._value as ResetPassword;
-
-  @override
-  $Res call({
-    Object? password = freezed,
-  }) {
-    return _then(ResetPassword(
-      password == freezed
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ResetPassword implements ResetPassword {
-  const _$ResetPassword(this.password);
-
-  @override
-  final String password;
-
-  @override
-  String toString() {
-    return 'RegisterAndLoginEvent.resetPassword(password: $password)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ResetPassword &&
-            const DeepCollectionEquality().equals(other.password, password));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(password));
-
-  @JsonKey(ignore: true)
-  @override
-  $ResetPasswordCopyWith<ResetPassword> get copyWith =>
-      _$ResetPasswordCopyWithImpl<ResetPassword>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() registerWithEmailAndPassword,
-    required TResult Function() loginWithEmailAndPassword,
-    required TResult Function() loginWithGoogle,
-    required TResult Function(String password) resetPassword,
-    required TResult Function(String email) forgotPassword,
-    required TResult Function(String email) emailChanged,
-    required TResult Function(String password) passwordChanged,
-  }) {
-    return resetPassword(password);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? registerWithEmailAndPassword,
-    TResult Function()? loginWithEmailAndPassword,
-    TResult Function()? loginWithGoogle,
-    TResult Function(String password)? resetPassword,
-    TResult Function(String email)? forgotPassword,
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-  }) {
-    return resetPassword?.call(password);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? registerWithEmailAndPassword,
-    TResult Function()? loginWithEmailAndPassword,
-    TResult Function()? loginWithGoogle,
-    TResult Function(String password)? resetPassword,
-    TResult Function(String email)? forgotPassword,
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-    required TResult orElse(),
-  }) {
-    if (resetPassword != null) {
-      return resetPassword(password);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(RegisterWithEmailAndPassword value)
-        registerWithEmailAndPassword,
-    required TResult Function(LoginWithEmailAndPassword value)
-        loginWithEmailAndPassword,
-    required TResult Function(LoginWithGoogle value) loginWithGoogle,
-    required TResult Function(ResetPassword value) resetPassword,
-    required TResult Function(ForgotPassword value) forgotPassword,
-    required TResult Function(EmailChanged value) emailChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-  }) {
-    return resetPassword(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RegisterWithEmailAndPassword value)?
-        registerWithEmailAndPassword,
-    TResult Function(LoginWithEmailAndPassword value)?
-        loginWithEmailAndPassword,
-    TResult Function(LoginWithGoogle value)? loginWithGoogle,
-    TResult Function(ResetPassword value)? resetPassword,
-    TResult Function(ForgotPassword value)? forgotPassword,
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-  }) {
-    return resetPassword?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(RegisterWithEmailAndPassword value)?
-        registerWithEmailAndPassword,
-    TResult Function(LoginWithEmailAndPassword value)?
-        loginWithEmailAndPassword,
-    TResult Function(LoginWithGoogle value)? loginWithGoogle,
-    TResult Function(ResetPassword value)? resetPassword,
-    TResult Function(ForgotPassword value)? forgotPassword,
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    required TResult orElse(),
-  }) {
-    if (resetPassword != null) {
-      return resetPassword(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ResetPassword implements RegisterAndLoginEvent {
-  const factory ResetPassword(final String password) = _$ResetPassword;
-
-  String get password => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ResetPasswordCopyWith<ResetPassword> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ForgotPasswordCopyWith<$Res> {
-  factory $ForgotPasswordCopyWith(
-          ForgotPassword value, $Res Function(ForgotPassword) then) =
-      _$ForgotPasswordCopyWithImpl<$Res>;
-  $Res call({String email});
-}
-
-/// @nodoc
-class _$ForgotPasswordCopyWithImpl<$Res>
-    extends _$RegisterAndLoginEventCopyWithImpl<$Res>
-    implements $ForgotPasswordCopyWith<$Res> {
-  _$ForgotPasswordCopyWithImpl(
-      ForgotPassword _value, $Res Function(ForgotPassword) _then)
-      : super(_value, (v) => _then(v as ForgotPassword));
-
-  @override
-  ForgotPassword get _value => super._value as ForgotPassword;
-
-  @override
-  $Res call({
-    Object? email = freezed,
-  }) {
-    return _then(ForgotPassword(
-      email == freezed
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ForgotPassword implements ForgotPassword {
-  const _$ForgotPassword(this.email);
-
-  @override
-  final String email;
-
-  @override
-  String toString() {
-    return 'RegisterAndLoginEvent.forgotPassword(email: $email)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ForgotPassword &&
-            const DeepCollectionEquality().equals(other.email, email));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
-
-  @JsonKey(ignore: true)
-  @override
-  $ForgotPasswordCopyWith<ForgotPassword> get copyWith =>
-      _$ForgotPasswordCopyWithImpl<ForgotPassword>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() registerWithEmailAndPassword,
-    required TResult Function() loginWithEmailAndPassword,
-    required TResult Function() loginWithGoogle,
-    required TResult Function(String password) resetPassword,
-    required TResult Function(String email) forgotPassword,
-    required TResult Function(String email) emailChanged,
-    required TResult Function(String password) passwordChanged,
-  }) {
-    return forgotPassword(email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? registerWithEmailAndPassword,
-    TResult Function()? loginWithEmailAndPassword,
-    TResult Function()? loginWithGoogle,
-    TResult Function(String password)? resetPassword,
-    TResult Function(String email)? forgotPassword,
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-  }) {
-    return forgotPassword?.call(email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? registerWithEmailAndPassword,
-    TResult Function()? loginWithEmailAndPassword,
-    TResult Function()? loginWithGoogle,
-    TResult Function(String password)? resetPassword,
-    TResult Function(String email)? forgotPassword,
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-    required TResult orElse(),
-  }) {
-    if (forgotPassword != null) {
-      return forgotPassword(email);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(RegisterWithEmailAndPassword value)
-        registerWithEmailAndPassword,
-    required TResult Function(LoginWithEmailAndPassword value)
-        loginWithEmailAndPassword,
-    required TResult Function(LoginWithGoogle value) loginWithGoogle,
-    required TResult Function(ResetPassword value) resetPassword,
-    required TResult Function(ForgotPassword value) forgotPassword,
-    required TResult Function(EmailChanged value) emailChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-  }) {
-    return forgotPassword(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RegisterWithEmailAndPassword value)?
-        registerWithEmailAndPassword,
-    TResult Function(LoginWithEmailAndPassword value)?
-        loginWithEmailAndPassword,
-    TResult Function(LoginWithGoogle value)? loginWithGoogle,
-    TResult Function(ResetPassword value)? resetPassword,
-    TResult Function(ForgotPassword value)? forgotPassword,
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-  }) {
-    return forgotPassword?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(RegisterWithEmailAndPassword value)?
-        registerWithEmailAndPassword,
-    TResult Function(LoginWithEmailAndPassword value)?
-        loginWithEmailAndPassword,
-    TResult Function(LoginWithGoogle value)? loginWithGoogle,
-    TResult Function(ResetPassword value)? resetPassword,
-    TResult Function(ForgotPassword value)? forgotPassword,
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    required TResult orElse(),
-  }) {
-    if (forgotPassword != null) {
-      return forgotPassword(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ForgotPassword implements RegisterAndLoginEvent {
-  const factory ForgotPassword(final String email) = _$ForgotPassword;
-
-  String get email => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ForgotPasswordCopyWith<ForgotPassword> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -946,8 +558,6 @@ class _$EmailChanged implements EmailChanged {
     required TResult Function() registerWithEmailAndPassword,
     required TResult Function() loginWithEmailAndPassword,
     required TResult Function() loginWithGoogle,
-    required TResult Function(String password) resetPassword,
-    required TResult Function(String email) forgotPassword,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
   }) {
@@ -960,8 +570,6 @@ class _$EmailChanged implements EmailChanged {
     TResult Function()? registerWithEmailAndPassword,
     TResult Function()? loginWithEmailAndPassword,
     TResult Function()? loginWithGoogle,
-    TResult Function(String password)? resetPassword,
-    TResult Function(String email)? forgotPassword,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
   }) {
@@ -974,8 +582,6 @@ class _$EmailChanged implements EmailChanged {
     TResult Function()? registerWithEmailAndPassword,
     TResult Function()? loginWithEmailAndPassword,
     TResult Function()? loginWithGoogle,
-    TResult Function(String password)? resetPassword,
-    TResult Function(String email)? forgotPassword,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     required TResult orElse(),
@@ -994,8 +600,6 @@ class _$EmailChanged implements EmailChanged {
     required TResult Function(LoginWithEmailAndPassword value)
         loginWithEmailAndPassword,
     required TResult Function(LoginWithGoogle value) loginWithGoogle,
-    required TResult Function(ResetPassword value) resetPassword,
-    required TResult Function(ForgotPassword value) forgotPassword,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
   }) {
@@ -1010,8 +614,6 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(LoginWithEmailAndPassword value)?
         loginWithEmailAndPassword,
     TResult Function(LoginWithGoogle value)? loginWithGoogle,
-    TResult Function(ResetPassword value)? resetPassword,
-    TResult Function(ForgotPassword value)? forgotPassword,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
   }) {
@@ -1026,8 +628,6 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(LoginWithEmailAndPassword value)?
         loginWithEmailAndPassword,
     TResult Function(LoginWithGoogle value)? loginWithGoogle,
-    TResult Function(ResetPassword value)? resetPassword,
-    TResult Function(ForgotPassword value)? forgotPassword,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     required TResult orElse(),
@@ -1116,8 +716,6 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function() registerWithEmailAndPassword,
     required TResult Function() loginWithEmailAndPassword,
     required TResult Function() loginWithGoogle,
-    required TResult Function(String password) resetPassword,
-    required TResult Function(String email) forgotPassword,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
   }) {
@@ -1130,8 +728,6 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function()? registerWithEmailAndPassword,
     TResult Function()? loginWithEmailAndPassword,
     TResult Function()? loginWithGoogle,
-    TResult Function(String password)? resetPassword,
-    TResult Function(String email)? forgotPassword,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
   }) {
@@ -1144,8 +740,6 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function()? registerWithEmailAndPassword,
     TResult Function()? loginWithEmailAndPassword,
     TResult Function()? loginWithGoogle,
-    TResult Function(String password)? resetPassword,
-    TResult Function(String email)? forgotPassword,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     required TResult orElse(),
@@ -1164,8 +758,6 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(LoginWithEmailAndPassword value)
         loginWithEmailAndPassword,
     required TResult Function(LoginWithGoogle value) loginWithGoogle,
-    required TResult Function(ResetPassword value) resetPassword,
-    required TResult Function(ForgotPassword value) forgotPassword,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
   }) {
@@ -1180,8 +772,6 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(LoginWithEmailAndPassword value)?
         loginWithEmailAndPassword,
     TResult Function(LoginWithGoogle value)? loginWithGoogle,
-    TResult Function(ResetPassword value)? resetPassword,
-    TResult Function(ForgotPassword value)? forgotPassword,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
   }) {
@@ -1196,8 +786,6 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(LoginWithEmailAndPassword value)?
         loginWithEmailAndPassword,
     TResult Function(LoginWithGoogle value)? loginWithGoogle,
-    TResult Function(ResetPassword value)? resetPassword,
-    TResult Function(ForgotPassword value)? forgotPassword,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     required TResult orElse(),
@@ -1223,7 +811,9 @@ mixin _$RegisterAndLoginState {
   EmailAddress get email => throw _privateConstructorUsedError;
   Password get password => throw _privateConstructorUsedError;
   bool get showErrorMessage => throw _privateConstructorUsedError;
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmittingRegister => throw _privateConstructorUsedError;
+  bool get isSubmittingLogin => throw _privateConstructorUsedError;
+  bool get isSubmittingGoogle => throw _privateConstructorUsedError;
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
 
@@ -1241,7 +831,9 @@ abstract class $RegisterAndLoginStateCopyWith<$Res> {
       {EmailAddress email,
       Password password,
       bool showErrorMessage,
-      bool isSubmitting,
+      bool isSubmittingRegister,
+      bool isSubmittingLogin,
+      bool isSubmittingGoogle,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
 }
 
@@ -1259,7 +851,9 @@ class _$RegisterAndLoginStateCopyWithImpl<$Res>
     Object? email = freezed,
     Object? password = freezed,
     Object? showErrorMessage = freezed,
-    Object? isSubmitting = freezed,
+    Object? isSubmittingRegister = freezed,
+    Object? isSubmittingLogin = freezed,
+    Object? isSubmittingGoogle = freezed,
     Object? authFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1275,9 +869,17 @@ class _$RegisterAndLoginStateCopyWithImpl<$Res>
           ? _value.showErrorMessage
           : showErrorMessage // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
-          ? _value.isSubmitting
-          : isSubmitting // ignore: cast_nullable_to_non_nullable
+      isSubmittingRegister: isSubmittingRegister == freezed
+          ? _value.isSubmittingRegister
+          : isSubmittingRegister // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmittingLogin: isSubmittingLogin == freezed
+          ? _value.isSubmittingLogin
+          : isSubmittingLogin // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmittingGoogle: isSubmittingGoogle == freezed
+          ? _value.isSubmittingGoogle
+          : isSubmittingGoogle // ignore: cast_nullable_to_non_nullable
               as bool,
       authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
           ? _value.authFailureOrSuccessOption
@@ -1298,7 +900,9 @@ abstract class _$RegisterAndLoginStateCopyWith<$Res>
       {EmailAddress email,
       Password password,
       bool showErrorMessage,
-      bool isSubmitting,
+      bool isSubmittingRegister,
+      bool isSubmittingLogin,
+      bool isSubmittingGoogle,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
 }
 
@@ -1318,7 +922,9 @@ class __$RegisterAndLoginStateCopyWithImpl<$Res>
     Object? email = freezed,
     Object? password = freezed,
     Object? showErrorMessage = freezed,
-    Object? isSubmitting = freezed,
+    Object? isSubmittingRegister = freezed,
+    Object? isSubmittingLogin = freezed,
+    Object? isSubmittingGoogle = freezed,
     Object? authFailureOrSuccessOption = freezed,
   }) {
     return _then(_RegisterAndLoginState(
@@ -1334,9 +940,17 @@ class __$RegisterAndLoginStateCopyWithImpl<$Res>
           ? _value.showErrorMessage
           : showErrorMessage // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
-          ? _value.isSubmitting
-          : isSubmitting // ignore: cast_nullable_to_non_nullable
+      isSubmittingRegister: isSubmittingRegister == freezed
+          ? _value.isSubmittingRegister
+          : isSubmittingRegister // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmittingLogin: isSubmittingLogin == freezed
+          ? _value.isSubmittingLogin
+          : isSubmittingLogin // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmittingGoogle: isSubmittingGoogle == freezed
+          ? _value.isSubmittingGoogle
+          : isSubmittingGoogle // ignore: cast_nullable_to_non_nullable
               as bool,
       authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
           ? _value.authFailureOrSuccessOption
@@ -1353,7 +967,9 @@ class _$_RegisterAndLoginState implements _RegisterAndLoginState {
       {required this.email,
       required this.password,
       required this.showErrorMessage,
-      required this.isSubmitting,
+      required this.isSubmittingRegister,
+      required this.isSubmittingLogin,
+      required this.isSubmittingGoogle,
       required this.authFailureOrSuccessOption});
 
   @override
@@ -1363,13 +979,17 @@ class _$_RegisterAndLoginState implements _RegisterAndLoginState {
   @override
   final bool showErrorMessage;
   @override
-  final bool isSubmitting;
+  final bool isSubmittingRegister;
+  @override
+  final bool isSubmittingLogin;
+  @override
+  final bool isSubmittingGoogle;
   @override
   final Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'RegisterAndLoginState(email: $email, password: $password, showErrorMessage: $showErrorMessage, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
+    return 'RegisterAndLoginState(email: $email, password: $password, showErrorMessage: $showErrorMessage, isSubmittingRegister: $isSubmittingRegister, isSubmittingLogin: $isSubmittingLogin, isSubmittingGoogle: $isSubmittingGoogle, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
   }
 
   @override
@@ -1382,7 +1002,11 @@ class _$_RegisterAndLoginState implements _RegisterAndLoginState {
             const DeepCollectionEquality()
                 .equals(other.showErrorMessage, showErrorMessage) &&
             const DeepCollectionEquality()
-                .equals(other.isSubmitting, isSubmitting) &&
+                .equals(other.isSubmittingRegister, isSubmittingRegister) &&
+            const DeepCollectionEquality()
+                .equals(other.isSubmittingLogin, isSubmittingLogin) &&
+            const DeepCollectionEquality()
+                .equals(other.isSubmittingGoogle, isSubmittingGoogle) &&
             const DeepCollectionEquality().equals(
                 other.authFailureOrSuccessOption, authFailureOrSuccessOption));
   }
@@ -1393,7 +1017,9 @@ class _$_RegisterAndLoginState implements _RegisterAndLoginState {
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(password),
       const DeepCollectionEquality().hash(showErrorMessage),
-      const DeepCollectionEquality().hash(isSubmitting),
+      const DeepCollectionEquality().hash(isSubmittingRegister),
+      const DeepCollectionEquality().hash(isSubmittingLogin),
+      const DeepCollectionEquality().hash(isSubmittingGoogle),
       const DeepCollectionEquality().hash(authFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
@@ -1408,7 +1034,9 @@ abstract class _RegisterAndLoginState implements RegisterAndLoginState {
       {required final EmailAddress email,
       required final Password password,
       required final bool showErrorMessage,
-      required final bool isSubmitting,
+      required final bool isSubmittingRegister,
+      required final bool isSubmittingLogin,
+      required final bool isSubmittingGoogle,
       required final Option<Either<AuthFailure, Unit>>
           authFailureOrSuccessOption}) = _$_RegisterAndLoginState;
 
@@ -1419,7 +1047,11 @@ abstract class _RegisterAndLoginState implements RegisterAndLoginState {
   @override
   bool get showErrorMessage => throw _privateConstructorUsedError;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmittingRegister => throw _privateConstructorUsedError;
+  @override
+  bool get isSubmittingLogin => throw _privateConstructorUsedError;
+  @override
+  bool get isSubmittingGoogle => throw _privateConstructorUsedError;
   @override
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
       throw _privateConstructorUsedError;

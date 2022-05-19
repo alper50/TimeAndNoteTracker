@@ -14,7 +14,7 @@ class MyAuthButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return state.isSubmitting
+    return state.isSubmittingLogin
         ? TextButton(
             child: CircularProgressIndicator(),
             onPressed: null,

@@ -26,7 +26,7 @@ class RegisterAndLoginBloc
           if (isPasswordValid && isEmailValid) {
             emit(
               state.copyWith(
-                isSubmitting: true,
+                isSubmittingRegister: true,
                 authFailureOrSuccessOption: none(),
               ),
             );
@@ -38,7 +38,7 @@ class RegisterAndLoginBloc
           }
           emit(
             state.copyWith(
-              isSubmitting: false,
+              isSubmittingRegister: false,
               showErrorMessage: true,
               authFailureOrSuccessOption: optionOf(failureOrSucces),
             ),
@@ -53,7 +53,7 @@ class RegisterAndLoginBloc
           if (isPasswordValid && isEmailValid) {
             emit(
               state.copyWith(
-                isSubmitting: true,
+                isSubmittingLogin: true,
                 authFailureOrSuccessOption: none(),
               ),
             );
@@ -65,7 +65,7 @@ class RegisterAndLoginBloc
           }
           emit(
             state.copyWith(
-              isSubmitting: false,
+              isSubmittingLogin: false,
               showErrorMessage: true,
               authFailureOrSuccessOption: optionOf(failureOrSucces),
             ),
@@ -74,7 +74,7 @@ class RegisterAndLoginBloc
         loginWithGoogle: (e) async {
           emit(
             state.copyWith(
-              isSubmitting: true,
+              isSubmittingGoogle: true,
               authFailureOrSuccessOption: none(),
             ),
           );
@@ -83,13 +83,11 @@ class RegisterAndLoginBloc
 
           emit(
             state.copyWith(
-              isSubmitting: false,
+              isSubmittingGoogle: false,
               authFailureOrSuccessOption: some(googleAuthFailureOrSucces),
             ),
           );
         },
-        resetPassword: (e) {}, // TODO
-        forgotPassword: (e) {}, // TODO
         emailChanged: (e) {
           emit(
             state.copyWith(

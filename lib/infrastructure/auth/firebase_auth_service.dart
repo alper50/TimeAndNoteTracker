@@ -5,7 +5,6 @@ import 'package:injectable/injectable.dart';
 import 'package:timenotetracker/domain/auth/%C4%B1_auth_methods.dart';
 import 'package:timenotetracker/domain/auth/auth_value_objects.dart';
 import 'package:timenotetracker/domain/auth/auth_failure.dart';
-import 'package:timenotetracker/domain/auth/user_model.dart';
 
 // IAuthMethods is a abstract class so when we call IAuthMethods in DI we need to return FirebaseAuthService
 @LazySingleton(as: IAuthMethods)
@@ -32,7 +31,7 @@ class FirebaseAuthService implements IAuthMethods {
       return right(unit);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'ERROR_WRONG_PASSWORD' ||
-          e.code == 'ERROR_USER_NOT_FOUND') {
+          e.code == 'user-not-found') {
         return left(const AuthFailure.invalidEmailAndPasswordCombination());
       } else {
         return left(const AuthFailure.serverError());
@@ -51,7 +50,7 @@ class FirebaseAuthService implements IAuthMethods {
           email: validEmail, password: validPassword);
       return right(unit);
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'ERROR_EMAIL_ALREADY_IN_USE') {
+      if (e.code == 'email-already-exists') {
         return left(const AuthFailure.emailAlreadyInUse());
       } else {
         return left(const AuthFailure.serverError());
@@ -94,7 +93,7 @@ class FirebaseAuthService implements IAuthMethods {
     try {
       await _firebaseAuth.sendPasswordResetEmail(email: validEmail);
       return right(unit);
-    } on FirebaseAuthException catch (e) {
+    } on FirebaseAuthException catch (_) {
       return left(const AuthFailure.serverError());
     }
   }

@@ -10,7 +10,7 @@ import 'package:google_sign_in/google_sign_in.dart' as _i4;
 import 'package:injectable/injectable.dart' as _i2;
 
 import 'application/auth/authBloc/auth_bloc.dart' as _i8;
-import 'application/auth/bloc/forgot_password_bloc.dart' as _i9;
+import 'application/auth/forgotPasswordBloc/forgot_password_bloc.dart' as _i9;
 import 'application/auth/registerAndLoginBloc/register_and_login_bloc.dart'
     as _i7;
 import 'domain/auth/%C4%B1_auth_methods.dart' as _i5;
