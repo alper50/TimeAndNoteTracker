@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/auth/forgotPasswordBloc/forgot_password_bloc.dart';
 import 'package:timenotetracker/injection.dart';
+import 'package:timenotetracker/presentation/auth/widgets/my_auth_button.dart';
+import 'package:timenotetracker/presentation/auth/widgets/my_textformfield.dart';
+import 'package:timenotetracker/presentation/core/constants/padding_constants.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
 
 class ForgotPasswordView extends StatelessWidget {
@@ -47,45 +50,50 @@ class ForgotPasswordView extends StatelessWidget {
         );
       }, builder: (context, state) {
         return Scaffold(
-          body: Form(
-            autovalidateMode: state.showErrorMessage
-                ? AutovalidateMode.always
-                : AutovalidateMode.disabled,
-            child: Column(
-              children: [
-                TextFormField(
-                  focusNode: emailFocus,
-                  textInputAction: TextInputAction.next,
-                  decoration: const InputDecoration(
-                    prefixIcon: Icon(Icons.email),
+          body: SingleChildScrollView(
+            padding: CustomPaddingAll.normal(),
+            child: Form(
+              autovalidateMode: state.showErrorMessage
+                  ? AutovalidateMode.always
+                  : AutovalidateMode.disabled,
+              child: Column(
+                children: [
+                  const SizedBox(height: 5),
+                  MyTextFormField(
                     labelText: 'Email',
-                  ),
-                  autocorrect: false,
-                  onChanged: (value) => context.read<ForgotPasswordBloc>().add(
-                        ForgotPasswordEvent.emailChanged(
-                          value,
-                        ),
-                      ),
-                  validator: (_) =>
-                      context.read<ForgotPasswordBloc>().state.email.value.fold(
-                            (f) => f.maybeMap(
-                              invalidEmail: (_) => 'Invalid Email',
-                              orElse: () => null,
+                    focusNode: emailFocus,
+                    onChanged: (value) =>
+                        context.read<ForgotPasswordBloc>().add(
+                              ForgotPasswordEvent.emailChanged(
+                                value,
+                              ),
                             ),
-                            (_) => null,
-                          ),
-                ),
-                const SizedBox(height: 10),
-                TextButton(
-                  onPressed: () {
-                    emailFocus.unfocus();
-                    context
+                    validator: (_) => context
                         .read<ForgotPasswordBloc>()
-                        .add(ForgotPasswordEvent.sendResetLink());
-                  },
-                  child: Text('Send Reset Link'),
-                )
-              ],
+                        .state
+                        .email
+                        .value
+                        .fold(
+                          (f) => f.maybeMap(
+                            invalidEmail: (_) => 'Invalid Email',
+                            orElse: () => null,
+                          ),
+                          (_) => null,
+                        ),
+                  ),
+                  const SizedBox(height: 10),
+                  MyAuthButton(
+                    title: 'Send Reset Link',
+                    isSubmitting: state.isSubmitting,
+                    onpressed: () {
+                      if (emailFocus.hasPrimaryFocus) emailFocus.unfocus();
+                      context
+                          .read<ForgotPasswordBloc>()
+                          .add(ForgotPasswordEvent.sendResetLink());
+                    },
+                  )
+                ],
+              ),
             ),
           ),
         );

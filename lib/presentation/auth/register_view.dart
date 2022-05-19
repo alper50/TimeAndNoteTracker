@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
 import 'package:timenotetracker/application/auth/registerAndLoginBloc/register_and_login_bloc.dart';
 import 'package:timenotetracker/presentation/auth/widgets/my_auth_button.dart';
+import 'package:timenotetracker/presentation/auth/widgets/my_textformfield.dart';
+import 'package:timenotetracker/presentation/core/constants/padding_constants.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
 
 class RegisterView extends StatelessWidget {
@@ -38,22 +40,19 @@ class RegisterView extends StatelessWidget {
           ),
         );
       },
-     builder: (context, state) {
+      builder: (context, state) {
         return Scaffold(
           body: SingleChildScrollView(
+            padding: CustomPaddingAll.normal(),
             child: Form(
               autovalidateMode: state.showErrorMessage
                   ? AutovalidateMode.always
                   : AutovalidateMode.disabled,
               child: Column(
                 children: [
-                  TextFormField(
-                    textInputAction: TextInputAction.next,
-                    decoration: const InputDecoration(
-                      prefixIcon: Icon(Icons.email),
-                      labelText: 'Email',
-                    ),
-                    autocorrect: false,
+                  const SizedBox(height: 5),
+                  MyTextFormField(
+                    labelText: 'Email',
                     onChanged: (value) =>
                         context.read<RegisterAndLoginBloc>().add(
                               RegisterAndLoginEvent.emailChanged(
@@ -73,14 +72,10 @@ class RegisterView extends StatelessWidget {
                           (_) => null,
                         ),
                   ),
-                  const SizedBox(height: 10),
-                  TextFormField(
+                  const SizedBox(height: 15),
+                  MyTextFormField(
+                    labelText: 'Password',
                     focusNode: passFocus,
-                    decoration: const InputDecoration(
-                      prefixIcon: Icon(Icons.lock),
-                      labelText: 'Password',
-                    ),
-                    autocorrect: false,
                     obscureText: true,
                     onChanged: (value) => context
                         .read<RegisterAndLoginBloc>()
@@ -98,12 +93,12 @@ class RegisterView extends StatelessWidget {
                           (_) => null,
                         ),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
                   MyAuthButton(
-                    state: state,
+                    isSubmitting: state.isSubmittingRegister,
                     title: 'Register',
                     onpressed: () {
-                      passFocus.unfocus();
+                      if(passFocus.hasPrimaryFocus)passFocus.unfocus();
                       context.read<RegisterAndLoginBloc>().add(
                           RegisterAndLoginEvent.registerWithEmailAndPassword());
                     },

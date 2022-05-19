@@ -1,6 +1,7 @@
   import 'package:flutter/material.dart';
 import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 import 'package:timenotetracker/presentation/core/constants/padding_constants.dart';
+import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
 
 Expanded buildTabbar() {
     return Expanded(
@@ -9,12 +10,12 @@ Expanded buildTabbar() {
         enableFeedback: false,
         padding: CustomPaddingAll.normal(),
         unselectedLabelStyle: TextStyle(color: MyColors.lightSecondaryColor),
-        labelPadding: EdgeInsets.only(right: 120),
+        labelPadding: EdgeInsets.only(right: 80),
         indicatorColor: Colors.transparent,
-        labelColor: Color.fromARGB(255, 7, 97, 139),
-        unselectedLabelColor: Colors.lightBlue[100],
+        labelColor: MyColors.primaryColor,
+        unselectedLabelColor: MyColors.lightPrimaryColor,
         isScrollable: true,
-        labelStyle: TextStyle(fontSize: 25),
+        labelStyle: MyTextStyles.headline1,
         tabs: [
           Tab(text: 'Register'),
           Tab(text: 'Login'),
@@ -27,11 +28,8 @@ Expanded buildTabbar() {
   Expanded buildTabbarView({required List<Widget> tabbarViews}) {
     return Expanded(
       flex: 6,
-      child: Padding(
-        padding: CustomPaddingAll.normal(),
-        child: TabBarView(
-          children: tabbarViews,
-        ),
+      child: TabBarView(
+        children: tabbarViews,
       ),
     );
   }
