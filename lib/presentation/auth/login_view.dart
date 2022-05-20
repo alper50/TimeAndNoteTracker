@@ -68,7 +68,8 @@ class LoginView extends StatelessWidget {
                         .value
                         .fold(
                           (f) => f.maybeMap(
-                            invalidEmail: (_) => 'Invalid Email',
+                            auth: (value) => value.failedValue.maybeMap(invalidEmail: (_) => 'Invalid Email',
+                            orElse: () => null,),
                             orElse: () => null,
                           ),
                           (_) => null,
@@ -88,7 +89,8 @@ class LoginView extends StatelessWidget {
                           .value
                           .fold(
                             (f) => f.maybeMap(
-                              passwordMinLength: (_) => 'Short Password',
+                              auth: (value) => value.failedValue.maybeMap(passwordMinLength: (_) => 'Short Password',
+                              orElse: () => null,),
                               orElse: () => null,
                             ),
                             (_) => null,

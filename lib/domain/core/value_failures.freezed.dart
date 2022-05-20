@@ -16,54 +16,36 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ValueFailure<T> {
-  T get failedValue => throw _privateConstructorUsedError;
+  AuthValueFailure<T> get failedValue => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedValue) invalidEmail,
-    required TResult Function(T failedValue) empty,
-    required TResult Function(T failedValue) emailAlreadyExist,
-    required TResult Function(T failedValue) passwordMinLength,
+    required TResult Function(AuthValueFailure<T> failedValue) auth,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? empty,
-    TResult Function(T failedValue)? emailAlreadyExist,
-    TResult Function(T failedValue)? passwordMinLength,
+    TResult Function(AuthValueFailure<T> failedValue)? auth,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? empty,
-    TResult Function(T failedValue)? emailAlreadyExist,
-    TResult Function(T failedValue)? passwordMinLength,
+    TResult Function(AuthValueFailure<T> failedValue)? auth,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(Empty<T> value) empty,
-    required TResult Function(EmailAlreadyExist<T> value) emailAlreadyExist,
-    required TResult Function(PasswordMinLength<T> value) passwordMinLength,
+    required TResult Function(Auth<T> value) auth,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(Empty<T> value)? empty,
-    TResult Function(EmailAlreadyExist<T> value)? emailAlreadyExist,
-    TResult Function(PasswordMinLength<T> value)? passwordMinLength,
+    TResult Function(Auth<T> value)? auth,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(Empty<T> value)? empty,
-    TResult Function(EmailAlreadyExist<T> value)? emailAlreadyExist,
-    TResult Function(PasswordMinLength<T> value)? passwordMinLength,
+    TResult Function(Auth<T> value)? auth,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -78,7 +60,9 @@ abstract class $ValueFailureCopyWith<T, $Res> {
   factory $ValueFailureCopyWith(
           ValueFailure<T> value, $Res Function(ValueFailure<T>) then) =
       _$ValueFailureCopyWithImpl<T, $Res>;
-  $Res call({T failedValue});
+  $Res call({AuthValueFailure<T> failedValue});
+
+  $AuthValueFailureCopyWith<T, $Res> get failedValue;
 }
 
 /// @nodoc
@@ -98,6 +82,229 @@ class _$ValueFailureCopyWithImpl<T, $Res>
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
+              as AuthValueFailure<T>,
+    ));
+  }
+
+  @override
+  $AuthValueFailureCopyWith<T, $Res> get failedValue {
+    return $AuthValueFailureCopyWith<T, $Res>(_value.failedValue, (value) {
+      return _then(_value.copyWith(failedValue: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class $AuthCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $AuthCopyWith(Auth<T> value, $Res Function(Auth<T>) then) =
+      _$AuthCopyWithImpl<T, $Res>;
+  @override
+  $Res call({AuthValueFailure<T> failedValue});
+
+  @override
+  $AuthValueFailureCopyWith<T, $Res> get failedValue;
+}
+
+/// @nodoc
+class _$AuthCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $AuthCopyWith<T, $Res> {
+  _$AuthCopyWithImpl(Auth<T> _value, $Res Function(Auth<T>) _then)
+      : super(_value, (v) => _then(v as Auth<T>));
+
+  @override
+  Auth<T> get _value => super._value as Auth<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(Auth<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as AuthValueFailure<T>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$Auth<T> implements Auth<T> {
+  const _$Auth({required this.failedValue});
+
+  @override
+  final AuthValueFailure<T> failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.auth(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Auth<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  $AuthCopyWith<T, Auth<T>> get copyWith =>
+      _$AuthCopyWithImpl<T, Auth<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AuthValueFailure<T> failedValue) auth,
+  }) {
+    return auth(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AuthValueFailure<T> failedValue)? auth,
+  }) {
+    return auth?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AuthValueFailure<T> failedValue)? auth,
+    required TResult orElse(),
+  }) {
+    if (auth != null) {
+      return auth(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Auth<T> value) auth,
+  }) {
+    return auth(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Auth<T> value)? auth,
+  }) {
+    return auth?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Auth<T> value)? auth,
+    required TResult orElse(),
+  }) {
+    if (auth != null) {
+      return auth(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Auth<T> implements ValueFailure<T> {
+  const factory Auth({required final AuthValueFailure<T> failedValue}) =
+      _$Auth<T>;
+
+  @override
+  AuthValueFailure<T> get failedValue => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  $AuthCopyWith<T, Auth<T>> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$AuthValueFailure<T> {
+  T get failedValue => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) emailAlreadyExist,
+    required TResult Function(T failedValue) passwordMinLength,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? emailAlreadyExist,
+    TResult Function(T failedValue)? passwordMinLength,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? emailAlreadyExist,
+    TResult Function(T failedValue)? passwordMinLength,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(EmailAlreadyExist<T> value) emailAlreadyExist,
+    required TResult Function(PasswordMinLength<T> value) passwordMinLength,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(EmailAlreadyExist<T> value)? emailAlreadyExist,
+    TResult Function(PasswordMinLength<T> value)? passwordMinLength,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(EmailAlreadyExist<T> value)? emailAlreadyExist,
+    TResult Function(PasswordMinLength<T> value)? passwordMinLength,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AuthValueFailureCopyWith<T, AuthValueFailure<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AuthValueFailureCopyWith<T, $Res> {
+  factory $AuthValueFailureCopyWith(
+          AuthValueFailure<T> value, $Res Function(AuthValueFailure<T>) then) =
+      _$AuthValueFailureCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$AuthValueFailureCopyWithImpl<T, $Res>
+    implements $AuthValueFailureCopyWith<T, $Res> {
+  _$AuthValueFailureCopyWithImpl(this._value, this._then);
+
+  final AuthValueFailure<T> _value;
+  // ignore: unused_field
+  final $Res Function(AuthValueFailure<T>) _then;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_value.copyWith(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
     ));
   }
@@ -105,7 +312,7 @@ class _$ValueFailureCopyWithImpl<T, $Res>
 
 /// @nodoc
 abstract class $InvalidEmailCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+    implements $AuthValueFailureCopyWith<T, $Res> {
   factory $InvalidEmailCopyWith(
           InvalidEmail<T> value, $Res Function(InvalidEmail<T>) then) =
       _$InvalidEmailCopyWithImpl<T, $Res>;
@@ -115,7 +322,7 @@ abstract class $InvalidEmailCopyWith<T, $Res>
 
 /// @nodoc
 class _$InvalidEmailCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$AuthValueFailureCopyWithImpl<T, $Res>
     implements $InvalidEmailCopyWith<T, $Res> {
   _$InvalidEmailCopyWithImpl(
       InvalidEmail<T> _value, $Res Function(InvalidEmail<T>) _then)
@@ -147,7 +354,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   String toString() {
-    return 'ValueFailure<$T>.invalidEmail(failedValue: $failedValue)';
+    return 'AuthValueFailure<$T>.invalidEmail(failedValue: $failedValue)';
   }
 
   @override
@@ -172,7 +379,6 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidEmail,
-    required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) emailAlreadyExist,
     required TResult Function(T failedValue) passwordMinLength,
   }) {
@@ -183,7 +389,6 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? emailAlreadyExist,
     TResult Function(T failedValue)? passwordMinLength,
   }) {
@@ -194,7 +399,6 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? emailAlreadyExist,
     TResult Function(T failedValue)? passwordMinLength,
     required TResult orElse(),
@@ -209,7 +413,6 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(Empty<T> value) empty,
     required TResult Function(EmailAlreadyExist<T> value) emailAlreadyExist,
     required TResult Function(PasswordMinLength<T> value) passwordMinLength,
   }) {
@@ -220,7 +423,6 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(Empty<T> value)? empty,
     TResult Function(EmailAlreadyExist<T> value)? emailAlreadyExist,
     TResult Function(PasswordMinLength<T> value)? passwordMinLength,
   }) {
@@ -231,7 +433,6 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(Empty<T> value)? empty,
     TResult Function(EmailAlreadyExist<T> value)? emailAlreadyExist,
     TResult Function(PasswordMinLength<T> value)? passwordMinLength,
     required TResult orElse(),
@@ -243,7 +444,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   }
 }
 
-abstract class InvalidEmail<T> implements ValueFailure<T> {
+abstract class InvalidEmail<T> implements AuthValueFailure<T> {
   const factory InvalidEmail({required final T failedValue}) =
       _$InvalidEmail<T>;
 
@@ -256,156 +457,8 @@ abstract class InvalidEmail<T> implements ValueFailure<T> {
 }
 
 /// @nodoc
-abstract class $EmptyCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
-  factory $EmptyCopyWith(Empty<T> value, $Res Function(Empty<T>) then) =
-      _$EmptyCopyWithImpl<T, $Res>;
-  @override
-  $Res call({T failedValue});
-}
-
-/// @nodoc
-class _$EmptyCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements $EmptyCopyWith<T, $Res> {
-  _$EmptyCopyWithImpl(Empty<T> _value, $Res Function(Empty<T>) _then)
-      : super(_value, (v) => _then(v as Empty<T>));
-
-  @override
-  Empty<T> get _value => super._value as Empty<T>;
-
-  @override
-  $Res call({
-    Object? failedValue = freezed,
-  }) {
-    return _then(Empty<T>(
-      failedValue: failedValue == freezed
-          ? _value.failedValue
-          : failedValue // ignore: cast_nullable_to_non_nullable
-              as T,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$Empty<T> implements Empty<T> {
-  const _$Empty({required this.failedValue});
-
-  @override
-  final T failedValue;
-
-  @override
-  String toString() {
-    return 'ValueFailure<$T>.empty(failedValue: $failedValue)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Empty<T> &&
-            const DeepCollectionEquality()
-                .equals(other.failedValue, failedValue));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failedValue));
-
-  @JsonKey(ignore: true)
-  @override
-  $EmptyCopyWith<T, Empty<T>> get copyWith =>
-      _$EmptyCopyWithImpl<T, Empty<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(T failedValue) invalidEmail,
-    required TResult Function(T failedValue) empty,
-    required TResult Function(T failedValue) emailAlreadyExist,
-    required TResult Function(T failedValue) passwordMinLength,
-  }) {
-    return empty(failedValue);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? empty,
-    TResult Function(T failedValue)? emailAlreadyExist,
-    TResult Function(T failedValue)? passwordMinLength,
-  }) {
-    return empty?.call(failedValue);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? empty,
-    TResult Function(T failedValue)? emailAlreadyExist,
-    TResult Function(T failedValue)? passwordMinLength,
-    required TResult orElse(),
-  }) {
-    if (empty != null) {
-      return empty(failedValue);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(Empty<T> value) empty,
-    required TResult Function(EmailAlreadyExist<T> value) emailAlreadyExist,
-    required TResult Function(PasswordMinLength<T> value) passwordMinLength,
-  }) {
-    return empty(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(Empty<T> value)? empty,
-    TResult Function(EmailAlreadyExist<T> value)? emailAlreadyExist,
-    TResult Function(PasswordMinLength<T> value)? passwordMinLength,
-  }) {
-    return empty?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(Empty<T> value)? empty,
-    TResult Function(EmailAlreadyExist<T> value)? emailAlreadyExist,
-    TResult Function(PasswordMinLength<T> value)? passwordMinLength,
-    required TResult orElse(),
-  }) {
-    if (empty != null) {
-      return empty(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Empty<T> implements ValueFailure<T> {
-  const factory Empty({required final T failedValue}) = _$Empty<T>;
-
-  @override
-  T get failedValue => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  $EmptyCopyWith<T, Empty<T>> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 abstract class $EmailAlreadyExistCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+    implements $AuthValueFailureCopyWith<T, $Res> {
   factory $EmailAlreadyExistCopyWith(EmailAlreadyExist<T> value,
           $Res Function(EmailAlreadyExist<T>) then) =
       _$EmailAlreadyExistCopyWithImpl<T, $Res>;
@@ -415,7 +468,7 @@ abstract class $EmailAlreadyExistCopyWith<T, $Res>
 
 /// @nodoc
 class _$EmailAlreadyExistCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$AuthValueFailureCopyWithImpl<T, $Res>
     implements $EmailAlreadyExistCopyWith<T, $Res> {
   _$EmailAlreadyExistCopyWithImpl(
       EmailAlreadyExist<T> _value, $Res Function(EmailAlreadyExist<T>) _then)
@@ -447,7 +500,7 @@ class _$EmailAlreadyExist<T> implements EmailAlreadyExist<T> {
 
   @override
   String toString() {
-    return 'ValueFailure<$T>.emailAlreadyExist(failedValue: $failedValue)';
+    return 'AuthValueFailure<$T>.emailAlreadyExist(failedValue: $failedValue)';
   }
 
   @override
@@ -473,7 +526,6 @@ class _$EmailAlreadyExist<T> implements EmailAlreadyExist<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidEmail,
-    required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) emailAlreadyExist,
     required TResult Function(T failedValue) passwordMinLength,
   }) {
@@ -484,7 +536,6 @@ class _$EmailAlreadyExist<T> implements EmailAlreadyExist<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? emailAlreadyExist,
     TResult Function(T failedValue)? passwordMinLength,
   }) {
@@ -495,7 +546,6 @@ class _$EmailAlreadyExist<T> implements EmailAlreadyExist<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? emailAlreadyExist,
     TResult Function(T failedValue)? passwordMinLength,
     required TResult orElse(),
@@ -510,7 +560,6 @@ class _$EmailAlreadyExist<T> implements EmailAlreadyExist<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(Empty<T> value) empty,
     required TResult Function(EmailAlreadyExist<T> value) emailAlreadyExist,
     required TResult Function(PasswordMinLength<T> value) passwordMinLength,
   }) {
@@ -521,7 +570,6 @@ class _$EmailAlreadyExist<T> implements EmailAlreadyExist<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(Empty<T> value)? empty,
     TResult Function(EmailAlreadyExist<T> value)? emailAlreadyExist,
     TResult Function(PasswordMinLength<T> value)? passwordMinLength,
   }) {
@@ -532,7 +580,6 @@ class _$EmailAlreadyExist<T> implements EmailAlreadyExist<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(Empty<T> value)? empty,
     TResult Function(EmailAlreadyExist<T> value)? emailAlreadyExist,
     TResult Function(PasswordMinLength<T> value)? passwordMinLength,
     required TResult orElse(),
@@ -544,7 +591,7 @@ class _$EmailAlreadyExist<T> implements EmailAlreadyExist<T> {
   }
 }
 
-abstract class EmailAlreadyExist<T> implements ValueFailure<T> {
+abstract class EmailAlreadyExist<T> implements AuthValueFailure<T> {
   const factory EmailAlreadyExist({required final T failedValue}) =
       _$EmailAlreadyExist<T>;
 
@@ -558,7 +605,7 @@ abstract class EmailAlreadyExist<T> implements ValueFailure<T> {
 
 /// @nodoc
 abstract class $PasswordMinLengthCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+    implements $AuthValueFailureCopyWith<T, $Res> {
   factory $PasswordMinLengthCopyWith(PasswordMinLength<T> value,
           $Res Function(PasswordMinLength<T>) then) =
       _$PasswordMinLengthCopyWithImpl<T, $Res>;
@@ -568,7 +615,7 @@ abstract class $PasswordMinLengthCopyWith<T, $Res>
 
 /// @nodoc
 class _$PasswordMinLengthCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$AuthValueFailureCopyWithImpl<T, $Res>
     implements $PasswordMinLengthCopyWith<T, $Res> {
   _$PasswordMinLengthCopyWithImpl(
       PasswordMinLength<T> _value, $Res Function(PasswordMinLength<T>) _then)
@@ -600,7 +647,7 @@ class _$PasswordMinLength<T> implements PasswordMinLength<T> {
 
   @override
   String toString() {
-    return 'ValueFailure<$T>.passwordMinLength(failedValue: $failedValue)';
+    return 'AuthValueFailure<$T>.passwordMinLength(failedValue: $failedValue)';
   }
 
   @override
@@ -626,7 +673,6 @@ class _$PasswordMinLength<T> implements PasswordMinLength<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidEmail,
-    required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) emailAlreadyExist,
     required TResult Function(T failedValue) passwordMinLength,
   }) {
@@ -637,7 +683,6 @@ class _$PasswordMinLength<T> implements PasswordMinLength<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? emailAlreadyExist,
     TResult Function(T failedValue)? passwordMinLength,
   }) {
@@ -648,7 +693,6 @@ class _$PasswordMinLength<T> implements PasswordMinLength<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? emailAlreadyExist,
     TResult Function(T failedValue)? passwordMinLength,
     required TResult orElse(),
@@ -663,7 +707,6 @@ class _$PasswordMinLength<T> implements PasswordMinLength<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(Empty<T> value) empty,
     required TResult Function(EmailAlreadyExist<T> value) emailAlreadyExist,
     required TResult Function(PasswordMinLength<T> value) passwordMinLength,
   }) {
@@ -674,7 +717,6 @@ class _$PasswordMinLength<T> implements PasswordMinLength<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(Empty<T> value)? empty,
     TResult Function(EmailAlreadyExist<T> value)? emailAlreadyExist,
     TResult Function(PasswordMinLength<T> value)? passwordMinLength,
   }) {
@@ -685,7 +727,6 @@ class _$PasswordMinLength<T> implements PasswordMinLength<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(Empty<T> value)? empty,
     TResult Function(EmailAlreadyExist<T> value)? emailAlreadyExist,
     TResult Function(PasswordMinLength<T> value)? passwordMinLength,
     required TResult orElse(),
@@ -697,7 +738,7 @@ class _$PasswordMinLength<T> implements PasswordMinLength<T> {
   }
 }
 
-abstract class PasswordMinLength<T> implements ValueFailure<T> {
+abstract class PasswordMinLength<T> implements AuthValueFailure<T> {
   const factory PasswordMinLength({required final T failedValue}) =
       _$PasswordMinLength<T>;
 

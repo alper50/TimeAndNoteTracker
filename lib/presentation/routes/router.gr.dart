@@ -39,8 +39,10 @@ class MyRouter extends _i5.RootStackRouter {
           routeData: routeData, child: _i3.AuthenticationView(key: args.key));
     },
     HomeView.name: (routeData) {
+      final args =
+          routeData.argsAs<HomeViewArgs>(orElse: () => const HomeViewArgs());
       return _i5.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i4.HomeView());
+          routeData: routeData, child: _i4.HomeView(key: args.key));
     }
   };
 
@@ -93,8 +95,20 @@ class AuthenticationViewArgs {
 
 /// generated route for
 /// [_i4.HomeView]
-class HomeView extends _i5.PageRouteInfo<void> {
-  const HomeView() : super(HomeView.name, path: '/home-view');
+class HomeView extends _i5.PageRouteInfo<HomeViewArgs> {
+  HomeView({_i6.Key? key})
+      : super(HomeView.name, path: '/home-view', args: HomeViewArgs(key: key));
 
   static const String name = 'HomeView';
+}
+
+class HomeViewArgs {
+  const HomeViewArgs({this.key});
+
+  final _i6.Key? key;
+
+  @override
+  String toString() {
+    return 'HomeViewArgs{key: $key}';
+  }
 }

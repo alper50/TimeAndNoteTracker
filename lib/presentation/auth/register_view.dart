@@ -66,7 +66,10 @@ class RegisterView extends StatelessWidget {
                         .value
                         .fold(
                           (f) => f.maybeMap(
-                            invalidEmail: (_) => 'Invalid Email',
+                            auth: (value) => value.failedValue.maybeMap(
+                              invalidEmail: (_) => 'Invalid Email',
+                              orElse: () => null,
+                            ),
                             orElse: () => null,
                           ),
                           (_) => null,
@@ -87,7 +90,10 @@ class RegisterView extends StatelessWidget {
                         .value
                         .fold(
                           (f) => f.maybeMap(
-                            passwordMinLength: (_) => 'Short Password',
+                            auth: (value) => value.failedValue.maybeMap(
+                              passwordMinLength: (_) => 'Short Password',
+                              orElse: () => null,
+                            ),
                             orElse: () => null,
                           ),
                           (_) => null,
@@ -98,7 +104,7 @@ class RegisterView extends StatelessWidget {
                     isSubmitting: state.isSubmittingRegister,
                     title: 'Register',
                     onpressed: () {
-                      if(passFocus.hasPrimaryFocus)passFocus.unfocus();
+                      if (passFocus.hasPrimaryFocus) passFocus.unfocus();
                       context.read<RegisterAndLoginBloc>().add(
                           RegisterAndLoginEvent.registerWithEmailAndPassword());
                     },

@@ -75,7 +75,10 @@ class ForgotPasswordView extends StatelessWidget {
                         .value
                         .fold(
                           (f) => f.maybeMap(
-                            invalidEmail: (_) => 'Invalid Email',
+                            auth: (value) => value.failedValue.maybeMap(
+                              invalidEmail: (_) => 'Invalid Email',
+                              orElse: () => null,
+                            ),
                             orElse: () => null,
                           ),
                           (_) => null,
