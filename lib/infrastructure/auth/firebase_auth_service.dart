@@ -30,7 +30,7 @@ class FirebaseAuthService implements IAuthMethods {
           email: validEmail, password: validPassword);
       return right(unit);
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'ERROR_WRONG_PASSWORD' ||
+      if (e.code == 'wrong-password' ||
           e.code == 'user-not-found') {
         return left(const AuthFailure.invalidEmailAndPasswordCombination());
       } else {
@@ -93,8 +93,13 @@ class FirebaseAuthService implements IAuthMethods {
     try {
       await _firebaseAuth.sendPasswordResetEmail(email: validEmail);
       return right(unit);
-    } on FirebaseAuthException catch (_) {
-      return left(const AuthFailure.serverError());
+    } on FirebaseAuthException catch (e) {
+      if(e.code=='user-not-found'){
+        return right(unit);  // this return made purposely
+      }
+      else{
+        return left(const AuthFailure.serverError());
+      }
     }
   }
 }
