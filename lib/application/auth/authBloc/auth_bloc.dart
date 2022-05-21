@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:timenotetracker/domain/auth/%C4%B1_auth_methods.dart';
+import 'package:timenotetracker/domain/auth/%C4%B1_auth_repository.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -9,7 +9,7 @@ part 'auth_bloc.freezed.dart';
 
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  final IAuthMethods _authFacade;
+  final IAuthRepository _authFacade;
   AuthBloc(this._authFacade) : super(AuthState.initial()) {
     on<AuthEvent>((event, emit) async{
      await event.map(

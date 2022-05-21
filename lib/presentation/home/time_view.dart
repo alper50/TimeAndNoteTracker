@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class NoteView extends StatelessWidget {
-  const NoteView({ Key? key }) : super(key: key);
+class TimeView extends StatelessWidget {
+  const TimeView({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('note'),
+      child: Text('time'),
     );
   }
 }

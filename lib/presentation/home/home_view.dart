@@ -1,32 +1,44 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:timenotetracker/presentation/routes/router.gr.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({Key? key}) : super(key: key);
-
+  HomeView({Key? key}) : super(key: key);
+  final List<PageRouteInfo<dynamic>> routes = [
+    NoteView(),
+    TimeView(),
+    AnalyseView(),
+  ];
+  final List<SalomonBottomBarItem> bottomItems = [
+    SalomonBottomBarItem(
+      icon: Icon(Icons.note),
+      title: Text('Note'),
+    ),
+    SalomonBottomBarItem(
+      icon: Icon(Icons.note),
+      title: Text('Time'),
+    ),
+    SalomonBottomBarItem(
+      icon: Icon(Icons.note),
+      title: Text('Analyse'),
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AuthBloc, AuthState>(
-      listener: (context, state) {
-        state.maybeMap(
-                unauthenticated: (_) =>
-                    AutoRouter.of(context).replaceNamed('/authentication-view'),
-                orElse: () {},
-              );
-      },
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.green,
-          leading: IconButton(
-            onPressed: () {
-              context.read<AuthBloc>().add(AuthEvent.signOut());
-            },
-            icon: Icon(Icons.power_settings_new_rounded),
+    return AutoTabsScaffold(
+      routes: routes,
+      bottomNavigationBuilder: (_, tabsRouter) {
+        return Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: SalomonBottomBar(
+            currentIndex: tabsRouter.activeIndex,
+            onTap: tabsRouter.setActiveIndex,
+            items: bottomItems,
+            
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }
