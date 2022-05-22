@@ -14,7 +14,7 @@ import 'package:timenotetracker/presentation/splash/splash_view.dart';
     AutoRoute(page: OnboardView, initial: true),
     AutoRoute(page: AuthenticationView),
     AutoRoute(
-      page: HomeView,
+      page: HomeView, //TODO nested route implements
       children: [
         AutoRoute(page: NoteView),
         AutoRoute(page: TimeView),

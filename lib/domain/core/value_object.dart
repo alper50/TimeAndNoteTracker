@@ -39,14 +39,20 @@ abstract class ValueObject<T>{
   String toString() => 'Value($value)';
 }
 
-class UniqeId extends ValueObject<String>{
+class UniqueId extends ValueObject<String>{
   @override
   final Either<ValueFailure<String>,String> value;
-  factory UniqeId(){
-    return UniqeId._(
+  factory UniqueId(){
+    return UniqueId._(
       right(Uuid().v1(),),
     );
   }
 
-  const UniqeId._(this.value);
+  factory UniqueId.fromString(String uniqueString){
+     return UniqueId._(
+      right(uniqueString),
+    );
+  }
+
+  const UniqueId._(this.value);
 }

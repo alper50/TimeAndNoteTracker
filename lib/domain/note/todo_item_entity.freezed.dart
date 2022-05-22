@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$TodoItem {
-  UniqeId get id => throw _privateConstructorUsedError;
+  UniqueId get id => throw _privateConstructorUsedError;
   Todo get todo => throw _privateConstructorUsedError;
   bool get isDone => throw _privateConstructorUsedError;
 
@@ -29,7 +29,7 @@ mixin _$TodoItem {
 abstract class $TodoItemCopyWith<$Res> {
   factory $TodoItemCopyWith(TodoItem value, $Res Function(TodoItem) then) =
       _$TodoItemCopyWithImpl<$Res>;
-  $Res call({UniqeId id, Todo todo, bool isDone});
+  $Res call({UniqueId id, Todo todo, bool isDone});
 }
 
 /// @nodoc
@@ -50,7 +50,7 @@ class _$TodoItemCopyWithImpl<$Res> implements $TodoItemCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as UniqeId,
+              as UniqueId,
       todo: todo == freezed
           ? _value.todo
           : todo // ignore: cast_nullable_to_non_nullable
@@ -68,7 +68,7 @@ abstract class _$TodoItemCopyWith<$Res> implements $TodoItemCopyWith<$Res> {
   factory _$TodoItemCopyWith(_TodoItem value, $Res Function(_TodoItem) then) =
       __$TodoItemCopyWithImpl<$Res>;
   @override
-  $Res call({UniqeId id, Todo todo, bool isDone});
+  $Res call({UniqueId id, Todo todo, bool isDone});
 }
 
 /// @nodoc
@@ -90,7 +90,7 @@ class __$TodoItemCopyWithImpl<$Res> extends _$TodoItemCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as UniqeId,
+              as UniqueId,
       todo: todo == freezed
           ? _value.todo
           : todo // ignore: cast_nullable_to_non_nullable
@@ -111,7 +111,7 @@ class _$_TodoItem extends _TodoItem {
       : super._();
 
   @override
-  final UniqeId id;
+  final UniqueId id;
   @override
   final Todo todo;
   @override
@@ -147,13 +147,13 @@ class _$_TodoItem extends _TodoItem {
 
 abstract class _TodoItem extends TodoItem {
   const factory _TodoItem(
-      {required final UniqeId id,
+      {required final UniqueId id,
       required final Todo todo,
       required final bool isDone}) = _$_TodoItem;
   const _TodoItem._() : super._();
 
   @override
-  UniqeId get id => throw _privateConstructorUsedError;
+  UniqueId get id => throw _privateConstructorUsedError;
   @override
   Todo get todo => throw _privateConstructorUsedError;
   @override

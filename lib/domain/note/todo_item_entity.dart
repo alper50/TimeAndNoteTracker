@@ -8,13 +8,13 @@ part   'todo_item_entity.freezed.dart';
 abstract class TodoItem implements _$TodoItem {
   const TodoItem._();
   const factory TodoItem({
-    required UniqeId id,
+    required UniqueId id,
     required Todo todo,
     required bool isDone,
   }) = _TodoItem;
 
   factory TodoItem.defaultTodoItem() => TodoItem(
-        id: UniqeId(),
+        id: UniqueId(),
         todo: Todo(''),
         isDone: false,
       );

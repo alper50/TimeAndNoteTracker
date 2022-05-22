@@ -11,13 +11,13 @@ abstract class Note implements _$Note {
   const Note._();
 
   const factory Note({
-    required UniqeId id,
+    required UniqueId id,
     required NoteBody noteBody,
     required TodoList<TodoItem> todoItems,
   }) = _Note;
 
   factory Note.defaultNote() => Note(
-        id: UniqeId(),
+        id: UniqueId(),
         noteBody: NoteBody(''),
         todoItems: TodoList([]),
       );
