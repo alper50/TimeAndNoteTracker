@@ -5,6 +5,7 @@ import 'package:timenotetracker/domain/core/value_object.dart';
 import 'package:timenotetracker/domain/note/note_entity.dart';
 import 'package:timenotetracker/domain/note/note_value_objects.dart';
 import 'package:timenotetracker/domain/note/todo_item_entity.dart';
+import 'package:timenotetracker/infrastructure/core/db_config.dart';
 part 'note_data_transfer_objects.freezed.dart';
 
 // weu used implements instead of with because adding regular function to the dataclass requires impplements
@@ -31,6 +32,18 @@ abstract class NoteDTO implements _$NoteDTO {
       lastUpdatedTime: DateTime(2022, 04, 22), //TODO make timestamp dynamic
     );
   }
+
+  // factory NoteDTO.fromDatabase(NoteTableData note) {
+  //   return NoteDTO(
+  //     id: note.id, TODO
+  //     noteText: note.noteText,
+  //     todoItems: note.todoItems
+  //         .getValueOrCrash()
+  //         .map((todoItem) => TodoItemDTO.fromDomain(todoItem))
+  //         .toList(),
+  //     lastUpdatedTime: DateTime(2022, 04, 22), 
+  //   );
+  // }
 
   Note toDomain() {
     return Note(
