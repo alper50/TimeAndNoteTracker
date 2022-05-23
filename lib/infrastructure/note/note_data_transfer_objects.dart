@@ -32,6 +32,7 @@ abstract class NoteDTO implements _$NoteDTO {
       lastUpdatedTime: DateTime(2022, 04, 22), //TODO make timestamp dynamic
     );
   }
+  
 
   // factory NoteDTO.fromDatabase(NoteTableData note) {
   //   return NoteDTO(
@@ -52,6 +53,14 @@ abstract class NoteDTO implements _$NoteDTO {
       todoItems: TodoList(
         todoItems.map((todoItem) => todoItem.toDomain()).toList(),
       ),
+    );
+  }
+
+ static NoteTableData toDB({required Note note}) {
+    return NoteTableData(
+      id: note.id.getValueOrCrash(),
+      noteText: note.noteBody.getValueOrCrash(),
+      lastUpdatedTime: DateTime(2022),
     );
   }
 }
