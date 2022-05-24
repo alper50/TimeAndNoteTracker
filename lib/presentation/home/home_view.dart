@@ -35,7 +35,6 @@ class HomeView extends StatelessWidget {
             currentIndex: tabsRouter.activeIndex,
             onTap: tabsRouter.setActiveIndex,
             items: bottomItems,
-            
           ),
         );
       },

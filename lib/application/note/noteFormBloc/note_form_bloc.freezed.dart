@@ -19,7 +19,7 @@ mixin _$NoteFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Note? initialNote) initialize,
-    required TResult Function(String text) bodyTextChanged,
+    required TResult Function(String bodyText) bodyTextChanged,
     required TResult Function(List<TodoItemPrimitive> todoItems)
         todoItemChanged,
     required TResult Function() saveNote,
@@ -28,7 +28,7 @@ mixin _$NoteFormEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function(String text)? bodyTextChanged,
+    TResult Function(String bodyText)? bodyTextChanged,
     TResult Function(List<TodoItemPrimitive> todoItems)? todoItemChanged,
     TResult Function()? saveNote,
   }) =>
@@ -36,7 +36,7 @@ mixin _$NoteFormEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function(String text)? bodyTextChanged,
+    TResult Function(String bodyText)? bodyTextChanged,
     TResult Function(List<TodoItemPrimitive> todoItems)? todoItemChanged,
     TResult Function()? saveNote,
     required TResult orElse(),
@@ -165,7 +165,7 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Note? initialNote) initialize,
-    required TResult Function(String text) bodyTextChanged,
+    required TResult Function(String bodyText) bodyTextChanged,
     required TResult Function(List<TodoItemPrimitive> todoItems)
         todoItemChanged,
     required TResult Function() saveNote,
@@ -177,7 +177,7 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function(String text)? bodyTextChanged,
+    TResult Function(String bodyText)? bodyTextChanged,
     TResult Function(List<TodoItemPrimitive> todoItems)? todoItemChanged,
     TResult Function()? saveNote,
   }) {
@@ -188,7 +188,7 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function(String text)? bodyTextChanged,
+    TResult Function(String bodyText)? bodyTextChanged,
     TResult Function(List<TodoItemPrimitive> todoItems)? todoItemChanged,
     TResult Function()? saveNote,
     required TResult orElse(),
@@ -251,7 +251,7 @@ abstract class _$BodyTextChangedCopyWith<$Res> {
   factory _$BodyTextChangedCopyWith(
           _BodyTextChanged value, $Res Function(_BodyTextChanged) then) =
       __$BodyTextChangedCopyWithImpl<$Res>;
-  $Res call({String text});
+  $Res call({String bodyText});
 }
 
 /// @nodoc
@@ -267,12 +267,12 @@ class __$BodyTextChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? text = freezed,
+    Object? bodyText = freezed,
   }) {
     return _then(_BodyTextChanged(
-      text == freezed
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
+      bodyText == freezed
+          ? _value.bodyText
+          : bodyText // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -281,14 +281,14 @@ class __$BodyTextChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_BodyTextChanged implements _BodyTextChanged {
-  const _$_BodyTextChanged(this.text);
+  const _$_BodyTextChanged(this.bodyText);
 
   @override
-  final String text;
+  final String bodyText;
 
   @override
   String toString() {
-    return 'NoteFormEvent.bodyTextChanged(text: $text)';
+    return 'NoteFormEvent.bodyTextChanged(bodyText: $bodyText)';
   }
 
   @override
@@ -296,12 +296,12 @@ class _$_BodyTextChanged implements _BodyTextChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _BodyTextChanged &&
-            const DeepCollectionEquality().equals(other.text, text));
+            const DeepCollectionEquality().equals(other.bodyText, bodyText));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(text));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(bodyText));
 
   @JsonKey(ignore: true)
   @override
@@ -312,36 +312,36 @@ class _$_BodyTextChanged implements _BodyTextChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Note? initialNote) initialize,
-    required TResult Function(String text) bodyTextChanged,
+    required TResult Function(String bodyText) bodyTextChanged,
     required TResult Function(List<TodoItemPrimitive> todoItems)
         todoItemChanged,
     required TResult Function() saveNote,
   }) {
-    return bodyTextChanged(text);
+    return bodyTextChanged(bodyText);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function(String text)? bodyTextChanged,
+    TResult Function(String bodyText)? bodyTextChanged,
     TResult Function(List<TodoItemPrimitive> todoItems)? todoItemChanged,
     TResult Function()? saveNote,
   }) {
-    return bodyTextChanged?.call(text);
+    return bodyTextChanged?.call(bodyText);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function(String text)? bodyTextChanged,
+    TResult Function(String bodyText)? bodyTextChanged,
     TResult Function(List<TodoItemPrimitive> todoItems)? todoItemChanged,
     TResult Function()? saveNote,
     required TResult orElse(),
   }) {
     if (bodyTextChanged != null) {
-      return bodyTextChanged(text);
+      return bodyTextChanged(bodyText);
     }
     return orElse();
   }
@@ -385,9 +385,9 @@ class _$_BodyTextChanged implements _BodyTextChanged {
 }
 
 abstract class _BodyTextChanged implements NoteFormEvent {
-  const factory _BodyTextChanged(final String text) = _$_BodyTextChanged;
+  const factory _BodyTextChanged(final String bodyText) = _$_BodyTextChanged;
 
-  String get text => throw _privateConstructorUsedError;
+  String get bodyText => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$BodyTextChangedCopyWith<_BodyTextChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -464,7 +464,7 @@ class _$_TodoItemChanged implements _TodoItemChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Note? initialNote) initialize,
-    required TResult Function(String text) bodyTextChanged,
+    required TResult Function(String bodyText) bodyTextChanged,
     required TResult Function(List<TodoItemPrimitive> todoItems)
         todoItemChanged,
     required TResult Function() saveNote,
@@ -476,7 +476,7 @@ class _$_TodoItemChanged implements _TodoItemChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function(String text)? bodyTextChanged,
+    TResult Function(String bodyText)? bodyTextChanged,
     TResult Function(List<TodoItemPrimitive> todoItems)? todoItemChanged,
     TResult Function()? saveNote,
   }) {
@@ -487,7 +487,7 @@ class _$_TodoItemChanged implements _TodoItemChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function(String text)? bodyTextChanged,
+    TResult Function(String bodyText)? bodyTextChanged,
     TResult Function(List<TodoItemPrimitive> todoItems)? todoItemChanged,
     TResult Function()? saveNote,
     required TResult orElse(),
@@ -585,7 +585,7 @@ class _$_SaveNote implements _SaveNote {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Note? initialNote) initialize,
-    required TResult Function(String text) bodyTextChanged,
+    required TResult Function(String bodyText) bodyTextChanged,
     required TResult Function(List<TodoItemPrimitive> todoItems)
         todoItemChanged,
     required TResult Function() saveNote,
@@ -597,7 +597,7 @@ class _$_SaveNote implements _SaveNote {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function(String text)? bodyTextChanged,
+    TResult Function(String bodyText)? bodyTextChanged,
     TResult Function(List<TodoItemPrimitive> todoItems)? todoItemChanged,
     TResult Function()? saveNote,
   }) {
@@ -608,7 +608,7 @@ class _$_SaveNote implements _SaveNote {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function(String text)? bodyTextChanged,
+    TResult Function(String bodyText)? bodyTextChanged,
     TResult Function(List<TodoItemPrimitive> todoItems)? todoItemChanged,
     TResult Function()? saveNote,
     required TResult orElse(),

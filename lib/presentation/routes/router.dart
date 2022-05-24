@@ -2,7 +2,7 @@ import 'package:auto_route/annotations.dart';
 import 'package:timenotetracker/presentation/auth/auth_view.dart';
 import 'package:timenotetracker/presentation/home/analyse_view.dart';
 import 'package:timenotetracker/presentation/home/home_view.dart';
-import 'package:timenotetracker/presentation/home/notes_view.dart';
+import 'package:timenotetracker/presentation/home/note/notes_overview_view.dart';
 import 'package:timenotetracker/presentation/home/time_view.dart';
 import 'package:timenotetracker/presentation/onboard/onboard_view.dart';
 import 'package:timenotetracker/presentation/splash/splash_view.dart';

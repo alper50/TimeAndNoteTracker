@@ -16,7 +16,7 @@ import 'package:flutter/material.dart' as _i9;
 import '../auth/auth_view.dart' as _i3;
 import '../home/analyse_view.dart' as _i7;
 import '../home/home_view.dart' as _i4;
-import '../home/notes_view.dart' as _i5;
+import '../home/note/notes_overview_view.dart' as _i5;
 import '../home/time_view.dart' as _i6;
 import '../onboard/onboard_view.dart' as _i2;
 import '../splash/splash_view.dart' as _i1;
