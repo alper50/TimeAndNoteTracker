@@ -4,6 +4,7 @@ import 'package:timenotetracker/application/note/noteActionBloc/note_action_bloc
 import 'package:timenotetracker/application/note/noteWatcherBloc/note_watcher_bloc.dart';
 import 'package:timenotetracker/injection.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
+import 'package:timenotetracker/presentation/home/note/widgets/note_overview_body.dart';
 
 class NoteView extends StatelessWidget {
   const NoteView({Key? key}) : super(key: key);
@@ -37,8 +38,13 @@ class NoteView extends StatelessWidget {
             orElse: () {},
           );
         },
-        child: Container(
-          child: Text('note'),
+        child: Scaffold(
+          body: NoteOverviewBody(),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              //TODO navigate to note view
+            },
+          ),
         ),
       ),
     );

@@ -22,7 +22,7 @@ abstract class Note implements _$Note {
         todoItems: TodoList([]),
       );
   // we are validation multiple valueObjects
-  Option<ValueFailure<dynamic>> get isValid {
+  Option<ValueFailure<dynamic>> get checkValidError {
     return noteBody.failureOrUnit.andThen(todoItems.failureOrUnit).fold(
           (f) => some(f),
           (_) => none(),

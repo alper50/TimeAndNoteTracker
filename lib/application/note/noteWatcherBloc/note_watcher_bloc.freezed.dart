@@ -464,6 +464,7 @@ mixin _$NoteWatcherState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<Note> notes) loadSucces,
+    required TResult Function() loadSuccesEmptyList,
     required TResult Function(NoteFailure noteFailure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -472,6 +473,7 @@ mixin _$NoteWatcherState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Note> notes)? loadSucces,
+    TResult Function()? loadSuccesEmptyList,
     TResult Function(NoteFailure noteFailure)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -480,6 +482,7 @@ mixin _$NoteWatcherState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Note> notes)? loadSucces,
+    TResult Function()? loadSuccesEmptyList,
     TResult Function(NoteFailure noteFailure)? loadFailure,
     required TResult orElse(),
   }) =>
@@ -489,6 +492,7 @@ mixin _$NoteWatcherState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadSucces value) loadSucces,
+    required TResult Function(_LoadSuccesEmptyList value) loadSuccesEmptyList,
     required TResult Function(_LoadFailure value) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -497,6 +501,7 @@ mixin _$NoteWatcherState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadSuccesEmptyList value)? loadSuccesEmptyList,
     TResult Function(_LoadFailure value)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -505,6 +510,7 @@ mixin _$NoteWatcherState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadSuccesEmptyList value)? loadSuccesEmptyList,
     TResult Function(_LoadFailure value)? loadFailure,
     required TResult orElse(),
   }) =>
@@ -569,6 +575,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<Note> notes) loadSucces,
+    required TResult Function() loadSuccesEmptyList,
     required TResult Function(NoteFailure noteFailure) loadFailure,
   }) {
     return initial();
@@ -580,6 +587,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Note> notes)? loadSucces,
+    TResult Function()? loadSuccesEmptyList,
     TResult Function(NoteFailure noteFailure)? loadFailure,
   }) {
     return initial?.call();
@@ -591,6 +599,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Note> notes)? loadSucces,
+    TResult Function()? loadSuccesEmptyList,
     TResult Function(NoteFailure noteFailure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -606,6 +615,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadSucces value) loadSucces,
+    required TResult Function(_LoadSuccesEmptyList value) loadSuccesEmptyList,
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return initial(this);
@@ -617,6 +627,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadSuccesEmptyList value)? loadSuccesEmptyList,
     TResult Function(_LoadFailure value)? loadFailure,
   }) {
     return initial?.call(this);
@@ -628,6 +639,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadSuccesEmptyList value)? loadSuccesEmptyList,
     TResult Function(_LoadFailure value)? loadFailure,
     required TResult orElse(),
   }) {
@@ -683,6 +695,7 @@ class _$_Loading implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<Note> notes) loadSucces,
+    required TResult Function() loadSuccesEmptyList,
     required TResult Function(NoteFailure noteFailure) loadFailure,
   }) {
     return loading();
@@ -694,6 +707,7 @@ class _$_Loading implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Note> notes)? loadSucces,
+    TResult Function()? loadSuccesEmptyList,
     TResult Function(NoteFailure noteFailure)? loadFailure,
   }) {
     return loading?.call();
@@ -705,6 +719,7 @@ class _$_Loading implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Note> notes)? loadSucces,
+    TResult Function()? loadSuccesEmptyList,
     TResult Function(NoteFailure noteFailure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -720,6 +735,7 @@ class _$_Loading implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadSucces value) loadSucces,
+    required TResult Function(_LoadSuccesEmptyList value) loadSuccesEmptyList,
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loading(this);
@@ -731,6 +747,7 @@ class _$_Loading implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadSuccesEmptyList value)? loadSuccesEmptyList,
     TResult Function(_LoadFailure value)? loadFailure,
   }) {
     return loading?.call(this);
@@ -742,6 +759,7 @@ class _$_Loading implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadSuccesEmptyList value)? loadSuccesEmptyList,
     TResult Function(_LoadFailure value)? loadFailure,
     required TResult orElse(),
   }) {
@@ -828,6 +846,7 @@ class _$_LoadSucces implements _LoadSucces {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<Note> notes) loadSucces,
+    required TResult Function() loadSuccesEmptyList,
     required TResult Function(NoteFailure noteFailure) loadFailure,
   }) {
     return loadSucces(notes);
@@ -839,6 +858,7 @@ class _$_LoadSucces implements _LoadSucces {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Note> notes)? loadSucces,
+    TResult Function()? loadSuccesEmptyList,
     TResult Function(NoteFailure noteFailure)? loadFailure,
   }) {
     return loadSucces?.call(notes);
@@ -850,6 +870,7 @@ class _$_LoadSucces implements _LoadSucces {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Note> notes)? loadSucces,
+    TResult Function()? loadSuccesEmptyList,
     TResult Function(NoteFailure noteFailure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -865,6 +886,7 @@ class _$_LoadSucces implements _LoadSucces {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadSucces value) loadSucces,
+    required TResult Function(_LoadSuccesEmptyList value) loadSuccesEmptyList,
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loadSucces(this);
@@ -876,6 +898,7 @@ class _$_LoadSucces implements _LoadSucces {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadSuccesEmptyList value)? loadSuccesEmptyList,
     TResult Function(_LoadFailure value)? loadFailure,
   }) {
     return loadSucces?.call(this);
@@ -887,6 +910,7 @@ class _$_LoadSucces implements _LoadSucces {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadSuccesEmptyList value)? loadSuccesEmptyList,
     TResult Function(_LoadFailure value)? loadFailure,
     required TResult orElse(),
   }) {
@@ -904,6 +928,129 @@ abstract class _LoadSucces implements NoteWatcherState {
   @JsonKey(ignore: true)
   _$LoadSuccesCopyWith<_LoadSucces> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$LoadSuccesEmptyListCopyWith<$Res> {
+  factory _$LoadSuccesEmptyListCopyWith(_LoadSuccesEmptyList value,
+          $Res Function(_LoadSuccesEmptyList) then) =
+      __$LoadSuccesEmptyListCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LoadSuccesEmptyListCopyWithImpl<$Res>
+    extends _$NoteWatcherStateCopyWithImpl<$Res>
+    implements _$LoadSuccesEmptyListCopyWith<$Res> {
+  __$LoadSuccesEmptyListCopyWithImpl(
+      _LoadSuccesEmptyList _value, $Res Function(_LoadSuccesEmptyList) _then)
+      : super(_value, (v) => _then(v as _LoadSuccesEmptyList));
+
+  @override
+  _LoadSuccesEmptyList get _value => super._value as _LoadSuccesEmptyList;
+}
+
+/// @nodoc
+
+class _$_LoadSuccesEmptyList implements _LoadSuccesEmptyList {
+  const _$_LoadSuccesEmptyList();
+
+  @override
+  String toString() {
+    return 'NoteWatcherState.loadSuccesEmptyList()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadSuccesEmptyList);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<Note> notes) loadSucces,
+    required TResult Function() loadSuccesEmptyList,
+    required TResult Function(NoteFailure noteFailure) loadFailure,
+  }) {
+    return loadSuccesEmptyList();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<Note> notes)? loadSucces,
+    TResult Function()? loadSuccesEmptyList,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
+  }) {
+    return loadSuccesEmptyList?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<Note> notes)? loadSucces,
+    TResult Function()? loadSuccesEmptyList,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
+    required TResult orElse(),
+  }) {
+    if (loadSuccesEmptyList != null) {
+      return loadSuccesEmptyList();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadSucces value) loadSucces,
+    required TResult Function(_LoadSuccesEmptyList value) loadSuccesEmptyList,
+    required TResult Function(_LoadFailure value) loadFailure,
+  }) {
+    return loadSuccesEmptyList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadSuccesEmptyList value)? loadSuccesEmptyList,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return loadSuccesEmptyList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadSuccesEmptyList value)? loadSuccesEmptyList,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
+  }) {
+    if (loadSuccesEmptyList != null) {
+      return loadSuccesEmptyList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadSuccesEmptyList implements NoteWatcherState {
+  const factory _LoadSuccesEmptyList() = _$_LoadSuccesEmptyList;
 }
 
 /// @nodoc
@@ -984,6 +1131,7 @@ class _$_LoadFailure implements _LoadFailure {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<Note> notes) loadSucces,
+    required TResult Function() loadSuccesEmptyList,
     required TResult Function(NoteFailure noteFailure) loadFailure,
   }) {
     return loadFailure(noteFailure);
@@ -995,6 +1143,7 @@ class _$_LoadFailure implements _LoadFailure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Note> notes)? loadSucces,
+    TResult Function()? loadSuccesEmptyList,
     TResult Function(NoteFailure noteFailure)? loadFailure,
   }) {
     return loadFailure?.call(noteFailure);
@@ -1006,6 +1155,7 @@ class _$_LoadFailure implements _LoadFailure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Note> notes)? loadSucces,
+    TResult Function()? loadSuccesEmptyList,
     TResult Function(NoteFailure noteFailure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -1021,6 +1171,7 @@ class _$_LoadFailure implements _LoadFailure {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadSucces value) loadSucces,
+    required TResult Function(_LoadSuccesEmptyList value) loadSuccesEmptyList,
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loadFailure(this);
@@ -1032,6 +1183,7 @@ class _$_LoadFailure implements _LoadFailure {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadSuccesEmptyList value)? loadSuccesEmptyList,
     TResult Function(_LoadFailure value)? loadFailure,
   }) {
     return loadFailure?.call(this);
@@ -1043,6 +1195,7 @@ class _$_LoadFailure implements _LoadFailure {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadSuccesEmptyList value)? loadSuccesEmptyList,
     TResult Function(_LoadFailure value)? loadFailure,
     required TResult orElse(),
   }) {

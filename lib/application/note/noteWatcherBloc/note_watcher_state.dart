@@ -5,5 +5,6 @@ class NoteWatcherState with _$NoteWatcherState {
   const factory NoteWatcherState.initial() = _Initial;
   const factory NoteWatcherState.loading() = _Loading;
   const factory NoteWatcherState.loadSucces(List<Note> notes) = _LoadSucces;
+  const factory NoteWatcherState.loadSuccesEmptyList() = _LoadSuccesEmptyList;
   const factory NoteWatcherState.loadFailure(NoteFailure noteFailure) = _LoadFailure;
 }

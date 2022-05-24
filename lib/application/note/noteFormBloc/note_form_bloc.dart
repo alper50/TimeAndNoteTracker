@@ -64,7 +64,7 @@ class NoteFormBloc extends Bloc<NoteFormEvent, NoteFormState> {
             ),
           );
 
-          if (state.note.isValid.isNone()) {
+          if (state.note.checkValidError.isNone()) {
             failureOrSucces = state.isEditing
                 ? await _iNoteRepository.updateNote(state.note)
                 : await _iNoteRepository.createNote(state.note);
