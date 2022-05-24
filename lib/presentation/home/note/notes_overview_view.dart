@@ -6,8 +6,8 @@ import 'package:timenotetracker/injection.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
 import 'package:timenotetracker/presentation/home/note/widgets/note_overview_body.dart';
 
-class NoteView extends StatelessWidget {
-  const NoteView({Key? key}) : super(key: key);
+class NoteOverview extends StatelessWidget {
+  const NoteOverview({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

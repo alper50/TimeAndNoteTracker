@@ -16,24 +16,26 @@ class NoteOverviewBody extends StatelessWidget {
       return state.map(
         initial: (_) => Container(),
         loading: (_) => MyCircularProgressIndicator(),
+        loadFailure: (_) => NoteFailureView(),
+        loadSuccesEmptyList: (_) => NoteEmptyListView(),
         loadSucces: (succesState) {
           return ListView.builder(
             itemCount: succesState.notes.length,
             itemBuilder: (context, index) {
               final currentNote = succesState.notes[index];
               if (currentNote.checkValidError.isSome()) {
-                return NoteErrorCard();
+                return NoteCardWrapper(
+                  onTap: () {},
+                  child: NoteErrorCard(note: currentNote),
+                );
               } else {
-                return NoteSuccesCard();
+                return NoteCardWrapper(
+                  onTap: () {},
+                  child: NoteSuccesCard(note: currentNote),
+                );
               }
             },
           );
-        },
-        loadFailure: (_) {
-          return NoteFailureView();
-        },
-        loadSuccesEmptyList: (_) {
-          return NoteEmptyListView();
         },
       );
     });

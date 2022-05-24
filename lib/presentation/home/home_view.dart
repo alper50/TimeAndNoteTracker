@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
-import 'package:timenotetracker/presentation/routes/router.gr.dart';
+import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({Key? key}) : super(key: key);

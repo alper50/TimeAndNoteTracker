@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
 import 'package:timenotetracker/injection.dart';
-import 'package:timenotetracker/presentation/routes/router.gr.dart';
+import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
 
 class MaterialAppWidget extends StatelessWidget {
   MaterialAppWidget({Key? key}) : super(key: key);
