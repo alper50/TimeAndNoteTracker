@@ -49,8 +49,22 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        
     }
-
+    
+    flavorDimensions "env"
+    productFlavors {
+        
+        dev {
+            dimension "env"
+            resValue "string", "app_name", "[DEV] BuzzwordBingo"
+        }
+        
+        prod {
+            dimension "env"
+            resValue "string", "app_name", "BuzzwordBingo"
+        }
+    }
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.

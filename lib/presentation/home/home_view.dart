@@ -6,7 +6,7 @@ import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
 class HomeView extends StatelessWidget {
   HomeView({Key? key}) : super(key: key);
   final List<PageRouteInfo<dynamic>> routes = [
-    NoteView(),
+    NoteOverview(),
     TimeView(),
     AnalyseView(),
   ];

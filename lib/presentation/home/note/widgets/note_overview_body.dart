@@ -15,7 +15,7 @@ class NoteOverviewBody extends StatelessWidget {
         builder: (context, state) {
       return state.map(
         initial: (_) => Container(),
-        loading: (_) => MyCircularProgressIndicator(),
+        loading: (_) => Center(child: MyCircularProgressIndicator()),
         loadFailure: (_) => NoteFailureView(),
         loadSuccesEmptyList: (_) => NoteEmptyListView(),
         loadSucces: (succesState) {
