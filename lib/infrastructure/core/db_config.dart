@@ -7,7 +7,7 @@ import 'package:timenotetracker/infrastructure/note/note_local_service.dart';
 import 'package:timenotetracker/infrastructure/note/note_local_tables.dart';
 part 'db_config.g.dart';
 
-@DriftDatabase(tables: [NoteTable, TodoItemTable],daos: [NoteLocaleService])
+@DriftDatabase(tables: [Note, TodoItem],daos: [NoteLocaleService])
 class MyDatabase extends _$MyDatabase {
   MyDatabase() : super(_openConnection());
   @override

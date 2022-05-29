@@ -12,7 +12,9 @@ part 'note_data_transfer_objects.freezed.dart';
 
 @freezed
 abstract class NoteDTO implements _$NoteDTO {
-  const NoteDTO._();
+  static final mockTodo =
+      TodoItemDTO(id: '1', todoText: 'testTODO', isDone: false);
+ const NoteDTO._();
 
   const factory NoteDTO({
     required String id,
@@ -32,7 +34,6 @@ abstract class NoteDTO implements _$NoteDTO {
       lastUpdatedTime: DateTime(2022, 04, 22), //TODO make timestamp dynamic
     );
   }
-  
 
   // factory NoteDTO.fromDatabase(NoteTableData note) {
   //   return NoteDTO(
@@ -42,7 +43,7 @@ abstract class NoteDTO implements _$NoteDTO {
   //         .getValueOrCrash()
   //         .map((todoItem) => TodoItemDTO.fromDomain(todoItem))
   //         .toList(),
-  //     lastUpdatedTime: DateTime(2022, 04, 22), 
+  //     lastUpdatedTime: DateTime(2022, 04, 22),
   //   );
   // }
 
@@ -56,8 +57,17 @@ abstract class NoteDTO implements _$NoteDTO {
     );
   }
 
- static NoteTableData toDB({required Note note}) {
-    return NoteTableData(
+  factory NoteDTO.fromDB({required NoteData noteData}) {
+    return NoteDTO(
+      id: noteData.id,
+      noteText: noteData.noteText,
+      todoItems: [mockTodo],
+      lastUpdatedTime: noteData.lastUpdatedTime,
+    );
+  }
+
+  static NoteData toDB({required Note note}) {
+    return NoteData(
       id: note.id.getValueOrCrash(),
       noteText: note.noteBody.getValueOrCrash(),
       lastUpdatedTime: DateTime(2022),
@@ -89,5 +99,16 @@ abstract class TodoItemDTO implements _$TodoItemDTO {
       todo: Todo(todoText),
       isDone: isDone,
     );
-  } // TODO converting to db method might be require
+  }
+
+  factory TodoItemDTO.fromDB({required TodoItemData todoItemData}) {
+    return TodoItemDTO(
+      id: todoItemData.id,
+      todoText: todoItemData.todoText,
+      isDone: todoItemData.isDone,
+    );
+  }
+  static TodoItemData toDB({required TodoItem todoItem}){
+    return TodoItemData(id: todoItem.id.getValueOrCrash(), todoText: todoItem.todo.getValueOrCrash(), isDone: todoItem.isDone, lastUpdatedTime: DateTime(2000)); // TODO dateTime needs to be dynamic
+  }
 }

@@ -7,19 +7,19 @@ part of 'db_config.dart';
 // **************************************************************************
 
 // ignore_for_file: type=lint
-class NoteTableData extends DataClass implements Insertable<NoteTableData> {
+class NoteData extends DataClass implements Insertable<NoteData> {
   final String id;
   final String noteText;
   final String? tagId;
   final DateTime lastUpdatedTime;
-  NoteTableData(
+  NoteData(
       {required this.id,
       required this.noteText,
       this.tagId,
       required this.lastUpdatedTime});
-  factory NoteTableData.fromData(Map<String, dynamic> data, {String? prefix}) {
+  factory NoteData.fromData(Map<String, dynamic> data, {String? prefix}) {
     final effectivePrefix = prefix ?? '';
-    return NoteTableData(
+    return NoteData(
       id: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}id'])!,
       noteText: const StringType()
@@ -42,8 +42,8 @@ class NoteTableData extends DataClass implements Insertable<NoteTableData> {
     return map;
   }
 
-  NoteTableCompanion toCompanion(bool nullToAbsent) {
-    return NoteTableCompanion(
+  NoteCompanion toCompanion(bool nullToAbsent) {
+    return NoteCompanion(
       id: Value(id),
       noteText: Value(noteText),
       tagId:
@@ -52,10 +52,10 @@ class NoteTableData extends DataClass implements Insertable<NoteTableData> {
     );
   }
 
-  factory NoteTableData.fromJson(Map<String, dynamic> json,
+  factory NoteData.fromJson(Map<String, dynamic> json,
       {ValueSerializer? serializer}) {
     serializer ??= driftRuntimeOptions.defaultSerializer;
-    return NoteTableData(
+    return NoteData(
       id: serializer.fromJson<String>(json['id']),
       noteText: serializer.fromJson<String>(json['noteText']),
       tagId: serializer.fromJson<String?>(json['tagId']),
@@ -73,12 +73,12 @@ class NoteTableData extends DataClass implements Insertable<NoteTableData> {
     };
   }
 
-  NoteTableData copyWith(
+  NoteData copyWith(
           {String? id,
           String? noteText,
           String? tagId,
           DateTime? lastUpdatedTime}) =>
-      NoteTableData(
+      NoteData(
         id: id ?? this.id,
         noteText: noteText ?? this.noteText,
         tagId: tagId ?? this.tagId,
@@ -86,7 +86,7 @@ class NoteTableData extends DataClass implements Insertable<NoteTableData> {
       );
   @override
   String toString() {
-    return (StringBuffer('NoteTableData(')
+    return (StringBuffer('NoteData(')
           ..write('id: $id, ')
           ..write('noteText: $noteText, ')
           ..write('tagId: $tagId, ')
@@ -100,32 +100,32 @@ class NoteTableData extends DataClass implements Insertable<NoteTableData> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      (other is NoteTableData &&
+      (other is NoteData &&
           other.id == this.id &&
           other.noteText == this.noteText &&
           other.tagId == this.tagId &&
           other.lastUpdatedTime == this.lastUpdatedTime);
 }
 
-class NoteTableCompanion extends UpdateCompanion<NoteTableData> {
+class NoteCompanion extends UpdateCompanion<NoteData> {
   final Value<String> id;
   final Value<String> noteText;
   final Value<String?> tagId;
   final Value<DateTime> lastUpdatedTime;
-  const NoteTableCompanion({
+  const NoteCompanion({
     this.id = const Value.absent(),
     this.noteText = const Value.absent(),
     this.tagId = const Value.absent(),
     this.lastUpdatedTime = const Value.absent(),
   });
-  NoteTableCompanion.insert({
+  NoteCompanion.insert({
     required String id,
     required String noteText,
     this.tagId = const Value.absent(),
     this.lastUpdatedTime = const Value.absent(),
   })  : id = Value(id),
         noteText = Value(noteText);
-  static Insertable<NoteTableData> custom({
+  static Insertable<NoteData> custom({
     Expression<String>? id,
     Expression<String>? noteText,
     Expression<String?>? tagId,
@@ -139,12 +139,12 @@ class NoteTableCompanion extends UpdateCompanion<NoteTableData> {
     });
   }
 
-  NoteTableCompanion copyWith(
+  NoteCompanion copyWith(
       {Value<String>? id,
       Value<String>? noteText,
       Value<String?>? tagId,
       Value<DateTime>? lastUpdatedTime}) {
-    return NoteTableCompanion(
+    return NoteCompanion(
       id: id ?? this.id,
       noteText: noteText ?? this.noteText,
       tagId: tagId ?? this.tagId,
@@ -172,7 +172,7 @@ class NoteTableCompanion extends UpdateCompanion<NoteTableData> {
 
   @override
   String toString() {
-    return (StringBuffer('NoteTableCompanion(')
+    return (StringBuffer('NoteCompanion(')
           ..write('id: $id, ')
           ..write('noteText: $noteText, ')
           ..write('tagId: $tagId, ')
@@ -182,12 +182,11 @@ class NoteTableCompanion extends UpdateCompanion<NoteTableData> {
   }
 }
 
-class $NoteTableTable extends NoteTable
-    with TableInfo<$NoteTableTable, NoteTableData> {
+class $NoteTable extends Note with TableInfo<$NoteTable, NoteData> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
-  $NoteTableTable(this.attachedDatabase, [this._alias]);
+  $NoteTable(this.attachedDatabase, [this._alias]);
   final VerificationMeta _idMeta = const VerificationMeta('id');
   @override
   late final GeneratedColumn<String?> id = GeneratedColumn<String?>(
@@ -223,7 +222,7 @@ class $NoteTableTable extends NoteTable
   @override
   String get actualTableName => 'noteTable';
   @override
-  VerificationContext validateIntegrity(Insertable<NoteTableData> instance,
+  VerificationContext validateIntegrity(Insertable<NoteData> instance,
       {bool isInserting = false}) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
@@ -254,32 +253,30 @@ class $NoteTableTable extends NoteTable
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
-  NoteTableData map(Map<String, dynamic> data, {String? tablePrefix}) {
-    return NoteTableData.fromData(data,
+  NoteData map(Map<String, dynamic> data, {String? tablePrefix}) {
+    return NoteData.fromData(data,
         prefix: tablePrefix != null ? '$tablePrefix.' : null);
   }
 
   @override
-  $NoteTableTable createAlias(String alias) {
-    return $NoteTableTable(attachedDatabase, alias);
+  $NoteTable createAlias(String alias) {
+    return $NoteTable(attachedDatabase, alias);
   }
 }
 
-class TodoItemTableData extends DataClass
-    implements Insertable<TodoItemTableData> {
+class TodoItemData extends DataClass implements Insertable<TodoItemData> {
   final String id;
   final String todoText;
   final bool isDone;
   final DateTime lastUpdatedTime;
-  TodoItemTableData(
+  TodoItemData(
       {required this.id,
       required this.todoText,
       required this.isDone,
       required this.lastUpdatedTime});
-  factory TodoItemTableData.fromData(Map<String, dynamic> data,
-      {String? prefix}) {
+  factory TodoItemData.fromData(Map<String, dynamic> data, {String? prefix}) {
     final effectivePrefix = prefix ?? '';
-    return TodoItemTableData(
+    return TodoItemData(
       id: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}id'])!,
       todoText: const StringType()
@@ -300,8 +297,8 @@ class TodoItemTableData extends DataClass
     return map;
   }
 
-  TodoItemTableCompanion toCompanion(bool nullToAbsent) {
-    return TodoItemTableCompanion(
+  TodoItemCompanion toCompanion(bool nullToAbsent) {
+    return TodoItemCompanion(
       id: Value(id),
       todoText: Value(todoText),
       isDone: Value(isDone),
@@ -309,10 +306,10 @@ class TodoItemTableData extends DataClass
     );
   }
 
-  factory TodoItemTableData.fromJson(Map<String, dynamic> json,
+  factory TodoItemData.fromJson(Map<String, dynamic> json,
       {ValueSerializer? serializer}) {
     serializer ??= driftRuntimeOptions.defaultSerializer;
-    return TodoItemTableData(
+    return TodoItemData(
       id: serializer.fromJson<String>(json['id']),
       todoText: serializer.fromJson<String>(json['todoText']),
       isDone: serializer.fromJson<bool>(json['isDone']),
@@ -330,12 +327,12 @@ class TodoItemTableData extends DataClass
     };
   }
 
-  TodoItemTableData copyWith(
+  TodoItemData copyWith(
           {String? id,
           String? todoText,
           bool? isDone,
           DateTime? lastUpdatedTime}) =>
-      TodoItemTableData(
+      TodoItemData(
         id: id ?? this.id,
         todoText: todoText ?? this.todoText,
         isDone: isDone ?? this.isDone,
@@ -343,7 +340,7 @@ class TodoItemTableData extends DataClass
       );
   @override
   String toString() {
-    return (StringBuffer('TodoItemTableData(')
+    return (StringBuffer('TodoItemData(')
           ..write('id: $id, ')
           ..write('todoText: $todoText, ')
           ..write('isDone: $isDone, ')
@@ -357,25 +354,25 @@ class TodoItemTableData extends DataClass
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      (other is TodoItemTableData &&
+      (other is TodoItemData &&
           other.id == this.id &&
           other.todoText == this.todoText &&
           other.isDone == this.isDone &&
           other.lastUpdatedTime == this.lastUpdatedTime);
 }
 
-class TodoItemTableCompanion extends UpdateCompanion<TodoItemTableData> {
+class TodoItemCompanion extends UpdateCompanion<TodoItemData> {
   final Value<String> id;
   final Value<String> todoText;
   final Value<bool> isDone;
   final Value<DateTime> lastUpdatedTime;
-  const TodoItemTableCompanion({
+  const TodoItemCompanion({
     this.id = const Value.absent(),
     this.todoText = const Value.absent(),
     this.isDone = const Value.absent(),
     this.lastUpdatedTime = const Value.absent(),
   });
-  TodoItemTableCompanion.insert({
+  TodoItemCompanion.insert({
     required String id,
     required String todoText,
     required bool isDone,
@@ -383,7 +380,7 @@ class TodoItemTableCompanion extends UpdateCompanion<TodoItemTableData> {
   })  : id = Value(id),
         todoText = Value(todoText),
         isDone = Value(isDone);
-  static Insertable<TodoItemTableData> custom({
+  static Insertable<TodoItemData> custom({
     Expression<String>? id,
     Expression<String>? todoText,
     Expression<bool>? isDone,
@@ -397,12 +394,12 @@ class TodoItemTableCompanion extends UpdateCompanion<TodoItemTableData> {
     });
   }
 
-  TodoItemTableCompanion copyWith(
+  TodoItemCompanion copyWith(
       {Value<String>? id,
       Value<String>? todoText,
       Value<bool>? isDone,
       Value<DateTime>? lastUpdatedTime}) {
-    return TodoItemTableCompanion(
+    return TodoItemCompanion(
       id: id ?? this.id,
       todoText: todoText ?? this.todoText,
       isDone: isDone ?? this.isDone,
@@ -430,7 +427,7 @@ class TodoItemTableCompanion extends UpdateCompanion<TodoItemTableData> {
 
   @override
   String toString() {
-    return (StringBuffer('TodoItemTableCompanion(')
+    return (StringBuffer('TodoItemCompanion(')
           ..write('id: $id, ')
           ..write('todoText: $todoText, ')
           ..write('isDone: $isDone, ')
@@ -440,12 +437,12 @@ class TodoItemTableCompanion extends UpdateCompanion<TodoItemTableData> {
   }
 }
 
-class $TodoItemTableTable extends TodoItemTable
-    with TableInfo<$TodoItemTableTable, TodoItemTableData> {
+class $TodoItemTable extends TodoItem
+    with TableInfo<$TodoItemTable, TodoItemData> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
-  $TodoItemTableTable(this.attachedDatabase, [this._alias]);
+  $TodoItemTable(this.attachedDatabase, [this._alias]);
   final VerificationMeta _idMeta = const VerificationMeta('id');
   @override
   late final GeneratedColumn<String?> id = GeneratedColumn<String?>(
@@ -481,7 +478,7 @@ class $TodoItemTableTable extends TodoItemTable
   @override
   String get actualTableName => 'todoItemTable';
   @override
-  VerificationContext validateIntegrity(Insertable<TodoItemTableData> instance,
+  VerificationContext validateIntegrity(Insertable<TodoItemData> instance,
       {bool isInserting = false}) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
@@ -514,26 +511,25 @@ class $TodoItemTableTable extends TodoItemTable
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
-  TodoItemTableData map(Map<String, dynamic> data, {String? tablePrefix}) {
-    return TodoItemTableData.fromData(data,
+  TodoItemData map(Map<String, dynamic> data, {String? tablePrefix}) {
+    return TodoItemData.fromData(data,
         prefix: tablePrefix != null ? '$tablePrefix.' : null);
   }
 
   @override
-  $TodoItemTableTable createAlias(String alias) {
-    return $TodoItemTableTable(attachedDatabase, alias);
+  $TodoItemTable createAlias(String alias) {
+    return $TodoItemTable(attachedDatabase, alias);
   }
 }
 
 abstract class _$MyDatabase extends GeneratedDatabase {
   _$MyDatabase(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
-  late final $NoteTableTable noteTable = $NoteTableTable(this);
-  late final $TodoItemTableTable todoItemTable = $TodoItemTableTable(this);
+  late final $NoteTable note = $NoteTable(this);
+  late final $TodoItemTable todoItem = $TodoItemTable(this);
   late final NoteLocaleService noteLocaleService =
       NoteLocaleService(this as MyDatabase);
   @override
   Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
   @override
-  List<DatabaseSchemaEntity> get allSchemaEntities =>
-      [noteTable, todoItemTable];
+  List<DatabaseSchemaEntity> get allSchemaEntities => [note, todoItem];
 }

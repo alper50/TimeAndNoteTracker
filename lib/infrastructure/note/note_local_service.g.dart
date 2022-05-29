@@ -7,6 +7,6 @@ part of 'note_local_service.dart';
 // **************************************************************************
 
 mixin _$NoteLocaleServiceMixin on DatabaseAccessor<MyDatabase> {
-  $NoteTableTable get noteTable => attachedDatabase.noteTable;
-  $TodoItemTableTable get todoItemTable => attachedDatabase.todoItemTable;
+  $NoteTable get note => attachedDatabase.note;
+  $TodoItemTable get todoItem => attachedDatabase.todoItem;
 }

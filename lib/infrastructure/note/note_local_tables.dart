@@ -1,8 +1,6 @@
 import 'package:drift/drift.dart';
 
-class NoteTable extends Table{
-  
-
+class Note extends Table{
   TextColumn get id => text()();
   TextColumn get noteText => text().withLength(min: 1, max: 1000)();
   TextColumn get tagId => text().nullable().customConstraint('NULL REFERENCES todoItemTable(id)')();
@@ -14,9 +12,7 @@ class NoteTable extends Table{
   String get tableName => 'noteTable';
 }
 
-class TodoItemTable extends Table{
-  
-
+class TodoItem extends Table{
   TextColumn get id => text()();
   TextColumn get todoText => text().withLength(min: 1, max: 1000)();
   BoolColumn get isDone => boolean()();
@@ -29,8 +25,8 @@ class TodoItemTable extends Table{
 }
 
 class NoteWithTagReference{
-  final NoteTable note;
-  final TodoItemTable todoItem;
+  final Note note;
+  final TodoItem todoItem;
 
   NoteWithTagReference({required this.note,required this.todoItem});
 }
