@@ -4,7 +4,6 @@ import 'package:rxdart/transformers.dart';
 import 'package:timenotetracker/domain/note/i_note_repository.dart';
 import 'package:timenotetracker/domain/note/note_failure.dart';
 import 'package:timenotetracker/domain/note/note_entity.dart';
-import 'package:timenotetracker/domain/note/todo_item_entity.dart';
 import 'package:timenotetracker/infrastructure/core/db_config.dart';
 import 'package:timenotetracker/infrastructure/note/note_data_transfer_objects.dart';
 
@@ -16,8 +15,8 @@ class NoteRepository implements INoteRepository {
     try {
       await noteLocaleService.createNote(NoteDTO.toDB(note: note));
       return right(unit);
-    } catch (_) {
-      return left(const NoteFailure.unexpected());
+    } catch (e) {
+      return left(NoteFailure.unexpected(e));
     }
   }
 
@@ -26,8 +25,8 @@ class NoteRepository implements INoteRepository {
     try {
       await noteLocaleService.deleteNote(NoteDTO.toDB(note: note));
       return right(unit);
-    } catch (_) {
-      return left(const NoteFailure.unexpected());
+    } catch (e) {
+      return left(NoteFailure.unexpected(e));
     }
   }
 
@@ -36,8 +35,8 @@ class NoteRepository implements INoteRepository {
     try {
       await noteLocaleService.updateNote(NoteDTO.toDB(note: note));
       return right(unit);
-    } catch (_) {
-      return left(const NoteFailure.unexpected());
+    } catch (e) {
+      return left(NoteFailure.unexpected(e));
     }
   }
 
@@ -58,7 +57,7 @@ class NoteRepository implements INoteRepository {
         )
         .onErrorReturnWith(
           (error, stackTrace) => left(
-            NoteFailure.unexpected(),
+            NoteFailure.unexpected(error),
           ),
         );
   }
@@ -80,8 +79,18 @@ class NoteRepository implements INoteRepository {
         )
         .onErrorReturnWith(
           (error, stackTrace) => left(
-            NoteFailure.unexpected(),
+            NoteFailure.unexpected(error),
           ),
         );
+  }
+  
+  @override
+  Future<Either<NoteFailure, Note>> getNoteById(String noteId) async{
+   try{
+     final result = await noteLocaleService.getNoteById(noteId);
+    return right(NoteDTO.fromDB(noteData: result).toDomain());
+   }catch(e){
+     return left(NoteFailure.unexpected(e));
+   }
   }
 }

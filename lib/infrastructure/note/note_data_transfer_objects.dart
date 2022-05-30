@@ -1,5 +1,7 @@
 //this file contains all entity's data transfer objects belong to note feature
 
+import 'dart:convert';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:timenotetracker/domain/core/value_object.dart';
 import 'package:timenotetracker/domain/note/note_entity.dart';
@@ -19,7 +21,7 @@ abstract class NoteDTO implements _$NoteDTO {
   const factory NoteDTO({
     required String id,
     required String noteText,
-    required List<TodoItemDTO> todoItems,
+    required String noteEditorText,
     required DateTime lastUpdatedTime,
   }) = _NoteDTO;
 
@@ -27,10 +29,7 @@ abstract class NoteDTO implements _$NoteDTO {
     return NoteDTO(
       id: note.id.getValueOrCrash(),
       noteText: note.noteBody.getValueOrCrash(),
-      todoItems: note.todoItems
-          .getValueOrCrash()
-          .map((todoItem) => TodoItemDTO.fromDomain(todoItem))
-          .toList(),
+      noteEditorText: jsonEncode(note.noteEditorBody),
       lastUpdatedTime: DateTime(2022, 04, 22), //TODO make timestamp dynamic
     );
   }
@@ -51,9 +50,7 @@ abstract class NoteDTO implements _$NoteDTO {
     return Note(
       id: UniqueId.fromString(id),
       noteBody: NoteBody(noteText),
-      todoItems: TodoList(
-        todoItems.map((todoItem) => todoItem.toDomain()).toList(),
-      ),
+      noteEditorBody: jsonDecode(noteEditorText),
     );
   }
 
@@ -61,7 +58,7 @@ abstract class NoteDTO implements _$NoteDTO {
     return NoteDTO(
       id: noteData.id,
       noteText: noteData.noteText,
-      todoItems: [mockTodo],
+      noteEditorText: noteData.noteEditorText,
       lastUpdatedTime: noteData.lastUpdatedTime,
     );
   }
@@ -70,6 +67,7 @@ abstract class NoteDTO implements _$NoteDTO {
     return NoteData(
       id: note.id.getValueOrCrash(),
       noteText: note.noteBody.getValueOrCrash(),
+      noteEditorText: jsonEncode(note.noteEditorBody),
       lastUpdatedTime: DateTime(2022),
     );
   }

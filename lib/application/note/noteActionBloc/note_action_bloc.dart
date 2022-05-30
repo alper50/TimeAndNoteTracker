@@ -20,7 +20,7 @@ class NoteActionBloc extends Bloc<NoteActionEvent, NoteActionState> {
           (failure) => emit(
                 NoteActionState.deleteFailure(failure),
               ),
-          (r) => NoteActionState.deleteSucces());
+          (r) => emit(NoteActionState.deleteSucces()));
     });
   }
 }

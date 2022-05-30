@@ -14,7 +14,7 @@ class MyPolicyDialog extends Dialog {
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
                       return Markdown( 
-                        data: snapshot.data.toString(), //TODO test this line
+                        data: snapshot.data.toString(),
                       );
                     } else {
                       return Center(

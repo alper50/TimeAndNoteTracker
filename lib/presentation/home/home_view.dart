@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
 
 class HomeView extends StatelessWidget {
@@ -16,11 +17,11 @@ class HomeView extends StatelessWidget {
       title: Text('Note'),
     ),
     SalomonBottomBarItem(
-      icon: Icon(Icons.note),
-      title: Text('Time'),
+      icon: Icon(Icons.track_changes_rounded),
+      title: Text('Time Tracker'),
     ),
     SalomonBottomBarItem(
-      icon: Icon(Icons.note),
+      icon: Icon(Icons.analytics_rounded),
       title: Text('Analyse'),
     ),
   ];
@@ -32,6 +33,8 @@ class HomeView extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.all(20.0),
           child: SalomonBottomBar(
+            selectedItemColor: MyColors.primaryColor,
+            unselectedItemColor: MyColors.lightPrimaryColor,
             currentIndex: tabsRouter.activeIndex,
             onTap: tabsRouter.setActiveIndex,
             items: bottomItems,

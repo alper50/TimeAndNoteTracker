@@ -7,7 +7,6 @@ import 'package:injectable/injectable.dart';
 import 'package:timenotetracker/domain/note/i_note_repository.dart';
 import 'package:timenotetracker/domain/note/note_entity.dart';
 import 'package:timenotetracker/domain/note/note_failure.dart';
-import 'package:timenotetracker/domain/note/todo_item_entity.dart';
 
 part 'note_watcher_event.dart';
 part 'note_watcher_state.dart';
@@ -46,7 +45,13 @@ class NoteWatcherBloc extends Bloc<NoteWatcherEvent, NoteWatcherState> {
               (failure) => emit(
                 NoteWatcherState.loadFailure(failure),
               ),
-              (notes) => NoteWatcherState.loadSucces(notes),
+              (notes) {
+                if(notes.isEmpty){
+                   emit(NoteWatcherState.loadSuccesEmptyList(),);
+                }else{
+                  emit(NoteWatcherState.loadSucces(notes),);
+                }
+              }
             );
           },);
     });

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
-import 'package:timenotetracker/application/note/noteWatcherBloc/note_watcher_bloc.dart';
+import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
 
 class NoteFailureView extends StatelessWidget {
-  const NoteFailureView({Key? key}) : super(key: key);
+  final void Function()? onPressed;
+  const NoteFailureView({Key? key,required this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Column(
         children: [
-          LottieBuilder.asset('failure.json'),
+          LottieBuilder.asset('assets/lottie/failure.json'),
           SizedBox(
             height: 50,
           ),
@@ -20,12 +20,8 @@ class NoteFailureView extends StatelessWidget {
             height: 30,
           ),
           TextButton(
-            onPressed: () {
-              context
-                  .read<NoteWatcherBloc>()
-                  .add(NoteWatcherEvent.watchAllStarted());
-            },
-            child: Text('Try Again'),
+            onPressed: onPressed,
+            child: Text('Try Again',style: MyTextStyles.headline3,),
           ),
         ],
       ),

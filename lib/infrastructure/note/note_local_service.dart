@@ -53,6 +53,10 @@ class NoteLocaleService extends DatabaseAccessor<MyDatabase>
       ]);
     return query.watch();
   }
+  Future<NoteData> getNoteById(String noteId) async{
+    final query = select(note)..where((tbl) => tbl.id.equals(noteId));
+    return await query.getSingle();
+  }
 
   Future createNote(Insertable<NoteData> noteToBeCreated) {
     return into(note).insert(noteToBeCreated);

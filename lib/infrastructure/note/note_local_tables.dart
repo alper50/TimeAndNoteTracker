@@ -2,6 +2,7 @@ import 'package:drift/drift.dart';
 
 class Note extends Table{
   TextColumn get id => text()();
+  TextColumn get noteEditorText => text().withLength(min: 1)();
   TextColumn get noteText => text().withLength(min: 1, max: 1000)();
   TextColumn get tagId => text().nullable().customConstraint('NULL REFERENCES todoItemTable(id)')();
   DateTimeColumn get lastUpdatedTime => dateTime().withDefault(currentDateAndTime)();

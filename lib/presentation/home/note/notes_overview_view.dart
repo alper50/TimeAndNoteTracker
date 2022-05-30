@@ -1,8 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/note/noteActionBloc/note_action_bloc.dart';
 import 'package:timenotetracker/application/note/noteWatcherBloc/note_watcher_bloc.dart';
 import 'package:timenotetracker/injection.dart';
+import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
 import 'package:timenotetracker/presentation/home/note/widgets/note_overview_body.dart';
 
@@ -41,8 +43,11 @@ class NoteOverview extends StatelessWidget {
         child: Scaffold(
           body: NoteOverviewBody(),
           floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              //TODO navigate to note view
+            tooltip: 'New Note',
+            child: Icon(Icons.note_add_rounded),
+            backgroundColor: MyColors.lightSecondaryColor,
+            onPressed: () { 
+              AutoRouter.of(context).pushNamed('/note-view');
             },
           ),
         ),

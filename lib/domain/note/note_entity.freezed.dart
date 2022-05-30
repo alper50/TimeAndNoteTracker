@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Note {
   UniqueId get id => throw _privateConstructorUsedError;
   NoteBody get noteBody => throw _privateConstructorUsedError;
-  TodoList<TodoItem> get todoItems => throw _privateConstructorUsedError;
+  List<dynamic> get noteEditorBody => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NoteCopyWith<Note> get copyWith => throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$Note {
 abstract class $NoteCopyWith<$Res> {
   factory $NoteCopyWith(Note value, $Res Function(Note) then) =
       _$NoteCopyWithImpl<$Res>;
-  $Res call({UniqueId id, NoteBody noteBody, TodoList<TodoItem> todoItems});
+  $Res call({UniqueId id, NoteBody noteBody, List<dynamic> noteEditorBody});
 }
 
 /// @nodoc
@@ -43,7 +43,7 @@ class _$NoteCopyWithImpl<$Res> implements $NoteCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? noteBody = freezed,
-    Object? todoItems = freezed,
+    Object? noteEditorBody = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -54,10 +54,10 @@ class _$NoteCopyWithImpl<$Res> implements $NoteCopyWith<$Res> {
           ? _value.noteBody
           : noteBody // ignore: cast_nullable_to_non_nullable
               as NoteBody,
-      todoItems: todoItems == freezed
-          ? _value.todoItems
-          : todoItems // ignore: cast_nullable_to_non_nullable
-              as TodoList<TodoItem>,
+      noteEditorBody: noteEditorBody == freezed
+          ? _value.noteEditorBody
+          : noteEditorBody // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
     ));
   }
 }
@@ -67,7 +67,7 @@ abstract class _$NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
   factory _$NoteCopyWith(_Note value, $Res Function(_Note) then) =
       __$NoteCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId id, NoteBody noteBody, TodoList<TodoItem> todoItems});
+  $Res call({UniqueId id, NoteBody noteBody, List<dynamic> noteEditorBody});
 }
 
 /// @nodoc
@@ -83,7 +83,7 @@ class __$NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? noteBody = freezed,
-    Object? todoItems = freezed,
+    Object? noteEditorBody = freezed,
   }) {
     return _then(_Note(
       id: id == freezed
@@ -94,10 +94,10 @@ class __$NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res>
           ? _value.noteBody
           : noteBody // ignore: cast_nullable_to_non_nullable
               as NoteBody,
-      todoItems: todoItems == freezed
-          ? _value.todoItems
-          : todoItems // ignore: cast_nullable_to_non_nullable
-              as TodoList<TodoItem>,
+      noteEditorBody: noteEditorBody == freezed
+          ? _value.noteEditorBody
+          : noteEditorBody // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
     ));
   }
 }
@@ -106,19 +106,26 @@ class __$NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res>
 
 class _$_Note extends _Note {
   const _$_Note(
-      {required this.id, required this.noteBody, required this.todoItems})
-      : super._();
+      {required this.id,
+      required this.noteBody,
+      required final List<dynamic> noteEditorBody})
+      : _noteEditorBody = noteEditorBody,
+        super._();
 
   @override
   final UniqueId id;
   @override
   final NoteBody noteBody;
+  final List<dynamic> _noteEditorBody;
   @override
-  final TodoList<TodoItem> todoItems;
+  List<dynamic> get noteEditorBody {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_noteEditorBody);
+  }
 
   @override
   String toString() {
-    return 'Note(id: $id, noteBody: $noteBody, todoItems: $todoItems)';
+    return 'Note(id: $id, noteBody: $noteBody, noteEditorBody: $noteEditorBody)';
   }
 
   @override
@@ -128,7 +135,8 @@ class _$_Note extends _Note {
             other is _Note &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.noteBody, noteBody) &&
-            const DeepCollectionEquality().equals(other.todoItems, todoItems));
+            const DeepCollectionEquality()
+                .equals(other.noteEditorBody, noteEditorBody));
   }
 
   @override
@@ -136,7 +144,7 @@ class _$_Note extends _Note {
       runtimeType,
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(noteBody),
-      const DeepCollectionEquality().hash(todoItems));
+      const DeepCollectionEquality().hash(noteEditorBody));
 
   @JsonKey(ignore: true)
   @override
@@ -148,7 +156,7 @@ abstract class _Note extends Note {
   const factory _Note(
       {required final UniqueId id,
       required final NoteBody noteBody,
-      required final TodoList<TodoItem> todoItems}) = _$_Note;
+      required final List<dynamic> noteEditorBody}) = _$_Note;
   const _Note._() : super._();
 
   @override
@@ -156,7 +164,7 @@ abstract class _Note extends Note {
   @override
   NoteBody get noteBody => throw _privateConstructorUsedError;
   @override
-  TodoList<TodoItem> get todoItems => throw _privateConstructorUsedError;
+  List<dynamic> get noteEditorBody => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$NoteCopyWith<_Note> get copyWith => throw _privateConstructorUsedError;
