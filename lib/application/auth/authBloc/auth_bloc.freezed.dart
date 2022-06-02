@@ -284,6 +284,7 @@ mixin _$AuthState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() authenticated,
+    required TResult Function() emailNotVerified,
     required TResult Function() unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
@@ -291,6 +292,7 @@ mixin _$AuthState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? authenticated,
+    TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
@@ -298,6 +300,7 @@ mixin _$AuthState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? authenticated,
+    TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
     required TResult orElse(),
   }) =>
@@ -306,6 +309,7 @@ mixin _$AuthState {
   TResult map<TResult extends Object?>({
     required TResult Function(AuthInitial value) initial,
     required TResult Function(Authenticated value) authenticated,
+    required TResult Function(EmailNotVerified value) emailNotVerified,
     required TResult Function(Unauthenticated value) unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
@@ -313,6 +317,7 @@ mixin _$AuthState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthInitial value)? initial,
     TResult Function(Authenticated value)? authenticated,
+    TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
@@ -320,6 +325,7 @@ mixin _$AuthState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthInitial value)? initial,
     TResult Function(Authenticated value)? authenticated,
+    TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
     required TResult orElse(),
   }) =>
@@ -383,6 +389,7 @@ class _$AuthInitial implements AuthInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() authenticated,
+    required TResult Function() emailNotVerified,
     required TResult Function() unauthenticated,
   }) {
     return initial();
@@ -393,6 +400,7 @@ class _$AuthInitial implements AuthInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? authenticated,
+    TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
   }) {
     return initial?.call();
@@ -403,6 +411,7 @@ class _$AuthInitial implements AuthInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? authenticated,
+    TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
     required TResult orElse(),
   }) {
@@ -417,6 +426,7 @@ class _$AuthInitial implements AuthInitial {
   TResult map<TResult extends Object?>({
     required TResult Function(AuthInitial value) initial,
     required TResult Function(Authenticated value) authenticated,
+    required TResult Function(EmailNotVerified value) emailNotVerified,
     required TResult Function(Unauthenticated value) unauthenticated,
   }) {
     return initial(this);
@@ -427,6 +437,7 @@ class _$AuthInitial implements AuthInitial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthInitial value)? initial,
     TResult Function(Authenticated value)? authenticated,
+    TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
   }) {
     return initial?.call(this);
@@ -437,6 +448,7 @@ class _$AuthInitial implements AuthInitial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthInitial value)? initial,
     TResult Function(Authenticated value)? authenticated,
+    TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
     required TResult orElse(),
   }) {
@@ -493,6 +505,7 @@ class _$Authenticated implements Authenticated {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() authenticated,
+    required TResult Function() emailNotVerified,
     required TResult Function() unauthenticated,
   }) {
     return authenticated();
@@ -503,6 +516,7 @@ class _$Authenticated implements Authenticated {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? authenticated,
+    TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
   }) {
     return authenticated?.call();
@@ -513,6 +527,7 @@ class _$Authenticated implements Authenticated {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? authenticated,
+    TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
     required TResult orElse(),
   }) {
@@ -527,6 +542,7 @@ class _$Authenticated implements Authenticated {
   TResult map<TResult extends Object?>({
     required TResult Function(AuthInitial value) initial,
     required TResult Function(Authenticated value) authenticated,
+    required TResult Function(EmailNotVerified value) emailNotVerified,
     required TResult Function(Unauthenticated value) unauthenticated,
   }) {
     return authenticated(this);
@@ -537,6 +553,7 @@ class _$Authenticated implements Authenticated {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthInitial value)? initial,
     TResult Function(Authenticated value)? authenticated,
+    TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
   }) {
     return authenticated?.call(this);
@@ -547,6 +564,7 @@ class _$Authenticated implements Authenticated {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthInitial value)? initial,
     TResult Function(Authenticated value)? authenticated,
+    TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
     required TResult orElse(),
   }) {
@@ -559,6 +577,122 @@ class _$Authenticated implements Authenticated {
 
 abstract class Authenticated implements AuthState {
   const factory Authenticated() = _$Authenticated;
+}
+
+/// @nodoc
+abstract class $EmailNotVerifiedCopyWith<$Res> {
+  factory $EmailNotVerifiedCopyWith(
+          EmailNotVerified value, $Res Function(EmailNotVerified) then) =
+      _$EmailNotVerifiedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$EmailNotVerifiedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements $EmailNotVerifiedCopyWith<$Res> {
+  _$EmailNotVerifiedCopyWithImpl(
+      EmailNotVerified _value, $Res Function(EmailNotVerified) _then)
+      : super(_value, (v) => _then(v as EmailNotVerified));
+
+  @override
+  EmailNotVerified get _value => super._value as EmailNotVerified;
+}
+
+/// @nodoc
+
+class _$EmailNotVerified implements EmailNotVerified {
+  const _$EmailNotVerified();
+
+  @override
+  String toString() {
+    return 'AuthState.emailNotVerified()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is EmailNotVerified);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() authenticated,
+    required TResult Function() emailNotVerified,
+    required TResult Function() unauthenticated,
+  }) {
+    return emailNotVerified();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? emailNotVerified,
+    TResult Function()? unauthenticated,
+  }) {
+    return emailNotVerified?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? emailNotVerified,
+    TResult Function()? unauthenticated,
+    required TResult orElse(),
+  }) {
+    if (emailNotVerified != null) {
+      return emailNotVerified();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AuthInitial value) initial,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(EmailNotVerified value) emailNotVerified,
+    required TResult Function(Unauthenticated value) unauthenticated,
+  }) {
+    return emailNotVerified(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AuthInitial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(Unauthenticated value)? unauthenticated,
+  }) {
+    return emailNotVerified?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AuthInitial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    required TResult orElse(),
+  }) {
+    if (emailNotVerified != null) {
+      return emailNotVerified(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmailNotVerified implements AuthState {
+  const factory EmailNotVerified() = _$EmailNotVerified;
 }
 
 /// @nodoc
@@ -603,6 +737,7 @@ class _$Unauthenticated implements Unauthenticated {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() authenticated,
+    required TResult Function() emailNotVerified,
     required TResult Function() unauthenticated,
   }) {
     return unauthenticated();
@@ -613,6 +748,7 @@ class _$Unauthenticated implements Unauthenticated {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? authenticated,
+    TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
   }) {
     return unauthenticated?.call();
@@ -623,6 +759,7 @@ class _$Unauthenticated implements Unauthenticated {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? authenticated,
+    TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
     required TResult orElse(),
   }) {
@@ -637,6 +774,7 @@ class _$Unauthenticated implements Unauthenticated {
   TResult map<TResult extends Object?>({
     required TResult Function(AuthInitial value) initial,
     required TResult Function(Authenticated value) authenticated,
+    required TResult Function(EmailNotVerified value) emailNotVerified,
     required TResult Function(Unauthenticated value) unauthenticated,
   }) {
     return unauthenticated(this);
@@ -647,6 +785,7 @@ class _$Unauthenticated implements Unauthenticated {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthInitial value)? initial,
     TResult Function(Authenticated value)? authenticated,
+    TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
   }) {
     return unauthenticated?.call(this);
@@ -657,6 +796,7 @@ class _$Unauthenticated implements Unauthenticated {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthInitial value)? initial,
     TResult Function(Authenticated value)? authenticated,
+    TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
     required TResult orElse(),
   }) {

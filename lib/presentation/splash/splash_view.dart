@@ -23,7 +23,10 @@ class _SplashPageState extends State<SplashView> {
             },
             unauthenticated: (_) {
               AutoRouter.of(context).replaceNamed('/authentication-view');
-            });
+            }, 
+            emailNotVerified: (_) { 
+              AutoRouter.of(context).replaceNamed('/verify-email-view');
+             });
       },
       child: Scaffold(
         body: Center(

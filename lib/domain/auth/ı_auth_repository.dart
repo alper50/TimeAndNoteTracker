@@ -5,6 +5,10 @@ import 'package:timenotetracker/domain/auth/auth_value_objects.dart';
 abstract class IAuthRepository {
   Future<Option<String>> getSignedInUser(); // TODO return type should be user model and uniqe ıd needs to be implemented
 
+  Future<Either<AuthFailure, Unit>> sendEmailVerification();
+
+  Future<Either<bool, Unit>> checkEmailVerification();
+
   //we are returning unit if everything is right
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
     required EmailAddress emailAddress,

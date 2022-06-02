@@ -19,7 +19,7 @@ mixin _$AuthFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() cancelledByUser,
-    required TResult Function() serverError,
+    required TResult Function(dynamic e) serverError,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
   }) =>
@@ -27,7 +27,7 @@ mixin _$AuthFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? serverError,
+    TResult Function(dynamic e)? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
   }) =>
@@ -35,7 +35,7 @@ mixin _$AuthFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? serverError,
+    TResult Function(dynamic e)? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     required TResult orElse(),
@@ -129,7 +129,7 @@ class _$CancelledByUser implements CancelledByUser {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() cancelledByUser,
-    required TResult Function() serverError,
+    required TResult Function(dynamic e) serverError,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
   }) {
@@ -140,7 +140,7 @@ class _$CancelledByUser implements CancelledByUser {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? serverError,
+    TResult Function(dynamic e)? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
   }) {
@@ -151,7 +151,7 @@ class _$CancelledByUser implements CancelledByUser {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? serverError,
+    TResult Function(dynamic e)? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     required TResult orElse(),
@@ -212,6 +212,7 @@ abstract class $ServerErrorCopyWith<$Res> {
   factory $ServerErrorCopyWith(
           ServerError value, $Res Function(ServerError) then) =
       _$ServerErrorCopyWithImpl<$Res>;
+  $Res call({dynamic e});
 }
 
 /// @nodoc
@@ -223,60 +224,83 @@ class _$ServerErrorCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
 
   @override
   ServerError get _value => super._value as ServerError;
+
+  @override
+  $Res call({
+    Object? e = freezed,
+  }) {
+    return _then(ServerError(
+      e == freezed
+          ? _value.e
+          : e // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$ServerError implements ServerError {
-  const _$ServerError();
+  const _$ServerError(this.e);
+
+  @override
+  final dynamic e;
 
   @override
   String toString() {
-    return 'AuthFailure.serverError()';
+    return 'AuthFailure.serverError(e: $e)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is ServerError);
+        (other.runtimeType == runtimeType &&
+            other is ServerError &&
+            const DeepCollectionEquality().equals(other.e, e));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(e));
+
+  @JsonKey(ignore: true)
+  @override
+  $ServerErrorCopyWith<ServerError> get copyWith =>
+      _$ServerErrorCopyWithImpl<ServerError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() cancelledByUser,
-    required TResult Function() serverError,
+    required TResult Function(dynamic e) serverError,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
   }) {
-    return serverError();
+    return serverError(e);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? serverError,
+    TResult Function(dynamic e)? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
   }) {
-    return serverError?.call();
+    return serverError?.call(e);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? serverError,
+    TResult Function(dynamic e)? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     required TResult orElse(),
   }) {
     if (serverError != null) {
-      return serverError();
+      return serverError(e);
     }
     return orElse();
   }
@@ -323,7 +347,12 @@ class _$ServerError implements ServerError {
 }
 
 abstract class ServerError implements AuthFailure {
-  const factory ServerError() = _$ServerError;
+  const factory ServerError(final dynamic e) = _$ServerError;
+
+  dynamic get e => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ServerErrorCopyWith<ServerError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -368,7 +397,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() cancelledByUser,
-    required TResult Function() serverError,
+    required TResult Function(dynamic e) serverError,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
   }) {
@@ -379,7 +408,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? serverError,
+    TResult Function(dynamic e)? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
   }) {
@@ -390,7 +419,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? serverError,
+    TResult Function(dynamic e)? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     required TResult orElse(),
@@ -493,7 +522,7 @@ class _$InvalidEmailAndPasswordCombination
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() cancelledByUser,
-    required TResult Function() serverError,
+    required TResult Function(dynamic e) serverError,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
   }) {
@@ -504,7 +533,7 @@ class _$InvalidEmailAndPasswordCombination
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? serverError,
+    TResult Function(dynamic e)? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
   }) {
@@ -515,7 +544,7 @@ class _$InvalidEmailAndPasswordCombination
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? serverError,
+    TResult Function(dynamic e)? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     required TResult orElse(),

@@ -30,11 +30,10 @@ class FirebaseAuthService implements IAuthRepository {
           email: validEmail, password: validPassword);
       return right(unit);
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'wrong-password' ||
-          e.code == 'user-not-found') {
+      if (e.code == 'wrong-password' || e.code == 'user-not-found') {
         return left(const AuthFailure.invalidEmailAndPasswordCombination());
       } else {
-        return left(const AuthFailure.serverError());
+        return left(AuthFailure.serverError(e));
       }
     }
   }
@@ -50,10 +49,10 @@ class FirebaseAuthService implements IAuthRepository {
           email: validEmail, password: validPassword);
       return right(unit);
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'email-already-exists') {
+      if (e.code == 'email-already-in-use') {
         return left(const AuthFailure.emailAlreadyInUse());
       } else {
-        return left(const AuthFailure.serverError());
+        return left(AuthFailure.serverError(e));
       }
     }
   }
@@ -74,8 +73,8 @@ class FirebaseAuthService implements IAuthRepository {
 
       await _firebaseAuth.signInWithCredential(googleCredential);
       return right(unit);
-    } on FirebaseAuthException catch (_) {
-      return left(const AuthFailure.serverError());
+    } on FirebaseAuthException catch (e) {
+      return left(AuthFailure.serverError(e));
     }
   }
 
@@ -94,12 +93,34 @@ class FirebaseAuthService implements IAuthRepository {
       await _firebaseAuth.sendPasswordResetEmail(email: validEmail);
       return right(unit);
     } on FirebaseAuthException catch (e) {
-      if(e.code=='user-not-found'){
-        return right(unit);  // this return made purposely
+      if (e.code == 'user-not-found') {
+        return right(unit); // this return made purposely
+      } else {
+        return left(AuthFailure.serverError(e));
       }
-      else{
-        return left(const AuthFailure.serverError());
-      }
+    }
+  }
+
+  @override
+  Future<Either<bool, Unit>> checkEmailVerification() async {
+    await _firebaseAuth.currentUser!.reload();
+    final _isVerified = _firebaseAuth.currentUser!.emailVerified;
+    return _isVerified ? right(unit) : left(_isVerified);
+    // try {
+    //   await _firebaseAuth.currentUser!.reload();
+    //   return right(optionOf(_firebaseAuth.currentUser!.emailVerified));
+    // } on FirebaseAuthException catch (e) {
+    //   return left( AuthFailure.serverError(e));
+    // }
+  }
+
+  @override
+  Future<Either<AuthFailure, Unit>> sendEmailVerification() async {
+    try {
+      await _firebaseAuth.currentUser!.sendEmailVerification();
+      return right(unit);
+    } on FirebaseAuthException catch (e) {
+      return left(AuthFailure.serverError(e));
     }
   }
 }

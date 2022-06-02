@@ -33,7 +33,7 @@ class RegisterView extends StatelessWidget {
               );
             },
             (_) {
-              AutoRouter.of(context).replaceNamed('/home-view');
+              AutoRouter.of(context).replaceNamed('/verify-email-view');
               context
                   .read<AuthBloc>()
                   .add(const AuthEvent.checkAuthentication());
