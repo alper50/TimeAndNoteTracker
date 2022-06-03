@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
-import 'package:timenotetracker/application/auth/bloc/verify_email_bloc.dart';
+import 'package:timenotetracker/application/auth/verifyEmailBloc/verify_email_bloc.dart';
 import 'package:timenotetracker/injection.dart';
 import 'package:timenotetracker/presentation/auth/widgets/verify_email_view_body.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';

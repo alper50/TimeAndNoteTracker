@@ -10,10 +10,10 @@ import 'package:google_sign_in/google_sign_in.dart' as _i4;
 import 'package:injectable/injectable.dart' as _i2;
 
 import 'application/auth/authBloc/auth_bloc.dart' as _i14;
-import 'application/auth/bloc/verify_email_bloc.dart' as _i13;
 import 'application/auth/forgotPasswordBloc/forgot_password_bloc.dart' as _i15;
 import 'application/auth/registerAndLoginBloc/register_and_login_bloc.dart'
     as _i12;
+import 'application/auth/verifyEmailBloc/verify_email_bloc.dart' as _i13;
 import 'application/note/noteActionBloc/note_action_bloc.dart' as _i9;
 import 'application/note/noteFormBloc/note_form_bloc.dart' as _i10;
 import 'application/note/noteWatcherBloc/note_watcher_bloc.dart' as _i11;
