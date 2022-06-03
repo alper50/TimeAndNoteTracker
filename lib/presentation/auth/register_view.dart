@@ -22,13 +22,13 @@ class RegisterView extends StatelessWidget {
             (failure) {
               ScaffoldMessenger.of(context).showSnackBar(
                 displaySnackBar(
-                  message: failure.map(
-                    cancelledByUser: (_) => 'Cancelled',
-                    serverError: (_) => 'Server error',
-                    emailAlreadyInUse: (_) => 'Email already in use',
-                    invalidEmailAndPasswordCombination: (_) =>
-                        'Invalid email and password combination',
-                  ),
+                  message: failure.maybeMap(
+                      cancelledByUser: (_) => 'Cancelled',
+                      serverError: (_) => 'Server error',
+                      emailAlreadyInUse: (_) => 'Email already in use',
+                      invalidEmailAndPasswordCombination: (_) =>
+                          'Invalid email and password combination',
+                      orElse: () => ''),
                 ),
               );
             },

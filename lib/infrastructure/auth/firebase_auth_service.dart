@@ -102,10 +102,20 @@ class FirebaseAuthService implements IAuthRepository {
   }
 
   @override
-  Future<Either<bool, Unit>> checkEmailVerification() async {
-    await _firebaseAuth.currentUser!.reload();
-    final _isVerified = _firebaseAuth.currentUser!.emailVerified;
-    return _isVerified ? right(unit) : left(_isVerified);
+  Future<Either<AuthFailure, bool>> checkEmailVerification() async {
+    try{
+      await _firebaseAuth.currentUser!.reload();
+      final isVerified = _firebaseAuth.currentUser!.emailVerified;
+      return right(isVerified);
+    }
+    on FirebaseAuthException catch(e){
+      if(e.code =='user-not-found'){
+        return left(AuthFailure.userNotFound());
+      }
+      return left(AuthFailure.serverError(e),);
+    }
+    
+    // return _isVerified ? right(unit) : left(_isVerified);
     // try {
     //   await _firebaseAuth.currentUser!.reload();
     //   return right(optionOf(_firebaseAuth.currentUser!.emailVerified));
@@ -120,6 +130,19 @@ class FirebaseAuthService implements IAuthRepository {
       await _firebaseAuth.currentUser!.sendEmailVerification();
       return right(unit);
     } on FirebaseAuthException catch (e) {
+      return left(AuthFailure.serverError(e));
+    }
+  }
+  
+  @override
+  Future<Either<AuthFailure,Unit>> signOutWithDelete() async{
+    try{
+      await _firebaseAuth.currentUser!.delete();
+      return right(unit);
+    } on FirebaseAuthException catch(e){
+      if(e.code =='requires-recent-login'){
+        return left(AuthFailure.requiresRecentLogin());
+      }
       return left(AuthFailure.serverError(e));
     }
   }

@@ -20,18 +20,24 @@ mixin _$AuthEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() checkAuthentication,
     required TResult Function() signOut,
+    required TResult Function() signOutWithDelete,
+    required TResult Function() checkVerification,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? checkAuthentication,
     TResult Function()? signOut,
+    TResult Function()? signOutWithDelete,
+    TResult Function()? checkVerification,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? checkAuthentication,
     TResult Function()? signOut,
+    TResult Function()? signOutWithDelete,
+    TResult Function()? checkVerification,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +45,24 @@ mixin _$AuthEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(CheckAuthentication value) checkAuthentication,
     required TResult Function(SignOut value) signOut,
+    required TResult Function(SignOutWithDelete value) signOutWithDelete,
+    required TResult Function(CheckVerification value) checkVerification,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(CheckAuthentication value)? checkAuthentication,
     TResult Function(SignOut value)? signOut,
+    TResult Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult Function(CheckVerification value)? checkVerification,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CheckAuthentication value)? checkAuthentication,
     TResult Function(SignOut value)? signOut,
+    TResult Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult Function(CheckVerification value)? checkVerification,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,6 +126,8 @@ class _$CheckAuthentication implements CheckAuthentication {
   TResult when<TResult extends Object?>({
     required TResult Function() checkAuthentication,
     required TResult Function() signOut,
+    required TResult Function() signOutWithDelete,
+    required TResult Function() checkVerification,
   }) {
     return checkAuthentication();
   }
@@ -123,6 +137,8 @@ class _$CheckAuthentication implements CheckAuthentication {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? checkAuthentication,
     TResult Function()? signOut,
+    TResult Function()? signOutWithDelete,
+    TResult Function()? checkVerification,
   }) {
     return checkAuthentication?.call();
   }
@@ -132,6 +148,8 @@ class _$CheckAuthentication implements CheckAuthentication {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? checkAuthentication,
     TResult Function()? signOut,
+    TResult Function()? signOutWithDelete,
+    TResult Function()? checkVerification,
     required TResult orElse(),
   }) {
     if (checkAuthentication != null) {
@@ -145,6 +163,8 @@ class _$CheckAuthentication implements CheckAuthentication {
   TResult map<TResult extends Object?>({
     required TResult Function(CheckAuthentication value) checkAuthentication,
     required TResult Function(SignOut value) signOut,
+    required TResult Function(SignOutWithDelete value) signOutWithDelete,
+    required TResult Function(CheckVerification value) checkVerification,
   }) {
     return checkAuthentication(this);
   }
@@ -154,6 +174,8 @@ class _$CheckAuthentication implements CheckAuthentication {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(CheckAuthentication value)? checkAuthentication,
     TResult Function(SignOut value)? signOut,
+    TResult Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult Function(CheckVerification value)? checkVerification,
   }) {
     return checkAuthentication?.call(this);
   }
@@ -163,6 +185,8 @@ class _$CheckAuthentication implements CheckAuthentication {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CheckAuthentication value)? checkAuthentication,
     TResult Function(SignOut value)? signOut,
+    TResult Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult Function(CheckVerification value)? checkVerification,
     required TResult orElse(),
   }) {
     if (checkAuthentication != null) {
@@ -216,6 +240,8 @@ class _$SignOut implements SignOut {
   TResult when<TResult extends Object?>({
     required TResult Function() checkAuthentication,
     required TResult Function() signOut,
+    required TResult Function() signOutWithDelete,
+    required TResult Function() checkVerification,
   }) {
     return signOut();
   }
@@ -225,6 +251,8 @@ class _$SignOut implements SignOut {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? checkAuthentication,
     TResult Function()? signOut,
+    TResult Function()? signOutWithDelete,
+    TResult Function()? checkVerification,
   }) {
     return signOut?.call();
   }
@@ -234,6 +262,8 @@ class _$SignOut implements SignOut {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? checkAuthentication,
     TResult Function()? signOut,
+    TResult Function()? signOutWithDelete,
+    TResult Function()? checkVerification,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -247,6 +277,8 @@ class _$SignOut implements SignOut {
   TResult map<TResult extends Object?>({
     required TResult Function(CheckAuthentication value) checkAuthentication,
     required TResult Function(SignOut value) signOut,
+    required TResult Function(SignOutWithDelete value) signOutWithDelete,
+    required TResult Function(CheckVerification value) checkVerification,
   }) {
     return signOut(this);
   }
@@ -256,6 +288,8 @@ class _$SignOut implements SignOut {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(CheckAuthentication value)? checkAuthentication,
     TResult Function(SignOut value)? signOut,
+    TResult Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult Function(CheckVerification value)? checkVerification,
   }) {
     return signOut?.call(this);
   }
@@ -265,6 +299,8 @@ class _$SignOut implements SignOut {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CheckAuthentication value)? checkAuthentication,
     TResult Function(SignOut value)? signOut,
+    TResult Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult Function(CheckVerification value)? checkVerification,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -276,6 +312,240 @@ class _$SignOut implements SignOut {
 
 abstract class SignOut implements AuthEvent {
   const factory SignOut() = _$SignOut;
+}
+
+/// @nodoc
+abstract class $SignOutWithDeleteCopyWith<$Res> {
+  factory $SignOutWithDeleteCopyWith(
+          SignOutWithDelete value, $Res Function(SignOutWithDelete) then) =
+      _$SignOutWithDeleteCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SignOutWithDeleteCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res>
+    implements $SignOutWithDeleteCopyWith<$Res> {
+  _$SignOutWithDeleteCopyWithImpl(
+      SignOutWithDelete _value, $Res Function(SignOutWithDelete) _then)
+      : super(_value, (v) => _then(v as SignOutWithDelete));
+
+  @override
+  SignOutWithDelete get _value => super._value as SignOutWithDelete;
+}
+
+/// @nodoc
+
+class _$SignOutWithDelete implements SignOutWithDelete {
+  const _$SignOutWithDelete();
+
+  @override
+  String toString() {
+    return 'AuthEvent.signOutWithDelete()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SignOutWithDelete);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() checkAuthentication,
+    required TResult Function() signOut,
+    required TResult Function() signOutWithDelete,
+    required TResult Function() checkVerification,
+  }) {
+    return signOutWithDelete();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? checkAuthentication,
+    TResult Function()? signOut,
+    TResult Function()? signOutWithDelete,
+    TResult Function()? checkVerification,
+  }) {
+    return signOutWithDelete?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? checkAuthentication,
+    TResult Function()? signOut,
+    TResult Function()? signOutWithDelete,
+    TResult Function()? checkVerification,
+    required TResult orElse(),
+  }) {
+    if (signOutWithDelete != null) {
+      return signOutWithDelete();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CheckAuthentication value) checkAuthentication,
+    required TResult Function(SignOut value) signOut,
+    required TResult Function(SignOutWithDelete value) signOutWithDelete,
+    required TResult Function(CheckVerification value) checkVerification,
+  }) {
+    return signOutWithDelete(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CheckAuthentication value)? checkAuthentication,
+    TResult Function(SignOut value)? signOut,
+    TResult Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult Function(CheckVerification value)? checkVerification,
+  }) {
+    return signOutWithDelete?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CheckAuthentication value)? checkAuthentication,
+    TResult Function(SignOut value)? signOut,
+    TResult Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult Function(CheckVerification value)? checkVerification,
+    required TResult orElse(),
+  }) {
+    if (signOutWithDelete != null) {
+      return signOutWithDelete(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignOutWithDelete implements AuthEvent {
+  const factory SignOutWithDelete() = _$SignOutWithDelete;
+}
+
+/// @nodoc
+abstract class $CheckVerificationCopyWith<$Res> {
+  factory $CheckVerificationCopyWith(
+          CheckVerification value, $Res Function(CheckVerification) then) =
+      _$CheckVerificationCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$CheckVerificationCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res>
+    implements $CheckVerificationCopyWith<$Res> {
+  _$CheckVerificationCopyWithImpl(
+      CheckVerification _value, $Res Function(CheckVerification) _then)
+      : super(_value, (v) => _then(v as CheckVerification));
+
+  @override
+  CheckVerification get _value => super._value as CheckVerification;
+}
+
+/// @nodoc
+
+class _$CheckVerification implements CheckVerification {
+  const _$CheckVerification();
+
+  @override
+  String toString() {
+    return 'AuthEvent.checkVerification()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is CheckVerification);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() checkAuthentication,
+    required TResult Function() signOut,
+    required TResult Function() signOutWithDelete,
+    required TResult Function() checkVerification,
+  }) {
+    return checkVerification();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? checkAuthentication,
+    TResult Function()? signOut,
+    TResult Function()? signOutWithDelete,
+    TResult Function()? checkVerification,
+  }) {
+    return checkVerification?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? checkAuthentication,
+    TResult Function()? signOut,
+    TResult Function()? signOutWithDelete,
+    TResult Function()? checkVerification,
+    required TResult orElse(),
+  }) {
+    if (checkVerification != null) {
+      return checkVerification();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CheckAuthentication value) checkAuthentication,
+    required TResult Function(SignOut value) signOut,
+    required TResult Function(SignOutWithDelete value) signOutWithDelete,
+    required TResult Function(CheckVerification value) checkVerification,
+  }) {
+    return checkVerification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CheckAuthentication value)? checkAuthentication,
+    TResult Function(SignOut value)? signOut,
+    TResult Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult Function(CheckVerification value)? checkVerification,
+  }) {
+    return checkVerification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CheckAuthentication value)? checkAuthentication,
+    TResult Function(SignOut value)? signOut,
+    TResult Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult Function(CheckVerification value)? checkVerification,
+    required TResult orElse(),
+  }) {
+    if (checkVerification != null) {
+      return checkVerification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckVerification implements AuthEvent {
+  const factory CheckVerification() = _$CheckVerification;
 }
 
 /// @nodoc

@@ -9,23 +9,50 @@ part 'auth_bloc.freezed.dart';
 
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  final IAuthRepository _authFacade;
-  AuthBloc(this._authFacade) : super(AuthState.initial()) {
+  final IAuthRepository _authRepository;
+  AuthBloc(this._authRepository) : super(AuthState.initial()) {
     on<AuthEvent>((event, emit) async {
       await event.map(
         checkAuthentication: (e) async {
-          final userOption = await _authFacade.getSignedInUser();
+          final userOption = await _authRepository.getSignedInUser();
           if (userOption.isNone()) {
             emit(const AuthState.unauthenticated());
           } else {
-            final isAuthenticated = await _authFacade.checkEmailVerification();
-            emit(isAuthenticated.fold((l) => const AuthState.emailNotVerified(),
-                (r) => const AuthState.authenticated()));
+            final isAuthenticated =
+                await _authRepository.checkEmailVerification();
+            emit(
+              isAuthenticated.fold(
+                (failure) => const AuthState.unauthenticated(),
+                (r) => r
+                    ? const AuthState.authenticated()
+                    : const AuthState.emailNotVerified(),
+              ),
+            );
           }
         },
         signOut: (e) async {
-          await _authFacade.signOut();
+          await _authRepository.signOut();
           emit(const AuthState.unauthenticated());
+        },
+        signOutWithDelete: (SignOutWithDelete value) async {
+          final signOut = await _authRepository.signOutWithDelete();
+          emit(
+            signOut.fold(
+              (failure) => state, // TODO test here
+              (r) => const AuthState.unauthenticated(),
+            ),
+          );
+        },
+        checkVerification: (_) async {
+          final verification = await _authRepository.checkEmailVerification();
+          emit(
+            verification.fold(
+              (failure) => state, // TODO test here
+              (r) => r
+                    ? const AuthState.authenticated()
+                    : const AuthState.emailNotVerified(),
+            ),
+          );
         },
       );
     });

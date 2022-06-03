@@ -7,7 +7,7 @@ abstract class IAuthRepository {
 
   Future<Either<AuthFailure, Unit>> sendEmailVerification();
 
-  Future<Either<bool, Unit>> checkEmailVerification();
+  Future<Either<AuthFailure, bool>> checkEmailVerification();
 
   //we are returning unit if everything is right
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
@@ -23,4 +23,5 @@ abstract class IAuthRepository {
   Future<Either<AuthFailure, Unit>> signInWithGoogle();
   Future<Either<AuthFailure, Unit>> forgotPassword({required EmailAddress emailAddress});
   Future<void> signOut();
+  Future<Either<AuthFailure,Unit>> signOutWithDelete();
 }

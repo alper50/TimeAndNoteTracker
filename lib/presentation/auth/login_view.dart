@@ -23,13 +23,13 @@ class LoginView extends StatelessWidget {
             (failure) {
               ScaffoldMessenger.of(context).showSnackBar(
                 displaySnackBar(
-                  message: failure.map(
-                    cancelledByUser: (_) => 'Cancelled',
-                    serverError: (_) => 'Server error',
-                    emailAlreadyInUse: (_) => 'Email already in use',
-                    invalidEmailAndPasswordCombination: (_) =>
-                        'Invalid email and password combination',
-                  ),
+                  message: failure.maybeMap(
+                      cancelledByUser: (_) => 'Cancelled',
+                      serverError: (_) => 'Server error',
+                      emailAlreadyInUse: (_) => 'Email already in use',
+                      invalidEmailAndPasswordCombination: (_) =>
+                          'Invalid email and password combination',
+                      orElse: () => ''),
                 ),
               );
             },
@@ -68,8 +68,10 @@ class LoginView extends StatelessWidget {
                         .value
                         .fold(
                           (f) => f.maybeMap(
-                            auth: (value) => value.failedValue.maybeMap(invalidEmail: (_) => 'Invalid Email',
-                            orElse: () => null,),
+                            auth: (value) => value.failedValue.maybeMap(
+                              invalidEmail: (_) => 'Invalid Email',
+                              orElse: () => null,
+                            ),
                             orElse: () => null,
                           ),
                           (_) => null,
@@ -89,8 +91,10 @@ class LoginView extends StatelessWidget {
                           .value
                           .fold(
                             (f) => f.maybeMap(
-                              auth: (value) => value.failedValue.maybeMap(passwordMinLength: (_) => 'Short Password',
-                              orElse: () => null,),
+                              auth: (value) => value.failedValue.maybeMap(
+                                passwordMinLength: (_) => 'Short Password',
+                                orElse: () => null,
+                              ),
                               orElse: () => null,
                             ),
                             (_) => null,
