@@ -566,14 +566,167 @@ class $TodoItemTable extends TodoItem
   }
 }
 
+class AppInformationData extends DataClass
+    implements Insertable<AppInformationData> {
+  final bool isOnboardShowed;
+  AppInformationData({required this.isOnboardShowed});
+  factory AppInformationData.fromData(Map<String, dynamic> data,
+      {String? prefix}) {
+    final effectivePrefix = prefix ?? '';
+    return AppInformationData(
+      isOnboardShowed: const BoolType().mapFromDatabaseResponse(
+          data['${effectivePrefix}is_onboard_showed'])!,
+    );
+  }
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['is_onboard_showed'] = Variable<bool>(isOnboardShowed);
+    return map;
+  }
+
+  AppInformationCompanion toCompanion(bool nullToAbsent) {
+    return AppInformationCompanion(
+      isOnboardShowed: Value(isOnboardShowed),
+    );
+  }
+
+  factory AppInformationData.fromJson(Map<String, dynamic> json,
+      {ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return AppInformationData(
+      isOnboardShowed: serializer.fromJson<bool>(json['isOnboardShowed']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'isOnboardShowed': serializer.toJson<bool>(isOnboardShowed),
+    };
+  }
+
+  AppInformationData copyWith({bool? isOnboardShowed}) => AppInformationData(
+        isOnboardShowed: isOnboardShowed ?? this.isOnboardShowed,
+      );
+  @override
+  String toString() {
+    return (StringBuffer('AppInformationData(')
+          ..write('isOnboardShowed: $isOnboardShowed')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => isOnboardShowed.hashCode;
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is AppInformationData &&
+          other.isOnboardShowed == this.isOnboardShowed);
+}
+
+class AppInformationCompanion extends UpdateCompanion<AppInformationData> {
+  final Value<bool> isOnboardShowed;
+  const AppInformationCompanion({
+    this.isOnboardShowed = const Value.absent(),
+  });
+  AppInformationCompanion.insert({
+    this.isOnboardShowed = const Value.absent(),
+  });
+  static Insertable<AppInformationData> custom({
+    Expression<bool>? isOnboardShowed,
+  }) {
+    return RawValuesInsertable({
+      if (isOnboardShowed != null) 'is_onboard_showed': isOnboardShowed,
+    });
+  }
+
+  AppInformationCompanion copyWith({Value<bool>? isOnboardShowed}) {
+    return AppInformationCompanion(
+      isOnboardShowed: isOnboardShowed ?? this.isOnboardShowed,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (isOnboardShowed.present) {
+      map['is_onboard_showed'] = Variable<bool>(isOnboardShowed.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('AppInformationCompanion(')
+          ..write('isOnboardShowed: $isOnboardShowed')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $AppInformationTable extends AppInformation
+    with TableInfo<$AppInformationTable, AppInformationData> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $AppInformationTable(this.attachedDatabase, [this._alias]);
+  final VerificationMeta _isOnboardShowedMeta =
+      const VerificationMeta('isOnboardShowed');
+  @override
+  late final GeneratedColumn<bool?> isOnboardShowed = GeneratedColumn<bool?>(
+      'is_onboard_showed', aliasedName, false,
+      type: const BoolType(),
+      requiredDuringInsert: false,
+      defaultConstraints: 'CHECK (is_onboard_showed IN (0, 1))',
+      defaultValue: const Constant(false));
+  @override
+  List<GeneratedColumn> get $columns => [isOnboardShowed];
+  @override
+  String get aliasedName => _alias ?? 'appInformation';
+  @override
+  String get actualTableName => 'appInformation';
+  @override
+  VerificationContext validateIntegrity(Insertable<AppInformationData> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('is_onboard_showed')) {
+      context.handle(
+          _isOnboardShowedMeta,
+          isOnboardShowed.isAcceptableOrUnknown(
+              data['is_onboard_showed']!, _isOnboardShowedMeta));
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => <GeneratedColumn>{};
+  @override
+  AppInformationData map(Map<String, dynamic> data, {String? tablePrefix}) {
+    return AppInformationData.fromData(data,
+        prefix: tablePrefix != null ? '$tablePrefix.' : null);
+  }
+
+  @override
+  $AppInformationTable createAlias(String alias) {
+    return $AppInformationTable(attachedDatabase, alias);
+  }
+}
+
 abstract class _$MyDatabase extends GeneratedDatabase {
   _$MyDatabase(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
   late final $NoteTable note = $NoteTable(this);
   late final $TodoItemTable todoItem = $TodoItemTable(this);
+  late final $AppInformationTable appInformation = $AppInformationTable(this);
   late final NoteLocaleService noteLocaleService =
       NoteLocaleService(this as MyDatabase);
+  late final AuthLocalService authLocalService =
+      AuthLocalService(this as MyDatabase);
   @override
   Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
   @override
-  List<DatabaseSchemaEntity> get allSchemaEntities => [note, todoItem];
+  List<DatabaseSchemaEntity> get allSchemaEntities =>
+      [note, todoItem, appInformation];
 }

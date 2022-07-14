@@ -34,18 +34,6 @@ abstract class NoteDTO implements _$NoteDTO {
     );
   }
 
-  // factory NoteDTO.fromDatabase(NoteTableData note) {
-  //   return NoteDTO(
-  //     id: note.id, TODO
-  //     noteText: note.noteText,
-  //     todoItems: note.todoItems
-  //         .getValueOrCrash()
-  //         .map((todoItem) => TodoItemDTO.fromDomain(todoItem))
-  //         .toList(),
-  //     lastUpdatedTime: DateTime(2022, 04, 22),
-  //   );
-  // }
-
   Note toDomain() {
     return Note(
       id: UniqueId.fromString(id),
@@ -66,7 +54,7 @@ abstract class NoteDTO implements _$NoteDTO {
   static NoteData toDB({required Note note}) {
     return NoteData(
       id: note.id.getValueOrCrash(),
-      noteText: note.noteBody.getValueOrCrash(),
+      noteText: jsonEncode(note.noteEditorBody) /*note.noteBody.getValueOrCrash()*/,
       noteEditorText: jsonEncode(note.noteEditorBody),
       lastUpdatedTime: DateTime(2022),
     );

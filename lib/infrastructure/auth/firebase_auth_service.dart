@@ -2,13 +2,13 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide User;
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
-import 'package:timenotetracker/domain/auth/%C4%B1_auth_repository.dart';
+import 'package:timenotetracker/domain/auth/i_auth_remote_repository.dart';
 import 'package:timenotetracker/domain/auth/auth_value_objects.dart';
 import 'package:timenotetracker/domain/auth/auth_failure.dart';
 
 // IAuthMethods is a abstract class so when we call IAuthMethods in DI we need to return FirebaseAuthService
-@LazySingleton(as: IAuthRepository)
-class FirebaseAuthService implements IAuthRepository {
+@LazySingleton(as: IAuthRemoteRepository)
+class FirebaseAuthService implements IAuthRemoteRepository {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
 
@@ -111,6 +111,9 @@ class FirebaseAuthService implements IAuthRepository {
     on FirebaseAuthException catch(e){
       if(e.code =='user-not-found'){
         return left(AuthFailure.userNotFound());
+      }
+      else if(e.code =='network-request-failed'){
+        return left(AuthFailure.serverError(e),); //TODO NETWORK REQUEESE GÖRE BİR ŞEY
       }
       return left(AuthFailure.serverError(e),);
     }

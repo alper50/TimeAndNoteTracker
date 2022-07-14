@@ -19,38 +19,44 @@ mixin _$NoteFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Note? initialNote) initialize,
-    required TResult Function() saveNote,
+    required TResult Function() updateNote,
+    required TResult Function() createNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function()? saveNote,
+    TResult Function()? updateNote,
+    TResult Function()? createNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function()? saveNote,
+    TResult Function()? updateNote,
+    TResult Function()? createNote,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialize value) initialize,
-    required TResult Function(_SaveNote value) saveNote,
+    required TResult Function(_UpdateNote value) updateNote,
+    required TResult Function(_CreateNote value) createNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
-    TResult Function(_SaveNote value)? saveNote,
+    TResult Function(_UpdateNote value)? updateNote,
+    TResult Function(_CreateNote value)? createNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
-    TResult Function(_SaveNote value)? saveNote,
+    TResult Function(_UpdateNote value)? updateNote,
+    TResult Function(_CreateNote value)? createNote,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -152,7 +158,8 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Note? initialNote) initialize,
-    required TResult Function() saveNote,
+    required TResult Function() updateNote,
+    required TResult Function() createNote,
   }) {
     return initialize(initialNote);
   }
@@ -161,7 +168,8 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function()? saveNote,
+    TResult Function()? updateNote,
+    TResult Function()? createNote,
   }) {
     return initialize?.call(initialNote);
   }
@@ -170,7 +178,8 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function()? saveNote,
+    TResult Function()? updateNote,
+    TResult Function()? createNote,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -183,7 +192,8 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialize value) initialize,
-    required TResult Function(_SaveNote value) saveNote,
+    required TResult Function(_UpdateNote value) updateNote,
+    required TResult Function(_CreateNote value) createNote,
   }) {
     return initialize(this);
   }
@@ -192,7 +202,8 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
-    TResult Function(_SaveNote value)? saveNote,
+    TResult Function(_UpdateNote value)? updateNote,
+    TResult Function(_CreateNote value)? createNote,
   }) {
     return initialize?.call(this);
   }
@@ -201,7 +212,8 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
-    TResult Function(_SaveNote value)? saveNote,
+    TResult Function(_UpdateNote value)? updateNote,
+    TResult Function(_CreateNote value)? createNote,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -221,35 +233,37 @@ abstract class _Initialize implements NoteFormEvent {
 }
 
 /// @nodoc
-abstract class _$SaveNoteCopyWith<$Res> {
-  factory _$SaveNoteCopyWith(_SaveNote value, $Res Function(_SaveNote) then) =
-      __$SaveNoteCopyWithImpl<$Res>;
+abstract class _$UpdateNoteCopyWith<$Res> {
+  factory _$UpdateNoteCopyWith(
+          _UpdateNote value, $Res Function(_UpdateNote) then) =
+      __$UpdateNoteCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SaveNoteCopyWithImpl<$Res> extends _$NoteFormEventCopyWithImpl<$Res>
-    implements _$SaveNoteCopyWith<$Res> {
-  __$SaveNoteCopyWithImpl(_SaveNote _value, $Res Function(_SaveNote) _then)
-      : super(_value, (v) => _then(v as _SaveNote));
+class __$UpdateNoteCopyWithImpl<$Res> extends _$NoteFormEventCopyWithImpl<$Res>
+    implements _$UpdateNoteCopyWith<$Res> {
+  __$UpdateNoteCopyWithImpl(
+      _UpdateNote _value, $Res Function(_UpdateNote) _then)
+      : super(_value, (v) => _then(v as _UpdateNote));
 
   @override
-  _SaveNote get _value => super._value as _SaveNote;
+  _UpdateNote get _value => super._value as _UpdateNote;
 }
 
 /// @nodoc
 
-class _$_SaveNote implements _SaveNote {
-  const _$_SaveNote();
+class _$_UpdateNote implements _UpdateNote {
+  const _$_UpdateNote();
 
   @override
   String toString() {
-    return 'NoteFormEvent.saveNote()';
+    return 'NoteFormEvent.updateNote()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SaveNote);
+        (other.runtimeType == runtimeType && other is _UpdateNote);
   }
 
   @override
@@ -259,29 +273,32 @@ class _$_SaveNote implements _SaveNote {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Note? initialNote) initialize,
-    required TResult Function() saveNote,
+    required TResult Function() updateNote,
+    required TResult Function() createNote,
   }) {
-    return saveNote();
+    return updateNote();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function()? saveNote,
+    TResult Function()? updateNote,
+    TResult Function()? createNote,
   }) {
-    return saveNote?.call();
+    return updateNote?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function()? saveNote,
+    TResult Function()? updateNote,
+    TResult Function()? createNote,
     required TResult orElse(),
   }) {
-    if (saveNote != null) {
-      return saveNote();
+    if (updateNote != null) {
+      return updateNote();
     }
     return orElse();
   }
@@ -290,36 +307,149 @@ class _$_SaveNote implements _SaveNote {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialize value) initialize,
-    required TResult Function(_SaveNote value) saveNote,
+    required TResult Function(_UpdateNote value) updateNote,
+    required TResult Function(_CreateNote value) createNote,
   }) {
-    return saveNote(this);
+    return updateNote(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
-    TResult Function(_SaveNote value)? saveNote,
+    TResult Function(_UpdateNote value)? updateNote,
+    TResult Function(_CreateNote value)? createNote,
   }) {
-    return saveNote?.call(this);
+    return updateNote?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
-    TResult Function(_SaveNote value)? saveNote,
+    TResult Function(_UpdateNote value)? updateNote,
+    TResult Function(_CreateNote value)? createNote,
     required TResult orElse(),
   }) {
-    if (saveNote != null) {
-      return saveNote(this);
+    if (updateNote != null) {
+      return updateNote(this);
     }
     return orElse();
   }
 }
 
-abstract class _SaveNote implements NoteFormEvent {
-  const factory _SaveNote() = _$_SaveNote;
+abstract class _UpdateNote implements NoteFormEvent {
+  const factory _UpdateNote() = _$_UpdateNote;
+}
+
+/// @nodoc
+abstract class _$CreateNoteCopyWith<$Res> {
+  factory _$CreateNoteCopyWith(
+          _CreateNote value, $Res Function(_CreateNote) then) =
+      __$CreateNoteCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$CreateNoteCopyWithImpl<$Res> extends _$NoteFormEventCopyWithImpl<$Res>
+    implements _$CreateNoteCopyWith<$Res> {
+  __$CreateNoteCopyWithImpl(
+      _CreateNote _value, $Res Function(_CreateNote) _then)
+      : super(_value, (v) => _then(v as _CreateNote));
+
+  @override
+  _CreateNote get _value => super._value as _CreateNote;
+}
+
+/// @nodoc
+
+class _$_CreateNote implements _CreateNote {
+  const _$_CreateNote();
+
+  @override
+  String toString() {
+    return 'NoteFormEvent.createNote()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _CreateNote);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Note? initialNote) initialize,
+    required TResult Function() updateNote,
+    required TResult Function() createNote,
+  }) {
+    return createNote();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Note? initialNote)? initialize,
+    TResult Function()? updateNote,
+    TResult Function()? createNote,
+  }) {
+    return createNote?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Note? initialNote)? initialize,
+    TResult Function()? updateNote,
+    TResult Function()? createNote,
+    required TResult orElse(),
+  }) {
+    if (createNote != null) {
+      return createNote();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialize value) initialize,
+    required TResult Function(_UpdateNote value) updateNote,
+    required TResult Function(_CreateNote value) createNote,
+  }) {
+    return createNote(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialize value)? initialize,
+    TResult Function(_UpdateNote value)? updateNote,
+    TResult Function(_CreateNote value)? createNote,
+  }) {
+    return createNote?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialize value)? initialize,
+    TResult Function(_UpdateNote value)? updateNote,
+    TResult Function(_CreateNote value)? createNote,
+    required TResult orElse(),
+  }) {
+    if (createNote != null) {
+      return createNote(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CreateNote implements NoteFormEvent {
+  const factory _CreateNote() = _$_CreateNote;
 }
 
 /// @nodoc

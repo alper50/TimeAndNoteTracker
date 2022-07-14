@@ -78,8 +78,8 @@ class MyRouter extends _i10.RootStackRouter {
 
   @override
   List<_i10.RouteConfig> get routes => [
-        _i10.RouteConfig(SplashView.name, path: '/splash-view'),
-        _i10.RouteConfig(OnboardView.name, path: '/'),
+        _i10.RouteConfig(SplashView.name, path: '/'),
+        _i10.RouteConfig(OnboardView.name, path: '/onboard-view'),
         _i10.RouteConfig(AuthenticationView.name, path: '/authentication-view'),
         _i10.RouteConfig(VerifyEmailView.name, path: '/verify-email-view'),
         _i10.RouteConfig(NoteView.name, path: '/note-view'),
@@ -97,7 +97,7 @@ class MyRouter extends _i10.RootStackRouter {
 /// generated route for
 /// [_i1.SplashView]
 class SplashView extends _i10.PageRouteInfo<void> {
-  const SplashView() : super(SplashView.name, path: '/splash-view');
+  const SplashView() : super(SplashView.name, path: '/');
 
   static const String name = 'SplashView';
 }
@@ -105,7 +105,7 @@ class SplashView extends _i10.PageRouteInfo<void> {
 /// generated route for
 /// [_i2.OnboardView]
 class OnboardView extends _i10.PageRouteInfo<void> {
-  const OnboardView() : super(OnboardView.name, path: '/');
+  const OnboardView() : super(OnboardView.name, path: '/onboard-view');
 
   static const String name = 'OnboardView';
 }

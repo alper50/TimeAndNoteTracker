@@ -1,7 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:timenotetracker/domain/auth/%C4%B1_auth_repository.dart';
+import 'package:timenotetracker/domain/auth/i_auth_local_repository.dart';
+import 'package:timenotetracker/domain/auth/i_auth_remote_repository.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -9,17 +10,23 @@ part 'auth_bloc.freezed.dart';
 
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  final IAuthRepository _authRepository;
-  AuthBloc(this._authRepository) : super(AuthState.initial()) {
+  final IAuthRemoteRepository _authRemoteRepository;
+  final IAuthLocalRepository _authLocalRepository;
+  AuthBloc(this._authRemoteRepository, this._authLocalRepository)
+      : super(AuthState.initial()) {
     on<AuthEvent>((event, emit) async {
       await event.map(
         checkAuthentication: (e) async {
-          final userOption = await _authRepository.getSignedInUser();
+          final userOption = await _authRemoteRepository.getSignedInUser();
           if (userOption.isNone()) {
-            emit(const AuthState.unauthenticated());
+            final isOnboardShowed =
+                await _authLocalRepository.isOnboardShowed();
+            isOnboardShowed
+                ? emit(const AuthState.unauthenticated())
+                : emit(const AuthState.onboardNotShowed());
           } else {
             final isAuthenticated =
-                await _authRepository.checkEmailVerification();
+                await _authRemoteRepository.checkEmailVerification();
             emit(
               isAuthenticated.fold(
                 (failure) => const AuthState.unauthenticated(),
@@ -31,11 +38,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           }
         },
         signOut: (e) async {
-          await _authRepository.signOut();
+          await _authRemoteRepository.signOut();
           emit(const AuthState.unauthenticated());
         },
         signOutWithDelete: (SignOutWithDelete value) async {
-          final signOut = await _authRepository.signOutWithDelete();
+          final signOut = await _authRemoteRepository.signOutWithDelete();
           emit(
             signOut.fold(
               (failure) => state, // TODO test here
@@ -44,13 +51,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           );
         },
         checkVerification: (_) async {
-          final verification = await _authRepository.checkEmailVerification();
+          final verification =
+              await _authRemoteRepository.checkEmailVerification();
           emit(
             verification.fold(
               (failure) => state, // TODO test here
               (r) => r
-                    ? const AuthState.authenticated()
-                    : const AuthState.emailNotVerified(),
+                  ? const AuthState.authenticated()
+                  : const AuthState.emailNotVerified(),
             ),
           );
         },

@@ -43,7 +43,7 @@ class NoteOverviewBody extends StatelessWidget {
                       ),
                     );
                   },
-                  child: NoteSuccesCard(note: currentNote),
+                  child: NoteSuccesCard(note: currentNote,),
                 );
               }
             },

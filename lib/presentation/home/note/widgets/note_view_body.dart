@@ -11,28 +11,29 @@ class NoteViewBody extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  late QuillController _controller;
+  late final QuillController _controller;
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<NoteFormBloc, NoteFormState>(
       builder: (context, state) {
         return state.maybeMap(
-            initial: (_) => Container(),
-            loading: (_) => Center(
-                  child: MyCircularProgressIndicator(),
-                ),
-            loadFailure: (_) => NoteFailureView(
-                  onPressed: () {},
-                ),
-            orElse: () => Container(),
-            loadSucces: (e) {
-              _controller = QuillController(
-                document: Document.fromJson(e.note.noteEditorBody),
-                selection: TextSelection.collapsed(offset: 0),
-              );
-              return NoteSuccesView(controller: _controller);
-            });
+          initial: (_) => Container(),
+          loading: (_) => Center(
+            child: MyCircularProgressIndicator(),
+          ),
+          loadFailure: (_) => NoteFailureView(
+            onPressed: () {},
+          ),
+          orElse: () => Container(),
+          loadSucces: (e) {
+            _controller = QuillController(
+              document: Document.fromJson(e.note.noteEditorBody),
+              selection: TextSelection.collapsed(offset: 0),
+            );
+            return NoteSuccesView(controller: _controller);
+          },
+        );
       },
     );
   }
@@ -49,30 +50,40 @@ class NoteSuccesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        QuillToolbar.basic(
-          controller: _controller,
-          multiRowsDisplay: false,
-          dialogTheme: QuillDialogTheme(
-            dialogBackgroundColor: MyColors.lightPrimaryColor,
-          ),
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          context.read<NoteFormBloc>().add(NoteFormEvent.createNote());
+        },
+        child: Icon(
+          Icons.check_rounded,
         ),
-        Expanded(
-          child: Container(
-            child: QuillEditor(
-              padding: EdgeInsets.zero,
-              controller: _controller,
-              readOnly: false,
-              autoFocus: false,
-              expands: false,
-              scrollable: true,
-              focusNode: FocusNode(),
-              scrollController: ScrollController(),
+      ),
+      body: Column(
+        children: [
+          QuillToolbar.basic(
+            controller: _controller,
+            multiRowsDisplay: false,
+            dialogTheme: QuillDialogTheme(
+              dialogBackgroundColor: MyColors.lightPrimaryColor,
             ),
           ),
-        )
-      ],
+          Expanded(
+            child: Container(
+              child: QuillEditor(
+                padding: EdgeInsets.zero,
+                controller: _controller,
+                readOnly: false,
+                autoFocus: false,
+                expands: false,
+                scrollable: true,
+                focusNode: FocusNode(),
+                scrollController: ScrollController(),
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

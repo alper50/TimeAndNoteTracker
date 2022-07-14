@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/note/noteFormBloc/note_form_bloc.dart';
@@ -29,19 +30,14 @@ class NoteView extends StatelessWidget {
                   ),
                 );
               },
+              saveSucces: (state){
+                AutoRouter.of(context).pop();
+              },
               orElse: () {});
         },
-        child: Scaffold(
-          resizeToAvoidBottomInset: false,
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {},
-            child: Icon(
-              Icons.check_rounded,
-            ),
-          ),
-          body: NoteViewBody(),
-        ),
+        child: NoteViewBody(),
       )),
     );
   }
 }
+

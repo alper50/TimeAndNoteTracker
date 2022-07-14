@@ -67,6 +67,6 @@ class NoteLocaleService extends DatabaseAccessor<MyDatabase>
   }
 
   Future deleteNote(Insertable<NoteData> noteToBeDeleted) {
-    return into(note).insert(noteToBeDeleted);
+    return delete(note).delete(noteToBeDeleted);
   }
 }

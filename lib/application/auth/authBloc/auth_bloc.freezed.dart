@@ -556,6 +556,7 @@ mixin _$AuthState {
     required TResult Function() authenticated,
     required TResult Function() emailNotVerified,
     required TResult Function() unauthenticated,
+    required TResult Function() onboardNotShowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -564,6 +565,7 @@ mixin _$AuthState {
     TResult Function()? authenticated,
     TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
+    TResult Function()? onboardNotShowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -572,6 +574,7 @@ mixin _$AuthState {
     TResult Function()? authenticated,
     TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
+    TResult Function()? onboardNotShowed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -581,6 +584,7 @@ mixin _$AuthState {
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(EmailNotVerified value) emailNotVerified,
     required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(OnboardNotShowed value) onboardNotShowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -589,6 +593,7 @@ mixin _$AuthState {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(OnboardNotShowed value)? onboardNotShowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -597,6 +602,7 @@ mixin _$AuthState {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(OnboardNotShowed value)? onboardNotShowed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -661,6 +667,7 @@ class _$AuthInitial implements AuthInitial {
     required TResult Function() authenticated,
     required TResult Function() emailNotVerified,
     required TResult Function() unauthenticated,
+    required TResult Function() onboardNotShowed,
   }) {
     return initial();
   }
@@ -672,6 +679,7 @@ class _$AuthInitial implements AuthInitial {
     TResult Function()? authenticated,
     TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
+    TResult Function()? onboardNotShowed,
   }) {
     return initial?.call();
   }
@@ -683,6 +691,7 @@ class _$AuthInitial implements AuthInitial {
     TResult Function()? authenticated,
     TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
+    TResult Function()? onboardNotShowed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -698,6 +707,7 @@ class _$AuthInitial implements AuthInitial {
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(EmailNotVerified value) emailNotVerified,
     required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(OnboardNotShowed value) onboardNotShowed,
   }) {
     return initial(this);
   }
@@ -709,6 +719,7 @@ class _$AuthInitial implements AuthInitial {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(OnboardNotShowed value)? onboardNotShowed,
   }) {
     return initial?.call(this);
   }
@@ -720,6 +731,7 @@ class _$AuthInitial implements AuthInitial {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(OnboardNotShowed value)? onboardNotShowed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -777,6 +789,7 @@ class _$Authenticated implements Authenticated {
     required TResult Function() authenticated,
     required TResult Function() emailNotVerified,
     required TResult Function() unauthenticated,
+    required TResult Function() onboardNotShowed,
   }) {
     return authenticated();
   }
@@ -788,6 +801,7 @@ class _$Authenticated implements Authenticated {
     TResult Function()? authenticated,
     TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
+    TResult Function()? onboardNotShowed,
   }) {
     return authenticated?.call();
   }
@@ -799,6 +813,7 @@ class _$Authenticated implements Authenticated {
     TResult Function()? authenticated,
     TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
+    TResult Function()? onboardNotShowed,
     required TResult orElse(),
   }) {
     if (authenticated != null) {
@@ -814,6 +829,7 @@ class _$Authenticated implements Authenticated {
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(EmailNotVerified value) emailNotVerified,
     required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(OnboardNotShowed value) onboardNotShowed,
   }) {
     return authenticated(this);
   }
@@ -825,6 +841,7 @@ class _$Authenticated implements Authenticated {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(OnboardNotShowed value)? onboardNotShowed,
   }) {
     return authenticated?.call(this);
   }
@@ -836,6 +853,7 @@ class _$Authenticated implements Authenticated {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(OnboardNotShowed value)? onboardNotShowed,
     required TResult orElse(),
   }) {
     if (authenticated != null) {
@@ -893,6 +911,7 @@ class _$EmailNotVerified implements EmailNotVerified {
     required TResult Function() authenticated,
     required TResult Function() emailNotVerified,
     required TResult Function() unauthenticated,
+    required TResult Function() onboardNotShowed,
   }) {
     return emailNotVerified();
   }
@@ -904,6 +923,7 @@ class _$EmailNotVerified implements EmailNotVerified {
     TResult Function()? authenticated,
     TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
+    TResult Function()? onboardNotShowed,
   }) {
     return emailNotVerified?.call();
   }
@@ -915,6 +935,7 @@ class _$EmailNotVerified implements EmailNotVerified {
     TResult Function()? authenticated,
     TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
+    TResult Function()? onboardNotShowed,
     required TResult orElse(),
   }) {
     if (emailNotVerified != null) {
@@ -930,6 +951,7 @@ class _$EmailNotVerified implements EmailNotVerified {
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(EmailNotVerified value) emailNotVerified,
     required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(OnboardNotShowed value) onboardNotShowed,
   }) {
     return emailNotVerified(this);
   }
@@ -941,6 +963,7 @@ class _$EmailNotVerified implements EmailNotVerified {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(OnboardNotShowed value)? onboardNotShowed,
   }) {
     return emailNotVerified?.call(this);
   }
@@ -952,6 +975,7 @@ class _$EmailNotVerified implements EmailNotVerified {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(OnboardNotShowed value)? onboardNotShowed,
     required TResult orElse(),
   }) {
     if (emailNotVerified != null) {
@@ -1009,6 +1033,7 @@ class _$Unauthenticated implements Unauthenticated {
     required TResult Function() authenticated,
     required TResult Function() emailNotVerified,
     required TResult Function() unauthenticated,
+    required TResult Function() onboardNotShowed,
   }) {
     return unauthenticated();
   }
@@ -1020,6 +1045,7 @@ class _$Unauthenticated implements Unauthenticated {
     TResult Function()? authenticated,
     TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
+    TResult Function()? onboardNotShowed,
   }) {
     return unauthenticated?.call();
   }
@@ -1031,6 +1057,7 @@ class _$Unauthenticated implements Unauthenticated {
     TResult Function()? authenticated,
     TResult Function()? emailNotVerified,
     TResult Function()? unauthenticated,
+    TResult Function()? onboardNotShowed,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
@@ -1046,6 +1073,7 @@ class _$Unauthenticated implements Unauthenticated {
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(EmailNotVerified value) emailNotVerified,
     required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(OnboardNotShowed value) onboardNotShowed,
   }) {
     return unauthenticated(this);
   }
@@ -1057,6 +1085,7 @@ class _$Unauthenticated implements Unauthenticated {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(OnboardNotShowed value)? onboardNotShowed,
   }) {
     return unauthenticated?.call(this);
   }
@@ -1068,6 +1097,7 @@ class _$Unauthenticated implements Unauthenticated {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(EmailNotVerified value)? emailNotVerified,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(OnboardNotShowed value)? onboardNotShowed,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
@@ -1079,4 +1109,126 @@ class _$Unauthenticated implements Unauthenticated {
 
 abstract class Unauthenticated implements AuthState {
   const factory Unauthenticated() = _$Unauthenticated;
+}
+
+/// @nodoc
+abstract class $OnboardNotShowedCopyWith<$Res> {
+  factory $OnboardNotShowedCopyWith(
+          OnboardNotShowed value, $Res Function(OnboardNotShowed) then) =
+      _$OnboardNotShowedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$OnboardNotShowedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements $OnboardNotShowedCopyWith<$Res> {
+  _$OnboardNotShowedCopyWithImpl(
+      OnboardNotShowed _value, $Res Function(OnboardNotShowed) _then)
+      : super(_value, (v) => _then(v as OnboardNotShowed));
+
+  @override
+  OnboardNotShowed get _value => super._value as OnboardNotShowed;
+}
+
+/// @nodoc
+
+class _$OnboardNotShowed implements OnboardNotShowed {
+  const _$OnboardNotShowed();
+
+  @override
+  String toString() {
+    return 'AuthState.onboardNotShowed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is OnboardNotShowed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() authenticated,
+    required TResult Function() emailNotVerified,
+    required TResult Function() unauthenticated,
+    required TResult Function() onboardNotShowed,
+  }) {
+    return onboardNotShowed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? emailNotVerified,
+    TResult Function()? unauthenticated,
+    TResult Function()? onboardNotShowed,
+  }) {
+    return onboardNotShowed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? emailNotVerified,
+    TResult Function()? unauthenticated,
+    TResult Function()? onboardNotShowed,
+    required TResult orElse(),
+  }) {
+    if (onboardNotShowed != null) {
+      return onboardNotShowed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AuthInitial value) initial,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(EmailNotVerified value) emailNotVerified,
+    required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(OnboardNotShowed value) onboardNotShowed,
+  }) {
+    return onboardNotShowed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AuthInitial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(OnboardNotShowed value)? onboardNotShowed,
+  }) {
+    return onboardNotShowed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AuthInitial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(OnboardNotShowed value)? onboardNotShowed,
+    required TResult orElse(),
+  }) {
+    if (onboardNotShowed != null) {
+      return onboardNotShowed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnboardNotShowed implements AuthState {
+  const factory OnboardNotShowed() = _$OnboardNotShowed;
 }

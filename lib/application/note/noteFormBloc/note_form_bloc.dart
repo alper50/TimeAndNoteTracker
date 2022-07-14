@@ -15,25 +15,39 @@ class NoteFormBloc extends Bloc<NoteFormEvent, NoteFormState> {
 
   NoteFormBloc(this._iNoteRepository) : super(NoteFormState.initial()) {
     on<NoteFormEvent>((event, emit) async {
-      event.map(
-        initialize: (e) async {
-          emit(NoteFormState.loading());
-          if (e.initialNote != null) {
-            final result = await _iNoteRepository
-                .getNoteById(e.initialNote!.id.getValueOrCrash());
+      await event.map(
+          initialize: (e) async {
+            emit(NoteFormState.loading());
+            if (e.initialNote != null) {
+              final result = await _iNoteRepository
+                  .getNoteById(e.initialNote!.id.getValueOrCrash());
+              
+              result.fold(
+                (failure) => emit(NoteFormState.loadFailure(failure)),
+                (note) => emit(
+                  NoteFormState.loadSucces(note),
+                ),
+              );
+            } else {
+              emit(
+                NoteFormState.loadSucces(
+                  Note.defaultNote(),
+                ),
+              );
+            }
+          },
+          createNote: (e) async {
+            emit(NoteFormState.loading());
+            final result =
+                await _iNoteRepository.createNote(Note.defaultNote());
             result.fold(
-              (failure) => emit(NoteFormState.loadFailure(failure)),
-              (note) => emit(
-                NoteFormState.loadSucces(note),
+              (l) => emit(NoteFormState.saveFailure(l)),
+              (r) => emit(
+                NoteFormState.saveSucces(),
               ),
             );
-          }
-          else{
-            emit(NoteFormState.loadSucces(Note.defaultNote(),),);
-          }
-        },
-        saveNote: (e){},
-      );
+          },
+          updateNote: (_UpdateNote value) {});
     });
   }
 }
