@@ -10,13 +10,11 @@ part of 'db_config.dart';
 class NoteData extends DataClass implements Insertable<NoteData> {
   final String id;
   final String noteEditorText;
-  final String noteText;
   final String? tagId;
   final DateTime lastUpdatedTime;
   NoteData(
       {required this.id,
       required this.noteEditorText,
-      required this.noteText,
       this.tagId,
       required this.lastUpdatedTime});
   factory NoteData.fromData(Map<String, dynamic> data, {String? prefix}) {
@@ -26,8 +24,6 @@ class NoteData extends DataClass implements Insertable<NoteData> {
           .mapFromDatabaseResponse(data['${effectivePrefix}id'])!,
       noteEditorText: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}note_editor_text'])!,
-      noteText: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}note_text'])!,
       tagId: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}tag_id']),
       lastUpdatedTime: const DateTimeType().mapFromDatabaseResponse(
@@ -39,7 +35,6 @@ class NoteData extends DataClass implements Insertable<NoteData> {
     final map = <String, Expression>{};
     map['id'] = Variable<String>(id);
     map['note_editor_text'] = Variable<String>(noteEditorText);
-    map['note_text'] = Variable<String>(noteText);
     if (!nullToAbsent || tagId != null) {
       map['tag_id'] = Variable<String?>(tagId);
     }
@@ -51,7 +46,6 @@ class NoteData extends DataClass implements Insertable<NoteData> {
     return NoteCompanion(
       id: Value(id),
       noteEditorText: Value(noteEditorText),
-      noteText: Value(noteText),
       tagId:
           tagId == null && nullToAbsent ? const Value.absent() : Value(tagId),
       lastUpdatedTime: Value(lastUpdatedTime),
@@ -64,7 +58,6 @@ class NoteData extends DataClass implements Insertable<NoteData> {
     return NoteData(
       id: serializer.fromJson<String>(json['id']),
       noteEditorText: serializer.fromJson<String>(json['noteEditorText']),
-      noteText: serializer.fromJson<String>(json['noteText']),
       tagId: serializer.fromJson<String?>(json['tagId']),
       lastUpdatedTime: serializer.fromJson<DateTime>(json['lastUpdatedTime']),
     );
@@ -75,7 +68,6 @@ class NoteData extends DataClass implements Insertable<NoteData> {
     return <String, dynamic>{
       'id': serializer.toJson<String>(id),
       'noteEditorText': serializer.toJson<String>(noteEditorText),
-      'noteText': serializer.toJson<String>(noteText),
       'tagId': serializer.toJson<String?>(tagId),
       'lastUpdatedTime': serializer.toJson<DateTime>(lastUpdatedTime),
     };
@@ -84,13 +76,11 @@ class NoteData extends DataClass implements Insertable<NoteData> {
   NoteData copyWith(
           {String? id,
           String? noteEditorText,
-          String? noteText,
           String? tagId,
           DateTime? lastUpdatedTime}) =>
       NoteData(
         id: id ?? this.id,
         noteEditorText: noteEditorText ?? this.noteEditorText,
-        noteText: noteText ?? this.noteText,
         tagId: tagId ?? this.tagId,
         lastUpdatedTime: lastUpdatedTime ?? this.lastUpdatedTime,
       );
@@ -99,7 +89,6 @@ class NoteData extends DataClass implements Insertable<NoteData> {
     return (StringBuffer('NoteData(')
           ..write('id: $id, ')
           ..write('noteEditorText: $noteEditorText, ')
-          ..write('noteText: $noteText, ')
           ..write('tagId: $tagId, ')
           ..write('lastUpdatedTime: $lastUpdatedTime')
           ..write(')'))
@@ -107,15 +96,13 @@ class NoteData extends DataClass implements Insertable<NoteData> {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(id, noteEditorText, noteText, tagId, lastUpdatedTime);
+  int get hashCode => Object.hash(id, noteEditorText, tagId, lastUpdatedTime);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       (other is NoteData &&
           other.id == this.id &&
           other.noteEditorText == this.noteEditorText &&
-          other.noteText == this.noteText &&
           other.tagId == this.tagId &&
           other.lastUpdatedTime == this.lastUpdatedTime);
 }
@@ -123,36 +110,30 @@ class NoteData extends DataClass implements Insertable<NoteData> {
 class NoteCompanion extends UpdateCompanion<NoteData> {
   final Value<String> id;
   final Value<String> noteEditorText;
-  final Value<String> noteText;
   final Value<String?> tagId;
   final Value<DateTime> lastUpdatedTime;
   const NoteCompanion({
     this.id = const Value.absent(),
     this.noteEditorText = const Value.absent(),
-    this.noteText = const Value.absent(),
     this.tagId = const Value.absent(),
     this.lastUpdatedTime = const Value.absent(),
   });
   NoteCompanion.insert({
     required String id,
     required String noteEditorText,
-    required String noteText,
     this.tagId = const Value.absent(),
     this.lastUpdatedTime = const Value.absent(),
   })  : id = Value(id),
-        noteEditorText = Value(noteEditorText),
-        noteText = Value(noteText);
+        noteEditorText = Value(noteEditorText);
   static Insertable<NoteData> custom({
     Expression<String>? id,
     Expression<String>? noteEditorText,
-    Expression<String>? noteText,
     Expression<String?>? tagId,
     Expression<DateTime>? lastUpdatedTime,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
       if (noteEditorText != null) 'note_editor_text': noteEditorText,
-      if (noteText != null) 'note_text': noteText,
       if (tagId != null) 'tag_id': tagId,
       if (lastUpdatedTime != null) 'last_updated_time': lastUpdatedTime,
     });
@@ -161,13 +142,11 @@ class NoteCompanion extends UpdateCompanion<NoteData> {
   NoteCompanion copyWith(
       {Value<String>? id,
       Value<String>? noteEditorText,
-      Value<String>? noteText,
       Value<String?>? tagId,
       Value<DateTime>? lastUpdatedTime}) {
     return NoteCompanion(
       id: id ?? this.id,
       noteEditorText: noteEditorText ?? this.noteEditorText,
-      noteText: noteText ?? this.noteText,
       tagId: tagId ?? this.tagId,
       lastUpdatedTime: lastUpdatedTime ?? this.lastUpdatedTime,
     );
@@ -181,9 +160,6 @@ class NoteCompanion extends UpdateCompanion<NoteData> {
     }
     if (noteEditorText.present) {
       map['note_editor_text'] = Variable<String>(noteEditorText.value);
-    }
-    if (noteText.present) {
-      map['note_text'] = Variable<String>(noteText.value);
     }
     if (tagId.present) {
       map['tag_id'] = Variable<String?>(tagId.value);
@@ -199,7 +175,6 @@ class NoteCompanion extends UpdateCompanion<NoteData> {
     return (StringBuffer('NoteCompanion(')
           ..write('id: $id, ')
           ..write('noteEditorText: $noteEditorText, ')
-          ..write('noteText: $noteText, ')
           ..write('tagId: $tagId, ')
           ..write('lastUpdatedTime: $lastUpdatedTime')
           ..write(')'))
@@ -227,14 +202,6 @@ class $NoteTable extends Note with TableInfo<$NoteTable, NoteData> {
           ),
           type: const StringType(),
           requiredDuringInsert: true);
-  final VerificationMeta _noteTextMeta = const VerificationMeta('noteText');
-  @override
-  late final GeneratedColumn<String?> noteText = GeneratedColumn<String?>(
-      'note_text', aliasedName, false,
-      additionalChecks: GeneratedColumn.checkTextLength(
-          minTextLength: 1, maxTextLength: 1000),
-      type: const StringType(),
-      requiredDuringInsert: true);
   final VerificationMeta _tagIdMeta = const VerificationMeta('tagId');
   @override
   late final GeneratedColumn<String?> tagId = GeneratedColumn<String?>(
@@ -252,7 +219,7 @@ class $NoteTable extends Note with TableInfo<$NoteTable, NoteData> {
           defaultValue: currentDateAndTime);
   @override
   List<GeneratedColumn> get $columns =>
-      [id, noteEditorText, noteText, tagId, lastUpdatedTime];
+      [id, noteEditorText, tagId, lastUpdatedTime];
   @override
   String get aliasedName => _alias ?? 'noteTable';
   @override
@@ -274,12 +241,6 @@ class $NoteTable extends Note with TableInfo<$NoteTable, NoteData> {
               data['note_editor_text']!, _noteEditorTextMeta));
     } else if (isInserting) {
       context.missing(_noteEditorTextMeta);
-    }
-    if (data.containsKey('note_text')) {
-      context.handle(_noteTextMeta,
-          noteText.isAcceptableOrUnknown(data['note_text']!, _noteTextMeta));
-    } else if (isInserting) {
-      context.missing(_noteTextMeta);
     }
     if (data.containsKey('tag_id')) {
       context.handle(

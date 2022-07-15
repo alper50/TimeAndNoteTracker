@@ -20,42 +20,42 @@ abstract class NoteDTO implements _$NoteDTO {
 
   const factory NoteDTO({
     required String id,
-    required String noteText,
     required String noteEditorText,
     required DateTime lastUpdatedTime,
+    required DateTime createdTime,
   }) = _NoteDTO;
 
   factory NoteDTO.fromDomain(Note note) {
     return NoteDTO(
       id: note.id.getValueOrCrash(),
-      noteText: note.noteBody.getValueOrCrash(),
       noteEditorText: jsonEncode(note.noteEditorBody),
       lastUpdatedTime: DateTime(2022, 04, 22), //TODO make timestamp dynamic
+      createdTime: DateTime(2022, 04, 22), 
     );
   }
 
   Note toDomain() {
     return Note(
       id: UniqueId.fromString(id),
-      noteBody: NoteBody(noteText),
-      noteEditorBody: noteEditorText,
+      noteEditorBody: NoteBody(noteEditorText),
+      createdTime: createdTime,
+      lastUpdatedTime: lastUpdatedTime,
     );
   }
 
   factory NoteDTO.fromDB({required NoteData noteData}) {
     return NoteDTO(
       id: noteData.id,
-      noteText: noteData.noteText,
       noteEditorText: noteData.noteEditorText,
       lastUpdatedTime: noteData.lastUpdatedTime,
+      createdTime: noteData.lastUpdatedTime //TODO,
     );
   }
 
   static NoteData toDB({required Note note}) {
     return NoteData(
       id: note.id.getValueOrCrash(),
-      noteText: jsonEncode(note.noteEditorBody) /*note.noteBody.getValueOrCrash()*/,
-      noteEditorText: note.noteEditorBody,
+      noteEditorText: note.noteEditorBody.getValueOrCrash(),
       lastUpdatedTime: DateTime(2022),
     );
   }

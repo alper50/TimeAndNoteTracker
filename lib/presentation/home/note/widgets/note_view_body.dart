@@ -33,7 +33,7 @@ class NoteViewBody extends StatelessWidget {
           ),
           orElse: () => Container(),
           loadSucces: (e) {
-            var t = jsonDecode(e.note.noteEditorBody);
+            var t = jsonDecode(e.note.noteEditorBody.getValueOrCrash());
             _controller = QuillController(
               document: Document.fromJson(t),
               selection: TextSelection.collapsed(offset: 0),

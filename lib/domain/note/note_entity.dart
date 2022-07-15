@@ -53,18 +53,20 @@ abstract class Note implements _$Note {
   ];
   const factory Note({
     required UniqueId id,
-    required NoteBody noteBody,
-    required String noteEditorBody,
+    required NoteBody noteEditorBody,
+    required DateTime lastUpdatedTime,
+    required DateTime createdTime,
   }) = _Note;
 
   factory Note.defaultNote() => Note(
         id: UniqueId(),
-        noteBody: NoteBody(''),
-        noteEditorBody: jsonEncode(initialNote),
+        noteEditorBody: NoteBody(jsonEncode(initialNote)),
+        lastUpdatedTime: DateTime(2022, 04, 22), 
+        createdTime: DateTime(2022, 04, 22), 
       );
   // we are validation multiple valueObjects
   Option<ValueFailure<dynamic>> get checkValidError {
-    return noteBody.failureOrUnit.fold(
+    return noteEditorBody.failureOrUnit.fold(
       (f) => some(f),
       (_) => none(),
     );

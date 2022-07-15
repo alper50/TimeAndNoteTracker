@@ -7,6 +7,7 @@ import 'package:injectable/injectable.dart';
 import 'package:timenotetracker/domain/note/i_note_repository.dart';
 import 'package:timenotetracker/domain/note/note_entity.dart';
 import 'package:timenotetracker/domain/note/note_failure.dart';
+import 'package:timenotetracker/domain/note/note_value_objects.dart';
 
 part 'note_form_event.dart';
 part 'note_form_state.dart';
@@ -50,7 +51,7 @@ class NoteFormBloc extends Bloc<NoteFormEvent, NoteFormState> {
       }, updateNote: (e) async {
         emit(NoteFormState.loading());
         Note noteToBeUpdated = e.noteToBeUpdated.copyWith(
-            noteEditorBody: jsonEncode(currentDocument.toDelta().toJson()));
+            noteEditorBody: NoteBody(jsonEncode(currentDocument.toDelta().toJson())));
         final result = await _iNoteRepository.updateNote(noteToBeUpdated);
         result.fold(
           (failure) => emit(NoteFormState.saveFailure(failure)),

@@ -17,8 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Note {
   UniqueId get id => throw _privateConstructorUsedError;
-  NoteBody get noteBody => throw _privateConstructorUsedError;
-  String get noteEditorBody => throw _privateConstructorUsedError;
+  NoteBody get noteEditorBody => throw _privateConstructorUsedError;
+  DateTime get lastUpdatedTime => throw _privateConstructorUsedError;
+  DateTime get createdTime => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NoteCopyWith<Note> get copyWith => throw _privateConstructorUsedError;
@@ -28,7 +29,11 @@ mixin _$Note {
 abstract class $NoteCopyWith<$Res> {
   factory $NoteCopyWith(Note value, $Res Function(Note) then) =
       _$NoteCopyWithImpl<$Res>;
-  $Res call({UniqueId id, NoteBody noteBody, String noteEditorBody});
+  $Res call(
+      {UniqueId id,
+      NoteBody noteEditorBody,
+      DateTime lastUpdatedTime,
+      DateTime createdTime});
 }
 
 /// @nodoc
@@ -42,22 +47,27 @@ class _$NoteCopyWithImpl<$Res> implements $NoteCopyWith<$Res> {
   @override
   $Res call({
     Object? id = freezed,
-    Object? noteBody = freezed,
     Object? noteEditorBody = freezed,
+    Object? lastUpdatedTime = freezed,
+    Object? createdTime = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as UniqueId,
-      noteBody: noteBody == freezed
-          ? _value.noteBody
-          : noteBody // ignore: cast_nullable_to_non_nullable
-              as NoteBody,
       noteEditorBody: noteEditorBody == freezed
           ? _value.noteEditorBody
           : noteEditorBody // ignore: cast_nullable_to_non_nullable
-              as String,
+              as NoteBody,
+      lastUpdatedTime: lastUpdatedTime == freezed
+          ? _value.lastUpdatedTime
+          : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      createdTime: createdTime == freezed
+          ? _value.createdTime
+          : createdTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -67,7 +77,11 @@ abstract class _$NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
   factory _$NoteCopyWith(_Note value, $Res Function(_Note) then) =
       __$NoteCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId id, NoteBody noteBody, String noteEditorBody});
+  $Res call(
+      {UniqueId id,
+      NoteBody noteEditorBody,
+      DateTime lastUpdatedTime,
+      DateTime createdTime});
 }
 
 /// @nodoc
@@ -82,22 +96,27 @@ class __$NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? noteBody = freezed,
     Object? noteEditorBody = freezed,
+    Object? lastUpdatedTime = freezed,
+    Object? createdTime = freezed,
   }) {
     return _then(_Note(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as UniqueId,
-      noteBody: noteBody == freezed
-          ? _value.noteBody
-          : noteBody // ignore: cast_nullable_to_non_nullable
-              as NoteBody,
       noteEditorBody: noteEditorBody == freezed
           ? _value.noteEditorBody
           : noteEditorBody // ignore: cast_nullable_to_non_nullable
-              as String,
+              as NoteBody,
+      lastUpdatedTime: lastUpdatedTime == freezed
+          ? _value.lastUpdatedTime
+          : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      createdTime: createdTime == freezed
+          ? _value.createdTime
+          : createdTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -106,19 +125,24 @@ class __$NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res>
 
 class _$_Note extends _Note {
   const _$_Note(
-      {required this.id, required this.noteBody, required this.noteEditorBody})
+      {required this.id,
+      required this.noteEditorBody,
+      required this.lastUpdatedTime,
+      required this.createdTime})
       : super._();
 
   @override
   final UniqueId id;
   @override
-  final NoteBody noteBody;
+  final NoteBody noteEditorBody;
   @override
-  final String noteEditorBody;
+  final DateTime lastUpdatedTime;
+  @override
+  final DateTime createdTime;
 
   @override
   String toString() {
-    return 'Note(id: $id, noteBody: $noteBody, noteEditorBody: $noteEditorBody)';
+    return 'Note(id: $id, noteEditorBody: $noteEditorBody, lastUpdatedTime: $lastUpdatedTime, createdTime: $createdTime)';
   }
 
   @override
@@ -127,17 +151,21 @@ class _$_Note extends _Note {
         (other.runtimeType == runtimeType &&
             other is _Note &&
             const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.noteBody, noteBody) &&
             const DeepCollectionEquality()
-                .equals(other.noteEditorBody, noteEditorBody));
+                .equals(other.noteEditorBody, noteEditorBody) &&
+            const DeepCollectionEquality()
+                .equals(other.lastUpdatedTime, lastUpdatedTime) &&
+            const DeepCollectionEquality()
+                .equals(other.createdTime, createdTime));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(noteBody),
-      const DeepCollectionEquality().hash(noteEditorBody));
+      const DeepCollectionEquality().hash(noteEditorBody),
+      const DeepCollectionEquality().hash(lastUpdatedTime),
+      const DeepCollectionEquality().hash(createdTime));
 
   @JsonKey(ignore: true)
   @override
@@ -148,16 +176,19 @@ class _$_Note extends _Note {
 abstract class _Note extends Note {
   const factory _Note(
       {required final UniqueId id,
-      required final NoteBody noteBody,
-      required final String noteEditorBody}) = _$_Note;
+      required final NoteBody noteEditorBody,
+      required final DateTime lastUpdatedTime,
+      required final DateTime createdTime}) = _$_Note;
   const _Note._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
   @override
-  NoteBody get noteBody => throw _privateConstructorUsedError;
+  NoteBody get noteEditorBody => throw _privateConstructorUsedError;
   @override
-  String get noteEditorBody => throw _privateConstructorUsedError;
+  DateTime get lastUpdatedTime => throw _privateConstructorUsedError;
+  @override
+  DateTime get createdTime => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$NoteCopyWith<_Note> get copyWith => throw _privateConstructorUsedError;
