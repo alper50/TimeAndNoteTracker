@@ -11,7 +11,7 @@ class NoteFailureView extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          LottieBuilder.asset('assets/lottie/failure.json'),
+          SizedBox(width: 400,child: LottieBuilder.asset('assets/lottie/failure.json',fit: BoxFit.contain)),
           SizedBox(
             height: 50,
           ),

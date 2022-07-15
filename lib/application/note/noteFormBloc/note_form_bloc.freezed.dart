@@ -19,22 +19,25 @@ mixin _$NoteFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Note? initialNote) initialize,
-    required TResult Function() updateNote,
+    required TResult Function(Note noteToBeUpdated) updateNote,
     required TResult Function() createNote,
+    required TResult Function(Document doc) noteChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function()? updateNote,
+    TResult Function(Note noteToBeUpdated)? updateNote,
     TResult Function()? createNote,
+    TResult Function(Document doc)? noteChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function()? updateNote,
+    TResult Function(Note noteToBeUpdated)? updateNote,
     TResult Function()? createNote,
+    TResult Function(Document doc)? noteChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$NoteFormEvent {
     required TResult Function(_Initialize value) initialize,
     required TResult Function(_UpdateNote value) updateNote,
     required TResult Function(_CreateNote value) createNote,
+    required TResult Function(_NoteChanged value) noteChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$NoteFormEvent {
     TResult Function(_Initialize value)? initialize,
     TResult Function(_UpdateNote value)? updateNote,
     TResult Function(_CreateNote value)? createNote,
+    TResult Function(_NoteChanged value)? noteChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$NoteFormEvent {
     TResult Function(_Initialize value)? initialize,
     TResult Function(_UpdateNote value)? updateNote,
     TResult Function(_CreateNote value)? createNote,
+    TResult Function(_NoteChanged value)? noteChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -158,8 +164,9 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Note? initialNote) initialize,
-    required TResult Function() updateNote,
+    required TResult Function(Note noteToBeUpdated) updateNote,
     required TResult Function() createNote,
+    required TResult Function(Document doc) noteChanged,
   }) {
     return initialize(initialNote);
   }
@@ -168,8 +175,9 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function()? updateNote,
+    TResult Function(Note noteToBeUpdated)? updateNote,
     TResult Function()? createNote,
+    TResult Function(Document doc)? noteChanged,
   }) {
     return initialize?.call(initialNote);
   }
@@ -178,8 +186,9 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function()? updateNote,
+    TResult Function(Note noteToBeUpdated)? updateNote,
     TResult Function()? createNote,
+    TResult Function(Document doc)? noteChanged,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -194,6 +203,7 @@ class _$_Initialize implements _Initialize {
     required TResult Function(_Initialize value) initialize,
     required TResult Function(_UpdateNote value) updateNote,
     required TResult Function(_CreateNote value) createNote,
+    required TResult Function(_NoteChanged value) noteChanged,
   }) {
     return initialize(this);
   }
@@ -204,6 +214,7 @@ class _$_Initialize implements _Initialize {
     TResult Function(_Initialize value)? initialize,
     TResult Function(_UpdateNote value)? updateNote,
     TResult Function(_CreateNote value)? createNote,
+    TResult Function(_NoteChanged value)? noteChanged,
   }) {
     return initialize?.call(this);
   }
@@ -214,6 +225,7 @@ class _$_Initialize implements _Initialize {
     TResult Function(_Initialize value)? initialize,
     TResult Function(_UpdateNote value)? updateNote,
     TResult Function(_CreateNote value)? createNote,
+    TResult Function(_NoteChanged value)? noteChanged,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -237,6 +249,9 @@ abstract class _$UpdateNoteCopyWith<$Res> {
   factory _$UpdateNoteCopyWith(
           _UpdateNote value, $Res Function(_UpdateNote) then) =
       __$UpdateNoteCopyWithImpl<$Res>;
+  $Res call({Note noteToBeUpdated});
+
+  $NoteCopyWith<$Res> get noteToBeUpdated;
 }
 
 /// @nodoc
@@ -248,57 +263,91 @@ class __$UpdateNoteCopyWithImpl<$Res> extends _$NoteFormEventCopyWithImpl<$Res>
 
   @override
   _UpdateNote get _value => super._value as _UpdateNote;
+
+  @override
+  $Res call({
+    Object? noteToBeUpdated = freezed,
+  }) {
+    return _then(_UpdateNote(
+      noteToBeUpdated: noteToBeUpdated == freezed
+          ? _value.noteToBeUpdated
+          : noteToBeUpdated // ignore: cast_nullable_to_non_nullable
+              as Note,
+    ));
+  }
+
+  @override
+  $NoteCopyWith<$Res> get noteToBeUpdated {
+    return $NoteCopyWith<$Res>(_value.noteToBeUpdated, (value) {
+      return _then(_value.copyWith(noteToBeUpdated: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$_UpdateNote implements _UpdateNote {
-  const _$_UpdateNote();
+  const _$_UpdateNote({required this.noteToBeUpdated});
+
+  @override
+  final Note noteToBeUpdated;
 
   @override
   String toString() {
-    return 'NoteFormEvent.updateNote()';
+    return 'NoteFormEvent.updateNote(noteToBeUpdated: $noteToBeUpdated)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _UpdateNote);
+        (other.runtimeType == runtimeType &&
+            other is _UpdateNote &&
+            const DeepCollectionEquality()
+                .equals(other.noteToBeUpdated, noteToBeUpdated));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(noteToBeUpdated));
+
+  @JsonKey(ignore: true)
+  @override
+  _$UpdateNoteCopyWith<_UpdateNote> get copyWith =>
+      __$UpdateNoteCopyWithImpl<_UpdateNote>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Note? initialNote) initialize,
-    required TResult Function() updateNote,
+    required TResult Function(Note noteToBeUpdated) updateNote,
     required TResult Function() createNote,
+    required TResult Function(Document doc) noteChanged,
   }) {
-    return updateNote();
+    return updateNote(noteToBeUpdated);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function()? updateNote,
+    TResult Function(Note noteToBeUpdated)? updateNote,
     TResult Function()? createNote,
+    TResult Function(Document doc)? noteChanged,
   }) {
-    return updateNote?.call();
+    return updateNote?.call(noteToBeUpdated);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function()? updateNote,
+    TResult Function(Note noteToBeUpdated)? updateNote,
     TResult Function()? createNote,
+    TResult Function(Document doc)? noteChanged,
     required TResult orElse(),
   }) {
     if (updateNote != null) {
-      return updateNote();
+      return updateNote(noteToBeUpdated);
     }
     return orElse();
   }
@@ -309,6 +358,7 @@ class _$_UpdateNote implements _UpdateNote {
     required TResult Function(_Initialize value) initialize,
     required TResult Function(_UpdateNote value) updateNote,
     required TResult Function(_CreateNote value) createNote,
+    required TResult Function(_NoteChanged value) noteChanged,
   }) {
     return updateNote(this);
   }
@@ -319,6 +369,7 @@ class _$_UpdateNote implements _UpdateNote {
     TResult Function(_Initialize value)? initialize,
     TResult Function(_UpdateNote value)? updateNote,
     TResult Function(_CreateNote value)? createNote,
+    TResult Function(_NoteChanged value)? noteChanged,
   }) {
     return updateNote?.call(this);
   }
@@ -329,6 +380,7 @@ class _$_UpdateNote implements _UpdateNote {
     TResult Function(_Initialize value)? initialize,
     TResult Function(_UpdateNote value)? updateNote,
     TResult Function(_CreateNote value)? createNote,
+    TResult Function(_NoteChanged value)? noteChanged,
     required TResult orElse(),
   }) {
     if (updateNote != null) {
@@ -339,7 +391,13 @@ class _$_UpdateNote implements _UpdateNote {
 }
 
 abstract class _UpdateNote implements NoteFormEvent {
-  const factory _UpdateNote() = _$_UpdateNote;
+  const factory _UpdateNote({required final Note noteToBeUpdated}) =
+      _$_UpdateNote;
+
+  Note get noteToBeUpdated => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$UpdateNoteCopyWith<_UpdateNote> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -383,8 +441,9 @@ class _$_CreateNote implements _CreateNote {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Note? initialNote) initialize,
-    required TResult Function() updateNote,
+    required TResult Function(Note noteToBeUpdated) updateNote,
     required TResult Function() createNote,
+    required TResult Function(Document doc) noteChanged,
   }) {
     return createNote();
   }
@@ -393,8 +452,9 @@ class _$_CreateNote implements _CreateNote {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function()? updateNote,
+    TResult Function(Note noteToBeUpdated)? updateNote,
     TResult Function()? createNote,
+    TResult Function(Document doc)? noteChanged,
   }) {
     return createNote?.call();
   }
@@ -403,8 +463,9 @@ class _$_CreateNote implements _CreateNote {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Note? initialNote)? initialize,
-    TResult Function()? updateNote,
+    TResult Function(Note noteToBeUpdated)? updateNote,
     TResult Function()? createNote,
+    TResult Function(Document doc)? noteChanged,
     required TResult orElse(),
   }) {
     if (createNote != null) {
@@ -419,6 +480,7 @@ class _$_CreateNote implements _CreateNote {
     required TResult Function(_Initialize value) initialize,
     required TResult Function(_UpdateNote value) updateNote,
     required TResult Function(_CreateNote value) createNote,
+    required TResult Function(_NoteChanged value) noteChanged,
   }) {
     return createNote(this);
   }
@@ -429,6 +491,7 @@ class _$_CreateNote implements _CreateNote {
     TResult Function(_Initialize value)? initialize,
     TResult Function(_UpdateNote value)? updateNote,
     TResult Function(_CreateNote value)? createNote,
+    TResult Function(_NoteChanged value)? noteChanged,
   }) {
     return createNote?.call(this);
   }
@@ -439,6 +502,7 @@ class _$_CreateNote implements _CreateNote {
     TResult Function(_Initialize value)? initialize,
     TResult Function(_UpdateNote value)? updateNote,
     TResult Function(_CreateNote value)? createNote,
+    TResult Function(_NoteChanged value)? noteChanged,
     required TResult orElse(),
   }) {
     if (createNote != null) {
@@ -450,6 +514,151 @@ class _$_CreateNote implements _CreateNote {
 
 abstract class _CreateNote implements NoteFormEvent {
   const factory _CreateNote() = _$_CreateNote;
+}
+
+/// @nodoc
+abstract class _$NoteChangedCopyWith<$Res> {
+  factory _$NoteChangedCopyWith(
+          _NoteChanged value, $Res Function(_NoteChanged) then) =
+      __$NoteChangedCopyWithImpl<$Res>;
+  $Res call({Document doc});
+}
+
+/// @nodoc
+class __$NoteChangedCopyWithImpl<$Res> extends _$NoteFormEventCopyWithImpl<$Res>
+    implements _$NoteChangedCopyWith<$Res> {
+  __$NoteChangedCopyWithImpl(
+      _NoteChanged _value, $Res Function(_NoteChanged) _then)
+      : super(_value, (v) => _then(v as _NoteChanged));
+
+  @override
+  _NoteChanged get _value => super._value as _NoteChanged;
+
+  @override
+  $Res call({
+    Object? doc = freezed,
+  }) {
+    return _then(_NoteChanged(
+      doc == freezed
+          ? _value.doc
+          : doc // ignore: cast_nullable_to_non_nullable
+              as Document,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_NoteChanged implements _NoteChanged {
+  const _$_NoteChanged(this.doc);
+
+  @override
+  final Document doc;
+
+  @override
+  String toString() {
+    return 'NoteFormEvent.noteChanged(doc: $doc)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _NoteChanged &&
+            const DeepCollectionEquality().equals(other.doc, doc));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(doc));
+
+  @JsonKey(ignore: true)
+  @override
+  _$NoteChangedCopyWith<_NoteChanged> get copyWith =>
+      __$NoteChangedCopyWithImpl<_NoteChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Note? initialNote) initialize,
+    required TResult Function(Note noteToBeUpdated) updateNote,
+    required TResult Function() createNote,
+    required TResult Function(Document doc) noteChanged,
+  }) {
+    return noteChanged(doc);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Note? initialNote)? initialize,
+    TResult Function(Note noteToBeUpdated)? updateNote,
+    TResult Function()? createNote,
+    TResult Function(Document doc)? noteChanged,
+  }) {
+    return noteChanged?.call(doc);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Note? initialNote)? initialize,
+    TResult Function(Note noteToBeUpdated)? updateNote,
+    TResult Function()? createNote,
+    TResult Function(Document doc)? noteChanged,
+    required TResult orElse(),
+  }) {
+    if (noteChanged != null) {
+      return noteChanged(doc);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialize value) initialize,
+    required TResult Function(_UpdateNote value) updateNote,
+    required TResult Function(_CreateNote value) createNote,
+    required TResult Function(_NoteChanged value) noteChanged,
+  }) {
+    return noteChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialize value)? initialize,
+    TResult Function(_UpdateNote value)? updateNote,
+    TResult Function(_CreateNote value)? createNote,
+    TResult Function(_NoteChanged value)? noteChanged,
+  }) {
+    return noteChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialize value)? initialize,
+    TResult Function(_UpdateNote value)? updateNote,
+    TResult Function(_CreateNote value)? createNote,
+    TResult Function(_NoteChanged value)? noteChanged,
+    required TResult orElse(),
+  }) {
+    if (noteChanged != null) {
+      return noteChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NoteChanged implements NoteFormEvent {
+  const factory _NoteChanged(final Document doc) = _$_NoteChanged;
+
+  Document get doc => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$NoteChangedCopyWith<_NoteChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

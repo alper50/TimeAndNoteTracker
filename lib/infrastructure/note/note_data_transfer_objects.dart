@@ -10,7 +10,7 @@ import 'package:timenotetracker/domain/note/todo_item_entity.dart';
 import 'package:timenotetracker/infrastructure/core/db_config.dart';
 part 'note_data_transfer_objects.freezed.dart';
 
-// weu used implements instead of with because adding regular function to the dataclass requires impplements
+// we used implements instead of with because adding regular function to the dataclass requires impplements
 
 @freezed
 abstract class NoteDTO implements _$NoteDTO {
@@ -38,7 +38,7 @@ abstract class NoteDTO implements _$NoteDTO {
     return Note(
       id: UniqueId.fromString(id),
       noteBody: NoteBody(noteText),
-      noteEditorBody: jsonDecode(noteEditorText),
+      noteEditorBody: noteEditorText,
     );
   }
 
@@ -55,7 +55,7 @@ abstract class NoteDTO implements _$NoteDTO {
     return NoteData(
       id: note.id.getValueOrCrash(),
       noteText: jsonEncode(note.noteEditorBody) /*note.noteBody.getValueOrCrash()*/,
-      noteEditorText: jsonEncode(note.noteEditorBody),
+      noteEditorText: note.noteEditorBody,
       lastUpdatedTime: DateTime(2022),
     );
   }

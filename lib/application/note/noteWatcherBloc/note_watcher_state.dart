@@ -8,3 +8,4 @@ class NoteWatcherState with _$NoteWatcherState {
   const factory NoteWatcherState.loadSuccesEmptyList() = _LoadSuccesEmptyList;
   const factory NoteWatcherState.loadFailure(NoteFailure noteFailure) = _LoadFailure;
 }
+//TODO İSİMLERİN BAŞINA WATCHER EKLENECEK

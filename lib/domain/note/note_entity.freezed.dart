@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Note {
   UniqueId get id => throw _privateConstructorUsedError;
   NoteBody get noteBody => throw _privateConstructorUsedError;
-  List<dynamic> get noteEditorBody => throw _privateConstructorUsedError;
+  String get noteEditorBody => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NoteCopyWith<Note> get copyWith => throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$Note {
 abstract class $NoteCopyWith<$Res> {
   factory $NoteCopyWith(Note value, $Res Function(Note) then) =
       _$NoteCopyWithImpl<$Res>;
-  $Res call({UniqueId id, NoteBody noteBody, List<dynamic> noteEditorBody});
+  $Res call({UniqueId id, NoteBody noteBody, String noteEditorBody});
 }
 
 /// @nodoc
@@ -57,7 +57,7 @@ class _$NoteCopyWithImpl<$Res> implements $NoteCopyWith<$Res> {
       noteEditorBody: noteEditorBody == freezed
           ? _value.noteEditorBody
           : noteEditorBody // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as String,
     ));
   }
 }
@@ -67,7 +67,7 @@ abstract class _$NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
   factory _$NoteCopyWith(_Note value, $Res Function(_Note) then) =
       __$NoteCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId id, NoteBody noteBody, List<dynamic> noteEditorBody});
+  $Res call({UniqueId id, NoteBody noteBody, String noteEditorBody});
 }
 
 /// @nodoc
@@ -97,7 +97,7 @@ class __$NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res>
       noteEditorBody: noteEditorBody == freezed
           ? _value.noteEditorBody
           : noteEditorBody // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as String,
     ));
   }
 }
@@ -106,22 +106,15 @@ class __$NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res>
 
 class _$_Note extends _Note {
   const _$_Note(
-      {required this.id,
-      required this.noteBody,
-      required final List<dynamic> noteEditorBody})
-      : _noteEditorBody = noteEditorBody,
-        super._();
+      {required this.id, required this.noteBody, required this.noteEditorBody})
+      : super._();
 
   @override
   final UniqueId id;
   @override
   final NoteBody noteBody;
-  final List<dynamic> _noteEditorBody;
   @override
-  List<dynamic> get noteEditorBody {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_noteEditorBody);
-  }
+  final String noteEditorBody;
 
   @override
   String toString() {
@@ -156,7 +149,7 @@ abstract class _Note extends Note {
   const factory _Note(
       {required final UniqueId id,
       required final NoteBody noteBody,
-      required final List<dynamic> noteEditorBody}) = _$_Note;
+      required final String noteEditorBody}) = _$_Note;
   const _Note._() : super._();
 
   @override
@@ -164,7 +157,7 @@ abstract class _Note extends Note {
   @override
   NoteBody get noteBody => throw _privateConstructorUsedError;
   @override
-  List<dynamic> get noteEditorBody => throw _privateConstructorUsedError;
+  String get noteEditorBody => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$NoteCopyWith<_Note> get copyWith => throw _privateConstructorUsedError;

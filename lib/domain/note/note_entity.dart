@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:timenotetracker/domain/core/value_failures.dart';
@@ -52,13 +54,13 @@ abstract class Note implements _$Note {
   const factory Note({
     required UniqueId id,
     required NoteBody noteBody,
-    required List<dynamic> noteEditorBody,
+    required String noteEditorBody,
   }) = _Note;
 
   factory Note.defaultNote() => Note(
         id: UniqueId(),
         noteBody: NoteBody(''),
-        noteEditorBody: initialNote,
+        noteEditorBody: jsonEncode(initialNote),
       );
   // we are validation multiple valueObjects
   Option<ValueFailure<dynamic>> get checkValidError {

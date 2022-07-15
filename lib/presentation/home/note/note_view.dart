@@ -30,14 +30,15 @@ class NoteView extends StatelessWidget {
                   ),
                 );
               },
-              saveSucces: (state){
+              saveSucces: (state) {
                 AutoRouter.of(context).pop();
               },
               orElse: () {});
         },
-        child: NoteViewBody(),
+        child: NoteViewBody(
+          noteToBeEdited: noteToBeEdited,
+        ),
       )),
     );
   }
 }
-

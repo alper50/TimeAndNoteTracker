@@ -9,7 +9,9 @@ import 'package:timenotetracker/infrastructure/note/note_data_transfer_objects.d
 
 @LazySingleton(as: INoteRepository)
 class NoteRepository implements INoteRepository {
+
   final noteLocaleService = MyDatabase().noteLocaleService;
+
   @override
   Future<Either<NoteFailure, Unit>> createNote(Note note) async {
     try {
