@@ -45,7 +45,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           final signOut = await _authRemoteRepository.signOutWithDelete();
           emit(
             signOut.fold(
-              (failure) => state, // TODO test here
+              (failure) => state, 
               (r) => const AuthState.unauthenticated(),
             ),
           );
@@ -55,7 +55,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               await _authRemoteRepository.checkEmailVerification();
           emit(
             verification.fold(
-              (failure) => state, // TODO test here
+              (failure) => state,
               (r) => r
                   ? const AuthState.authenticated()
                   : const AuthState.emailNotVerified(),

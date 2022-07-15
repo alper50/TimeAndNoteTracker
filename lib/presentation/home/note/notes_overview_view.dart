@@ -66,6 +66,16 @@ class NoteOverview extends StatelessWidget {
                   Icons.snowboarding_rounded,
                 ),
               ),
+              actions: [
+                IconButton(
+                onPressed: () {
+                  context.read<AuthBloc>().add(AuthEvent.signOutWithDelete());
+                },
+                icon: Icon(
+                  Icons.delete_forever,
+                ),
+              ),
+              ],
             ),
             body: NoteOverviewBody(),
             floatingActionButton: FloatingActionButton(

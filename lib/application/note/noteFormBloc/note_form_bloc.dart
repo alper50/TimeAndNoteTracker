@@ -21,8 +21,9 @@ class NoteFormBloc extends Bloc<NoteFormEvent, NoteFormState> {
       await event.map(initialize: (e) async {
         emit(NoteFormState.loading());
         if (e.initialNote != null) {
-          final result = await _iNoteRepository.getNoteById(e.initialNote!.id
-              .getValueOrCrash()); //TODO zaten db den geldiğinden tekrar db ye sorgu atmak gereksiz olabilir
+          final result = await _iNoteRepository.getNoteById(
+            e.initialNote!.id.getValueOrCrash(),
+          );
 
           result.fold(
             (failure) => emit(NoteFormState.loadFailure(failure)),

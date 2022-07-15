@@ -23,7 +23,7 @@ class _OnboardViewState extends State<OnboardView> {
           ],
           physics: NeverScrollableScrollPhysics(),
           onFinish: (){
-            AutoRouter.of(context).replaceNamed('/authentication-view'); // TODO change path to the auth
+            AutoRouter.of(context).replaceNamed('/authentication-view'); 
           },
           itemCount: onboards.length,
           itemBuilder: (int index) {
