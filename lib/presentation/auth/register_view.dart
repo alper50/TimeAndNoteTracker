@@ -23,6 +23,7 @@ class RegisterView extends StatelessWidget {
               ScaffoldMessenger.of(context).showSnackBar(
                 displaySnackBar(
                   message: failure.maybeMap(
+                      networkError: (_)=> 'Network Request Failed',
                       cancelledByUser: (_) => 'Cancelled',
                       serverError: (_) => 'Server error',
                       emailAlreadyInUse: (_) => 'Email already in use',

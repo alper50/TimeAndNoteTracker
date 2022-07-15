@@ -38,6 +38,7 @@ class VerifyEmailView extends StatelessWidget {
                     ScaffoldMessenger.of(context).showSnackBar(
                       displaySnackBar(
                         message: failure.maybeMap(
+                            networkError: (_)=> 'Network Request Failed',
                             serverError: (e) => 'There is an error occured $e',
                             orElse: () => ''),
                       ),

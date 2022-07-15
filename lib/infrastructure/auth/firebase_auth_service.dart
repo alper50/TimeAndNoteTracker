@@ -32,8 +32,14 @@ class FirebaseAuthService implements IAuthRemoteRepository {
     } on FirebaseAuthException catch (e) {
       if (e.code == 'wrong-password' || e.code == 'user-not-found') {
         return left(const AuthFailure.invalidEmailAndPasswordCombination());
+      } else if (e.code == 'network-request-failed') {
+        return left(
+          AuthFailure.networkError(),
+        );
       } else {
-        return left(AuthFailure.serverError(e));
+        return left(
+          AuthFailure.serverError(e),
+        );
       }
     }
   }
@@ -51,6 +57,10 @@ class FirebaseAuthService implements IAuthRemoteRepository {
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {
         return left(const AuthFailure.emailAlreadyInUse());
+      } else if (e.code == 'network-request-failed') {
+        return left(
+          AuthFailure.networkError(),
+        );
       } else {
         return left(AuthFailure.serverError(e));
       }
@@ -95,6 +105,10 @@ class FirebaseAuthService implements IAuthRemoteRepository {
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         return right(unit); // this return made purposely
+      } else if (e.code == 'network-request-failed') {
+        return left(
+          AuthFailure.networkError(),
+        );
       } else {
         return left(AuthFailure.serverError(e));
       }
@@ -103,21 +117,23 @@ class FirebaseAuthService implements IAuthRemoteRepository {
 
   @override
   Future<Either<AuthFailure, bool>> checkEmailVerification() async {
-    try{
+    try {
       await _firebaseAuth.currentUser!.reload();
       final isVerified = _firebaseAuth.currentUser!.emailVerified;
       return right(isVerified);
-    }
-    on FirebaseAuthException catch(e){
-      if(e.code =='user-not-found'){
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
         return left(AuthFailure.userNotFound());
+      } else if (e.code == 'network-request-failed') {
+        return left(
+          AuthFailure.networkError(),
+        );
       }
-      else if(e.code =='network-request-failed'){
-        return left(AuthFailure.serverError(e),); //TODO NETWORK REQUEESE GÖRE BİR ŞEY
-      }
-      return left(AuthFailure.serverError(e),);
+      return left(
+        AuthFailure.serverError(e),
+      );
     }
-    
+
     // return _isVerified ? right(unit) : left(_isVerified);
     // try {
     //   await _firebaseAuth.currentUser!.reload();
@@ -136,14 +152,14 @@ class FirebaseAuthService implements IAuthRemoteRepository {
       return left(AuthFailure.serverError(e));
     }
   }
-  
+
   @override
-  Future<Either<AuthFailure,Unit>> signOutWithDelete() async{
-    try{
+  Future<Either<AuthFailure, Unit>> signOutWithDelete() async {
+    try {
       await _firebaseAuth.currentUser!.delete();
       return right(unit);
-    } on FirebaseAuthException catch(e){
-      if(e.code =='requires-recent-login'){
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'requires-recent-login') {
         return left(AuthFailure.requiresRecentLogin());
       }
       return left(AuthFailure.serverError(e));
