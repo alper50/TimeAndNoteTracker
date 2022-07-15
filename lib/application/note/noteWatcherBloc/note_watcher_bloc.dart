@@ -16,12 +16,12 @@ part 'note_watcher_bloc.freezed.dart';
 class NoteWatcherBloc extends Bloc<NoteWatcherEvent, NoteWatcherState> {
   final INoteRepository _noteRepository;
 
-   StreamSubscription<Either<NoteFailure, List<Note>>>?
-      _noteStreamSubscription;
+  StreamSubscription<Either<NoteFailure, List<Note>>>? _noteStreamSubscription;
 
   NoteWatcherBloc(this._noteRepository) : super(NoteWatcherState.initial()) {
-    on<NoteWatcherEvent>((event, emit) async {
-      event.map(
+    on<NoteWatcherEvent>(
+      (event, emit) async {
+        event.map(
           watchAllStarted: (e) async {
             emit(NoteWatcherState.loading());
             await _noteStreamSubscription?.cancel();
@@ -42,25 +42,27 @@ class NoteWatcherBloc extends Bloc<NoteWatcherEvent, NoteWatcherState> {
           },
           watchAllReceived: (WatchAllReceived value) async {
             value.failureOrNotes.fold(
-              (failure) => emit(
-                NoteWatcherState.loadFailure(failure),
-              ),
-              (notes) {
-                if(notes.isEmpty){
-                   emit(NoteWatcherState.loadSuccesEmptyList(),);
-                }else{
-                  emit(NoteWatcherState.loadSucces(notes),);
-                }
+                (failure) => emit(
+                      NoteWatcherState.loadFailure(failure),
+                    ), (notes) {
+              if (notes.isEmpty) {
+                emit(
+                  NoteWatcherState.loadSuccesEmptyList(),
+                );
+              } else {
+                emit(
+                  NoteWatcherState.loadSucces(notes),
+                );
               }
-            );
-          },);
-    });
-
-    
-    @override
-    Future<void> close()async{
-      await _noteStreamSubscription?.cancel();
-      return super.close();
-    }
+            });
+          },
+        );
+      },
+    );
+  }
+  @override
+  Future<void> close() async {
+    await _noteStreamSubscription?.cancel();
+    return super.close();
   }
 }
