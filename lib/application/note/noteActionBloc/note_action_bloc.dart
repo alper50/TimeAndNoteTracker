@@ -11,7 +11,7 @@ part 'note_action_bloc.freezed.dart';
 
 @injectable
 class NoteActionBloc extends Bloc<NoteActionEvent, NoteActionState> {
-  final INoteRepository _noteRepository;
+  final INoteLocalRepository _noteRepository;
   NoteActionBloc(this._noteRepository) : super(NoteActionState.initial()) {
     on<NoteActionEvent>((event, emit) async {
       emit(NoteActionState.loadingAction());

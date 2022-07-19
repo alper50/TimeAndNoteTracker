@@ -1,9 +1,12 @@
 import 'package:drift/drift.dart';
+import 'package:injectable/injectable.dart';
 import 'package:timenotetracker/infrastructure/core/db_config.dart';
 import 'package:timenotetracker/infrastructure/note/note_local_tables.dart';
 part 'note_local_service.g.dart';
 
 @DriftAccessor(tables: [Note, TodoItem])
+@LazySingleton()
+@injectable
 class NoteLocaleService extends DatabaseAccessor<MyDatabase>
     with _$NoteLocaleServiceMixin {
       final MyDatabase db;
@@ -58,15 +61,15 @@ class NoteLocaleService extends DatabaseAccessor<MyDatabase>
     return await query.getSingle();
   }
 
-  Future createNote(Insertable<NoteData> noteToBeCreated) {
+  Future<int> createNote(Insertable<NoteData> noteToBeCreated) {
     return into(note).insert(noteToBeCreated);
   }
 
-  Future updateNote(Insertable<NoteData> noteToBeUpdated) {
+  Future<bool> updateNote(Insertable<NoteData> noteToBeUpdated) {
     return update(note).replace(noteToBeUpdated);
   }
 
-  Future deleteNote(Insertable<NoteData> noteToBeDeleted) {
+  Future<int> deleteNote(Insertable<NoteData> noteToBeDeleted) {
     return delete(note).delete(noteToBeDeleted);
   }
 }

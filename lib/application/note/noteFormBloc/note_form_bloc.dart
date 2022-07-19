@@ -15,7 +15,7 @@ part 'note_form_bloc.freezed.dart';
 
 @injectable
 class NoteFormBloc extends Bloc<NoteFormEvent, NoteFormState> {
-  final INoteRepository _iNoteRepository;
+  final INoteLocalRepository _iNoteRepository;
   late Document currentDocument;
   NoteFormBloc(this._iNoteRepository) : super(NoteFormState.initial()) {
     on<NoteFormEvent>((event, emit) async {

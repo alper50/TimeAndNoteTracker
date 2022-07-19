@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:injectable/injectable.dart';
 import 'package:path/path.dart' as p;
 import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
@@ -10,8 +11,10 @@ import 'package:timenotetracker/infrastructure/note/note_local_tables.dart';
 part 'db_config.g.dart';
 
 @DriftDatabase(tables: [Note, TodoItem, AppInformation],daos: [NoteLocaleService, AuthLocalService])
+@LazySingleton()
+@injectable
 class MyDatabase extends _$MyDatabase {
-  MyDatabase() : super(_openConnection());
+  MyDatabase([NativeDatabase? nativeDatabase]) : super(nativeDatabase ?? _openConnection());
   @override
   int get schemaVersion => 1;
 }

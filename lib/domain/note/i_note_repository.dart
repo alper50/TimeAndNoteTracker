@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:timenotetracker/domain/note/note_entity.dart';
 import 'package:timenotetracker/domain/note/note_failure.dart';
 
-abstract class INoteRepository{
+abstract class INoteLocalRepository{
   Stream<Either<NoteFailure,List<Note>>> watchAll(); 
   Stream<Either<NoteFailure,List<Note>>> watchTodos(); 
   Future<Either<NoteFailure,Unit>> createNote(Note note);

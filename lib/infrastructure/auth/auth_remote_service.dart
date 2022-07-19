@@ -6,13 +6,13 @@ import 'package:timenotetracker/domain/auth/i_auth_remote_repository.dart';
 import 'package:timenotetracker/domain/auth/auth_value_objects.dart';
 import 'package:timenotetracker/domain/auth/auth_failure.dart';
 
-// IAuthMethods is a abstract class so when we call IAuthMethods in DI we need to return FirebaseAuthService
+// IAuthMethods is a abstract class so when we call IAuthMethods in DI we need to return AuthRemoteService
 @LazySingleton(as: IAuthRemoteRepository)
-class FirebaseAuthService implements IAuthRemoteRepository {
+class AuthRemoteService implements IAuthRemoteRepository {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
 
-  FirebaseAuthService(this._firebaseAuth, this._googleSignIn);
+  AuthRemoteService(this._firebaseAuth, this._googleSignIn);
   @override
   Future<Option<String>> getSignedInUser() async {
     final String? userId = _firebaseAuth.currentUser?.uid;
@@ -133,14 +133,6 @@ class FirebaseAuthService implements IAuthRemoteRepository {
         AuthFailure.serverError(e),
       );
     }
-
-    // return _isVerified ? right(unit) : left(_isVerified);
-    // try {
-    //   await _firebaseAuth.currentUser!.reload();
-    //   return right(optionOf(_firebaseAuth.currentUser!.emailVerified));
-    // } on FirebaseAuthException catch (e) {
-    //   return left( AuthFailure.serverError(e));
-    // }
   }
 
   @override

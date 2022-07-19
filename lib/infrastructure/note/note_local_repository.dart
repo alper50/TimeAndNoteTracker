@@ -4,13 +4,15 @@ import 'package:rxdart/transformers.dart';
 import 'package:timenotetracker/domain/note/i_note_repository.dart';
 import 'package:timenotetracker/domain/note/note_failure.dart';
 import 'package:timenotetracker/domain/note/note_entity.dart';
-import 'package:timenotetracker/infrastructure/core/db_config.dart';
 import 'package:timenotetracker/infrastructure/note/note_data_transfer_objects.dart';
+import 'package:timenotetracker/infrastructure/note/note_local_service.dart';
 
-@LazySingleton(as: INoteRepository)
-class NoteRepository implements INoteRepository {
+@LazySingleton(as: INoteLocalRepository)
+@injectable
+class NoteLocalRepository implements INoteLocalRepository {
 
-  final noteLocaleService = MyDatabase().noteLocaleService;
+  final NoteLocaleService noteLocaleService;
+  NoteLocalRepository({required this.noteLocaleService});
 
   @override
   Future<Either<NoteFailure, Unit>> createNote(Note note) async {
