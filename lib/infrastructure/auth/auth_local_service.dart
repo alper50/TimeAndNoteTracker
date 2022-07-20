@@ -9,7 +9,12 @@ class AuthLocalService extends DatabaseAccessor<MyDatabase>  with _$AuthLocalSer
   AuthLocalService(this.db) : super(db);
   
   Future<AppInformationData> getOnboardInformation() async{
-    final query = select(appInformation);
+    final query = select(appInformation)..where((tbl) => tbl.isOnboardShowed);
     return await query.getSingle();
+  }
+
+  Future setOnboardInformation(Insertable<AppInformationData> information) async{
+    return await into(appInformation).insert(information);
+    
   }
 }

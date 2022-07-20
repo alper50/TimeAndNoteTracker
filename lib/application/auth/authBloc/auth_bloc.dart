@@ -18,30 +18,35 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       await event.map(
         checkAuthentication: (e) async {
           final userOption = await _authRemoteRepository.getSignedInUser();
-          await userOption.fold((l) async {
-            final isOnboardShowed =
-                await _authLocalRepository.isOnboardShowed();
-            isOnboardShowed
-                ? emit(const AuthState.unauthenticated())
-                : emit(const AuthState.onboardNotShowed());
-          }, (r) async {
-            final isAuthenticated =
-                await _authRemoteRepository.checkEmailVerification();
-            emit(
-              isAuthenticated.fold(
-                (failure) => const AuthState.unauthenticated(),
-                (r) => r
-                    ? const AuthState.authenticated()
-                    : const AuthState.emailNotVerified(),
-              ),
-            );
-          });
+          await userOption.fold(
+            (l) async {
+              final isOnboardShowed =
+                  await _authLocalRepository.isOnboardShowed();
+              
+              isOnboardShowed
+                  ? emit(const AuthState.unauthenticated())
+                  : emit(const AuthState.onboardNotShowed());
+              
+            },
+            (r) async {
+              final isAuthenticated =
+                  await _authRemoteRepository.checkEmailVerification();
+              emit(
+                isAuthenticated.fold(
+                  (failure) => const AuthState.unauthenticated(),
+                  (r) => r
+                      ? const AuthState.authenticated()
+                      : const AuthState.emailNotVerified(),
+                ),
+              );
+            },
+          );
         },
-        signOut: (e) async {
+        signOut: (_) async {
           await _authRemoteRepository.signOut();
           emit(const AuthState.unauthenticated());
         },
-        signOutWithDelete: (SignOutWithDelete value) async {
+        signOutWithDelete: (_) async {
           final signOut = await _authRemoteRepository.signOutWithDelete();
           emit(
             signOut.fold(

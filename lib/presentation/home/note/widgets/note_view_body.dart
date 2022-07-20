@@ -29,7 +29,9 @@ class NoteViewBody extends StatelessWidget {
             child: MyCircularProgressIndicator(),
           ),
           loadFailure: (_) => NoteFailureView(
-            onPressed: () {}, //TODO 
+            onPressed: () {
+              context.read<NoteFormBloc>().add(NoteFormEvent.initialize(noteToBeEdited));
+            }, 
           ),
           orElse: () => Container(),
           loadSucces: (e) {

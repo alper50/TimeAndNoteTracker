@@ -4,5 +4,5 @@ class AppInformation extends Table{
 BoolColumn get isOnboardShowed => boolean().withDefault(const Constant(false))();
 
 @override
-  String get tableName => 'appInformation';
+  String get tableName => 'appInformationTable';
 }

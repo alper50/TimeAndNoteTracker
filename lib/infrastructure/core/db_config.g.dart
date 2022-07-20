@@ -645,9 +645,9 @@ class $AppInformationTable extends AppInformation
   @override
   List<GeneratedColumn> get $columns => [isOnboardShowed];
   @override
-  String get aliasedName => _alias ?? 'appInformation';
+  String get aliasedName => _alias ?? 'appInformationTable';
   @override
-  String get actualTableName => 'appInformation';
+  String get actualTableName => 'appInformationTable';
   @override
   VerificationContext validateIntegrity(Insertable<AppInformationData> instance,
       {bool isInserting = false}) {

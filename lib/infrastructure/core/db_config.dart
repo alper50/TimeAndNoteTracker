@@ -16,6 +16,17 @@ class MyDatabase extends _$MyDatabase {
   MyDatabase([NativeDatabase? nativeDatabase]) : super(nativeDatabase ?? _openConnection());
   @override
   int get schemaVersion => 1;
+
+  @override
+  MigrationStrategy get migration{
+    return MigrationStrategy(
+      onCreate: (Migrator m)async{
+        await m.createAll();
+        final initialInformation = AppInformationData(isOnboardShowed: false);
+        await into(appInformation).insert(initialInformation);
+      }
+    );
+  }
 }
 
 LazyDatabase _openConnection() {
