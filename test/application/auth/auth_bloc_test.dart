@@ -1,12 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart' as tst;
-import 'package:injectable/injectable.dart';
 import 'package:mockito/mockito.dart';
 import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
-import 'package:timenotetracker/domain/auth/auth_failure.dart';
 import 'package:timenotetracker/domain/auth/i_auth_local_repository.dart';
 import 'package:timenotetracker/domain/auth/i_auth_remote_repository.dart';
-import 'package:timenotetracker/infrastructure/auth/auth_local_repository.dart';
 import 'package:timenotetracker/infrastructure/auth/auth_remote_service.dart';
 import 'package:timenotetracker/injection.dart';
 class MockIAuthRemoteService extends Mock implements IAuthRemoteService{}

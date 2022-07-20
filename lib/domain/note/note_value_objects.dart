@@ -21,7 +21,7 @@ class NoteBody extends ValueObject<String> {
   const NoteBody._(this.value);
 }
 
-class Todo extends ValueObject<String> {//TODO todo's  might require todoList object
+class Todo extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
   static const maxCharacter = 100;
@@ -36,18 +36,4 @@ class Todo extends ValueObject<String> {//TODO todo's  might require todoList ob
   }
 
   const Todo._(this.value);
-}
-
-class TodoList<T> extends ValueObject<List<T>>{
-  @override
-  final Either<ValueFailure<List<T>>, List<T>> value;
-
-  factory TodoList(List<T> input){
-    return TodoList(input);
-  }
-  const TodoList._(this.value);
-
-  int get length{
-    return value.getOrElse(() => []).length;
-  }
 }

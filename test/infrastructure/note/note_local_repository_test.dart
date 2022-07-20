@@ -1,15 +1,13 @@
 import 'package:dartz/dartz.dart';
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
 import 'package:timenotetracker/domain/core/value_object.dart';
 import 'package:timenotetracker/domain/note/note_entity.dart';
-import 'package:timenotetracker/domain/note/note_failure.dart';
 import 'package:timenotetracker/domain/note/note_value_objects.dart';
 import 'package:timenotetracker/infrastructure/core/db_config.dart';
 import 'package:timenotetracker/infrastructure/note/note_local_repository.dart';
 
-//TODO
+//TODO test infrastructure note 
 void main() {
   late NoteLocalRepository noteLocalRepository;
   late MyDatabase myDatabase;
