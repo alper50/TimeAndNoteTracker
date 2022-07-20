@@ -10,7 +10,7 @@ import 'package:timenotetracker/infrastructure/note/note_local_service.dart';
 import 'package:timenotetracker/infrastructure/note/note_local_tables.dart';
 part 'db_config.g.dart';
 
-@DriftDatabase(tables: [Note, TodoItem, AppInformation],daos: [NoteLocaleService, AuthLocalService])
+@DriftDatabase(tables: [Note, TodoItem, AppInformation],daos: [NoteLocalService, AuthLocalService])
 @LazySingleton()
 @injectable
 class MyDatabase extends _$MyDatabase {

@@ -7,10 +7,10 @@ part 'note_local_service.g.dart';
 @DriftAccessor(tables: [Note, TodoItem])
 @LazySingleton()
 @injectable
-class NoteLocaleService extends DatabaseAccessor<MyDatabase>
-    with _$NoteLocaleServiceMixin {
+class NoteLocalService extends DatabaseAccessor<MyDatabase>
+    with _$NoteLocalServiceMixin {
       final MyDatabase db;
-  NoteLocaleService(this.db) : super(db);
+  NoteLocalService(this.db) : super(db);
 
   // Stream<List<NoteWithTagReference>> watchAll() {
   //   final query = (select(noteTable)

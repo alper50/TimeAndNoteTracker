@@ -46,8 +46,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i9.MyDatabase(get<_i10.NativeDatabase>()));
   gh.lazySingleton<_i10.NativeDatabase>(
       () => infrastructureInjectableModule.nativeDatabase);
-  gh.lazySingleton<_i11.NoteLocaleService>(
-      () => _i11.NoteLocaleService(get<_i9.MyDatabase>()));
+  gh.lazySingleton<_i11.NoteLocalService>(
+      () => _i11.NoteLocalService(get<_i9.MyDatabase>()));
   gh.factory<_i12.RegisterAndLoginBloc>(
       () => _i12.RegisterAndLoginBloc(get<_i7.IAuthRemoteService>()));
   gh.factory<_i13.VerifyEmailBloc>(
@@ -57,7 +57,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i15.ForgotPasswordBloc>(
       () => _i15.ForgotPasswordBloc(get<_i7.IAuthRemoteService>()));
   gh.lazySingleton<_i16.INoteLocalRepository>(() => _i17.NoteLocalRepository(
-      noteLocaleService: get<_i11.NoteLocaleService>()));
+      noteLocaleService: get<_i11.NoteLocalService>()));
   gh.factory<_i18.NoteActionBloc>(
       () => _i18.NoteActionBloc(get<_i16.INoteLocalRepository>()));
   gh.factory<_i19.NoteFormBloc>(

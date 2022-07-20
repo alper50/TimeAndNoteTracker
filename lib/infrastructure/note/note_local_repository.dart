@@ -11,7 +11,7 @@ import 'package:timenotetracker/infrastructure/note/note_local_service.dart';
 @injectable
 class NoteLocalRepository implements INoteLocalRepository {
 
-  final NoteLocaleService noteLocaleService;
+  final NoteLocalService noteLocaleService;
   NoteLocalRepository({required this.noteLocaleService});
 
   @override

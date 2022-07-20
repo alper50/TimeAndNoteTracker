@@ -681,8 +681,8 @@ abstract class _$MyDatabase extends GeneratedDatabase {
   late final $NoteTable note = $NoteTable(this);
   late final $TodoItemTable todoItem = $TodoItemTable(this);
   late final $AppInformationTable appInformation = $AppInformationTable(this);
-  late final NoteLocaleService noteLocaleService =
-      NoteLocaleService(this as MyDatabase);
+  late final NoteLocalService noteLocaleService =
+      NoteLocalService(this as MyDatabase);
   late final AuthLocalService authLocalService =
       AuthLocalService(this as MyDatabase);
   @override

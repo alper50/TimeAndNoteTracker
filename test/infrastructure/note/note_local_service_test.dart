@@ -5,10 +5,10 @@ import 'package:timenotetracker/infrastructure/note/note_local_service.dart';
 
 void main() {
   late MyDatabase myDatabase;
-  late NoteLocaleService noteLocaleService;
+  late NoteLocalService noteLocaleService;
   setUp(() {
     myDatabase = MyDatabase(NativeDatabase.memory());
-    noteLocaleService = NoteLocaleService(myDatabase);
+    noteLocaleService = NoteLocalService(myDatabase);
   });
   tearDown(() async {
     await myDatabase.close();
