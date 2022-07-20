@@ -11,7 +11,7 @@ part 'verify_email_bloc.freezed.dart';
 
 @injectable
 class VerifyEmailBloc extends Bloc<VerifyEmailEvent, VerifyEmailState> {
-  final IAuthRemoteRepository _authMethods;
+  final IAuthRemoteService _authMethods;
   VerifyEmailBloc(this._authMethods) : super(VerifyEmailState.initial()) {
     on<VerifyEmailEvent>((event, emit) async {
       await event.map(

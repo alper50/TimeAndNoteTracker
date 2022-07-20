@@ -13,7 +13,7 @@ part 'forgot_password_bloc.freezed.dart';
 @injectable
 class ForgotPasswordBloc
     extends Bloc<ForgotPasswordEvent, ForgotPasswordState> {
-  final IAuthRemoteRepository _authMethods;
+  final IAuthRemoteService _authMethods;
   ForgotPasswordBloc(this._authMethods) : super(ForgotPasswordState.initial()) {
     on<ForgotPasswordEvent>(
       (event, emit) async {

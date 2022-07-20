@@ -40,7 +40,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i4.GoogleSignIn>(
       () => infrastructureInjectableModule.googleSignIn);
   gh.lazySingleton<_i5.IAuthLocalRepository>(() => _i6.AuthLocalRepository());
-  gh.lazySingleton<_i7.IAuthRemoteRepository>(() =>
+  gh.lazySingleton<_i7.IAuthRemoteService>(() =>
       _i8.AuthRemoteService(get<_i3.FirebaseAuth>(), get<_i4.GoogleSignIn>()));
   gh.lazySingleton<_i9.MyDatabase>(
       () => _i9.MyDatabase(get<_i10.NativeDatabase>()));
@@ -49,13 +49,13 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i11.NoteLocaleService>(
       () => _i11.NoteLocaleService(get<_i9.MyDatabase>()));
   gh.factory<_i12.RegisterAndLoginBloc>(
-      () => _i12.RegisterAndLoginBloc(get<_i7.IAuthRemoteRepository>()));
+      () => _i12.RegisterAndLoginBloc(get<_i7.IAuthRemoteService>()));
   gh.factory<_i13.VerifyEmailBloc>(
-      () => _i13.VerifyEmailBloc(get<_i7.IAuthRemoteRepository>()));
+      () => _i13.VerifyEmailBloc(get<_i7.IAuthRemoteService>()));
   gh.factory<_i14.AuthBloc>(() => _i14.AuthBloc(
-      get<_i7.IAuthRemoteRepository>(), get<_i5.IAuthLocalRepository>()));
+      get<_i7.IAuthRemoteService>(), get<_i5.IAuthLocalRepository>()));
   gh.factory<_i15.ForgotPasswordBloc>(
-      () => _i15.ForgotPasswordBloc(get<_i7.IAuthRemoteRepository>()));
+      () => _i15.ForgotPasswordBloc(get<_i7.IAuthRemoteService>()));
   gh.lazySingleton<_i16.INoteLocalRepository>(() => _i17.NoteLocalRepository(
       noteLocaleService: get<_i11.NoteLocaleService>()));
   gh.factory<_i18.NoteActionBloc>(

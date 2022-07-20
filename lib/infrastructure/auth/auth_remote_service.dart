@@ -7,16 +7,20 @@ import 'package:timenotetracker/domain/auth/auth_value_objects.dart';
 import 'package:timenotetracker/domain/auth/auth_failure.dart';
 
 // IAuthMethods is a abstract class so when we call IAuthMethods in DI we need to return AuthRemoteService
-@LazySingleton(as: IAuthRemoteRepository)
-class AuthRemoteService implements IAuthRemoteRepository {
+@LazySingleton(as: IAuthRemoteService)
+class AuthRemoteService implements IAuthRemoteService {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
 
   AuthRemoteService(this._firebaseAuth, this._googleSignIn);
   @override
-  Future<Option<String>> getSignedInUser() async {
+  Future<Either<AuthFailure,String>> getSignedInUser() async {
     final String? userId = _firebaseAuth.currentUser?.uid;
-    return optionOf(userId);
+    if(userId!=null){
+      return Right(userId);
+    }else{
+      return Left(AuthFailure.userNotFound());
+    }
   }
 
   @override

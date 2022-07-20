@@ -10,7 +10,7 @@ part 'auth_bloc.freezed.dart';
 
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  final IAuthRemoteRepository _authRemoteRepository;
+  final IAuthRemoteService _authRemoteRepository;
   final IAuthLocalRepository _authLocalRepository;
   AuthBloc(this._authRemoteRepository, this._authLocalRepository)
       : super(AuthState.initial()) {
@@ -18,13 +18,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       await event.map(
         checkAuthentication: (e) async {
           final userOption = await _authRemoteRepository.getSignedInUser();
-          if (userOption.isNone()) {
+          userOption.fold((l) async {
             final isOnboardShowed =
                 await _authLocalRepository.isOnboardShowed();
             isOnboardShowed
                 ? emit(const AuthState.unauthenticated())
                 : emit(const AuthState.onboardNotShowed());
-          } else {
+          }, (r) async {
             final isAuthenticated =
                 await _authRemoteRepository.checkEmailVerification();
             emit(
@@ -35,7 +35,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
                     : const AuthState.emailNotVerified(),
               ),
             );
-          }
+          });
         },
         signOut: (e) async {
           await _authRemoteRepository.signOut();
@@ -45,7 +45,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           final signOut = await _authRemoteRepository.signOutWithDelete();
           emit(
             signOut.fold(
-              (failure) => state, 
+              (failure) => state,
               (r) => const AuthState.unauthenticated(),
             ),
           );

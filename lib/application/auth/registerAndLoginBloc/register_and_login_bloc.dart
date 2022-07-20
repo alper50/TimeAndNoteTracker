@@ -12,7 +12,7 @@ part 'register_and_login_bloc.freezed.dart';
 @injectable
 class RegisterAndLoginBloc
     extends Bloc<RegisterAndLoginEvent, RegisterAndLoginState> {
-  final IAuthRemoteRepository _authMethods;
+  final IAuthRemoteService _authMethods;
   RegisterAndLoginBloc(this._authMethods)
       : super(RegisterAndLoginState.initial()) {
     on<RegisterAndLoginEvent>((event, emit) async {
