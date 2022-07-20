@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:timenotetracker/domain/auth/i_auth_local_repository.dart';
-import 'package:timenotetracker/domain/auth/i_auth_remote_repository.dart';
+import 'package:timenotetracker/domain/auth/i_auth_remote.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -18,7 +18,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       await event.map(
         checkAuthentication: (e) async {
           final userOption = await _authRemoteRepository.getSignedInUser();
-          userOption.fold((l) async {
+          await userOption.fold((l) async {
             final isOnboardShowed =
                 await _authLocalRepository.isOnboardShowed();
             isOnboardShowed

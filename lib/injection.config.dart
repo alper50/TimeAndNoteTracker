@@ -11,21 +11,22 @@ import 'package:google_sign_in/google_sign_in.dart' as _i4;
 import 'package:injectable/injectable.dart' as _i2;
 
 import 'application/auth/authBloc/auth_bloc.dart' as _i14;
-import 'application/auth/forgotPasswordBloc/forgot_password_bloc.dart' as _i15;
+import 'application/auth/forgotPasswordBloc/forgot_password_bloc.dart' as _i16;
 import 'application/auth/registerAndLoginBloc/register_and_login_bloc.dart'
     as _i12;
 import 'application/auth/verifyEmailBloc/verify_email_bloc.dart' as _i13;
-import 'application/note/noteActionBloc/note_action_bloc.dart' as _i18;
-import 'application/note/noteFormBloc/note_form_bloc.dart' as _i19;
-import 'application/note/noteWatcherBloc/note_watcher_bloc.dart' as _i20;
+import 'application/note/noteActionBloc/note_action_bloc.dart' as _i19;
+import 'application/note/noteFormBloc/note_form_bloc.dart' as _i20;
+import 'application/note/noteWatcherBloc/note_watcher_bloc.dart' as _i21;
 import 'domain/auth/i_auth_local_repository.dart' as _i5;
-import 'domain/auth/i_auth_remote_repository.dart' as _i7;
-import 'domain/note/i_note_repository.dart' as _i16;
+import 'domain/auth/i_auth_remote.dart' as _i7;
+import 'domain/note/i_note_repository.dart' as _i17;
 import 'infrastructure/auth/auth_local_repository.dart' as _i6;
+import 'infrastructure/auth/auth_remote_repository.dart' as _i15;
 import 'infrastructure/auth/auth_remote_service.dart' as _i8;
 import 'infrastructure/core/db_config.dart' as _i9;
-import 'infrastructure/core/infrastructure_injectable_module.dart' as _i21;
-import 'infrastructure/note/note_local_repository.dart' as _i17;
+import 'infrastructure/core/infrastructure_injectable_module.dart' as _i22;
+import 'infrastructure/note/note_local_repository.dart' as _i18;
 import 'infrastructure/note/note_local_service.dart'
     as _i11; // ignore_for_file: unnecessary_lambdas
 
@@ -54,18 +55,20 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i13.VerifyEmailBloc(get<_i7.IAuthRemoteService>()));
   gh.factory<_i14.AuthBloc>(() => _i14.AuthBloc(
       get<_i7.IAuthRemoteService>(), get<_i5.IAuthLocalRepository>()));
-  gh.factory<_i15.ForgotPasswordBloc>(
-      () => _i15.ForgotPasswordBloc(get<_i7.IAuthRemoteService>()));
-  gh.lazySingleton<_i16.INoteLocalRepository>(() => _i17.NoteLocalRepository(
+  gh.factory<_i15.AuthRemoteRepository>(
+      () => _i15.AuthRemoteRepository(get<_i7.IAuthRemoteService>()));
+  gh.factory<_i16.ForgotPasswordBloc>(
+      () => _i16.ForgotPasswordBloc(get<_i7.IAuthRemoteService>()));
+  gh.lazySingleton<_i17.INoteLocalRepository>(() => _i18.NoteLocalRepository(
       noteLocaleService: get<_i11.NoteLocalService>()));
-  gh.factory<_i18.NoteActionBloc>(
-      () => _i18.NoteActionBloc(get<_i16.INoteLocalRepository>()));
-  gh.factory<_i19.NoteFormBloc>(
-      () => _i19.NoteFormBloc(get<_i16.INoteLocalRepository>()));
-  gh.factory<_i20.NoteWatcherBloc>(
-      () => _i20.NoteWatcherBloc(get<_i16.INoteLocalRepository>()));
+  gh.factory<_i19.NoteActionBloc>(
+      () => _i19.NoteActionBloc(get<_i17.INoteLocalRepository>()));
+  gh.factory<_i20.NoteFormBloc>(
+      () => _i20.NoteFormBloc(get<_i17.INoteLocalRepository>()));
+  gh.factory<_i21.NoteWatcherBloc>(
+      () => _i21.NoteWatcherBloc(get<_i17.INoteLocalRepository>()));
   return get;
 }
 
 class _$InfrastructureInjectableModule
-    extends _i21.InfrastructureInjectableModule {}
+    extends _i22.InfrastructureInjectableModule {}

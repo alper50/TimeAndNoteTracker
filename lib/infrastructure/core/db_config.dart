@@ -12,7 +12,6 @@ part 'db_config.g.dart';
 
 @DriftDatabase(tables: [Note, TodoItem, AppInformation],daos: [NoteLocalService, AuthLocalService])
 @LazySingleton()
-@injectable
 class MyDatabase extends _$MyDatabase {
   MyDatabase([NativeDatabase? nativeDatabase]) : super(nativeDatabase ?? _openConnection());
   @override

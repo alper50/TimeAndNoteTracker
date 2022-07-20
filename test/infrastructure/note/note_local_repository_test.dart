@@ -14,7 +14,7 @@ void main() {
   setUp(() {
     myDatabase = MyDatabase(NativeDatabase.memory());
     noteLocalRepository =
-        NoteLocalRepository(noteLocaleService: myDatabase.noteLocaleService);
+        NoteLocalRepository(noteLocaleService: myDatabase.noteLocalService);
   });
   tearDown(() async {
     await myDatabase.close();
