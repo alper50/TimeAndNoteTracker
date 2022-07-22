@@ -34,15 +34,15 @@ void main(){
 
   tst.group('AuthBloc CheckAuthentication Test', (){
     
-    tst.test('should call when the event fired', () async{
+    // tst.test('should call when the event fired', () async{
       
-      when(mockAuthRemoteRepository.getSignedInUser()).thenAnswer((_) async=> Right('user'));
+    //   when(mockAuthRemoteRepository.getSignedInUser()).thenAnswer((_) async=> Right('user'));
       
       
-      authBloc = AuthBloc(mockAuthRemoteRepository,mockAuthLocalRepository);
-      authBloc.add(AuthEvent.checkAuthentication());
-      verify(mockAuthRemoteRepository.getSignedInUser());
-    });
+    //   authBloc = AuthBloc(mockAuthRemoteRepository,mockAuthLocalRepository);
+    //   authBloc.add(AuthEvent.checkAuthentication());
+    //   verify(mockAuthRemoteRepository.getSignedInUser());
+    // });
   });
   tst.group('AuthBloc SignOut Test', (){});
   tst.group('AuthBloc SignOutWithDelete Test', (){});
