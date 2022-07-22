@@ -1,0 +1,20 @@
+name: Build Apk
+on:
+  workflow_dispatch:
+
+jobs:
+  flutter_test:
+    name: Build Flutter Apk
+    needs: [flutter_test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '12.x'
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '3.0.1'
+      - run: flutter pub get
+      - run: flutter build apk
+      
