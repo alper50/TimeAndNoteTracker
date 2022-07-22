@@ -20,7 +20,7 @@ jobs:
         with:
           flutter-version: '3.0.1'
       - run: flutter pub get
-      - run: flutter build apk -t lib/main_dev.dart
+      - run: flutter build apk --flavor dev -t lib/main_dev.dart 
       - name: Upload APK
         uses: actions/upload-artifact@master
         with:
