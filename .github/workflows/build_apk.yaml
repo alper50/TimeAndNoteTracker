@@ -1,11 +1,15 @@
 name: Build Apk
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Build Tests"]
+    branches: [main]
+    types: 
+      - completed
 
 jobs:
   flutter_build_apk:
     name: Build Flutter Apk
-    needs: [flutter_test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
