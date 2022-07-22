@@ -1,5 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:timenotetracker/presentation/auth/auth_view.dart';
+import 'package:timenotetracker/presentation/auth/verify_email_view.dart';
 import 'package:timenotetracker/presentation/home/analyse_view.dart';
 import 'package:timenotetracker/presentation/home/home_view.dart';
 import 'package:timenotetracker/presentation/home/note/note_view.dart';
@@ -11,10 +12,11 @@ import 'package:timenotetracker/presentation/splash/splash_view.dart';
 @MaterialAutoRouter(
   replaceInRouteName: 'Route,',
   routes: <AutoRoute>[
-    AutoRoute(page: SplashView),
-    AutoRoute(page: OnboardView, initial: true),
+    AutoRoute(page: SplashView, initial: true),
+    AutoRoute(page: OnboardView),
     AutoRoute(page: AuthenticationView),
-    // AutoRoute(page: NoteView),
+    AutoRoute(page: VerifyEmailView),
+    AutoRoute(page: NoteView),
     AutoRoute(
       page: HomeView, //TODO nested route implements
       children: [

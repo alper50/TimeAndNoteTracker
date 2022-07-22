@@ -6,7 +6,7 @@ part of 'note_local_service.dart';
 // DaoGenerator
 // **************************************************************************
 
-mixin _$NoteLocaleServiceMixin on DatabaseAccessor<MyDatabase> {
-  $NoteTableTable get noteTable => attachedDatabase.noteTable;
-  $TodoItemTableTable get todoItemTable => attachedDatabase.todoItemTable;
+mixin _$NoteLocalServiceMixin on DatabaseAccessor<MyDatabase> {
+  $NoteTable get note => attachedDatabase.note;
+  $TodoItemTable get todoItem => attachedDatabase.todoItem;
 }

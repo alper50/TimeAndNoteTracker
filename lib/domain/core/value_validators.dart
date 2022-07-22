@@ -44,15 +44,13 @@ Either<ValueFailure<String>, String> validateExceedingLength(
   }
 }
 
-Either<ValueFailure<String>, String> validateEmptyField(
-    String input) {
+Either<ValueFailure<String>, String> validateEmptyField(String input) {
   if (input.isNotEmpty) {
     return right(input);
   } else {
     return left(
       ValueFailure.note(
-        failedValue: NoteValueFailure.emptyField(
-            failedValue: input),
+        failedValue: NoteValueFailure.emptyField(failedValue: input),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
 
 class NoteEmptyListView extends StatelessWidget {
   const NoteEmptyListView({Key? key}) : super(key: key);
@@ -9,9 +10,14 @@ class NoteEmptyListView extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          LottieBuilder.asset('emptyList.json'),
-          SizedBox(height: 50,),
-          Text('You dont have any notes yet'),
+          LottieBuilder.asset('assets/lottie/emptyList.json'),
+          SizedBox(
+            height: 50,
+          ),
+          Text(
+            'You dont have any notes yet',
+            style: MyTextStyles.headline3,
+          ),
         ],
       ),
     );

@@ -5,6 +5,7 @@ import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
 import 'package:timenotetracker/application/auth/registerAndLoginBloc/register_and_login_bloc.dart';
 import 'package:timenotetracker/presentation/auth/widgets/my_auth_button.dart';
 import 'package:timenotetracker/presentation/auth/widgets/my_textformfield.dart';
+import 'package:timenotetracker/presentation/auth/widgets/policy_text.dart';
 import 'package:timenotetracker/presentation/core/constants/padding_constants.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
 
@@ -21,18 +22,19 @@ class RegisterView extends StatelessWidget {
             (failure) {
               ScaffoldMessenger.of(context).showSnackBar(
                 displaySnackBar(
-                  message: failure.map(
-                    cancelledByUser: (_) => 'Cancelled',
-                    serverError: (_) => 'Server error',
-                    emailAlreadyInUse: (_) => 'Email already in use',
-                    invalidEmailAndPasswordCombination: (_) =>
-                        'Invalid email and password combination',
-                  ),
+                  message: failure.maybeMap(
+                      networkError: (_)=> 'Network Request Failed',
+                      cancelledByUser: (_) => 'Cancelled',
+                      serverError: (_) => 'Server error',
+                      emailAlreadyInUse: (_) => 'Email already in use',
+                      invalidEmailAndPasswordCombination: (_) =>
+                          'Invalid email and password combination',
+                      orElse: () => ''),
                 ),
               );
             },
             (_) {
-              AutoRouter.of(context).replaceNamed('/home-view');
+              AutoRouter.of(context).replaceNamed('/verify-email-view');
               context
                   .read<AuthBloc>()
                   .add(const AuthEvent.checkAuthentication());
@@ -109,6 +111,8 @@ class RegisterView extends StatelessWidget {
                           RegisterAndLoginEvent.registerWithEmailAndPassword());
                     },
                   ),
+                  const SizedBox(height: 20),
+                  buildPolicyText(context),
                 ],
               ),
             ),

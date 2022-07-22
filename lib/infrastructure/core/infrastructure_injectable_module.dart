@@ -1,3 +1,4 @@
+import 'package:drift/native.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
@@ -12,4 +13,6 @@ abstract class InfrastructureInjectableModule{
   GoogleSignIn get googleSignIn => GoogleSignIn();
   @lazySingleton
   FirebaseAuth get firebaseAuth => FirebaseAuth.instance;
+  @lazySingleton
+  NativeDatabase get nativeDatabase => NativeDatabase.memory();
 }

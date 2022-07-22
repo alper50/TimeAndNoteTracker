@@ -34,14 +34,14 @@ class MyAuthButton extends StatelessWidget {
                     child: Text(
                       title,
                       style: MyTextStyles.headline3.copyWith(
-                        color: MyColors.lightPrimaryColor,
+                        color: MyColors.primaryColor,
                       ),
                     ),
                   ),
                   Spacer(flex: 4),
                   CircleAvatar(
                     radius: 20,
-                    backgroundColor: MyColors.lightPrimaryColor,
+                    backgroundColor: MyColors.primaryColor,
                     child: Icon(
                       Icons.arrow_forward_ios_rounded,
                       color: MyColors.lightSecondaryColor,

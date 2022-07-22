@@ -2,21 +2,25 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide User;
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
-import 'package:timenotetracker/domain/auth/%C4%B1_auth_repository.dart';
+import 'package:timenotetracker/domain/auth/i_auth_remote.dart';
 import 'package:timenotetracker/domain/auth/auth_value_objects.dart';
 import 'package:timenotetracker/domain/auth/auth_failure.dart';
 
-// IAuthMethods is a abstract class so when we call IAuthMethods in DI we need to return FirebaseAuthService
-@LazySingleton(as: IAuthRepository)
-class FirebaseAuthService implements IAuthRepository {
+// IAuthMethods is a abstract class so when we call IAuthMethods in DI we need to return AuthRemoteService
+@LazySingleton(as: IAuthRemoteService)
+class AuthRemoteService implements IAuthRemoteService {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
 
-  FirebaseAuthService(this._firebaseAuth, this._googleSignIn);
+  AuthRemoteService(this._firebaseAuth, this._googleSignIn);
   @override
-  Future<Option<String>> getSignedInUser() async {
+  Future<Either<AuthFailure,String>> getSignedInUser() async {
     final String? userId = _firebaseAuth.currentUser?.uid;
-    return optionOf(userId);
+    if(userId!=null){
+      return Right(userId);
+    }else{
+      return Left(AuthFailure.userNotFound());
+    }
   }
 
   @override
@@ -30,11 +34,16 @@ class FirebaseAuthService implements IAuthRepository {
           email: validEmail, password: validPassword);
       return right(unit);
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'wrong-password' ||
-          e.code == 'user-not-found') {
+      if (e.code == 'wrong-password' || e.code == 'user-not-found') {
         return left(const AuthFailure.invalidEmailAndPasswordCombination());
+      } else if (e.code == 'network-request-failed') {
+        return left(
+          AuthFailure.networkError(),
+        );
       } else {
-        return left(const AuthFailure.serverError());
+        return left(
+          AuthFailure.serverError(e),
+        );
       }
     }
   }
@@ -50,10 +59,14 @@ class FirebaseAuthService implements IAuthRepository {
           email: validEmail, password: validPassword);
       return right(unit);
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'email-already-exists') {
+      if (e.code == 'email-already-in-use') {
         return left(const AuthFailure.emailAlreadyInUse());
+      } else if (e.code == 'network-request-failed') {
+        return left(
+          AuthFailure.networkError(),
+        );
       } else {
-        return left(const AuthFailure.serverError());
+        return left(AuthFailure.serverError(e));
       }
     }
   }
@@ -74,8 +87,8 @@ class FirebaseAuthService implements IAuthRepository {
 
       await _firebaseAuth.signInWithCredential(googleCredential);
       return right(unit);
-    } on FirebaseAuthException catch (_) {
-      return left(const AuthFailure.serverError());
+    } on FirebaseAuthException catch (e) {
+      return left(AuthFailure.serverError(e));
     }
   }
 
@@ -94,12 +107,58 @@ class FirebaseAuthService implements IAuthRepository {
       await _firebaseAuth.sendPasswordResetEmail(email: validEmail);
       return right(unit);
     } on FirebaseAuthException catch (e) {
-      if(e.code=='user-not-found'){
-        return right(unit);  // this return made purposely
+      if (e.code == 'user-not-found') {
+        return right(unit); // this return made purposely
+      } else if (e.code == 'network-request-failed') {
+        return left(
+          AuthFailure.networkError(),
+        );
+      } else {
+        return left(AuthFailure.serverError(e));
       }
-      else{
-        return left(const AuthFailure.serverError());
+    }
+  }
+
+  @override
+  Future<Either<AuthFailure, bool>> checkEmailVerification() async {
+    try {
+      await _firebaseAuth.currentUser!.reload();
+      final isVerified = _firebaseAuth.currentUser!.emailVerified;
+      return right(isVerified);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        return left(AuthFailure.userNotFound());
+      } else if (e.code == 'network-request-failed') {
+        return left(
+          AuthFailure.networkError(),
+        );
       }
+      return left(
+        AuthFailure.serverError(e),
+      );
+    }
+  }
+
+  @override
+  Future<Either<AuthFailure, Unit>> sendEmailVerification() async {
+    try {
+      await _firebaseAuth.currentUser!.sendEmailVerification();
+      return right(unit);
+    } on FirebaseAuthException catch (e) {
+      return left(AuthFailure.serverError(e));
+    }
+  }
+
+  @override
+  Future<Either<AuthFailure, Unit>> signOutWithDelete() async {
+    try {
+      await _firebaseAuth.currentUser!.delete();
+      return right(unit);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'requires-recent-login') {
+        return left(AuthFailure.requiresRecentLogin());
+      }
+      return left(AuthFailure.serverError(e));
     }
   }
 }

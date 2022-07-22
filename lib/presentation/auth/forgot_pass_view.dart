@@ -29,13 +29,14 @@ class ForgotPasswordView extends StatelessWidget {
             (failure) {
               ScaffoldMessenger.of(context).showSnackBar(
                 displaySnackBar(
-                  message: failure.map(
-                    cancelledByUser: (_) => 'Cancelled',
-                    serverError: (_) => 'Server error',
-                    emailAlreadyInUse: (_) => 'Email already in use',
-                    invalidEmailAndPasswordCombination: (_) =>
-                        'Invalid email and password combination',
-                  ),
+                  message: failure.maybeMap(
+                      networkError: (_)=> 'Network Request Failed',
+                      cancelledByUser: (_) => 'Cancelled',
+                      serverError: (_) => 'Server error',
+                      emailAlreadyInUse: (_) => 'Email already in use',
+                      invalidEmailAndPasswordCombination: (_) =>
+                          'Invalid email and password combination',
+                      orElse: () => ''),
                 ),
               );
             },

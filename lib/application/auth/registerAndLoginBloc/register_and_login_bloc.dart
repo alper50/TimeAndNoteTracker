@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:timenotetracker/domain/auth/%C4%B1_auth_repository.dart';
+import 'package:timenotetracker/domain/auth/i_auth_remote.dart';
 import 'package:timenotetracker/domain/auth/auth_failure.dart';
 import 'package:timenotetracker/domain/auth/auth_value_objects.dart';
 part 'register_and_login_event.dart';
@@ -12,7 +12,7 @@ part 'register_and_login_bloc.freezed.dart';
 @injectable
 class RegisterAndLoginBloc
     extends Bloc<RegisterAndLoginEvent, RegisterAndLoginState> {
-  final IAuthRepository _authMethods;
+  final IAuthRemoteService _authMethods;
   RegisterAndLoginBloc(this._authMethods)
       : super(RegisterAndLoginState.initial()) {
     on<RegisterAndLoginEvent>((event, emit) async {

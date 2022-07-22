@@ -17,9 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$NoteDTO {
   String get id => throw _privateConstructorUsedError;
-  String get noteText => throw _privateConstructorUsedError;
-  List<TodoItemDTO> get todoItems => throw _privateConstructorUsedError;
+  String get noteEditorText => throw _privateConstructorUsedError;
   DateTime get lastUpdatedTime => throw _privateConstructorUsedError;
+  DateTime get createdTime => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NoteDTOCopyWith<NoteDTO> get copyWith => throw _privateConstructorUsedError;
@@ -31,9 +31,9 @@ abstract class $NoteDTOCopyWith<$Res> {
       _$NoteDTOCopyWithImpl<$Res>;
   $Res call(
       {String id,
-      String noteText,
-      List<TodoItemDTO> todoItems,
-      DateTime lastUpdatedTime});
+      String noteEditorText,
+      DateTime lastUpdatedTime,
+      DateTime createdTime});
 }
 
 /// @nodoc
@@ -47,26 +47,26 @@ class _$NoteDTOCopyWithImpl<$Res> implements $NoteDTOCopyWith<$Res> {
   @override
   $Res call({
     Object? id = freezed,
-    Object? noteText = freezed,
-    Object? todoItems = freezed,
+    Object? noteEditorText = freezed,
     Object? lastUpdatedTime = freezed,
+    Object? createdTime = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      noteText: noteText == freezed
-          ? _value.noteText
-          : noteText // ignore: cast_nullable_to_non_nullable
+      noteEditorText: noteEditorText == freezed
+          ? _value.noteEditorText
+          : noteEditorText // ignore: cast_nullable_to_non_nullable
               as String,
-      todoItems: todoItems == freezed
-          ? _value.todoItems
-          : todoItems // ignore: cast_nullable_to_non_nullable
-              as List<TodoItemDTO>,
       lastUpdatedTime: lastUpdatedTime == freezed
           ? _value.lastUpdatedTime
           : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      createdTime: createdTime == freezed
+          ? _value.createdTime
+          : createdTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
@@ -79,9 +79,9 @@ abstract class _$NoteDTOCopyWith<$Res> implements $NoteDTOCopyWith<$Res> {
   @override
   $Res call(
       {String id,
-      String noteText,
-      List<TodoItemDTO> todoItems,
-      DateTime lastUpdatedTime});
+      String noteEditorText,
+      DateTime lastUpdatedTime,
+      DateTime createdTime});
 }
 
 /// @nodoc
@@ -96,26 +96,26 @@ class __$NoteDTOCopyWithImpl<$Res> extends _$NoteDTOCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? noteText = freezed,
-    Object? todoItems = freezed,
+    Object? noteEditorText = freezed,
     Object? lastUpdatedTime = freezed,
+    Object? createdTime = freezed,
   }) {
     return _then(_NoteDTO(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      noteText: noteText == freezed
-          ? _value.noteText
-          : noteText // ignore: cast_nullable_to_non_nullable
+      noteEditorText: noteEditorText == freezed
+          ? _value.noteEditorText
+          : noteEditorText // ignore: cast_nullable_to_non_nullable
               as String,
-      todoItems: todoItems == freezed
-          ? _value.todoItems
-          : todoItems // ignore: cast_nullable_to_non_nullable
-              as List<TodoItemDTO>,
       lastUpdatedTime: lastUpdatedTime == freezed
           ? _value.lastUpdatedTime
           : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      createdTime: createdTime == freezed
+          ? _value.createdTime
+          : createdTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
@@ -126,29 +126,23 @@ class __$NoteDTOCopyWithImpl<$Res> extends _$NoteDTOCopyWithImpl<$Res>
 class _$_NoteDTO extends _NoteDTO {
   const _$_NoteDTO(
       {required this.id,
-      required this.noteText,
-      required final List<TodoItemDTO> todoItems,
-      required this.lastUpdatedTime})
-      : _todoItems = todoItems,
-        super._();
+      required this.noteEditorText,
+      required this.lastUpdatedTime,
+      required this.createdTime})
+      : super._();
 
   @override
   final String id;
   @override
-  final String noteText;
-  final List<TodoItemDTO> _todoItems;
-  @override
-  List<TodoItemDTO> get todoItems {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_todoItems);
-  }
-
+  final String noteEditorText;
   @override
   final DateTime lastUpdatedTime;
+  @override
+  final DateTime createdTime;
 
   @override
   String toString() {
-    return 'NoteDTO(id: $id, noteText: $noteText, todoItems: $todoItems, lastUpdatedTime: $lastUpdatedTime)';
+    return 'NoteDTO(id: $id, noteEditorText: $noteEditorText, lastUpdatedTime: $lastUpdatedTime, createdTime: $createdTime)';
   }
 
   @override
@@ -157,19 +151,21 @@ class _$_NoteDTO extends _NoteDTO {
         (other.runtimeType == runtimeType &&
             other is _NoteDTO &&
             const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.noteText, noteText) &&
-            const DeepCollectionEquality().equals(other.todoItems, todoItems) &&
             const DeepCollectionEquality()
-                .equals(other.lastUpdatedTime, lastUpdatedTime));
+                .equals(other.noteEditorText, noteEditorText) &&
+            const DeepCollectionEquality()
+                .equals(other.lastUpdatedTime, lastUpdatedTime) &&
+            const DeepCollectionEquality()
+                .equals(other.createdTime, createdTime));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(noteText),
-      const DeepCollectionEquality().hash(todoItems),
-      const DeepCollectionEquality().hash(lastUpdatedTime));
+      const DeepCollectionEquality().hash(noteEditorText),
+      const DeepCollectionEquality().hash(lastUpdatedTime),
+      const DeepCollectionEquality().hash(createdTime));
 
   @JsonKey(ignore: true)
   @override
@@ -180,19 +176,19 @@ class _$_NoteDTO extends _NoteDTO {
 abstract class _NoteDTO extends NoteDTO {
   const factory _NoteDTO(
       {required final String id,
-      required final String noteText,
-      required final List<TodoItemDTO> todoItems,
-      required final DateTime lastUpdatedTime}) = _$_NoteDTO;
+      required final String noteEditorText,
+      required final DateTime lastUpdatedTime,
+      required final DateTime createdTime}) = _$_NoteDTO;
   const _NoteDTO._() : super._();
 
   @override
   String get id => throw _privateConstructorUsedError;
   @override
-  String get noteText => throw _privateConstructorUsedError;
-  @override
-  List<TodoItemDTO> get todoItems => throw _privateConstructorUsedError;
+  String get noteEditorText => throw _privateConstructorUsedError;
   @override
   DateTime get lastUpdatedTime => throw _privateConstructorUsedError;
+  @override
+  DateTime get createdTime => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$NoteDTOCopyWith<_NoteDTO> get copyWith =>

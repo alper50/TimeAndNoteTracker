@@ -11,7 +11,6 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashView> {
-
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
@@ -23,7 +22,13 @@ class _SplashPageState extends State<SplashView> {
             },
             unauthenticated: (_) {
               AutoRouter.of(context).replaceNamed('/authentication-view');
-            });
+            },
+            emailNotVerified: (_) {
+              AutoRouter.of(context).replaceNamed('/verify-email-view');
+            },
+            onboardNotShowed: (_) {
+              AutoRouter.of(context).replaceNamed('/onboard-view');
+            },);
       },
       child: Scaffold(
         body: Center(
