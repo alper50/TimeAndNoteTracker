@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "845487822991",
+    "project_id": "timenotetracker",
+    "storage_bucket": "timenotetracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845487822991:android:f8862bd59d48492bd5f8fa",
+        "android_client_info": {
+          "package_name": "com.example.timenotetracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845487822991-goon0a7d2uki25gevko92do75kvhqq8q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKPrvPAedYggcy_4lG_t5iHb_Iq0WMldg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845487822991-goon0a7d2uki25gevko92do75kvhqq8q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
