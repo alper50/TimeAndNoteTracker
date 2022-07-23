@@ -6,6 +6,6 @@ void main(){
   final user = User(id: UniqueId());
 
   test('should return a valid userId', (){
-    expect(true, user.id!.isValid());
+    expect(true, user.id.isValid());
   });
 }

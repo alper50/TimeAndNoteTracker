@@ -4,5 +4,5 @@ part 'user_model.freezed.dart';
 
 @freezed
 abstract class User with _$User {
-  const factory User({UniqueId? id}) = _User;
+  const factory User({required UniqueId id}) = _User;
 }

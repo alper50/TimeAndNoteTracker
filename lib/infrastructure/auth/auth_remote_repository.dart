@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'package:timenotetracker/domain/auth/auth_failure.dart';
 import 'package:timenotetracker/domain/auth/auth_value_objects.dart';
 import 'package:timenotetracker/domain/auth/i_auth_remote.dart';
+import 'package:timenotetracker/domain/auth/user_model.dart';
 
 
 //TODO make sure this class is working instead of Service
@@ -12,7 +13,7 @@ class AuthRemoteRepository implements IAuthRemoteService{
 
   AuthRemoteRepository(this._authRemoteService);
    @override
-  Future<Either<AuthFailure, String>> getSignedInUser() async {
+  Future<Either<AuthFailure, User>> getSignedInUser() async {
     final result = await _authRemoteService.getSignedInUser();
     return result;
   }
