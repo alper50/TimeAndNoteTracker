@@ -1,9 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:timenotetracker/domain/auth/auth_failure.dart';
 import 'package:timenotetracker/domain/auth/auth_value_objects.dart';
+import 'package:timenotetracker/domain/auth/user_model.dart';
 
 abstract class IAuthRemoteService {
-  Future<Either<AuthFailure,String>> getSignedInUser(); // TODO return type should be user model and uniqe ıd needs to be implemented
+  Future<Either<AuthFailure,User>> getSignedInUser(); 
 
   Future<Either<AuthFailure, Unit>> sendEmailVerification();
 

@@ -5,5 +5,5 @@ class AuthEvent with _$AuthEvent {
   const factory AuthEvent.checkAuthentication() = CheckAuthentication;
   const factory AuthEvent.signOut() = SignOut;
   const factory AuthEvent.signOutWithDelete() = SignOutWithDelete;
-  const factory AuthEvent.checkVerification() = CheckVerification;
+  const factory AuthEvent.checkEmailVerification() = CheckEmailVerification;
 }

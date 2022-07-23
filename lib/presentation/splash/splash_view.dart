@@ -15,20 +15,22 @@ class _SplashPageState extends State<SplashView> {
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) {
-        state.map(
-            initial: (_) {},
-            authenticated: (_) {
-              AutoRouter.of(context).replaceNamed('/home-view');
-            },
-            unauthenticated: (_) {
-              AutoRouter.of(context).replaceNamed('/authentication-view');
-            },
-            emailNotVerified: (_) {
-              AutoRouter.of(context).replaceNamed('/verify-email-view');
-            },
-            onboardNotShowed: (_) {
-              AutoRouter.of(context).replaceNamed('/onboard-view');
-            },);
+        state.maybeMap(
+          initial: (_) {},
+          authenticated: (_) {
+            AutoRouter.of(context).replaceNamed('/home-view');
+          },
+          unauthenticated: (_) {
+            AutoRouter.of(context).replaceNamed('/authentication-view');
+          },
+          emailNotVerified: (_) {
+            AutoRouter.of(context).replaceNamed('/verify-email-view');
+          },
+          onboardNotShowed: (_) {
+            AutoRouter.of(context).replaceNamed('/onboard-view');
+          },
+          orElse: () {},
+        );
       },
       child: Scaffold(
         body: Center(

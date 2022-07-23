@@ -4,4 +4,5 @@ part of 'verify_email_bloc.dart';
 class VerifyEmailEvent with _$VerifyEmailEvent {
   const factory VerifyEmailEvent.initalize() = Initial;
   const factory VerifyEmailEvent.resendEmail() = ResendEmail;
+
 }

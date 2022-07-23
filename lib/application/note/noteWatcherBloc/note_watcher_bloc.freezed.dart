@@ -18,48 +18,58 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$NoteWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() watchAllStarted,
+    required TResult Function() watchNotesStarted,
     required TResult Function(Either<NoteFailure, List<Note>> failureOrNotes)
-        watchAllReceived,
+        watchNotesReceived,
     required TResult Function() watchTodosStarted,
+    required TResult Function(
+            Either<NoteFailure, List<TodoItem>> failureOrTodos)
+        watchTodosReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
+    TResult Function()? watchNotesStarted,
     TResult Function(Either<NoteFailure, List<Note>> failureOrNotes)?
-        watchAllReceived,
+        watchNotesReceived,
     TResult Function()? watchTodosStarted,
+    TResult Function(Either<NoteFailure, List<TodoItem>> failureOrTodos)?
+        watchTodosReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
+    TResult Function()? watchNotesStarted,
     TResult Function(Either<NoteFailure, List<Note>> failureOrNotes)?
-        watchAllReceived,
+        watchNotesReceived,
     TResult Function()? watchTodosStarted,
+    TResult Function(Either<NoteFailure, List<TodoItem>> failureOrTodos)?
+        watchTodosReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchAllStarted value) watchAllStarted,
-    required TResult Function(WatchAllReceived value) watchAllReceived,
+    required TResult Function(_WatchNotesStarted value) watchNotesStarted,
+    required TResult Function(_WatchNotesReceived value) watchNotesReceived,
     required TResult Function(_WatchTodosStarted value) watchTodosStarted,
+    required TResult Function(_WatchTodosReceived value) watchTodosReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(WatchAllReceived value)? watchAllReceived,
+    TResult Function(_WatchNotesStarted value)? watchNotesStarted,
+    TResult Function(_WatchNotesReceived value)? watchNotesReceived,
     TResult Function(_WatchTodosStarted value)? watchTodosStarted,
+    TResult Function(_WatchTodosReceived value)? watchTodosReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(WatchAllReceived value)? watchAllReceived,
+    TResult Function(_WatchNotesStarted value)? watchNotesStarted,
+    TResult Function(_WatchNotesReceived value)? watchNotesReceived,
     TResult Function(_WatchTodosStarted value)? watchTodosStarted,
+    TResult Function(_WatchTodosReceived value)? watchTodosReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -83,38 +93,38 @@ class _$NoteWatcherEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$WatchAllStartedCopyWith<$Res> {
-  factory _$WatchAllStartedCopyWith(
-          _WatchAllStarted value, $Res Function(_WatchAllStarted) then) =
-      __$WatchAllStartedCopyWithImpl<$Res>;
+abstract class _$WatchNotesStartedCopyWith<$Res> {
+  factory _$WatchNotesStartedCopyWith(
+          _WatchNotesStarted value, $Res Function(_WatchNotesStarted) then) =
+      __$WatchNotesStartedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$WatchAllStartedCopyWithImpl<$Res>
+class __$WatchNotesStartedCopyWithImpl<$Res>
     extends _$NoteWatcherEventCopyWithImpl<$Res>
-    implements _$WatchAllStartedCopyWith<$Res> {
-  __$WatchAllStartedCopyWithImpl(
-      _WatchAllStarted _value, $Res Function(_WatchAllStarted) _then)
-      : super(_value, (v) => _then(v as _WatchAllStarted));
+    implements _$WatchNotesStartedCopyWith<$Res> {
+  __$WatchNotesStartedCopyWithImpl(
+      _WatchNotesStarted _value, $Res Function(_WatchNotesStarted) _then)
+      : super(_value, (v) => _then(v as _WatchNotesStarted));
 
   @override
-  _WatchAllStarted get _value => super._value as _WatchAllStarted;
+  _WatchNotesStarted get _value => super._value as _WatchNotesStarted;
 }
 
 /// @nodoc
 
-class _$_WatchAllStarted implements _WatchAllStarted {
-  const _$_WatchAllStarted();
+class _$_WatchNotesStarted implements _WatchNotesStarted {
+  const _$_WatchNotesStarted();
 
   @override
   String toString() {
-    return 'NoteWatcherEvent.watchAllStarted()';
+    return 'NoteWatcherEvent.watchNotesStarted()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _WatchAllStarted);
+        (other.runtimeType == runtimeType && other is _WatchNotesStarted);
   }
 
   @override
@@ -123,36 +133,43 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() watchAllStarted,
+    required TResult Function() watchNotesStarted,
     required TResult Function(Either<NoteFailure, List<Note>> failureOrNotes)
-        watchAllReceived,
+        watchNotesReceived,
     required TResult Function() watchTodosStarted,
+    required TResult Function(
+            Either<NoteFailure, List<TodoItem>> failureOrTodos)
+        watchTodosReceived,
   }) {
-    return watchAllStarted();
+    return watchNotesStarted();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
+    TResult Function()? watchNotesStarted,
     TResult Function(Either<NoteFailure, List<Note>> failureOrNotes)?
-        watchAllReceived,
+        watchNotesReceived,
     TResult Function()? watchTodosStarted,
+    TResult Function(Either<NoteFailure, List<TodoItem>> failureOrTodos)?
+        watchTodosReceived,
   }) {
-    return watchAllStarted?.call();
+    return watchNotesStarted?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
+    TResult Function()? watchNotesStarted,
     TResult Function(Either<NoteFailure, List<Note>> failureOrNotes)?
-        watchAllReceived,
+        watchNotesReceived,
     TResult Function()? watchTodosStarted,
+    TResult Function(Either<NoteFailure, List<TodoItem>> failureOrTodos)?
+        watchTodosReceived,
     required TResult orElse(),
   }) {
-    if (watchAllStarted != null) {
-      return watchAllStarted();
+    if (watchNotesStarted != null) {
+      return watchNotesStarted();
     }
     return orElse();
   }
@@ -160,66 +177,69 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchAllStarted value) watchAllStarted,
-    required TResult Function(WatchAllReceived value) watchAllReceived,
+    required TResult Function(_WatchNotesStarted value) watchNotesStarted,
+    required TResult Function(_WatchNotesReceived value) watchNotesReceived,
     required TResult Function(_WatchTodosStarted value) watchTodosStarted,
+    required TResult Function(_WatchTodosReceived value) watchTodosReceived,
   }) {
-    return watchAllStarted(this);
+    return watchNotesStarted(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(WatchAllReceived value)? watchAllReceived,
+    TResult Function(_WatchNotesStarted value)? watchNotesStarted,
+    TResult Function(_WatchNotesReceived value)? watchNotesReceived,
     TResult Function(_WatchTodosStarted value)? watchTodosStarted,
+    TResult Function(_WatchTodosReceived value)? watchTodosReceived,
   }) {
-    return watchAllStarted?.call(this);
+    return watchNotesStarted?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(WatchAllReceived value)? watchAllReceived,
+    TResult Function(_WatchNotesStarted value)? watchNotesStarted,
+    TResult Function(_WatchNotesReceived value)? watchNotesReceived,
     TResult Function(_WatchTodosStarted value)? watchTodosStarted,
+    TResult Function(_WatchTodosReceived value)? watchTodosReceived,
     required TResult orElse(),
   }) {
-    if (watchAllStarted != null) {
-      return watchAllStarted(this);
+    if (watchNotesStarted != null) {
+      return watchNotesStarted(this);
     }
     return orElse();
   }
 }
 
-abstract class _WatchAllStarted implements NoteWatcherEvent {
-  const factory _WatchAllStarted() = _$_WatchAllStarted;
+abstract class _WatchNotesStarted implements NoteWatcherEvent {
+  const factory _WatchNotesStarted() = _$_WatchNotesStarted;
 }
 
 /// @nodoc
-abstract class $WatchAllReceivedCopyWith<$Res> {
-  factory $WatchAllReceivedCopyWith(
-          WatchAllReceived value, $Res Function(WatchAllReceived) then) =
-      _$WatchAllReceivedCopyWithImpl<$Res>;
+abstract class _$WatchNotesReceivedCopyWith<$Res> {
+  factory _$WatchNotesReceivedCopyWith(
+          _WatchNotesReceived value, $Res Function(_WatchNotesReceived) then) =
+      __$WatchNotesReceivedCopyWithImpl<$Res>;
   $Res call({Either<NoteFailure, List<Note>> failureOrNotes});
 }
 
 /// @nodoc
-class _$WatchAllReceivedCopyWithImpl<$Res>
+class __$WatchNotesReceivedCopyWithImpl<$Res>
     extends _$NoteWatcherEventCopyWithImpl<$Res>
-    implements $WatchAllReceivedCopyWith<$Res> {
-  _$WatchAllReceivedCopyWithImpl(
-      WatchAllReceived _value, $Res Function(WatchAllReceived) _then)
-      : super(_value, (v) => _then(v as WatchAllReceived));
+    implements _$WatchNotesReceivedCopyWith<$Res> {
+  __$WatchNotesReceivedCopyWithImpl(
+      _WatchNotesReceived _value, $Res Function(_WatchNotesReceived) _then)
+      : super(_value, (v) => _then(v as _WatchNotesReceived));
 
   @override
-  WatchAllReceived get _value => super._value as WatchAllReceived;
+  _WatchNotesReceived get _value => super._value as _WatchNotesReceived;
 
   @override
   $Res call({
     Object? failureOrNotes = freezed,
   }) {
-    return _then(WatchAllReceived(
+    return _then(_WatchNotesReceived(
       failureOrNotes == freezed
           ? _value.failureOrNotes
           : failureOrNotes // ignore: cast_nullable_to_non_nullable
@@ -230,22 +250,22 @@ class _$WatchAllReceivedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$WatchAllReceived implements WatchAllReceived {
-  const _$WatchAllReceived(this.failureOrNotes);
+class _$_WatchNotesReceived implements _WatchNotesReceived {
+  const _$_WatchNotesReceived(this.failureOrNotes);
 
   @override
   final Either<NoteFailure, List<Note>> failureOrNotes;
 
   @override
   String toString() {
-    return 'NoteWatcherEvent.watchAllReceived(failureOrNotes: $failureOrNotes)';
+    return 'NoteWatcherEvent.watchNotesReceived(failureOrNotes: $failureOrNotes)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is WatchAllReceived &&
+            other is _WatchNotesReceived &&
             const DeepCollectionEquality()
                 .equals(other.failureOrNotes, failureOrNotes));
   }
@@ -256,42 +276,49 @@ class _$WatchAllReceived implements WatchAllReceived {
 
   @JsonKey(ignore: true)
   @override
-  $WatchAllReceivedCopyWith<WatchAllReceived> get copyWith =>
-      _$WatchAllReceivedCopyWithImpl<WatchAllReceived>(this, _$identity);
+  _$WatchNotesReceivedCopyWith<_WatchNotesReceived> get copyWith =>
+      __$WatchNotesReceivedCopyWithImpl<_WatchNotesReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() watchAllStarted,
+    required TResult Function() watchNotesStarted,
     required TResult Function(Either<NoteFailure, List<Note>> failureOrNotes)
-        watchAllReceived,
+        watchNotesReceived,
     required TResult Function() watchTodosStarted,
+    required TResult Function(
+            Either<NoteFailure, List<TodoItem>> failureOrTodos)
+        watchTodosReceived,
   }) {
-    return watchAllReceived(failureOrNotes);
+    return watchNotesReceived(failureOrNotes);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
+    TResult Function()? watchNotesStarted,
     TResult Function(Either<NoteFailure, List<Note>> failureOrNotes)?
-        watchAllReceived,
+        watchNotesReceived,
     TResult Function()? watchTodosStarted,
+    TResult Function(Either<NoteFailure, List<TodoItem>> failureOrTodos)?
+        watchTodosReceived,
   }) {
-    return watchAllReceived?.call(failureOrNotes);
+    return watchNotesReceived?.call(failureOrNotes);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
+    TResult Function()? watchNotesStarted,
     TResult Function(Either<NoteFailure, List<Note>> failureOrNotes)?
-        watchAllReceived,
+        watchNotesReceived,
     TResult Function()? watchTodosStarted,
+    TResult Function(Either<NoteFailure, List<TodoItem>> failureOrTodos)?
+        watchTodosReceived,
     required TResult orElse(),
   }) {
-    if (watchAllReceived != null) {
-      return watchAllReceived(failureOrNotes);
+    if (watchNotesReceived != null) {
+      return watchNotesReceived(failureOrNotes);
     }
     return orElse();
   }
@@ -299,47 +326,50 @@ class _$WatchAllReceived implements WatchAllReceived {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchAllStarted value) watchAllStarted,
-    required TResult Function(WatchAllReceived value) watchAllReceived,
+    required TResult Function(_WatchNotesStarted value) watchNotesStarted,
+    required TResult Function(_WatchNotesReceived value) watchNotesReceived,
     required TResult Function(_WatchTodosStarted value) watchTodosStarted,
+    required TResult Function(_WatchTodosReceived value) watchTodosReceived,
   }) {
-    return watchAllReceived(this);
+    return watchNotesReceived(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(WatchAllReceived value)? watchAllReceived,
+    TResult Function(_WatchNotesStarted value)? watchNotesStarted,
+    TResult Function(_WatchNotesReceived value)? watchNotesReceived,
     TResult Function(_WatchTodosStarted value)? watchTodosStarted,
+    TResult Function(_WatchTodosReceived value)? watchTodosReceived,
   }) {
-    return watchAllReceived?.call(this);
+    return watchNotesReceived?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(WatchAllReceived value)? watchAllReceived,
+    TResult Function(_WatchNotesStarted value)? watchNotesStarted,
+    TResult Function(_WatchNotesReceived value)? watchNotesReceived,
     TResult Function(_WatchTodosStarted value)? watchTodosStarted,
+    TResult Function(_WatchTodosReceived value)? watchTodosReceived,
     required TResult orElse(),
   }) {
-    if (watchAllReceived != null) {
-      return watchAllReceived(this);
+    if (watchNotesReceived != null) {
+      return watchNotesReceived(this);
     }
     return orElse();
   }
 }
 
-abstract class WatchAllReceived implements NoteWatcherEvent {
-  const factory WatchAllReceived(
+abstract class _WatchNotesReceived implements NoteWatcherEvent {
+  const factory _WatchNotesReceived(
           final Either<NoteFailure, List<Note>> failureOrNotes) =
-      _$WatchAllReceived;
+      _$_WatchNotesReceived;
 
   Either<NoteFailure, List<Note>> get failureOrNotes =>
       throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $WatchAllReceivedCopyWith<WatchAllReceived> get copyWith =>
+  _$WatchNotesReceivedCopyWith<_WatchNotesReceived> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -384,10 +414,13 @@ class _$_WatchTodosStarted implements _WatchTodosStarted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() watchAllStarted,
+    required TResult Function() watchNotesStarted,
     required TResult Function(Either<NoteFailure, List<Note>> failureOrNotes)
-        watchAllReceived,
+        watchNotesReceived,
     required TResult Function() watchTodosStarted,
+    required TResult Function(
+            Either<NoteFailure, List<TodoItem>> failureOrTodos)
+        watchTodosReceived,
   }) {
     return watchTodosStarted();
   }
@@ -395,10 +428,12 @@ class _$_WatchTodosStarted implements _WatchTodosStarted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
+    TResult Function()? watchNotesStarted,
     TResult Function(Either<NoteFailure, List<Note>> failureOrNotes)?
-        watchAllReceived,
+        watchNotesReceived,
     TResult Function()? watchTodosStarted,
+    TResult Function(Either<NoteFailure, List<TodoItem>> failureOrTodos)?
+        watchTodosReceived,
   }) {
     return watchTodosStarted?.call();
   }
@@ -406,10 +441,12 @@ class _$_WatchTodosStarted implements _WatchTodosStarted {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
+    TResult Function()? watchNotesStarted,
     TResult Function(Either<NoteFailure, List<Note>> failureOrNotes)?
-        watchAllReceived,
+        watchNotesReceived,
     TResult Function()? watchTodosStarted,
+    TResult Function(Either<NoteFailure, List<TodoItem>> failureOrTodos)?
+        watchTodosReceived,
     required TResult orElse(),
   }) {
     if (watchTodosStarted != null) {
@@ -421,9 +458,10 @@ class _$_WatchTodosStarted implements _WatchTodosStarted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchAllStarted value) watchAllStarted,
-    required TResult Function(WatchAllReceived value) watchAllReceived,
+    required TResult Function(_WatchNotesStarted value) watchNotesStarted,
+    required TResult Function(_WatchNotesReceived value) watchNotesReceived,
     required TResult Function(_WatchTodosStarted value) watchTodosStarted,
+    required TResult Function(_WatchTodosReceived value) watchTodosReceived,
   }) {
     return watchTodosStarted(this);
   }
@@ -431,9 +469,10 @@ class _$_WatchTodosStarted implements _WatchTodosStarted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(WatchAllReceived value)? watchAllReceived,
+    TResult Function(_WatchNotesStarted value)? watchNotesStarted,
+    TResult Function(_WatchNotesReceived value)? watchNotesReceived,
     TResult Function(_WatchTodosStarted value)? watchTodosStarted,
+    TResult Function(_WatchTodosReceived value)? watchTodosReceived,
   }) {
     return watchTodosStarted?.call(this);
   }
@@ -441,9 +480,10 @@ class _$_WatchTodosStarted implements _WatchTodosStarted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(WatchAllReceived value)? watchAllReceived,
+    TResult Function(_WatchNotesStarted value)? watchNotesStarted,
+    TResult Function(_WatchNotesReceived value)? watchNotesReceived,
     TResult Function(_WatchTodosStarted value)? watchTodosStarted,
+    TResult Function(_WatchTodosReceived value)? watchTodosReceived,
     required TResult orElse(),
   }) {
     if (watchTodosStarted != null) {
@@ -455,6 +495,163 @@ class _$_WatchTodosStarted implements _WatchTodosStarted {
 
 abstract class _WatchTodosStarted implements NoteWatcherEvent {
   const factory _WatchTodosStarted() = _$_WatchTodosStarted;
+}
+
+/// @nodoc
+abstract class _$WatchTodosReceivedCopyWith<$Res> {
+  factory _$WatchTodosReceivedCopyWith(
+          _WatchTodosReceived value, $Res Function(_WatchTodosReceived) then) =
+      __$WatchTodosReceivedCopyWithImpl<$Res>;
+  $Res call({Either<NoteFailure, List<TodoItem>> failureOrTodos});
+}
+
+/// @nodoc
+class __$WatchTodosReceivedCopyWithImpl<$Res>
+    extends _$NoteWatcherEventCopyWithImpl<$Res>
+    implements _$WatchTodosReceivedCopyWith<$Res> {
+  __$WatchTodosReceivedCopyWithImpl(
+      _WatchTodosReceived _value, $Res Function(_WatchTodosReceived) _then)
+      : super(_value, (v) => _then(v as _WatchTodosReceived));
+
+  @override
+  _WatchTodosReceived get _value => super._value as _WatchTodosReceived;
+
+  @override
+  $Res call({
+    Object? failureOrTodos = freezed,
+  }) {
+    return _then(_WatchTodosReceived(
+      failureOrTodos == freezed
+          ? _value.failureOrTodos
+          : failureOrTodos // ignore: cast_nullable_to_non_nullable
+              as Either<NoteFailure, List<TodoItem>>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_WatchTodosReceived implements _WatchTodosReceived {
+  const _$_WatchTodosReceived(this.failureOrTodos);
+
+  @override
+  final Either<NoteFailure, List<TodoItem>> failureOrTodos;
+
+  @override
+  String toString() {
+    return 'NoteWatcherEvent.watchTodosReceived(failureOrTodos: $failureOrTodos)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _WatchTodosReceived &&
+            const DeepCollectionEquality()
+                .equals(other.failureOrTodos, failureOrTodos));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failureOrTodos));
+
+  @JsonKey(ignore: true)
+  @override
+  _$WatchTodosReceivedCopyWith<_WatchTodosReceived> get copyWith =>
+      __$WatchTodosReceivedCopyWithImpl<_WatchTodosReceived>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchNotesStarted,
+    required TResult Function(Either<NoteFailure, List<Note>> failureOrNotes)
+        watchNotesReceived,
+    required TResult Function() watchTodosStarted,
+    required TResult Function(
+            Either<NoteFailure, List<TodoItem>> failureOrTodos)
+        watchTodosReceived,
+  }) {
+    return watchTodosReceived(failureOrTodos);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? watchNotesStarted,
+    TResult Function(Either<NoteFailure, List<Note>> failureOrNotes)?
+        watchNotesReceived,
+    TResult Function()? watchTodosStarted,
+    TResult Function(Either<NoteFailure, List<TodoItem>> failureOrTodos)?
+        watchTodosReceived,
+  }) {
+    return watchTodosReceived?.call(failureOrTodos);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchNotesStarted,
+    TResult Function(Either<NoteFailure, List<Note>> failureOrNotes)?
+        watchNotesReceived,
+    TResult Function()? watchTodosStarted,
+    TResult Function(Either<NoteFailure, List<TodoItem>> failureOrTodos)?
+        watchTodosReceived,
+    required TResult orElse(),
+  }) {
+    if (watchTodosReceived != null) {
+      return watchTodosReceived(failureOrTodos);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchNotesStarted value) watchNotesStarted,
+    required TResult Function(_WatchNotesReceived value) watchNotesReceived,
+    required TResult Function(_WatchTodosStarted value) watchTodosStarted,
+    required TResult Function(_WatchTodosReceived value) watchTodosReceived,
+  }) {
+    return watchTodosReceived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchNotesStarted value)? watchNotesStarted,
+    TResult Function(_WatchNotesReceived value)? watchNotesReceived,
+    TResult Function(_WatchTodosStarted value)? watchTodosStarted,
+    TResult Function(_WatchTodosReceived value)? watchTodosReceived,
+  }) {
+    return watchTodosReceived?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchNotesStarted value)? watchNotesStarted,
+    TResult Function(_WatchNotesReceived value)? watchNotesReceived,
+    TResult Function(_WatchTodosStarted value)? watchTodosStarted,
+    TResult Function(_WatchTodosReceived value)? watchTodosReceived,
+    required TResult orElse(),
+  }) {
+    if (watchTodosReceived != null) {
+      return watchTodosReceived(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _WatchTodosReceived implements NoteWatcherEvent {
+  const factory _WatchTodosReceived(
+          final Either<NoteFailure, List<TodoItem>> failureOrTodos) =
+      _$_WatchTodosReceived;
+
+  Either<NoteFailure, List<TodoItem>> get failureOrTodos =>
+      throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$WatchTodosReceivedCopyWith<_WatchTodosReceived> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

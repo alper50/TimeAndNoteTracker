@@ -200,6 +200,7 @@ mixin _$TodoItemDTO {
   String get id => throw _privateConstructorUsedError;
   String get todoText => throw _privateConstructorUsedError;
   bool get isDone => throw _privateConstructorUsedError;
+  DateTime get lastUpdatedTime => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TodoItemDTOCopyWith<TodoItemDTO> get copyWith =>
@@ -211,7 +212,8 @@ abstract class $TodoItemDTOCopyWith<$Res> {
   factory $TodoItemDTOCopyWith(
           TodoItemDTO value, $Res Function(TodoItemDTO) then) =
       _$TodoItemDTOCopyWithImpl<$Res>;
-  $Res call({String id, String todoText, bool isDone});
+  $Res call(
+      {String id, String todoText, bool isDone, DateTime lastUpdatedTime});
 }
 
 /// @nodoc
@@ -227,6 +229,7 @@ class _$TodoItemDTOCopyWithImpl<$Res> implements $TodoItemDTOCopyWith<$Res> {
     Object? id = freezed,
     Object? todoText = freezed,
     Object? isDone = freezed,
+    Object? lastUpdatedTime = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -241,6 +244,10 @@ class _$TodoItemDTOCopyWithImpl<$Res> implements $TodoItemDTOCopyWith<$Res> {
           ? _value.isDone
           : isDone // ignore: cast_nullable_to_non_nullable
               as bool,
+      lastUpdatedTime: lastUpdatedTime == freezed
+          ? _value.lastUpdatedTime
+          : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -252,7 +259,8 @@ abstract class _$TodoItemDTOCopyWith<$Res>
           _TodoItemDTO value, $Res Function(_TodoItemDTO) then) =
       __$TodoItemDTOCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String todoText, bool isDone});
+  $Res call(
+      {String id, String todoText, bool isDone, DateTime lastUpdatedTime});
 }
 
 /// @nodoc
@@ -270,6 +278,7 @@ class __$TodoItemDTOCopyWithImpl<$Res> extends _$TodoItemDTOCopyWithImpl<$Res>
     Object? id = freezed,
     Object? todoText = freezed,
     Object? isDone = freezed,
+    Object? lastUpdatedTime = freezed,
   }) {
     return _then(_TodoItemDTO(
       id: id == freezed
@@ -284,6 +293,10 @@ class __$TodoItemDTOCopyWithImpl<$Res> extends _$TodoItemDTOCopyWithImpl<$Res>
           ? _value.isDone
           : isDone // ignore: cast_nullable_to_non_nullable
               as bool,
+      lastUpdatedTime: lastUpdatedTime == freezed
+          ? _value.lastUpdatedTime
+          : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -292,7 +305,10 @@ class __$TodoItemDTOCopyWithImpl<$Res> extends _$TodoItemDTOCopyWithImpl<$Res>
 
 class _$_TodoItemDTO extends _TodoItemDTO {
   const _$_TodoItemDTO(
-      {required this.id, required this.todoText, required this.isDone})
+      {required this.id,
+      required this.todoText,
+      required this.isDone,
+      required this.lastUpdatedTime})
       : super._();
 
   @override
@@ -301,10 +317,12 @@ class _$_TodoItemDTO extends _TodoItemDTO {
   final String todoText;
   @override
   final bool isDone;
+  @override
+  final DateTime lastUpdatedTime;
 
   @override
   String toString() {
-    return 'TodoItemDTO(id: $id, todoText: $todoText, isDone: $isDone)';
+    return 'TodoItemDTO(id: $id, todoText: $todoText, isDone: $isDone, lastUpdatedTime: $lastUpdatedTime)';
   }
 
   @override
@@ -314,7 +332,9 @@ class _$_TodoItemDTO extends _TodoItemDTO {
             other is _TodoItemDTO &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.todoText, todoText) &&
-            const DeepCollectionEquality().equals(other.isDone, isDone));
+            const DeepCollectionEquality().equals(other.isDone, isDone) &&
+            const DeepCollectionEquality()
+                .equals(other.lastUpdatedTime, lastUpdatedTime));
   }
 
   @override
@@ -322,7 +342,8 @@ class _$_TodoItemDTO extends _TodoItemDTO {
       runtimeType,
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(todoText),
-      const DeepCollectionEquality().hash(isDone));
+      const DeepCollectionEquality().hash(isDone),
+      const DeepCollectionEquality().hash(lastUpdatedTime));
 
   @JsonKey(ignore: true)
   @override
@@ -334,7 +355,8 @@ abstract class _TodoItemDTO extends TodoItemDTO {
   const factory _TodoItemDTO(
       {required final String id,
       required final String todoText,
-      required final bool isDone}) = _$_TodoItemDTO;
+      required final bool isDone,
+      required final DateTime lastUpdatedTime}) = _$_TodoItemDTO;
   const _TodoItemDTO._() : super._();
 
   @override
@@ -343,6 +365,8 @@ abstract class _TodoItemDTO extends TodoItemDTO {
   String get todoText => throw _privateConstructorUsedError;
   @override
   bool get isDone => throw _privateConstructorUsedError;
+  @override
+  DateTime get lastUpdatedTime => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TodoItemDTOCopyWith<_TodoItemDTO> get copyWith =>

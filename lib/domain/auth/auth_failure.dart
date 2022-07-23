@@ -10,6 +10,7 @@ abstract class AuthFailure with _$AuthFailure {
   const factory AuthFailure.requiresRecentLogin() = RequiresRecentLogin;
   const factory AuthFailure.userNotFound() = UserNotFound;
   const factory AuthFailure.emailAlreadyInUse() = EmailAlreadyInUse;
+  const factory AuthFailure.multipleRequest() = MultipleRequest;
   const factory AuthFailure.invalidEmailAndPasswordCombination() =
       InvalidEmailAndPasswordCombination;
 }

@@ -19,6 +19,7 @@ mixin _$TodoItem {
   UniqueId get id => throw _privateConstructorUsedError;
   Todo get todo => throw _privateConstructorUsedError;
   bool get isDone => throw _privateConstructorUsedError;
+  DateTime get lastUpdatedTime => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TodoItemCopyWith<TodoItem> get copyWith =>
@@ -29,7 +30,7 @@ mixin _$TodoItem {
 abstract class $TodoItemCopyWith<$Res> {
   factory $TodoItemCopyWith(TodoItem value, $Res Function(TodoItem) then) =
       _$TodoItemCopyWithImpl<$Res>;
-  $Res call({UniqueId id, Todo todo, bool isDone});
+  $Res call({UniqueId id, Todo todo, bool isDone, DateTime lastUpdatedTime});
 }
 
 /// @nodoc
@@ -45,6 +46,7 @@ class _$TodoItemCopyWithImpl<$Res> implements $TodoItemCopyWith<$Res> {
     Object? id = freezed,
     Object? todo = freezed,
     Object? isDone = freezed,
+    Object? lastUpdatedTime = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -59,6 +61,10 @@ class _$TodoItemCopyWithImpl<$Res> implements $TodoItemCopyWith<$Res> {
           ? _value.isDone
           : isDone // ignore: cast_nullable_to_non_nullable
               as bool,
+      lastUpdatedTime: lastUpdatedTime == freezed
+          ? _value.lastUpdatedTime
+          : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -68,7 +74,7 @@ abstract class _$TodoItemCopyWith<$Res> implements $TodoItemCopyWith<$Res> {
   factory _$TodoItemCopyWith(_TodoItem value, $Res Function(_TodoItem) then) =
       __$TodoItemCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId id, Todo todo, bool isDone});
+  $Res call({UniqueId id, Todo todo, bool isDone, DateTime lastUpdatedTime});
 }
 
 /// @nodoc
@@ -85,6 +91,7 @@ class __$TodoItemCopyWithImpl<$Res> extends _$TodoItemCopyWithImpl<$Res>
     Object? id = freezed,
     Object? todo = freezed,
     Object? isDone = freezed,
+    Object? lastUpdatedTime = freezed,
   }) {
     return _then(_TodoItem(
       id: id == freezed
@@ -99,6 +106,10 @@ class __$TodoItemCopyWithImpl<$Res> extends _$TodoItemCopyWithImpl<$Res>
           ? _value.isDone
           : isDone // ignore: cast_nullable_to_non_nullable
               as bool,
+      lastUpdatedTime: lastUpdatedTime == freezed
+          ? _value.lastUpdatedTime
+          : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -107,7 +118,10 @@ class __$TodoItemCopyWithImpl<$Res> extends _$TodoItemCopyWithImpl<$Res>
 
 class _$_TodoItem extends _TodoItem {
   const _$_TodoItem(
-      {required this.id, required this.todo, required this.isDone})
+      {required this.id,
+      required this.todo,
+      required this.isDone,
+      required this.lastUpdatedTime})
       : super._();
 
   @override
@@ -116,10 +130,12 @@ class _$_TodoItem extends _TodoItem {
   final Todo todo;
   @override
   final bool isDone;
+  @override
+  final DateTime lastUpdatedTime;
 
   @override
   String toString() {
-    return 'TodoItem(id: $id, todo: $todo, isDone: $isDone)';
+    return 'TodoItem(id: $id, todo: $todo, isDone: $isDone, lastUpdatedTime: $lastUpdatedTime)';
   }
 
   @override
@@ -129,7 +145,9 @@ class _$_TodoItem extends _TodoItem {
             other is _TodoItem &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.todo, todo) &&
-            const DeepCollectionEquality().equals(other.isDone, isDone));
+            const DeepCollectionEquality().equals(other.isDone, isDone) &&
+            const DeepCollectionEquality()
+                .equals(other.lastUpdatedTime, lastUpdatedTime));
   }
 
   @override
@@ -137,7 +155,8 @@ class _$_TodoItem extends _TodoItem {
       runtimeType,
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(todo),
-      const DeepCollectionEquality().hash(isDone));
+      const DeepCollectionEquality().hash(isDone),
+      const DeepCollectionEquality().hash(lastUpdatedTime));
 
   @JsonKey(ignore: true)
   @override
@@ -149,7 +168,8 @@ abstract class _TodoItem extends TodoItem {
   const factory _TodoItem(
       {required final UniqueId id,
       required final Todo todo,
-      required final bool isDone}) = _$_TodoItem;
+      required final bool isDone,
+      required final DateTime lastUpdatedTime}) = _$_TodoItem;
   const _TodoItem._() : super._();
 
   @override
@@ -158,6 +178,8 @@ abstract class _TodoItem extends TodoItem {
   Todo get todo => throw _privateConstructorUsedError;
   @override
   bool get isDone => throw _privateConstructorUsedError;
+  @override
+  DateTime get lastUpdatedTime => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TodoItemCopyWith<_TodoItem> get copyWith =>

@@ -4,8 +4,8 @@ class Note extends Table{
   TextColumn get id => text()();
   TextColumn get noteEditorText => text().withLength(min: 1)();
   TextColumn get tagId => text().nullable().customConstraint('NULL REFERENCES todoItemTable(id)')();
-  DateTimeColumn get lastUpdatedTime => dateTime().withDefault(currentDateAndTime)();
-  // DateTimeColumn get createdTime => dateTime().withDefault(currentDateAndTime)();
+  DateTimeColumn get lastUpdatedTime => dateTime()();
+  DateTimeColumn get createdTime => dateTime()();
 
 
   @override

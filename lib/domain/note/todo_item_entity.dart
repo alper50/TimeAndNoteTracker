@@ -11,12 +11,14 @@ abstract class TodoItem implements _$TodoItem {
     required UniqueId id,
     required Todo todo,
     required bool isDone,
+    required DateTime lastUpdatedTime,
   }) = _TodoItem;
 
   factory TodoItem.defaultTodoItem() => TodoItem(
         id: UniqueId(),
         todo: Todo(''),
         isDone: false,
+        lastUpdatedTime: DateTime.now(),
       );
 
   // we can validate TodoItem entity

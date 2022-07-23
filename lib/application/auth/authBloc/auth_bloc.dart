@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:timenotetracker/domain/auth/auth_failure.dart';
 import 'package:timenotetracker/domain/auth/i_auth_local_repository.dart';
 import 'package:timenotetracker/domain/auth/i_auth_remote.dart';
 
@@ -50,17 +51,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           final signOut = await _authRemoteRepository.signOutWithDelete();
           emit(
             signOut.fold(
-              (failure) => state,
+              (failure) => AuthState.signOutWithDeleteFailure(failure),
               (r) => const AuthState.unauthenticated(),
             ),
           );
         },
-        checkVerification: (_) async {
+        checkEmailVerification: (_) async {
           final verification =
               await _authRemoteRepository.checkEmailVerification();
           emit(
             verification.fold(
-              (failure) => state,
+              (failure) => AuthState.checkEmailVerificationFailure(failure),
               (r) => r
                   ? const AuthState.authenticated()
                   : const AuthState.emailNotVerified(),
