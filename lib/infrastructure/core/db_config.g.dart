@@ -12,11 +12,13 @@ class NoteData extends DataClass implements Insertable<NoteData> {
   final String noteEditorText;
   final String? tagId;
   final DateTime lastUpdatedTime;
+  final DateTime createdTime;
   NoteData(
       {required this.id,
       required this.noteEditorText,
       this.tagId,
-      required this.lastUpdatedTime});
+      required this.lastUpdatedTime,
+      required this.createdTime});
   factory NoteData.fromData(Map<String, dynamic> data, {String? prefix}) {
     final effectivePrefix = prefix ?? '';
     return NoteData(
@@ -28,6 +30,8 @@ class NoteData extends DataClass implements Insertable<NoteData> {
           .mapFromDatabaseResponse(data['${effectivePrefix}tag_id']),
       lastUpdatedTime: const DateTimeType().mapFromDatabaseResponse(
           data['${effectivePrefix}last_updated_time'])!,
+      createdTime: const DateTimeType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}created_time'])!,
     );
   }
   @override
@@ -39,6 +43,7 @@ class NoteData extends DataClass implements Insertable<NoteData> {
       map['tag_id'] = Variable<String?>(tagId);
     }
     map['last_updated_time'] = Variable<DateTime>(lastUpdatedTime);
+    map['created_time'] = Variable<DateTime>(createdTime);
     return map;
   }
 
@@ -49,6 +54,7 @@ class NoteData extends DataClass implements Insertable<NoteData> {
       tagId:
           tagId == null && nullToAbsent ? const Value.absent() : Value(tagId),
       lastUpdatedTime: Value(lastUpdatedTime),
+      createdTime: Value(createdTime),
     );
   }
 
@@ -60,6 +66,7 @@ class NoteData extends DataClass implements Insertable<NoteData> {
       noteEditorText: serializer.fromJson<String>(json['noteEditorText']),
       tagId: serializer.fromJson<String?>(json['tagId']),
       lastUpdatedTime: serializer.fromJson<DateTime>(json['lastUpdatedTime']),
+      createdTime: serializer.fromJson<DateTime>(json['createdTime']),
     );
   }
   @override
@@ -70,6 +77,7 @@ class NoteData extends DataClass implements Insertable<NoteData> {
       'noteEditorText': serializer.toJson<String>(noteEditorText),
       'tagId': serializer.toJson<String?>(tagId),
       'lastUpdatedTime': serializer.toJson<DateTime>(lastUpdatedTime),
+      'createdTime': serializer.toJson<DateTime>(createdTime),
     };
   }
 
@@ -77,12 +85,14 @@ class NoteData extends DataClass implements Insertable<NoteData> {
           {String? id,
           String? noteEditorText,
           String? tagId,
-          DateTime? lastUpdatedTime}) =>
+          DateTime? lastUpdatedTime,
+          DateTime? createdTime}) =>
       NoteData(
         id: id ?? this.id,
         noteEditorText: noteEditorText ?? this.noteEditorText,
         tagId: tagId ?? this.tagId,
         lastUpdatedTime: lastUpdatedTime ?? this.lastUpdatedTime,
+        createdTime: createdTime ?? this.createdTime,
       );
   @override
   String toString() {
@@ -90,13 +100,15 @@ class NoteData extends DataClass implements Insertable<NoteData> {
           ..write('id: $id, ')
           ..write('noteEditorText: $noteEditorText, ')
           ..write('tagId: $tagId, ')
-          ..write('lastUpdatedTime: $lastUpdatedTime')
+          ..write('lastUpdatedTime: $lastUpdatedTime, ')
+          ..write('createdTime: $createdTime')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode => Object.hash(id, noteEditorText, tagId, lastUpdatedTime);
+  int get hashCode =>
+      Object.hash(id, noteEditorText, tagId, lastUpdatedTime, createdTime);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -104,7 +116,8 @@ class NoteData extends DataClass implements Insertable<NoteData> {
           other.id == this.id &&
           other.noteEditorText == this.noteEditorText &&
           other.tagId == this.tagId &&
-          other.lastUpdatedTime == this.lastUpdatedTime);
+          other.lastUpdatedTime == this.lastUpdatedTime &&
+          other.createdTime == this.createdTime);
 }
 
 class NoteCompanion extends UpdateCompanion<NoteData> {
@@ -112,30 +125,37 @@ class NoteCompanion extends UpdateCompanion<NoteData> {
   final Value<String> noteEditorText;
   final Value<String?> tagId;
   final Value<DateTime> lastUpdatedTime;
+  final Value<DateTime> createdTime;
   const NoteCompanion({
     this.id = const Value.absent(),
     this.noteEditorText = const Value.absent(),
     this.tagId = const Value.absent(),
     this.lastUpdatedTime = const Value.absent(),
+    this.createdTime = const Value.absent(),
   });
   NoteCompanion.insert({
     required String id,
     required String noteEditorText,
     this.tagId = const Value.absent(),
-    this.lastUpdatedTime = const Value.absent(),
+    required DateTime lastUpdatedTime,
+    required DateTime createdTime,
   })  : id = Value(id),
-        noteEditorText = Value(noteEditorText);
+        noteEditorText = Value(noteEditorText),
+        lastUpdatedTime = Value(lastUpdatedTime),
+        createdTime = Value(createdTime);
   static Insertable<NoteData> custom({
     Expression<String>? id,
     Expression<String>? noteEditorText,
     Expression<String?>? tagId,
     Expression<DateTime>? lastUpdatedTime,
+    Expression<DateTime>? createdTime,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
       if (noteEditorText != null) 'note_editor_text': noteEditorText,
       if (tagId != null) 'tag_id': tagId,
       if (lastUpdatedTime != null) 'last_updated_time': lastUpdatedTime,
+      if (createdTime != null) 'created_time': createdTime,
     });
   }
 
@@ -143,12 +163,14 @@ class NoteCompanion extends UpdateCompanion<NoteData> {
       {Value<String>? id,
       Value<String>? noteEditorText,
       Value<String?>? tagId,
-      Value<DateTime>? lastUpdatedTime}) {
+      Value<DateTime>? lastUpdatedTime,
+      Value<DateTime>? createdTime}) {
     return NoteCompanion(
       id: id ?? this.id,
       noteEditorText: noteEditorText ?? this.noteEditorText,
       tagId: tagId ?? this.tagId,
       lastUpdatedTime: lastUpdatedTime ?? this.lastUpdatedTime,
+      createdTime: createdTime ?? this.createdTime,
     );
   }
 
@@ -167,6 +189,9 @@ class NoteCompanion extends UpdateCompanion<NoteData> {
     if (lastUpdatedTime.present) {
       map['last_updated_time'] = Variable<DateTime>(lastUpdatedTime.value);
     }
+    if (createdTime.present) {
+      map['created_time'] = Variable<DateTime>(createdTime.value);
+    }
     return map;
   }
 
@@ -176,7 +201,8 @@ class NoteCompanion extends UpdateCompanion<NoteData> {
           ..write('id: $id, ')
           ..write('noteEditorText: $noteEditorText, ')
           ..write('tagId: $tagId, ')
-          ..write('lastUpdatedTime: $lastUpdatedTime')
+          ..write('lastUpdatedTime: $lastUpdatedTime, ')
+          ..write('createdTime: $createdTime')
           ..write(')'))
         .toString();
   }
@@ -214,12 +240,16 @@ class $NoteTable extends Note with TableInfo<$NoteTable, NoteData> {
   @override
   late final GeneratedColumn<DateTime?> lastUpdatedTime =
       GeneratedColumn<DateTime?>('last_updated_time', aliasedName, false,
-          type: const IntType(),
-          requiredDuringInsert: false,
-          defaultValue: currentDateAndTime);
+          type: const IntType(), requiredDuringInsert: true);
+  final VerificationMeta _createdTimeMeta =
+      const VerificationMeta('createdTime');
+  @override
+  late final GeneratedColumn<DateTime?> createdTime =
+      GeneratedColumn<DateTime?>('created_time', aliasedName, false,
+          type: const IntType(), requiredDuringInsert: true);
   @override
   List<GeneratedColumn> get $columns =>
-      [id, noteEditorText, tagId, lastUpdatedTime];
+      [id, noteEditorText, tagId, lastUpdatedTime, createdTime];
   @override
   String get aliasedName => _alias ?? 'noteTable';
   @override
@@ -251,6 +281,16 @@ class $NoteTable extends Note with TableInfo<$NoteTable, NoteData> {
           _lastUpdatedTimeMeta,
           lastUpdatedTime.isAcceptableOrUnknown(
               data['last_updated_time']!, _lastUpdatedTimeMeta));
+    } else if (isInserting) {
+      context.missing(_lastUpdatedTimeMeta);
+    }
+    if (data.containsKey('created_time')) {
+      context.handle(
+          _createdTimeMeta,
+          createdTime.isAcceptableOrUnknown(
+              data['created_time']!, _createdTimeMeta));
+    } else if (isInserting) {
+      context.missing(_createdTimeMeta);
     }
     return context;
   }

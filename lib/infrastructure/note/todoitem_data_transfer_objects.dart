@@ -12,6 +12,7 @@ abstract class TodoItemPrimitive implements _$TodoItemPrimitive {
     required UniqueId id,
     required String todoText,
     required bool isDone,
+    required DateTime lastUpdatedTime,
   }) = _TodoItemPrimitive;
 
   factory TodoItemPrimitive.fromDomain(TodoItem todoItem) {
@@ -19,6 +20,7 @@ abstract class TodoItemPrimitive implements _$TodoItemPrimitive {
       id: todoItem.id,
       todoText: todoItem.todo.getValueOrCrash(),
       isDone: todoItem.isDone,
+      lastUpdatedTime: todoItem.lastUpdatedTime
     );
   }
 
@@ -27,6 +29,7 @@ abstract class TodoItemPrimitive implements _$TodoItemPrimitive {
       id: UniqueId(),
       todoText: '',
       isDone: false,
+      lastUpdatedTime: DateTime.now(),
     );
   }
 
@@ -35,6 +38,7 @@ abstract class TodoItemPrimitive implements _$TodoItemPrimitive {
       id: id,
       todo: Todo(todoText),
       isDone: isDone,
+      lastUpdatedTime: lastUpdatedTime
     );
   } 
 }

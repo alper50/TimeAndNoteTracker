@@ -18,6 +18,7 @@ void main() {
       id: 'id',
       noteEditorText: 'test',
       lastUpdatedTime: DateTime(2022),
+      createdTime: DateTime.now(),
     );
 
     test('should return rowid succesfuly when a note created', () async {
