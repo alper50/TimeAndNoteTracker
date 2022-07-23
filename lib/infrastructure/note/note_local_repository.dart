@@ -68,7 +68,7 @@ class NoteLocalRepository implements INoteLocalRepository {
   }
 
   @override
-  Stream<Either<NoteFailure, List<TodoItem>>> watchTodos() async* { //TODO this function will return todoItemList
+  Stream<Either<NoteFailure, List<TodoItem>>> watchTodos() async* { 
     yield* noteLocaleService
         .watchTodos()
         .map(

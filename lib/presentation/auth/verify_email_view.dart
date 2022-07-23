@@ -26,6 +26,12 @@ class VerifyEmailView extends StatelessWidget {
                   authenticated: (_) {
                     AutoRouter.of(context).replaceNamed('/home-view');
                   },
+                  signOutWithDeleteFailure: (e){
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      displaySnackBar(
+                          message: 'Cancel request failed:$e'),
+                    );
+                  },
                   orElse: () {});
             },
           ),
@@ -38,8 +44,9 @@ class VerifyEmailView extends StatelessWidget {
                     ScaffoldMessenger.of(context).showSnackBar(
                       displaySnackBar(
                         message: failure.maybeMap(
-                            networkError: (_)=> 'Network Request Failed',
+                            networkError: (_)=> 'Network request failed',
                             serverError: (e) => 'There is an error occured $e',
+                            multipleRequest: (_)=> 'You cannot send new link until timer finished',
                             orElse: () => ''),
                       ),
                     );

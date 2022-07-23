@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -12,6 +14,7 @@ part 'verify_email_bloc.freezed.dart';
 @injectable
 class VerifyEmailBloc extends Bloc<VerifyEmailEvent, VerifyEmailState> {
   final IAuthRemoteService _authMethods;
+  static const int _tickerDuration = 60;
   VerifyEmailBloc(this._authMethods) : super(VerifyEmailState.initial()) {
     on<VerifyEmailEvent>((event, emit) async {
       await event.map(
@@ -30,19 +33,35 @@ class VerifyEmailBloc extends Bloc<VerifyEmailEvent, VerifyEmailState> {
           );
         },
         resendEmail: (_) async {
-          Either<AuthFailure, Unit> failureOrSucces;
+          if (state.canResend) {
+            Either<AuthFailure, Unit> failureOrSucces;
 
-          emit(
-            state.copyWith(isVerifying: true),
-          );
-          failureOrSucces = await _authMethods.sendEmailVerification();
-          emit(
-            state.copyWith(
-              canResend: false,
-              isVerifying: false,
-              verifyFailureOrSuccesOption: optionOf(failureOrSucces),
-            ),
-          );
+            emit(
+              state.copyWith(isVerifying: true),
+            );
+            failureOrSucces = await _authMethods.sendEmailVerification();
+            emit(
+              state.copyWith(
+                canResend: false,
+                isVerifying: false,
+                verifyFailureOrSuccesOption: optionOf(failureOrSucces),
+              ),
+            );
+            Future.delayed(Duration(seconds: _tickerDuration), () {
+              emit(
+                state.copyWith(
+                  canResend: true,
+                ),
+              );
+            });
+          } else {
+            emit(
+              state.copyWith(
+                verifyFailureOrSuccesOption:
+                    optionOf(Left(AuthFailure.multipleRequest())),
+              ),
+            );
+          }
         },
       );
     });

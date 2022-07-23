@@ -1,4 +1,3 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart' as tst;
 import 'package:mockito/mockito.dart';
 import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
