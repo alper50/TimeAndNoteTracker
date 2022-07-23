@@ -4,6 +4,7 @@ import 'package:rxdart/transformers.dart';
 import 'package:timenotetracker/domain/note/i_note_repository.dart';
 import 'package:timenotetracker/domain/note/note_failure.dart';
 import 'package:timenotetracker/domain/note/note_entity.dart';
+import 'package:timenotetracker/domain/note/todo_item_entity.dart';
 import 'package:timenotetracker/infrastructure/note/note_data_transfer_objects.dart';
 import 'package:timenotetracker/infrastructure/note/note_local_service.dart';
 
@@ -67,15 +68,15 @@ class NoteLocalRepository implements INoteLocalRepository {
   }
 
   @override
-  Stream<Either<NoteFailure, List<Note>>> watchTodos() async* { //TODO this function will return todoItemList
+  Stream<Either<NoteFailure, List<TodoItem>>> watchTodos() async* { //TODO this function will return todoItemList
     yield* noteLocaleService
-        .watchNotes()
+        .watchTodos()
         .map(
-          (notes) => right<NoteFailure, List<Note>>(
-            notes
+          (todos) => right<NoteFailure, List<TodoItem>>(
+            todos
                 .map(
-                  (note) => NoteDTO.fromDB(
-                    noteData: note,
+                  (todo) => TodoItemDTO.fromDB(
+                    todoItemData: todo
                   ).toDomain(),
                 )
                 .toList(),

@@ -22,7 +22,7 @@ class NoteOverviewBody extends StatelessWidget {
         loadFailure: (_) => NoteFailureView(
           onPressed: () => context
               .read<NoteWatcherBloc>()
-              .add(NoteWatcherEvent.watchAllStarted()),
+              .add(NoteWatcherEvent.watchNotesStarted()),
         ),
         loadSuccesEmptyList: (_) => NoteEmptyListView(),
         loadSucces: (succesState) {

@@ -21,7 +21,7 @@ class NoteOverview extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) =>
-              getIt<NoteWatcherBloc>()..add(NoteWatcherEvent.watchAllStarted()),
+              getIt<NoteWatcherBloc>()..add(NoteWatcherEvent.watchNotesStarted()),
         ),
       ],
       child: MultiBlocListener(

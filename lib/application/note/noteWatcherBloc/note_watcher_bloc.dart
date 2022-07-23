@@ -7,6 +7,7 @@ import 'package:injectable/injectable.dart';
 import 'package:timenotetracker/domain/note/i_note_repository.dart';
 import 'package:timenotetracker/domain/note/note_entity.dart';
 import 'package:timenotetracker/domain/note/note_failure.dart';
+import 'package:timenotetracker/domain/note/todo_item_entity.dart';
 
 part 'note_watcher_event.dart';
 part 'note_watcher_state.dart';
@@ -22,25 +23,25 @@ class NoteWatcherBloc extends Bloc<NoteWatcherEvent, NoteWatcherState> {
     on<NoteWatcherEvent>(
       (event, emit) async {
         event.map(
-          watchAllStarted: (e) async {
+          watchNotesStarted: (e) async {
             emit(NoteWatcherState.loading());
             await _noteStreamSubscription?.cancel();
             _noteStreamSubscription = _noteRepository.watchAll().listen(
                   (noteStream) => add(
-                    NoteWatcherEvent.watchAllReceived(noteStream),
+                    NoteWatcherEvent.watchNotesReceived(noteStream),
                   ),
                 );
           },
-          watchTodosStarted: (e) async {
-            emit(NoteWatcherState.loading());
-            await _noteStreamSubscription?.cancel();
-            _noteStreamSubscription = _noteRepository.watchTodos().listen(
-                  (noteStream) => add(
-                    NoteWatcherEvent.watchAllReceived(noteStream),
-                  ),
-                );
-          },
-          watchAllReceived: (WatchAllReceived value) async {
+          // watchTodosStarted: (e) async {
+          //   emit(NoteWatcherState.loading());
+          //   await _noteStreamSubscription?.cancel();
+          //   _noteStreamSubscription = _noteRepository.watchTodos().listen(
+          //         (noteStream) => add(
+          //           NoteWatcherEvent.watchAllReceived(noteStream),
+          //         ),
+          //       );
+          // },
+          watchNotesReceived: (_WatchNotesReceived value) async {
             value.failureOrNotes.fold(
                 (failure) => emit(
                       NoteWatcherState.loadFailure(failure),
@@ -56,6 +57,8 @@ class NoteWatcherBloc extends Bloc<NoteWatcherEvent, NoteWatcherState> {
               }
             });
           },
+          watchTodosStarted: (_WatchTodosStarted value) {},
+          watchTodosReceived: (_WatchTodosReceived value) {},
         );
       },
     );
