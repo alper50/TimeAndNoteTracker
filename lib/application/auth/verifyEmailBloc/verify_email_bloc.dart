@@ -10,7 +10,7 @@ import 'package:timenotetracker/domain/auth/auth_failure.dart';
 part 'verify_email_event.dart';
 part 'verify_email_state.dart';
 part 'verify_email_bloc.freezed.dart';
-
+//TODO cancel button fail require recent login failure 
 @injectable
 class VerifyEmailBloc extends Bloc<VerifyEmailEvent, VerifyEmailState> {
   final IAuthRemoteService _authMethods;
