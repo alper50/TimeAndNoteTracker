@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
-import 'package:timenotetracker/application/core/bloc/internet_connection_bloc.dart';
+import 'package:timenotetracker/application/core/internetConnectionBloc/internet_connection_bloc.dart';
 import 'package:timenotetracker/injection.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_network_failure_widget.dart';
 import 'package:timenotetracker/presentation/core/routes/router.gr.dart';

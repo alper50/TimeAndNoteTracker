@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:timenotetracker/application/core/bloc/internet_connection_bloc.dart';
+import 'package:timenotetracker/application/core/internetConnectionBloc/internet_connection_bloc.dart';
 import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_circular_progress.dart';

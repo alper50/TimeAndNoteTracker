@@ -6,7 +6,6 @@ part 'note_local_service.g.dart';
 
 @DriftAccessor(tables: [Note, TodoItem])
 @LazySingleton()
-@injectable
 class NoteLocalService extends DatabaseAccessor<MyDatabase>
     with _$NoteLocalServiceMixin {
       final MyDatabase db;

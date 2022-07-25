@@ -108,3 +108,4 @@ class RegisterAndLoginBloc
     });
   }
 }
+//TODO while internet connection slow it throws apiexception and stays in loading indicator

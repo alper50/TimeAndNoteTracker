@@ -7,5 +7,5 @@ class CustomPaddingAll extends EdgeInsets {
 
 class CustomPaddingOnly extends EdgeInsets {
   const CustomPaddingOnly.onlyBottomNormal() : super.only(bottom: 20);
-  const CustomPaddingOnly.onlyTopNormal() : super.only(top: 20);
+  const CustomPaddingOnly.onlyTopNormal() : super.only(top: 100);
 }
