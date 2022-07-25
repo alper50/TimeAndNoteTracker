@@ -20,7 +20,7 @@ class SearchResultsView extends StatelessWidget {
 
   ListView _buildResult() {
     return ListView(
-      padding: CustomPaddingOnly.onlyTopNormal(),
+      padding: MyPaddingOnly.onlyTop(),
       children: List.generate(
         50,
         (index) => ListTile(

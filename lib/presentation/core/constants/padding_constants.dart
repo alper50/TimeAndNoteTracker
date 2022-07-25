@@ -1,11 +1,11 @@
 import 'package:flutter/rendering.dart';
 
-class CustomPaddingAll extends EdgeInsets {
-  CustomPaddingAll.normal() : super.all(20);
-  CustomPaddingAll.halfNormal() : super.all(10);
+class MyPaddingAll extends EdgeInsets {
+  MyPaddingAll.regular() : super.all(20);
+  MyPaddingAll.half() : super.all(10);
 }
 
-class CustomPaddingOnly extends EdgeInsets {
-  const CustomPaddingOnly.onlyBottomNormal() : super.only(bottom: 20);
-  const CustomPaddingOnly.onlyTopNormal() : super.only(top: 100);
+class MyPaddingOnly extends EdgeInsets {
+  const MyPaddingOnly.onlyBottom() : super.only(bottom: 20);
+  const MyPaddingOnly.onlyTop() : super.only(top: 100);
 }

@@ -13,6 +13,6 @@ abstract class InfrastructureInjectableModule{
   GoogleSignIn get googleSignIn => GoogleSignIn();
   @lazySingleton
   FirebaseAuth get firebaseAuth => FirebaseAuth.instance;
-  @lazySingleton
+  @injectable
   NativeDatabase get nativeDatabase => NativeDatabase.memory();
 }

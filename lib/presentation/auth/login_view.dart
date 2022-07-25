@@ -46,7 +46,7 @@ class LoginView extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           body: SingleChildScrollView(
-            padding: CustomPaddingAll.normal(),
+            padding: MyPaddingAll.regular(),
             child: Form(
               autovalidateMode: state.showErrorMessage
                   ? AutovalidateMode.always

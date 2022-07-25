@@ -1,8 +1,9 @@
 import 'package:injectable/injectable.dart';
+import 'package:timenotetracker/domain/core/search/i_search_service.dart';
 
 @injectable
-class SearchService {
-  SearchService(){
+class SearchService extends ISearchService {
+  SearchService() {
     filteredSearchHistory = filterSearchTexts(filter: null);
   }
 
@@ -17,6 +18,7 @@ class SearchService {
   static const historyLength = 5;
   String? selectedText;
 
+  @override
   List<String> filterSearchTexts({
     required String? filter,
   }) {
@@ -29,11 +31,13 @@ class SearchService {
     }
   }
 
+  @override
   void putSearchTermFirst(String term) {
     deleteSearchTerm(term);
     addSearchTerm(term);
   }
 
+  @override
   void addSearchTerm(String term) {
     if (searchHistory.contains(term)) {
       putSearchTermFirst(term);
@@ -48,6 +52,7 @@ class SearchService {
     filteredSearchHistory = filterSearchTexts(filter: null);
   }
 
+  @override
   void deleteSearchTerm(String term) {
     searchHistory.removeWhere((t) => t == term);
     filteredSearchHistory = filterSearchTexts(filter: null);

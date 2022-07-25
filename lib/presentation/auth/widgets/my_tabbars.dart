@@ -8,7 +8,7 @@ Expanded buildTabbar() {
       flex: 1,
       child: TabBar(
         enableFeedback: false,
-        padding: CustomPaddingAll.normal(),
+        padding: MyPaddingAll.regular(),
         unselectedLabelStyle: TextStyle(color: MyColors.lightSecondaryColor),
         labelPadding: EdgeInsets.only(right: 80),
         indicatorColor: Colors.transparent,

@@ -43,7 +43,6 @@ class _SearchViewState extends State<SearchView> {
                 ),
               ),
               transition: CircularFloatingSearchBarTransition(),
-              physics: BouncingScrollPhysics(),
               title: Text(state.selectedText ?? 'Start Searching',
                   style: MyTextStyles.headline3),
               hint: 'Search ${widget.searchTitle}',

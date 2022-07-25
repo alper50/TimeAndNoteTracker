@@ -97,7 +97,7 @@ class NoteSuccesView extends StatelessWidget {
           Expanded(
             child: Container(
               child: QuillEditor(
-                padding: CustomPaddingAll.normal(),
+                padding: MyPaddingAll.regular(),
                 controller: _controller,
                 readOnly: false,
                 autoFocus: false,

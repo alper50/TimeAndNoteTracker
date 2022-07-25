@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:timenotetracker/domain/core/search_service.dart';
+import 'package:timenotetracker/infrastructure/core/search/search_service.dart';
 
 part 'search_event.dart';
 part 'search_state.dart';
