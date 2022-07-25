@@ -9,7 +9,6 @@ import 'package:timenotetracker/infrastructure/note/note_data_transfer_objects.d
 import 'package:timenotetracker/infrastructure/note/note_local_service.dart';
 
 @LazySingleton(as: INoteLocalRepository)
-@injectable
 class NoteLocalRepository implements INoteLocalRepository {
 
   final NoteLocalService noteLocaleService;

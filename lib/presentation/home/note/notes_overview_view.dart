@@ -7,6 +7,7 @@ import 'package:timenotetracker/application/note/noteWatcherBloc/note_watcher_bl
 import 'package:timenotetracker/injection.dart';
 import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
+import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
 import 'package:timenotetracker/presentation/home/note/widgets/note_overview_body.dart';
 
 class NoteOverview extends StatelessWidget {
@@ -20,8 +21,8 @@ class NoteOverview extends StatelessWidget {
           create: (context) => getIt<NoteActionBloc>(),
         ),
         BlocProvider(
-          create: (context) =>
-              getIt<NoteWatcherBloc>()..add(NoteWatcherEvent.watchNotesStarted()),
+          create: (context) => getIt<NoteWatcherBloc>()
+            ..add(NoteWatcherEvent.watchNotesStarted()),
         ),
       ],
       child: MultiBlocListener(
@@ -68,13 +69,23 @@ class NoteOverview extends StatelessWidget {
               ),
               actions: [
                 IconButton(
-                onPressed: () {
-                  context.read<AuthBloc>().add(AuthEvent.signOutWithDelete());
-                },
-                icon: Icon(
-                  Icons.delete_forever,
+                  onPressed: () {
+                    context.read<AuthBloc>().add(AuthEvent.signOutWithDelete());
+                  },
+                  icon: Icon(
+                    Icons.delete_forever,
+                  ),
                 ),
-              ),
+                IconButton(
+                  onPressed: () {
+                    AutoRouter.of(context).push(
+                      SearchView(searchTitle: 'Notes'),
+                    );
+                  },
+                  icon: Icon(
+                    Icons.search,
+                  ),
+                ),
               ],
             ),
             body: NoteOverviewBody(),
