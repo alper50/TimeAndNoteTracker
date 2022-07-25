@@ -20,7 +20,7 @@ import '../../home/analyse_view.dart' as _i10;
 import '../../home/home_view.dart' as _i7;
 import '../../home/note/note_view.dart' as _i5;
 import '../../home/note/notes_overview_view.dart' as _i8;
-import '../../home/time_view.dart' as _i9;
+import '../../home/time/time_view.dart' as _i9;
 import '../../onboard/onboard_view.dart' as _i2;
 import '../../splash/splash_view.dart' as _i1;
 import '../search/search_view.dart' as _i6;
