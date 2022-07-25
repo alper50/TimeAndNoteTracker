@@ -20,18 +20,21 @@ mixin _$ValueFailure<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(AuthValueFailure<T> failedValue) auth,
     required TResult Function(NoteValueFailure<T> failedValue) note,
+    required TResult Function(TimerValueFailure<T> failedValue) timer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AuthValueFailure<T> failedValue)? auth,
     TResult Function(NoteValueFailure<T> failedValue)? note,
+    TResult Function(TimerValueFailure<T> failedValue)? timer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthValueFailure<T> failedValue)? auth,
     TResult Function(NoteValueFailure<T> failedValue)? note,
+    TResult Function(TimerValueFailure<T> failedValue)? timer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$ValueFailure<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Auth<T> value) auth,
     required TResult Function(Note<T> value) note,
+    required TResult Function(Timer<T> value) timer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Auth<T> value)? auth,
     TResult Function(Note<T> value)? note,
+    TResult Function(Timer<T> value)? timer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Auth<T> value)? auth,
     TResult Function(Note<T> value)? note,
+    TResult Function(Timer<T> value)? timer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -147,6 +153,7 @@ class _$Auth<T> implements Auth<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(AuthValueFailure<T> failedValue) auth,
     required TResult Function(NoteValueFailure<T> failedValue) note,
+    required TResult Function(TimerValueFailure<T> failedValue) timer,
   }) {
     return auth(failedValue);
   }
@@ -156,6 +163,7 @@ class _$Auth<T> implements Auth<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AuthValueFailure<T> failedValue)? auth,
     TResult Function(NoteValueFailure<T> failedValue)? note,
+    TResult Function(TimerValueFailure<T> failedValue)? timer,
   }) {
     return auth?.call(failedValue);
   }
@@ -165,6 +173,7 @@ class _$Auth<T> implements Auth<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthValueFailure<T> failedValue)? auth,
     TResult Function(NoteValueFailure<T> failedValue)? note,
+    TResult Function(TimerValueFailure<T> failedValue)? timer,
     required TResult orElse(),
   }) {
     if (auth != null) {
@@ -178,6 +187,7 @@ class _$Auth<T> implements Auth<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Auth<T> value) auth,
     required TResult Function(Note<T> value) note,
+    required TResult Function(Timer<T> value) timer,
   }) {
     return auth(this);
   }
@@ -187,6 +197,7 @@ class _$Auth<T> implements Auth<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Auth<T> value)? auth,
     TResult Function(Note<T> value)? note,
+    TResult Function(Timer<T> value)? timer,
   }) {
     return auth?.call(this);
   }
@@ -196,6 +207,7 @@ class _$Auth<T> implements Auth<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Auth<T> value)? auth,
     TResult Function(Note<T> value)? note,
+    TResult Function(Timer<T> value)? timer,
     required TResult orElse(),
   }) {
     if (auth != null) {
@@ -288,6 +300,7 @@ class _$Note<T> implements Note<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(AuthValueFailure<T> failedValue) auth,
     required TResult Function(NoteValueFailure<T> failedValue) note,
+    required TResult Function(TimerValueFailure<T> failedValue) timer,
   }) {
     return note(failedValue);
   }
@@ -297,6 +310,7 @@ class _$Note<T> implements Note<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AuthValueFailure<T> failedValue)? auth,
     TResult Function(NoteValueFailure<T> failedValue)? note,
+    TResult Function(TimerValueFailure<T> failedValue)? timer,
   }) {
     return note?.call(failedValue);
   }
@@ -306,6 +320,7 @@ class _$Note<T> implements Note<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthValueFailure<T> failedValue)? auth,
     TResult Function(NoteValueFailure<T> failedValue)? note,
+    TResult Function(TimerValueFailure<T> failedValue)? timer,
     required TResult orElse(),
   }) {
     if (note != null) {
@@ -319,6 +334,7 @@ class _$Note<T> implements Note<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Auth<T> value) auth,
     required TResult Function(Note<T> value) note,
+    required TResult Function(Timer<T> value) timer,
   }) {
     return note(this);
   }
@@ -328,6 +344,7 @@ class _$Note<T> implements Note<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Auth<T> value)? auth,
     TResult Function(Note<T> value)? note,
+    TResult Function(Timer<T> value)? timer,
   }) {
     return note?.call(this);
   }
@@ -337,6 +354,7 @@ class _$Note<T> implements Note<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Auth<T> value)? auth,
     TResult Function(Note<T> value)? note,
+    TResult Function(Timer<T> value)? timer,
     required TResult orElse(),
   }) {
     if (note != null) {
@@ -353,6 +371,154 @@ abstract class Note<T> implements ValueFailure<T> {
   NoteValueFailure<T> get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $NoteCopyWith<T, Note<T>> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TimerCopyWith<T, $Res> {
+  factory $TimerCopyWith(Timer<T> value, $Res Function(Timer<T>) then) =
+      _$TimerCopyWithImpl<T, $Res>;
+  $Res call({TimerValueFailure<T> failedValue});
+
+  $TimerValueFailureCopyWith<T, $Res> get failedValue;
+}
+
+/// @nodoc
+class _$TimerCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $TimerCopyWith<T, $Res> {
+  _$TimerCopyWithImpl(Timer<T> _value, $Res Function(Timer<T>) _then)
+      : super(_value, (v) => _then(v as Timer<T>));
+
+  @override
+  Timer<T> get _value => super._value as Timer<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(Timer<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as TimerValueFailure<T>,
+    ));
+  }
+
+  @override
+  $TimerValueFailureCopyWith<T, $Res> get failedValue {
+    return $TimerValueFailureCopyWith<T, $Res>(_value.failedValue, (value) {
+      return _then(_value.copyWith(failedValue: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$Timer<T> implements Timer<T> {
+  const _$Timer({required this.failedValue});
+
+  @override
+  final TimerValueFailure<T> failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.timer(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Timer<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  $TimerCopyWith<T, Timer<T>> get copyWith =>
+      _$TimerCopyWithImpl<T, Timer<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AuthValueFailure<T> failedValue) auth,
+    required TResult Function(NoteValueFailure<T> failedValue) note,
+    required TResult Function(TimerValueFailure<T> failedValue) timer,
+  }) {
+    return timer(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AuthValueFailure<T> failedValue)? auth,
+    TResult Function(NoteValueFailure<T> failedValue)? note,
+    TResult Function(TimerValueFailure<T> failedValue)? timer,
+  }) {
+    return timer?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AuthValueFailure<T> failedValue)? auth,
+    TResult Function(NoteValueFailure<T> failedValue)? note,
+    TResult Function(TimerValueFailure<T> failedValue)? timer,
+    required TResult orElse(),
+  }) {
+    if (timer != null) {
+      return timer(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Auth<T> value) auth,
+    required TResult Function(Note<T> value) note,
+    required TResult Function(Timer<T> value) timer,
+  }) {
+    return timer(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Auth<T> value)? auth,
+    TResult Function(Note<T> value)? note,
+    TResult Function(Timer<T> value)? timer,
+  }) {
+    return timer?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Auth<T> value)? auth,
+    TResult Function(Note<T> value)? note,
+    TResult Function(Timer<T> value)? timer,
+    required TResult orElse(),
+  }) {
+    if (timer != null) {
+      return timer(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Timer<T> implements ValueFailure<T> {
+  const factory Timer({required final TimerValueFailure<T> failedValue}) =
+      _$Timer<T>;
+
+  TimerValueFailure<T> get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TimerCopyWith<T, Timer<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1254,4 +1420,390 @@ abstract class MaxCharacterExceeding<T> implements NoteValueFailure<T> {
   @JsonKey(ignore: true)
   $MaxCharacterExceedingCopyWith<T, MaxCharacterExceeding<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$TimerValueFailure<T> {
+  T get failedValue => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyField,
+    required TResult Function(T failedValue, int maxCharacter)
+        maxCharacterExceeding,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyField,
+    TResult Function(T failedValue, int maxCharacter)? maxCharacterExceeding,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyField,
+    TResult Function(T failedValue, int maxCharacter)? maxCharacterExceeding,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyFieldTimer<T> value) emptyField,
+    required TResult Function(MaxCharacterExceedingTimer<T> value)
+        maxCharacterExceeding,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyFieldTimer<T> value)? emptyField,
+    TResult Function(MaxCharacterExceedingTimer<T> value)?
+        maxCharacterExceeding,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyFieldTimer<T> value)? emptyField,
+    TResult Function(MaxCharacterExceedingTimer<T> value)?
+        maxCharacterExceeding,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $TimerValueFailureCopyWith<T, TimerValueFailure<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TimerValueFailureCopyWith<T, $Res> {
+  factory $TimerValueFailureCopyWith(TimerValueFailure<T> value,
+          $Res Function(TimerValueFailure<T>) then) =
+      _$TimerValueFailureCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$TimerValueFailureCopyWithImpl<T, $Res>
+    implements $TimerValueFailureCopyWith<T, $Res> {
+  _$TimerValueFailureCopyWithImpl(this._value, this._then);
+
+  final TimerValueFailure<T> _value;
+  // ignore: unused_field
+  final $Res Function(TimerValueFailure<T>) _then;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_value.copyWith(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $EmptyFieldTimerCopyWith<T, $Res>
+    implements $TimerValueFailureCopyWith<T, $Res> {
+  factory $EmptyFieldTimerCopyWith(
+          EmptyFieldTimer<T> value, $Res Function(EmptyFieldTimer<T>) then) =
+      _$EmptyFieldTimerCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$EmptyFieldTimerCopyWithImpl<T, $Res>
+    extends _$TimerValueFailureCopyWithImpl<T, $Res>
+    implements $EmptyFieldTimerCopyWith<T, $Res> {
+  _$EmptyFieldTimerCopyWithImpl(
+      EmptyFieldTimer<T> _value, $Res Function(EmptyFieldTimer<T>) _then)
+      : super(_value, (v) => _then(v as EmptyFieldTimer<T>));
+
+  @override
+  EmptyFieldTimer<T> get _value => super._value as EmptyFieldTimer<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(EmptyFieldTimer<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EmptyFieldTimer<T> implements EmptyFieldTimer<T> {
+  const _$EmptyFieldTimer({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'TimerValueFailure<$T>.emptyField(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is EmptyFieldTimer<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  $EmptyFieldTimerCopyWith<T, EmptyFieldTimer<T>> get copyWith =>
+      _$EmptyFieldTimerCopyWithImpl<T, EmptyFieldTimer<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyField,
+    required TResult Function(T failedValue, int maxCharacter)
+        maxCharacterExceeding,
+  }) {
+    return emptyField(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyField,
+    TResult Function(T failedValue, int maxCharacter)? maxCharacterExceeding,
+  }) {
+    return emptyField?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyField,
+    TResult Function(T failedValue, int maxCharacter)? maxCharacterExceeding,
+    required TResult orElse(),
+  }) {
+    if (emptyField != null) {
+      return emptyField(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyFieldTimer<T> value) emptyField,
+    required TResult Function(MaxCharacterExceedingTimer<T> value)
+        maxCharacterExceeding,
+  }) {
+    return emptyField(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyFieldTimer<T> value)? emptyField,
+    TResult Function(MaxCharacterExceedingTimer<T> value)?
+        maxCharacterExceeding,
+  }) {
+    return emptyField?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyFieldTimer<T> value)? emptyField,
+    TResult Function(MaxCharacterExceedingTimer<T> value)?
+        maxCharacterExceeding,
+    required TResult orElse(),
+  }) {
+    if (emptyField != null) {
+      return emptyField(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmptyFieldTimer<T> implements TimerValueFailure<T> {
+  const factory EmptyFieldTimer({required final T failedValue}) =
+      _$EmptyFieldTimer<T>;
+
+  @override
+  T get failedValue => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  $EmptyFieldTimerCopyWith<T, EmptyFieldTimer<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MaxCharacterExceedingTimerCopyWith<T, $Res>
+    implements $TimerValueFailureCopyWith<T, $Res> {
+  factory $MaxCharacterExceedingTimerCopyWith(
+          MaxCharacterExceedingTimer<T> value,
+          $Res Function(MaxCharacterExceedingTimer<T>) then) =
+      _$MaxCharacterExceedingTimerCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue, int maxCharacter});
+}
+
+/// @nodoc
+class _$MaxCharacterExceedingTimerCopyWithImpl<T, $Res>
+    extends _$TimerValueFailureCopyWithImpl<T, $Res>
+    implements $MaxCharacterExceedingTimerCopyWith<T, $Res> {
+  _$MaxCharacterExceedingTimerCopyWithImpl(MaxCharacterExceedingTimer<T> _value,
+      $Res Function(MaxCharacterExceedingTimer<T>) _then)
+      : super(_value, (v) => _then(v as MaxCharacterExceedingTimer<T>));
+
+  @override
+  MaxCharacterExceedingTimer<T> get _value =>
+      super._value as MaxCharacterExceedingTimer<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+    Object? maxCharacter = freezed,
+  }) {
+    return _then(MaxCharacterExceedingTimer<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+      maxCharacter: maxCharacter == freezed
+          ? _value.maxCharacter
+          : maxCharacter // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MaxCharacterExceedingTimer<T> implements MaxCharacterExceedingTimer<T> {
+  const _$MaxCharacterExceedingTimer(
+      {required this.failedValue, required this.maxCharacter});
+
+  @override
+  final T failedValue;
+  @override
+  final int maxCharacter;
+
+  @override
+  String toString() {
+    return 'TimerValueFailure<$T>.maxCharacterExceeding(failedValue: $failedValue, maxCharacter: $maxCharacter)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MaxCharacterExceedingTimer<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue) &&
+            const DeepCollectionEquality()
+                .equals(other.maxCharacter, maxCharacter));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(failedValue),
+      const DeepCollectionEquality().hash(maxCharacter));
+
+  @JsonKey(ignore: true)
+  @override
+  $MaxCharacterExceedingTimerCopyWith<T, MaxCharacterExceedingTimer<T>>
+      get copyWith => _$MaxCharacterExceedingTimerCopyWithImpl<T,
+          MaxCharacterExceedingTimer<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyField,
+    required TResult Function(T failedValue, int maxCharacter)
+        maxCharacterExceeding,
+  }) {
+    return maxCharacterExceeding(failedValue, maxCharacter);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyField,
+    TResult Function(T failedValue, int maxCharacter)? maxCharacterExceeding,
+  }) {
+    return maxCharacterExceeding?.call(failedValue, maxCharacter);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyField,
+    TResult Function(T failedValue, int maxCharacter)? maxCharacterExceeding,
+    required TResult orElse(),
+  }) {
+    if (maxCharacterExceeding != null) {
+      return maxCharacterExceeding(failedValue, maxCharacter);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyFieldTimer<T> value) emptyField,
+    required TResult Function(MaxCharacterExceedingTimer<T> value)
+        maxCharacterExceeding,
+  }) {
+    return maxCharacterExceeding(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyFieldTimer<T> value)? emptyField,
+    TResult Function(MaxCharacterExceedingTimer<T> value)?
+        maxCharacterExceeding,
+  }) {
+    return maxCharacterExceeding?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyFieldTimer<T> value)? emptyField,
+    TResult Function(MaxCharacterExceedingTimer<T> value)?
+        maxCharacterExceeding,
+    required TResult orElse(),
+  }) {
+    if (maxCharacterExceeding != null) {
+      return maxCharacterExceeding(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MaxCharacterExceedingTimer<T> implements TimerValueFailure<T> {
+  const factory MaxCharacterExceedingTimer(
+      {required final T failedValue,
+      required final int maxCharacter}) = _$MaxCharacterExceedingTimer<T>;
+
+  @override
+  T get failedValue => throw _privateConstructorUsedError;
+  int get maxCharacter => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  $MaxCharacterExceedingTimerCopyWith<T, MaxCharacterExceedingTimer<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -26,78 +26,79 @@ class NoteOverview extends StatelessWidget {
         ),
       ],
       child: MultiBlocListener(
-          listeners: [
-            BlocListener<NoteActionBloc, NoteActionState>(
-              listener: (context, state) {
-                state.maybeMap(
-                  deleteFailure: (state) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      displaySnackBar(
-                        message: state.noteFailure.map(
-                          unexpected: (e) => 'Unexpected Error Happened: $e',
-                          insufficientPermission: (_) =>
-                              'This case will not happen :)',
-                        ),
+        listeners: [
+          BlocListener<NoteActionBloc, NoteActionState>(
+            listener: (context, state) {
+              state.maybeMap(
+                deleteFailure: (state) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    displaySnackBar(
+                      message: state.noteFailure.map(
+                        unexpected: (e) => 'Unexpected Error Happened: $e',
+                        insufficientPermission: (_) =>
+                            'This case will not happen :)',
                       ),
-                    );
-                  },
-                  orElse: () {},
-                );
+                    ),
+                  );
+                },
+                orElse: () {},
+              );
+            },
+          ),
+          BlocListener<AuthBloc, AuthState>(
+            listener: (context, state) {
+              state.maybeMap(
+                unauthenticated: (_) {
+                  AutoRouter.of(context).replaceNamed('/authentication-view');
+                },
+                orElse: () {},
+              );
+            },
+          ),
+        ],
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('Test'),
+            leading: IconButton(
+              onPressed: () {
+                context.read<AuthBloc>().add(AuthEvent.signOut());
               },
+              icon: Icon(
+                Icons.snowboarding_rounded,
+              ),
             ),
-            BlocListener<AuthBloc, AuthState>(
-              listener: (context, state) {
-                state.maybeMap(
-                  unauthenticated: (_) {
-                    AutoRouter.of(context).replaceNamed('/authentication-view');
-                  },
-                  orElse: () {},
-                );
-              },
-            ),
-          ],
-          child: Scaffold(
-            appBar: AppBar(
-              title: Text('Test'),
-              leading: IconButton(
+            actions: [
+              IconButton(
                 onPressed: () {
-                  context.read<AuthBloc>().add(AuthEvent.signOut());
+                  context.read<AuthBloc>().add(AuthEvent.signOutWithDelete());
                 },
                 icon: Icon(
-                  Icons.snowboarding_rounded,
+                  Icons.delete_forever,
                 ),
               ),
-              actions: [
-                IconButton(
-                  onPressed: () {
-                    context.read<AuthBloc>().add(AuthEvent.signOutWithDelete());
-                  },
-                  icon: Icon(
-                    Icons.delete_forever,
-                  ),
+              IconButton(
+                onPressed: () {
+                  AutoRouter.of(context).push(
+                    SearchView(searchTitle: 'Notes'),
+                  );
+                },
+                icon: Icon(
+                  Icons.search,
                 ),
-                IconButton(
-                  onPressed: () {
-                    AutoRouter.of(context).push(
-                      SearchView(searchTitle: 'Notes'),
-                    );
-                  },
-                  icon: Icon(
-                    Icons.search,
-                  ),
-                ),
-              ],
-            ),
-            body: NoteOverviewBody(),
-            floatingActionButton: FloatingActionButton(
-              tooltip: 'New Note',
-              child: Icon(Icons.note_add_rounded),
-              backgroundColor: MyColors.lightSecondaryColor,
-              onPressed: () {
-                AutoRouter.of(context).pushNamed('/note-view');
-              },
-            ),
-          )),
+              ),
+            ],
+          ),
+          body: NoteOverviewBody(),
+          floatingActionButton: FloatingActionButton(
+            tooltip: 'New Note',
+            child: Icon(Icons.note_add_rounded),
+            backgroundColor: MyColors.lightSecondaryColor,
+            onPressed: () {
+              AutoRouter.of(context).pushNamed('/note-view');
+            },
+          ),
+        ),
+      ),
     );
   }
 }

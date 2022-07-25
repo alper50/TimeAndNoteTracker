@@ -6,7 +6,7 @@ import 'package:timenotetracker/presentation/home/analyse_view.dart';
 import 'package:timenotetracker/presentation/home/home_view.dart';
 import 'package:timenotetracker/presentation/home/note/note_view.dart';
 import 'package:timenotetracker/presentation/home/note/notes_overview_view.dart';
-import 'package:timenotetracker/presentation/home/time/time_view.dart';
+import 'package:timenotetracker/presentation/home/timer/time_view.dart';
 import 'package:timenotetracker/presentation/onboard/onboard_view.dart';
 import 'package:timenotetracker/presentation/splash/splash_view.dart';
 
