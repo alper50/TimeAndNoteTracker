@@ -4,15 +4,15 @@ import 'package:timenotetracker/presentation/core/constants/padding_constants.da
 import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
 
 class SearchResultsView extends StatelessWidget {
-  final String? searchTerm;
+  final List<String>? searchResult;
 
   const SearchResultsView({
-    required this.searchTerm,
+    required this.searchResult,
   }) : super();
 
   @override
   Widget build(BuildContext context) {
-    if (searchTerm == null) {
+    if (searchResult == null) {
       return _buildInitialResult();
     }
     return _buildResult();
@@ -22,9 +22,9 @@ class SearchResultsView extends StatelessWidget {
     return ListView(
       padding: MyPaddingOnly.onlyTop(),
       children: List.generate(
-        50,
+        searchResult!.length,
         (index) => ListTile(
-          title: Text('$searchTerm search result'),
+          title: Text('$searchResult search result'),
           subtitle: Text(index.toString()),
         ),
       ),

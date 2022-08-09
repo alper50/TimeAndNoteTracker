@@ -7,12 +7,8 @@ class SearchService extends ISearchService {
     filteredSearchHistory = filterSearchTexts(filter: null);
   }
 
-  List<String> searchHistory = [
-    'fuchsia',
-    'flutter',
-    'widgets',
-    'resocoder',
-  ];
+  final List<String> searchHistory =
+      []; //TODO make sure to load search history from local while app started
 
   List<String>? filteredSearchHistory;
   static const historyLength = 5;
@@ -42,14 +38,14 @@ class SearchService extends ISearchService {
     if (searchHistory.contains(term)) {
       putSearchTermFirst(term);
       return;
-    }
+    } else {
+      searchHistory.add(term);
+      if (searchHistory.length > historyLength) {
+        searchHistory.removeRange(0, searchHistory.length - historyLength);
+      }
 
-    searchHistory.add(term);
-    if (searchHistory.length > historyLength) {
-      searchHistory.removeRange(0, searchHistory.length - historyLength);
+      filteredSearchHistory = filterSearchTexts(filter: null);
     }
-
-    filteredSearchHistory = filterSearchTexts(filter: null);
   }
 
   @override

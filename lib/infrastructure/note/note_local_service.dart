@@ -71,4 +71,9 @@ class NoteLocalService extends DatabaseAccessor<MyDatabase>
   Future<int> deleteNote(Insertable<NoteData> noteToBeDeleted) {
     return delete(note).delete(noteToBeDeleted);
   }
+
+  Future<List<NoteData>> searchNote(String noteToBeSearched) async{
+    final query = select(note)..where((tbl) => tbl.noteEditorText.contains(noteToBeSearched));
+    return await query.get();
+  }
 }

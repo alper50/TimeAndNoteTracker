@@ -677,7 +677,10 @@ abstract class _SelectSearchHistory implements SearchEvent {
 /// @nodoc
 mixin _$SearchState {
   String? get selectedText => throw _privateConstructorUsedError;
+  List<String>? get searchResult => throw _privateConstructorUsedError;
   List<String>? get filteredSearchHistory => throw _privateConstructorUsedError;
+  Option<NoteFailure> get searchFailureOrSucces =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SearchStateCopyWith<SearchState> get copyWith =>
@@ -689,7 +692,11 @@ abstract class $SearchStateCopyWith<$Res> {
   factory $SearchStateCopyWith(
           SearchState value, $Res Function(SearchState) then) =
       _$SearchStateCopyWithImpl<$Res>;
-  $Res call({String? selectedText, List<String>? filteredSearchHistory});
+  $Res call(
+      {String? selectedText,
+      List<String>? searchResult,
+      List<String>? filteredSearchHistory,
+      Option<NoteFailure> searchFailureOrSucces});
 }
 
 /// @nodoc
@@ -703,17 +710,27 @@ class _$SearchStateCopyWithImpl<$Res> implements $SearchStateCopyWith<$Res> {
   @override
   $Res call({
     Object? selectedText = freezed,
+    Object? searchResult = freezed,
     Object? filteredSearchHistory = freezed,
+    Object? searchFailureOrSucces = freezed,
   }) {
     return _then(_value.copyWith(
       selectedText: selectedText == freezed
           ? _value.selectedText
           : selectedText // ignore: cast_nullable_to_non_nullable
               as String?,
+      searchResult: searchResult == freezed
+          ? _value.searchResult
+          : searchResult // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       filteredSearchHistory: filteredSearchHistory == freezed
           ? _value.filteredSearchHistory
           : filteredSearchHistory // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      searchFailureOrSucces: searchFailureOrSucces == freezed
+          ? _value.searchFailureOrSucces
+          : searchFailureOrSucces // ignore: cast_nullable_to_non_nullable
+              as Option<NoteFailure>,
     ));
   }
 }
@@ -725,7 +742,11 @@ abstract class _$SearchStateCopyWith<$Res>
           _SearchState value, $Res Function(_SearchState) then) =
       __$SearchStateCopyWithImpl<$Res>;
   @override
-  $Res call({String? selectedText, List<String>? filteredSearchHistory});
+  $Res call(
+      {String? selectedText,
+      List<String>? searchResult,
+      List<String>? filteredSearchHistory,
+      Option<NoteFailure> searchFailureOrSucces});
 }
 
 /// @nodoc
@@ -741,17 +762,27 @@ class __$SearchStateCopyWithImpl<$Res> extends _$SearchStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? selectedText = freezed,
+    Object? searchResult = freezed,
     Object? filteredSearchHistory = freezed,
+    Object? searchFailureOrSucces = freezed,
   }) {
     return _then(_SearchState(
       selectedText: selectedText == freezed
           ? _value.selectedText
           : selectedText // ignore: cast_nullable_to_non_nullable
               as String?,
+      searchResult: searchResult == freezed
+          ? _value.searchResult
+          : searchResult // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       filteredSearchHistory: filteredSearchHistory == freezed
           ? _value.filteredSearchHistory
           : filteredSearchHistory // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      searchFailureOrSucces: searchFailureOrSucces == freezed
+          ? _value.searchFailureOrSucces
+          : searchFailureOrSucces // ignore: cast_nullable_to_non_nullable
+              as Option<NoteFailure>,
     ));
   }
 }
@@ -761,11 +792,23 @@ class __$SearchStateCopyWithImpl<$Res> extends _$SearchStateCopyWithImpl<$Res>
 class _$_SearchState implements _SearchState {
   const _$_SearchState(
       {required this.selectedText,
-      required final List<String>? filteredSearchHistory})
-      : _filteredSearchHistory = filteredSearchHistory;
+      required final List<String>? searchResult,
+      required final List<String>? filteredSearchHistory,
+      required this.searchFailureOrSucces})
+      : _searchResult = searchResult,
+        _filteredSearchHistory = filteredSearchHistory;
 
   @override
   final String? selectedText;
+  final List<String>? _searchResult;
+  @override
+  List<String>? get searchResult {
+    final value = _searchResult;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   final List<String>? _filteredSearchHistory;
   @override
   List<String>? get filteredSearchHistory {
@@ -776,8 +819,11 @@ class _$_SearchState implements _SearchState {
   }
 
   @override
+  final Option<NoteFailure> searchFailureOrSucces;
+
+  @override
   String toString() {
-    return 'SearchState(selectedText: $selectedText, filteredSearchHistory: $filteredSearchHistory)';
+    return 'SearchState(selectedText: $selectedText, searchResult: $searchResult, filteredSearchHistory: $filteredSearchHistory, searchFailureOrSucces: $searchFailureOrSucces)';
   }
 
   @override
@@ -788,14 +834,20 @@ class _$_SearchState implements _SearchState {
             const DeepCollectionEquality()
                 .equals(other.selectedText, selectedText) &&
             const DeepCollectionEquality()
-                .equals(other.filteredSearchHistory, filteredSearchHistory));
+                .equals(other.searchResult, searchResult) &&
+            const DeepCollectionEquality()
+                .equals(other.filteredSearchHistory, filteredSearchHistory) &&
+            const DeepCollectionEquality()
+                .equals(other.searchFailureOrSucces, searchFailureOrSucces));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(selectedText),
-      const DeepCollectionEquality().hash(filteredSearchHistory));
+      const DeepCollectionEquality().hash(searchResult),
+      const DeepCollectionEquality().hash(filteredSearchHistory),
+      const DeepCollectionEquality().hash(searchFailureOrSucces));
 
   @JsonKey(ignore: true)
   @override
@@ -805,13 +857,21 @@ class _$_SearchState implements _SearchState {
 
 abstract class _SearchState implements SearchState {
   const factory _SearchState(
-      {required final String? selectedText,
-      required final List<String>? filteredSearchHistory}) = _$_SearchState;
+          {required final String? selectedText,
+          required final List<String>? searchResult,
+          required final List<String>? filteredSearchHistory,
+          required final Option<NoteFailure> searchFailureOrSucces}) =
+      _$_SearchState;
 
   @override
   String? get selectedText => throw _privateConstructorUsedError;
   @override
+  List<String>? get searchResult => throw _privateConstructorUsedError;
+  @override
   List<String>? get filteredSearchHistory => throw _privateConstructorUsedError;
+  @override
+  Option<NoteFailure> get searchFailureOrSucces =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SearchStateCopyWith<_SearchState> get copyWith =>

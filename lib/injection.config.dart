@@ -80,8 +80,9 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i24.NoteFormBloc(get<_i21.INoteLocalRepository>()));
   gh.factory<_i25.NoteWatcherBloc>(
       () => _i25.NoteWatcherBloc(get<_i21.INoteLocalRepository>()));
-  gh.factory<_i26.SearchBloc>(
-      () => _i26.SearchBloc(searchService: get<_i16.SearchService>()));
+  gh.factory<_i26.SearchBloc>(() => _i26.SearchBloc(
+      noteLocalRepository: get<_i21.INoteLocalRepository>(),
+      searchService: get<_i16.SearchService>()));
   return get;
 }
 

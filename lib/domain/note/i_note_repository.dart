@@ -10,4 +10,5 @@ abstract class INoteLocalRepository{
   Future<Either<NoteFailure,Note>> getNoteById(String noteId);
   Future<Either<NoteFailure,Unit>> updateNote(Note note);
   Future<Either<NoteFailure,Unit>> deleteNote(Note note);
+  Future<Either<NoteFailure,List<Note>>> searchNote(String noteToBeSearched);
 }

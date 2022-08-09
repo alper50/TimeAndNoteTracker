@@ -10,7 +10,6 @@ import 'package:timenotetracker/infrastructure/note/note_local_service.dart';
 
 @LazySingleton(as: INoteLocalRepository)
 class NoteLocalRepository implements INoteLocalRepository {
-
   final NoteLocalService noteLocaleService;
   NoteLocalRepository({required this.noteLocaleService});
 
@@ -67,16 +66,14 @@ class NoteLocalRepository implements INoteLocalRepository {
   }
 
   @override
-  Stream<Either<NoteFailure, List<TodoItem>>> watchTodos() async* { 
+  Stream<Either<NoteFailure, List<TodoItem>>> watchTodos() async* {
     yield* noteLocaleService
         .watchTodos()
         .map(
           (todos) => right<NoteFailure, List<TodoItem>>(
             todos
                 .map(
-                  (todo) => TodoItemDTO.fromDB(
-                    todoItemData: todo
-                  ).toDomain(),
+                  (todo) => TodoItemDTO.fromDB(todoItemData: todo).toDomain(),
                 )
                 .toList(),
           ),
@@ -87,14 +84,26 @@ class NoteLocalRepository implements INoteLocalRepository {
           ),
         );
   }
-  
+
   @override
-  Future<Either<NoteFailure, Note>> getNoteById(String noteId) async{
-   try{
-     final result = await noteLocaleService.getNoteById(noteId);
-    return right(NoteDTO.fromDB(noteData: result).toDomain());
-   }catch(e){
-     return left(NoteFailure.unexpected(e));
-   }
+  Future<Either<NoteFailure, Note>> getNoteById(String noteId) async {
+    try {
+      final result = await noteLocaleService.getNoteById(noteId);
+      return right(NoteDTO.fromDB(noteData: result).toDomain());
+    } catch (e) {
+      return left(NoteFailure.unexpected(e));
+    }
+  }
+
+  @override
+  Future<Either<NoteFailure, List<Note>>> searchNote(String noteToBeSearched) async {
+    try {
+      final result = await noteLocaleService.searchNote(
+        noteToBeSearched,
+      );
+      return right(result.map((e) => NoteDTO.fromDB(noteData: e).toDomain()).toList());
+    } catch (e) {
+      return left(NoteFailure.unexpected(e));
+    }
   }
 }

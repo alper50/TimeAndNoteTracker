@@ -4,11 +4,15 @@ part of 'search_bloc.dart';
 abstract class SearchState with _$SearchState {
   const factory SearchState({
     required String? selectedText,
+    required List<String>? searchResult,
     required List<String>? filteredSearchHistory,
+    required Option<NoteFailure> searchFailureOrSucces, 
   }) = _SearchState;
 
   factory SearchState.initial({required List<String>? filteredSearchHistory}) => SearchState(
         selectedText: null,
+        searchResult: null,
         filteredSearchHistory: filteredSearchHistory,
+        searchFailureOrSucces: none(),
       );
 }

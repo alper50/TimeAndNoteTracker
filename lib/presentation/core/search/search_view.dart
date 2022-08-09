@@ -39,7 +39,7 @@ class _SearchViewState extends State<SearchView> {
               controller: controller,
               body: FloatingSearchBarScrollNotifier(
                 child: SearchResultsView(
-                  searchTerm: state.selectedText,
+                  searchResult: state.searchResult,
                 ),
               ),
               transition: CircularFloatingSearchBarTransition(),
