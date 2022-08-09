@@ -22,7 +22,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
         ) {
     on<SearchEvent>(
       (event, emit) async {
-        event.map(
+        await event.map(
           queryChanged: (e) {
             searchService.filteredSearchHistory =
                 searchService.filterSearchTexts(

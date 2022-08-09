@@ -14,8 +14,26 @@ class SearchResultsView extends StatelessWidget {
   Widget build(BuildContext context) {
     if (searchResult == null) {
       return _buildInitialResult();
+    } else if (searchResult!.isEmpty) {
+      return _buildEmptyResult();
     }
     return _buildResult();
+  }
+
+  Center _buildEmptyResult() {
+    return Center(
+      child: Column(
+        children: [
+          LottieBuilder.asset(
+            'assets/lottie/emptyList.json',
+          ),
+          Text(
+            'Could not find',
+            style: MyTextStyles.headline3,
+          ),
+        ],
+      ),
+    );
   }
 
   ListView _buildResult() {
