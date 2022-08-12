@@ -716,18 +716,325 @@ class $AppInformationTable extends AppInformation
   }
 }
 
+class TimeTableData extends DataClass implements Insertable<TimeTableData> {
+  final String id;
+  final String timeHeader;
+  final String timeBody;
+  final DateTime lastUpdatedTime;
+  final DateTime createdTime;
+  TimeTableData(
+      {required this.id,
+      required this.timeHeader,
+      required this.timeBody,
+      required this.lastUpdatedTime,
+      required this.createdTime});
+  factory TimeTableData.fromData(Map<String, dynamic> data, {String? prefix}) {
+    final effectivePrefix = prefix ?? '';
+    return TimeTableData(
+      id: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}id'])!,
+      timeHeader: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}time_header'])!,
+      timeBody: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}time_body'])!,
+      lastUpdatedTime: const DateTimeType().mapFromDatabaseResponse(
+          data['${effectivePrefix}last_updated_time'])!,
+      createdTime: const DateTimeType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}created_time'])!,
+    );
+  }
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['time_header'] = Variable<String>(timeHeader);
+    map['time_body'] = Variable<String>(timeBody);
+    map['last_updated_time'] = Variable<DateTime>(lastUpdatedTime);
+    map['created_time'] = Variable<DateTime>(createdTime);
+    return map;
+  }
+
+  TimeTableCompanion toCompanion(bool nullToAbsent) {
+    return TimeTableCompanion(
+      id: Value(id),
+      timeHeader: Value(timeHeader),
+      timeBody: Value(timeBody),
+      lastUpdatedTime: Value(lastUpdatedTime),
+      createdTime: Value(createdTime),
+    );
+  }
+
+  factory TimeTableData.fromJson(Map<String, dynamic> json,
+      {ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return TimeTableData(
+      id: serializer.fromJson<String>(json['id']),
+      timeHeader: serializer.fromJson<String>(json['timeHeader']),
+      timeBody: serializer.fromJson<String>(json['timeBody']),
+      lastUpdatedTime: serializer.fromJson<DateTime>(json['lastUpdatedTime']),
+      createdTime: serializer.fromJson<DateTime>(json['createdTime']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'timeHeader': serializer.toJson<String>(timeHeader),
+      'timeBody': serializer.toJson<String>(timeBody),
+      'lastUpdatedTime': serializer.toJson<DateTime>(lastUpdatedTime),
+      'createdTime': serializer.toJson<DateTime>(createdTime),
+    };
+  }
+
+  TimeTableData copyWith(
+          {String? id,
+          String? timeHeader,
+          String? timeBody,
+          DateTime? lastUpdatedTime,
+          DateTime? createdTime}) =>
+      TimeTableData(
+        id: id ?? this.id,
+        timeHeader: timeHeader ?? this.timeHeader,
+        timeBody: timeBody ?? this.timeBody,
+        lastUpdatedTime: lastUpdatedTime ?? this.lastUpdatedTime,
+        createdTime: createdTime ?? this.createdTime,
+      );
+  @override
+  String toString() {
+    return (StringBuffer('TimeTableData(')
+          ..write('id: $id, ')
+          ..write('timeHeader: $timeHeader, ')
+          ..write('timeBody: $timeBody, ')
+          ..write('lastUpdatedTime: $lastUpdatedTime, ')
+          ..write('createdTime: $createdTime')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(id, timeHeader, timeBody, lastUpdatedTime, createdTime);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is TimeTableData &&
+          other.id == this.id &&
+          other.timeHeader == this.timeHeader &&
+          other.timeBody == this.timeBody &&
+          other.lastUpdatedTime == this.lastUpdatedTime &&
+          other.createdTime == this.createdTime);
+}
+
+class TimeTableCompanion extends UpdateCompanion<TimeTableData> {
+  final Value<String> id;
+  final Value<String> timeHeader;
+  final Value<String> timeBody;
+  final Value<DateTime> lastUpdatedTime;
+  final Value<DateTime> createdTime;
+  const TimeTableCompanion({
+    this.id = const Value.absent(),
+    this.timeHeader = const Value.absent(),
+    this.timeBody = const Value.absent(),
+    this.lastUpdatedTime = const Value.absent(),
+    this.createdTime = const Value.absent(),
+  });
+  TimeTableCompanion.insert({
+    required String id,
+    required String timeHeader,
+    required String timeBody,
+    required DateTime lastUpdatedTime,
+    required DateTime createdTime,
+  })  : id = Value(id),
+        timeHeader = Value(timeHeader),
+        timeBody = Value(timeBody),
+        lastUpdatedTime = Value(lastUpdatedTime),
+        createdTime = Value(createdTime);
+  static Insertable<TimeTableData> custom({
+    Expression<String>? id,
+    Expression<String>? timeHeader,
+    Expression<String>? timeBody,
+    Expression<DateTime>? lastUpdatedTime,
+    Expression<DateTime>? createdTime,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (timeHeader != null) 'time_header': timeHeader,
+      if (timeBody != null) 'time_body': timeBody,
+      if (lastUpdatedTime != null) 'last_updated_time': lastUpdatedTime,
+      if (createdTime != null) 'created_time': createdTime,
+    });
+  }
+
+  TimeTableCompanion copyWith(
+      {Value<String>? id,
+      Value<String>? timeHeader,
+      Value<String>? timeBody,
+      Value<DateTime>? lastUpdatedTime,
+      Value<DateTime>? createdTime}) {
+    return TimeTableCompanion(
+      id: id ?? this.id,
+      timeHeader: timeHeader ?? this.timeHeader,
+      timeBody: timeBody ?? this.timeBody,
+      lastUpdatedTime: lastUpdatedTime ?? this.lastUpdatedTime,
+      createdTime: createdTime ?? this.createdTime,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (timeHeader.present) {
+      map['time_header'] = Variable<String>(timeHeader.value);
+    }
+    if (timeBody.present) {
+      map['time_body'] = Variable<String>(timeBody.value);
+    }
+    if (lastUpdatedTime.present) {
+      map['last_updated_time'] = Variable<DateTime>(lastUpdatedTime.value);
+    }
+    if (createdTime.present) {
+      map['created_time'] = Variable<DateTime>(createdTime.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('TimeTableCompanion(')
+          ..write('id: $id, ')
+          ..write('timeHeader: $timeHeader, ')
+          ..write('timeBody: $timeBody, ')
+          ..write('lastUpdatedTime: $lastUpdatedTime, ')
+          ..write('createdTime: $createdTime')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $TimeTableTable extends TimeTable
+    with TableInfo<$TimeTableTable, TimeTableData> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $TimeTableTable(this.attachedDatabase, [this._alias]);
+  final VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String?> id = GeneratedColumn<String?>(
+      'id', aliasedName, false,
+      type: const StringType(), requiredDuringInsert: true);
+  final VerificationMeta _timeHeaderMeta = const VerificationMeta('timeHeader');
+  @override
+  late final GeneratedColumn<String?> timeHeader =
+      GeneratedColumn<String?>('time_header', aliasedName, false,
+          additionalChecks: GeneratedColumn.checkTextLength(
+            minTextLength: 1,
+          ),
+          type: const StringType(),
+          requiredDuringInsert: true);
+  final VerificationMeta _timeBodyMeta = const VerificationMeta('timeBody');
+  @override
+  late final GeneratedColumn<String?> timeBody =
+      GeneratedColumn<String?>('time_body', aliasedName, false,
+          additionalChecks: GeneratedColumn.checkTextLength(
+            minTextLength: 1,
+          ),
+          type: const StringType(),
+          requiredDuringInsert: true);
+  final VerificationMeta _lastUpdatedTimeMeta =
+      const VerificationMeta('lastUpdatedTime');
+  @override
+  late final GeneratedColumn<DateTime?> lastUpdatedTime =
+      GeneratedColumn<DateTime?>('last_updated_time', aliasedName, false,
+          type: const IntType(), requiredDuringInsert: true);
+  final VerificationMeta _createdTimeMeta =
+      const VerificationMeta('createdTime');
+  @override
+  late final GeneratedColumn<DateTime?> createdTime =
+      GeneratedColumn<DateTime?>('created_time', aliasedName, false,
+          type: const IntType(), requiredDuringInsert: true);
+  @override
+  List<GeneratedColumn> get $columns =>
+      [id, timeHeader, timeBody, lastUpdatedTime, createdTime];
+  @override
+  String get aliasedName => _alias ?? 'timeTable';
+  @override
+  String get actualTableName => 'timeTable';
+  @override
+  VerificationContext validateIntegrity(Insertable<TimeTableData> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('time_header')) {
+      context.handle(
+          _timeHeaderMeta,
+          timeHeader.isAcceptableOrUnknown(
+              data['time_header']!, _timeHeaderMeta));
+    } else if (isInserting) {
+      context.missing(_timeHeaderMeta);
+    }
+    if (data.containsKey('time_body')) {
+      context.handle(_timeBodyMeta,
+          timeBody.isAcceptableOrUnknown(data['time_body']!, _timeBodyMeta));
+    } else if (isInserting) {
+      context.missing(_timeBodyMeta);
+    }
+    if (data.containsKey('last_updated_time')) {
+      context.handle(
+          _lastUpdatedTimeMeta,
+          lastUpdatedTime.isAcceptableOrUnknown(
+              data['last_updated_time']!, _lastUpdatedTimeMeta));
+    } else if (isInserting) {
+      context.missing(_lastUpdatedTimeMeta);
+    }
+    if (data.containsKey('created_time')) {
+      context.handle(
+          _createdTimeMeta,
+          createdTime.isAcceptableOrUnknown(
+              data['created_time']!, _createdTimeMeta));
+    } else if (isInserting) {
+      context.missing(_createdTimeMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  TimeTableData map(Map<String, dynamic> data, {String? tablePrefix}) {
+    return TimeTableData.fromData(data,
+        prefix: tablePrefix != null ? '$tablePrefix.' : null);
+  }
+
+  @override
+  $TimeTableTable createAlias(String alias) {
+    return $TimeTableTable(attachedDatabase, alias);
+  }
+}
+
 abstract class _$MyDatabase extends GeneratedDatabase {
   _$MyDatabase(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
   late final $NoteTable note = $NoteTable(this);
   late final $TodoItemTable todoItem = $TodoItemTable(this);
   late final $AppInformationTable appInformation = $AppInformationTable(this);
+  late final $TimeTableTable timeTable = $TimeTableTable(this);
   late final NoteLocalService noteLocalService =
       NoteLocalService(this as MyDatabase);
   late final AuthLocalService authLocalService =
       AuthLocalService(this as MyDatabase);
+  late final TimeLocalService timeLocalService =
+      TimeLocalService(this as MyDatabase);
   @override
   Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
   @override
   List<DatabaseSchemaEntity> get allSchemaEntities =>
-      [note, todoItem, appInformation];
+      [note, todoItem, appInformation, timeTable];
 }

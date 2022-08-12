@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:timenotetracker/domain/note/i_note_repository.dart';
+import 'package:timenotetracker/domain/note/i_note_local_repository.dart';
 import 'package:timenotetracker/domain/note/note_entity.dart';
 import 'package:timenotetracker/domain/note/note_failure.dart';
 import 'package:timenotetracker/domain/note/todo_item_entity.dart';

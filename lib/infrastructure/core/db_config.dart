@@ -8,9 +8,11 @@ import 'package:timenotetracker/infrastructure/auth/auth_local_service.dart';
 import 'package:timenotetracker/infrastructure/auth/auth_local_tables.dart';
 import 'package:timenotetracker/infrastructure/note/note_local_service.dart';
 import 'package:timenotetracker/infrastructure/note/note_local_tables.dart';
+import 'package:timenotetracker/infrastructure/timer/time_local_service.dart';
+import 'package:timenotetracker/infrastructure/timer/time_local_tables.dart';
 part 'db_config.g.dart';
 
-@DriftDatabase(tables: [Note, TodoItem, AppInformation],daos: [NoteLocalService, AuthLocalService])
+@DriftDatabase(tables: [Note, TodoItem, AppInformation, TimeTable],daos: [NoteLocalService, AuthLocalService, TimeLocalService])
 @LazySingleton()
 class MyDatabase extends _$MyDatabase {
   MyDatabase([NativeDatabase? nativeDatabase]) : super(nativeDatabase ?? _openConnection());
