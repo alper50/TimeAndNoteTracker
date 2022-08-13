@@ -19,7 +19,14 @@ abstract class Time implements _$Time {
     required DateTime createdTime,
   }) = _Time;
 
-  // we are validation multiple valueObjects
+  factory Time.defaultTime() => Time(
+        id: UniqueId(),
+        timeHeader: TimeHeader(''),
+        timeBody: TimeBody(''),
+        lastUpdatedTime: DateTime.now(),
+        createdTime: DateTime.now(),
+      );
+
   Option<ValueFailure<dynamic>> get checkValidError {
     return timeBody.failureOrUnit.fold(
       (f) => some(f),

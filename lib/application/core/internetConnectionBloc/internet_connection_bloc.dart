@@ -15,7 +15,7 @@ class InternetConnectionBloc
   final IInternetConnectionService iInternetConnectionService;
   late StreamSubscription<InternetConnectionStatus> listener;
   InternetConnectionBloc({required this.iInternetConnectionService})
-      : super(_Initial()) {
+      : super(InternetConnectionState.initial()) {
     on<InternetConnectionEvent>(
       (event, emit) async {
         await event.map(

@@ -21,6 +21,9 @@ import 'application/core/searchBloc/search_bloc.dart' as _i29;
 import 'application/note/noteActionBloc/note_action_bloc.dart' as _i26;
 import 'application/note/noteFormBloc/note_form_bloc.dart' as _i27;
 import 'application/note/noteWatcherBloc/note_watcher_bloc.dart' as _i28;
+import 'application/timer/timeActionBloc/time_action_bloc.dart' as _i30;
+import 'application/timer/timeFormBloc/time_form_bloc.dart' as _i31;
+import 'application/timer/timeWatcherBloc/time_watcher_bloc.dart' as _i32;
 import 'domain/auth/i_auth_local_repository.dart' as _i5;
 import 'domain/auth/i_auth_remote.dart' as _i7;
 import 'domain/core/internetConnection/i_internet_connection_service.dart'
@@ -31,7 +34,7 @@ import 'infrastructure/auth/auth_local_repository.dart' as _i6;
 import 'infrastructure/auth/auth_remote_repository.dart' as _i20;
 import 'infrastructure/auth/auth_remote_service.dart' as _i8;
 import 'infrastructure/core/db_config.dart' as _i12;
-import 'infrastructure/core/infrastructure_injectable_module.dart' as _i30;
+import 'infrastructure/core/infrastructure_injectable_module.dart' as _i33;
 import 'infrastructure/core/internetConnection/internet_connection_service.dart'
     as _i10;
 import 'infrastructure/core/search/search_service.dart' as _i16;
@@ -90,8 +93,14 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i29.SearchBloc>(() => _i29.SearchBloc(
       noteLocalRepository: get<_i22.INoteLocalRepository>(),
       searchService: get<_i16.SearchService>()));
+  gh.factory<_i30.TimeActionBloc>(
+      () => _i30.TimeActionBloc(get<_i24.ITimeLocalRepository>()));
+  gh.factory<_i31.TimeFormBloc>(
+      () => _i31.TimeFormBloc(get<_i24.ITimeLocalRepository>()));
+  gh.factory<_i32.TimeWatcherBloc>(
+      () => _i32.TimeWatcherBloc(get<_i24.ITimeLocalRepository>()));
   return get;
 }
 
 class _$InfrastructureInjectableModule
-    extends _i30.InfrastructureInjectableModule {}
+    extends _i33.InfrastructureInjectableModule {}
