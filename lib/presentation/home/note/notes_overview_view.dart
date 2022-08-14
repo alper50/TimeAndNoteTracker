@@ -8,6 +8,7 @@ import 'package:timenotetracker/injection.dart';
 import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
 import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
+import 'package:timenotetracker/presentation/home/note/widgets/note_overview_appbar.dart';
 import 'package:timenotetracker/presentation/home/note/widgets/note_overview_body.dart';
 
 class NoteOverview extends StatelessWidget {
@@ -30,14 +31,20 @@ class NoteOverview extends StatelessWidget {
           BlocListener<NoteActionBloc, NoteActionState>(
             listener: (context, state) {
               state.maybeMap(
+                deleteSucces: (_) {
+                  showMySnackBar(
+                    context: context,
+                    message: 'Note Successfully Deleted',
+                  );
+                },
                 deleteFailure: (state) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    displaySnackBar(
-                      message: state.noteFailure.map(
-                        unexpected: (e) => 'Unexpected Error Happened: $e',
-                        insufficientPermission: (_) =>
-                            'This case will not happen :)',
-                      ),
+                  showMySnackBar(
+                    context: context,
+                    message: state.noteFailure.map(
+                      unexpected: (e) =>
+                          'Unexpected Error Happened While Note Deleting: $e',
+                      insufficientPermission: (_) =>
+                          'This case will not happen :)',
                     ),
                   );
                 },
@@ -57,36 +64,9 @@ class NoteOverview extends StatelessWidget {
           ),
         ],
         child: Scaffold(
-          appBar: AppBar(
-            title: Text('Test'),
-            leading: IconButton(
-              onPressed: () {
-                context.read<AuthBloc>().add(AuthEvent.signOut());
-              },
-              icon: Icon(
-                Icons.snowboarding_rounded,
-              ),
-            ),
-            actions: [
-              IconButton(
-                onPressed: () {
-                  context.read<AuthBloc>().add(AuthEvent.signOutWithDelete());
-                },
-                icon: Icon(
-                  Icons.delete_forever,
-                ),
-              ),
-              IconButton(
-                onPressed: () {
-                  AutoRouter.of(context).push(
-                    SearchView(searchTitle: 'Notes'),
-                  );
-                },
-                icon: Icon(
-                  Icons.search,
-                ),
-              ),
-            ],
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(AppBar().preferredSize.height),
+            child: NoteOverviewAppBar(),
           ),
           body: NoteOverviewBody(),
           floatingActionButton: FloatingActionButton(
@@ -102,3 +82,5 @@ class NoteOverview extends StatelessWidget {
     );
   }
 }
+
+

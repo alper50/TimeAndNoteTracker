@@ -8,7 +8,7 @@ import 'package:timenotetracker/domain/note/note_entity.dart';
 import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 import 'package:timenotetracker/presentation/core/constants/padding_constants.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_circular_progress.dart';
-import 'package:timenotetracker/presentation/home/note/note_failure_view.dart';
+import 'package:timenotetracker/presentation/core/coreWidgets/my_failure_view.dart';
 
 class NoteViewBody extends StatelessWidget {
   final Note? noteToBeEdited;
@@ -28,7 +28,7 @@ class NoteViewBody extends StatelessWidget {
           loading: (_) => Center(
             child: MyCircularProgressIndicator(),
           ),
-          loadFailure: (_) => NoteFailureView(
+          loadFailure: (_) => FailureView(
             onPressed: () {
               context.read<NoteFormBloc>().add(NoteFormEvent.initialize(noteToBeEdited));
             }, 

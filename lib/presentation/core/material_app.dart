@@ -6,7 +6,7 @@ import 'package:timenotetracker/application/core/internetConnectionBloc/internet
 import 'package:timenotetracker/injection.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_network_failure_widget.dart';
 import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
-import 'package:timenotetracker/presentation/home/note/note_failure_view.dart';
+import 'package:timenotetracker/presentation/core/coreWidgets/my_failure_view.dart';
 
 class MaterialAppWidget extends StatelessWidget {
   MaterialAppWidget({Key? key}) : super(key: key);
@@ -55,8 +55,8 @@ class MaterialAppWidget extends StatelessWidget {
     );
   }
 
-  NoteFailureView _showFailureView(BuildContext context) {
-    return NoteFailureView(
+  FailureView _showFailureView(BuildContext context) {
+    return FailureView(
       onPressed: () {
         context
             .read<InternetConnectionBloc>()

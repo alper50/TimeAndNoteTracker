@@ -8,7 +8,7 @@ class HomeView extends StatelessWidget {
   HomeView({Key? key}) : super(key: key);
   final List<PageRouteInfo<dynamic>> routes = [
     NoteOverview(),
-    TimeView(),
+    TimeListView(),
     AnalyseView(),
   ];
   final List<SalomonBottomBarItem> bottomItems = [

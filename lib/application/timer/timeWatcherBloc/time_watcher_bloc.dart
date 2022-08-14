@@ -33,12 +33,17 @@ class TimeWatcherBloc extends Bloc<TimeWatcherEvent, TimeWatcherState> {
         },
         watchTimesReceived: (e) async {
           e.failureOrTimes.fold(
-              (failure) => emit(TimeWatcherState.loadTimeFailure(
-                    timeFailure: failure,
-                  )),
-              (succes) => emit(
+            (failure) => emit(TimeWatcherState.loadTimeFailure(
+              timeFailure: failure,
+            )),
+            (succes) => succes.isEmpty
+                ? emit(
+                    TimeWatcherState.loadTimeSuccesEmptyList(),
+                  )
+                : emit(
                     TimeWatcherState.loadTimeSucces(times: succes),
-                  ));
+                  ),
+          );
         },
       );
     });

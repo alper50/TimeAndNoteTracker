@@ -6,6 +6,7 @@ import 'package:timenotetracker/presentation/home/analyse_view.dart';
 import 'package:timenotetracker/presentation/home/home_view.dart';
 import 'package:timenotetracker/presentation/home/note/note_view.dart';
 import 'package:timenotetracker/presentation/home/note/notes_overview_view.dart';
+import 'package:timenotetracker/presentation/home/timer/time_list_view.dart';
 import 'package:timenotetracker/presentation/home/timer/time_view.dart';
 import 'package:timenotetracker/presentation/onboard/onboard_view.dart';
 import 'package:timenotetracker/presentation/splash/splash_view.dart';
@@ -19,11 +20,12 @@ import 'package:timenotetracker/presentation/splash/splash_view.dart';
     AutoRoute(page: VerifyEmailView),
     AutoRoute(page: NoteView),
     AutoRoute(page: SearchView),
+    AutoRoute(page: TimeView),
     AutoRoute(
       page: HomeView, //TODO nested route implements
       children: [
         AutoRoute(page: NoteOverview),
-        AutoRoute(page: TimeView),
+        AutoRoute(page: TimeListView),
         AutoRoute(page: AnalyseView),
         
       ],

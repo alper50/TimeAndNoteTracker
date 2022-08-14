@@ -5,8 +5,8 @@ import 'package:timenotetracker/application/note/noteActionBloc/note_action_bloc
 import 'package:timenotetracker/application/note/noteWatcherBloc/note_watcher_bloc.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_circular_progress.dart';
 import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
-import 'package:timenotetracker/presentation/home/note/note_empty_view.dart';
-import 'package:timenotetracker/presentation/home/note/note_failure_view.dart';
+import 'package:timenotetracker/presentation/core/coreWidgets/my_empty_list_view.dart';
+import 'package:timenotetracker/presentation/core/coreWidgets/my_failure_view.dart';
 import 'package:timenotetracker/presentation/home/note/widgets/note_cards.dart';
 
 class NoteOverviewBody extends StatelessWidget {
@@ -19,12 +19,12 @@ class NoteOverviewBody extends StatelessWidget {
       return state.map(
         initial: (_) => Container(),
         loading: (_) => Center(child: MyCircularProgressIndicator()),
-        loadFailure: (_) => NoteFailureView(
+        loadFailure: (_) => FailureView(
           onPressed: () => context
               .read<NoteWatcherBloc>()
               .add(NoteWatcherEvent.watchNotesStarted()),
         ),
-        loadSuccesEmptyList: (_) => NoteEmptyListView(),
+        loadSuccesEmptyList: (_) => EmptyListView(),
         loadSucces: (succesState) {
           return ListView.builder(
             itemCount: succesState.notes.length,

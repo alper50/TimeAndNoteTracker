@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 
+void showMySnackBar({required BuildContext context,required String message}) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    displaySnackBar(message: message),
+  );
+}
+
 SnackBar displaySnackBar(
     {required String message, String? actionMessage, VoidCallback? onClick}) {
   return SnackBar(
