@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:timenotetracker/domain/note/note_entity.dart';
 import 'package:timenotetracker/domain/timer/time_entity.dart';
 import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 

@@ -10,8 +10,10 @@ class MockIAuthLocalRepository extends Mock implements IAuthLocalRepository{}
 class MockAuthRemoteService extends Mock implements AuthRemoteService{}
 //TODO write tests for application
 void main(){
+  // ignore: unused_local_variable
   late AuthBloc authBloc;
   late MockIAuthRemote mockAuthRemoteRepository;
+  // ignore: unused_local_variable
   late MockIAuthLocalRepository mockAuthLocalRepository;
 
   tst.setUpAll((){

@@ -5,10 +5,7 @@ import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
 import 'package:timenotetracker/application/note/noteActionBloc/note_action_bloc.dart';
 import 'package:timenotetracker/application/note/noteWatcherBloc/note_watcher_bloc.dart';
 import 'package:timenotetracker/injection.dart';
-import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
-import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
-import 'package:timenotetracker/presentation/home/note/widgets/note_overview_appbar.dart';
 import 'package:timenotetracker/presentation/home/note/widgets/note_overview_body.dart';
 
 class NoteOverview extends StatelessWidget {
@@ -63,21 +60,7 @@ class NoteOverview extends StatelessWidget {
             },
           ),
         ],
-        child: Scaffold(
-          appBar: PreferredSize(
-            preferredSize: Size.fromHeight(AppBar().preferredSize.height),
-            child: NoteOverviewAppBar(),
-          ),
-          body: NoteOverviewBody(),
-          floatingActionButton: FloatingActionButton(
-            tooltip: 'New Note',
-            child: Icon(Icons.note_add_rounded),
-            backgroundColor: MyColors.lightSecondaryColor,
-            onPressed: () {
-              AutoRouter.of(context).pushNamed('/note-view');
-            },
-          ),
-        ),
+        child: NoteOverviewBody()
       ),
     );
   }
