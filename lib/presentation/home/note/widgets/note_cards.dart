@@ -27,10 +27,4 @@ class NoteErrorCard extends INoteCard {
         );
 }
 
-class NoteCardWrapper extends InkWell {
-  NoteCardWrapper({
-    required void Function() onTap,
-    void Function()? onLongPress,
-    required Widget child,
-  }) : super(onTap: onTap, onLongPress: onLongPress, child: child);
-}
+

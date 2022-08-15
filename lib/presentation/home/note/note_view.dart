@@ -8,14 +8,14 @@ import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
 import 'package:timenotetracker/presentation/home/note/widgets/note_view_body.dart';
 
 class NoteView extends StatelessWidget {
-  final Note? noteToBeEdited;
-  NoteView({Key? key, this.noteToBeEdited}) : super(key: key);
+  final Note? currentNote;
+  NoteView({Key? key, this.currentNote}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          getIt<NoteFormBloc>()..add(NoteFormEvent.initialize(noteToBeEdited)),
+          getIt<NoteFormBloc>()..add(NoteFormEvent.initialize(currentNote)),
       child: SafeArea(
           child: BlocListener<NoteFormBloc, NoteFormState>(
         listener: (context, state) {
@@ -36,7 +36,7 @@ class NoteView extends StatelessWidget {
               orElse: () {});
         },
         child: NoteViewBody(
-          noteToBeEdited: noteToBeEdited,
+          noteToBeEdited: currentNote,
         ),
       )),
     );

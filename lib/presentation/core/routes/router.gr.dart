@@ -14,6 +14,7 @@ import 'package:auto_route/auto_route.dart' as _i12;
 import 'package:flutter/material.dart' as _i13;
 
 import '../../../domain/note/note_entity.dart' as _i14;
+import '../../../domain/timer/time_entity.dart' as _i15;
 import '../../auth/auth_view.dart' as _i3;
 import '../../auth/verify_email_view.dart' as _i4;
 import '../../home/analyse_view.dart' as _i11;
@@ -55,8 +56,7 @@ class MyRouter extends _i12.RootStackRouter {
           routeData.argsAs<NoteViewArgs>(orElse: () => const NoteViewArgs());
       return _i12.MaterialPageX<dynamic>(
           routeData: routeData,
-          child:
-              _i5.NoteView(key: args.key, noteToBeEdited: args.noteToBeEdited));
+          child: _i5.NoteView(key: args.key, currentNote: args.currentNote));
     },
     SearchView.name: (routeData) {
       final args = routeData.argsAs<SearchViewArgs>();
@@ -65,8 +65,10 @@ class MyRouter extends _i12.RootStackRouter {
           child: _i6.SearchView(key: args.key, searchTitle: args.searchTitle));
     },
     TimeView.name: (routeData) {
+      final args = routeData.argsAs<TimeViewArgs>();
       return _i12.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i7.TimeView());
+          routeData: routeData,
+          child: _i7.TimeView(key: args.key, currentTime: args.currentTime));
     },
     HomeView.name: (routeData) {
       final args =
@@ -158,24 +160,24 @@ class VerifyEmailView extends _i12.PageRouteInfo<void> {
 /// generated route for
 /// [_i5.NoteView]
 class NoteView extends _i12.PageRouteInfo<NoteViewArgs> {
-  NoteView({_i13.Key? key, _i14.Note? noteToBeEdited})
+  NoteView({_i13.Key? key, _i14.Note? currentNote})
       : super(NoteView.name,
             path: '/note-view',
-            args: NoteViewArgs(key: key, noteToBeEdited: noteToBeEdited));
+            args: NoteViewArgs(key: key, currentNote: currentNote));
 
   static const String name = 'NoteView';
 }
 
 class NoteViewArgs {
-  const NoteViewArgs({this.key, this.noteToBeEdited});
+  const NoteViewArgs({this.key, this.currentNote});
 
   final _i13.Key? key;
 
-  final _i14.Note? noteToBeEdited;
+  final _i14.Note? currentNote;
 
   @override
   String toString() {
-    return 'NoteViewArgs{key: $key, noteToBeEdited: $noteToBeEdited}';
+    return 'NoteViewArgs{key: $key, currentNote: $currentNote}';
   }
 }
 
@@ -205,10 +207,26 @@ class SearchViewArgs {
 
 /// generated route for
 /// [_i7.TimeView]
-class TimeView extends _i12.PageRouteInfo<void> {
-  const TimeView() : super(TimeView.name, path: '/time-view');
+class TimeView extends _i12.PageRouteInfo<TimeViewArgs> {
+  TimeView({_i13.Key? key, required _i15.Time? currentTime})
+      : super(TimeView.name,
+            path: '/time-view',
+            args: TimeViewArgs(key: key, currentTime: currentTime));
 
   static const String name = 'TimeView';
+}
+
+class TimeViewArgs {
+  const TimeViewArgs({this.key, required this.currentTime});
+
+  final _i13.Key? key;
+
+  final _i15.Time? currentTime;
+
+  @override
+  String toString() {
+    return 'TimeViewArgs{key: $key, currentTime: $currentTime}';
+  }
 }
 
 /// generated route for

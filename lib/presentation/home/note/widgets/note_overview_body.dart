@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/note/noteActionBloc/note_action_bloc.dart';
 import 'package:timenotetracker/application/note/noteWatcherBloc/note_watcher_bloc.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_circular_progress.dart';
+import 'package:timenotetracker/presentation/core/coreWidgets/my_widget_wrapper.dart';
 import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_empty_list_view.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_failure_view.dart';
@@ -31,12 +32,12 @@ class NoteOverviewBody extends StatelessWidget {
             itemBuilder: (context, index) {
               final currentNote = succesState.notes[index];
               if (currentNote.checkValidError.isSome()) {
-                return NoteCardWrapper(
+                return MyWidgetdWrapper(
                   onTap: () {},
                   child: NoteErrorCard(note: currentNote),
                 );
               } else {
-                return NoteCardWrapper(
+                return MyWidgetdWrapper(
                   onLongPress: () {
                     context.read<NoteActionBloc>().add(
                           NoteActionEvent.deleteNote(currentNote),
@@ -45,7 +46,7 @@ class NoteOverviewBody extends StatelessWidget {
                   onTap: () {
                     AutoRouter.of(context).push(
                       NoteView(
-                        noteToBeEdited: currentNote,
+                        currentNote: currentNote,
                       ),
                     );
                   },
