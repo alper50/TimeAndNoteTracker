@@ -21,15 +21,16 @@ class TimeWatcherBloc extends Bloc<TimeWatcherEvent, TimeWatcherState> {
     on<TimeWatcherEvent>((event, emit) async {
       await event.map(
         watchTimesStarted: (e) async {
-          //TODO is async word necessary ?
+          
 
           emit(TimeWatcherState.loadingTimes());
           await _timeStreamSubscription?.cancel();
-          _timeStreamSubscription =
-              timeLocalRepository.watchTimers().listen((timeStream) => add(
-                    TimeWatcherEvent.watchTimesReceived(
-                        failureOrTimes: timeStream),
-                  ));
+          _timeStreamSubscription = timeLocalRepository.watchTimers().listen(
+                (timeStream) => add(
+                  TimeWatcherEvent.watchTimesReceived(
+                      failureOrTimes: timeStream),
+                ),
+              );
         },
         watchTimesReceived: (e) async {
           e.failureOrTimes.fold(

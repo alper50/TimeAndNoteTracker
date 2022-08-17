@@ -39,7 +39,9 @@ class TimeCreateFieldBottomSheet extends StatelessWidget {
                       Expanded(
                           child: MyTextFormField(
                         labelText: 'I am working on..',
-                        validator: (e) {},
+                        validator: (value) {
+                          return value!.isEmpty? 'This field cannot be empty':'';
+                        },
                         onChanged: (String e) {},
                       )),
                       IconButton(

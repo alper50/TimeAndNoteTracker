@@ -43,7 +43,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
               (succes) => emit(
                 state.copyWith(
                   selectedText: searchService.selectedText,
-                  searchResult: succes.map((e) => e.noteEditorBody.getValueOrCrash()).toList(), //TODO this line will be dynamic
+                  searchResult: succes.map((e) => e.noteEditorBody.getValueOrCrash()).toList(), 
                   filteredSearchHistory: searchService.filteredSearchHistory,
                   searchFailureOrSucces: none(),
                 ),

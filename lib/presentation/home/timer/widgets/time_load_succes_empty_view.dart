@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_bottom_sheet.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_empty_list_view.dart';
 import 'package:timenotetracker/presentation/home/timer/widgets/time_create_field_bottomsheet.dart';
-import 'package:timenotetracker/presentation/home/timer/widgets/time_list_view_body.dart';
 
 class TimeLoadSuccesEmptyView extends StatelessWidget {
   const TimeLoadSuccesEmptyView({
