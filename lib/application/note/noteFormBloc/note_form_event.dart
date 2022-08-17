@@ -8,3 +8,4 @@ class NoteFormEvent with _$NoteFormEvent {
   const factory NoteFormEvent.createNote() = _CreateNote;
   const factory NoteFormEvent.noteChanged(Document doc) = _NoteChanged;
 }
+//TODO create note will get note parameter

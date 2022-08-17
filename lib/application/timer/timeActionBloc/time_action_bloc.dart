@@ -15,7 +15,7 @@ class TimeActionBloc extends Bloc<TimeActionEvent, TimeActionState> {
   TimeActionBloc(this._timeLocalRepository) : super(TimeActionState.initial()) {
     on<TimeActionEvent>(
       (event, emit) async {
-       await event.map(
+        await event.map(
           deleteTimer: (e) async {
             emit(TimeActionState.deleteTimeLoading());
 
@@ -31,7 +31,20 @@ class TimeActionBloc extends Bloc<TimeActionEvent, TimeActionState> {
               ),
             );
           },
-          createTimer: (e) {},
+          createTimer: (e) async {
+            emit(TimeActionState.createTimeLoading());
+            print('tetetet');
+            final result =
+                await _timeLocalRepository.createTimer(e.timeToBeCreated);
+            result.fold(
+              (failure) => emit(
+                TimeActionState.createTimeFailure(timeFailure: failure),
+              ),
+              (r) => emit(
+                TimeActionState.createTimeSucces(),
+              ),
+            );
+          },
         );
       },
     );

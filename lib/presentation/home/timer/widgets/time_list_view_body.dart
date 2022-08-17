@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/timer/timeActionBloc/time_action_bloc.dart';
 import 'package:timenotetracker/application/timer/timeWatcherBloc/time_watcher_bloc.dart';
-import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
+import 'package:timenotetracker/presentation/core/coreWidgets/my_bottom_sheet.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_circular_progress.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_empty_list_view.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_failure_view.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_widget_wrapper.dart';
 import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
 import 'package:timenotetracker/presentation/home/timer/widgets/time_cards.dart';
+import 'package:timenotetracker/presentation/home/timer/widgets/time_create_field_bottomsheet.dart';
+import 'package:timenotetracker/presentation/home/timer/widgets/time_load_succes_empty_view.dart';
 import 'package:timenotetracker/presentation/home/timer/widgets/time_overview_appbar.dart';
 
 class TimeListViewBody extends StatelessWidget {
@@ -18,10 +19,11 @@ class TimeListViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: PreferredSize(
-            preferredSize: Size.fromHeight(AppBar().preferredSize.height),
-            child: TimeOverviewAppBar(),
-          ),
+        preferredSize: Size.fromHeight(AppBar().preferredSize.height),
+        child: TimeOverviewAppBar(),
+      ),
       body: BlocBuilder<TimeWatcherBloc, TimeWatcherState>(
         builder: (context, state) {
           return state.map(
@@ -32,12 +34,8 @@ class TimeListViewBody extends StatelessWidget {
                   .read<TimeWatcherBloc>()
                   .add(TimeWatcherEvent.watchTimesStarted()),
             ),
-            loadTimeSuccesEmptyList: (_) => Column(
-              children: [
-                EmptyListView(),
-                TimeCreateField(timeTextController: timeTextController),
-              ],
-            ),
+            loadTimeSuccesEmptyList: (_) =>
+                TimeLoadSuccesEmptyView(timeTextController: timeTextController),
             loadTimeSucces: (succesState) => Stack(
               children: [
                 ListView.builder(
@@ -66,7 +64,7 @@ class TimeListViewBody extends StatelessWidget {
                           );
                   },
                 ),
-                TimeCreateField(timeTextController: timeTextController),
+                _buildSuccesTimeCreateButton(context),
               ],
             ),
           );
@@ -74,41 +72,24 @@ class TimeListViewBody extends StatelessWidget {
       ),
     );
   }
-}
 
-class TimeCreateField extends StatelessWidget {
-  const TimeCreateField({
-    Key? key,
-    required this.timeTextController,
-  }) : super(key: key);
-
-  final TextEditingController timeTextController;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red,
-      height: 200,
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Expanded(
-            child: TextField(
-              controller: timeTextController,
+  Positioned _buildSuccesTimeCreateButton(BuildContext context) {
+    return Positioned(
+      bottom: 10,
+      left: MediaQuery.of(context).size.width * 0.45,
+      child: IconButton(
+        onPressed: () {
+          showMyBottomSheet(
+            context: context,
+            child: TimeCreateFieldBottomSheet(
+              timeTextController: timeTextController,
             ),
-          ),
-          IconButton(
-            onPressed: () {
-              //TODO TimeActionEvent.createTimer(timeToBeCreated: );
-            },
-            icon: Icon(
-              Icons.play_circle_outline_rounded,
-            ),
-          )
-        ],
+          );
+        },
+        icon: Icon(
+          Icons.play_circle_outline_rounded,
+        ),
       ),
     );
   }
 }
-
-

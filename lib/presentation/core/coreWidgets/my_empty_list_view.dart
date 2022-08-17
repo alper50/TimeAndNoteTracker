@@ -14,9 +14,7 @@ class EmptyListView extends StatelessWidget {
         child: Column(
           children: [
             LottieBuilder.asset('assets/lottie/emptyList.json'),
-            SizedBox(
-              height: 50,
-            ),
+
             Text(
               'You dont have any item yet',
               style: MyTextStyles.headline3,

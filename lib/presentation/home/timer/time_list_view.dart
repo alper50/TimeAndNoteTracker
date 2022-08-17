@@ -32,6 +32,7 @@ class TimeListView extends StatelessWidget {
               );
             },
             createTimeSucces: (_) {
+              Navigator.of(context).pop(); // this is going to close bottomSheet
               AutoRouter.of(context).pushNamed('/time-view');
             },
             deleteTimeFailure: (e) {
@@ -44,7 +45,7 @@ class TimeListView extends StatelessWidget {
                 ),
               );
             },
-            createTimeFailure: (e) {
+            createTimeFailure: (e) { //TODO timeactionbloc doesnt trigger this line
               showMySnackBar(
                 context: context,
                 message: e.timeFailure.map(

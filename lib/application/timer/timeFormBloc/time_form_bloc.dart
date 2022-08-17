@@ -20,7 +20,7 @@ class TimeFormBloc extends Bloc<TimeFormEvent, TimeFormState> {
           if (e.initialTime != null) {
             emit(TimeFormState.loadTimeSucces(time: e.initialTime!));
           } else {
-            emit(TimeFormState.loadTimeSucces(time: Time.defaultTime()));
+            emit(TimeFormState.loadTimeFailure(timeFailure: TimeFailure.unexpected(e)));
           }
         },
         updateTime: (e) async {

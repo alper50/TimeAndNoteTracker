@@ -7,7 +7,7 @@ class MyTextFormField extends TextFormField {
     required void Function(String)? onChanged,
     required String? Function(String?)? validator,
     required String? labelText,
-    bool? obscureText=false,
+    bool? obscureText = false,
     FocusNode? focusNode,
   }) : super(
           textInputAction: TextInputAction.next,
@@ -56,3 +56,31 @@ class MyTextFormField extends TextFormField {
           ),
         );
 }
+
+//  class MyTextFormFieldWithGesture extends StatelessWidget { 
+//   const MyTextFormFieldWithGesture({
+//     Key? key,
+//     required void Function(String)? onChanged,
+//     required String? Function(String?)? validator,
+//     required String? labelText,
+//     bool? obscureText = false,
+//     FocusNode? focusNode,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return GestureDetector(
+//       onTap: () {
+//         FocusScopeNode currentFocus = FocusScope.of(context);
+//         if (!currentFocus.hasPrimaryFocus) {
+//           currentFocus.focusedChild!.unfocus();
+//         }
+//       },
+//       child: MyTextFormField(
+//         onChanged: onChanged,
+//         validator: validator,
+//         labelText: labelText,
+//       ),
+//     );
+//   }
+// } //TODO textfield arrange
