@@ -25,9 +25,7 @@ class NoteViewBody extends StatelessWidget {
       builder: (context, state) {
         return state.maybeMap(
           initial: (_) => Container(),
-          loading: (_) => Center(
-            child: MyCircularProgressIndicator(),
-          ),
+          loading: (_) => MyCircularProgressIndicator(),
           loadFailure: (_) => FailureView(
             onPressed: () {
               context.read<NoteFormBloc>().add(NoteFormEvent.initialize(noteToBeEdited));

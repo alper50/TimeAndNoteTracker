@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/timer/timeActionBloc/time_action_bloc.dart';
 import 'package:timenotetracker/application/timer/timeWatcherBloc/time_watcher_bloc.dart';
+import 'package:timenotetracker/domain/timer/time_entity.dart';
+import 'package:timenotetracker/presentation/auth/widgets/my_textformfield.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_bottom_sheet.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_circular_progress.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_failure_view.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_widget_wrapper.dart';
 import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
 import 'package:timenotetracker/presentation/home/timer/widgets/time_cards.dart';
-import 'package:timenotetracker/presentation/home/timer/widgets/time_create_field_bottomsheet.dart';
 import 'package:timenotetracker/presentation/home/timer/widgets/time_load_succes_empty_view.dart';
 import 'package:timenotetracker/presentation/home/timer/widgets/time_overview_appbar.dart';
 
@@ -51,8 +52,10 @@ class TimeListViewBody extends StatelessWidget {
                           )
                         : MyWidgetdWrapper(
                             onLongPress: () {
-                              TimeActionEvent.deleteTimer(
-                                  timeToBeDeleted: currentTime);
+                              context.read<TimeActionBloc>().add(
+                                    TimeActionEvent.deleteTimer(
+                                        timeToBeDeleted: currentTime),
+                                  );
                             },
                             onTap: () {
                               AutoRouter.of(context)
@@ -75,19 +78,39 @@ class TimeListViewBody extends StatelessWidget {
 
   Positioned _buildSuccesTimeCreateButton(BuildContext context) {
     return Positioned(
-      bottom: 10,
-      left: MediaQuery.of(context).size.width * 0.45,
-      child: IconButton(
-        onPressed: () {
-          showMyBottomSheet(
-            context: context,
-            child: TimeCreateFieldBottomSheet(
-              timeTextController: timeTextController,
-            ),
-          );
-        },
-        icon: Icon(
-          Icons.play_circle_outline_rounded,
+      bottom: 0,
+      width: MediaQuery.of(context).size.width,
+      child: AnimatedContainer(
+        duration: Duration(seconds: 1),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Expanded(
+                child: MyTextFormField(
+                  controller: timeTextController,
+              labelText: 'I am working on..',
+              validator: (value) {
+                return value!.isEmpty ? 'This field cannot be empty' : '';
+              },
+              onChanged: (String e) {},
+            )),
+            IconButton(
+              onPressed: () {
+                context.read<TimeActionBloc>().add(
+                      TimeActionEvent.createTimer(
+                        timeToBeCreated: Time.defaultTime(
+                          '00:00',
+                          timeTextController.text,
+                        ),
+                      ),
+                    );
+              },
+              icon: Icon(
+                Icons.play_circle_outline_rounded,
+              ),
+            )
+          ],
         ),
       ),
     );

@@ -8,5 +8,5 @@ class TimeActionState with _$TimeActionState {
   const factory TimeActionState.deleteTimeSucces() = _DeleteTimeSucces;
   const factory TimeActionState.createTimeLoading() = _CreateTimeLoading;
   const factory TimeActionState.createTimeFailure({required TimeFailure timeFailure}) = _CreateTimeFailure;
-  const factory TimeActionState.createTimeSucces() = _CreateTimeSucces;
+  const factory TimeActionState.createTimeSucces({required Time time}) = _CreateTimeSucces;
 }

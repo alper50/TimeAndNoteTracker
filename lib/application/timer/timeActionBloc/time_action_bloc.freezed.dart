@@ -373,7 +373,7 @@ mixin _$TimeActionState {
     required TResult Function() deleteTimeSucces,
     required TResult Function() createTimeLoading,
     required TResult Function(TimeFailure timeFailure) createTimeFailure,
-    required TResult Function() createTimeSucces,
+    required TResult Function(Time time) createTimeSucces,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -384,7 +384,7 @@ mixin _$TimeActionState {
     TResult Function()? deleteTimeSucces,
     TResult Function()? createTimeLoading,
     TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function()? createTimeSucces,
+    TResult Function(Time time)? createTimeSucces,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -395,7 +395,7 @@ mixin _$TimeActionState {
     TResult Function()? deleteTimeSucces,
     TResult Function()? createTimeLoading,
     TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function()? createTimeSucces,
+    TResult Function(Time time)? createTimeSucces,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -496,7 +496,7 @@ class _$_Initial implements _Initial {
     required TResult Function() deleteTimeSucces,
     required TResult Function() createTimeLoading,
     required TResult Function(TimeFailure timeFailure) createTimeFailure,
-    required TResult Function() createTimeSucces,
+    required TResult Function(Time time) createTimeSucces,
   }) {
     return initial();
   }
@@ -510,7 +510,7 @@ class _$_Initial implements _Initial {
     TResult Function()? deleteTimeSucces,
     TResult Function()? createTimeLoading,
     TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function()? createTimeSucces,
+    TResult Function(Time time)? createTimeSucces,
   }) {
     return initial?.call();
   }
@@ -524,7 +524,7 @@ class _$_Initial implements _Initial {
     TResult Function()? deleteTimeSucces,
     TResult Function()? createTimeLoading,
     TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function()? createTimeSucces,
+    TResult Function(Time time)? createTimeSucces,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -631,7 +631,7 @@ class _$_DeleteTimeLoading implements _DeleteTimeLoading {
     required TResult Function() deleteTimeSucces,
     required TResult Function() createTimeLoading,
     required TResult Function(TimeFailure timeFailure) createTimeFailure,
-    required TResult Function() createTimeSucces,
+    required TResult Function(Time time) createTimeSucces,
   }) {
     return deleteTimeLoading();
   }
@@ -645,7 +645,7 @@ class _$_DeleteTimeLoading implements _DeleteTimeLoading {
     TResult Function()? deleteTimeSucces,
     TResult Function()? createTimeLoading,
     TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function()? createTimeSucces,
+    TResult Function(Time time)? createTimeSucces,
   }) {
     return deleteTimeLoading?.call();
   }
@@ -659,7 +659,7 @@ class _$_DeleteTimeLoading implements _DeleteTimeLoading {
     TResult Function()? deleteTimeSucces,
     TResult Function()? createTimeLoading,
     TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function()? createTimeSucces,
+    TResult Function(Time time)? createTimeSucces,
     required TResult orElse(),
   }) {
     if (deleteTimeLoading != null) {
@@ -800,7 +800,7 @@ class _$_DeleteTimeFailure implements _DeleteTimeFailure {
     required TResult Function() deleteTimeSucces,
     required TResult Function() createTimeLoading,
     required TResult Function(TimeFailure timeFailure) createTimeFailure,
-    required TResult Function() createTimeSucces,
+    required TResult Function(Time time) createTimeSucces,
   }) {
     return deleteTimeFailure(timeFailure);
   }
@@ -814,7 +814,7 @@ class _$_DeleteTimeFailure implements _DeleteTimeFailure {
     TResult Function()? deleteTimeSucces,
     TResult Function()? createTimeLoading,
     TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function()? createTimeSucces,
+    TResult Function(Time time)? createTimeSucces,
   }) {
     return deleteTimeFailure?.call(timeFailure);
   }
@@ -828,7 +828,7 @@ class _$_DeleteTimeFailure implements _DeleteTimeFailure {
     TResult Function()? deleteTimeSucces,
     TResult Function()? createTimeLoading,
     TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function()? createTimeSucces,
+    TResult Function(Time time)? createTimeSucces,
     required TResult orElse(),
   }) {
     if (deleteTimeFailure != null) {
@@ -941,7 +941,7 @@ class _$_DeleteTimeSucces implements _DeleteTimeSucces {
     required TResult Function() deleteTimeSucces,
     required TResult Function() createTimeLoading,
     required TResult Function(TimeFailure timeFailure) createTimeFailure,
-    required TResult Function() createTimeSucces,
+    required TResult Function(Time time) createTimeSucces,
   }) {
     return deleteTimeSucces();
   }
@@ -955,7 +955,7 @@ class _$_DeleteTimeSucces implements _DeleteTimeSucces {
     TResult Function()? deleteTimeSucces,
     TResult Function()? createTimeLoading,
     TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function()? createTimeSucces,
+    TResult Function(Time time)? createTimeSucces,
   }) {
     return deleteTimeSucces?.call();
   }
@@ -969,7 +969,7 @@ class _$_DeleteTimeSucces implements _DeleteTimeSucces {
     TResult Function()? deleteTimeSucces,
     TResult Function()? createTimeLoading,
     TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function()? createTimeSucces,
+    TResult Function(Time time)? createTimeSucces,
     required TResult orElse(),
   }) {
     if (deleteTimeSucces != null) {
@@ -1076,7 +1076,7 @@ class _$_CreateTimeLoading implements _CreateTimeLoading {
     required TResult Function() deleteTimeSucces,
     required TResult Function() createTimeLoading,
     required TResult Function(TimeFailure timeFailure) createTimeFailure,
-    required TResult Function() createTimeSucces,
+    required TResult Function(Time time) createTimeSucces,
   }) {
     return createTimeLoading();
   }
@@ -1090,7 +1090,7 @@ class _$_CreateTimeLoading implements _CreateTimeLoading {
     TResult Function()? deleteTimeSucces,
     TResult Function()? createTimeLoading,
     TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function()? createTimeSucces,
+    TResult Function(Time time)? createTimeSucces,
   }) {
     return createTimeLoading?.call();
   }
@@ -1104,7 +1104,7 @@ class _$_CreateTimeLoading implements _CreateTimeLoading {
     TResult Function()? deleteTimeSucces,
     TResult Function()? createTimeLoading,
     TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function()? createTimeSucces,
+    TResult Function(Time time)? createTimeSucces,
     required TResult orElse(),
   }) {
     if (createTimeLoading != null) {
@@ -1245,7 +1245,7 @@ class _$_CreateTimeFailure implements _CreateTimeFailure {
     required TResult Function() deleteTimeSucces,
     required TResult Function() createTimeLoading,
     required TResult Function(TimeFailure timeFailure) createTimeFailure,
-    required TResult Function() createTimeSucces,
+    required TResult Function(Time time) createTimeSucces,
   }) {
     return createTimeFailure(timeFailure);
   }
@@ -1259,7 +1259,7 @@ class _$_CreateTimeFailure implements _CreateTimeFailure {
     TResult Function()? deleteTimeSucces,
     TResult Function()? createTimeLoading,
     TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function()? createTimeSucces,
+    TResult Function(Time time)? createTimeSucces,
   }) {
     return createTimeFailure?.call(timeFailure);
   }
@@ -1273,7 +1273,7 @@ class _$_CreateTimeFailure implements _CreateTimeFailure {
     TResult Function()? deleteTimeSucces,
     TResult Function()? createTimeLoading,
     TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function()? createTimeSucces,
+    TResult Function(Time time)? createTimeSucces,
     required TResult orElse(),
   }) {
     if (createTimeFailure != null) {
@@ -1344,6 +1344,9 @@ abstract class _$CreateTimeSuccesCopyWith<$Res> {
   factory _$CreateTimeSuccesCopyWith(
           _CreateTimeSucces value, $Res Function(_CreateTimeSucces) then) =
       __$CreateTimeSuccesCopyWithImpl<$Res>;
+  $Res call({Time time});
+
+  $TimeCopyWith<$Res> get time;
 }
 
 /// @nodoc
@@ -1356,26 +1359,56 @@ class __$CreateTimeSuccesCopyWithImpl<$Res>
 
   @override
   _CreateTimeSucces get _value => super._value as _CreateTimeSucces;
+
+  @override
+  $Res call({
+    Object? time = freezed,
+  }) {
+    return _then(_CreateTimeSucces(
+      time: time == freezed
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as Time,
+    ));
+  }
+
+  @override
+  $TimeCopyWith<$Res> get time {
+    return $TimeCopyWith<$Res>(_value.time, (value) {
+      return _then(_value.copyWith(time: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$_CreateTimeSucces implements _CreateTimeSucces {
-  const _$_CreateTimeSucces();
+  const _$_CreateTimeSucces({required this.time});
+
+  @override
+  final Time time;
 
   @override
   String toString() {
-    return 'TimeActionState.createTimeSucces()';
+    return 'TimeActionState.createTimeSucces(time: $time)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _CreateTimeSucces);
+        (other.runtimeType == runtimeType &&
+            other is _CreateTimeSucces &&
+            const DeepCollectionEquality().equals(other.time, time));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
+
+  @JsonKey(ignore: true)
+  @override
+  _$CreateTimeSuccesCopyWith<_CreateTimeSucces> get copyWith =>
+      __$CreateTimeSuccesCopyWithImpl<_CreateTimeSucces>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1386,9 +1419,9 @@ class _$_CreateTimeSucces implements _CreateTimeSucces {
     required TResult Function() deleteTimeSucces,
     required TResult Function() createTimeLoading,
     required TResult Function(TimeFailure timeFailure) createTimeFailure,
-    required TResult Function() createTimeSucces,
+    required TResult Function(Time time) createTimeSucces,
   }) {
-    return createTimeSucces();
+    return createTimeSucces(time);
   }
 
   @override
@@ -1400,9 +1433,9 @@ class _$_CreateTimeSucces implements _CreateTimeSucces {
     TResult Function()? deleteTimeSucces,
     TResult Function()? createTimeLoading,
     TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function()? createTimeSucces,
+    TResult Function(Time time)? createTimeSucces,
   }) {
-    return createTimeSucces?.call();
+    return createTimeSucces?.call(time);
   }
 
   @override
@@ -1414,11 +1447,11 @@ class _$_CreateTimeSucces implements _CreateTimeSucces {
     TResult Function()? deleteTimeSucces,
     TResult Function()? createTimeLoading,
     TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function()? createTimeSucces,
+    TResult Function(Time time)? createTimeSucces,
     required TResult orElse(),
   }) {
     if (createTimeSucces != null) {
-      return createTimeSucces();
+      return createTimeSucces(time);
     }
     return orElse();
   }
@@ -1471,5 +1504,11 @@ class _$_CreateTimeSucces implements _CreateTimeSucces {
 }
 
 abstract class _CreateTimeSucces implements TimeActionState {
-  const factory _CreateTimeSucces() = _$_CreateTimeSucces;
+  const factory _CreateTimeSucces({required final Time time}) =
+      _$_CreateTimeSucces;
+
+  Time get time => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$CreateTimeSuccesCopyWith<_CreateTimeSucces> get copyWith =>
+      throw _privateConstructorUsedError;
 }

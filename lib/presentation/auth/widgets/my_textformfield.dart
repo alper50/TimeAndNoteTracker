@@ -7,9 +7,11 @@ class MyTextFormField extends TextFormField {
     required void Function(String)? onChanged,
     required String? Function(String?)? validator,
     required String? labelText,
+    TextEditingController? controller,
     bool? obscureText = false,
     FocusNode? focusNode,
   }) : super(
+          controller: controller,
           textInputAction: TextInputAction.next,
           onChanged: onChanged,
           validator: validator,

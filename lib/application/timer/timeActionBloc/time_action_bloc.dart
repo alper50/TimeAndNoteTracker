@@ -33,7 +33,6 @@ class TimeActionBloc extends Bloc<TimeActionEvent, TimeActionState> {
           },
           createTimer: (e) async {
             emit(TimeActionState.createTimeLoading());
-            print('tetetet');
             final result =
                 await _timeLocalRepository.createTimer(e.timeToBeCreated);
             result.fold(
@@ -41,7 +40,7 @@ class TimeActionBloc extends Bloc<TimeActionEvent, TimeActionState> {
                 TimeActionState.createTimeFailure(timeFailure: failure),
               ),
               (r) => emit(
-                TimeActionState.createTimeSucces(),
+                TimeActionState.createTimeSucces(time: e.timeToBeCreated),
               ),
             );
           },

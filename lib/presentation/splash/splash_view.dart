@@ -27,7 +27,7 @@ class _SplashPageState extends State<SplashView> {
             AutoRouter.of(context).replaceNamed('/verify-email-view');
           },
           onboardNotShowed: (_) {
-            AutoRouter.of(context).replaceNamed('/onboard-view');
+            AutoRouter.of(context).replaceNamed('/home-view'); //TODO
           },
           orElse: () {},
         );

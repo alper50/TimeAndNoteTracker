@@ -5,6 +5,7 @@ import 'package:timenotetracker/application/timer/timeActionBloc/time_action_blo
 import 'package:timenotetracker/application/timer/timeWatcherBloc/time_watcher_bloc.dart';
 import 'package:timenotetracker/injection.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
+import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
 import 'package:timenotetracker/presentation/home/timer/widgets/time_list_view_body.dart';
 
 class TimeListView extends StatelessWidget {
@@ -31,9 +32,8 @@ class TimeListView extends StatelessWidget {
                 message: 'Time Successfully Deleted',
               );
             },
-            createTimeSucces: (_) {
-              Navigator.of(context).pop(); // this is going to close bottomSheet
-              AutoRouter.of(context).pushNamed('/time-view');
+            createTimeSucces: (e) {
+              AutoRouter.of(context).push(TimeView(currentTime: e.time));
             },
             deleteTimeFailure: (e) {
               showMySnackBar(
@@ -45,7 +45,7 @@ class TimeListView extends StatelessWidget {
                 ),
               );
             },
-            createTimeFailure: (e) { //TODO timeactionbloc doesnt trigger this line
+            createTimeFailure: (e) { 
               showMySnackBar(
                 context: context,
                 message: e.timeFailure.map(

@@ -668,9 +668,9 @@ mixin _$NoteFormState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(Note note) loadSucces,
+    required TResult Function(NoteFailure noteFailure) loadFailure,
     required TResult Function() saveSucces,
     required TResult Function(NoteFailure noteFailure) saveFailure,
-    required TResult Function(NoteFailure noteFailure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -678,9 +678,9 @@ mixin _$NoteFormState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(Note note)? loadSucces,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
     TResult Function()? saveSucces,
     TResult Function(NoteFailure noteFailure)? saveFailure,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -688,9 +688,9 @@ mixin _$NoteFormState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(Note note)? loadSucces,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
     TResult Function()? saveSucces,
     TResult Function(NoteFailure noteFailure)? saveFailure,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -699,9 +699,9 @@ mixin _$NoteFormState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadSucces value) loadSucces,
+    required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_SaveSucces value) saveSucces,
     required TResult Function(_SaveFailure value) saveFailure,
-    required TResult Function(_LoadFailure value) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -709,9 +709,9 @@ mixin _$NoteFormState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_SaveSucces value)? saveSucces,
     TResult Function(_SaveFailure value)? saveFailure,
-    TResult Function(_LoadFailure value)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -719,9 +719,9 @@ mixin _$NoteFormState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_SaveSucces value)? saveSucces,
     TResult Function(_SaveFailure value)? saveFailure,
-    TResult Function(_LoadFailure value)? loadFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -785,9 +785,9 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(Note note) loadSucces,
+    required TResult Function(NoteFailure noteFailure) loadFailure,
     required TResult Function() saveSucces,
     required TResult Function(NoteFailure noteFailure) saveFailure,
-    required TResult Function(NoteFailure noteFailure) loadFailure,
   }) {
     return initial();
   }
@@ -798,9 +798,9 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(Note note)? loadSucces,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
     TResult Function()? saveSucces,
     TResult Function(NoteFailure noteFailure)? saveFailure,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
   }) {
     return initial?.call();
   }
@@ -811,9 +811,9 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(Note note)? loadSucces,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
     TResult Function()? saveSucces,
     TResult Function(NoteFailure noteFailure)? saveFailure,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -828,9 +828,9 @@ class _$_Initial implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadSucces value) loadSucces,
+    required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_SaveSucces value) saveSucces,
     required TResult Function(_SaveFailure value) saveFailure,
-    required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return initial(this);
   }
@@ -841,9 +841,9 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_SaveSucces value)? saveSucces,
     TResult Function(_SaveFailure value)? saveFailure,
-    TResult Function(_LoadFailure value)? loadFailure,
   }) {
     return initial?.call(this);
   }
@@ -854,9 +854,9 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_SaveSucces value)? saveSucces,
     TResult Function(_SaveFailure value)? saveFailure,
-    TResult Function(_LoadFailure value)? loadFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -911,9 +911,9 @@ class _$_Loading implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(Note note) loadSucces,
+    required TResult Function(NoteFailure noteFailure) loadFailure,
     required TResult Function() saveSucces,
     required TResult Function(NoteFailure noteFailure) saveFailure,
-    required TResult Function(NoteFailure noteFailure) loadFailure,
   }) {
     return loading();
   }
@@ -924,9 +924,9 @@ class _$_Loading implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(Note note)? loadSucces,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
     TResult Function()? saveSucces,
     TResult Function(NoteFailure noteFailure)? saveFailure,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
   }) {
     return loading?.call();
   }
@@ -937,9 +937,9 @@ class _$_Loading implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(Note note)? loadSucces,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
     TResult Function()? saveSucces,
     TResult Function(NoteFailure noteFailure)? saveFailure,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -954,9 +954,9 @@ class _$_Loading implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadSucces value) loadSucces,
+    required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_SaveSucces value) saveSucces,
     required TResult Function(_SaveFailure value) saveFailure,
-    required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loading(this);
   }
@@ -967,9 +967,9 @@ class _$_Loading implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_SaveSucces value)? saveSucces,
     TResult Function(_SaveFailure value)? saveFailure,
-    TResult Function(_LoadFailure value)? loadFailure,
   }) {
     return loading?.call(this);
   }
@@ -980,9 +980,9 @@ class _$_Loading implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_SaveSucces value)? saveSucces,
     TResult Function(_SaveFailure value)? saveFailure,
-    TResult Function(_LoadFailure value)? loadFailure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1072,9 +1072,9 @@ class _$_LoadSucces implements _LoadSucces {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(Note note) loadSucces,
+    required TResult Function(NoteFailure noteFailure) loadFailure,
     required TResult Function() saveSucces,
     required TResult Function(NoteFailure noteFailure) saveFailure,
-    required TResult Function(NoteFailure noteFailure) loadFailure,
   }) {
     return loadSucces(note);
   }
@@ -1085,9 +1085,9 @@ class _$_LoadSucces implements _LoadSucces {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(Note note)? loadSucces,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
     TResult Function()? saveSucces,
     TResult Function(NoteFailure noteFailure)? saveFailure,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
   }) {
     return loadSucces?.call(note);
   }
@@ -1098,9 +1098,9 @@ class _$_LoadSucces implements _LoadSucces {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(Note note)? loadSucces,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
     TResult Function()? saveSucces,
     TResult Function(NoteFailure noteFailure)? saveFailure,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSucces != null) {
@@ -1115,9 +1115,9 @@ class _$_LoadSucces implements _LoadSucces {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadSucces value) loadSucces,
+    required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_SaveSucces value) saveSucces,
     required TResult Function(_SaveFailure value) saveFailure,
-    required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loadSucces(this);
   }
@@ -1128,9 +1128,9 @@ class _$_LoadSucces implements _LoadSucces {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_SaveSucces value)? saveSucces,
     TResult Function(_SaveFailure value)? saveFailure,
-    TResult Function(_LoadFailure value)? loadFailure,
   }) {
     return loadSucces?.call(this);
   }
@@ -1141,9 +1141,9 @@ class _$_LoadSucces implements _LoadSucces {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_SaveSucces value)? saveSucces,
     TResult Function(_SaveFailure value)? saveFailure,
-    TResult Function(_LoadFailure value)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSucces != null) {
@@ -1159,6 +1159,173 @@ abstract class _LoadSucces implements NoteFormState {
   Note get note => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$LoadSuccesCopyWith<_LoadSucces> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$LoadFailureCopyWith<$Res> {
+  factory _$LoadFailureCopyWith(
+          _LoadFailure value, $Res Function(_LoadFailure) then) =
+      __$LoadFailureCopyWithImpl<$Res>;
+  $Res call({NoteFailure noteFailure});
+
+  $NoteFailureCopyWith<$Res> get noteFailure;
+}
+
+/// @nodoc
+class __$LoadFailureCopyWithImpl<$Res> extends _$NoteFormStateCopyWithImpl<$Res>
+    implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(
+      _LoadFailure _value, $Res Function(_LoadFailure) _then)
+      : super(_value, (v) => _then(v as _LoadFailure));
+
+  @override
+  _LoadFailure get _value => super._value as _LoadFailure;
+
+  @override
+  $Res call({
+    Object? noteFailure = freezed,
+  }) {
+    return _then(_LoadFailure(
+      noteFailure == freezed
+          ? _value.noteFailure
+          : noteFailure // ignore: cast_nullable_to_non_nullable
+              as NoteFailure,
+    ));
+  }
+
+  @override
+  $NoteFailureCopyWith<$Res> get noteFailure {
+    return $NoteFailureCopyWith<$Res>(_value.noteFailure, (value) {
+      return _then(_value.copyWith(noteFailure: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_LoadFailure implements _LoadFailure {
+  const _$_LoadFailure(this.noteFailure);
+
+  @override
+  final NoteFailure noteFailure;
+
+  @override
+  String toString() {
+    return 'NoteFormState.loadFailure(noteFailure: $noteFailure)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _LoadFailure &&
+            const DeepCollectionEquality()
+                .equals(other.noteFailure, noteFailure));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(noteFailure));
+
+  @JsonKey(ignore: true)
+  @override
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(Note note) loadSucces,
+    required TResult Function(NoteFailure noteFailure) loadFailure,
+    required TResult Function() saveSucces,
+    required TResult Function(NoteFailure noteFailure) saveFailure,
+  }) {
+    return loadFailure(noteFailure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(Note note)? loadSucces,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
+    TResult Function()? saveSucces,
+    TResult Function(NoteFailure noteFailure)? saveFailure,
+  }) {
+    return loadFailure?.call(noteFailure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(Note note)? loadSucces,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
+    TResult Function()? saveSucces,
+    TResult Function(NoteFailure noteFailure)? saveFailure,
+    required TResult orElse(),
+  }) {
+    if (loadFailure != null) {
+      return loadFailure(noteFailure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadSucces value) loadSucces,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_SaveSucces value) saveSucces,
+    required TResult Function(_SaveFailure value) saveFailure,
+  }) {
+    return loadFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_SaveSucces value)? saveSucces,
+    TResult Function(_SaveFailure value)? saveFailure,
+  }) {
+    return loadFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_SaveSucces value)? saveSucces,
+    TResult Function(_SaveFailure value)? saveFailure,
+    required TResult orElse(),
+  }) {
+    if (loadFailure != null) {
+      return loadFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadFailure implements NoteFormState {
+  const factory _LoadFailure(final NoteFailure noteFailure) = _$_LoadFailure;
+
+  NoteFailure get noteFailure => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1205,9 +1372,9 @@ class _$_SaveSucces implements _SaveSucces {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(Note note) loadSucces,
+    required TResult Function(NoteFailure noteFailure) loadFailure,
     required TResult Function() saveSucces,
     required TResult Function(NoteFailure noteFailure) saveFailure,
-    required TResult Function(NoteFailure noteFailure) loadFailure,
   }) {
     return saveSucces();
   }
@@ -1218,9 +1385,9 @@ class _$_SaveSucces implements _SaveSucces {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(Note note)? loadSucces,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
     TResult Function()? saveSucces,
     TResult Function(NoteFailure noteFailure)? saveFailure,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
   }) {
     return saveSucces?.call();
   }
@@ -1231,9 +1398,9 @@ class _$_SaveSucces implements _SaveSucces {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(Note note)? loadSucces,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
     TResult Function()? saveSucces,
     TResult Function(NoteFailure noteFailure)? saveFailure,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (saveSucces != null) {
@@ -1248,9 +1415,9 @@ class _$_SaveSucces implements _SaveSucces {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadSucces value) loadSucces,
+    required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_SaveSucces value) saveSucces,
     required TResult Function(_SaveFailure value) saveFailure,
-    required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return saveSucces(this);
   }
@@ -1261,9 +1428,9 @@ class _$_SaveSucces implements _SaveSucces {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_SaveSucces value)? saveSucces,
     TResult Function(_SaveFailure value)? saveFailure,
-    TResult Function(_LoadFailure value)? loadFailure,
   }) {
     return saveSucces?.call(this);
   }
@@ -1274,9 +1441,9 @@ class _$_SaveSucces implements _SaveSucces {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_SaveSucces value)? saveSucces,
     TResult Function(_SaveFailure value)? saveFailure,
-    TResult Function(_LoadFailure value)? loadFailure,
     required TResult orElse(),
   }) {
     if (saveSucces != null) {
@@ -1367,9 +1534,9 @@ class _$_SaveFailure implements _SaveFailure {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(Note note) loadSucces,
+    required TResult Function(NoteFailure noteFailure) loadFailure,
     required TResult Function() saveSucces,
     required TResult Function(NoteFailure noteFailure) saveFailure,
-    required TResult Function(NoteFailure noteFailure) loadFailure,
   }) {
     return saveFailure(noteFailure);
   }
@@ -1380,9 +1547,9 @@ class _$_SaveFailure implements _SaveFailure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(Note note)? loadSucces,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
     TResult Function()? saveSucces,
     TResult Function(NoteFailure noteFailure)? saveFailure,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
   }) {
     return saveFailure?.call(noteFailure);
   }
@@ -1393,9 +1560,9 @@ class _$_SaveFailure implements _SaveFailure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(Note note)? loadSucces,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
     TResult Function()? saveSucces,
     TResult Function(NoteFailure noteFailure)? saveFailure,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (saveFailure != null) {
@@ -1410,9 +1577,9 @@ class _$_SaveFailure implements _SaveFailure {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadSucces value) loadSucces,
+    required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_SaveSucces value) saveSucces,
     required TResult Function(_SaveFailure value) saveFailure,
-    required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return saveFailure(this);
   }
@@ -1423,9 +1590,9 @@ class _$_SaveFailure implements _SaveFailure {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_SaveSucces value)? saveSucces,
     TResult Function(_SaveFailure value)? saveFailure,
-    TResult Function(_LoadFailure value)? loadFailure,
   }) {
     return saveFailure?.call(this);
   }
@@ -1436,9 +1603,9 @@ class _$_SaveFailure implements _SaveFailure {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSucces value)? loadSucces,
+    TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_SaveSucces value)? saveSucces,
     TResult Function(_SaveFailure value)? saveFailure,
-    TResult Function(_LoadFailure value)? loadFailure,
     required TResult orElse(),
   }) {
     if (saveFailure != null) {
@@ -1454,172 +1621,5 @@ abstract class _SaveFailure implements NoteFormState {
   NoteFailure get noteFailure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$SaveFailureCopyWith<_SaveFailure> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(
-          _LoadFailure value, $Res Function(_LoadFailure) then) =
-      __$LoadFailureCopyWithImpl<$Res>;
-  $Res call({NoteFailure noteFailure});
-
-  $NoteFailureCopyWith<$Res> get noteFailure;
-}
-
-/// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$NoteFormStateCopyWithImpl<$Res>
-    implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(
-      _LoadFailure _value, $Res Function(_LoadFailure) _then)
-      : super(_value, (v) => _then(v as _LoadFailure));
-
-  @override
-  _LoadFailure get _value => super._value as _LoadFailure;
-
-  @override
-  $Res call({
-    Object? noteFailure = freezed,
-  }) {
-    return _then(_LoadFailure(
-      noteFailure == freezed
-          ? _value.noteFailure
-          : noteFailure // ignore: cast_nullable_to_non_nullable
-              as NoteFailure,
-    ));
-  }
-
-  @override
-  $NoteFailureCopyWith<$Res> get noteFailure {
-    return $NoteFailureCopyWith<$Res>(_value.noteFailure, (value) {
-      return _then(_value.copyWith(noteFailure: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure(this.noteFailure);
-
-  @override
-  final NoteFailure noteFailure;
-
-  @override
-  String toString() {
-    return 'NoteFormState.loadFailure(noteFailure: $noteFailure)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _LoadFailure &&
-            const DeepCollectionEquality()
-                .equals(other.noteFailure, noteFailure));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(noteFailure));
-
-  @JsonKey(ignore: true)
-  @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
-      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(Note note) loadSucces,
-    required TResult Function() saveSucces,
-    required TResult Function(NoteFailure noteFailure) saveFailure,
-    required TResult Function(NoteFailure noteFailure) loadFailure,
-  }) {
-    return loadFailure(noteFailure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(Note note)? loadSucces,
-    TResult Function()? saveSucces,
-    TResult Function(NoteFailure noteFailure)? saveFailure,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
-  }) {
-    return loadFailure?.call(noteFailure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(Note note)? loadSucces,
-    TResult Function()? saveSucces,
-    TResult Function(NoteFailure noteFailure)? saveFailure,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
-    required TResult orElse(),
-  }) {
-    if (loadFailure != null) {
-      return loadFailure(noteFailure);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_LoadSucces value) loadSucces,
-    required TResult Function(_SaveSucces value) saveSucces,
-    required TResult Function(_SaveFailure value) saveFailure,
-    required TResult Function(_LoadFailure value) loadFailure,
-  }) {
-    return loadFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_LoadSucces value)? loadSucces,
-    TResult Function(_SaveSucces value)? saveSucces,
-    TResult Function(_SaveFailure value)? saveFailure,
-    TResult Function(_LoadFailure value)? loadFailure,
-  }) {
-    return loadFailure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_LoadSucces value)? loadSucces,
-    TResult Function(_SaveSucces value)? saveSucces,
-    TResult Function(_SaveFailure value)? saveFailure,
-    TResult Function(_LoadFailure value)? loadFailure,
-    required TResult orElse(),
-  }) {
-    if (loadFailure != null) {
-      return loadFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _LoadFailure implements NoteFormState {
-  const factory _LoadFailure(final NoteFailure noteFailure) = _$_LoadFailure;
-
-  NoteFailure get noteFailure => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
