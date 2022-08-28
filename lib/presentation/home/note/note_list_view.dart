@@ -6,7 +6,7 @@ import 'package:timenotetracker/application/note/noteActionBloc/note_action_bloc
 import 'package:timenotetracker/application/note/noteWatcherBloc/note_watcher_bloc.dart';
 import 'package:timenotetracker/injection.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
-import 'package:timenotetracker/presentation/home/note/widgets/note_overview_body.dart';
+import 'package:timenotetracker/presentation/home/note/widgets/note_list_view_body.dart';
 
 class NoteOverview extends StatelessWidget {
   const NoteOverview({Key? key}) : super(key: key);

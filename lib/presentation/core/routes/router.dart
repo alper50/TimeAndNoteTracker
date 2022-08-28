@@ -5,7 +5,7 @@ import 'package:timenotetracker/presentation/core/search/search_view.dart';
 import 'package:timenotetracker/presentation/home/analyse_view.dart';
 import 'package:timenotetracker/presentation/home/home_view.dart';
 import 'package:timenotetracker/presentation/home/note/note_view.dart';
-import 'package:timenotetracker/presentation/home/note/notes_overview_view.dart';
+import 'package:timenotetracker/presentation/home/note/note_list_view.dart';
 import 'package:timenotetracker/presentation/home/timer/time_list_view.dart';
 import 'package:timenotetracker/presentation/home/timer/time_view.dart';
 import 'package:timenotetracker/presentation/onboard/onboard_view.dart';

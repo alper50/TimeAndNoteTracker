@@ -5,7 +5,6 @@ import 'package:timenotetracker/application/timer/timeActionBloc/time_action_blo
 import 'package:timenotetracker/application/timer/timeWatcherBloc/time_watcher_bloc.dart';
 import 'package:timenotetracker/domain/timer/time_entity.dart';
 import 'package:timenotetracker/presentation/auth/widgets/my_textformfield.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_bottom_sheet.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_circular_progress.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_failure_view.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_widget_wrapper.dart';

@@ -10,7 +10,7 @@ import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_empty_list_view.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_failure_view.dart';
 import 'package:timenotetracker/presentation/home/note/widgets/note_cards.dart';
-import 'package:timenotetracker/presentation/home/note/widgets/note_overview_appbar.dart';
+import 'package:timenotetracker/presentation/home/note/widgets/note_list_view_appbar.dart';
 
 class NoteOverviewBody extends StatelessWidget {
   const NoteOverviewBody({Key? key}) : super(key: key);
