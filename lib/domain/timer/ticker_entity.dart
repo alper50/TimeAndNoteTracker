@@ -1,3 +1,6 @@
+import 'package:injectable/injectable.dart';
+
+@lazySingleton
 class TickerBackward {
   const TickerBackward();
   Stream<int> tick({required int ticks}) {

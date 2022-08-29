@@ -2,6 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/timer/timeFormBloc/time_form_bloc.dart';
+import 'package:timenotetracker/application/timer/timeTickerBloc/time_ticker_bloc.dart';
+import 'package:timenotetracker/domain/timer/ticker_entity.dart';
 import 'package:timenotetracker/domain/timer/time_entity.dart';
 import 'package:timenotetracker/injection.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
@@ -13,8 +15,16 @@ class TimeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<TimeFormBloc>()..add(TimeFormEvent.initialize(currentTime)),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) =>
+              getIt<TimeFormBloc>()..add(TimeFormEvent.initialize(currentTime)),
+        ),
+        BlocProvider(
+          create: (context) => getIt<TimeTickerBloc>()..add(TimeTickerEvent.started(duration: 60)), //TODO currentTime.timeHeader
+        ),
+      ],
       child: BlocListener<TimeFormBloc, TimeFormState>(
         listener: (context, state) {
           state.maybeMap(
@@ -22,12 +32,12 @@ class TimeView extends StatelessWidget {
                 ScaffoldMessenger.of(context).showSnackBar(
               displaySnackBar(
                 message: state.timeFailure.maybeMap(
-                  unexpected: (e) => 'Unexpected Error Happened: $e',
+                  unexpected: (e) => 'Unexpected Error Happened: //',
                   orElse: () => '',
                 ),
               ),
             ),
-            updateTimeSucces: (_)=>AutoRouter.of(context).pop(),
+            updateTimeSucces: (_) => AutoRouter.of(context).pop(),
             orElse: () {},
           );
         },
@@ -36,5 +46,3 @@ class TimeView extends StatelessWidget {
     );
   }
 }
-
-
