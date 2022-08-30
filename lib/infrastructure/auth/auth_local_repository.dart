@@ -9,10 +9,19 @@ class AuthLocalRepository extends IAuthLocalRepository{
   
   @override
   Future<bool> isOnboardShowed() async{
-    // final result = await authLocaleService.getOnboardInformation();
-    // return result.isOnboardShowed;
+    final result = await authLocaleService.getOnboardInformation();
+    if(result.isEmpty) {
+      return false;
+    } else{
+      return result[0].isOnboardShowed!;
+    }
      //TODO isonboard
-     return false;
+    
+  }
+  
+  @override
+  Future<void> setOnboardShowed() async{
+    await authLocaleService.setOnboardInformation(AppInformationData(isOnboardShowed: true));
   }
   
 }

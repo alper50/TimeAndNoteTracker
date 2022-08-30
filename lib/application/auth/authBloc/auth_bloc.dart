@@ -67,6 +67,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
                   : const AuthState.emailNotVerified(),
             ),
           );
+        }, setOnboardInformation: (_) async{  
+          await _authLocalRepository.setOnboardShowed();
         },
       );
     });

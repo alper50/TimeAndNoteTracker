@@ -22,7 +22,7 @@ import 'package:timenotetracker/presentation/splash/splash_view.dart';
     AutoRoute(page: SearchView),
     AutoRoute(page: TimeView),
     AutoRoute(
-      page: HomeView, //TODO nested route implements
+      page: HomeView, 
       children: [
         AutoRoute(page: NoteOverview),
         AutoRoute(page: TimeListView),

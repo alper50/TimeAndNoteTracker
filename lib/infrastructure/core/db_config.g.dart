@@ -569,26 +569,30 @@ class $TodoItemTable extends TodoItem
 
 class AppInformationData extends DataClass
     implements Insertable<AppInformationData> {
-  final bool isOnboardShowed;
-  AppInformationData({required this.isOnboardShowed});
+  final bool? isOnboardShowed;
+  AppInformationData({this.isOnboardShowed});
   factory AppInformationData.fromData(Map<String, dynamic> data,
       {String? prefix}) {
     final effectivePrefix = prefix ?? '';
     return AppInformationData(
-      isOnboardShowed: const BoolType().mapFromDatabaseResponse(
-          data['${effectivePrefix}is_onboard_showed'])!,
+      isOnboardShowed: const BoolType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}is_onboard_showed']),
     );
   }
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
-    map['is_onboard_showed'] = Variable<bool>(isOnboardShowed);
+    if (!nullToAbsent || isOnboardShowed != null) {
+      map['is_onboard_showed'] = Variable<bool?>(isOnboardShowed);
+    }
     return map;
   }
 
   AppInformationCompanion toCompanion(bool nullToAbsent) {
     return AppInformationCompanion(
-      isOnboardShowed: Value(isOnboardShowed),
+      isOnboardShowed: isOnboardShowed == null && nullToAbsent
+          ? const Value.absent()
+          : Value(isOnboardShowed),
     );
   }
 
@@ -596,14 +600,14 @@ class AppInformationData extends DataClass
       {ValueSerializer? serializer}) {
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return AppInformationData(
-      isOnboardShowed: serializer.fromJson<bool>(json['isOnboardShowed']),
+      isOnboardShowed: serializer.fromJson<bool?>(json['isOnboardShowed']),
     );
   }
   @override
   Map<String, dynamic> toJson({ValueSerializer? serializer}) {
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return <String, dynamic>{
-      'isOnboardShowed': serializer.toJson<bool>(isOnboardShowed),
+      'isOnboardShowed': serializer.toJson<bool?>(isOnboardShowed),
     };
   }
 
@@ -628,7 +632,7 @@ class AppInformationData extends DataClass
 }
 
 class AppInformationCompanion extends UpdateCompanion<AppInformationData> {
-  final Value<bool> isOnboardShowed;
+  final Value<bool?> isOnboardShowed;
   const AppInformationCompanion({
     this.isOnboardShowed = const Value.absent(),
   });
@@ -636,14 +640,14 @@ class AppInformationCompanion extends UpdateCompanion<AppInformationData> {
     this.isOnboardShowed = const Value.absent(),
   });
   static Insertable<AppInformationData> custom({
-    Expression<bool>? isOnboardShowed,
+    Expression<bool?>? isOnboardShowed,
   }) {
     return RawValuesInsertable({
       if (isOnboardShowed != null) 'is_onboard_showed': isOnboardShowed,
     });
   }
 
-  AppInformationCompanion copyWith({Value<bool>? isOnboardShowed}) {
+  AppInformationCompanion copyWith({Value<bool?>? isOnboardShowed}) {
     return AppInformationCompanion(
       isOnboardShowed: isOnboardShowed ?? this.isOnboardShowed,
     );
@@ -653,7 +657,7 @@ class AppInformationCompanion extends UpdateCompanion<AppInformationData> {
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
     if (isOnboardShowed.present) {
-      map['is_onboard_showed'] = Variable<bool>(isOnboardShowed.value);
+      map['is_onboard_showed'] = Variable<bool?>(isOnboardShowed.value);
     }
     return map;
   }
@@ -677,7 +681,7 @@ class $AppInformationTable extends AppInformation
       const VerificationMeta('isOnboardShowed');
   @override
   late final GeneratedColumn<bool?> isOnboardShowed = GeneratedColumn<bool?>(
-      'is_onboard_showed', aliasedName, false,
+      'is_onboard_showed', aliasedName, true,
       type: const BoolType(),
       requiredDuringInsert: false,
       defaultConstraints: 'CHECK (is_onboard_showed IN (0, 1))',

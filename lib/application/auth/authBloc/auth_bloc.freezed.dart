@@ -22,6 +22,7 @@ mixin _$AuthEvent {
     required TResult Function() signOut,
     required TResult Function() signOutWithDelete,
     required TResult Function() checkEmailVerification,
+    required TResult Function() setOnboardInformation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$AuthEvent {
     TResult Function()? signOut,
     TResult Function()? signOutWithDelete,
     TResult Function()? checkEmailVerification,
+    TResult Function()? setOnboardInformation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$AuthEvent {
     TResult Function()? signOut,
     TResult Function()? signOutWithDelete,
     TResult Function()? checkEmailVerification,
+    TResult Function()? setOnboardInformation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +51,8 @@ mixin _$AuthEvent {
     required TResult Function(SignOutWithDelete value) signOutWithDelete,
     required TResult Function(CheckEmailVerification value)
         checkEmailVerification,
+    required TResult Function(SetOnboardInformation value)
+        setOnboardInformation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +61,7 @@ mixin _$AuthEvent {
     TResult Function(SignOut value)? signOut,
     TResult Function(SignOutWithDelete value)? signOutWithDelete,
     TResult Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult Function(SetOnboardInformation value)? setOnboardInformation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +70,7 @@ mixin _$AuthEvent {
     TResult Function(SignOut value)? signOut,
     TResult Function(SignOutWithDelete value)? signOutWithDelete,
     TResult Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult Function(SetOnboardInformation value)? setOnboardInformation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -129,6 +136,7 @@ class _$CheckAuthentication implements CheckAuthentication {
     required TResult Function() signOut,
     required TResult Function() signOutWithDelete,
     required TResult Function() checkEmailVerification,
+    required TResult Function() setOnboardInformation,
   }) {
     return checkAuthentication();
   }
@@ -140,6 +148,7 @@ class _$CheckAuthentication implements CheckAuthentication {
     TResult Function()? signOut,
     TResult Function()? signOutWithDelete,
     TResult Function()? checkEmailVerification,
+    TResult Function()? setOnboardInformation,
   }) {
     return checkAuthentication?.call();
   }
@@ -151,6 +160,7 @@ class _$CheckAuthentication implements CheckAuthentication {
     TResult Function()? signOut,
     TResult Function()? signOutWithDelete,
     TResult Function()? checkEmailVerification,
+    TResult Function()? setOnboardInformation,
     required TResult orElse(),
   }) {
     if (checkAuthentication != null) {
@@ -167,6 +177,8 @@ class _$CheckAuthentication implements CheckAuthentication {
     required TResult Function(SignOutWithDelete value) signOutWithDelete,
     required TResult Function(CheckEmailVerification value)
         checkEmailVerification,
+    required TResult Function(SetOnboardInformation value)
+        setOnboardInformation,
   }) {
     return checkAuthentication(this);
   }
@@ -178,6 +190,7 @@ class _$CheckAuthentication implements CheckAuthentication {
     TResult Function(SignOut value)? signOut,
     TResult Function(SignOutWithDelete value)? signOutWithDelete,
     TResult Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult Function(SetOnboardInformation value)? setOnboardInformation,
   }) {
     return checkAuthentication?.call(this);
   }
@@ -189,6 +202,7 @@ class _$CheckAuthentication implements CheckAuthentication {
     TResult Function(SignOut value)? signOut,
     TResult Function(SignOutWithDelete value)? signOutWithDelete,
     TResult Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult Function(SetOnboardInformation value)? setOnboardInformation,
     required TResult orElse(),
   }) {
     if (checkAuthentication != null) {
@@ -244,6 +258,7 @@ class _$SignOut implements SignOut {
     required TResult Function() signOut,
     required TResult Function() signOutWithDelete,
     required TResult Function() checkEmailVerification,
+    required TResult Function() setOnboardInformation,
   }) {
     return signOut();
   }
@@ -255,6 +270,7 @@ class _$SignOut implements SignOut {
     TResult Function()? signOut,
     TResult Function()? signOutWithDelete,
     TResult Function()? checkEmailVerification,
+    TResult Function()? setOnboardInformation,
   }) {
     return signOut?.call();
   }
@@ -266,6 +282,7 @@ class _$SignOut implements SignOut {
     TResult Function()? signOut,
     TResult Function()? signOutWithDelete,
     TResult Function()? checkEmailVerification,
+    TResult Function()? setOnboardInformation,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -282,6 +299,8 @@ class _$SignOut implements SignOut {
     required TResult Function(SignOutWithDelete value) signOutWithDelete,
     required TResult Function(CheckEmailVerification value)
         checkEmailVerification,
+    required TResult Function(SetOnboardInformation value)
+        setOnboardInformation,
   }) {
     return signOut(this);
   }
@@ -293,6 +312,7 @@ class _$SignOut implements SignOut {
     TResult Function(SignOut value)? signOut,
     TResult Function(SignOutWithDelete value)? signOutWithDelete,
     TResult Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult Function(SetOnboardInformation value)? setOnboardInformation,
   }) {
     return signOut?.call(this);
   }
@@ -304,6 +324,7 @@ class _$SignOut implements SignOut {
     TResult Function(SignOut value)? signOut,
     TResult Function(SignOutWithDelete value)? signOutWithDelete,
     TResult Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult Function(SetOnboardInformation value)? setOnboardInformation,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -362,6 +383,7 @@ class _$SignOutWithDelete implements SignOutWithDelete {
     required TResult Function() signOut,
     required TResult Function() signOutWithDelete,
     required TResult Function() checkEmailVerification,
+    required TResult Function() setOnboardInformation,
   }) {
     return signOutWithDelete();
   }
@@ -373,6 +395,7 @@ class _$SignOutWithDelete implements SignOutWithDelete {
     TResult Function()? signOut,
     TResult Function()? signOutWithDelete,
     TResult Function()? checkEmailVerification,
+    TResult Function()? setOnboardInformation,
   }) {
     return signOutWithDelete?.call();
   }
@@ -384,6 +407,7 @@ class _$SignOutWithDelete implements SignOutWithDelete {
     TResult Function()? signOut,
     TResult Function()? signOutWithDelete,
     TResult Function()? checkEmailVerification,
+    TResult Function()? setOnboardInformation,
     required TResult orElse(),
   }) {
     if (signOutWithDelete != null) {
@@ -400,6 +424,8 @@ class _$SignOutWithDelete implements SignOutWithDelete {
     required TResult Function(SignOutWithDelete value) signOutWithDelete,
     required TResult Function(CheckEmailVerification value)
         checkEmailVerification,
+    required TResult Function(SetOnboardInformation value)
+        setOnboardInformation,
   }) {
     return signOutWithDelete(this);
   }
@@ -411,6 +437,7 @@ class _$SignOutWithDelete implements SignOutWithDelete {
     TResult Function(SignOut value)? signOut,
     TResult Function(SignOutWithDelete value)? signOutWithDelete,
     TResult Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult Function(SetOnboardInformation value)? setOnboardInformation,
   }) {
     return signOutWithDelete?.call(this);
   }
@@ -422,6 +449,7 @@ class _$SignOutWithDelete implements SignOutWithDelete {
     TResult Function(SignOut value)? signOut,
     TResult Function(SignOutWithDelete value)? signOutWithDelete,
     TResult Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult Function(SetOnboardInformation value)? setOnboardInformation,
     required TResult orElse(),
   }) {
     if (signOutWithDelete != null) {
@@ -480,6 +508,7 @@ class _$CheckEmailVerification implements CheckEmailVerification {
     required TResult Function() signOut,
     required TResult Function() signOutWithDelete,
     required TResult Function() checkEmailVerification,
+    required TResult Function() setOnboardInformation,
   }) {
     return checkEmailVerification();
   }
@@ -491,6 +520,7 @@ class _$CheckEmailVerification implements CheckEmailVerification {
     TResult Function()? signOut,
     TResult Function()? signOutWithDelete,
     TResult Function()? checkEmailVerification,
+    TResult Function()? setOnboardInformation,
   }) {
     return checkEmailVerification?.call();
   }
@@ -502,6 +532,7 @@ class _$CheckEmailVerification implements CheckEmailVerification {
     TResult Function()? signOut,
     TResult Function()? signOutWithDelete,
     TResult Function()? checkEmailVerification,
+    TResult Function()? setOnboardInformation,
     required TResult orElse(),
   }) {
     if (checkEmailVerification != null) {
@@ -518,6 +549,8 @@ class _$CheckEmailVerification implements CheckEmailVerification {
     required TResult Function(SignOutWithDelete value) signOutWithDelete,
     required TResult Function(CheckEmailVerification value)
         checkEmailVerification,
+    required TResult Function(SetOnboardInformation value)
+        setOnboardInformation,
   }) {
     return checkEmailVerification(this);
   }
@@ -529,6 +562,7 @@ class _$CheckEmailVerification implements CheckEmailVerification {
     TResult Function(SignOut value)? signOut,
     TResult Function(SignOutWithDelete value)? signOutWithDelete,
     TResult Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult Function(SetOnboardInformation value)? setOnboardInformation,
   }) {
     return checkEmailVerification?.call(this);
   }
@@ -540,6 +574,7 @@ class _$CheckEmailVerification implements CheckEmailVerification {
     TResult Function(SignOut value)? signOut,
     TResult Function(SignOutWithDelete value)? signOutWithDelete,
     TResult Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult Function(SetOnboardInformation value)? setOnboardInformation,
     required TResult orElse(),
   }) {
     if (checkEmailVerification != null) {
@@ -551,6 +586,131 @@ class _$CheckEmailVerification implements CheckEmailVerification {
 
 abstract class CheckEmailVerification implements AuthEvent {
   const factory CheckEmailVerification() = _$CheckEmailVerification;
+}
+
+/// @nodoc
+abstract class $SetOnboardInformationCopyWith<$Res> {
+  factory $SetOnboardInformationCopyWith(SetOnboardInformation value,
+          $Res Function(SetOnboardInformation) then) =
+      _$SetOnboardInformationCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SetOnboardInformationCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res>
+    implements $SetOnboardInformationCopyWith<$Res> {
+  _$SetOnboardInformationCopyWithImpl(
+      SetOnboardInformation _value, $Res Function(SetOnboardInformation) _then)
+      : super(_value, (v) => _then(v as SetOnboardInformation));
+
+  @override
+  SetOnboardInformation get _value => super._value as SetOnboardInformation;
+}
+
+/// @nodoc
+
+class _$SetOnboardInformation implements SetOnboardInformation {
+  const _$SetOnboardInformation();
+
+  @override
+  String toString() {
+    return 'AuthEvent.setOnboardInformation()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SetOnboardInformation);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() checkAuthentication,
+    required TResult Function() signOut,
+    required TResult Function() signOutWithDelete,
+    required TResult Function() checkEmailVerification,
+    required TResult Function() setOnboardInformation,
+  }) {
+    return setOnboardInformation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? checkAuthentication,
+    TResult Function()? signOut,
+    TResult Function()? signOutWithDelete,
+    TResult Function()? checkEmailVerification,
+    TResult Function()? setOnboardInformation,
+  }) {
+    return setOnboardInformation?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? checkAuthentication,
+    TResult Function()? signOut,
+    TResult Function()? signOutWithDelete,
+    TResult Function()? checkEmailVerification,
+    TResult Function()? setOnboardInformation,
+    required TResult orElse(),
+  }) {
+    if (setOnboardInformation != null) {
+      return setOnboardInformation();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CheckAuthentication value) checkAuthentication,
+    required TResult Function(SignOut value) signOut,
+    required TResult Function(SignOutWithDelete value) signOutWithDelete,
+    required TResult Function(CheckEmailVerification value)
+        checkEmailVerification,
+    required TResult Function(SetOnboardInformation value)
+        setOnboardInformation,
+  }) {
+    return setOnboardInformation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CheckAuthentication value)? checkAuthentication,
+    TResult Function(SignOut value)? signOut,
+    TResult Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult Function(SetOnboardInformation value)? setOnboardInformation,
+  }) {
+    return setOnboardInformation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CheckAuthentication value)? checkAuthentication,
+    TResult Function(SignOut value)? signOut,
+    TResult Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult Function(SetOnboardInformation value)? setOnboardInformation,
+    required TResult orElse(),
+  }) {
+    if (setOnboardInformation != null) {
+      return setOnboardInformation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SetOnboardInformation implements AuthEvent {
+  const factory SetOnboardInformation() = _$SetOnboardInformation;
 }
 
 /// @nodoc

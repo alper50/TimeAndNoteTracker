@@ -39,8 +39,10 @@ class MyRouter extends _i12.RootStackRouter {
           routeData: routeData, child: const _i1.SplashView());
     },
     OnboardView.name: (routeData) {
+      final args = routeData.argsAs<OnboardViewArgs>(
+          orElse: () => const OnboardViewArgs());
       return _i12.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i2.OnboardView());
+          routeData: routeData, child: _i2.OnboardView(key: args.key));
     },
     AuthenticationView.name: (routeData) {
       final args = routeData.argsAs<AuthenticationViewArgs>(
@@ -124,10 +126,23 @@ class SplashView extends _i12.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.OnboardView]
-class OnboardView extends _i12.PageRouteInfo<void> {
-  const OnboardView() : super(OnboardView.name, path: '/onboard-view');
+class OnboardView extends _i12.PageRouteInfo<OnboardViewArgs> {
+  OnboardView({_i13.Key? key})
+      : super(OnboardView.name,
+            path: '/onboard-view', args: OnboardViewArgs(key: key));
 
   static const String name = 'OnboardView';
+}
+
+class OnboardViewArgs {
+  const OnboardViewArgs({this.key});
+
+  final _i13.Key? key;
+
+  @override
+  String toString() {
+    return 'OnboardViewArgs{key: $key}';
+  }
 }
 
 /// generated route for

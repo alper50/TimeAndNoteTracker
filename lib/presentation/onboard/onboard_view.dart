@@ -1,17 +1,15 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:concentric_transition/concentric_transition.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
 import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 import 'package:timenotetracker/presentation/onboard/widgets/onboard_body.dart';
 
-class OnboardView extends StatefulWidget {
-  const OnboardView({Key? key}) : super(key: key);
 
-  @override
-  State<OnboardView> createState() => _OnboardViewState();
-}
+class OnboardView extends StatelessWidget {
 
-class _OnboardViewState extends State<OnboardView> {
+ OnboardView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -22,8 +20,9 @@ class _OnboardViewState extends State<OnboardView> {
             MyColors.secondaryColor,
           ],
           physics: NeverScrollableScrollPhysics(),
-          onFinish: (){
+          onFinish: () {
             AutoRouter.of(context).replaceNamed('/authentication-view'); 
+            context.read<AuthBloc>().add(AuthEvent.setOnboardInformation());
           },
           itemCount: onboards.length,
           itemBuilder: (int index) {
