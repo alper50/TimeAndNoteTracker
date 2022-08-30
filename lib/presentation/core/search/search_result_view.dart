@@ -20,19 +20,23 @@ class SearchResultsView extends StatelessWidget {
     return _buildResult();
   }
 
-  Center _buildEmptyResult() {
-    return Center(
-      child: Column(
-        children: [
-          LottieBuilder.asset(
+  Column _buildEmptyResult() {
+    return Column(
+      children: [
+        Flexible(
+          flex: 4,
+          child: LottieBuilder.asset(
             'assets/lottie/emptyList.json',
           ),
-          Text(
+        ),
+        Flexible(
+          flex: 1,
+          child: Text(
             'Could not find',
             style: MyTextStyles.headline3,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
@@ -54,13 +58,19 @@ class SearchResultsView extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          LottieBuilder.asset(
-            'assets/lottie/search.json',
-            fit: BoxFit.contain,
-            reverse: true,
+          Flexible(
+            flex: 4,
+            child: LottieBuilder.asset(
+              'assets/lottie/search.json',
+              fit: BoxFit.contain,
+              reverse: true,
+            ),
           ),
-          Text('Search what you are looking for..',
-              style: MyTextStyles.headline2)
+          Flexible(
+            flex: 1,
+            child: Text('Search what you are looking for..',
+                style: MyTextStyles.headline2),
+          )
         ],
       ),
     );

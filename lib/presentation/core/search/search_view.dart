@@ -60,6 +60,7 @@ class _SearchViewState extends State<SearchView> {
           );
         },
         child: Scaffold(
+          resizeToAvoidBottomInset: false,
           body: BlocBuilder<SearchBloc, SearchState>(
             builder: (context, state) {
               return FloatingSearchBar(
