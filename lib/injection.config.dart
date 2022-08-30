@@ -97,7 +97,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i30.NoteWatcherBloc(get<_i24.INoteLocalRepository>()));
   gh.factory<_i31.SearchBloc>(() => _i31.SearchBloc(
       noteLocalRepository: get<_i24.INoteLocalRepository>(),
-      searchService: get<_i16.SearchService>()));
+      searchService: get<_i16.SearchService>(),
+      timeLocalRepository: get<_i26.ITimeLocalRepository>()));
   gh.factory<_i32.TimeActionBloc>(
       () => _i32.TimeActionBloc(get<_i26.ITimeLocalRepository>()));
   gh.factory<_i33.TimeFormBloc>(

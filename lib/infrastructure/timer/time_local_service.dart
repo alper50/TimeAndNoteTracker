@@ -33,4 +33,9 @@ class TimeLocalService extends DatabaseAccessor<MyDatabase>
   Future<int> deleteTimer(Insertable<TimeTableData> timerToBeDeleted) {
     return delete(timeTable).delete(timerToBeDeleted);
   }
+
+ Future<List<TimeTableData>> searchNote(String timerToBeSearched) async{
+    final query = select(timeTable)..where((tbl) => tbl.timeBody.contains(timerToBeSearched));
+    return await query.get();
+  }
 }

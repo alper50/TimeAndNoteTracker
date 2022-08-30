@@ -6,7 +6,7 @@ abstract class SearchState with _$SearchState {
     required String? selectedText,
     required List<String>? searchResult,
     required List<String>? filteredSearchHistory,
-    required Option<NoteFailure> searchFailureOrSucces, 
+    required Option<Either<NoteFailure,TimeFailure>> searchFailureOrSucces, 
   }) = _SearchState;
 
   factory SearchState.initial({required List<String>? filteredSearchHistory}) => SearchState(

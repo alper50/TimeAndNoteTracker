@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/timer/timeFormBloc/time_form_bloc.dart';
 import 'package:timenotetracker/application/timer/timeTickerBloc/time_ticker_bloc.dart';
-import 'package:timenotetracker/domain/timer/ticker_entity.dart';
 import 'package:timenotetracker/domain/timer/time_entity.dart';
 import 'package:timenotetracker/injection.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';

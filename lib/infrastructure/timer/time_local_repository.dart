@@ -63,4 +63,16 @@ class TimeLocalRepository extends ITimeLocalRepository {
       return left(TimeFailure.unexpected(e));
     }
   }
+  
+  @override
+  Future<Either<TimeFailure, List<Time>>> searchTimer(String timeToBeSearched) async{
+    try {
+      final result = await timeLocalService.searchNote(
+        timeToBeSearched,
+      );
+      return right(result.map((e) => TimeDTO.fromDB(timeTableData: e).toDomain()).toList());
+    } catch (e) {
+      return left(TimeFailure.unexpected(e));
+    }
+  }
 }

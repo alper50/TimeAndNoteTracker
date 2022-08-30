@@ -7,4 +7,5 @@ abstract class ITimeLocalRepository{
   Future<Either<TimeFailure,Unit>> createTimer(Time time);
   Future<Either<TimeFailure,Unit>> updateTimer(Time time);
   Future<Either<TimeFailure,Unit>> deleteTimer(Time time);
+  Future<Either<TimeFailure,List<Time>>> searchTimer(String timeToBeSearched);
 }

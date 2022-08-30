@@ -13,8 +13,9 @@
 import 'package:auto_route/auto_route.dart' as _i12;
 import 'package:flutter/material.dart' as _i13;
 
+import '../../../domain/core/search/i_search_service.dart' as _i15;
 import '../../../domain/note/note_entity.dart' as _i14;
-import '../../../domain/timer/time_entity.dart' as _i15;
+import '../../../domain/timer/time_entity.dart' as _i16;
 import '../../auth/auth_view.dart' as _i3;
 import '../../auth/verify_email_view.dart' as _i4;
 import '../../home/analyse_view.dart' as _i11;
@@ -62,7 +63,10 @@ class MyRouter extends _i12.RootStackRouter {
       final args = routeData.argsAs<SearchViewArgs>();
       return _i12.MaterialPageX<dynamic>(
           routeData: routeData,
-          child: _i6.SearchView(key: args.key, searchTitle: args.searchTitle));
+          child: _i6.SearchView(
+              key: args.key,
+              searchTitle: args.searchTitle,
+              searchTable: args.searchTable));
     },
     TimeView.name: (routeData) {
       final args = routeData.argsAs<TimeViewArgs>();
@@ -184,31 +188,38 @@ class NoteViewArgs {
 /// generated route for
 /// [_i6.SearchView]
 class SearchView extends _i12.PageRouteInfo<SearchViewArgs> {
-  SearchView({_i13.Key? key, required String searchTitle})
+  SearchView(
+      {_i13.Key? key,
+      required String searchTitle,
+      required _i15.SearchTables searchTable})
       : super(SearchView.name,
             path: '/search-view',
-            args: SearchViewArgs(key: key, searchTitle: searchTitle));
+            args: SearchViewArgs(
+                key: key, searchTitle: searchTitle, searchTable: searchTable));
 
   static const String name = 'SearchView';
 }
 
 class SearchViewArgs {
-  const SearchViewArgs({this.key, required this.searchTitle});
+  const SearchViewArgs(
+      {this.key, required this.searchTitle, required this.searchTable});
 
   final _i13.Key? key;
 
   final String searchTitle;
 
+  final _i15.SearchTables searchTable;
+
   @override
   String toString() {
-    return 'SearchViewArgs{key: $key, searchTitle: $searchTitle}';
+    return 'SearchViewArgs{key: $key, searchTitle: $searchTitle, searchTable: $searchTable}';
   }
 }
 
 /// generated route for
 /// [_i7.TimeView]
 class TimeView extends _i12.PageRouteInfo<TimeViewArgs> {
-  TimeView({_i13.Key? key, required _i15.Time? currentTime})
+  TimeView({_i13.Key? key, required _i16.Time? currentTime})
       : super(TimeView.name,
             path: '/time-view',
             args: TimeViewArgs(key: key, currentTime: currentTime));
@@ -221,7 +232,7 @@ class TimeViewArgs {
 
   final _i13.Key? key;
 
-  final _i15.Time? currentTime;
+  final _i16.Time? currentTime;
 
   @override
   String toString() {

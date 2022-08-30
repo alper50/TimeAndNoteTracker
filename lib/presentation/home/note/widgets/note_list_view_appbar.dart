@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
+import 'package:timenotetracker/domain/core/search/i_search_service.dart';
 import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
 
 class NoteOverviewAppBar extends StatelessWidget {
@@ -33,7 +34,7 @@ class NoteOverviewAppBar extends StatelessWidget {
         IconButton(
           onPressed: () {
             AutoRouter.of(context).push(
-              SearchView(searchTitle: 'Notes'),
+              SearchView(searchTitle: 'Notes',searchTable: SearchTables.note),
             );
           },
           icon: Icon(

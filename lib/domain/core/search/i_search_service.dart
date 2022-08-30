@@ -9,3 +9,5 @@ abstract class ISearchService{
   void deleteSearchTerm(String term);
 
 }
+
+enum SearchTables{note,time}

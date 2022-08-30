@@ -124,7 +124,8 @@ class AuthRemoteService implements IAuthRemoteService {
   @override
   Future<Either<AuthFailure, bool>> checkEmailVerification() async {
     try {
-      await _firebaseAuth.currentUser!.reload();
+      // await _firebaseAuth.currentUser!.reload();
+      // final updatedUser =  _firebaseAuth.currentUser!;
       final isVerified = _firebaseAuth.currentUser!.emailVerified;
       return right(isVerified);
     } on FirebaseAuthException catch (e) {
