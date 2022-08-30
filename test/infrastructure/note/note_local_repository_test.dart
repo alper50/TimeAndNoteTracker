@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:timenotetracker/domain/core/value_object.dart';
 import 'package:timenotetracker/domain/note/note_entity.dart';
 import 'package:timenotetracker/domain/note/note_value_objects.dart';
-import 'package:timenotetracker/infrastructure/core/db_config.dart';
+import 'package:timenotetracker/infrastructure/core/database/db_config.dart';
 import 'package:timenotetracker/infrastructure/note/note_local_repository.dart';
 
 //TODO test infrastructure note 

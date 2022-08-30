@@ -1,7 +1,7 @@
 import 'package:drift/drift.dart';
 import 'package:injectable/injectable.dart';
 import 'package:timenotetracker/infrastructure/auth/auth_local_tables.dart';
-import 'package:timenotetracker/infrastructure/core/db_config.dart';
+import 'package:timenotetracker/infrastructure/core/database/db_config.dart';
 part 'auth_local_service.g.dart';
 
 @LazySingleton()

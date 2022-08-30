@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:timenotetracker/domain/core/value_object.dart';
 import 'package:timenotetracker/domain/timer/time_entity.dart';
 import 'package:timenotetracker/domain/timer/time_value_objects.dart';
-import 'package:timenotetracker/infrastructure/core/db_config.dart';
+import 'package:timenotetracker/infrastructure/core/database/db_config.dart';
 part 'time_data_transfer_objects.freezed.dart';
 
 @freezed

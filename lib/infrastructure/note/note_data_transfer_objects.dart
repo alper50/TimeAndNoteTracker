@@ -7,7 +7,7 @@ import 'package:timenotetracker/domain/core/value_object.dart';
 import 'package:timenotetracker/domain/note/note_entity.dart';
 import 'package:timenotetracker/domain/note/note_value_objects.dart';
 import 'package:timenotetracker/domain/note/todo_item_entity.dart';
-import 'package:timenotetracker/infrastructure/core/db_config.dart';
+import 'package:timenotetracker/infrastructure/core/database/db_config.dart';
 part 'note_data_transfer_objects.freezed.dart';
 
 // we used implements instead of with because adding regular function to the dataclass requires impplements

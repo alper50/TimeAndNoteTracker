@@ -1,6 +1,6 @@
 import 'package:drift/drift.dart';
 import 'package:injectable/injectable.dart';
-import 'package:timenotetracker/infrastructure/core/db_config.dart';
+import 'package:timenotetracker/infrastructure/core/database/db_config.dart';
 import 'package:timenotetracker/infrastructure/timer/time_local_tables.dart';
 part 'time_local_service.g.dart';
 

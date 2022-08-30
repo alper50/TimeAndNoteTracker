@@ -36,7 +36,7 @@ import 'infrastructure/auth/auth_local_repository.dart' as _i6;
 import 'infrastructure/auth/auth_local_service.dart' as _i22;
 import 'infrastructure/auth/auth_remote_repository.dart' as _i23;
 import 'infrastructure/auth/auth_remote_service.dart' as _i8;
-import 'infrastructure/core/db_config.dart' as _i12;
+import 'infrastructure/core/database/db_config.dart' as _i12;
 import 'infrastructure/core/infrastructure_injectable_module.dart' as _i36;
 import 'infrastructure/core/internetConnection/internet_connection_service.dart'
     as _i10;
