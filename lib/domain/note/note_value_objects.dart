@@ -11,9 +11,9 @@ class NoteBody extends ValueObject<String> {
   //if validaEmptyField returns left then flatmap will skip validateExceedingLength.
   factory NoteBody(String input) {
     return NoteBody._(
-      validateEmptyField(input).flatMap(
+      validateEmptyFieldTime(input).flatMap(
         (outputFromFunc) =>
-            validateExceedingLength(outputFromFunc, maxCharacter),
+            validateExceedingLengthTime(outputFromFunc, maxCharacter),
       ),
     );
   }
@@ -28,9 +28,9 @@ class Todo extends ValueObject<String> {
 
   factory Todo(String input) {
     return Todo._(
-      validateEmptyField(input).flatMap(
+      validateEmptyFieldNote(input).flatMap(
         (outputFromFunc) =>
-            validateExceedingLength(outputFromFunc, maxCharacter),
+            validateExceedingLengthNote(outputFromFunc, maxCharacter),
       ),
     );
   }

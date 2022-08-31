@@ -5,6 +5,7 @@ import 'package:timenotetracker/application/core/searchBloc/search_bloc.dart';
 import 'package:timenotetracker/domain/core/search/i_search_service.dart';
 import 'package:timenotetracker/injection.dart';
 import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
+import 'package:timenotetracker/presentation/core/coreWidgets/my_circular_progress.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
 import 'package:timenotetracker/presentation/core/search/search_result_view.dart';
 
@@ -36,7 +37,8 @@ class _SearchViewState extends State<SearchView> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<SearchBloc>(),
+      create: (context) => getIt<SearchBloc>()
+        ..add(SearchEvent.getSearchHistory(searchTable: widget.searchTable)),
       child: BlocListener<SearchBloc, SearchState>(
         listener: (context, state) {
           state.searchFailureOrSucces.fold(
@@ -63,103 +65,111 @@ class _SearchViewState extends State<SearchView> {
           resizeToAvoidBottomInset: false,
           body: BlocBuilder<SearchBloc, SearchState>(
             builder: (context, state) {
-              return FloatingSearchBar(
-                controller: controller,
-                body: FloatingSearchBarScrollNotifier(
-                  child: SearchResultsView(
-                    searchResult: state.searchResult,
-                  ),
-                ),
-                transition: CircularFloatingSearchBarTransition(),
-                title: Text(state.selectedText ?? 'Start Searching',
-                    style: MyTextStyles.headline3),
-                hint: 'Search ${widget.searchTitle}',
-                actions: [
-                  FloatingSearchBarAction.searchToClear(),
-                ],
-                onQueryChanged: (query) {
-                  context
-                      .read<SearchBloc>()
-                      .add(SearchEvent.queryChanged(query: query));
-                },
-                onSubmitted: (query) {
-                  context.read<SearchBloc>().add(SearchEvent.searchSubmitted(
-                      query: query, searchTable: widget.searchTable));
+              return state.isSearchLoading
+                  ? MyCircularProgress()
+                  : FloatingSearchBar(
+                      controller: controller,
+                      body: FloatingSearchBarScrollNotifier(
+                        child: SearchResultsView(
+                          searchResult: state.searchResult,
+                        ),
+                      ),
+                      transition: CircularFloatingSearchBarTransition(),
+                      title: Text(state.selectedText ?? 'Start Searching',
+                          style: MyTextStyles.headline3),
+                      hint: 'Search ${widget.searchTitle}',
+                      actions: [
+                        FloatingSearchBarAction.searchToClear(),
+                      ],
+                      onQueryChanged: (query) {
+                        context
+                            .read<SearchBloc>()
+                            .add(SearchEvent.queryChanged(query: query));
+                      },
+                      onSubmitted: (query) {
+                        context.read<SearchBloc>().add(
+                            SearchEvent.searchSubmitted(
+                                query: query, searchTable: widget.searchTable));
 
-                  controller.close();
-                },
-                builder: (context, transition) {
-                  return ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: Material(
-                      color: Colors.white,
-                      elevation: 4,
-                      child: Builder(
-                        builder: (context) {
-                          if (state.filteredSearchHistory!.isEmpty &&
-                              controller.query.isEmpty) {
-                            return Container(
-                              height: 56,
-                              width: double.infinity,
-                              alignment: Alignment.center,
-                              child: Text('Start searching',
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: MyTextStyles.headline2),
-                            );
-                          } else if (state.filteredSearchHistory!.isEmpty) {
-                            return ListTile(
-                              title: Text(controller.query),
-                              leading: const Icon(Icons.search),
-                              onTap: () {
-                                context.read<SearchBloc>().add(
-                                      SearchEvent.queryChanged(
-                                          query: controller.query),
-                                    );
-
-                                controller.close();
-                              },
-                            );
-                          } else {
-                            return Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: state.filteredSearchHistory!
-                                  .map(
-                                    (term) => ListTile(
-                                      title: Text(
-                                        term,
+                        controller.close();
+                      },
+                      builder: (context, transition) {
+                        return ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Material(
+                            color: Colors.white,
+                            elevation: 4,
+                            child: Builder(
+                              builder: (context) {
+                                if (state.filteredSearchHistory!.isEmpty &&
+                                    controller.query.isEmpty) {
+                                  return Container(
+                                    height: 56,
+                                    width: double.infinity,
+                                    alignment: Alignment.center,
+                                    child: Text('Start searching',
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
-                                      ),
-                                      leading: const Icon(Icons.history),
-                                      trailing: IconButton(
-                                        icon: const Icon(Icons.clear),
-                                        onPressed: () {
-                                          context.read<SearchBloc>().add(
-                                                SearchEvent.deleteSearchHistory(
-                                                  queryToBeDeleted: term,
-                                                ),
-                                              );
-                                        },
-                                      ),
-                                      onTap: () {
-                                        context.read<SearchBloc>().add(
-                                              SearchEvent.selectSearchHistory(
-                                                  queryToBeSelected: term),
-                                            );
-                                        controller.close();
-                                      },
-                                    ),
-                                  )
-                                  .toList(),
-                            );
-                          }
-                        },
-                      ),
-                    ),
-                  );
-                },
-              );
+                                        style: MyTextStyles.headline2),
+                                  );
+                                } else if (state
+                                    .filteredSearchHistory!.isEmpty) {
+                                  return ListTile(
+                                    title: Text(controller.query),
+                                    leading: const Icon(Icons.search),
+                                    onTap: () {
+                                      context.read<SearchBloc>().add(
+                                            SearchEvent.queryChanged(
+                                                query: controller.query),
+                                          );
+
+                                      controller.close();
+                                    },
+                                  );
+                                } else {
+                                  return Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: state.filteredSearchHistory!
+                                        .map(
+                                          (term) => ListTile(
+                                            title: Text(
+                                              term,
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                            leading: const Icon(Icons.history),
+                                            trailing: IconButton(
+                                              icon: const Icon(Icons.clear),
+                                              onPressed: () {
+                                                context.read<SearchBloc>().add(
+                                                      SearchEvent
+                                                          .deleteSearchHistory(
+                                                        queryToBeDeleted: term,
+                                                        searchTable: widget.searchTable
+                                                      ),
+                                                    );
+                                              },
+                                            ),
+                                            onTap: () {
+                                              context.read<SearchBloc>().add(
+                                                    SearchEvent
+                                                        .selectSearchHistory(
+                                                            queryToBeSelected:
+                                                                term),
+                                                  );
+                                              controller.close();
+                                            },
+                                          ),
+                                        )
+                                        .toList(),
+                                  );
+                                }
+                              },
+                            ),
+                          ),
+                        );
+                      },
+                    );
             },
           ),
         ),

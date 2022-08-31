@@ -21,24 +21,30 @@ mixin _$SearchEvent {
     required TResult Function(String query) queryChanged,
     required TResult Function(String query, SearchTables searchTable)
         searchSubmitted,
-    required TResult Function(String queryToBeDeleted) deleteSearchHistory,
+    required TResult Function(String queryToBeDeleted, SearchTables searchTable)
+        deleteSearchHistory,
     required TResult Function(String queryToBeSelected) selectSearchHistory,
+    required TResult Function(SearchTables searchTable) getSearchHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String query)? queryChanged,
     TResult Function(String query, SearchTables searchTable)? searchSubmitted,
-    TResult Function(String queryToBeDeleted)? deleteSearchHistory,
+    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+        deleteSearchHistory,
     TResult Function(String queryToBeSelected)? selectSearchHistory,
+    TResult Function(SearchTables searchTable)? getSearchHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String query)? queryChanged,
     TResult Function(String query, SearchTables searchTable)? searchSubmitted,
-    TResult Function(String queryToBeDeleted)? deleteSearchHistory,
+    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+        deleteSearchHistory,
     TResult Function(String queryToBeSelected)? selectSearchHistory,
+    TResult Function(SearchTables searchTable)? getSearchHistory,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +54,7 @@ mixin _$SearchEvent {
     required TResult Function(_SearchSubmitted value) searchSubmitted,
     required TResult Function(_DeleteSearchHistory value) deleteSearchHistory,
     required TResult Function(_SelectSearchHistory value) selectSearchHistory,
+    required TResult Function(_GetSearchHistory value) getSearchHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +63,7 @@ mixin _$SearchEvent {
     TResult Function(_SearchSubmitted value)? searchSubmitted,
     TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
     TResult Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult Function(_GetSearchHistory value)? getSearchHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +72,7 @@ mixin _$SearchEvent {
     TResult Function(_SearchSubmitted value)? searchSubmitted,
     TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
     TResult Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult Function(_GetSearchHistory value)? getSearchHistory,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -152,8 +161,10 @@ class _$_QueryChanged implements _QueryChanged {
     required TResult Function(String query) queryChanged,
     required TResult Function(String query, SearchTables searchTable)
         searchSubmitted,
-    required TResult Function(String queryToBeDeleted) deleteSearchHistory,
+    required TResult Function(String queryToBeDeleted, SearchTables searchTable)
+        deleteSearchHistory,
     required TResult Function(String queryToBeSelected) selectSearchHistory,
+    required TResult Function(SearchTables searchTable) getSearchHistory,
   }) {
     return queryChanged(query);
   }
@@ -163,8 +174,10 @@ class _$_QueryChanged implements _QueryChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String query)? queryChanged,
     TResult Function(String query, SearchTables searchTable)? searchSubmitted,
-    TResult Function(String queryToBeDeleted)? deleteSearchHistory,
+    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+        deleteSearchHistory,
     TResult Function(String queryToBeSelected)? selectSearchHistory,
+    TResult Function(SearchTables searchTable)? getSearchHistory,
   }) {
     return queryChanged?.call(query);
   }
@@ -174,8 +187,10 @@ class _$_QueryChanged implements _QueryChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String query)? queryChanged,
     TResult Function(String query, SearchTables searchTable)? searchSubmitted,
-    TResult Function(String queryToBeDeleted)? deleteSearchHistory,
+    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+        deleteSearchHistory,
     TResult Function(String queryToBeSelected)? selectSearchHistory,
+    TResult Function(SearchTables searchTable)? getSearchHistory,
     required TResult orElse(),
   }) {
     if (queryChanged != null) {
@@ -191,6 +206,7 @@ class _$_QueryChanged implements _QueryChanged {
     required TResult Function(_SearchSubmitted value) searchSubmitted,
     required TResult Function(_DeleteSearchHistory value) deleteSearchHistory,
     required TResult Function(_SelectSearchHistory value) selectSearchHistory,
+    required TResult Function(_GetSearchHistory value) getSearchHistory,
   }) {
     return queryChanged(this);
   }
@@ -202,6 +218,7 @@ class _$_QueryChanged implements _QueryChanged {
     TResult Function(_SearchSubmitted value)? searchSubmitted,
     TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
     TResult Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult Function(_GetSearchHistory value)? getSearchHistory,
   }) {
     return queryChanged?.call(this);
   }
@@ -213,6 +230,7 @@ class _$_QueryChanged implements _QueryChanged {
     TResult Function(_SearchSubmitted value)? searchSubmitted,
     TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
     TResult Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult Function(_GetSearchHistory value)? getSearchHistory,
     required TResult orElse(),
   }) {
     if (queryChanged != null) {
@@ -310,8 +328,10 @@ class _$_SearchSubmitted implements _SearchSubmitted {
     required TResult Function(String query) queryChanged,
     required TResult Function(String query, SearchTables searchTable)
         searchSubmitted,
-    required TResult Function(String queryToBeDeleted) deleteSearchHistory,
+    required TResult Function(String queryToBeDeleted, SearchTables searchTable)
+        deleteSearchHistory,
     required TResult Function(String queryToBeSelected) selectSearchHistory,
+    required TResult Function(SearchTables searchTable) getSearchHistory,
   }) {
     return searchSubmitted(query, searchTable);
   }
@@ -321,8 +341,10 @@ class _$_SearchSubmitted implements _SearchSubmitted {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String query)? queryChanged,
     TResult Function(String query, SearchTables searchTable)? searchSubmitted,
-    TResult Function(String queryToBeDeleted)? deleteSearchHistory,
+    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+        deleteSearchHistory,
     TResult Function(String queryToBeSelected)? selectSearchHistory,
+    TResult Function(SearchTables searchTable)? getSearchHistory,
   }) {
     return searchSubmitted?.call(query, searchTable);
   }
@@ -332,8 +354,10 @@ class _$_SearchSubmitted implements _SearchSubmitted {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String query)? queryChanged,
     TResult Function(String query, SearchTables searchTable)? searchSubmitted,
-    TResult Function(String queryToBeDeleted)? deleteSearchHistory,
+    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+        deleteSearchHistory,
     TResult Function(String queryToBeSelected)? selectSearchHistory,
+    TResult Function(SearchTables searchTable)? getSearchHistory,
     required TResult orElse(),
   }) {
     if (searchSubmitted != null) {
@@ -349,6 +373,7 @@ class _$_SearchSubmitted implements _SearchSubmitted {
     required TResult Function(_SearchSubmitted value) searchSubmitted,
     required TResult Function(_DeleteSearchHistory value) deleteSearchHistory,
     required TResult Function(_SelectSearchHistory value) selectSearchHistory,
+    required TResult Function(_GetSearchHistory value) getSearchHistory,
   }) {
     return searchSubmitted(this);
   }
@@ -360,6 +385,7 @@ class _$_SearchSubmitted implements _SearchSubmitted {
     TResult Function(_SearchSubmitted value)? searchSubmitted,
     TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
     TResult Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult Function(_GetSearchHistory value)? getSearchHistory,
   }) {
     return searchSubmitted?.call(this);
   }
@@ -371,6 +397,7 @@ class _$_SearchSubmitted implements _SearchSubmitted {
     TResult Function(_SearchSubmitted value)? searchSubmitted,
     TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
     TResult Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult Function(_GetSearchHistory value)? getSearchHistory,
     required TResult orElse(),
   }) {
     if (searchSubmitted != null) {
@@ -397,7 +424,7 @@ abstract class _$DeleteSearchHistoryCopyWith<$Res> {
   factory _$DeleteSearchHistoryCopyWith(_DeleteSearchHistory value,
           $Res Function(_DeleteSearchHistory) then) =
       __$DeleteSearchHistoryCopyWithImpl<$Res>;
-  $Res call({String queryToBeDeleted});
+  $Res call({String queryToBeDeleted, SearchTables searchTable});
 }
 
 /// @nodoc
@@ -414,12 +441,17 @@ class __$DeleteSearchHistoryCopyWithImpl<$Res>
   @override
   $Res call({
     Object? queryToBeDeleted = freezed,
+    Object? searchTable = freezed,
   }) {
     return _then(_DeleteSearchHistory(
       queryToBeDeleted: queryToBeDeleted == freezed
           ? _value.queryToBeDeleted
           : queryToBeDeleted // ignore: cast_nullable_to_non_nullable
               as String,
+      searchTable: searchTable == freezed
+          ? _value.searchTable
+          : searchTable // ignore: cast_nullable_to_non_nullable
+              as SearchTables,
     ));
   }
 }
@@ -427,14 +459,17 @@ class __$DeleteSearchHistoryCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_DeleteSearchHistory implements _DeleteSearchHistory {
-  const _$_DeleteSearchHistory({required this.queryToBeDeleted});
+  const _$_DeleteSearchHistory(
+      {required this.queryToBeDeleted, required this.searchTable});
 
   @override
   final String queryToBeDeleted;
+  @override
+  final SearchTables searchTable;
 
   @override
   String toString() {
-    return 'SearchEvent.deleteSearchHistory(queryToBeDeleted: $queryToBeDeleted)';
+    return 'SearchEvent.deleteSearchHistory(queryToBeDeleted: $queryToBeDeleted, searchTable: $searchTable)';
   }
 
   @override
@@ -443,12 +478,16 @@ class _$_DeleteSearchHistory implements _DeleteSearchHistory {
         (other.runtimeType == runtimeType &&
             other is _DeleteSearchHistory &&
             const DeepCollectionEquality()
-                .equals(other.queryToBeDeleted, queryToBeDeleted));
+                .equals(other.queryToBeDeleted, queryToBeDeleted) &&
+            const DeepCollectionEquality()
+                .equals(other.searchTable, searchTable));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(queryToBeDeleted));
+      runtimeType,
+      const DeepCollectionEquality().hash(queryToBeDeleted),
+      const DeepCollectionEquality().hash(searchTable));
 
   @JsonKey(ignore: true)
   @override
@@ -462,10 +501,12 @@ class _$_DeleteSearchHistory implements _DeleteSearchHistory {
     required TResult Function(String query) queryChanged,
     required TResult Function(String query, SearchTables searchTable)
         searchSubmitted,
-    required TResult Function(String queryToBeDeleted) deleteSearchHistory,
+    required TResult Function(String queryToBeDeleted, SearchTables searchTable)
+        deleteSearchHistory,
     required TResult Function(String queryToBeSelected) selectSearchHistory,
+    required TResult Function(SearchTables searchTable) getSearchHistory,
   }) {
-    return deleteSearchHistory(queryToBeDeleted);
+    return deleteSearchHistory(queryToBeDeleted, searchTable);
   }
 
   @override
@@ -473,10 +514,12 @@ class _$_DeleteSearchHistory implements _DeleteSearchHistory {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String query)? queryChanged,
     TResult Function(String query, SearchTables searchTable)? searchSubmitted,
-    TResult Function(String queryToBeDeleted)? deleteSearchHistory,
+    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+        deleteSearchHistory,
     TResult Function(String queryToBeSelected)? selectSearchHistory,
+    TResult Function(SearchTables searchTable)? getSearchHistory,
   }) {
-    return deleteSearchHistory?.call(queryToBeDeleted);
+    return deleteSearchHistory?.call(queryToBeDeleted, searchTable);
   }
 
   @override
@@ -484,12 +527,14 @@ class _$_DeleteSearchHistory implements _DeleteSearchHistory {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String query)? queryChanged,
     TResult Function(String query, SearchTables searchTable)? searchSubmitted,
-    TResult Function(String queryToBeDeleted)? deleteSearchHistory,
+    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+        deleteSearchHistory,
     TResult Function(String queryToBeSelected)? selectSearchHistory,
+    TResult Function(SearchTables searchTable)? getSearchHistory,
     required TResult orElse(),
   }) {
     if (deleteSearchHistory != null) {
-      return deleteSearchHistory(queryToBeDeleted);
+      return deleteSearchHistory(queryToBeDeleted, searchTable);
     }
     return orElse();
   }
@@ -501,6 +546,7 @@ class _$_DeleteSearchHistory implements _DeleteSearchHistory {
     required TResult Function(_SearchSubmitted value) searchSubmitted,
     required TResult Function(_DeleteSearchHistory value) deleteSearchHistory,
     required TResult Function(_SelectSearchHistory value) selectSearchHistory,
+    required TResult Function(_GetSearchHistory value) getSearchHistory,
   }) {
     return deleteSearchHistory(this);
   }
@@ -512,6 +558,7 @@ class _$_DeleteSearchHistory implements _DeleteSearchHistory {
     TResult Function(_SearchSubmitted value)? searchSubmitted,
     TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
     TResult Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult Function(_GetSearchHistory value)? getSearchHistory,
   }) {
     return deleteSearchHistory?.call(this);
   }
@@ -523,6 +570,7 @@ class _$_DeleteSearchHistory implements _DeleteSearchHistory {
     TResult Function(_SearchSubmitted value)? searchSubmitted,
     TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
     TResult Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult Function(_GetSearchHistory value)? getSearchHistory,
     required TResult orElse(),
   }) {
     if (deleteSearchHistory != null) {
@@ -533,10 +581,12 @@ class _$_DeleteSearchHistory implements _DeleteSearchHistory {
 }
 
 abstract class _DeleteSearchHistory implements SearchEvent {
-  const factory _DeleteSearchHistory({required final String queryToBeDeleted}) =
-      _$_DeleteSearchHistory;
+  const factory _DeleteSearchHistory(
+      {required final String queryToBeDeleted,
+      required final SearchTables searchTable}) = _$_DeleteSearchHistory;
 
   String get queryToBeDeleted => throw _privateConstructorUsedError;
+  SearchTables get searchTable => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$DeleteSearchHistoryCopyWith<_DeleteSearchHistory> get copyWith =>
       throw _privateConstructorUsedError;
@@ -612,8 +662,10 @@ class _$_SelectSearchHistory implements _SelectSearchHistory {
     required TResult Function(String query) queryChanged,
     required TResult Function(String query, SearchTables searchTable)
         searchSubmitted,
-    required TResult Function(String queryToBeDeleted) deleteSearchHistory,
+    required TResult Function(String queryToBeDeleted, SearchTables searchTable)
+        deleteSearchHistory,
     required TResult Function(String queryToBeSelected) selectSearchHistory,
+    required TResult Function(SearchTables searchTable) getSearchHistory,
   }) {
     return selectSearchHistory(queryToBeSelected);
   }
@@ -623,8 +675,10 @@ class _$_SelectSearchHistory implements _SelectSearchHistory {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String query)? queryChanged,
     TResult Function(String query, SearchTables searchTable)? searchSubmitted,
-    TResult Function(String queryToBeDeleted)? deleteSearchHistory,
+    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+        deleteSearchHistory,
     TResult Function(String queryToBeSelected)? selectSearchHistory,
+    TResult Function(SearchTables searchTable)? getSearchHistory,
   }) {
     return selectSearchHistory?.call(queryToBeSelected);
   }
@@ -634,8 +688,10 @@ class _$_SelectSearchHistory implements _SelectSearchHistory {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String query)? queryChanged,
     TResult Function(String query, SearchTables searchTable)? searchSubmitted,
-    TResult Function(String queryToBeDeleted)? deleteSearchHistory,
+    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+        deleteSearchHistory,
     TResult Function(String queryToBeSelected)? selectSearchHistory,
+    TResult Function(SearchTables searchTable)? getSearchHistory,
     required TResult orElse(),
   }) {
     if (selectSearchHistory != null) {
@@ -651,6 +707,7 @@ class _$_SelectSearchHistory implements _SelectSearchHistory {
     required TResult Function(_SearchSubmitted value) searchSubmitted,
     required TResult Function(_DeleteSearchHistory value) deleteSearchHistory,
     required TResult Function(_SelectSearchHistory value) selectSearchHistory,
+    required TResult Function(_GetSearchHistory value) getSearchHistory,
   }) {
     return selectSearchHistory(this);
   }
@@ -662,6 +719,7 @@ class _$_SelectSearchHistory implements _SelectSearchHistory {
     TResult Function(_SearchSubmitted value)? searchSubmitted,
     TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
     TResult Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult Function(_GetSearchHistory value)? getSearchHistory,
   }) {
     return selectSearchHistory?.call(this);
   }
@@ -673,6 +731,7 @@ class _$_SelectSearchHistory implements _SelectSearchHistory {
     TResult Function(_SearchSubmitted value)? searchSubmitted,
     TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
     TResult Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult Function(_GetSearchHistory value)? getSearchHistory,
     required TResult orElse(),
   }) {
     if (selectSearchHistory != null) {
@@ -693,8 +752,167 @@ abstract class _SelectSearchHistory implements SearchEvent {
 }
 
 /// @nodoc
+abstract class _$GetSearchHistoryCopyWith<$Res> {
+  factory _$GetSearchHistoryCopyWith(
+          _GetSearchHistory value, $Res Function(_GetSearchHistory) then) =
+      __$GetSearchHistoryCopyWithImpl<$Res>;
+  $Res call({SearchTables searchTable});
+}
+
+/// @nodoc
+class __$GetSearchHistoryCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res>
+    implements _$GetSearchHistoryCopyWith<$Res> {
+  __$GetSearchHistoryCopyWithImpl(
+      _GetSearchHistory _value, $Res Function(_GetSearchHistory) _then)
+      : super(_value, (v) => _then(v as _GetSearchHistory));
+
+  @override
+  _GetSearchHistory get _value => super._value as _GetSearchHistory;
+
+  @override
+  $Res call({
+    Object? searchTable = freezed,
+  }) {
+    return _then(_GetSearchHistory(
+      searchTable: searchTable == freezed
+          ? _value.searchTable
+          : searchTable // ignore: cast_nullable_to_non_nullable
+              as SearchTables,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GetSearchHistory implements _GetSearchHistory {
+  const _$_GetSearchHistory({required this.searchTable});
+
+  @override
+  final SearchTables searchTable;
+
+  @override
+  String toString() {
+    return 'SearchEvent.getSearchHistory(searchTable: $searchTable)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _GetSearchHistory &&
+            const DeepCollectionEquality()
+                .equals(other.searchTable, searchTable));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(searchTable));
+
+  @JsonKey(ignore: true)
+  @override
+  _$GetSearchHistoryCopyWith<_GetSearchHistory> get copyWith =>
+      __$GetSearchHistoryCopyWithImpl<_GetSearchHistory>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String query) queryChanged,
+    required TResult Function(String query, SearchTables searchTable)
+        searchSubmitted,
+    required TResult Function(String queryToBeDeleted, SearchTables searchTable)
+        deleteSearchHistory,
+    required TResult Function(String queryToBeSelected) selectSearchHistory,
+    required TResult Function(SearchTables searchTable) getSearchHistory,
+  }) {
+    return getSearchHistory(searchTable);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String query)? queryChanged,
+    TResult Function(String query, SearchTables searchTable)? searchSubmitted,
+    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+        deleteSearchHistory,
+    TResult Function(String queryToBeSelected)? selectSearchHistory,
+    TResult Function(SearchTables searchTable)? getSearchHistory,
+  }) {
+    return getSearchHistory?.call(searchTable);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String query)? queryChanged,
+    TResult Function(String query, SearchTables searchTable)? searchSubmitted,
+    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+        deleteSearchHistory,
+    TResult Function(String queryToBeSelected)? selectSearchHistory,
+    TResult Function(SearchTables searchTable)? getSearchHistory,
+    required TResult orElse(),
+  }) {
+    if (getSearchHistory != null) {
+      return getSearchHistory(searchTable);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_QueryChanged value) queryChanged,
+    required TResult Function(_SearchSubmitted value) searchSubmitted,
+    required TResult Function(_DeleteSearchHistory value) deleteSearchHistory,
+    required TResult Function(_SelectSearchHistory value) selectSearchHistory,
+    required TResult Function(_GetSearchHistory value) getSearchHistory,
+  }) {
+    return getSearchHistory(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_QueryChanged value)? queryChanged,
+    TResult Function(_SearchSubmitted value)? searchSubmitted,
+    TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
+    TResult Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult Function(_GetSearchHistory value)? getSearchHistory,
+  }) {
+    return getSearchHistory?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_QueryChanged value)? queryChanged,
+    TResult Function(_SearchSubmitted value)? searchSubmitted,
+    TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
+    TResult Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult Function(_GetSearchHistory value)? getSearchHistory,
+    required TResult orElse(),
+  }) {
+    if (getSearchHistory != null) {
+      return getSearchHistory(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetSearchHistory implements SearchEvent {
+  const factory _GetSearchHistory({required final SearchTables searchTable}) =
+      _$_GetSearchHistory;
+
+  SearchTables get searchTable => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$GetSearchHistoryCopyWith<_GetSearchHistory> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$SearchState {
   String? get selectedText => throw _privateConstructorUsedError;
+  bool get isSearchLoading => throw _privateConstructorUsedError;
   List<String>? get searchResult => throw _privateConstructorUsedError;
   List<String>? get filteredSearchHistory => throw _privateConstructorUsedError;
   Option<Either<NoteFailure, TimeFailure>> get searchFailureOrSucces =>
@@ -712,6 +930,7 @@ abstract class $SearchStateCopyWith<$Res> {
       _$SearchStateCopyWithImpl<$Res>;
   $Res call(
       {String? selectedText,
+      bool isSearchLoading,
       List<String>? searchResult,
       List<String>? filteredSearchHistory,
       Option<Either<NoteFailure, TimeFailure>> searchFailureOrSucces});
@@ -728,6 +947,7 @@ class _$SearchStateCopyWithImpl<$Res> implements $SearchStateCopyWith<$Res> {
   @override
   $Res call({
     Object? selectedText = freezed,
+    Object? isSearchLoading = freezed,
     Object? searchResult = freezed,
     Object? filteredSearchHistory = freezed,
     Object? searchFailureOrSucces = freezed,
@@ -737,6 +957,10 @@ class _$SearchStateCopyWithImpl<$Res> implements $SearchStateCopyWith<$Res> {
           ? _value.selectedText
           : selectedText // ignore: cast_nullable_to_non_nullable
               as String?,
+      isSearchLoading: isSearchLoading == freezed
+          ? _value.isSearchLoading
+          : isSearchLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       searchResult: searchResult == freezed
           ? _value.searchResult
           : searchResult // ignore: cast_nullable_to_non_nullable
@@ -762,6 +986,7 @@ abstract class _$SearchStateCopyWith<$Res>
   @override
   $Res call(
       {String? selectedText,
+      bool isSearchLoading,
       List<String>? searchResult,
       List<String>? filteredSearchHistory,
       Option<Either<NoteFailure, TimeFailure>> searchFailureOrSucces});
@@ -780,6 +1005,7 @@ class __$SearchStateCopyWithImpl<$Res> extends _$SearchStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? selectedText = freezed,
+    Object? isSearchLoading = freezed,
     Object? searchResult = freezed,
     Object? filteredSearchHistory = freezed,
     Object? searchFailureOrSucces = freezed,
@@ -789,6 +1015,10 @@ class __$SearchStateCopyWithImpl<$Res> extends _$SearchStateCopyWithImpl<$Res>
           ? _value.selectedText
           : selectedText // ignore: cast_nullable_to_non_nullable
               as String?,
+      isSearchLoading: isSearchLoading == freezed
+          ? _value.isSearchLoading
+          : isSearchLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       searchResult: searchResult == freezed
           ? _value.searchResult
           : searchResult // ignore: cast_nullable_to_non_nullable
@@ -810,6 +1040,7 @@ class __$SearchStateCopyWithImpl<$Res> extends _$SearchStateCopyWithImpl<$Res>
 class _$_SearchState implements _SearchState {
   const _$_SearchState(
       {required this.selectedText,
+      required this.isSearchLoading,
       required final List<String>? searchResult,
       required final List<String>? filteredSearchHistory,
       required this.searchFailureOrSucces})
@@ -818,6 +1049,8 @@ class _$_SearchState implements _SearchState {
 
   @override
   final String? selectedText;
+  @override
+  final bool isSearchLoading;
   final List<String>? _searchResult;
   @override
   List<String>? get searchResult {
@@ -841,7 +1074,7 @@ class _$_SearchState implements _SearchState {
 
   @override
   String toString() {
-    return 'SearchState(selectedText: $selectedText, searchResult: $searchResult, filteredSearchHistory: $filteredSearchHistory, searchFailureOrSucces: $searchFailureOrSucces)';
+    return 'SearchState(selectedText: $selectedText, isSearchLoading: $isSearchLoading, searchResult: $searchResult, filteredSearchHistory: $filteredSearchHistory, searchFailureOrSucces: $searchFailureOrSucces)';
   }
 
   @override
@@ -851,6 +1084,8 @@ class _$_SearchState implements _SearchState {
             other is _SearchState &&
             const DeepCollectionEquality()
                 .equals(other.selectedText, selectedText) &&
+            const DeepCollectionEquality()
+                .equals(other.isSearchLoading, isSearchLoading) &&
             const DeepCollectionEquality()
                 .equals(other.searchResult, searchResult) &&
             const DeepCollectionEquality()
@@ -863,6 +1098,7 @@ class _$_SearchState implements _SearchState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(selectedText),
+      const DeepCollectionEquality().hash(isSearchLoading),
       const DeepCollectionEquality().hash(searchResult),
       const DeepCollectionEquality().hash(filteredSearchHistory),
       const DeepCollectionEquality().hash(searchFailureOrSucces));
@@ -876,6 +1112,7 @@ class _$_SearchState implements _SearchState {
 abstract class _SearchState implements SearchState {
   const factory _SearchState(
       {required final String? selectedText,
+      required final bool isSearchLoading,
       required final List<String>? searchResult,
       required final List<String>? filteredSearchHistory,
       required final Option<Either<NoteFailure, TimeFailure>>
@@ -883,6 +1120,8 @@ abstract class _SearchState implements SearchState {
 
   @override
   String? get selectedText => throw _privateConstructorUsedError;
+  @override
+  bool get isSearchLoading => throw _privateConstructorUsedError;
   @override
   List<String>? get searchResult => throw _privateConstructorUsedError;
   @override

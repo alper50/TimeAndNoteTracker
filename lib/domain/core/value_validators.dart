@@ -30,7 +30,7 @@ Either<ValueFailure<String>, String> validatePassword(String input) {
 }
 
 //note
-Either<ValueFailure<String>, String> validateExceedingLength(
+Either<ValueFailure<String>, String> validateExceedingLengthNote(
     String input, int maxCharacter) {
   if (input.length <= maxCharacter) {
     return right(input);
@@ -44,7 +44,34 @@ Either<ValueFailure<String>, String> validateExceedingLength(
   }
 }
 
-Either<ValueFailure<String>, String> validateEmptyField(String input) {
+Either<ValueFailure<String>, String> validateEmptyFieldNote(String input) {
+  if (input.isNotEmpty) {
+    return right(input);
+  } else {
+    return left(
+      ValueFailure.note(
+        failedValue: NoteValueFailure.emptyField(failedValue: input),
+      ),
+    );
+  }
+}
+
+//time
+Either<ValueFailure<String>, String> validateExceedingLengthTime(
+    String input, int maxCharacter) {
+  if (input.length <= maxCharacter) {
+    return right(input);
+  } else {
+    return left(
+      ValueFailure.note(
+        failedValue: NoteValueFailure.maxCharacterExceeding(
+            failedValue: input, maxCharacter: maxCharacter),
+      ),
+    );
+  }
+}
+
+Either<ValueFailure<String>, String> validateEmptyFieldTime(String input) {
   if (input.isNotEmpty) {
     return right(input);
   } else {

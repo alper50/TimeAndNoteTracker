@@ -1,14 +1,13 @@
 import 'package:injectable/injectable.dart';
 import 'package:timenotetracker/domain/core/search/i_search_service.dart';
 
-@injectable
+@lazySingleton
 class SearchService extends ISearchService {
   SearchService() {
     filteredSearchHistory = filterSearchTexts(filter: null);
   }
 
-  final List<String> searchHistory =
-      []; //TODO make sure to load search history from local while app started
+  List<String>? searchHistory=[]; 
 
   List<String>? filteredSearchHistory;
   static const historyLength = 5;
@@ -19,11 +18,11 @@ class SearchService extends ISearchService {
     required String? filter,
   }) {
     if (filter != null && filter.isNotEmpty) {
-      return searchHistory.reversed
+      return searchHistory!.reversed
           .where((term) => term.startsWith(filter))
           .toList();
     } else {
-      return searchHistory.reversed.toList();
+      return searchHistory!.reversed.toList();
     }
   }
 
@@ -35,13 +34,13 @@ class SearchService extends ISearchService {
 
   @override
   void addSearchTerm(String term) {
-    if (searchHistory.contains(term)) {
+    if (searchHistory!.contains(term)) {
       putSearchTermFirst(term);
       return;
     } else {
-      searchHistory.add(term);
-      if (searchHistory.length > historyLength) {
-        searchHistory.removeRange(0, searchHistory.length - historyLength);
+      searchHistory!.add(term);
+      if (searchHistory!.length > historyLength) {
+        searchHistory!.removeRange(0, searchHistory!.length - historyLength);
       }
 
       filteredSearchHistory = filterSearchTexts(filter: null);
@@ -50,7 +49,7 @@ class SearchService extends ISearchService {
 
   @override
   void deleteSearchTerm(String term) {
-    searchHistory.removeWhere((t) => t == term);
+    searchHistory!.removeWhere((t) => t == term);
     filteredSearchHistory = filterSearchTexts(filter: null);
   }
 }

@@ -9,7 +9,7 @@ class TimeBody extends ValueObject<String>{
 
   factory TimeBody(String input) {
     return TimeBody._(
-      validateEmptyField(input)
+      validateEmptyFieldTime(input)
     );
   }
 
@@ -22,9 +22,9 @@ class TimeHeader extends ValueObject<String>{
   static const maxCharacter = 100;
   factory TimeHeader(String input) {
     return TimeHeader._(
-      validateEmptyField(input).flatMap(
+      validateEmptyFieldTime(input).flatMap(
         (outputFromFunc) =>
-            validateExceedingLength(outputFromFunc, maxCharacter),
+            validateExceedingLengthTime(outputFromFunc, maxCharacter),
       ),
     );
   }

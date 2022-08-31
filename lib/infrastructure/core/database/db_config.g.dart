@@ -1024,21 +1024,343 @@ class $TimeTableTable extends TimeTable
   }
 }
 
+class SearchNoteHistoryData extends DataClass
+    implements Insertable<SearchNoteHistoryData> {
+  final String searchNoteText;
+  SearchNoteHistoryData({required this.searchNoteText});
+  factory SearchNoteHistoryData.fromData(Map<String, dynamic> data,
+      {String? prefix}) {
+    final effectivePrefix = prefix ?? '';
+    return SearchNoteHistoryData(
+      searchNoteText: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}search_note_text'])!,
+    );
+  }
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['search_note_text'] = Variable<String>(searchNoteText);
+    return map;
+  }
+
+  SearchNoteHistoryCompanion toCompanion(bool nullToAbsent) {
+    return SearchNoteHistoryCompanion(
+      searchNoteText: Value(searchNoteText),
+    );
+  }
+
+  factory SearchNoteHistoryData.fromJson(Map<String, dynamic> json,
+      {ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return SearchNoteHistoryData(
+      searchNoteText: serializer.fromJson<String>(json['searchNoteText']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'searchNoteText': serializer.toJson<String>(searchNoteText),
+    };
+  }
+
+  SearchNoteHistoryData copyWith({String? searchNoteText}) =>
+      SearchNoteHistoryData(
+        searchNoteText: searchNoteText ?? this.searchNoteText,
+      );
+  @override
+  String toString() {
+    return (StringBuffer('SearchNoteHistoryData(')
+          ..write('searchNoteText: $searchNoteText')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => searchNoteText.hashCode;
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is SearchNoteHistoryData &&
+          other.searchNoteText == this.searchNoteText);
+}
+
+class SearchNoteHistoryCompanion
+    extends UpdateCompanion<SearchNoteHistoryData> {
+  final Value<String> searchNoteText;
+  const SearchNoteHistoryCompanion({
+    this.searchNoteText = const Value.absent(),
+  });
+  SearchNoteHistoryCompanion.insert({
+    required String searchNoteText,
+  }) : searchNoteText = Value(searchNoteText);
+  static Insertable<SearchNoteHistoryData> custom({
+    Expression<String>? searchNoteText,
+  }) {
+    return RawValuesInsertable({
+      if (searchNoteText != null) 'search_note_text': searchNoteText,
+    });
+  }
+
+  SearchNoteHistoryCompanion copyWith({Value<String>? searchNoteText}) {
+    return SearchNoteHistoryCompanion(
+      searchNoteText: searchNoteText ?? this.searchNoteText,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (searchNoteText.present) {
+      map['search_note_text'] = Variable<String>(searchNoteText.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('SearchNoteHistoryCompanion(')
+          ..write('searchNoteText: $searchNoteText')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $SearchNoteHistoryTable extends SearchNoteHistory
+    with TableInfo<$SearchNoteHistoryTable, SearchNoteHistoryData> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $SearchNoteHistoryTable(this.attachedDatabase, [this._alias]);
+  final VerificationMeta _searchNoteTextMeta =
+      const VerificationMeta('searchNoteText');
+  @override
+  late final GeneratedColumn<String?> searchNoteText =
+      GeneratedColumn<String?>('search_note_text', aliasedName, false,
+          additionalChecks: GeneratedColumn.checkTextLength(
+            minTextLength: 1,
+          ),
+          type: const StringType(),
+          requiredDuringInsert: true);
+  @override
+  List<GeneratedColumn> get $columns => [searchNoteText];
+  @override
+  String get aliasedName => _alias ?? 'searchNoteHistoryTable';
+  @override
+  String get actualTableName => 'searchNoteHistoryTable';
+  @override
+  VerificationContext validateIntegrity(
+      Insertable<SearchNoteHistoryData> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('search_note_text')) {
+      context.handle(
+          _searchNoteTextMeta,
+          searchNoteText.isAcceptableOrUnknown(
+              data['search_note_text']!, _searchNoteTextMeta));
+    } else if (isInserting) {
+      context.missing(_searchNoteTextMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {searchNoteText};
+  @override
+  SearchNoteHistoryData map(Map<String, dynamic> data, {String? tablePrefix}) {
+    return SearchNoteHistoryData.fromData(data,
+        prefix: tablePrefix != null ? '$tablePrefix.' : null);
+  }
+
+  @override
+  $SearchNoteHistoryTable createAlias(String alias) {
+    return $SearchNoteHistoryTable(attachedDatabase, alias);
+  }
+}
+
+class SearchTimeHistoryData extends DataClass
+    implements Insertable<SearchTimeHistoryData> {
+  final String searchTimeText;
+  SearchTimeHistoryData({required this.searchTimeText});
+  factory SearchTimeHistoryData.fromData(Map<String, dynamic> data,
+      {String? prefix}) {
+    final effectivePrefix = prefix ?? '';
+    return SearchTimeHistoryData(
+      searchTimeText: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}search_time_text'])!,
+    );
+  }
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['search_time_text'] = Variable<String>(searchTimeText);
+    return map;
+  }
+
+  SearchTimeHistoryCompanion toCompanion(bool nullToAbsent) {
+    return SearchTimeHistoryCompanion(
+      searchTimeText: Value(searchTimeText),
+    );
+  }
+
+  factory SearchTimeHistoryData.fromJson(Map<String, dynamic> json,
+      {ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return SearchTimeHistoryData(
+      searchTimeText: serializer.fromJson<String>(json['searchTimeText']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'searchTimeText': serializer.toJson<String>(searchTimeText),
+    };
+  }
+
+  SearchTimeHistoryData copyWith({String? searchTimeText}) =>
+      SearchTimeHistoryData(
+        searchTimeText: searchTimeText ?? this.searchTimeText,
+      );
+  @override
+  String toString() {
+    return (StringBuffer('SearchTimeHistoryData(')
+          ..write('searchTimeText: $searchTimeText')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => searchTimeText.hashCode;
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is SearchTimeHistoryData &&
+          other.searchTimeText == this.searchTimeText);
+}
+
+class SearchTimeHistoryCompanion
+    extends UpdateCompanion<SearchTimeHistoryData> {
+  final Value<String> searchTimeText;
+  const SearchTimeHistoryCompanion({
+    this.searchTimeText = const Value.absent(),
+  });
+  SearchTimeHistoryCompanion.insert({
+    required String searchTimeText,
+  }) : searchTimeText = Value(searchTimeText);
+  static Insertable<SearchTimeHistoryData> custom({
+    Expression<String>? searchTimeText,
+  }) {
+    return RawValuesInsertable({
+      if (searchTimeText != null) 'search_time_text': searchTimeText,
+    });
+  }
+
+  SearchTimeHistoryCompanion copyWith({Value<String>? searchTimeText}) {
+    return SearchTimeHistoryCompanion(
+      searchTimeText: searchTimeText ?? this.searchTimeText,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (searchTimeText.present) {
+      map['search_time_text'] = Variable<String>(searchTimeText.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('SearchTimeHistoryCompanion(')
+          ..write('searchTimeText: $searchTimeText')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $SearchTimeHistoryTable extends SearchTimeHistory
+    with TableInfo<$SearchTimeHistoryTable, SearchTimeHistoryData> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $SearchTimeHistoryTable(this.attachedDatabase, [this._alias]);
+  final VerificationMeta _searchTimeTextMeta =
+      const VerificationMeta('searchTimeText');
+  @override
+  late final GeneratedColumn<String?> searchTimeText =
+      GeneratedColumn<String?>('search_time_text', aliasedName, false,
+          additionalChecks: GeneratedColumn.checkTextLength(
+            minTextLength: 1,
+          ),
+          type: const StringType(),
+          requiredDuringInsert: true);
+  @override
+  List<GeneratedColumn> get $columns => [searchTimeText];
+  @override
+  String get aliasedName => _alias ?? 'searchTimeHistoryTable';
+  @override
+  String get actualTableName => 'searchTimeHistoryTable';
+  @override
+  VerificationContext validateIntegrity(
+      Insertable<SearchTimeHistoryData> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('search_time_text')) {
+      context.handle(
+          _searchTimeTextMeta,
+          searchTimeText.isAcceptableOrUnknown(
+              data['search_time_text']!, _searchTimeTextMeta));
+    } else if (isInserting) {
+      context.missing(_searchTimeTextMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {searchTimeText};
+  @override
+  SearchTimeHistoryData map(Map<String, dynamic> data, {String? tablePrefix}) {
+    return SearchTimeHistoryData.fromData(data,
+        prefix: tablePrefix != null ? '$tablePrefix.' : null);
+  }
+
+  @override
+  $SearchTimeHistoryTable createAlias(String alias) {
+    return $SearchTimeHistoryTable(attachedDatabase, alias);
+  }
+}
+
 abstract class _$MyDatabase extends GeneratedDatabase {
   _$MyDatabase(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
   late final $NoteTable note = $NoteTable(this);
   late final $TodoItemTable todoItem = $TodoItemTable(this);
   late final $AppInformationTable appInformation = $AppInformationTable(this);
   late final $TimeTableTable timeTable = $TimeTableTable(this);
+  late final $SearchNoteHistoryTable searchNoteHistory =
+      $SearchNoteHistoryTable(this);
+  late final $SearchTimeHistoryTable searchTimeHistory =
+      $SearchTimeHistoryTable(this);
   late final NoteLocalService noteLocalService =
       NoteLocalService(this as MyDatabase);
   late final AuthLocalService authLocalService =
       AuthLocalService(this as MyDatabase);
   late final TimeLocalService timeLocalService =
       TimeLocalService(this as MyDatabase);
+  late final SearchLocalService searchLocalService =
+      SearchLocalService(this as MyDatabase);
   @override
   Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
   @override
-  List<DatabaseSchemaEntity> get allSchemaEntities =>
-      [note, todoItem, appInformation, timeTable];
+  List<DatabaseSchemaEntity> get allSchemaEntities => [
+        note,
+        todoItem,
+        appInformation,
+        timeTable,
+        searchNoteHistory,
+        searchTimeHistory
+      ];
 }
