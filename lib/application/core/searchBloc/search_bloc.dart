@@ -7,8 +7,10 @@ import 'package:timenotetracker/domain/core/search/i_search_service.dart';
 import 'package:timenotetracker/domain/core/search/search_history_entity.dart';
 import 'package:timenotetracker/domain/core/search/search_history_value_objects.dart';
 import 'package:timenotetracker/domain/note/i_note_local_repository.dart';
+import 'package:timenotetracker/domain/note/note_entity.dart';
 import 'package:timenotetracker/domain/note/note_failure.dart';
 import 'package:timenotetracker/domain/timer/i_time_local_repository.dart';
+import 'package:timenotetracker/domain/timer/time_entity.dart';
 import 'package:timenotetracker/domain/timer/time_failure.dart';
 import 'package:timenotetracker/infrastructure/core/search/search_service.dart';
 
@@ -57,16 +59,14 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
                   await searchLocalRepository.createNoteHistory(
                       searchHistoryToBeCreated: SearchHistory(
                           searchHistoryText: SearchHistoryBody(e
-                              .query))); //TODO event will accepts SearchHistory object
+                              .query))); 
                   searchResult.fold(
                     (failure) => emit(state.copyWith(
                         searchFailureOrSucces: some(left(failure)))),
                     (succes) => emit(
                       state.copyWith(
                         selectedText: searchService.selectedText,
-                        searchResult: succes
-                            .map((e) => e.noteEditorBody.getValueOrCrash())
-                            .toList(),
+                        searchResult: left(succes),
                         filteredSearchHistory:
                             searchService.filteredSearchHistory,
                         searchFailureOrSucces: none(),
@@ -91,9 +91,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
                   (succes) => emit(
                     state.copyWith(
                       selectedText: searchService.selectedText,
-                      searchResult: succes
-                          .map((e) => e.timeBody.getValueOrCrash())
-                          .toList(),
+                      searchResult: right(succes),
                       filteredSearchHistory:
                           searchService.filteredSearchHistory,
                       searchFailureOrSucces: none(),

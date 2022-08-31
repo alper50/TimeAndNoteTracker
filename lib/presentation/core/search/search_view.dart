@@ -70,10 +70,17 @@ class _SearchViewState extends State<SearchView> {
                   : FloatingSearchBar(
                       controller: controller,
                       body: FloatingSearchBarScrollNotifier(
-                        child: SearchResultsView(
-                          searchResult: state.searchResult,
-                        ),
-                      ),
+                          child: state.searchResult!.fold(
+                              (notes) => SearchResultsView(
+                                  searchResult: notes
+                                      .map((note) =>
+                                          note.noteEditorBody.getValueOrCrash())
+                                      .toList()),
+                              (times) => SearchResultsView(
+                                  searchResult: times
+                                      .map((time) =>
+                                          time.timeBody.getValueOrCrash())
+                                      .toList()))),
                       transition: CircularFloatingSearchBarTransition(),
                       title: Text(state.selectedText ?? 'Start Searching',
                           style: MyTextStyles.headline3),
@@ -144,9 +151,10 @@ class _SearchViewState extends State<SearchView> {
                                                 context.read<SearchBloc>().add(
                                                       SearchEvent
                                                           .deleteSearchHistory(
-                                                        queryToBeDeleted: term,
-                                                        searchTable: widget.searchTable
-                                                      ),
+                                                              queryToBeDeleted:
+                                                                  term,
+                                                              searchTable: widget
+                                                                  .searchTable),
                                                     );
                                               },
                                             ),

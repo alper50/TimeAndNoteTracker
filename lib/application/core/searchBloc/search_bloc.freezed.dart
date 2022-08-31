@@ -913,7 +913,8 @@ abstract class _GetSearchHistory implements SearchEvent {
 mixin _$SearchState {
   String? get selectedText => throw _privateConstructorUsedError;
   bool get isSearchLoading => throw _privateConstructorUsedError;
-  List<String>? get searchResult => throw _privateConstructorUsedError;
+  Either<List<Note>, List<Time>>? get searchResult =>
+      throw _privateConstructorUsedError;
   List<String>? get filteredSearchHistory => throw _privateConstructorUsedError;
   Option<Either<NoteFailure, TimeFailure>> get searchFailureOrSucces =>
       throw _privateConstructorUsedError;
@@ -931,7 +932,7 @@ abstract class $SearchStateCopyWith<$Res> {
   $Res call(
       {String? selectedText,
       bool isSearchLoading,
-      List<String>? searchResult,
+      Either<List<Note>, List<Time>>? searchResult,
       List<String>? filteredSearchHistory,
       Option<Either<NoteFailure, TimeFailure>> searchFailureOrSucces});
 }
@@ -964,7 +965,7 @@ class _$SearchStateCopyWithImpl<$Res> implements $SearchStateCopyWith<$Res> {
       searchResult: searchResult == freezed
           ? _value.searchResult
           : searchResult // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as Either<List<Note>, List<Time>>?,
       filteredSearchHistory: filteredSearchHistory == freezed
           ? _value.filteredSearchHistory
           : filteredSearchHistory // ignore: cast_nullable_to_non_nullable
@@ -987,7 +988,7 @@ abstract class _$SearchStateCopyWith<$Res>
   $Res call(
       {String? selectedText,
       bool isSearchLoading,
-      List<String>? searchResult,
+      Either<List<Note>, List<Time>>? searchResult,
       List<String>? filteredSearchHistory,
       Option<Either<NoteFailure, TimeFailure>> searchFailureOrSucces});
 }
@@ -1022,7 +1023,7 @@ class __$SearchStateCopyWithImpl<$Res> extends _$SearchStateCopyWithImpl<$Res>
       searchResult: searchResult == freezed
           ? _value.searchResult
           : searchResult // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as Either<List<Note>, List<Time>>?,
       filteredSearchHistory: filteredSearchHistory == freezed
           ? _value.filteredSearchHistory
           : filteredSearchHistory // ignore: cast_nullable_to_non_nullable
@@ -1041,25 +1042,17 @@ class _$_SearchState implements _SearchState {
   const _$_SearchState(
       {required this.selectedText,
       required this.isSearchLoading,
-      required final List<String>? searchResult,
+      required this.searchResult,
       required final List<String>? filteredSearchHistory,
       required this.searchFailureOrSucces})
-      : _searchResult = searchResult,
-        _filteredSearchHistory = filteredSearchHistory;
+      : _filteredSearchHistory = filteredSearchHistory;
 
   @override
   final String? selectedText;
   @override
   final bool isSearchLoading;
-  final List<String>? _searchResult;
   @override
-  List<String>? get searchResult {
-    final value = _searchResult;
-    if (value == null) return null;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  final Either<List<Note>, List<Time>>? searchResult;
   final List<String>? _filteredSearchHistory;
   @override
   List<String>? get filteredSearchHistory {
@@ -1113,7 +1106,7 @@ abstract class _SearchState implements SearchState {
   const factory _SearchState(
       {required final String? selectedText,
       required final bool isSearchLoading,
-      required final List<String>? searchResult,
+      required final Either<List<Note>, List<Time>>? searchResult,
       required final List<String>? filteredSearchHistory,
       required final Option<Either<NoteFailure, TimeFailure>>
           searchFailureOrSucces}) = _$_SearchState;
@@ -1123,7 +1116,8 @@ abstract class _SearchState implements SearchState {
   @override
   bool get isSearchLoading => throw _privateConstructorUsedError;
   @override
-  List<String>? get searchResult => throw _privateConstructorUsedError;
+  Either<List<Note>, List<Time>>? get searchResult =>
+      throw _privateConstructorUsedError;
   @override
   List<String>? get filteredSearchHistory => throw _privateConstructorUsedError;
   @override

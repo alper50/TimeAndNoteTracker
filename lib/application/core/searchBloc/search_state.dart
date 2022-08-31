@@ -5,7 +5,7 @@ abstract class SearchState with _$SearchState {
   const factory SearchState({
     required String? selectedText,
     required bool isSearchLoading,
-    required List<String>? searchResult,
+    required Either<List<Note>,List<Time>>? searchResult,
     required List<String>? filteredSearchHistory,
     required Option<Either<NoteFailure,TimeFailure>> searchFailureOrSucces, 
   }) = _SearchState;
