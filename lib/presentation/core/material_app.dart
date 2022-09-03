@@ -5,6 +5,7 @@ import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
 import 'package:timenotetracker/application/core/internetConnectionBloc/internet_connection_bloc.dart';
 import 'package:timenotetracker/injection.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_network_failure_widget.dart';
+import 'package:timenotetracker/presentation/core/coreWidgets/my_theme_data.dart';
 import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_failure_view.dart';
 
@@ -24,10 +25,7 @@ class MaterialAppWidget extends StatelessWidget {
               ..add(InternetConnectionEvent.startListeningConnection())),
       ],
       child: MaterialApp.router(
-        theme: ThemeData(
-          splashColor: Colors.transparent,
-          highlightColor: Colors.transparent,
-        ),
+        theme: MyThemeData.lightheme, //TODO make theme bloc
         builder: (context, widget) => ResponsiveWrapper.builder(
           ClampingScrollWrapper.builder(
             context,

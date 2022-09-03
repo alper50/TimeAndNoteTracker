@@ -1,16 +1,14 @@
 import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:timenotetracker/domain/timer/ticker_entity.dart';
 import 'package:timenotetracker/domain/timer/time_entity.dart';
-import 'package:timenotetracker/domain/timer/time_value_objects.dart';
 
 part 'time_ticker_event.dart';
 part 'time_ticker_state.dart';
 part 'time_ticker_bloc.freezed.dart';
-
+//TODO ticker doesnt count
 @injectable
 class TimeTickerBloc extends Bloc<TimeTickerEvent, TimeTickerState> {
   final TickerForward ticker;
