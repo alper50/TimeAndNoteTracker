@@ -2,7 +2,7 @@ import 'package:drift/drift.dart';
 
 class TimeTable extends Table{
   TextColumn get id => text()();
-  TextColumn get timeHeader => text().withLength(min: 1)();
+  IntColumn get timeHeader => integer()();
   TextColumn get timeBody => text().withLength(min: 1)();
   DateTimeColumn get lastUpdatedTime => dateTime()();
   DateTimeColumn get createdTime => dateTime()();

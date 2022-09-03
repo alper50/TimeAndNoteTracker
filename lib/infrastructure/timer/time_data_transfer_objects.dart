@@ -12,7 +12,7 @@ abstract class TimeDTO implements _$TimeDTO {
 
   const factory TimeDTO({
     required String id,
-    required String timeHeader,
+    required int timeHeader,
     required String timeBody,
     required DateTime lastUpdatedTime,
     required DateTime createdTime,

@@ -8,3 +8,12 @@ class TickerBackward {
         .take(ticks);
   }
 }
+
+@lazySingleton
+class TickerForward {
+  const TickerForward();
+  Stream<int> tick({required int ticks}) {
+    return Stream.periodic(const Duration(seconds: 1), (x) => ticks + x + 100000)
+        .take(ticks);
+  }
+}

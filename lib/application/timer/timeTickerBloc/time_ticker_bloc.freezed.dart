@@ -18,29 +18,29 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$TimeTickerEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int duration) started,
+    required TResult Function(Time time) started,
     required TResult Function() paused,
     required TResult Function() resumed,
-    required TResult Function() reset,
-    required TResult Function(int duration) ticked,
+    required TResult Function(Time time) reset,
+    required TResult Function(Time time) ticked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int duration)? started,
+    TResult Function(Time time)? started,
     TResult Function()? paused,
     TResult Function()? resumed,
-    TResult Function()? reset,
-    TResult Function(int duration)? ticked,
+    TResult Function(Time time)? reset,
+    TResult Function(Time time)? ticked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int duration)? started,
+    TResult Function(Time time)? started,
     TResult Function()? paused,
     TResult Function()? resumed,
-    TResult Function()? reset,
-    TResult Function(int duration)? ticked,
+    TResult Function(Time time)? reset,
+    TResult Function(Time time)? ticked,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -95,7 +95,9 @@ class _$TimeTickerEventCopyWithImpl<$Res>
 abstract class _$StartedCopyWith<$Res> {
   factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
       __$StartedCopyWithImpl<$Res>;
-  $Res call({int duration});
+  $Res call({Time time});
+
+  $TimeCopyWith<$Res> get time;
 }
 
 /// @nodoc
@@ -109,28 +111,35 @@ class __$StartedCopyWithImpl<$Res> extends _$TimeTickerEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? duration = freezed,
+    Object? time = freezed,
   }) {
     return _then(_Started(
-      duration: duration == freezed
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as int,
+      time: time == freezed
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as Time,
     ));
+  }
+
+  @override
+  $TimeCopyWith<$Res> get time {
+    return $TimeCopyWith<$Res>(_value.time, (value) {
+      return _then(_value.copyWith(time: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$_Started implements _Started {
-  const _$_Started({required this.duration});
+  const _$_Started({required this.time});
 
   @override
-  final int duration;
+  final Time time;
 
   @override
   String toString() {
-    return 'TimeTickerEvent.started(duration: $duration)';
+    return 'TimeTickerEvent.started(time: $time)';
   }
 
   @override
@@ -138,12 +147,12 @@ class _$_Started implements _Started {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Started &&
-            const DeepCollectionEquality().equals(other.duration, duration));
+            const DeepCollectionEquality().equals(other.time, time));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(duration));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
 
   @JsonKey(ignore: true)
   @override
@@ -153,39 +162,39 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int duration) started,
+    required TResult Function(Time time) started,
     required TResult Function() paused,
     required TResult Function() resumed,
-    required TResult Function() reset,
-    required TResult Function(int duration) ticked,
+    required TResult Function(Time time) reset,
+    required TResult Function(Time time) ticked,
   }) {
-    return started(duration);
+    return started(time);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int duration)? started,
+    TResult Function(Time time)? started,
     TResult Function()? paused,
     TResult Function()? resumed,
-    TResult Function()? reset,
-    TResult Function(int duration)? ticked,
+    TResult Function(Time time)? reset,
+    TResult Function(Time time)? ticked,
   }) {
-    return started?.call(duration);
+    return started?.call(time);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int duration)? started,
+    TResult Function(Time time)? started,
     TResult Function()? paused,
     TResult Function()? resumed,
-    TResult Function()? reset,
-    TResult Function(int duration)? ticked,
+    TResult Function(Time time)? reset,
+    TResult Function(Time time)? ticked,
     required TResult orElse(),
   }) {
     if (started != null) {
-      return started(duration);
+      return started(time);
     }
     return orElse();
   }
@@ -232,9 +241,9 @@ class _$_Started implements _Started {
 }
 
 abstract class _Started implements TimeTickerEvent {
-  const factory _Started({required final int duration}) = _$_Started;
+  const factory _Started({required final Time time}) = _$_Started;
 
-  int get duration => throw _privateConstructorUsedError;
+  Time get time => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$StartedCopyWith<_Started> get copyWith =>
       throw _privateConstructorUsedError;
@@ -278,11 +287,11 @@ class _$_Paused implements _Paused {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int duration) started,
+    required TResult Function(Time time) started,
     required TResult Function() paused,
     required TResult Function() resumed,
-    required TResult Function() reset,
-    required TResult Function(int duration) ticked,
+    required TResult Function(Time time) reset,
+    required TResult Function(Time time) ticked,
   }) {
     return paused();
   }
@@ -290,11 +299,11 @@ class _$_Paused implements _Paused {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int duration)? started,
+    TResult Function(Time time)? started,
     TResult Function()? paused,
     TResult Function()? resumed,
-    TResult Function()? reset,
-    TResult Function(int duration)? ticked,
+    TResult Function(Time time)? reset,
+    TResult Function(Time time)? ticked,
   }) {
     return paused?.call();
   }
@@ -302,11 +311,11 @@ class _$_Paused implements _Paused {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int duration)? started,
+    TResult Function(Time time)? started,
     TResult Function()? paused,
     TResult Function()? resumed,
-    TResult Function()? reset,
-    TResult Function(int duration)? ticked,
+    TResult Function(Time time)? reset,
+    TResult Function(Time time)? ticked,
     required TResult orElse(),
   }) {
     if (paused != null) {
@@ -398,11 +407,11 @@ class _$_Resumed implements _Resumed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int duration) started,
+    required TResult Function(Time time) started,
     required TResult Function() paused,
     required TResult Function() resumed,
-    required TResult Function() reset,
-    required TResult Function(int duration) ticked,
+    required TResult Function(Time time) reset,
+    required TResult Function(Time time) ticked,
   }) {
     return resumed();
   }
@@ -410,11 +419,11 @@ class _$_Resumed implements _Resumed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int duration)? started,
+    TResult Function(Time time)? started,
     TResult Function()? paused,
     TResult Function()? resumed,
-    TResult Function()? reset,
-    TResult Function(int duration)? ticked,
+    TResult Function(Time time)? reset,
+    TResult Function(Time time)? ticked,
   }) {
     return resumed?.call();
   }
@@ -422,11 +431,11 @@ class _$_Resumed implements _Resumed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int duration)? started,
+    TResult Function(Time time)? started,
     TResult Function()? paused,
     TResult Function()? resumed,
-    TResult Function()? reset,
-    TResult Function(int duration)? ticked,
+    TResult Function(Time time)? reset,
+    TResult Function(Time time)? ticked,
     required TResult orElse(),
   }) {
     if (resumed != null) {
@@ -484,6 +493,9 @@ abstract class _Resumed implements TimeTickerEvent {
 abstract class _$ResetCopyWith<$Res> {
   factory _$ResetCopyWith(_Reset value, $Res Function(_Reset) then) =
       __$ResetCopyWithImpl<$Res>;
+  $Res call({Time time});
+
+  $TimeCopyWith<$Res> get time;
 }
 
 /// @nodoc
@@ -494,63 +506,93 @@ class __$ResetCopyWithImpl<$Res> extends _$TimeTickerEventCopyWithImpl<$Res>
 
   @override
   _Reset get _value => super._value as _Reset;
+
+  @override
+  $Res call({
+    Object? time = freezed,
+  }) {
+    return _then(_Reset(
+      time: time == freezed
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as Time,
+    ));
+  }
+
+  @override
+  $TimeCopyWith<$Res> get time {
+    return $TimeCopyWith<$Res>(_value.time, (value) {
+      return _then(_value.copyWith(time: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$_Reset implements _Reset {
-  const _$_Reset();
+  const _$_Reset({required this.time});
+
+  @override
+  final Time time;
 
   @override
   String toString() {
-    return 'TimeTickerEvent.reset()';
+    return 'TimeTickerEvent.reset(time: $time)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Reset);
+        (other.runtimeType == runtimeType &&
+            other is _Reset &&
+            const DeepCollectionEquality().equals(other.time, time));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
+
+  @JsonKey(ignore: true)
+  @override
+  _$ResetCopyWith<_Reset> get copyWith =>
+      __$ResetCopyWithImpl<_Reset>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int duration) started,
+    required TResult Function(Time time) started,
     required TResult Function() paused,
     required TResult Function() resumed,
-    required TResult Function() reset,
-    required TResult Function(int duration) ticked,
+    required TResult Function(Time time) reset,
+    required TResult Function(Time time) ticked,
   }) {
-    return reset();
+    return reset(time);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int duration)? started,
+    TResult Function(Time time)? started,
     TResult Function()? paused,
     TResult Function()? resumed,
-    TResult Function()? reset,
-    TResult Function(int duration)? ticked,
+    TResult Function(Time time)? reset,
+    TResult Function(Time time)? ticked,
   }) {
-    return reset?.call();
+    return reset?.call(time);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int duration)? started,
+    TResult Function(Time time)? started,
     TResult Function()? paused,
     TResult Function()? resumed,
-    TResult Function()? reset,
-    TResult Function(int duration)? ticked,
+    TResult Function(Time time)? reset,
+    TResult Function(Time time)? ticked,
     required TResult orElse(),
   }) {
     if (reset != null) {
-      return reset();
+      return reset(time);
     }
     return orElse();
   }
@@ -597,14 +639,20 @@ class _$_Reset implements _Reset {
 }
 
 abstract class _Reset implements TimeTickerEvent {
-  const factory _Reset() = _$_Reset;
+  const factory _Reset({required final Time time}) = _$_Reset;
+
+  Time get time => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ResetCopyWith<_Reset> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$TickedCopyWith<$Res> {
   factory _$TickedCopyWith(_Ticked value, $Res Function(_Ticked) then) =
       __$TickedCopyWithImpl<$Res>;
-  $Res call({int duration});
+  $Res call({Time time});
+
+  $TimeCopyWith<$Res> get time;
 }
 
 /// @nodoc
@@ -618,28 +666,35 @@ class __$TickedCopyWithImpl<$Res> extends _$TimeTickerEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? duration = freezed,
+    Object? time = freezed,
   }) {
     return _then(_Ticked(
-      duration: duration == freezed
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as int,
+      time: time == freezed
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as Time,
     ));
+  }
+
+  @override
+  $TimeCopyWith<$Res> get time {
+    return $TimeCopyWith<$Res>(_value.time, (value) {
+      return _then(_value.copyWith(time: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$_Ticked implements _Ticked {
-  const _$_Ticked({required this.duration});
+  const _$_Ticked({required this.time});
 
   @override
-  final int duration;
+  final Time time;
 
   @override
   String toString() {
-    return 'TimeTickerEvent.ticked(duration: $duration)';
+    return 'TimeTickerEvent.ticked(time: $time)';
   }
 
   @override
@@ -647,12 +702,12 @@ class _$_Ticked implements _Ticked {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Ticked &&
-            const DeepCollectionEquality().equals(other.duration, duration));
+            const DeepCollectionEquality().equals(other.time, time));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(duration));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
 
   @JsonKey(ignore: true)
   @override
@@ -662,39 +717,39 @@ class _$_Ticked implements _Ticked {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int duration) started,
+    required TResult Function(Time time) started,
     required TResult Function() paused,
     required TResult Function() resumed,
-    required TResult Function() reset,
-    required TResult Function(int duration) ticked,
+    required TResult Function(Time time) reset,
+    required TResult Function(Time time) ticked,
   }) {
-    return ticked(duration);
+    return ticked(time);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int duration)? started,
+    TResult Function(Time time)? started,
     TResult Function()? paused,
     TResult Function()? resumed,
-    TResult Function()? reset,
-    TResult Function(int duration)? ticked,
+    TResult Function(Time time)? reset,
+    TResult Function(Time time)? ticked,
   }) {
-    return ticked?.call(duration);
+    return ticked?.call(time);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int duration)? started,
+    TResult Function(Time time)? started,
     TResult Function()? paused,
     TResult Function()? resumed,
-    TResult Function()? reset,
-    TResult Function(int duration)? ticked,
+    TResult Function(Time time)? reset,
+    TResult Function(Time time)? ticked,
     required TResult orElse(),
   }) {
     if (ticked != null) {
-      return ticked(duration);
+      return ticked(time);
     }
     return orElse();
   }
@@ -741,38 +796,38 @@ class _$_Ticked implements _Ticked {
 }
 
 abstract class _Ticked implements TimeTickerEvent {
-  const factory _Ticked({required final int duration}) = _$_Ticked;
+  const factory _Ticked({required final Time time}) = _$_Ticked;
 
-  int get duration => throw _privateConstructorUsedError;
+  Time get time => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$TickedCopyWith<_Ticked> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$TimeTickerState {
-  int get duration => throw _privateConstructorUsedError;
+  Time get time => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int duration) initial,
-    required TResult Function(int duration) timeInPause,
-    required TResult Function(int duration) timeInProgress,
-    required TResult Function(int duration) timeCompleted,
+    required TResult Function(Time time) initial,
+    required TResult Function(Time time) timeInPause,
+    required TResult Function(Time time) timeInProgress,
+    required TResult Function(Time time) timeCompleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int duration)? initial,
-    TResult Function(int duration)? timeInPause,
-    TResult Function(int duration)? timeInProgress,
-    TResult Function(int duration)? timeCompleted,
+    TResult Function(Time time)? initial,
+    TResult Function(Time time)? timeInPause,
+    TResult Function(Time time)? timeInProgress,
+    TResult Function(Time time)? timeCompleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int duration)? initial,
-    TResult Function(int duration)? timeInPause,
-    TResult Function(int duration)? timeInProgress,
-    TResult Function(int duration)? timeCompleted,
+    TResult Function(Time time)? initial,
+    TResult Function(Time time)? timeInPause,
+    TResult Function(Time time)? timeInProgress,
+    TResult Function(Time time)? timeCompleted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -812,7 +867,9 @@ abstract class $TimeTickerStateCopyWith<$Res> {
   factory $TimeTickerStateCopyWith(
           TimeTickerState value, $Res Function(TimeTickerState) then) =
       _$TimeTickerStateCopyWithImpl<$Res>;
-  $Res call({int duration});
+  $Res call({Time time});
+
+  $TimeCopyWith<$Res> get time;
 }
 
 /// @nodoc
@@ -826,14 +883,21 @@ class _$TimeTickerStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? duration = freezed,
+    Object? time = freezed,
   }) {
     return _then(_value.copyWith(
-      duration: duration == freezed
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as int,
+      time: time == freezed
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as Time,
     ));
+  }
+
+  @override
+  $TimeCopyWith<$Res> get time {
+    return $TimeCopyWith<$Res>(_value.time, (value) {
+      return _then(_value.copyWith(time: value));
+    });
   }
 }
 
@@ -843,7 +907,10 @@ abstract class _$InitialCopyWith<$Res>
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
   @override
-  $Res call({int duration});
+  $Res call({Time time});
+
+  @override
+  $TimeCopyWith<$Res> get time;
 }
 
 /// @nodoc
@@ -857,13 +924,13 @@ class __$InitialCopyWithImpl<$Res> extends _$TimeTickerStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? duration = freezed,
+    Object? time = freezed,
   }) {
     return _then(_Initial(
-      duration: duration == freezed
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as int,
+      time: time == freezed
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as Time,
     ));
   }
 }
@@ -871,14 +938,14 @@ class __$InitialCopyWithImpl<$Res> extends _$TimeTickerStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Initial implements _Initial {
-  const _$_Initial({required this.duration});
+  const _$_Initial({required this.time});
 
   @override
-  final int duration;
+  final Time time;
 
   @override
   String toString() {
-    return 'TimeTickerState.initial(duration: $duration)';
+    return 'TimeTickerState.initial(time: $time)';
   }
 
   @override
@@ -886,12 +953,12 @@ class _$_Initial implements _Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Initial &&
-            const DeepCollectionEquality().equals(other.duration, duration));
+            const DeepCollectionEquality().equals(other.time, time));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(duration));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
 
   @JsonKey(ignore: true)
   @override
@@ -901,36 +968,36 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int duration) initial,
-    required TResult Function(int duration) timeInPause,
-    required TResult Function(int duration) timeInProgress,
-    required TResult Function(int duration) timeCompleted,
+    required TResult Function(Time time) initial,
+    required TResult Function(Time time) timeInPause,
+    required TResult Function(Time time) timeInProgress,
+    required TResult Function(Time time) timeCompleted,
   }) {
-    return initial(duration);
+    return initial(time);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int duration)? initial,
-    TResult Function(int duration)? timeInPause,
-    TResult Function(int duration)? timeInProgress,
-    TResult Function(int duration)? timeCompleted,
+    TResult Function(Time time)? initial,
+    TResult Function(Time time)? timeInPause,
+    TResult Function(Time time)? timeInProgress,
+    TResult Function(Time time)? timeCompleted,
   }) {
-    return initial?.call(duration);
+    return initial?.call(time);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int duration)? initial,
-    TResult Function(int duration)? timeInPause,
-    TResult Function(int duration)? timeInProgress,
-    TResult Function(int duration)? timeCompleted,
+    TResult Function(Time time)? initial,
+    TResult Function(Time time)? timeInPause,
+    TResult Function(Time time)? timeInProgress,
+    TResult Function(Time time)? timeCompleted,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(duration);
+      return initial(time);
     }
     return orElse();
   }
@@ -974,10 +1041,10 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements TimeTickerState {
-  const factory _Initial({required final int duration}) = _$_Initial;
+  const factory _Initial({required final Time time}) = _$_Initial;
 
   @override
-  int get duration => throw _privateConstructorUsedError;
+  Time get time => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$InitialCopyWith<_Initial> get copyWith =>
@@ -991,7 +1058,10 @@ abstract class _$TimeInPauseCopyWith<$Res>
           _TimeInPause value, $Res Function(_TimeInPause) then) =
       __$TimeInPauseCopyWithImpl<$Res>;
   @override
-  $Res call({int duration});
+  $Res call({Time time});
+
+  @override
+  $TimeCopyWith<$Res> get time;
 }
 
 /// @nodoc
@@ -1007,13 +1077,13 @@ class __$TimeInPauseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? duration = freezed,
+    Object? time = freezed,
   }) {
     return _then(_TimeInPause(
-      duration: duration == freezed
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as int,
+      time: time == freezed
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as Time,
     ));
   }
 }
@@ -1021,14 +1091,14 @@ class __$TimeInPauseCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_TimeInPause implements _TimeInPause {
-  const _$_TimeInPause({required this.duration});
+  const _$_TimeInPause({required this.time});
 
   @override
-  final int duration;
+  final Time time;
 
   @override
   String toString() {
-    return 'TimeTickerState.timeInPause(duration: $duration)';
+    return 'TimeTickerState.timeInPause(time: $time)';
   }
 
   @override
@@ -1036,12 +1106,12 @@ class _$_TimeInPause implements _TimeInPause {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _TimeInPause &&
-            const DeepCollectionEquality().equals(other.duration, duration));
+            const DeepCollectionEquality().equals(other.time, time));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(duration));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
 
   @JsonKey(ignore: true)
   @override
@@ -1051,36 +1121,36 @@ class _$_TimeInPause implements _TimeInPause {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int duration) initial,
-    required TResult Function(int duration) timeInPause,
-    required TResult Function(int duration) timeInProgress,
-    required TResult Function(int duration) timeCompleted,
+    required TResult Function(Time time) initial,
+    required TResult Function(Time time) timeInPause,
+    required TResult Function(Time time) timeInProgress,
+    required TResult Function(Time time) timeCompleted,
   }) {
-    return timeInPause(duration);
+    return timeInPause(time);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int duration)? initial,
-    TResult Function(int duration)? timeInPause,
-    TResult Function(int duration)? timeInProgress,
-    TResult Function(int duration)? timeCompleted,
+    TResult Function(Time time)? initial,
+    TResult Function(Time time)? timeInPause,
+    TResult Function(Time time)? timeInProgress,
+    TResult Function(Time time)? timeCompleted,
   }) {
-    return timeInPause?.call(duration);
+    return timeInPause?.call(time);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int duration)? initial,
-    TResult Function(int duration)? timeInPause,
-    TResult Function(int duration)? timeInProgress,
-    TResult Function(int duration)? timeCompleted,
+    TResult Function(Time time)? initial,
+    TResult Function(Time time)? timeInPause,
+    TResult Function(Time time)? timeInProgress,
+    TResult Function(Time time)? timeCompleted,
     required TResult orElse(),
   }) {
     if (timeInPause != null) {
-      return timeInPause(duration);
+      return timeInPause(time);
     }
     return orElse();
   }
@@ -1124,10 +1194,10 @@ class _$_TimeInPause implements _TimeInPause {
 }
 
 abstract class _TimeInPause implements TimeTickerState {
-  const factory _TimeInPause({required final int duration}) = _$_TimeInPause;
+  const factory _TimeInPause({required final Time time}) = _$_TimeInPause;
 
   @override
-  int get duration => throw _privateConstructorUsedError;
+  Time get time => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TimeInPauseCopyWith<_TimeInPause> get copyWith =>
@@ -1141,7 +1211,10 @@ abstract class _$TimeInProgressCopyWith<$Res>
           _TimeInProgress value, $Res Function(_TimeInProgress) then) =
       __$TimeInProgressCopyWithImpl<$Res>;
   @override
-  $Res call({int duration});
+  $Res call({Time time});
+
+  @override
+  $TimeCopyWith<$Res> get time;
 }
 
 /// @nodoc
@@ -1157,13 +1230,13 @@ class __$TimeInProgressCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? duration = freezed,
+    Object? time = freezed,
   }) {
     return _then(_TimeInProgress(
-      duration: duration == freezed
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as int,
+      time: time == freezed
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as Time,
     ));
   }
 }
@@ -1171,14 +1244,14 @@ class __$TimeInProgressCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_TimeInProgress implements _TimeInProgress {
-  const _$_TimeInProgress({required this.duration});
+  const _$_TimeInProgress({required this.time});
 
   @override
-  final int duration;
+  final Time time;
 
   @override
   String toString() {
-    return 'TimeTickerState.timeInProgress(duration: $duration)';
+    return 'TimeTickerState.timeInProgress(time: $time)';
   }
 
   @override
@@ -1186,12 +1259,12 @@ class _$_TimeInProgress implements _TimeInProgress {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _TimeInProgress &&
-            const DeepCollectionEquality().equals(other.duration, duration));
+            const DeepCollectionEquality().equals(other.time, time));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(duration));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
 
   @JsonKey(ignore: true)
   @override
@@ -1201,36 +1274,36 @@ class _$_TimeInProgress implements _TimeInProgress {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int duration) initial,
-    required TResult Function(int duration) timeInPause,
-    required TResult Function(int duration) timeInProgress,
-    required TResult Function(int duration) timeCompleted,
+    required TResult Function(Time time) initial,
+    required TResult Function(Time time) timeInPause,
+    required TResult Function(Time time) timeInProgress,
+    required TResult Function(Time time) timeCompleted,
   }) {
-    return timeInProgress(duration);
+    return timeInProgress(time);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int duration)? initial,
-    TResult Function(int duration)? timeInPause,
-    TResult Function(int duration)? timeInProgress,
-    TResult Function(int duration)? timeCompleted,
+    TResult Function(Time time)? initial,
+    TResult Function(Time time)? timeInPause,
+    TResult Function(Time time)? timeInProgress,
+    TResult Function(Time time)? timeCompleted,
   }) {
-    return timeInProgress?.call(duration);
+    return timeInProgress?.call(time);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int duration)? initial,
-    TResult Function(int duration)? timeInPause,
-    TResult Function(int duration)? timeInProgress,
-    TResult Function(int duration)? timeCompleted,
+    TResult Function(Time time)? initial,
+    TResult Function(Time time)? timeInPause,
+    TResult Function(Time time)? timeInProgress,
+    TResult Function(Time time)? timeCompleted,
     required TResult orElse(),
   }) {
     if (timeInProgress != null) {
-      return timeInProgress(duration);
+      return timeInProgress(time);
     }
     return orElse();
   }
@@ -1274,11 +1347,10 @@ class _$_TimeInProgress implements _TimeInProgress {
 }
 
 abstract class _TimeInProgress implements TimeTickerState {
-  const factory _TimeInProgress({required final int duration}) =
-      _$_TimeInProgress;
+  const factory _TimeInProgress({required final Time time}) = _$_TimeInProgress;
 
   @override
-  int get duration => throw _privateConstructorUsedError;
+  Time get time => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TimeInProgressCopyWith<_TimeInProgress> get copyWith =>
@@ -1292,7 +1364,10 @@ abstract class _$TimeCompletedCopyWith<$Res>
           _TimeCompleted value, $Res Function(_TimeCompleted) then) =
       __$TimeCompletedCopyWithImpl<$Res>;
   @override
-  $Res call({int duration});
+  $Res call({Time time});
+
+  @override
+  $TimeCopyWith<$Res> get time;
 }
 
 /// @nodoc
@@ -1308,13 +1383,13 @@ class __$TimeCompletedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? duration = freezed,
+    Object? time = freezed,
   }) {
     return _then(_TimeCompleted(
-      duration: duration == freezed
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as int,
+      time: time == freezed
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as Time,
     ));
   }
 }
@@ -1322,14 +1397,14 @@ class __$TimeCompletedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_TimeCompleted implements _TimeCompleted {
-  const _$_TimeCompleted({required this.duration});
+  const _$_TimeCompleted({required this.time});
 
   @override
-  final int duration;
+  final Time time;
 
   @override
   String toString() {
-    return 'TimeTickerState.timeCompleted(duration: $duration)';
+    return 'TimeTickerState.timeCompleted(time: $time)';
   }
 
   @override
@@ -1337,12 +1412,12 @@ class _$_TimeCompleted implements _TimeCompleted {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _TimeCompleted &&
-            const DeepCollectionEquality().equals(other.duration, duration));
+            const DeepCollectionEquality().equals(other.time, time));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(duration));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
 
   @JsonKey(ignore: true)
   @override
@@ -1352,36 +1427,36 @@ class _$_TimeCompleted implements _TimeCompleted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int duration) initial,
-    required TResult Function(int duration) timeInPause,
-    required TResult Function(int duration) timeInProgress,
-    required TResult Function(int duration) timeCompleted,
+    required TResult Function(Time time) initial,
+    required TResult Function(Time time) timeInPause,
+    required TResult Function(Time time) timeInProgress,
+    required TResult Function(Time time) timeCompleted,
   }) {
-    return timeCompleted(duration);
+    return timeCompleted(time);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int duration)? initial,
-    TResult Function(int duration)? timeInPause,
-    TResult Function(int duration)? timeInProgress,
-    TResult Function(int duration)? timeCompleted,
+    TResult Function(Time time)? initial,
+    TResult Function(Time time)? timeInPause,
+    TResult Function(Time time)? timeInProgress,
+    TResult Function(Time time)? timeCompleted,
   }) {
-    return timeCompleted?.call(duration);
+    return timeCompleted?.call(time);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int duration)? initial,
-    TResult Function(int duration)? timeInPause,
-    TResult Function(int duration)? timeInProgress,
-    TResult Function(int duration)? timeCompleted,
+    TResult Function(Time time)? initial,
+    TResult Function(Time time)? timeInPause,
+    TResult Function(Time time)? timeInProgress,
+    TResult Function(Time time)? timeCompleted,
     required TResult orElse(),
   }) {
     if (timeCompleted != null) {
-      return timeCompleted(duration);
+      return timeCompleted(time);
     }
     return orElse();
   }
@@ -1425,11 +1500,10 @@ class _$_TimeCompleted implements _TimeCompleted {
 }
 
 abstract class _TimeCompleted implements TimeTickerState {
-  const factory _TimeCompleted({required final int duration}) =
-      _$_TimeCompleted;
+  const factory _TimeCompleted({required final Time time}) = _$_TimeCompleted;
 
   @override
-  int get duration => throw _privateConstructorUsedError;
+  Time get time => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TimeCompletedCopyWith<_TimeCompleted> get copyWith =>

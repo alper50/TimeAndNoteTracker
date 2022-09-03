@@ -13,7 +13,7 @@ class TimeSuccesCard extends ITimeCard {
             backgroundColor: MyColors.lightPrimaryColor,
             child: Column(
               children: [
-                Text(time.timeHeader.getValueOrCrash()),
+                Text(time.timeHeader.getValueOrCrash().toString()),
                 SizedBox(height: 10),
                 Text(time.timeBody.getValueOrCrash()),
               ],

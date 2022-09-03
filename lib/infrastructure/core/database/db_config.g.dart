@@ -722,7 +722,7 @@ class $AppInformationTable extends AppInformation
 
 class TimeTableData extends DataClass implements Insertable<TimeTableData> {
   final String id;
-  final String timeHeader;
+  final int timeHeader;
   final String timeBody;
   final DateTime lastUpdatedTime;
   final DateTime createdTime;
@@ -737,7 +737,7 @@ class TimeTableData extends DataClass implements Insertable<TimeTableData> {
     return TimeTableData(
       id: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}id'])!,
-      timeHeader: const StringType()
+      timeHeader: const IntType()
           .mapFromDatabaseResponse(data['${effectivePrefix}time_header'])!,
       timeBody: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}time_body'])!,
@@ -751,7 +751,7 @@ class TimeTableData extends DataClass implements Insertable<TimeTableData> {
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
     map['id'] = Variable<String>(id);
-    map['time_header'] = Variable<String>(timeHeader);
+    map['time_header'] = Variable<int>(timeHeader);
     map['time_body'] = Variable<String>(timeBody);
     map['last_updated_time'] = Variable<DateTime>(lastUpdatedTime);
     map['created_time'] = Variable<DateTime>(createdTime);
@@ -773,7 +773,7 @@ class TimeTableData extends DataClass implements Insertable<TimeTableData> {
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return TimeTableData(
       id: serializer.fromJson<String>(json['id']),
-      timeHeader: serializer.fromJson<String>(json['timeHeader']),
+      timeHeader: serializer.fromJson<int>(json['timeHeader']),
       timeBody: serializer.fromJson<String>(json['timeBody']),
       lastUpdatedTime: serializer.fromJson<DateTime>(json['lastUpdatedTime']),
       createdTime: serializer.fromJson<DateTime>(json['createdTime']),
@@ -784,7 +784,7 @@ class TimeTableData extends DataClass implements Insertable<TimeTableData> {
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return <String, dynamic>{
       'id': serializer.toJson<String>(id),
-      'timeHeader': serializer.toJson<String>(timeHeader),
+      'timeHeader': serializer.toJson<int>(timeHeader),
       'timeBody': serializer.toJson<String>(timeBody),
       'lastUpdatedTime': serializer.toJson<DateTime>(lastUpdatedTime),
       'createdTime': serializer.toJson<DateTime>(createdTime),
@@ -793,7 +793,7 @@ class TimeTableData extends DataClass implements Insertable<TimeTableData> {
 
   TimeTableData copyWith(
           {String? id,
-          String? timeHeader,
+          int? timeHeader,
           String? timeBody,
           DateTime? lastUpdatedTime,
           DateTime? createdTime}) =>
@@ -832,7 +832,7 @@ class TimeTableData extends DataClass implements Insertable<TimeTableData> {
 
 class TimeTableCompanion extends UpdateCompanion<TimeTableData> {
   final Value<String> id;
-  final Value<String> timeHeader;
+  final Value<int> timeHeader;
   final Value<String> timeBody;
   final Value<DateTime> lastUpdatedTime;
   final Value<DateTime> createdTime;
@@ -845,7 +845,7 @@ class TimeTableCompanion extends UpdateCompanion<TimeTableData> {
   });
   TimeTableCompanion.insert({
     required String id,
-    required String timeHeader,
+    required int timeHeader,
     required String timeBody,
     required DateTime lastUpdatedTime,
     required DateTime createdTime,
@@ -856,7 +856,7 @@ class TimeTableCompanion extends UpdateCompanion<TimeTableData> {
         createdTime = Value(createdTime);
   static Insertable<TimeTableData> custom({
     Expression<String>? id,
-    Expression<String>? timeHeader,
+    Expression<int>? timeHeader,
     Expression<String>? timeBody,
     Expression<DateTime>? lastUpdatedTime,
     Expression<DateTime>? createdTime,
@@ -872,7 +872,7 @@ class TimeTableCompanion extends UpdateCompanion<TimeTableData> {
 
   TimeTableCompanion copyWith(
       {Value<String>? id,
-      Value<String>? timeHeader,
+      Value<int>? timeHeader,
       Value<String>? timeBody,
       Value<DateTime>? lastUpdatedTime,
       Value<DateTime>? createdTime}) {
@@ -892,7 +892,7 @@ class TimeTableCompanion extends UpdateCompanion<TimeTableData> {
       map['id'] = Variable<String>(id.value);
     }
     if (timeHeader.present) {
-      map['time_header'] = Variable<String>(timeHeader.value);
+      map['time_header'] = Variable<int>(timeHeader.value);
     }
     if (timeBody.present) {
       map['time_body'] = Variable<String>(timeBody.value);
@@ -932,13 +932,9 @@ class $TimeTableTable extends TimeTable
       type: const StringType(), requiredDuringInsert: true);
   final VerificationMeta _timeHeaderMeta = const VerificationMeta('timeHeader');
   @override
-  late final GeneratedColumn<String?> timeHeader =
-      GeneratedColumn<String?>('time_header', aliasedName, false,
-          additionalChecks: GeneratedColumn.checkTextLength(
-            minTextLength: 1,
-          ),
-          type: const StringType(),
-          requiredDuringInsert: true);
+  late final GeneratedColumn<int?> timeHeader = GeneratedColumn<int?>(
+      'time_header', aliasedName, false,
+      type: const IntType(), requiredDuringInsert: true);
   final VerificationMeta _timeBodyMeta = const VerificationMeta('timeBody');
   @override
   late final GeneratedColumn<String?> timeBody =

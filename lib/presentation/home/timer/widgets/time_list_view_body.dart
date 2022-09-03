@@ -99,11 +99,12 @@ class TimeListViewBody extends StatelessWidget {
                 context.read<TimeActionBloc>().add(
                       TimeActionEvent.createTimer(
                         timeToBeCreated: Time.defaultTime(
-                          '00:00',
+                          0,
                           timeTextController.text,
                         ),
                       ),
                     );
+                    timeTextController.clear();
               },
               icon: Icon(
                 Icons.play_circle_outline_rounded,

@@ -79,10 +79,11 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i16.SearchLocalService(get<_i12.MyDatabase>()));
   gh.lazySingleton<_i17.SearchService>(() => _i17.SearchService());
   gh.lazySingleton<_i18.TickerBackward>(() => _i18.TickerBackward());
+  gh.lazySingleton<_i18.TickerForward>(() => _i18.TickerForward());
   gh.lazySingleton<_i19.TimeLocalService>(
       () => _i19.TimeLocalService(get<_i12.MyDatabase>()));
   gh.factory<_i20.TimeTickerBloc>(
-      () => _i20.TimeTickerBloc(ticker: get<_i18.TickerBackward>()));
+      () => _i20.TimeTickerBloc(ticker: get<_i18.TickerForward>()));
   gh.factory<_i21.VerifyEmailBloc>(
       () => _i21.VerifyEmailBloc(get<_i7.IAuthRemoteService>()));
   gh.factory<_i22.AuthBloc>(() => _i22.AuthBloc(

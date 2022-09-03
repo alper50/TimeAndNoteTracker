@@ -21,7 +21,7 @@ class TimeView extends StatelessWidget {
               getIt<TimeFormBloc>()..add(TimeFormEvent.initialize(currentTime)),
         ),
         BlocProvider(
-          create: (context) => getIt<TimeTickerBloc>()..add(TimeTickerEvent.started(duration: 60)), //TODO currentTime.timeHeader
+          create: (context) => getIt<TimeTickerBloc>()..add(TimeTickerEvent.started(time: currentTime!)), //TODO currentTime.timeHeader
         ),
       ],
       child: BlocListener<TimeFormBloc, TimeFormState>(

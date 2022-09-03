@@ -16,7 +16,7 @@ class TimeFormBloc extends Bloc<TimeFormEvent, TimeFormState> {
     on<TimeFormEvent>((event, emit) async {
      await event.map(
         initialize: (e) {
-          emit(TimeFormState.loadingTime()); //TODO make sure this bloc is working
+          emit(TimeFormState.loadingTime()); 
           if (e.initialTime != null) {
             emit(TimeFormState.loadTimeSucces(time: e.initialTime!));
           } else {

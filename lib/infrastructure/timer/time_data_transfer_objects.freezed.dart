@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$TimeDTO {
   String get id => throw _privateConstructorUsedError;
-  String get timeHeader => throw _privateConstructorUsedError;
+  int get timeHeader => throw _privateConstructorUsedError;
   String get timeBody => throw _privateConstructorUsedError;
   DateTime get lastUpdatedTime => throw _privateConstructorUsedError;
   DateTime get createdTime => throw _privateConstructorUsedError;
@@ -32,7 +32,7 @@ abstract class $TimeDTOCopyWith<$Res> {
       _$TimeDTOCopyWithImpl<$Res>;
   $Res call(
       {String id,
-      String timeHeader,
+      int timeHeader,
       String timeBody,
       DateTime lastUpdatedTime,
       DateTime createdTime});
@@ -62,7 +62,7 @@ class _$TimeDTOCopyWithImpl<$Res> implements $TimeDTOCopyWith<$Res> {
       timeHeader: timeHeader == freezed
           ? _value.timeHeader
           : timeHeader // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       timeBody: timeBody == freezed
           ? _value.timeBody
           : timeBody // ignore: cast_nullable_to_non_nullable
@@ -86,7 +86,7 @@ abstract class _$TimeDTOCopyWith<$Res> implements $TimeDTOCopyWith<$Res> {
   @override
   $Res call(
       {String id,
-      String timeHeader,
+      int timeHeader,
       String timeBody,
       DateTime lastUpdatedTime,
       DateTime createdTime});
@@ -117,7 +117,7 @@ class __$TimeDTOCopyWithImpl<$Res> extends _$TimeDTOCopyWithImpl<$Res>
       timeHeader: timeHeader == freezed
           ? _value.timeHeader
           : timeHeader // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       timeBody: timeBody == freezed
           ? _value.timeBody
           : timeBody // ignore: cast_nullable_to_non_nullable
@@ -148,7 +148,7 @@ class _$_TimeDTO extends _TimeDTO {
   @override
   final String id;
   @override
-  final String timeHeader;
+  final int timeHeader;
   @override
   final String timeBody;
   @override
@@ -194,7 +194,7 @@ class _$_TimeDTO extends _TimeDTO {
 abstract class _TimeDTO extends TimeDTO {
   const factory _TimeDTO(
       {required final String id,
-      required final String timeHeader,
+      required final int timeHeader,
       required final String timeBody,
       required final DateTime lastUpdatedTime,
       required final DateTime createdTime}) = _$_TimeDTO;
@@ -203,7 +203,7 @@ abstract class _TimeDTO extends TimeDTO {
   @override
   String get id => throw _privateConstructorUsedError;
   @override
-  String get timeHeader => throw _privateConstructorUsedError;
+  int get timeHeader => throw _privateConstructorUsedError;
   @override
   String get timeBody => throw _privateConstructorUsedError;
   @override

@@ -42,7 +42,7 @@ class TimeLoadSuccesEmptyView extends StatelessWidget {
                 context.read<TimeActionBloc>().add(
                       TimeActionEvent.createTimer(
                         timeToBeCreated: Time.defaultTime(
-                          '00:00',
+                          0,
                           timeTextController.text,
                         ),
                       ),

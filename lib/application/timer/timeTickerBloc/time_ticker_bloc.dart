@@ -4,6 +4,8 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:timenotetracker/domain/timer/ticker_entity.dart';
+import 'package:timenotetracker/domain/timer/time_entity.dart';
+import 'package:timenotetracker/domain/timer/time_value_objects.dart';
 
 part 'time_ticker_event.dart';
 part 'time_ticker_state.dart';
@@ -11,46 +13,47 @@ part 'time_ticker_bloc.freezed.dart';
 
 @injectable
 class TimeTickerBloc extends Bloc<TimeTickerEvent, TimeTickerState> {
-  static const int _duration = 60;
-  final TickerBackward ticker;
+  final TickerForward ticker;
   StreamSubscription<int>? _tickerSubscription;
 
   TimeTickerBloc({required this.ticker})
-      : super(TimeTickerState.initial(duration: _duration)) {
+      : super(TimeTickerState.initial(
+            time: Time.defaultTime(0, 'initializing'))) {
     on<TimeTickerEvent>(
       (event, emit) {
         event.map(
           started: (e) {
-            emit(TimeTickerState.timeInProgress(duration: e.duration));
+            emit(TimeTickerState.timeInProgress(time: e.time));
             _tickerSubscription?.cancel();
-            _tickerSubscription = ticker.tick(ticks: e.duration).listen(
-                  (duration) => add(
-                    TimeTickerEvent.ticked(
-                      duration: duration,
-                    ),
-                  ),
-                );
+            _tickerSubscription =
+                ticker.tick(ticks: e.time.timeHeader.getValueOrCrash()).listen(
+                      (duration) => add(
+                        TimeTickerEvent.ticked(
+                            time: e.time
+                                ),
+                      ),
+                    );
           },
           paused: (e) {
             if (state is _TimeInProgress) {
               _tickerSubscription?.pause();
-              emit(TimeTickerState.timeInPause(duration: state.duration));
+              emit(TimeTickerState.timeInPause(time: state.time));
             }
           },
           resumed: (e) {
             if (state is _TimeInPause) {
               _tickerSubscription?.resume();
-              emit(TimeTickerState.timeInProgress(duration: state.duration));
+              emit(TimeTickerState.timeInProgress(time: state.time));
             }
           },
           reset: (e) {
             _tickerSubscription?.cancel();
-            emit(TimeTickerState.initial(duration: _duration));
+            emit(TimeTickerState.initial(time: e.time));
           },
           ticked: (e) {
-            e.duration > 0
-                ? emit(TimeTickerState.timeInProgress(duration: e.duration))
-                : emit(TimeTickerState.timeCompleted(duration: e.duration));
+            e.time.timeHeader.getValueOrCrash() >= 0
+                ? emit(TimeTickerState.timeInProgress(time: e.time))
+                : emit(TimeTickerState.timeCompleted(time: e.time));
           },
         );
       },

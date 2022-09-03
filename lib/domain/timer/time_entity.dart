@@ -17,7 +17,7 @@ abstract class Time implements _$Time {
     required DateTime createdTime,
   }) = _Time;
 
-  factory Time.defaultTime(String header,String body) => Time(
+  factory Time.defaultTime(int header,String body) => Time(
         id: UniqueId(),
         timeHeader: TimeHeader(header),
         timeBody: TimeBody(body),
