@@ -1,17 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:timenotetracker/domain/note/note_entity.dart';
 import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
+import 'package:timenotetracker/presentation/core/constants/padding_constants.dart';
+import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
 
 class INoteCard extends Card {
-  const INoteCard({Color? backgroundColor, required Widget child})
-      : super(color: backgroundColor, child: child);
+  INoteCard({Color? backgroundColor, required Widget child})
+      : super(
+        margin: MyPaddingAll.half(),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          color: backgroundColor,
+          child: child,
+        );
 }
 
 class NoteSuccesCard extends INoteCard {
   NoteSuccesCard({required Note note})
       : super(
-            backgroundColor: MyColors.lightPrimaryColor,
-            child: Text(note.id.toString()));
+          child: Padding(
+            padding: MyPaddingAll.half(),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  note.noteEditorBody.getValueOrCrash().substring(0, 50),
+                  style: MyTextStyles.headline3.copyWith(color: MyColors.secondaryColor),
+                ),
+                SizedBox(height: 10,),
+                Text(
+                  note.lastUpdatedTime.toString().substring(0,16),
+                  style: MyTextStyles.bodyLarge.copyWith(color: MyColors.lightSecondaryColor),
+                ),
+              ],
+            ),
+          ),
+        );
 }
 
 class NoteErrorCard extends INoteCard {
@@ -26,5 +52,3 @@ class NoteErrorCard extends INoteCard {
           ),
         );
 }
-
-

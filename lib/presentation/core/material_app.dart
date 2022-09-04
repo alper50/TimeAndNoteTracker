@@ -34,7 +34,7 @@ class MaterialAppWidget extends StatelessWidget {
           return MaterialApp.router(
             theme: state.isDarkModeOn
                 ? MyThemeData.darktheme
-                : MyThemeData.lightheme, //TODO make theme bloc
+                : MyThemeData.lightheme,
             builder: (context, widget) => ResponsiveWrapper.builder(
               ClampingScrollWrapper.builder(
                 context,

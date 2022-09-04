@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
 import 'package:timenotetracker/domain/core/search/i_search_service.dart';
+import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
 import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
 
 class NoteOverviewAppBar extends StatelessWidget {
@@ -13,7 +14,10 @@ class NoteOverviewAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text('Test'),
+      title: Text(
+        'Test',
+        style: MyTextStyles.headline2,
+      ),
       leading: IconButton(
         onPressed: () {
           context.read<AuthBloc>().add(AuthEvent.signOut());
@@ -34,7 +38,7 @@ class NoteOverviewAppBar extends StatelessWidget {
         IconButton(
           onPressed: () {
             AutoRouter.of(context).push(
-              SearchView(searchTitle: 'Notes',searchTable: SearchTables.note),
+              SearchView(searchTitle: 'Notes', searchTable: SearchTables.note),
             );
           },
           icon: Icon(
