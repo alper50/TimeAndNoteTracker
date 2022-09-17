@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
 import 'package:timenotetracker/domain/core/search/i_search_service.dart';
-import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
 import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
 
-class NoteOverviewAppBar extends StatelessWidget {
-  const NoteOverviewAppBar({
+class NoteListAppBar extends StatelessWidget {
+  const NoteListAppBar({
     Key? key,
   }) : super(key: key);
 
@@ -16,15 +15,6 @@ class NoteOverviewAppBar extends StatelessWidget {
     return AppBar(
       title: Text(
         'Test',
-        style: MyTextStyles.headline2,
-      ),
-      leading: IconButton(
-        onPressed: () {
-          context.read<AuthBloc>().add(AuthEvent.signOut());
-        },
-        icon: Icon(
-          Icons.snowboarding_rounded,
-        ),
       ),
       actions: [
         IconButton(
@@ -33,6 +23,14 @@ class NoteOverviewAppBar extends StatelessWidget {
           },
           icon: Icon(
             Icons.delete_forever,
+          ),
+        ),
+        IconButton(
+          onPressed: () {
+            context.read<AuthBloc>().add(AuthEvent.signOut());
+          },
+          icon: Icon(
+            Icons.snowboarding_rounded,
           ),
         ),
         IconButton(

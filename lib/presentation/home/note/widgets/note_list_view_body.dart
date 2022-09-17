@@ -19,7 +19,7 @@ class NoteOverviewBody extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(AppBar().preferredSize.height),
-        child: NoteOverviewAppBar(),
+        child: NoteListAppBar(),
       ),
       floatingActionButton: FloatingActionButton(
         tooltip: 'New Note',
