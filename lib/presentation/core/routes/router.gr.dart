@@ -18,7 +18,7 @@ import '../../../domain/note/note_entity.dart' as _i14;
 import '../../../domain/timer/time_entity.dart' as _i16;
 import '../../auth/auth_view.dart' as _i3;
 import '../../auth/verify_email_view.dart' as _i4;
-import '../../home/analyse_view.dart' as _i11;
+import '../../home/analyse/analyse_view.dart' as _i11;
 import '../../home/home_view.dart' as _i8;
 import '../../home/note/note_list_view.dart' as _i9;
 import '../../home/note/note_view.dart' as _i5;
