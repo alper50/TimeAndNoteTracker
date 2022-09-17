@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/note/noteActionBloc/note_action_bloc.dart';
 import 'package:timenotetracker/application/note/noteWatcherBloc/note_watcher_bloc.dart';
-import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_circular_progress.dart';
 import 'package:timenotetracker/presentation/core/coreWidgets/my_widget_wrapper.dart';
 import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
@@ -25,7 +24,6 @@ class NoteOverviewBody extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         tooltip: 'New Note',
         child: Icon(Icons.note_add_rounded),
-        backgroundColor: MyColors.lightSecondaryColor,
         onPressed: () {
           AutoRouter.of(context).pushNamed('/note-view');
         },

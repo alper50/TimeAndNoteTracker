@@ -7,7 +7,7 @@ import 'package:timenotetracker/domain/note/note_value_objects.dart';
 import 'package:timenotetracker/infrastructure/core/database/db_config.dart';
 import 'package:timenotetracker/infrastructure/note/note_local_repository.dart';
 
-//TODO test infrastructure note 
+
 void main() {
   late NoteLocalRepository noteLocalRepository;
   late MyDatabase myDatabase;
@@ -46,6 +46,5 @@ void main() {
       //assert
       expect(Right(unit), result);
     });
-    //TODO test streams
   });
 }

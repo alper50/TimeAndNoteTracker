@@ -7,5 +7,6 @@ class MyPaddingAll extends EdgeInsets {
 
 class MyPaddingOnly extends EdgeInsets {
   const MyPaddingOnly.onlyBottom() : super.only(bottom: 20);
+  const MyPaddingOnly.onlyLeft() : super.only(left: 20);
   const MyPaddingOnly.onlyTop() : super.only(top: 100);
 }

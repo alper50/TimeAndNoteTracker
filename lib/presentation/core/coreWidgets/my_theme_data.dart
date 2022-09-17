@@ -11,6 +11,7 @@ class MyThemeData{
     highlightColor: Colors.transparent,
     brightness: Brightness.light,
     cardTheme: CardTheme(color: MyColors.lightPrimaryColor,),
+    floatingActionButtonTheme: FloatingActionButtonThemeData(backgroundColor: MyColors.lightSecondaryColor,),
     appBarTheme: AppBarTheme(
       elevation: 0,
       titleTextStyle: MyTextStyles.headline3.copyWith(color: MyColors.primaryColor),
@@ -24,6 +25,7 @@ class MyThemeData{
     splashColor: Colors.transparent,
     highlightColor: Colors.transparent,
     brightness: Brightness.dark,
+    floatingActionButtonTheme: FloatingActionButtonThemeData(backgroundColor: MyColors.lightSecondaryColor,),
     appBarTheme: AppBarTheme(
       elevation: 0,
       titleTextStyle: MyTextStyles.headline3.copyWith(color: MyColors.primaryColor),

@@ -18,6 +18,9 @@ class MyTextFormField extends TextFormField {
           obscureText: obscureText!,
           focusNode: focusNode,
           autocorrect: false,
+          onFieldSubmitted: (_){
+            focusNode!.unfocus();
+          },
           decoration: InputDecoration(
             labelStyle:
                 MyTextStyles.bodyLarge.copyWith(color: MyColors.primaryColor),
