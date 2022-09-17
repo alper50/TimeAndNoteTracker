@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:timenotetracker/domain/auth/auth_failure.dart';
 import 'package:timenotetracker/domain/auth/i_auth_local_repository.dart';
-import 'package:timenotetracker/domain/auth/i_auth_remote.dart';
+import 'package:timenotetracker/domain/auth/i_auth_remote_repository.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -11,7 +11,7 @@ part 'auth_bloc.freezed.dart';
 
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  final IAuthRemoteService _authRemoteRepository;
+  final IAuthRemoteRepository _authRemoteRepository;
   final IAuthLocalRepository _authLocalRepository;
   AuthBloc(this._authRemoteRepository, this._authLocalRepository)
       : super(AuthState.initial()) {

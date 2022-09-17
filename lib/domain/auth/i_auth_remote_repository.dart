@@ -3,7 +3,7 @@ import 'package:timenotetracker/domain/auth/auth_failure.dart';
 import 'package:timenotetracker/domain/auth/auth_value_objects.dart';
 import 'package:timenotetracker/domain/auth/user_model.dart';
 
-abstract class IAuthRemoteService {
+abstract class IAuthRemoteRepository {
   Future<Either<AuthFailure,User>> getSignedInUser(); 
 
   Future<Either<AuthFailure, Unit>> sendEmailVerification();

@@ -2,14 +2,14 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:timenotetracker/domain/auth/auth_failure.dart';
 import 'package:timenotetracker/domain/auth/auth_value_objects.dart';
-import 'package:timenotetracker/domain/auth/i_auth_remote.dart';
+import 'package:timenotetracker/domain/auth/i_auth_remote_repository.dart';
 import 'package:timenotetracker/domain/auth/user_model.dart';
+import 'package:timenotetracker/infrastructure/auth/auth_remote_service.dart';
 
 
-//TODO make sure this class is working instead of Service
-@injectable
-class AuthRemoteRepository implements IAuthRemoteService{
-  final IAuthRemoteService _authRemoteService;
+@LazySingleton(as: IAuthRemoteRepository)
+class AuthRemoteRepository implements IAuthRemoteRepository{
+  final AuthRemoteService _authRemoteService;
 
   AuthRemoteRepository(this._authRemoteService);
    @override

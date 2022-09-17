@@ -2,20 +2,19 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide User;
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
-import 'package:timenotetracker/domain/auth/i_auth_remote.dart';
 import 'package:timenotetracker/domain/auth/auth_value_objects.dart';
 import 'package:timenotetracker/domain/auth/auth_failure.dart';
 import 'package:timenotetracker/domain/auth/user_model.dart';
 import 'package:timenotetracker/domain/core/value_object.dart';
 
 // IAuthMethods is a abstract class so when we call IAuthMethods in DI we need to return AuthRemoteService
-@LazySingleton(as: IAuthRemoteService)
-class AuthRemoteService implements IAuthRemoteService {
+@LazySingleton()
+class AuthRemoteService{
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
 
   AuthRemoteService(this._firebaseAuth, this._googleSignIn);
-  @override
+  
   Future<Either<AuthFailure,User>> getSignedInUser() async {
     final String? userId = _firebaseAuth.currentUser?.uid;
     if(userId!=null){
@@ -25,7 +24,7 @@ class AuthRemoteService implements IAuthRemoteService {
     }
   }
 
-  @override
+  
   Future<Either<AuthFailure, Unit>> loginWithEmailAndPassword(
       {required EmailAddress emailAddress, required Password password}) async {
     final validEmail = emailAddress.getValueOrCrash();
@@ -50,7 +49,7 @@ class AuthRemoteService implements IAuthRemoteService {
     }
   }
 
-  @override
+  
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword(
       {required EmailAddress emailAddress, required Password password}) async {
     final validEmail = emailAddress.getValueOrCrash();
@@ -73,7 +72,7 @@ class AuthRemoteService implements IAuthRemoteService {
     }
   }
 
-  @override
+  
   Future<Either<AuthFailure, Unit>> signInWithGoogle() async {
     try {
       final googleUser = await _googleSignIn.signIn();
@@ -94,13 +93,13 @@ class AuthRemoteService implements IAuthRemoteService {
     }
   }
 
-  @override
+  
   Future<void> signOut() async {
     await _googleSignIn.signOut();
     await _firebaseAuth.signOut();
   }
 
-  @override
+  
   Future<Either<AuthFailure, Unit>> forgotPassword(
       {required EmailAddress emailAddress}) async {
     final validEmail = emailAddress.getValueOrCrash();
@@ -121,7 +120,7 @@ class AuthRemoteService implements IAuthRemoteService {
     }
   }
 
-  @override
+  
   Future<Either<AuthFailure, bool>> checkEmailVerification() async {
     try {
       // await _firebaseAuth.currentUser!.reload();
@@ -142,7 +141,7 @@ class AuthRemoteService implements IAuthRemoteService {
     }
   }
 
-  @override
+  
   Future<Either<AuthFailure, Unit>> sendEmailVerification() async {
     try {
       await _firebaseAuth.currentUser!.sendEmailVerification();
@@ -152,7 +151,7 @@ class AuthRemoteService implements IAuthRemoteService {
     }
   }
 
-  @override
+  
   Future<Either<AuthFailure, Unit>> signOutWithDelete() async {
     try {
       await _firebaseAuth.currentUser!.delete();

@@ -2,10 +2,10 @@ import 'package:flutter_test/flutter_test.dart' as tst;
 import 'package:mockito/mockito.dart';
 import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
 import 'package:timenotetracker/domain/auth/i_auth_local_repository.dart';
-import 'package:timenotetracker/domain/auth/i_auth_remote.dart';
+import 'package:timenotetracker/domain/auth/i_auth_remote_repository.dart';
 import 'package:timenotetracker/infrastructure/auth/auth_remote_service.dart';
 import 'package:timenotetracker/injection.dart';
-class MockIAuthRemote extends Mock implements IAuthRemoteService{}
+class MockIAuthRemote extends Mock implements IAuthRemoteRepository{}
 class MockIAuthLocalRepository extends Mock implements IAuthLocalRepository{}
 class MockAuthRemoteService extends Mock implements AuthRemoteService{}
 //TODO write tests for application
@@ -20,7 +20,7 @@ void main(){
     configureDependencies();
     getIt.allowReassignment=true;
     mockAuthRemoteRepository = MockIAuthRemote();
-      getIt.registerLazySingleton<IAuthRemoteService>(() => mockAuthRemoteRepository);
+      getIt.registerLazySingleton<IAuthRemoteRepository>(() => mockAuthRemoteRepository);
     
     mockAuthRemoteRepository = MockIAuthRemote();
     mockAuthLocalRepository = MockIAuthLocalRepository();
