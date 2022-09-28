@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/note/noteFormBloc/note_form_bloc.dart';
 import 'package:timenotetracker/domain/note/note_entity.dart';
 import 'package:timenotetracker/injection.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_snackbar.dart';
 import 'package:timenotetracker/presentation/home/note/widgets/note_view_body.dart';
 
 class NoteView extends StatelessWidget {

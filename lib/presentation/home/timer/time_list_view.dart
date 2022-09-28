@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/timer/timeActionBloc/time_action_bloc.dart';
 import 'package:timenotetracker/application/timer/timeWatcherBloc/time_watcher_bloc.dart';
 import 'package:timenotetracker/injection.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_snackbar.dart';
 import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
 import 'package:timenotetracker/presentation/home/timer/widgets/time_list_view_body.dart';
 

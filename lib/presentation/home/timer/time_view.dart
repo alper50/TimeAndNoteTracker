@@ -5,7 +5,7 @@ import 'package:timenotetracker/application/timer/timeFormBloc/time_form_bloc.da
 import 'package:timenotetracker/application/timer/timeTickerBloc/time_ticker_bloc.dart';
 import 'package:timenotetracker/domain/timer/time_entity.dart';
 import 'package:timenotetracker/injection.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_snackbar.dart';
 import 'package:timenotetracker/presentation/home/timer/widgets/time_view_body.dart';
 
 class TimeView extends StatelessWidget {

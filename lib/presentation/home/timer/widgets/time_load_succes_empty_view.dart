@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_empty_list_view.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/views/my_empty_list_view.dart';
 import 'package:timenotetracker/presentation/home/timer/widgets/time_create_widget.dart';
 
 class TimeLoadSuccesEmptyView extends StatelessWidget {

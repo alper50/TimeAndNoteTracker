@@ -6,7 +6,7 @@ import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
 import 'package:timenotetracker/application/auth/verifyEmailBloc/verify_email_bloc.dart';
 import 'package:timenotetracker/presentation/auth/widgets/my_auth_button.dart';
 import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_circular_progress.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_circular_progress.dart';
 
 class VerifyEmailViewBody extends StatefulWidget {
   const VerifyEmailViewBody({

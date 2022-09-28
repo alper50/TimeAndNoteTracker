@@ -1,6 +1,6 @@
   import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_policy_dialog.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_policy_dialog.dart';
 
 RichText buildPolicyText(BuildContext context) {
     return RichText(

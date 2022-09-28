@@ -5,10 +5,10 @@ import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
 import 'package:timenotetracker/application/core/internetConnectionBloc/internet_connection_bloc.dart';
 import 'package:timenotetracker/application/core/themeBloc/theme_bloc.dart';
 import 'package:timenotetracker/injection.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_network_failure_widget.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_theme_data.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/views/my_failure_view.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_network_failure_widget.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_theme_data.dart';
 import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_failure_view.dart';
 
 class MaterialAppWidget extends StatelessWidget {
   MaterialAppWidget({Key? key}) : super(key: key);

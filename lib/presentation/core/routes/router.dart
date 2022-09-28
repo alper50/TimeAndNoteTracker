@@ -4,6 +4,7 @@ import 'package:timenotetracker/presentation/auth/verify_email_view.dart';
 import 'package:timenotetracker/presentation/core/search/search_view.dart';
 import 'package:timenotetracker/presentation/home/analyse/analyse_view.dart';
 import 'package:timenotetracker/presentation/home/analyse/settings_view.dart';
+import 'package:timenotetracker/presentation/home/analyse/sub_setting_view.dart';
 import 'package:timenotetracker/presentation/home/home_view.dart';
 import 'package:timenotetracker/presentation/home/note/note_view.dart';
 import 'package:timenotetracker/presentation/home/note/note_list_view.dart';
@@ -23,6 +24,7 @@ import 'package:timenotetracker/presentation/splash/splash_view.dart';
     AutoRoute(page: SearchView),
     AutoRoute(page: TimeView),
     CustomRoute(page: SettingsView, transitionsBuilder: TransitionsBuilders.slideBottom),
+    CustomRoute(page: SubSettingView,transitionsBuilder: TransitionsBuilders.slideLeft),
     AutoRoute(
       page: HomeView, 
       children: [

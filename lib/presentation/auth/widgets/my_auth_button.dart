@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:timenotetracker/presentation/auth/widgets/my_text_button.dart';
 import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_circular_progress.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_circular_progress.dart';
 
 class MyAuthButton extends StatelessWidget {
   final bool isSubmitting;

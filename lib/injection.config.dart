@@ -10,22 +10,23 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:google_sign_in/google_sign_in.dart' as _i4;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'application/auth/authBloc/auth_bloc.dart' as _i39;
-import 'application/auth/forgotPasswordBloc/forgot_password_bloc.dart' as _i40;
+import 'application/analyze/settingsBloc/settings_bloc.dart' as _i34;
+import 'application/auth/authBloc/auth_bloc.dart' as _i40;
+import 'application/auth/forgotPasswordBloc/forgot_password_bloc.dart' as _i41;
 import 'application/auth/registerAndLoginBloc/register_and_login_bloc.dart'
     as _i32;
-import 'application/auth/verifyEmailBloc/verify_email_bloc.dart' as _i38;
+import 'application/auth/verifyEmailBloc/verify_email_bloc.dart' as _i39;
 import 'application/core/internetConnectionBloc/internet_connection_bloc.dart'
     as _i9;
 import 'application/core/searchBloc/search_bloc.dart' as _i33;
-import 'application/core/themeBloc/theme_bloc.dart' as _i34;
+import 'application/core/themeBloc/theme_bloc.dart' as _i35;
 import 'application/note/noteActionBloc/note_action_bloc.dart' as _i29;
 import 'application/note/noteFormBloc/note_form_bloc.dart' as _i30;
 import 'application/note/noteWatcherBloc/note_watcher_bloc.dart' as _i31;
-import 'application/timer/timeActionBloc/time_action_bloc.dart' as _i35;
-import 'application/timer/timeFormBloc/time_form_bloc.dart' as _i36;
+import 'application/timer/timeActionBloc/time_action_bloc.dart' as _i36;
+import 'application/timer/timeFormBloc/time_form_bloc.dart' as _i37;
 import 'application/timer/timeTickerBloc/time_ticker_bloc.dart' as _i18;
-import 'application/timer/timeWatcherBloc/time_watcher_bloc.dart' as _i37;
+import 'application/timer/timeWatcherBloc/time_watcher_bloc.dart' as _i38;
 import 'domain/auth/i_auth_local_repository.dart' as _i5;
 import 'domain/auth/i_auth_remote_repository.dart' as _i21;
 import 'domain/core/internetConnection/i_internet_connection_service.dart'
@@ -39,7 +40,7 @@ import 'infrastructure/auth/auth_local_service.dart' as _i19;
 import 'infrastructure/auth/auth_remote_repository.dart' as _i22;
 import 'infrastructure/auth/auth_remote_service.dart' as _i20;
 import 'infrastructure/core/database/db_config.dart' as _i10;
-import 'infrastructure/core/infrastructure_injectable_module.dart' as _i41;
+import 'infrastructure/core/infrastructure_injectable_module.dart' as _i42;
 import 'infrastructure/core/internetConnection/internet_connection_service.dart'
     as _i8;
 import 'infrastructure/core/search/search_local_repository.dart' as _i26;
@@ -108,21 +109,23 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       searchLocalRepository: get<_i25.ISearchLocalRepository>(),
       searchService: get<_i14.SearchService>(),
       timeLocalRepository: get<_i27.ITimeLocalRepository>()));
-  gh.factory<_i34.ThemeBloc>(() => _i34.ThemeBloc(get<_i15.ThemeManager>()));
-  gh.factory<_i35.TimeActionBloc>(
-      () => _i35.TimeActionBloc(get<_i27.ITimeLocalRepository>()));
-  gh.factory<_i36.TimeFormBloc>(
-      () => _i36.TimeFormBloc(get<_i27.ITimeLocalRepository>()));
-  gh.factory<_i37.TimeWatcherBloc>(
-      () => _i37.TimeWatcherBloc(get<_i27.ITimeLocalRepository>()));
-  gh.factory<_i38.VerifyEmailBloc>(
-      () => _i38.VerifyEmailBloc(get<_i21.IAuthRemoteRepository>()));
-  gh.factory<_i39.AuthBloc>(() => _i39.AuthBloc(
+  gh.factory<_i34.SettingsBloc>(
+      () => _i34.SettingsBloc(get<_i21.IAuthRemoteRepository>()));
+  gh.factory<_i35.ThemeBloc>(() => _i35.ThemeBloc(get<_i15.ThemeManager>()));
+  gh.factory<_i36.TimeActionBloc>(
+      () => _i36.TimeActionBloc(get<_i27.ITimeLocalRepository>()));
+  gh.factory<_i37.TimeFormBloc>(
+      () => _i37.TimeFormBloc(get<_i27.ITimeLocalRepository>()));
+  gh.factory<_i38.TimeWatcherBloc>(
+      () => _i38.TimeWatcherBloc(get<_i27.ITimeLocalRepository>()));
+  gh.factory<_i39.VerifyEmailBloc>(
+      () => _i39.VerifyEmailBloc(get<_i21.IAuthRemoteRepository>()));
+  gh.factory<_i40.AuthBloc>(() => _i40.AuthBloc(
       get<_i21.IAuthRemoteRepository>(), get<_i5.IAuthLocalRepository>()));
-  gh.factory<_i40.ForgotPasswordBloc>(
-      () => _i40.ForgotPasswordBloc(get<_i21.IAuthRemoteRepository>()));
+  gh.factory<_i41.ForgotPasswordBloc>(
+      () => _i41.ForgotPasswordBloc(get<_i21.IAuthRemoteRepository>()));
   return get;
 }
 
 class _$InfrastructureInjectableModule
-    extends _i41.InfrastructureInjectableModule {}
+    extends _i42.InfrastructureInjectableModule {}

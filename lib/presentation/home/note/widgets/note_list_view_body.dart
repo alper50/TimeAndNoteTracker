@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/note/noteActionBloc/note_action_bloc.dart';
 import 'package:timenotetracker/application/note/noteWatcherBloc/note_watcher_bloc.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_circular_progress.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_widget_wrapper.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/views/my_empty_list_view.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/views/my_failure_view.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_circular_progress.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_widget_wrapper.dart';
 import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_empty_list_view.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_failure_view.dart';
 import 'package:timenotetracker/presentation/home/note/widgets/note_cards.dart';
 import 'package:timenotetracker/presentation/home/note/widgets/note_list_view_appbar.dart';
 

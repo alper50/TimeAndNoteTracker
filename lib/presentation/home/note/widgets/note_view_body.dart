@@ -5,8 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:timenotetracker/application/note/noteFormBloc/note_form_bloc.dart';
 import 'package:timenotetracker/domain/note/note_entity.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_circular_progress.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_failure_view.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/views/my_failure_view.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_circular_progress.dart';
 import 'package:timenotetracker/presentation/home/note/widgets/note_load_succes_view.dart';
 
 class NoteViewBody extends StatelessWidget {

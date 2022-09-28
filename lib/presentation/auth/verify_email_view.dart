@@ -5,7 +5,7 @@ import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
 import 'package:timenotetracker/application/auth/verifyEmailBloc/verify_email_bloc.dart';
 import 'package:timenotetracker/injection.dart';
 import 'package:timenotetracker/presentation/auth/widgets/verify_email_view_body.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_snackbar.dart';
 
 class VerifyEmailView extends StatelessWidget {
   const VerifyEmailView({Key? key}) : super(key: key);

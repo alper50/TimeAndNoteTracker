@@ -8,12 +8,12 @@ import 'package:timenotetracker/domain/auth/auth_value_objects.dart';
 part 'register_and_login_event.dart';
 part 'register_and_login_state.dart';
 part 'register_and_login_bloc.freezed.dart';
-
+//TODO while internet connection slow it throws apiexception and stays in loading indicator
 @injectable
 class RegisterAndLoginBloc
     extends Bloc<RegisterAndLoginEvent, RegisterAndLoginState> {
-  final IAuthRemoteRepository _authMethods;
-  RegisterAndLoginBloc(this._authMethods)
+  final IAuthRemoteRepository _authRemoteRepository;
+  RegisterAndLoginBloc(this._authRemoteRepository)
       : super(RegisterAndLoginState.initial()) {
     on<RegisterAndLoginEvent>((event, emit) async {
       await event.map(
@@ -31,7 +31,7 @@ class RegisterAndLoginBloc
               ),
             );
 
-            failureOrSucces = await _authMethods.registerWithEmailAndPassword(
+            failureOrSucces = await _authRemoteRepository.registerWithEmailAndPassword(
               emailAddress: state.email,
               password: state.password,
             );
@@ -58,7 +58,7 @@ class RegisterAndLoginBloc
               ),
             );
 
-            failureOrSucces = await _authMethods.loginWithEmailAndPassword(
+            failureOrSucces = await _authRemoteRepository.loginWithEmailAndPassword(
               emailAddress: state.email,
               password: state.password,
             );
@@ -79,7 +79,7 @@ class RegisterAndLoginBloc
             ),
           );
           final googleAuthFailureOrSucces =
-              await _authMethods.signInWithGoogle();
+              await _authRemoteRepository.signInWithGoogle();
 
           emit(
             state.copyWith(
@@ -108,4 +108,3 @@ class RegisterAndLoginBloc
     });
   }
 }
-//TODO while internet connection slow it throws apiexception and stays in loading indicator

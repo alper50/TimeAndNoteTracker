@@ -7,7 +7,7 @@ import 'package:timenotetracker/presentation/auth/widgets/my_auth_button.dart';
 import 'package:timenotetracker/presentation/auth/widgets/my_textformfield.dart';
 import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 import 'package:timenotetracker/presentation/core/constants/padding_constants.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_snackbar.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_snackbar.dart';
 
 class LoginView extends StatelessWidget {
   LoginView({Key? key}) : super(key: key);

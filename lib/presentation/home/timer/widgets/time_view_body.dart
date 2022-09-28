@@ -5,8 +5,8 @@ import 'package:timenotetracker/application/timer/timeTickerBloc/time_ticker_blo
 import 'package:timenotetracker/domain/timer/time_entity.dart';
 import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_circular_progress.dart';
-import 'package:timenotetracker/presentation/core/coreWidgets/my_failure_view.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/views/my_failure_view.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_circular_progress.dart';
 
 class TimeViewBody extends StatelessWidget {
   final Time? timeToBeEdited;
