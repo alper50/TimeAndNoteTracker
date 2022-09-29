@@ -26,11 +26,9 @@ class VerifyEmailView extends StatelessWidget {
                   authenticated: (_) {
                     AutoRouter.of(context).replaceNamed('/home-view');
                   },
-                  signOutWithDeleteFailure: (e){
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      displaySnackBar(
-                          message: 'Cancel request failed:$e'),
-                    );
+                  signOutWithDeleteFailure: (e) {
+                    showMySnackBar(
+                        context: context, message: 'Cancel request failed:$e');
                   },
                   orElse: () {});
             },
@@ -41,21 +39,20 @@ class VerifyEmailView extends StatelessWidget {
                 () => () {},
                 (either) => either.fold(
                   (failure) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      displaySnackBar(
-                        message: failure.maybeMap(
-                            networkError: (_)=> 'Network request failed',
-                            serverError: (e) => 'There is an error occured $e',
-                            multipleRequest: (_)=> 'You cannot send new link until timer finished',
-                            orElse: () => ''),
-                      ),
+                    showMySnackBar(
+                      context: context,
+                      message: failure.maybeMap(
+                          networkError: (_) => 'Network request failed',
+                          serverError: (e) => 'There is an error occured $e',
+                          multipleRequest: (_) =>
+                              'You cannot send new link until timer finished',
+                          orElse: () => ''),
                     );
                   },
                   (succes) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      displaySnackBar(
-                          message: 'Verification link sent, please verify'),
-                    );
+                    showMySnackBar(
+                        context: context,
+                        message: 'Verification link sent, please verify');
                   },
                 ),
               );

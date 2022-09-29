@@ -21,12 +21,11 @@ class NoteView extends StatelessWidget {
         listener: (context, state) {
           state.maybeMap(
               saveFailure: (state) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  displaySnackBar(
-                    message: state.noteFailure.maybeMap(
-                      unexpected: (e) => 'Unexpected Error Happened: $e',
-                      orElse: () => '',
-                    ),
+                showMySnackBar(
+                  context: context,
+                  message: state.noteFailure.maybeMap(
+                    unexpected: (e) => 'Unexpected Error Happened: $e',
+                    orElse: () => '',
                   ),
                 );
               },

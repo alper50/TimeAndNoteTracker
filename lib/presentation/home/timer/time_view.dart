@@ -21,19 +21,19 @@ class TimeView extends StatelessWidget {
               getIt<TimeFormBloc>()..add(TimeFormEvent.initialize(currentTime)),
         ),
         BlocProvider(
-          create: (context) => getIt<TimeTickerBloc>()..add(TimeTickerEvent.started(time: currentTime!)), //TODO currentTime.timeHeader
+          create: (context) => getIt<TimeTickerBloc>()
+            ..add(TimeTickerEvent.started(
+                time: currentTime!)), //TODO currentTime.timeHeader
         ),
       ],
       child: BlocListener<TimeFormBloc, TimeFormState>(
         listener: (context, state) {
           state.maybeMap(
-            updateTimeFailure: (state) =>
-                ScaffoldMessenger.of(context).showSnackBar(
-              displaySnackBar(
-                message: state.timeFailure.maybeMap(
-                  unexpected: (e) => 'Unexpected Error Happened: //',
-                  orElse: () => '',
-                ),
+            updateTimeFailure: (state) => showMySnackBar(
+              context: context,
+              message: state.timeFailure.maybeMap(
+                unexpected: (e) => 'Unexpected Error Happened: //',
+                orElse: () => '',
               ),
             ),
             updateTimeSucces: (_) => AutoRouter.of(context).pop(),

@@ -44,19 +44,17 @@ class _SearchViewState extends State<SearchView> {
           state.searchFailureOrSucces.fold(
             () => null,
             (either) => either.fold(
-              (noteFailure) => ScaffoldMessenger.of(context).showSnackBar(
-                displaySnackBar(
-                  message: noteFailure.maybeMap(
-                      unexpected: (e) => 'Unexpected happened $e',
-                      orElse: () => ''),
-                ),
+              (noteFailure) => showMySnackBar(
+                context: context,
+                message: noteFailure.maybeMap(
+                    unexpected: (e) => 'Unexpected happened $e',
+                    orElse: () => ''),
               ),
-              (timeFailure) => ScaffoldMessenger.of(context).showSnackBar(
-                displaySnackBar(
-                  message: timeFailure.maybeMap(
-                      unexpected: (e) => 'Unexpected happened $e',
-                      orElse: () => ''),
-                ),
+              (timeFailure) => showMySnackBar(
+                context: context,
+                message: timeFailure.maybeMap(
+                    unexpected: (e) => 'Unexpected happened $e',
+                    orElse: () => ''),
               ),
             ),
           );
@@ -71,6 +69,7 @@ class _SearchViewState extends State<SearchView> {
                       controller: controller,
                       body: FloatingSearchBarScrollNotifier(
                           child: state.searchResult!.fold(
+                              //TODO search result returns null
                               (notes) => SearchResultsView(
                                   searchResult: notes
                                       .map((note) =>

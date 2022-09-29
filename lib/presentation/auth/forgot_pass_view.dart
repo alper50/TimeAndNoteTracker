@@ -27,25 +27,23 @@ class ForgotPasswordView extends StatelessWidget {
           () {},
           (either) => either.fold(
             (failure) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                displaySnackBar(
-                  message: failure.maybeMap(
-                      networkError: (_)=> 'Network Request Failed',
-                      cancelledByUser: (_) => 'Cancelled',
-                      serverError: (_) => 'Server error',
-                      emailAlreadyInUse: (_) => 'Email already in use',
-                      invalidEmailAndPasswordCombination: (_) =>
-                          'Invalid email and password combination',
-                      orElse: () => ''),
-                ),
+              showMySnackBar(
+                context: context,
+                message: failure.maybeMap(
+                    networkError: (_) => 'Network Request Failed',
+                    cancelledByUser: (_) => 'Cancelled',
+                    serverError: (_) => 'Server error',
+                    emailAlreadyInUse: (_) => 'Email already in use',
+                    invalidEmailAndPasswordCombination: (_) =>
+                        'Invalid email and password combination',
+                    orElse: () => ''),
               );
             },
             (_) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                displaySnackBar(
-                    message:
-                        'If this email exist password reset link has been sent to this email.'),
-              );
+              showMySnackBar(
+                  context: context,
+                  message:
+                      'If this email exist password reset link has been sent to this email.');
             },
           ),
         );
