@@ -10,7 +10,7 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:google_sign_in/google_sign_in.dart' as _i4;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'application/analyze/settingsBloc/settings_bloc.dart' as _i34;
+import 'application/settings/settingsBloc/settings_bloc.dart' as _i34;
 import 'application/auth/authBloc/auth_bloc.dart' as _i40;
 import 'application/auth/forgotPasswordBloc/forgot_password_bloc.dart' as _i41;
 import 'application/auth/registerAndLoginBloc/register_and_login_bloc.dart'

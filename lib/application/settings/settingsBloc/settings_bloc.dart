@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:timenotetracker/application/core/themeBloc/theme_bloc.dart';
-import 'package:timenotetracker/domain/analyze/settings/settings_failure.dart';
+import 'package:timenotetracker/domain/settings/settings_failure.dart';
 import 'package:timenotetracker/domain/auth/auth_failure.dart';
 import 'package:timenotetracker/domain/auth/auth_value_objects.dart';
 import 'package:timenotetracker/domain/auth/i_auth_remote_repository.dart';

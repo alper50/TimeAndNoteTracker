@@ -6,7 +6,7 @@ void showMySnackBar({required BuildContext context,required String message, bool
     displaySnackBar(message: message,isError: isError),
   );
 }
-//TODO only showmysnackbar needs to be call 
+
 SnackBar displaySnackBar(
     {required String message, String? actionMessage, VoidCallback? onClick, bool isError=false}) {
   return SnackBar(

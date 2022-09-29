@@ -1,14 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:timenotetracker/application/analyze/settingsBloc/settings_bloc.dart';
+import 'package:timenotetracker/application/settings/settingsBloc/settings_bloc.dart';
 import 'package:timenotetracker/application/core/themeBloc/theme_bloc.dart';
 import 'package:timenotetracker/infrastructure/core/theme/theme_manager.dart';
 import 'package:timenotetracker/injection.dart';
 import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 import 'package:timenotetracker/presentation/core/constants/padding_constants.dart';
 import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
-import 'package:timenotetracker/presentation/home/analyse/settings_alert_dialog.dart';
+import 'package:timenotetracker/presentation/home/settings/settings_alert_dialog.dart';
 import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_circular_progress.dart';
 import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_divider.dart';
 import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_snackbar.dart';
