@@ -796,6 +796,8 @@ mixin _$SettingsState {
   String get userName => throw _privateConstructorUsedError;
   ThemeMode get themeMode => throw _privateConstructorUsedError;
   bool get isInitializing => throw _privateConstructorUsedError;
+  Option<Either<AuthFailure, SettingsFailure>> get failure =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SettingsStateCopyWith<SettingsState> get copyWith =>
@@ -811,7 +813,8 @@ abstract class $SettingsStateCopyWith<$Res> {
       {EmailAddress email,
       String userName,
       ThemeMode themeMode,
-      bool isInitializing});
+      bool isInitializing,
+      Option<Either<AuthFailure, SettingsFailure>> failure});
 }
 
 /// @nodoc
@@ -829,6 +832,7 @@ class _$SettingsStateCopyWithImpl<$Res>
     Object? userName = freezed,
     Object? themeMode = freezed,
     Object? isInitializing = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_value.copyWith(
       email: email == freezed
@@ -847,6 +851,10 @@ class _$SettingsStateCopyWithImpl<$Res>
           ? _value.isInitializing
           : isInitializing // ignore: cast_nullable_to_non_nullable
               as bool,
+      failure: failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Option<Either<AuthFailure, SettingsFailure>>,
     ));
   }
 }
@@ -862,7 +870,8 @@ abstract class _$SettingsStateCopyWith<$Res>
       {EmailAddress email,
       String userName,
       ThemeMode themeMode,
-      bool isInitializing});
+      bool isInitializing,
+      Option<Either<AuthFailure, SettingsFailure>> failure});
 }
 
 /// @nodoc
@@ -882,6 +891,7 @@ class __$SettingsStateCopyWithImpl<$Res>
     Object? userName = freezed,
     Object? themeMode = freezed,
     Object? isInitializing = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_SettingsState(
       email: email == freezed
@@ -900,6 +910,10 @@ class __$SettingsStateCopyWithImpl<$Res>
           ? _value.isInitializing
           : isInitializing // ignore: cast_nullable_to_non_nullable
               as bool,
+      failure: failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Option<Either<AuthFailure, SettingsFailure>>,
     ));
   }
 }
@@ -911,7 +925,8 @@ class _$_SettingsState implements _SettingsState {
       {required this.email,
       required this.userName,
       required this.themeMode,
-      required this.isInitializing});
+      required this.isInitializing,
+      required this.failure});
 
   @override
   final EmailAddress email;
@@ -921,10 +936,12 @@ class _$_SettingsState implements _SettingsState {
   final ThemeMode themeMode;
   @override
   final bool isInitializing;
+  @override
+  final Option<Either<AuthFailure, SettingsFailure>> failure;
 
   @override
   String toString() {
-    return 'SettingsState(email: $email, userName: $userName, themeMode: $themeMode, isInitializing: $isInitializing)';
+    return 'SettingsState(email: $email, userName: $userName, themeMode: $themeMode, isInitializing: $isInitializing, failure: $failure)';
   }
 
   @override
@@ -936,7 +953,8 @@ class _$_SettingsState implements _SettingsState {
             const DeepCollectionEquality().equals(other.userName, userName) &&
             const DeepCollectionEquality().equals(other.themeMode, themeMode) &&
             const DeepCollectionEquality()
-                .equals(other.isInitializing, isInitializing));
+                .equals(other.isInitializing, isInitializing) &&
+            const DeepCollectionEquality().equals(other.failure, failure));
   }
 
   @override
@@ -945,7 +963,8 @@ class _$_SettingsState implements _SettingsState {
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(userName),
       const DeepCollectionEquality().hash(themeMode),
-      const DeepCollectionEquality().hash(isInitializing));
+      const DeepCollectionEquality().hash(isInitializing),
+      const DeepCollectionEquality().hash(failure));
 
   @JsonKey(ignore: true)
   @override
@@ -958,7 +977,9 @@ abstract class _SettingsState implements SettingsState {
       {required final EmailAddress email,
       required final String userName,
       required final ThemeMode themeMode,
-      required final bool isInitializing}) = _$_SettingsState;
+      required final bool isInitializing,
+      required final Option<Either<AuthFailure, SettingsFailure>>
+          failure}) = _$_SettingsState;
 
   @override
   EmailAddress get email => throw _privateConstructorUsedError;
@@ -968,6 +989,9 @@ abstract class _SettingsState implements SettingsState {
   ThemeMode get themeMode => throw _privateConstructorUsedError;
   @override
   bool get isInitializing => throw _privateConstructorUsedError;
+  @override
+  Option<Either<AuthFailure, SettingsFailure>> get failure =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SettingsStateCopyWith<_SettingsState> get copyWith =>

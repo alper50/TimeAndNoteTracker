@@ -2,12 +2,16 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/analyze/settingsBloc/settings_bloc.dart';
+import 'package:timenotetracker/application/core/themeBloc/theme_bloc.dart';
+import 'package:timenotetracker/infrastructure/core/theme/theme_manager.dart';
 import 'package:timenotetracker/injection.dart';
 import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 import 'package:timenotetracker/presentation/core/constants/padding_constants.dart';
 import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
+import 'package:timenotetracker/presentation/home/analyse/settings_alert_dialog.dart';
 import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_circular_progress.dart';
 import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_divider.dart';
+import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_snackbar.dart';
 import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
 
 class SettingsView extends StatelessWidget {
@@ -20,7 +24,19 @@ class SettingsView extends StatelessWidget {
           getIt<SettingsBloc>()..add(SettingsEvent.initialize()),
       child: BlocListener<SettingsBloc, SettingsState>(
         listener: (context, state) {
-          // TODO: implement listener
+          state.failure.map(
+            (failure) => failure.fold(
+              (authFailure) => authFailure.maybeMap(
+                  networkError: (_) => showMySnackBar(
+                      context: context, message: 'Network Error'),
+                  serverError: (_) =>
+                      showMySnackBar(context: context, message: 'Server Error'),
+                  orElse: () {}),
+              (settingsFailure) => settingsFailure.maybeMap(
+                orElse: () {},
+              ),
+            ),
+          );
         },
         child: SettingsViewBody(),
       ),
@@ -51,7 +67,7 @@ class SettingsViewBody extends StatelessWidget {
                     alignment: Alignment.center,
                     child: Column(
                       children: [
-                        _buildPersonalSection(context),
+                        _buildPersonalSection(context, state),
                         SizedBox(
                           height: 20,
                         ),
@@ -65,7 +81,7 @@ class SettingsViewBody extends StatelessWidget {
     );
   }
 
-    Column _buildPersonalSection(BuildContext context) {
+  Column _buildPersonalSection(BuildContext context, SettingsState state) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -88,19 +104,21 @@ class SettingsViewBody extends StatelessWidget {
           child: Column(
             children: [
               ListTile(
-                onTap: ()=>AutoRouter.of(context).push(SubSettingView(viewName: 'Name')),
+                onTap: () => AutoRouter.of(context)
+                    .push(SubSettingView(viewName: 'Name')),
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Name'),
-                    Text(context.read<SettingsBloc>().state.userName),
+                    Text(state.userName),
                   ],
                 ),
                 trailing: Icon(Icons.arrow_right_rounded),
               ),
               MyDivider(),
               ListTile(
-                onTap: ()=>AutoRouter.of(context).push(SubSettingView(viewName: 'Email')),
+                onTap: () => AutoRouter.of(context)
+                    .push(SubSettingView(viewName: 'Email')),
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -143,18 +161,32 @@ class SettingsViewBody extends StatelessWidget {
           ),
           child: Column(
             children: [
-              ListTile(
-                title: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Theme'),
-                    Text(context
-                        .read<SettingsBloc>()
-                        .state
-                        .themeMode.name),
-                  ],
-                ),
-                trailing: Icon(Icons.circle,size: 10,),
+              BlocBuilder<ThemeBloc, ThemeState>(
+                builder: (context, state) {
+                  return ListTile(
+                    onTap: () => showSettingsAlertDialog(
+                      context: context,
+                      child: SettingsAlertDialog(
+                        selectedRadio: ThemeManager.convertCurrentThemeToIndex(
+                            themeMode: state.themeMode),
+                      ),
+                    ),
+                    title: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Theme'),
+                        (state.themeMode.name == 'systemDark' ||
+                                state.themeMode.name == 'systemLight')
+                            ? Text(ThemeMode.system.name)
+                            : Text(state.themeMode.name)
+                      ],
+                    ),
+                    trailing: Icon(
+                      Icons.circle,
+                      size: 10,
+                    ),
+                  );
+                },
               ),
               MyDivider(),
               ListTile(
@@ -165,7 +197,10 @@ class SettingsViewBody extends StatelessWidget {
                     Text('----'),
                   ],
                 ),
-                trailing: Icon(Icons.circle,size: 10,),
+                trailing: Icon(
+                  Icons.circle,
+                  size: 10,
+                ),
               ),
             ],
           ),

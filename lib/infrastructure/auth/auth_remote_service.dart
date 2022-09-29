@@ -17,8 +17,10 @@ class AuthRemoteService{
   
   Future<Either<AuthFailure,User>> getSignedInUser() async {
     final String? userId = _firebaseAuth.currentUser?.uid;
+    final String? userName = _firebaseAuth.currentUser?.displayName;
+    final String? userEmail = _firebaseAuth.currentUser?.email;
     if(userId!=null){
-      return Right(User(id: UniqueId.fromString(userId)));
+      return Right(User(id: UniqueId.fromString(userId),name: userName,email: userEmail));
     }else{
       return Left(AuthFailure.userNotFound());
     }

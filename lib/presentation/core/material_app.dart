@@ -29,10 +29,10 @@ class MaterialAppWidget extends StatelessWidget {
                 getIt<ThemeBloc>()..add(ThemeEvent.watchThemeModeStarted())),
       ],
       child: BlocBuilder<ThemeBloc, ThemeState>(
-        buildWhen: (prev, cur) => prev.isDarkModeOn != cur.isDarkModeOn,
+        buildWhen: (prev, cur) => prev.themeMode.name != cur.themeMode.name,
         builder: (context, state) {
           return MaterialApp.router(
-            theme: state.isDarkModeOn
+            theme: state.themeMode.name=='dark' ||  state.themeMode.name=='systemDark'
                 ? MyThemeData.darktheme
                 : MyThemeData.lightheme,
             builder: (context, widget) => ResponsiveWrapper.builder(

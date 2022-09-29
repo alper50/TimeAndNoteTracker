@@ -6,12 +6,14 @@ class SettingsState with _$SettingsState {
       {required EmailAddress email,
       required String userName,
       required ThemeMode themeMode,
-      required bool isInitializing}) = _SettingsState;
+      required bool isInitializing,
+      required Option<Either<AuthFailure,SettingsFailure>> failure}) = _SettingsState;
 
   factory SettingsState.initial() => SettingsState(
         email: EmailAddress('test@gmail.com'),
         themeMode: ThemeMode.system,
         userName: '',
-        isInitializing: false,
+        isInitializing: true,
+        failure: none(),
       );
 }

@@ -4,6 +4,8 @@ import 'package:timenotetracker/presentation/core/constants/text_styles_constant
 
 enum ThemeMode{
   system,
+  systemLight,
+  systemDark,
   light,
   dark
 }

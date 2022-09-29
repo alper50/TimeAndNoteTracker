@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:timenotetracker/presentation/auth/widgets/my_textformfield.dart';
+import 'package:timenotetracker/presentation/core/constants/padding_constants.dart';
 
 class SubSettingView extends StatelessWidget {
   final String viewName;
@@ -9,15 +10,21 @@ class SubSettingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Settings > ' + viewName)),
-      body: Column(
-        children: [
-          Text('New' + viewName),
-          MyTextFormField(
-            onChanged: (_) {},
-            validator: (_) {},
-            labelText: viewName,
-          ),
-        ],
+      body: Padding(
+        padding: MyPaddingAll.regular(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('New ' + viewName),
+            SizedBox(height: 10,),
+            MyTextFormField(
+              onChanged: (_) {},
+              validator: (_) {},
+              labelText: viewName,
+            ),
+          ],
+        ),
       ),
     );
   }

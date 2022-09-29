@@ -19,25 +19,28 @@ mixin _$ThemeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchThemeModeStarted,
-    required TResult Function(bool isDarkModeOn) watchThemeModeReceived,
+    required TResult Function(ThemeMode themeMode) watchThemeModeReceived,
     required TResult Function() setDarModeOn,
     required TResult Function() setLightModeOn,
+    required TResult Function() setToSystemMode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? watchThemeModeStarted,
-    TResult Function(bool isDarkModeOn)? watchThemeModeReceived,
+    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
     TResult Function()? setDarModeOn,
     TResult Function()? setLightModeOn,
+    TResult Function()? setToSystemMode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchThemeModeStarted,
-    TResult Function(bool isDarkModeOn)? watchThemeModeReceived,
+    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
     TResult Function()? setDarModeOn,
     TResult Function()? setLightModeOn,
+    TResult Function()? setToSystemMode,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +52,7 @@ mixin _$ThemeEvent {
         watchThemeModeReceived,
     required TResult Function(_SetDarModeOn value) setDarModeOn,
     required TResult Function(_SetLightModeOn value) setLightModeOn,
+    required TResult Function(_SetToSystemMode value) setToSystemMode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +61,7 @@ mixin _$ThemeEvent {
     TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
     TResult Function(_SetDarModeOn value)? setDarModeOn,
     TResult Function(_SetLightModeOn value)? setLightModeOn,
+    TResult Function(_SetToSystemMode value)? setToSystemMode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +70,7 @@ mixin _$ThemeEvent {
     TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
     TResult Function(_SetDarModeOn value)? setDarModeOn,
     TResult Function(_SetLightModeOn value)? setLightModeOn,
+    TResult Function(_SetToSystemMode value)? setToSystemMode,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -128,9 +134,10 @@ class _$_WatchThemeModeStarted implements _WatchThemeModeStarted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchThemeModeStarted,
-    required TResult Function(bool isDarkModeOn) watchThemeModeReceived,
+    required TResult Function(ThemeMode themeMode) watchThemeModeReceived,
     required TResult Function() setDarModeOn,
     required TResult Function() setLightModeOn,
+    required TResult Function() setToSystemMode,
   }) {
     return watchThemeModeStarted();
   }
@@ -139,9 +146,10 @@ class _$_WatchThemeModeStarted implements _WatchThemeModeStarted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? watchThemeModeStarted,
-    TResult Function(bool isDarkModeOn)? watchThemeModeReceived,
+    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
     TResult Function()? setDarModeOn,
     TResult Function()? setLightModeOn,
+    TResult Function()? setToSystemMode,
   }) {
     return watchThemeModeStarted?.call();
   }
@@ -150,9 +158,10 @@ class _$_WatchThemeModeStarted implements _WatchThemeModeStarted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchThemeModeStarted,
-    TResult Function(bool isDarkModeOn)? watchThemeModeReceived,
+    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
     TResult Function()? setDarModeOn,
     TResult Function()? setLightModeOn,
+    TResult Function()? setToSystemMode,
     required TResult orElse(),
   }) {
     if (watchThemeModeStarted != null) {
@@ -170,6 +179,7 @@ class _$_WatchThemeModeStarted implements _WatchThemeModeStarted {
         watchThemeModeReceived,
     required TResult Function(_SetDarModeOn value) setDarModeOn,
     required TResult Function(_SetLightModeOn value) setLightModeOn,
+    required TResult Function(_SetToSystemMode value) setToSystemMode,
   }) {
     return watchThemeModeStarted(this);
   }
@@ -181,6 +191,7 @@ class _$_WatchThemeModeStarted implements _WatchThemeModeStarted {
     TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
     TResult Function(_SetDarModeOn value)? setDarModeOn,
     TResult Function(_SetLightModeOn value)? setLightModeOn,
+    TResult Function(_SetToSystemMode value)? setToSystemMode,
   }) {
     return watchThemeModeStarted?.call(this);
   }
@@ -192,6 +203,7 @@ class _$_WatchThemeModeStarted implements _WatchThemeModeStarted {
     TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
     TResult Function(_SetDarModeOn value)? setDarModeOn,
     TResult Function(_SetLightModeOn value)? setLightModeOn,
+    TResult Function(_SetToSystemMode value)? setToSystemMode,
     required TResult orElse(),
   }) {
     if (watchThemeModeStarted != null) {
@@ -210,7 +222,7 @@ abstract class _$WatchThemeModeReceivedCopyWith<$Res> {
   factory _$WatchThemeModeReceivedCopyWith(_WatchThemeModeReceived value,
           $Res Function(_WatchThemeModeReceived) then) =
       __$WatchThemeModeReceivedCopyWithImpl<$Res>;
-  $Res call({bool isDarkModeOn});
+  $Res call({ThemeMode themeMode});
 }
 
 /// @nodoc
@@ -226,13 +238,13 @@ class __$WatchThemeModeReceivedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? isDarkModeOn = freezed,
+    Object? themeMode = freezed,
   }) {
     return _then(_WatchThemeModeReceived(
-      isDarkModeOn: isDarkModeOn == freezed
-          ? _value.isDarkModeOn
-          : isDarkModeOn // ignore: cast_nullable_to_non_nullable
-              as bool,
+      themeMode: themeMode == freezed
+          ? _value.themeMode
+          : themeMode // ignore: cast_nullable_to_non_nullable
+              as ThemeMode,
     ));
   }
 }
@@ -240,14 +252,14 @@ class __$WatchThemeModeReceivedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_WatchThemeModeReceived implements _WatchThemeModeReceived {
-  const _$_WatchThemeModeReceived({required this.isDarkModeOn});
+  const _$_WatchThemeModeReceived({required this.themeMode});
 
   @override
-  final bool isDarkModeOn;
+  final ThemeMode themeMode;
 
   @override
   String toString() {
-    return 'ThemeEvent.watchThemeModeReceived(isDarkModeOn: $isDarkModeOn)';
+    return 'ThemeEvent.watchThemeModeReceived(themeMode: $themeMode)';
   }
 
   @override
@@ -255,13 +267,12 @@ class _$_WatchThemeModeReceived implements _WatchThemeModeReceived {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _WatchThemeModeReceived &&
-            const DeepCollectionEquality()
-                .equals(other.isDarkModeOn, isDarkModeOn));
+            const DeepCollectionEquality().equals(other.themeMode, themeMode));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(isDarkModeOn));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(themeMode));
 
   @JsonKey(ignore: true)
   @override
@@ -273,35 +284,38 @@ class _$_WatchThemeModeReceived implements _WatchThemeModeReceived {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchThemeModeStarted,
-    required TResult Function(bool isDarkModeOn) watchThemeModeReceived,
+    required TResult Function(ThemeMode themeMode) watchThemeModeReceived,
     required TResult Function() setDarModeOn,
     required TResult Function() setLightModeOn,
+    required TResult Function() setToSystemMode,
   }) {
-    return watchThemeModeReceived(isDarkModeOn);
+    return watchThemeModeReceived(themeMode);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? watchThemeModeStarted,
-    TResult Function(bool isDarkModeOn)? watchThemeModeReceived,
+    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
     TResult Function()? setDarModeOn,
     TResult Function()? setLightModeOn,
+    TResult Function()? setToSystemMode,
   }) {
-    return watchThemeModeReceived?.call(isDarkModeOn);
+    return watchThemeModeReceived?.call(themeMode);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchThemeModeStarted,
-    TResult Function(bool isDarkModeOn)? watchThemeModeReceived,
+    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
     TResult Function()? setDarModeOn,
     TResult Function()? setLightModeOn,
+    TResult Function()? setToSystemMode,
     required TResult orElse(),
   }) {
     if (watchThemeModeReceived != null) {
-      return watchThemeModeReceived(isDarkModeOn);
+      return watchThemeModeReceived(themeMode);
     }
     return orElse();
   }
@@ -315,6 +329,7 @@ class _$_WatchThemeModeReceived implements _WatchThemeModeReceived {
         watchThemeModeReceived,
     required TResult Function(_SetDarModeOn value) setDarModeOn,
     required TResult Function(_SetLightModeOn value) setLightModeOn,
+    required TResult Function(_SetToSystemMode value) setToSystemMode,
   }) {
     return watchThemeModeReceived(this);
   }
@@ -326,6 +341,7 @@ class _$_WatchThemeModeReceived implements _WatchThemeModeReceived {
     TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
     TResult Function(_SetDarModeOn value)? setDarModeOn,
     TResult Function(_SetLightModeOn value)? setLightModeOn,
+    TResult Function(_SetToSystemMode value)? setToSystemMode,
   }) {
     return watchThemeModeReceived?.call(this);
   }
@@ -337,6 +353,7 @@ class _$_WatchThemeModeReceived implements _WatchThemeModeReceived {
     TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
     TResult Function(_SetDarModeOn value)? setDarModeOn,
     TResult Function(_SetLightModeOn value)? setLightModeOn,
+    TResult Function(_SetToSystemMode value)? setToSystemMode,
     required TResult orElse(),
   }) {
     if (watchThemeModeReceived != null) {
@@ -347,10 +364,10 @@ class _$_WatchThemeModeReceived implements _WatchThemeModeReceived {
 }
 
 abstract class _WatchThemeModeReceived implements ThemeEvent {
-  const factory _WatchThemeModeReceived({required final bool isDarkModeOn}) =
+  const factory _WatchThemeModeReceived({required final ThemeMode themeMode}) =
       _$_WatchThemeModeReceived;
 
-  bool get isDarkModeOn => throw _privateConstructorUsedError;
+  ThemeMode get themeMode => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$WatchThemeModeReceivedCopyWith<_WatchThemeModeReceived> get copyWith =>
       throw _privateConstructorUsedError;
@@ -397,9 +414,10 @@ class _$_SetDarModeOn implements _SetDarModeOn {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchThemeModeStarted,
-    required TResult Function(bool isDarkModeOn) watchThemeModeReceived,
+    required TResult Function(ThemeMode themeMode) watchThemeModeReceived,
     required TResult Function() setDarModeOn,
     required TResult Function() setLightModeOn,
+    required TResult Function() setToSystemMode,
   }) {
     return setDarModeOn();
   }
@@ -408,9 +426,10 @@ class _$_SetDarModeOn implements _SetDarModeOn {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? watchThemeModeStarted,
-    TResult Function(bool isDarkModeOn)? watchThemeModeReceived,
+    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
     TResult Function()? setDarModeOn,
     TResult Function()? setLightModeOn,
+    TResult Function()? setToSystemMode,
   }) {
     return setDarModeOn?.call();
   }
@@ -419,9 +438,10 @@ class _$_SetDarModeOn implements _SetDarModeOn {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchThemeModeStarted,
-    TResult Function(bool isDarkModeOn)? watchThemeModeReceived,
+    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
     TResult Function()? setDarModeOn,
     TResult Function()? setLightModeOn,
+    TResult Function()? setToSystemMode,
     required TResult orElse(),
   }) {
     if (setDarModeOn != null) {
@@ -439,6 +459,7 @@ class _$_SetDarModeOn implements _SetDarModeOn {
         watchThemeModeReceived,
     required TResult Function(_SetDarModeOn value) setDarModeOn,
     required TResult Function(_SetLightModeOn value) setLightModeOn,
+    required TResult Function(_SetToSystemMode value) setToSystemMode,
   }) {
     return setDarModeOn(this);
   }
@@ -450,6 +471,7 @@ class _$_SetDarModeOn implements _SetDarModeOn {
     TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
     TResult Function(_SetDarModeOn value)? setDarModeOn,
     TResult Function(_SetLightModeOn value)? setLightModeOn,
+    TResult Function(_SetToSystemMode value)? setToSystemMode,
   }) {
     return setDarModeOn?.call(this);
   }
@@ -461,6 +483,7 @@ class _$_SetDarModeOn implements _SetDarModeOn {
     TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
     TResult Function(_SetDarModeOn value)? setDarModeOn,
     TResult Function(_SetLightModeOn value)? setLightModeOn,
+    TResult Function(_SetToSystemMode value)? setToSystemMode,
     required TResult orElse(),
   }) {
     if (setDarModeOn != null) {
@@ -515,9 +538,10 @@ class _$_SetLightModeOn implements _SetLightModeOn {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchThemeModeStarted,
-    required TResult Function(bool isDarkModeOn) watchThemeModeReceived,
+    required TResult Function(ThemeMode themeMode) watchThemeModeReceived,
     required TResult Function() setDarModeOn,
     required TResult Function() setLightModeOn,
+    required TResult Function() setToSystemMode,
   }) {
     return setLightModeOn();
   }
@@ -526,9 +550,10 @@ class _$_SetLightModeOn implements _SetLightModeOn {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? watchThemeModeStarted,
-    TResult Function(bool isDarkModeOn)? watchThemeModeReceived,
+    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
     TResult Function()? setDarModeOn,
     TResult Function()? setLightModeOn,
+    TResult Function()? setToSystemMode,
   }) {
     return setLightModeOn?.call();
   }
@@ -537,9 +562,10 @@ class _$_SetLightModeOn implements _SetLightModeOn {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchThemeModeStarted,
-    TResult Function(bool isDarkModeOn)? watchThemeModeReceived,
+    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
     TResult Function()? setDarModeOn,
     TResult Function()? setLightModeOn,
+    TResult Function()? setToSystemMode,
     required TResult orElse(),
   }) {
     if (setLightModeOn != null) {
@@ -557,6 +583,7 @@ class _$_SetLightModeOn implements _SetLightModeOn {
         watchThemeModeReceived,
     required TResult Function(_SetDarModeOn value) setDarModeOn,
     required TResult Function(_SetLightModeOn value) setLightModeOn,
+    required TResult Function(_SetToSystemMode value) setToSystemMode,
   }) {
     return setLightModeOn(this);
   }
@@ -568,6 +595,7 @@ class _$_SetLightModeOn implements _SetLightModeOn {
     TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
     TResult Function(_SetDarModeOn value)? setDarModeOn,
     TResult Function(_SetLightModeOn value)? setLightModeOn,
+    TResult Function(_SetToSystemMode value)? setToSystemMode,
   }) {
     return setLightModeOn?.call(this);
   }
@@ -579,6 +607,7 @@ class _$_SetLightModeOn implements _SetLightModeOn {
     TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
     TResult Function(_SetDarModeOn value)? setDarModeOn,
     TResult Function(_SetLightModeOn value)? setLightModeOn,
+    TResult Function(_SetToSystemMode value)? setToSystemMode,
     required TResult orElse(),
   }) {
     if (setLightModeOn != null) {
@@ -593,8 +622,133 @@ abstract class _SetLightModeOn implements ThemeEvent {
 }
 
 /// @nodoc
+abstract class _$SetToSystemModeCopyWith<$Res> {
+  factory _$SetToSystemModeCopyWith(
+          _SetToSystemMode value, $Res Function(_SetToSystemMode) then) =
+      __$SetToSystemModeCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SetToSystemModeCopyWithImpl<$Res>
+    extends _$ThemeEventCopyWithImpl<$Res>
+    implements _$SetToSystemModeCopyWith<$Res> {
+  __$SetToSystemModeCopyWithImpl(
+      _SetToSystemMode _value, $Res Function(_SetToSystemMode) _then)
+      : super(_value, (v) => _then(v as _SetToSystemMode));
+
+  @override
+  _SetToSystemMode get _value => super._value as _SetToSystemMode;
+}
+
+/// @nodoc
+
+class _$_SetToSystemMode implements _SetToSystemMode {
+  const _$_SetToSystemMode();
+
+  @override
+  String toString() {
+    return 'ThemeEvent.setToSystemMode()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SetToSystemMode);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchThemeModeStarted,
+    required TResult Function(ThemeMode themeMode) watchThemeModeReceived,
+    required TResult Function() setDarModeOn,
+    required TResult Function() setLightModeOn,
+    required TResult Function() setToSystemMode,
+  }) {
+    return setToSystemMode();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? watchThemeModeStarted,
+    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
+    TResult Function()? setDarModeOn,
+    TResult Function()? setLightModeOn,
+    TResult Function()? setToSystemMode,
+  }) {
+    return setToSystemMode?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchThemeModeStarted,
+    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
+    TResult Function()? setDarModeOn,
+    TResult Function()? setLightModeOn,
+    TResult Function()? setToSystemMode,
+    required TResult orElse(),
+  }) {
+    if (setToSystemMode != null) {
+      return setToSystemMode();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchThemeModeStarted value)
+        watchThemeModeStarted,
+    required TResult Function(_WatchThemeModeReceived value)
+        watchThemeModeReceived,
+    required TResult Function(_SetDarModeOn value) setDarModeOn,
+    required TResult Function(_SetLightModeOn value) setLightModeOn,
+    required TResult Function(_SetToSystemMode value) setToSystemMode,
+  }) {
+    return setToSystemMode(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchThemeModeStarted value)? watchThemeModeStarted,
+    TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
+    TResult Function(_SetDarModeOn value)? setDarModeOn,
+    TResult Function(_SetLightModeOn value)? setLightModeOn,
+    TResult Function(_SetToSystemMode value)? setToSystemMode,
+  }) {
+    return setToSystemMode?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchThemeModeStarted value)? watchThemeModeStarted,
+    TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
+    TResult Function(_SetDarModeOn value)? setDarModeOn,
+    TResult Function(_SetLightModeOn value)? setLightModeOn,
+    TResult Function(_SetToSystemMode value)? setToSystemMode,
+    required TResult orElse(),
+  }) {
+    if (setToSystemMode != null) {
+      return setToSystemMode(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetToSystemMode implements ThemeEvent {
+  const factory _SetToSystemMode() = _$_SetToSystemMode;
+}
+
+/// @nodoc
 mixin _$ThemeState {
-  bool get isDarkModeOn => throw _privateConstructorUsedError;
+  ThemeMode get themeMode => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ThemeStateCopyWith<ThemeState> get copyWith =>
@@ -606,7 +760,7 @@ abstract class $ThemeStateCopyWith<$Res> {
   factory $ThemeStateCopyWith(
           ThemeState value, $Res Function(ThemeState) then) =
       _$ThemeStateCopyWithImpl<$Res>;
-  $Res call({bool isDarkModeOn});
+  $Res call({ThemeMode themeMode});
 }
 
 /// @nodoc
@@ -619,13 +773,13 @@ class _$ThemeStateCopyWithImpl<$Res> implements $ThemeStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? isDarkModeOn = freezed,
+    Object? themeMode = freezed,
   }) {
     return _then(_value.copyWith(
-      isDarkModeOn: isDarkModeOn == freezed
-          ? _value.isDarkModeOn
-          : isDarkModeOn // ignore: cast_nullable_to_non_nullable
-              as bool,
+      themeMode: themeMode == freezed
+          ? _value.themeMode
+          : themeMode // ignore: cast_nullable_to_non_nullable
+              as ThemeMode,
     ));
   }
 }
@@ -636,7 +790,7 @@ abstract class _$ThemeStateCopyWith<$Res> implements $ThemeStateCopyWith<$Res> {
           _ThemeState value, $Res Function(_ThemeState) then) =
       __$ThemeStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isDarkModeOn});
+  $Res call({ThemeMode themeMode});
 }
 
 /// @nodoc
@@ -651,13 +805,13 @@ class __$ThemeStateCopyWithImpl<$Res> extends _$ThemeStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? isDarkModeOn = freezed,
+    Object? themeMode = freezed,
   }) {
     return _then(_ThemeState(
-      isDarkModeOn: isDarkModeOn == freezed
-          ? _value.isDarkModeOn
-          : isDarkModeOn // ignore: cast_nullable_to_non_nullable
-              as bool,
+      themeMode: themeMode == freezed
+          ? _value.themeMode
+          : themeMode // ignore: cast_nullable_to_non_nullable
+              as ThemeMode,
     ));
   }
 }
@@ -665,14 +819,14 @@ class __$ThemeStateCopyWithImpl<$Res> extends _$ThemeStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ThemeState implements _ThemeState {
-  const _$_ThemeState({required this.isDarkModeOn});
+  const _$_ThemeState({required this.themeMode});
 
   @override
-  final bool isDarkModeOn;
+  final ThemeMode themeMode;
 
   @override
   String toString() {
-    return 'ThemeState(isDarkModeOn: $isDarkModeOn)';
+    return 'ThemeState(themeMode: $themeMode)';
   }
 
   @override
@@ -680,13 +834,12 @@ class _$_ThemeState implements _ThemeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ThemeState &&
-            const DeepCollectionEquality()
-                .equals(other.isDarkModeOn, isDarkModeOn));
+            const DeepCollectionEquality().equals(other.themeMode, themeMode));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(isDarkModeOn));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(themeMode));
 
   @JsonKey(ignore: true)
   @override
@@ -695,10 +848,11 @@ class _$_ThemeState implements _ThemeState {
 }
 
 abstract class _ThemeState implements ThemeState {
-  const factory _ThemeState({required final bool isDarkModeOn}) = _$_ThemeState;
+  const factory _ThemeState({required final ThemeMode themeMode}) =
+      _$_ThemeState;
 
   @override
-  bool get isDarkModeOn => throw _privateConstructorUsedError;
+  ThemeMode get themeMode => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ThemeStateCopyWith<_ThemeState> get copyWith =>
