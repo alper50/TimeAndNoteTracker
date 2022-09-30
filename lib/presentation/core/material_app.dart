@@ -26,7 +26,7 @@ class MaterialAppWidget extends StatelessWidget {
               ..add(InternetConnectionEvent.startListeningConnection())),
         BlocProvider(
             create: (context) =>
-                getIt<ThemeBloc>()..add(ThemeEvent.watchThemeModeStarted())),
+                getIt<ThemeBloc>()..add(ThemeEvent.initializeThemeMode())),
       ],
       child: BlocBuilder<ThemeBloc, ThemeState>(
         buildWhen: (prev, cur) => prev.themeMode.name != cur.themeMode.name,

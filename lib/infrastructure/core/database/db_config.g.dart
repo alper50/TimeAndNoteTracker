@@ -1330,6 +1330,181 @@ class $SearchTimeHistoryTable extends SearchTimeHistory
   }
 }
 
+class SettingsTableData extends DataClass
+    implements Insertable<SettingsTableData> {
+  final int id;
+  final int themeMode;
+  SettingsTableData({required this.id, required this.themeMode});
+  factory SettingsTableData.fromData(Map<String, dynamic> data,
+      {String? prefix}) {
+    final effectivePrefix = prefix ?? '';
+    return SettingsTableData(
+      id: const IntType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}id'])!,
+      themeMode: const IntType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}theme_mode'])!,
+    );
+  }
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<int>(id);
+    map['theme_mode'] = Variable<int>(themeMode);
+    return map;
+  }
+
+  SettingsTableCompanion toCompanion(bool nullToAbsent) {
+    return SettingsTableCompanion(
+      id: Value(id),
+      themeMode: Value(themeMode),
+    );
+  }
+
+  factory SettingsTableData.fromJson(Map<String, dynamic> json,
+      {ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return SettingsTableData(
+      id: serializer.fromJson<int>(json['id']),
+      themeMode: serializer.fromJson<int>(json['themeMode']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<int>(id),
+      'themeMode': serializer.toJson<int>(themeMode),
+    };
+  }
+
+  SettingsTableData copyWith({int? id, int? themeMode}) => SettingsTableData(
+        id: id ?? this.id,
+        themeMode: themeMode ?? this.themeMode,
+      );
+  @override
+  String toString() {
+    return (StringBuffer('SettingsTableData(')
+          ..write('id: $id, ')
+          ..write('themeMode: $themeMode')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(id, themeMode);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is SettingsTableData &&
+          other.id == this.id &&
+          other.themeMode == this.themeMode);
+}
+
+class SettingsTableCompanion extends UpdateCompanion<SettingsTableData> {
+  final Value<int> id;
+  final Value<int> themeMode;
+  const SettingsTableCompanion({
+    this.id = const Value.absent(),
+    this.themeMode = const Value.absent(),
+  });
+  SettingsTableCompanion.insert({
+    this.id = const Value.absent(),
+    required int themeMode,
+  }) : themeMode = Value(themeMode);
+  static Insertable<SettingsTableData> custom({
+    Expression<int>? id,
+    Expression<int>? themeMode,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (themeMode != null) 'theme_mode': themeMode,
+    });
+  }
+
+  SettingsTableCompanion copyWith({Value<int>? id, Value<int>? themeMode}) {
+    return SettingsTableCompanion(
+      id: id ?? this.id,
+      themeMode: themeMode ?? this.themeMode,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<int>(id.value);
+    }
+    if (themeMode.present) {
+      map['theme_mode'] = Variable<int>(themeMode.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('SettingsTableCompanion(')
+          ..write('id: $id, ')
+          ..write('themeMode: $themeMode')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $SettingsTableTable extends SettingsTable
+    with TableInfo<$SettingsTableTable, SettingsTableData> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $SettingsTableTable(this.attachedDatabase, [this._alias]);
+  final VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<int?> id = GeneratedColumn<int?>(
+      'id', aliasedName, false,
+      type: const IntType(),
+      requiredDuringInsert: false,
+      defaultConstraints: 'PRIMARY KEY AUTOINCREMENT');
+  final VerificationMeta _themeModeMeta = const VerificationMeta('themeMode');
+  @override
+  late final GeneratedColumn<int?> themeMode = GeneratedColumn<int?>(
+      'theme_mode', aliasedName, false,
+      type: const IntType(), requiredDuringInsert: true);
+  @override
+  List<GeneratedColumn> get $columns => [id, themeMode];
+  @override
+  String get aliasedName => _alias ?? 'settingsTable';
+  @override
+  String get actualTableName => 'settingsTable';
+  @override
+  VerificationContext validateIntegrity(Insertable<SettingsTableData> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('theme_mode')) {
+      context.handle(_themeModeMeta,
+          themeMode.isAcceptableOrUnknown(data['theme_mode']!, _themeModeMeta));
+    } else if (isInserting) {
+      context.missing(_themeModeMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  SettingsTableData map(Map<String, dynamic> data, {String? tablePrefix}) {
+    return SettingsTableData.fromData(data,
+        prefix: tablePrefix != null ? '$tablePrefix.' : null);
+  }
+
+  @override
+  $SettingsTableTable createAlias(String alias) {
+    return $SettingsTableTable(attachedDatabase, alias);
+  }
+}
+
 abstract class _$MyDatabase extends GeneratedDatabase {
   _$MyDatabase(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
   late final $NoteTable note = $NoteTable(this);
@@ -1340,6 +1515,7 @@ abstract class _$MyDatabase extends GeneratedDatabase {
       $SearchNoteHistoryTable(this);
   late final $SearchTimeHistoryTable searchTimeHistory =
       $SearchTimeHistoryTable(this);
+  late final $SettingsTableTable settingsTable = $SettingsTableTable(this);
   late final NoteLocalService noteLocalService =
       NoteLocalService(this as MyDatabase);
   late final AuthLocalService authLocalService =
@@ -1348,6 +1524,8 @@ abstract class _$MyDatabase extends GeneratedDatabase {
       TimeLocalService(this as MyDatabase);
   late final SearchLocalService searchLocalService =
       SearchLocalService(this as MyDatabase);
+  late final SettingsLocalService settingsLocalService =
+      SettingsLocalService(this as MyDatabase);
   @override
   Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
   @override
@@ -1357,6 +1535,7 @@ abstract class _$MyDatabase extends GeneratedDatabase {
         appInformation,
         timeTable,
         searchNoteHistory,
-        searchTimeHistory
+        searchTimeHistory,
+        settingsTable
       ];
 }

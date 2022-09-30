@@ -7,4 +7,5 @@ class ThemeEvent with _$ThemeEvent {
   const factory ThemeEvent.setDarModeOn() = _SetDarModeOn;
   const factory ThemeEvent.setLightModeOn() = _SetLightModeOn;
   const factory ThemeEvent.setToSystemMode() = _SetToSystemMode;
+  const factory ThemeEvent.initializeThemeMode() = _InitializeThemeMode;
 }
