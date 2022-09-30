@@ -48,11 +48,7 @@ class TimeSuccesView extends StatelessWidget {
     return BlocBuilder<TimeTickerBloc, TimeTickerState>(
       builder: (context, state) {
         return Scaffold(
-                appBar: AppBar(
-                  elevation: 0,
-                  backgroundColor: MyColors.lightBackgroundColor,
-                  foregroundColor: MyColors.primaryColor,
-                ),
+                appBar: AppBar(),
                 body: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,

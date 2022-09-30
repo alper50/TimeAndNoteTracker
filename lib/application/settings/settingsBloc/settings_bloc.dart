@@ -13,7 +13,7 @@ import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_them
 part 'settings_event.dart';
 part 'settings_state.dart';
 part 'settings_bloc.freezed.dart';
-
+//TODO check if db working and make settings respository
 @injectable
 class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   final IAuthRemoteRepository _authRemoteRepository;

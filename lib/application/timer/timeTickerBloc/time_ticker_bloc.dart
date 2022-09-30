@@ -2,24 +2,28 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:timenotetracker/domain/timer/i_time_local_repository.dart';
 import 'package:timenotetracker/domain/timer/ticker_entity.dart';
 import 'package:timenotetracker/domain/timer/time_entity.dart';
+import 'package:timenotetracker/domain/timer/time_value_objects.dart';
+import 'package:timenotetracker/infrastructure/timer/time_local_repository.dart';
 
 part 'time_ticker_event.dart';
 part 'time_ticker_state.dart';
 part 'time_ticker_bloc.freezed.dart';
-//TODO ticker doesnt count
+
 @injectable
 class TimeTickerBloc extends Bloc<TimeTickerEvent, TimeTickerState> {
   final TickerForward ticker;
+  final ITimeLocalRepository _timeLocalRepository;
   StreamSubscription<int>? _tickerSubscription;
 
-  TimeTickerBloc({required this.ticker})
+  TimeTickerBloc(this._timeLocalRepository, {required this.ticker})
       : super(TimeTickerState.initial(
-            time: Time.defaultTime(0, 'initializing'))) {
+            time: Time.defaultTime(60, 'initializing'))) {
     on<TimeTickerEvent>(
-      (event, emit) {
-        event.map(
+      (event, emit) async{
+       await event.map(
           started: (e) {
             emit(TimeTickerState.timeInProgress(time: e.time));
             _tickerSubscription?.cancel();
@@ -27,7 +31,7 @@ class TimeTickerBloc extends Bloc<TimeTickerEvent, TimeTickerState> {
                 ticker.tick(ticks: e.time.timeHeader.getValueOrCrash()).listen(
                       (duration) => add(
                         TimeTickerEvent.ticked(
-                            time: e.time
+                            time: e.time.copyWith(timeHeader: TimeHeader(duration))
                                 ),
                       ),
                     );
@@ -44,9 +48,10 @@ class TimeTickerBloc extends Bloc<TimeTickerEvent, TimeTickerState> {
               emit(TimeTickerState.timeInProgress(time: state.time));
             }
           },
-          reset: (e) {
+          reset: (e) async{
+           await _timeLocalRepository.updateTimer(state.time);
             _tickerSubscription?.cancel();
-            emit(TimeTickerState.initial(time: e.time));
+            emit(TimeTickerState.initial(time: Time.defaultTime(60, 'initializing')));
           },
           ticked: (e) {
             e.time.timeHeader.getValueOrCrash() >= 0
@@ -58,7 +63,8 @@ class TimeTickerBloc extends Bloc<TimeTickerEvent, TimeTickerState> {
     );
   }
   @override
-  Future<void> close() {
+  Future<void> close() async{
+    await _timeLocalRepository.updateTimer(state.time);
     _tickerSubscription?.cancel();
     return super.close();
   }

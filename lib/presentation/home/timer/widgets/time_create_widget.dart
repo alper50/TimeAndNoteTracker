@@ -32,6 +32,7 @@ class TimeCreateWidget extends StatelessWidget {
           Flexible(
             flex: 5,
             child: MyTextFormField(
+              focusNode: FocusNode(),
               controller: textEditingController,
               labelText: 'I am working on..',
               validator: (value) {
@@ -47,7 +48,7 @@ class TimeCreateWidget extends StatelessWidget {
                 context.read<TimeActionBloc>().add(
                       TimeActionEvent.createTimer(
                         timeToBeCreated: Time.defaultTime(
-                          0,
+                          60,
                           textEditingController.text,
                         ),
                       ),
