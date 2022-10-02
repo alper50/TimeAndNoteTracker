@@ -8,7 +8,7 @@ class AnalyseViewAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text('Analyzes'),
+      title: Text('Analyze'),
       actions: [
         IconButton(
           onPressed: () {

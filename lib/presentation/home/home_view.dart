@@ -24,7 +24,7 @@ class HomeView extends StatelessWidget {
     ),
     SalomonBottomBarItem(
       icon: Icon(Icons.analytics_rounded),
-      title: Text('Analyse'),
+      title: Text('Analyze'),
     ),
   ];
   DateTime backPressedTime = DateTime.now();
