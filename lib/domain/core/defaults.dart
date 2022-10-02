@@ -5,4 +5,5 @@ import 'package:timenotetracker/domain/timer/time_entity.dart';
 class DefaultConfig{
   static Time dDefaultTimeForward = Time.defaultTime(dTimeForwardInitial, dTimeHeader);
   static Time dDefaultTimeBackward= Time.defaultTime(dTimeBackwardInitial, dTimeHeader);
+  static int dWillPopScopeDuration = 2;
 }
