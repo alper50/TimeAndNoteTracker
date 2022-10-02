@@ -48,20 +48,38 @@ class TimeSuccesView extends StatelessWidget {
     return BlocBuilder<TimeTickerBloc, TimeTickerState>(
       builder: (context, state) {
         return Scaffold(
-                appBar: AppBar(),
-                body: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      state.time.timeHeader.getValueOrCrash().toString(),
-                      style: MyTextStyles.headline1,
+          appBar: AppBar(),
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text(
+                timeToBeEdited!.timeBody.getValueOrCrash(),
+                style: MyTextStyles.headline2,
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Expanded(
+                    child: Center(
+                      child: ListWheelScrollView(
+                        useMagnifier: false,
+                        itemExtent: 10,
+                        children: [
+                          Text(
+                            state.time.timeHeader.getValueOrCrash().toString(),
+                            style: MyTextStyles.headline1,
+                          ),
+                        ],
+                      ),
                     ),
-                    Text(timeToBeEdited!.timeBody.getValueOrCrash()),
-                    _buildBottomButtons(state, context),
-                  ],
-                ),
-              );
+                  ),
+                ],
+              ),
+              _buildBottomButtons(state, context),
+            ],
+          ),
+        );
       },
     );
   }
@@ -69,7 +87,7 @@ class TimeSuccesView extends StatelessWidget {
   Widget _buildBottomButtons(TimeTickerState state, BuildContext context) {
     return state.map(
       initial: (_) => Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconButton(
             onPressed: () {
@@ -82,9 +100,12 @@ class TimeSuccesView extends StatelessWidget {
         ],
       ),
       timeInPause: (e) => Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconButton(
+            color: MyColors.lightPrimaryColor,
+            focusColor: MyColors.primaryColor,
+            splashColor: MyColors.primaryColor,
             onPressed: () {
               context.read<TimeTickerBloc>().add(TimeTickerEvent.resumed());
             },
@@ -101,7 +122,7 @@ class TimeSuccesView extends StatelessWidget {
         ],
       ),
       timeInProgress: (e) => Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconButton(
             onPressed: () {
@@ -120,7 +141,7 @@ class TimeSuccesView extends StatelessWidget {
         ],
       ),
       timeCompleted: (e) => Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconButton(
             onPressed: () {

@@ -23,7 +23,7 @@ class TimeView extends StatelessWidget {
         BlocProvider(
           create: (context) => getIt<TimeTickerBloc>()
             ..add(TimeTickerEvent.started(
-                time: currentTime!)), //TODO currentTime.timeHeader
+                time: currentTime!)),
         ),
       ],
       child: BlocListener<TimeFormBloc, TimeFormState>(

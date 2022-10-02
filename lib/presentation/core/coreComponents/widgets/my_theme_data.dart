@@ -32,6 +32,7 @@ class MyThemeData {
       backgroundColor: MyColors.lightSecondaryColor,
     ),
     appBarTheme: AppBarTheme(
+        iconTheme: IconThemeData(color: MyColors.lightPrimaryColor),
         elevation: 2,
         titleTextStyle:
             MyTextStyles.headline3.copyWith(color: MyColors.primaryColor),
@@ -55,6 +56,7 @@ class MyThemeData {
       backgroundColor: MyColors.lightSecondaryColor,
     ),
     appBarTheme: AppBarTheme(
+      iconTheme: IconThemeData(color: MyColors.primaryColor),
         elevation: 2,
         titleTextStyle:
             MyTextStyles.headline3.copyWith(color: MyColors.primaryColor),

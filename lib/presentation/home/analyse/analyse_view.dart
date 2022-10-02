@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:timenotetracker/presentation/home/analyse/widgets/analyse_view_appbar.dart';
 
 class AnalyseView extends StatelessWidget {
-  const AnalyseView({ Key? key }) : super(key: key);
+  const AnalyseView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,6 +10,10 @@ class AnalyseView extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(AppBar().preferredSize.height),
         child: AnalyseViewAppBar(),
+      ),
+      body: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [],
       ),
     );
   }

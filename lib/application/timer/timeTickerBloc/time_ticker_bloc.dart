@@ -2,11 +2,11 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:timenotetracker/domain/core/defaults.dart';
 import 'package:timenotetracker/domain/timer/i_time_local_repository.dart';
 import 'package:timenotetracker/domain/timer/ticker_entity.dart';
 import 'package:timenotetracker/domain/timer/time_entity.dart';
 import 'package:timenotetracker/domain/timer/time_value_objects.dart';
-import 'package:timenotetracker/infrastructure/timer/time_local_repository.dart';
 
 part 'time_ticker_event.dart';
 part 'time_ticker_state.dart';
@@ -20,7 +20,7 @@ class TimeTickerBloc extends Bloc<TimeTickerEvent, TimeTickerState> {
 
   TimeTickerBloc(this._timeLocalRepository, {required this.ticker})
       : super(TimeTickerState.initial(
-            time: Time.defaultTime(60, 'initializing'))) {
+            time: DefaultConfig.dDefaultTimeForward)) {
     on<TimeTickerEvent>(
       (event, emit) async{
        await event.map(
@@ -51,7 +51,7 @@ class TimeTickerBloc extends Bloc<TimeTickerEvent, TimeTickerState> {
           reset: (e) async{
            await _timeLocalRepository.updateTimer(state.time);
             _tickerSubscription?.cancel();
-            emit(TimeTickerState.initial(time: Time.defaultTime(60, 'initializing')));
+            emit(TimeTickerState.initial(time: DefaultConfig.dDefaultTimeForward));
           },
           ticked: (e) {
             e.time.timeHeader.getValueOrCrash() >= 0
