@@ -64,7 +64,7 @@ class _SearchViewState extends State<SearchView> {
           body: BlocBuilder<SearchBloc, SearchState>(
             builder: (context, state) {
               return state.isSearchLoading
-                  ? MyCircularProgress()
+                  ? MyCircularProgressIndicator()
                   : FloatingSearchBar(
                       controller: controller,
                       body: FloatingSearchBarScrollNotifier(

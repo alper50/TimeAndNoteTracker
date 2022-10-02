@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
 
-class MyCircularProgress extends CircularProgressIndicator {
-  MyCircularProgress()
+class MyCircular extends CircularProgressIndicator {
+  MyCircular()
       : super(
           color: MyColors.lightPrimaryColor,
           backgroundColor: Colors.white10,
@@ -14,6 +14,6 @@ class MyCircularProgressIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: MyCircularProgress(),);
+    return Center(child: MyCircular(),);
   }
 }

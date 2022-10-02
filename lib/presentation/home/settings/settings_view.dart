@@ -59,7 +59,7 @@ class SettingsViewBody extends StatelessWidget {
       body: BlocBuilder<SettingsBloc, SettingsState>(
         builder: (context, state) {
           return state.isInitializing
-              ? Center(child: MyCircularProgress())
+              ? MyCircularProgressIndicator()
               : SingleChildScrollView(
                   physics: BouncingScrollPhysics(),
                   child: Container(
