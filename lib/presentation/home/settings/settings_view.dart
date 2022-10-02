@@ -5,9 +5,9 @@ import 'package:timenotetracker/application/settings/settingsBloc/settings_bloc.
 import 'package:timenotetracker/application/core/themeBloc/theme_bloc.dart';
 import 'package:timenotetracker/infrastructure/core/theme/theme_manager.dart';
 import 'package:timenotetracker/injection.dart';
-import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
-import 'package:timenotetracker/presentation/core/constants/padding_constants.dart';
-import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/color_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/padding_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/text_styles_constants.dart';
 import 'package:timenotetracker/presentation/home/settings/settings_alert_dialog.dart';
 import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_circular_progress.dart';
 import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_divider.dart';

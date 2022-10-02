@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/text_styles_constants.dart';
 
 class FailureView extends StatelessWidget {
   final void Function()? onPressed;

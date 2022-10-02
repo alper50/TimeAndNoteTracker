@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/core/internetConnectionBloc/internet_connection_bloc.dart';
-import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
-import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/color_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/text_styles_constants.dart';
 
 class NetworkFailureWidget extends StatelessWidget {
   const NetworkFailureWidget({Key? key}) : super(key: key);

@@ -1,4 +1,4 @@
-import 'package:timenotetracker/domain/timer/time_constants.dart';
+import 'package:timenotetracker/domain/core/domain_constants/time_constants.dart';
 import 'package:timenotetracker/domain/timer/time_entity.dart';
 
 // d stands for default

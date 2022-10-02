@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:timenotetracker/domain/analyze/analyze_constants.dart';
+import 'package:timenotetracker/domain/core/domain_constants/analyze_constants.dart';
 
 part 'analyze_entity.freezed.dart';
 

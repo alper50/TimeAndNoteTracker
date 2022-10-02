@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/analyze/bloc/analyze_bloc.dart';
-import 'package:timenotetracker/domain/analyze/analyze_constants.dart';
-import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
-import 'package:timenotetracker/presentation/core/constants/padding_constants.dart';
-import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
+import 'package:timenotetracker/domain/core/domain_constants/analyze_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/color_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/padding_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/text_styles_constants.dart';
 import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_circular_progress.dart';
 
 class AnalyzeViewBody extends StatelessWidget {

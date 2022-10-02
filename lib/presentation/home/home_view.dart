@@ -2,31 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:timenotetracker/domain/core/defaults.dart';
-import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
+import 'package:timenotetracker/domain/core/domain_constants/home_constans.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/color_constants.dart';
 import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_snackbar.dart';
-import 'package:timenotetracker/presentation/core/routes/router.gr.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({Key? key}) : super(key: key);
-  final List<PageRouteInfo<dynamic>> routes = [
-    NoteOverview(),
-    TimeListView(),
-    AnalyseView(),
-  ];
-  final List<SalomonBottomBarItem> bottomItems = [
-    SalomonBottomBarItem(
-      icon: Icon(Icons.note),
-      title: Text('Note'),
-    ),
-    SalomonBottomBarItem(
-      icon: Icon(Icons.track_changes_rounded),
-      title: Text('Time Tracker'),
-    ),
-    SalomonBottomBarItem(
-      icon: Icon(Icons.analytics_rounded),
-      title: Text('Analyze'),
-    ),
-  ];
+
   DateTime backPressedTime = DateTime.now();
   @override
   Widget build(BuildContext context) {

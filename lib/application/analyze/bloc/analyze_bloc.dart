@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:timenotetracker/domain/analyze/analyze_constants.dart';
+import 'package:timenotetracker/domain/core/domain_constants/analyze_constants.dart';
 
 part 'analyze_event.dart';
 part 'analyze_state.dart';

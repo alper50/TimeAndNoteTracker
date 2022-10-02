@@ -6,7 +6,7 @@ import 'package:timenotetracker/application/auth/registerAndLoginBloc/register_a
 import 'package:timenotetracker/presentation/auth/widgets/my_auth_button.dart';
 import 'package:timenotetracker/presentation/auth/widgets/my_textformfield.dart';
 import 'package:timenotetracker/presentation/auth/widgets/policy_text.dart';
-import 'package:timenotetracker/presentation/core/constants/padding_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/padding_constants.dart';
 import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_snackbar.dart';
 
 class RegisterView extends StatelessWidget {
