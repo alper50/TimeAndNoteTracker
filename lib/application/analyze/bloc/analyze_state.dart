@@ -5,6 +5,7 @@ class AnalyzeState with _$AnalyzeState {
   const factory AnalyzeState({
     required bool isInitializing,
     required bool isChangingDateScope,
+    required bool isAnalyzeEmpty,
     required int selectedChip,
   }) = _AnalyzeState;
 
@@ -12,5 +13,6 @@ class AnalyzeState with _$AnalyzeState {
         isInitializing: true,
         selectedChip: dSelectedChipIndex,
         isChangingDateScope:false,
+        isAnalyzeEmpty: false,
       );
 }

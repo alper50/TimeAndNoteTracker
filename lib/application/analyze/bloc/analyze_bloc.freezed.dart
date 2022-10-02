@@ -316,6 +316,7 @@ abstract class _ChangeDateScope implements AnalyzeEvent {
 mixin _$AnalyzeState {
   bool get isInitializing => throw _privateConstructorUsedError;
   bool get isChangingDateScope => throw _privateConstructorUsedError;
+  bool get isAnalyzeEmpty => throw _privateConstructorUsedError;
   int get selectedChip => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -328,7 +329,11 @@ abstract class $AnalyzeStateCopyWith<$Res> {
   factory $AnalyzeStateCopyWith(
           AnalyzeState value, $Res Function(AnalyzeState) then) =
       _$AnalyzeStateCopyWithImpl<$Res>;
-  $Res call({bool isInitializing, bool isChangingDateScope, int selectedChip});
+  $Res call(
+      {bool isInitializing,
+      bool isChangingDateScope,
+      bool isAnalyzeEmpty,
+      int selectedChip});
 }
 
 /// @nodoc
@@ -343,6 +348,7 @@ class _$AnalyzeStateCopyWithImpl<$Res> implements $AnalyzeStateCopyWith<$Res> {
   $Res call({
     Object? isInitializing = freezed,
     Object? isChangingDateScope = freezed,
+    Object? isAnalyzeEmpty = freezed,
     Object? selectedChip = freezed,
   }) {
     return _then(_value.copyWith(
@@ -353,6 +359,10 @@ class _$AnalyzeStateCopyWithImpl<$Res> implements $AnalyzeStateCopyWith<$Res> {
       isChangingDateScope: isChangingDateScope == freezed
           ? _value.isChangingDateScope
           : isChangingDateScope // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isAnalyzeEmpty: isAnalyzeEmpty == freezed
+          ? _value.isAnalyzeEmpty
+          : isAnalyzeEmpty // ignore: cast_nullable_to_non_nullable
               as bool,
       selectedChip: selectedChip == freezed
           ? _value.selectedChip
@@ -369,7 +379,11 @@ abstract class _$AnalyzeStateCopyWith<$Res>
           _AnalyzeState value, $Res Function(_AnalyzeState) then) =
       __$AnalyzeStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isInitializing, bool isChangingDateScope, int selectedChip});
+  $Res call(
+      {bool isInitializing,
+      bool isChangingDateScope,
+      bool isAnalyzeEmpty,
+      int selectedChip});
 }
 
 /// @nodoc
@@ -386,6 +400,7 @@ class __$AnalyzeStateCopyWithImpl<$Res> extends _$AnalyzeStateCopyWithImpl<$Res>
   $Res call({
     Object? isInitializing = freezed,
     Object? isChangingDateScope = freezed,
+    Object? isAnalyzeEmpty = freezed,
     Object? selectedChip = freezed,
   }) {
     return _then(_AnalyzeState(
@@ -396,6 +411,10 @@ class __$AnalyzeStateCopyWithImpl<$Res> extends _$AnalyzeStateCopyWithImpl<$Res>
       isChangingDateScope: isChangingDateScope == freezed
           ? _value.isChangingDateScope
           : isChangingDateScope // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isAnalyzeEmpty: isAnalyzeEmpty == freezed
+          ? _value.isAnalyzeEmpty
+          : isAnalyzeEmpty // ignore: cast_nullable_to_non_nullable
               as bool,
       selectedChip: selectedChip == freezed
           ? _value.selectedChip
@@ -411,6 +430,7 @@ class _$_AnalyzeState implements _AnalyzeState {
   const _$_AnalyzeState(
       {required this.isInitializing,
       required this.isChangingDateScope,
+      required this.isAnalyzeEmpty,
       required this.selectedChip});
 
   @override
@@ -418,11 +438,13 @@ class _$_AnalyzeState implements _AnalyzeState {
   @override
   final bool isChangingDateScope;
   @override
+  final bool isAnalyzeEmpty;
+  @override
   final int selectedChip;
 
   @override
   String toString() {
-    return 'AnalyzeState(isInitializing: $isInitializing, isChangingDateScope: $isChangingDateScope, selectedChip: $selectedChip)';
+    return 'AnalyzeState(isInitializing: $isInitializing, isChangingDateScope: $isChangingDateScope, isAnalyzeEmpty: $isAnalyzeEmpty, selectedChip: $selectedChip)';
   }
 
   @override
@@ -435,6 +457,8 @@ class _$_AnalyzeState implements _AnalyzeState {
             const DeepCollectionEquality()
                 .equals(other.isChangingDateScope, isChangingDateScope) &&
             const DeepCollectionEquality()
+                .equals(other.isAnalyzeEmpty, isAnalyzeEmpty) &&
+            const DeepCollectionEquality()
                 .equals(other.selectedChip, selectedChip));
   }
 
@@ -443,6 +467,7 @@ class _$_AnalyzeState implements _AnalyzeState {
       runtimeType,
       const DeepCollectionEquality().hash(isInitializing),
       const DeepCollectionEquality().hash(isChangingDateScope),
+      const DeepCollectionEquality().hash(isAnalyzeEmpty),
       const DeepCollectionEquality().hash(selectedChip));
 
   @JsonKey(ignore: true)
@@ -455,12 +480,15 @@ abstract class _AnalyzeState implements AnalyzeState {
   const factory _AnalyzeState(
       {required final bool isInitializing,
       required final bool isChangingDateScope,
+      required final bool isAnalyzeEmpty,
       required final int selectedChip}) = _$_AnalyzeState;
 
   @override
   bool get isInitializing => throw _privateConstructorUsedError;
   @override
   bool get isChangingDateScope => throw _privateConstructorUsedError;
+  @override
+  bool get isAnalyzeEmpty => throw _privateConstructorUsedError;
   @override
   int get selectedChip => throw _privateConstructorUsedError;
   @override
