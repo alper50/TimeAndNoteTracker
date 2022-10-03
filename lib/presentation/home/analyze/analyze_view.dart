@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:timenotetracker/application/analyze/bloc/analyze_bloc.dart';
+import 'package:timenotetracker/application/analyze/analyzeBloc/analyze_bloc.dart';
 import 'package:timenotetracker/injection.dart';
 import 'package:timenotetracker/presentation/home/analyze/widgets/analyze_view_appbar.dart';
 import 'package:timenotetracker/presentation/home/analyze/widgets/analyze_view_body.dart';

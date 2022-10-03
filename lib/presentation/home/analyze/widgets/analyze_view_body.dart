@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:timenotetracker/application/analyze/bloc/analyze_bloc.dart';
+import 'package:timenotetracker/application/analyze/analyzeBloc/analyze_bloc.dart';
 import 'package:timenotetracker/domain/core/domain_constants/analyze_constants.dart';
 import 'package:timenotetracker/presentation/core/presentation_constants/color_constants.dart';
 import 'package:timenotetracker/presentation/core/presentation_constants/padding_constants.dart';
@@ -41,7 +41,8 @@ class AnalyzeViewBody extends StatelessWidget {
                               ),
                               selectedColor: MyColors.primaryColor,
                               backgroundColor: MyColors.darkBackgroundColor,
-                              side: BorderSide(color: MyColors.primaryColor,width: 1.5),
+                              side: BorderSide(
+                                  color: MyColors.primaryColor, width: 1.5),
                               onSelected: (bool selected) {
                                 context.read<AnalyzeBloc>().add(
                                       AnalyzeEvent.changeDateScope(
@@ -53,11 +54,11 @@ class AnalyzeViewBody extends StatelessWidget {
                         ).toList(),
                       ),
                     ),
-                    state.isChangingDateScope
-                        ? MyCircularProgressIndicator()
-                        : Flexible(
-                          flex: 9,
-                          child: Column(
+                    Flexible(
+                      flex: 9,
+                      child: state.isChangingDateScope
+                          ? MyCircularProgressIndicator()
+                          : Column(
                               children: [
                                 Flexible(
                                   flex: 3,
@@ -75,7 +76,8 @@ class AnalyzeViewBody extends StatelessWidget {
                                           style: MyTextStyles.headline3,
                                         ),
                                         Text(
-                                          '00:00',
+                                          state.analyze.totalTrackedHours
+                                              .toString(),
                                           style: MyTextStyles.headline1,
                                         ),
                                       ],
@@ -88,7 +90,7 @@ class AnalyzeViewBody extends StatelessWidget {
                                 )
                               ],
                             ),
-                        )
+                    )
                   ],
                 ),
               );

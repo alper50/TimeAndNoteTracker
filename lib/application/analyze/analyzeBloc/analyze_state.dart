@@ -7,6 +7,8 @@ class AnalyzeState with _$AnalyzeState {
     required bool isChangingDateScope,
     required bool isAnalyzeEmpty,
     required int selectedChip,
+    required Analyze analyze,
+    required Option<AnalyzeFailure> analyzeFailureOrSuccessOption,
   }) = _AnalyzeState;
 
   factory AnalyzeState.initial() => AnalyzeState(
@@ -14,5 +16,7 @@ class AnalyzeState with _$AnalyzeState {
         selectedChip: dSelectedChipIndex,
         isChangingDateScope:false,
         isAnalyzeEmpty: false,
+        analyze: Analyze.defaultAnalyze(),
+        analyzeFailureOrSuccessOption:none(),
       );
 }
