@@ -22,19 +22,19 @@ class TimeLocalService extends DatabaseAccessor<MyDatabase>
     return query.watch();
   }
 
-  Future<int> createTimer(Insertable<TimeTableData> timerToBeCreated) {
-    return into(timeTable).insert(timerToBeCreated);
+  Future<int> createTimer(Insertable<TimeTableData> timerToBeCreated) async{
+    return await into(timeTable).insert(timerToBeCreated);
   }
 
-  Future<bool> updateTimer(Insertable<TimeTableData> timerToBeUpdated) {
-    return update(timeTable).replace(timerToBeUpdated);
+  Future<bool> updateTimer(Insertable<TimeTableData> timerToBeUpdated) async{
+    return await update(timeTable).replace(timerToBeUpdated);
   }
 
-  Future<int> deleteTimer(Insertable<TimeTableData> timerToBeDeleted) {
-    return delete(timeTable).delete(timerToBeDeleted);
+  Future<int> deleteTimer(Insertable<TimeTableData> timerToBeDeleted) async{
+    return await delete(timeTable).delete(timerToBeDeleted);
   }
 
- Future<List<TimeTableData>> searchNote(String timerToBeSearched) async{
+ Future<List<TimeTableData>> searchTime(String timerToBeSearched) async{
     final query = select(timeTable)..where((tbl) => tbl.timeBody.contains(timerToBeSearched));
     return await query.get();
   }

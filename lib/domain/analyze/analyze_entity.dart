@@ -8,14 +8,10 @@ abstract class Analyze implements _$Analyze {
   const Analyze._();
 
   const factory Analyze({
-    required String dateScope,
-    required int selectedChipIndex,
     required double totalTrackedHours,
   }) = _Analyze;
 
   factory Analyze.defaultAnalyze() => Analyze(
-        dateScope: chipsText[dSelectedChipIndex],
-        selectedChipIndex: dSelectedChipIndex,
         totalTrackedHours: dTotalTracked
       );
 
