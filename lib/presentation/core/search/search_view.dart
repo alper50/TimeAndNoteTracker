@@ -4,7 +4,7 @@ import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 import 'package:timenotetracker/application/core/searchBloc/search_bloc.dart';
 import 'package:timenotetracker/domain/core/search/i_search_service.dart';
 import 'package:timenotetracker/injection.dart';
-import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/text_styles_constants.dart';
 import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_circular_progress.dart';
 import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_snackbar.dart';
 import 'package:timenotetracker/presentation/core/search/search_result_view.dart';
@@ -64,7 +64,7 @@ class _SearchViewState extends State<SearchView> {
           body: BlocBuilder<SearchBloc, SearchState>(
             builder: (context, state) {
               return state.isSearchLoading
-                  ? MyCircularProgress()
+                  ? MyCircularProgressIndicator()
                   : FloatingSearchBar(
                       controller: controller,
                       body: FloatingSearchBarScrollNotifier(

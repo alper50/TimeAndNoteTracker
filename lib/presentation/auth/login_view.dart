@@ -5,8 +5,8 @@ import 'package:timenotetracker/application/auth/authBloc/auth_bloc.dart';
 import 'package:timenotetracker/application/auth/registerAndLoginBloc/register_and_login_bloc.dart';
 import 'package:timenotetracker/presentation/auth/widgets/my_auth_button.dart';
 import 'package:timenotetracker/presentation/auth/widgets/my_textformfield.dart';
-import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
-import 'package:timenotetracker/presentation/core/constants/padding_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/color_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/padding_constants.dart';
 import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_snackbar.dart';
 
 class LoginView extends StatelessWidget {

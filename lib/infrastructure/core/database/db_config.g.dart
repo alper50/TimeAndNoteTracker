@@ -1526,6 +1526,8 @@ abstract class _$MyDatabase extends GeneratedDatabase {
       SearchLocalService(this as MyDatabase);
   late final SettingsLocalService settingsLocalService =
       SettingsLocalService(this as MyDatabase);
+  late final AnalyzeLocalService analyzeLocalService =
+      AnalyzeLocalService(this as MyDatabase);
   @override
   Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
   @override

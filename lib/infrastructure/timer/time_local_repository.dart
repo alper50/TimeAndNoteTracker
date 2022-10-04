@@ -67,7 +67,7 @@ class TimeLocalRepository extends ITimeLocalRepository {
   @override
   Future<Either<TimeFailure, List<Time>>> searchTimer(String timeToBeSearched) async{
     try {
-      final result = await timeLocalService.searchNote(
+      final result = await timeLocalService.searchTime(
         timeToBeSearched,
       );
       return right(result.map((e) => TimeDTO.fromDB(timeTableData: e).toDomain()).toList());

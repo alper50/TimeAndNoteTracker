@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timenotetracker/application/timer/timeFormBloc/time_form_bloc.dart';
 import 'package:timenotetracker/application/timer/timeTickerBloc/time_ticker_bloc.dart';
 import 'package:timenotetracker/domain/timer/time_entity.dart';
-import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
-import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/color_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/text_styles_constants.dart';
 import 'package:timenotetracker/presentation/core/coreComponents/views/my_failure_view.dart';
 import 'package:timenotetracker/presentation/core/coreComponents/widgets/my_circular_progress.dart';
 

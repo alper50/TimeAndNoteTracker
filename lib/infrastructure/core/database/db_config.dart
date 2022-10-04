@@ -4,6 +4,7 @@ import 'package:path/path.dart' as p;
 import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:timenotetracker/infrastructure/analyze/analyze_local_service.dart';
 import 'package:timenotetracker/infrastructure/auth/auth_local_service.dart';
 import 'package:timenotetracker/infrastructure/auth/auth_local_tables.dart';
 import 'package:timenotetracker/infrastructure/core/search/search_local_service.dart';
@@ -16,7 +17,7 @@ import 'package:timenotetracker/infrastructure/timer/time_local_service.dart';
 import 'package:timenotetracker/infrastructure/timer/time_local_tables.dart';
 part 'db_config.g.dart';
 
-@DriftDatabase(tables: [Note, TodoItem, AppInformation, TimeTable, SearchNoteHistory, SearchTimeHistory, SettingsTable],daos: [NoteLocalService, AuthLocalService, TimeLocalService, SearchLocalService, SettingsLocalService])
+@DriftDatabase(tables: [Note, TodoItem, AppInformation, TimeTable, SearchNoteHistory, SearchTimeHistory, SettingsTable],daos: [NoteLocalService, AuthLocalService, TimeLocalService, SearchLocalService, SettingsLocalService, AnalyzeLocalService])
 @LazySingleton()
 class MyDatabase extends _$MyDatabase {
   MyDatabase([NativeDatabase? nativeDatabase]) : super(nativeDatabase ?? _openConnection());

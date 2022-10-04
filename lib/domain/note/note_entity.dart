@@ -5,7 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:timenotetracker/domain/core/value_failures.dart';
 import 'package:timenotetracker/domain/core/value_object.dart';
 import 'package:timenotetracker/domain/note/note_value_objects.dart';
-import 'package:timenotetracker/presentation/core/constants/note_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/note_constants.dart';
 part 'note_entity.freezed.dart';
 
 @freezed

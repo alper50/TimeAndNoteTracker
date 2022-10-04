@@ -2,7 +2,7 @@ import 'package:flutter/rendering.dart';
 
 class MyPaddingAll extends EdgeInsets {
   MyPaddingAll.regular() : super.all(20);
-  MyPaddingAll.half() : super.all(7);
+  MyPaddingAll.half() : super.all(10);
 }
 
 class MyPaddingOnly extends EdgeInsets {

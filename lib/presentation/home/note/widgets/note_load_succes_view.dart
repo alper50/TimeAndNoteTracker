@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:timenotetracker/application/note/noteFormBloc/note_form_bloc.dart';
 import 'package:timenotetracker/domain/note/note_entity.dart';
-import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
-import 'package:timenotetracker/presentation/core/constants/padding_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/color_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/padding_constants.dart';
 
 class NoteSuccesView extends StatelessWidget {
   final Note? noteToBeEdited;

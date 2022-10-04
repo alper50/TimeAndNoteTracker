@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:timenotetracker/domain/timer/time_entity.dart';
-import 'package:timenotetracker/presentation/core/constants/color_constants.dart';
-import 'package:timenotetracker/presentation/core/constants/padding_constants.dart';
-import 'package:timenotetracker/presentation/core/constants/text_styles_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/color_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/padding_constants.dart';
+import 'package:timenotetracker/presentation/core/presentation_constants/text_styles_constants.dart';
 
 class ITimeCard extends Card {
   ITimeCard({Color? backgroundColor, required Widget child})
