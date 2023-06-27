@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'analyze_bloc.dart';
 
@@ -31,15 +31,15 @@ mixin _$AnalyzeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialize,
-    TResult Function(int newSelectedChip)? changeDateScope,
-    TResult Function()? changeDateToday,
-    TResult Function()? changeDateYesterday,
-    TResult Function()? changeDateThisWeek,
-    TResult Function()? changeDateLastWeek,
-    TResult Function()? changeDateThisMonth,
-    TResult Function()? changeDateLastMonth,
-    TResult Function()? changeDateThisYear,
+    TResult? Function()? initialize,
+    TResult? Function(int newSelectedChip)? changeDateScope,
+    TResult? Function()? changeDateToday,
+    TResult? Function()? changeDateYesterday,
+    TResult? Function()? changeDateThisWeek,
+    TResult? Function()? changeDateLastWeek,
+    TResult? Function()? changeDateThisMonth,
+    TResult? Function()? changeDateLastMonth,
+    TResult? Function()? changeDateThisYear,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,15 +71,15 @@ mixin _$AnalyzeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_ChangeDateScope value)? changeDateScope,
-    TResult Function(_ChangeDateToday value)? changeDateToday,
-    TResult Function(_ChangeDateYesterday value)? changeDateYesterday,
-    TResult Function(ChangeDateThisWeek value)? changeDateThisWeek,
-    TResult Function(_ChangeDateLastWeek value)? changeDateLastWeek,
-    TResult Function(_ChangeDateThisMonth value)? changeDateThisMonth,
-    TResult Function(_ChangeDateLastMonth value)? changeDateLastMonth,
-    TResult Function(_ChangeDateThisYear value)? changeDateThisYear,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_ChangeDateScope value)? changeDateScope,
+    TResult? Function(_ChangeDateToday value)? changeDateToday,
+    TResult? Function(_ChangeDateYesterday value)? changeDateYesterday,
+    TResult? Function(ChangeDateThisWeek value)? changeDateThisWeek,
+    TResult? Function(_ChangeDateLastWeek value)? changeDateLastWeek,
+    TResult? Function(_ChangeDateThisMonth value)? changeDateThisMonth,
+    TResult? Function(_ChangeDateLastMonth value)? changeDateLastMonth,
+    TResult? Function(_ChangeDateThisYear value)? changeDateThisYear,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -102,34 +102,34 @@ mixin _$AnalyzeEvent {
 abstract class $AnalyzeEventCopyWith<$Res> {
   factory $AnalyzeEventCopyWith(
           AnalyzeEvent value, $Res Function(AnalyzeEvent) then) =
-      _$AnalyzeEventCopyWithImpl<$Res>;
+      _$AnalyzeEventCopyWithImpl<$Res, AnalyzeEvent>;
 }
 
 /// @nodoc
-class _$AnalyzeEventCopyWithImpl<$Res> implements $AnalyzeEventCopyWith<$Res> {
+class _$AnalyzeEventCopyWithImpl<$Res, $Val extends AnalyzeEvent>
+    implements $AnalyzeEventCopyWith<$Res> {
   _$AnalyzeEventCopyWithImpl(this._value, this._then);
 
-  final AnalyzeEvent _value;
   // ignore: unused_field
-  final $Res Function(AnalyzeEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitializeCopyWith<$Res> {
-  factory _$InitializeCopyWith(
-          _Initialize value, $Res Function(_Initialize) then) =
-      __$InitializeCopyWithImpl<$Res>;
+abstract class _$$_InitializeCopyWith<$Res> {
+  factory _$$_InitializeCopyWith(
+          _$_Initialize value, $Res Function(_$_Initialize) then) =
+      __$$_InitializeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitializeCopyWithImpl<$Res> extends _$AnalyzeEventCopyWithImpl<$Res>
-    implements _$InitializeCopyWith<$Res> {
-  __$InitializeCopyWithImpl(
-      _Initialize _value, $Res Function(_Initialize) _then)
-      : super(_value, (v) => _then(v as _Initialize));
-
-  @override
-  _Initialize get _value => super._value as _Initialize;
+class __$$_InitializeCopyWithImpl<$Res>
+    extends _$AnalyzeEventCopyWithImpl<$Res, _$_Initialize>
+    implements _$$_InitializeCopyWith<$Res> {
+  __$$_InitializeCopyWithImpl(
+      _$_Initialize _value, $Res Function(_$_Initialize) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -145,7 +145,7 @@ class _$_Initialize implements _Initialize {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initialize);
+        (other.runtimeType == runtimeType && other is _$_Initialize);
   }
 
   @override
@@ -170,15 +170,15 @@ class _$_Initialize implements _Initialize {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialize,
-    TResult Function(int newSelectedChip)? changeDateScope,
-    TResult Function()? changeDateToday,
-    TResult Function()? changeDateYesterday,
-    TResult Function()? changeDateThisWeek,
-    TResult Function()? changeDateLastWeek,
-    TResult Function()? changeDateThisMonth,
-    TResult Function()? changeDateLastMonth,
-    TResult Function()? changeDateThisYear,
+    TResult? Function()? initialize,
+    TResult? Function(int newSelectedChip)? changeDateScope,
+    TResult? Function()? changeDateToday,
+    TResult? Function()? changeDateYesterday,
+    TResult? Function()? changeDateThisWeek,
+    TResult? Function()? changeDateLastWeek,
+    TResult? Function()? changeDateThisMonth,
+    TResult? Function()? changeDateLastMonth,
+    TResult? Function()? changeDateThisYear,
   }) {
     return initialize?.call();
   }
@@ -222,15 +222,15 @@ class _$_Initialize implements _Initialize {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_ChangeDateScope value)? changeDateScope,
-    TResult Function(_ChangeDateToday value)? changeDateToday,
-    TResult Function(_ChangeDateYesterday value)? changeDateYesterday,
-    TResult Function(ChangeDateThisWeek value)? changeDateThisWeek,
-    TResult Function(_ChangeDateLastWeek value)? changeDateLastWeek,
-    TResult Function(_ChangeDateThisMonth value)? changeDateThisMonth,
-    TResult Function(_ChangeDateLastMonth value)? changeDateLastMonth,
-    TResult Function(_ChangeDateThisYear value)? changeDateThisYear,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_ChangeDateScope value)? changeDateScope,
+    TResult? Function(_ChangeDateToday value)? changeDateToday,
+    TResult? Function(_ChangeDateYesterday value)? changeDateYesterday,
+    TResult? Function(ChangeDateThisWeek value)? changeDateThisWeek,
+    TResult? Function(_ChangeDateLastWeek value)? changeDateLastWeek,
+    TResult? Function(_ChangeDateThisMonth value)? changeDateThisMonth,
+    TResult? Function(_ChangeDateLastMonth value)? changeDateLastMonth,
+    TResult? Function(_ChangeDateThisYear value)? changeDateThisYear,
   }) {
     return initialize?.call(this);
   }
@@ -261,30 +261,29 @@ abstract class _Initialize implements AnalyzeEvent {
 }
 
 /// @nodoc
-abstract class _$ChangeDateScopeCopyWith<$Res> {
-  factory _$ChangeDateScopeCopyWith(
-          _ChangeDateScope value, $Res Function(_ChangeDateScope) then) =
-      __$ChangeDateScopeCopyWithImpl<$Res>;
+abstract class _$$_ChangeDateScopeCopyWith<$Res> {
+  factory _$$_ChangeDateScopeCopyWith(
+          _$_ChangeDateScope value, $Res Function(_$_ChangeDateScope) then) =
+      __$$_ChangeDateScopeCopyWithImpl<$Res>;
+  @useResult
   $Res call({int newSelectedChip});
 }
 
 /// @nodoc
-class __$ChangeDateScopeCopyWithImpl<$Res>
-    extends _$AnalyzeEventCopyWithImpl<$Res>
-    implements _$ChangeDateScopeCopyWith<$Res> {
-  __$ChangeDateScopeCopyWithImpl(
-      _ChangeDateScope _value, $Res Function(_ChangeDateScope) _then)
-      : super(_value, (v) => _then(v as _ChangeDateScope));
+class __$$_ChangeDateScopeCopyWithImpl<$Res>
+    extends _$AnalyzeEventCopyWithImpl<$Res, _$_ChangeDateScope>
+    implements _$$_ChangeDateScopeCopyWith<$Res> {
+  __$$_ChangeDateScopeCopyWithImpl(
+      _$_ChangeDateScope _value, $Res Function(_$_ChangeDateScope) _then)
+      : super(_value, _then);
 
-  @override
-  _ChangeDateScope get _value => super._value as _ChangeDateScope;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newSelectedChip = freezed,
+    Object? newSelectedChip = null,
   }) {
-    return _then(_ChangeDateScope(
-      newSelectedChip: newSelectedChip == freezed
+    return _then(_$_ChangeDateScope(
+      newSelectedChip: null == newSelectedChip
           ? _value.newSelectedChip
           : newSelectedChip // ignore: cast_nullable_to_non_nullable
               as int,
@@ -309,19 +308,19 @@ class _$_ChangeDateScope implements _ChangeDateScope {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ChangeDateScope &&
-            const DeepCollectionEquality()
-                .equals(other.newSelectedChip, newSelectedChip));
+            other is _$_ChangeDateScope &&
+            (identical(other.newSelectedChip, newSelectedChip) ||
+                other.newSelectedChip == newSelectedChip));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(newSelectedChip));
+  int get hashCode => Object.hash(runtimeType, newSelectedChip);
 
   @JsonKey(ignore: true)
   @override
-  _$ChangeDateScopeCopyWith<_ChangeDateScope> get copyWith =>
-      __$ChangeDateScopeCopyWithImpl<_ChangeDateScope>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ChangeDateScopeCopyWith<_$_ChangeDateScope> get copyWith =>
+      __$$_ChangeDateScopeCopyWithImpl<_$_ChangeDateScope>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -342,15 +341,15 @@ class _$_ChangeDateScope implements _ChangeDateScope {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialize,
-    TResult Function(int newSelectedChip)? changeDateScope,
-    TResult Function()? changeDateToday,
-    TResult Function()? changeDateYesterday,
-    TResult Function()? changeDateThisWeek,
-    TResult Function()? changeDateLastWeek,
-    TResult Function()? changeDateThisMonth,
-    TResult Function()? changeDateLastMonth,
-    TResult Function()? changeDateThisYear,
+    TResult? Function()? initialize,
+    TResult? Function(int newSelectedChip)? changeDateScope,
+    TResult? Function()? changeDateToday,
+    TResult? Function()? changeDateYesterday,
+    TResult? Function()? changeDateThisWeek,
+    TResult? Function()? changeDateLastWeek,
+    TResult? Function()? changeDateThisMonth,
+    TResult? Function()? changeDateLastMonth,
+    TResult? Function()? changeDateThisYear,
   }) {
     return changeDateScope?.call(newSelectedChip);
   }
@@ -394,15 +393,15 @@ class _$_ChangeDateScope implements _ChangeDateScope {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_ChangeDateScope value)? changeDateScope,
-    TResult Function(_ChangeDateToday value)? changeDateToday,
-    TResult Function(_ChangeDateYesterday value)? changeDateYesterday,
-    TResult Function(ChangeDateThisWeek value)? changeDateThisWeek,
-    TResult Function(_ChangeDateLastWeek value)? changeDateLastWeek,
-    TResult Function(_ChangeDateThisMonth value)? changeDateThisMonth,
-    TResult Function(_ChangeDateLastMonth value)? changeDateLastMonth,
-    TResult Function(_ChangeDateThisYear value)? changeDateThisYear,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_ChangeDateScope value)? changeDateScope,
+    TResult? Function(_ChangeDateToday value)? changeDateToday,
+    TResult? Function(_ChangeDateYesterday value)? changeDateYesterday,
+    TResult? Function(ChangeDateThisWeek value)? changeDateThisWeek,
+    TResult? Function(_ChangeDateLastWeek value)? changeDateLastWeek,
+    TResult? Function(_ChangeDateThisMonth value)? changeDateThisMonth,
+    TResult? Function(_ChangeDateLastMonth value)? changeDateLastMonth,
+    TResult? Function(_ChangeDateThisYear value)? changeDateThisYear,
   }) {
     return changeDateScope?.call(this);
   }
@@ -432,29 +431,26 @@ abstract class _ChangeDateScope implements AnalyzeEvent {
   const factory _ChangeDateScope({required final int newSelectedChip}) =
       _$_ChangeDateScope;
 
-  int get newSelectedChip => throw _privateConstructorUsedError;
+  int get newSelectedChip;
   @JsonKey(ignore: true)
-  _$ChangeDateScopeCopyWith<_ChangeDateScope> get copyWith =>
+  _$$_ChangeDateScopeCopyWith<_$_ChangeDateScope> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ChangeDateTodayCopyWith<$Res> {
-  factory _$ChangeDateTodayCopyWith(
-          _ChangeDateToday value, $Res Function(_ChangeDateToday) then) =
-      __$ChangeDateTodayCopyWithImpl<$Res>;
+abstract class _$$_ChangeDateTodayCopyWith<$Res> {
+  factory _$$_ChangeDateTodayCopyWith(
+          _$_ChangeDateToday value, $Res Function(_$_ChangeDateToday) then) =
+      __$$_ChangeDateTodayCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ChangeDateTodayCopyWithImpl<$Res>
-    extends _$AnalyzeEventCopyWithImpl<$Res>
-    implements _$ChangeDateTodayCopyWith<$Res> {
-  __$ChangeDateTodayCopyWithImpl(
-      _ChangeDateToday _value, $Res Function(_ChangeDateToday) _then)
-      : super(_value, (v) => _then(v as _ChangeDateToday));
-
-  @override
-  _ChangeDateToday get _value => super._value as _ChangeDateToday;
+class __$$_ChangeDateTodayCopyWithImpl<$Res>
+    extends _$AnalyzeEventCopyWithImpl<$Res, _$_ChangeDateToday>
+    implements _$$_ChangeDateTodayCopyWith<$Res> {
+  __$$_ChangeDateTodayCopyWithImpl(
+      _$_ChangeDateToday _value, $Res Function(_$_ChangeDateToday) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -470,7 +466,7 @@ class _$_ChangeDateToday implements _ChangeDateToday {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ChangeDateToday);
+        (other.runtimeType == runtimeType && other is _$_ChangeDateToday);
   }
 
   @override
@@ -495,15 +491,15 @@ class _$_ChangeDateToday implements _ChangeDateToday {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialize,
-    TResult Function(int newSelectedChip)? changeDateScope,
-    TResult Function()? changeDateToday,
-    TResult Function()? changeDateYesterday,
-    TResult Function()? changeDateThisWeek,
-    TResult Function()? changeDateLastWeek,
-    TResult Function()? changeDateThisMonth,
-    TResult Function()? changeDateLastMonth,
-    TResult Function()? changeDateThisYear,
+    TResult? Function()? initialize,
+    TResult? Function(int newSelectedChip)? changeDateScope,
+    TResult? Function()? changeDateToday,
+    TResult? Function()? changeDateYesterday,
+    TResult? Function()? changeDateThisWeek,
+    TResult? Function()? changeDateLastWeek,
+    TResult? Function()? changeDateThisMonth,
+    TResult? Function()? changeDateLastMonth,
+    TResult? Function()? changeDateThisYear,
   }) {
     return changeDateToday?.call();
   }
@@ -547,15 +543,15 @@ class _$_ChangeDateToday implements _ChangeDateToday {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_ChangeDateScope value)? changeDateScope,
-    TResult Function(_ChangeDateToday value)? changeDateToday,
-    TResult Function(_ChangeDateYesterday value)? changeDateYesterday,
-    TResult Function(ChangeDateThisWeek value)? changeDateThisWeek,
-    TResult Function(_ChangeDateLastWeek value)? changeDateLastWeek,
-    TResult Function(_ChangeDateThisMonth value)? changeDateThisMonth,
-    TResult Function(_ChangeDateLastMonth value)? changeDateLastMonth,
-    TResult Function(_ChangeDateThisYear value)? changeDateThisYear,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_ChangeDateScope value)? changeDateScope,
+    TResult? Function(_ChangeDateToday value)? changeDateToday,
+    TResult? Function(_ChangeDateYesterday value)? changeDateYesterday,
+    TResult? Function(ChangeDateThisWeek value)? changeDateThisWeek,
+    TResult? Function(_ChangeDateLastWeek value)? changeDateLastWeek,
+    TResult? Function(_ChangeDateThisMonth value)? changeDateThisMonth,
+    TResult? Function(_ChangeDateLastMonth value)? changeDateLastMonth,
+    TResult? Function(_ChangeDateThisYear value)? changeDateThisYear,
   }) {
     return changeDateToday?.call(this);
   }
@@ -586,22 +582,19 @@ abstract class _ChangeDateToday implements AnalyzeEvent {
 }
 
 /// @nodoc
-abstract class _$ChangeDateYesterdayCopyWith<$Res> {
-  factory _$ChangeDateYesterdayCopyWith(_ChangeDateYesterday value,
-          $Res Function(_ChangeDateYesterday) then) =
-      __$ChangeDateYesterdayCopyWithImpl<$Res>;
+abstract class _$$_ChangeDateYesterdayCopyWith<$Res> {
+  factory _$$_ChangeDateYesterdayCopyWith(_$_ChangeDateYesterday value,
+          $Res Function(_$_ChangeDateYesterday) then) =
+      __$$_ChangeDateYesterdayCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ChangeDateYesterdayCopyWithImpl<$Res>
-    extends _$AnalyzeEventCopyWithImpl<$Res>
-    implements _$ChangeDateYesterdayCopyWith<$Res> {
-  __$ChangeDateYesterdayCopyWithImpl(
-      _ChangeDateYesterday _value, $Res Function(_ChangeDateYesterday) _then)
-      : super(_value, (v) => _then(v as _ChangeDateYesterday));
-
-  @override
-  _ChangeDateYesterday get _value => super._value as _ChangeDateYesterday;
+class __$$_ChangeDateYesterdayCopyWithImpl<$Res>
+    extends _$AnalyzeEventCopyWithImpl<$Res, _$_ChangeDateYesterday>
+    implements _$$_ChangeDateYesterdayCopyWith<$Res> {
+  __$$_ChangeDateYesterdayCopyWithImpl(_$_ChangeDateYesterday _value,
+      $Res Function(_$_ChangeDateYesterday) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -617,7 +610,7 @@ class _$_ChangeDateYesterday implements _ChangeDateYesterday {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ChangeDateYesterday);
+        (other.runtimeType == runtimeType && other is _$_ChangeDateYesterday);
   }
 
   @override
@@ -642,15 +635,15 @@ class _$_ChangeDateYesterday implements _ChangeDateYesterday {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialize,
-    TResult Function(int newSelectedChip)? changeDateScope,
-    TResult Function()? changeDateToday,
-    TResult Function()? changeDateYesterday,
-    TResult Function()? changeDateThisWeek,
-    TResult Function()? changeDateLastWeek,
-    TResult Function()? changeDateThisMonth,
-    TResult Function()? changeDateLastMonth,
-    TResult Function()? changeDateThisYear,
+    TResult? Function()? initialize,
+    TResult? Function(int newSelectedChip)? changeDateScope,
+    TResult? Function()? changeDateToday,
+    TResult? Function()? changeDateYesterday,
+    TResult? Function()? changeDateThisWeek,
+    TResult? Function()? changeDateLastWeek,
+    TResult? Function()? changeDateThisMonth,
+    TResult? Function()? changeDateLastMonth,
+    TResult? Function()? changeDateThisYear,
   }) {
     return changeDateYesterday?.call();
   }
@@ -694,15 +687,15 @@ class _$_ChangeDateYesterday implements _ChangeDateYesterday {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_ChangeDateScope value)? changeDateScope,
-    TResult Function(_ChangeDateToday value)? changeDateToday,
-    TResult Function(_ChangeDateYesterday value)? changeDateYesterday,
-    TResult Function(ChangeDateThisWeek value)? changeDateThisWeek,
-    TResult Function(_ChangeDateLastWeek value)? changeDateLastWeek,
-    TResult Function(_ChangeDateThisMonth value)? changeDateThisMonth,
-    TResult Function(_ChangeDateLastMonth value)? changeDateLastMonth,
-    TResult Function(_ChangeDateThisYear value)? changeDateThisYear,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_ChangeDateScope value)? changeDateScope,
+    TResult? Function(_ChangeDateToday value)? changeDateToday,
+    TResult? Function(_ChangeDateYesterday value)? changeDateYesterday,
+    TResult? Function(ChangeDateThisWeek value)? changeDateThisWeek,
+    TResult? Function(_ChangeDateLastWeek value)? changeDateLastWeek,
+    TResult? Function(_ChangeDateThisMonth value)? changeDateThisMonth,
+    TResult? Function(_ChangeDateLastMonth value)? changeDateLastMonth,
+    TResult? Function(_ChangeDateThisYear value)? changeDateThisYear,
   }) {
     return changeDateYesterday?.call(this);
   }
@@ -733,22 +726,19 @@ abstract class _ChangeDateYesterday implements AnalyzeEvent {
 }
 
 /// @nodoc
-abstract class $ChangeDateThisWeekCopyWith<$Res> {
-  factory $ChangeDateThisWeekCopyWith(
-          ChangeDateThisWeek value, $Res Function(ChangeDateThisWeek) then) =
-      _$ChangeDateThisWeekCopyWithImpl<$Res>;
+abstract class _$$ChangeDateThisWeekCopyWith<$Res> {
+  factory _$$ChangeDateThisWeekCopyWith(_$ChangeDateThisWeek value,
+          $Res Function(_$ChangeDateThisWeek) then) =
+      __$$ChangeDateThisWeekCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ChangeDateThisWeekCopyWithImpl<$Res>
-    extends _$AnalyzeEventCopyWithImpl<$Res>
-    implements $ChangeDateThisWeekCopyWith<$Res> {
-  _$ChangeDateThisWeekCopyWithImpl(
-      ChangeDateThisWeek _value, $Res Function(ChangeDateThisWeek) _then)
-      : super(_value, (v) => _then(v as ChangeDateThisWeek));
-
-  @override
-  ChangeDateThisWeek get _value => super._value as ChangeDateThisWeek;
+class __$$ChangeDateThisWeekCopyWithImpl<$Res>
+    extends _$AnalyzeEventCopyWithImpl<$Res, _$ChangeDateThisWeek>
+    implements _$$ChangeDateThisWeekCopyWith<$Res> {
+  __$$ChangeDateThisWeekCopyWithImpl(
+      _$ChangeDateThisWeek _value, $Res Function(_$ChangeDateThisWeek) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -764,7 +754,7 @@ class _$ChangeDateThisWeek implements ChangeDateThisWeek {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is ChangeDateThisWeek);
+        (other.runtimeType == runtimeType && other is _$ChangeDateThisWeek);
   }
 
   @override
@@ -789,15 +779,15 @@ class _$ChangeDateThisWeek implements ChangeDateThisWeek {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialize,
-    TResult Function(int newSelectedChip)? changeDateScope,
-    TResult Function()? changeDateToday,
-    TResult Function()? changeDateYesterday,
-    TResult Function()? changeDateThisWeek,
-    TResult Function()? changeDateLastWeek,
-    TResult Function()? changeDateThisMonth,
-    TResult Function()? changeDateLastMonth,
-    TResult Function()? changeDateThisYear,
+    TResult? Function()? initialize,
+    TResult? Function(int newSelectedChip)? changeDateScope,
+    TResult? Function()? changeDateToday,
+    TResult? Function()? changeDateYesterday,
+    TResult? Function()? changeDateThisWeek,
+    TResult? Function()? changeDateLastWeek,
+    TResult? Function()? changeDateThisMonth,
+    TResult? Function()? changeDateLastMonth,
+    TResult? Function()? changeDateThisYear,
   }) {
     return changeDateThisWeek?.call();
   }
@@ -841,15 +831,15 @@ class _$ChangeDateThisWeek implements ChangeDateThisWeek {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_ChangeDateScope value)? changeDateScope,
-    TResult Function(_ChangeDateToday value)? changeDateToday,
-    TResult Function(_ChangeDateYesterday value)? changeDateYesterday,
-    TResult Function(ChangeDateThisWeek value)? changeDateThisWeek,
-    TResult Function(_ChangeDateLastWeek value)? changeDateLastWeek,
-    TResult Function(_ChangeDateThisMonth value)? changeDateThisMonth,
-    TResult Function(_ChangeDateLastMonth value)? changeDateLastMonth,
-    TResult Function(_ChangeDateThisYear value)? changeDateThisYear,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_ChangeDateScope value)? changeDateScope,
+    TResult? Function(_ChangeDateToday value)? changeDateToday,
+    TResult? Function(_ChangeDateYesterday value)? changeDateYesterday,
+    TResult? Function(ChangeDateThisWeek value)? changeDateThisWeek,
+    TResult? Function(_ChangeDateLastWeek value)? changeDateLastWeek,
+    TResult? Function(_ChangeDateThisMonth value)? changeDateThisMonth,
+    TResult? Function(_ChangeDateLastMonth value)? changeDateLastMonth,
+    TResult? Function(_ChangeDateThisYear value)? changeDateThisYear,
   }) {
     return changeDateThisWeek?.call(this);
   }
@@ -880,22 +870,19 @@ abstract class ChangeDateThisWeek implements AnalyzeEvent {
 }
 
 /// @nodoc
-abstract class _$ChangeDateLastWeekCopyWith<$Res> {
-  factory _$ChangeDateLastWeekCopyWith(
-          _ChangeDateLastWeek value, $Res Function(_ChangeDateLastWeek) then) =
-      __$ChangeDateLastWeekCopyWithImpl<$Res>;
+abstract class _$$_ChangeDateLastWeekCopyWith<$Res> {
+  factory _$$_ChangeDateLastWeekCopyWith(_$_ChangeDateLastWeek value,
+          $Res Function(_$_ChangeDateLastWeek) then) =
+      __$$_ChangeDateLastWeekCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ChangeDateLastWeekCopyWithImpl<$Res>
-    extends _$AnalyzeEventCopyWithImpl<$Res>
-    implements _$ChangeDateLastWeekCopyWith<$Res> {
-  __$ChangeDateLastWeekCopyWithImpl(
-      _ChangeDateLastWeek _value, $Res Function(_ChangeDateLastWeek) _then)
-      : super(_value, (v) => _then(v as _ChangeDateLastWeek));
-
-  @override
-  _ChangeDateLastWeek get _value => super._value as _ChangeDateLastWeek;
+class __$$_ChangeDateLastWeekCopyWithImpl<$Res>
+    extends _$AnalyzeEventCopyWithImpl<$Res, _$_ChangeDateLastWeek>
+    implements _$$_ChangeDateLastWeekCopyWith<$Res> {
+  __$$_ChangeDateLastWeekCopyWithImpl(
+      _$_ChangeDateLastWeek _value, $Res Function(_$_ChangeDateLastWeek) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -911,7 +898,7 @@ class _$_ChangeDateLastWeek implements _ChangeDateLastWeek {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ChangeDateLastWeek);
+        (other.runtimeType == runtimeType && other is _$_ChangeDateLastWeek);
   }
 
   @override
@@ -936,15 +923,15 @@ class _$_ChangeDateLastWeek implements _ChangeDateLastWeek {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialize,
-    TResult Function(int newSelectedChip)? changeDateScope,
-    TResult Function()? changeDateToday,
-    TResult Function()? changeDateYesterday,
-    TResult Function()? changeDateThisWeek,
-    TResult Function()? changeDateLastWeek,
-    TResult Function()? changeDateThisMonth,
-    TResult Function()? changeDateLastMonth,
-    TResult Function()? changeDateThisYear,
+    TResult? Function()? initialize,
+    TResult? Function(int newSelectedChip)? changeDateScope,
+    TResult? Function()? changeDateToday,
+    TResult? Function()? changeDateYesterday,
+    TResult? Function()? changeDateThisWeek,
+    TResult? Function()? changeDateLastWeek,
+    TResult? Function()? changeDateThisMonth,
+    TResult? Function()? changeDateLastMonth,
+    TResult? Function()? changeDateThisYear,
   }) {
     return changeDateLastWeek?.call();
   }
@@ -988,15 +975,15 @@ class _$_ChangeDateLastWeek implements _ChangeDateLastWeek {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_ChangeDateScope value)? changeDateScope,
-    TResult Function(_ChangeDateToday value)? changeDateToday,
-    TResult Function(_ChangeDateYesterday value)? changeDateYesterday,
-    TResult Function(ChangeDateThisWeek value)? changeDateThisWeek,
-    TResult Function(_ChangeDateLastWeek value)? changeDateLastWeek,
-    TResult Function(_ChangeDateThisMonth value)? changeDateThisMonth,
-    TResult Function(_ChangeDateLastMonth value)? changeDateLastMonth,
-    TResult Function(_ChangeDateThisYear value)? changeDateThisYear,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_ChangeDateScope value)? changeDateScope,
+    TResult? Function(_ChangeDateToday value)? changeDateToday,
+    TResult? Function(_ChangeDateYesterday value)? changeDateYesterday,
+    TResult? Function(ChangeDateThisWeek value)? changeDateThisWeek,
+    TResult? Function(_ChangeDateLastWeek value)? changeDateLastWeek,
+    TResult? Function(_ChangeDateThisMonth value)? changeDateThisMonth,
+    TResult? Function(_ChangeDateLastMonth value)? changeDateLastMonth,
+    TResult? Function(_ChangeDateThisYear value)? changeDateThisYear,
   }) {
     return changeDateLastWeek?.call(this);
   }
@@ -1027,22 +1014,19 @@ abstract class _ChangeDateLastWeek implements AnalyzeEvent {
 }
 
 /// @nodoc
-abstract class _$ChangeDateThisMonthCopyWith<$Res> {
-  factory _$ChangeDateThisMonthCopyWith(_ChangeDateThisMonth value,
-          $Res Function(_ChangeDateThisMonth) then) =
-      __$ChangeDateThisMonthCopyWithImpl<$Res>;
+abstract class _$$_ChangeDateThisMonthCopyWith<$Res> {
+  factory _$$_ChangeDateThisMonthCopyWith(_$_ChangeDateThisMonth value,
+          $Res Function(_$_ChangeDateThisMonth) then) =
+      __$$_ChangeDateThisMonthCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ChangeDateThisMonthCopyWithImpl<$Res>
-    extends _$AnalyzeEventCopyWithImpl<$Res>
-    implements _$ChangeDateThisMonthCopyWith<$Res> {
-  __$ChangeDateThisMonthCopyWithImpl(
-      _ChangeDateThisMonth _value, $Res Function(_ChangeDateThisMonth) _then)
-      : super(_value, (v) => _then(v as _ChangeDateThisMonth));
-
-  @override
-  _ChangeDateThisMonth get _value => super._value as _ChangeDateThisMonth;
+class __$$_ChangeDateThisMonthCopyWithImpl<$Res>
+    extends _$AnalyzeEventCopyWithImpl<$Res, _$_ChangeDateThisMonth>
+    implements _$$_ChangeDateThisMonthCopyWith<$Res> {
+  __$$_ChangeDateThisMonthCopyWithImpl(_$_ChangeDateThisMonth _value,
+      $Res Function(_$_ChangeDateThisMonth) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1058,7 +1042,7 @@ class _$_ChangeDateThisMonth implements _ChangeDateThisMonth {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ChangeDateThisMonth);
+        (other.runtimeType == runtimeType && other is _$_ChangeDateThisMonth);
   }
 
   @override
@@ -1083,15 +1067,15 @@ class _$_ChangeDateThisMonth implements _ChangeDateThisMonth {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialize,
-    TResult Function(int newSelectedChip)? changeDateScope,
-    TResult Function()? changeDateToday,
-    TResult Function()? changeDateYesterday,
-    TResult Function()? changeDateThisWeek,
-    TResult Function()? changeDateLastWeek,
-    TResult Function()? changeDateThisMonth,
-    TResult Function()? changeDateLastMonth,
-    TResult Function()? changeDateThisYear,
+    TResult? Function()? initialize,
+    TResult? Function(int newSelectedChip)? changeDateScope,
+    TResult? Function()? changeDateToday,
+    TResult? Function()? changeDateYesterday,
+    TResult? Function()? changeDateThisWeek,
+    TResult? Function()? changeDateLastWeek,
+    TResult? Function()? changeDateThisMonth,
+    TResult? Function()? changeDateLastMonth,
+    TResult? Function()? changeDateThisYear,
   }) {
     return changeDateThisMonth?.call();
   }
@@ -1135,15 +1119,15 @@ class _$_ChangeDateThisMonth implements _ChangeDateThisMonth {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_ChangeDateScope value)? changeDateScope,
-    TResult Function(_ChangeDateToday value)? changeDateToday,
-    TResult Function(_ChangeDateYesterday value)? changeDateYesterday,
-    TResult Function(ChangeDateThisWeek value)? changeDateThisWeek,
-    TResult Function(_ChangeDateLastWeek value)? changeDateLastWeek,
-    TResult Function(_ChangeDateThisMonth value)? changeDateThisMonth,
-    TResult Function(_ChangeDateLastMonth value)? changeDateLastMonth,
-    TResult Function(_ChangeDateThisYear value)? changeDateThisYear,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_ChangeDateScope value)? changeDateScope,
+    TResult? Function(_ChangeDateToday value)? changeDateToday,
+    TResult? Function(_ChangeDateYesterday value)? changeDateYesterday,
+    TResult? Function(ChangeDateThisWeek value)? changeDateThisWeek,
+    TResult? Function(_ChangeDateLastWeek value)? changeDateLastWeek,
+    TResult? Function(_ChangeDateThisMonth value)? changeDateThisMonth,
+    TResult? Function(_ChangeDateLastMonth value)? changeDateLastMonth,
+    TResult? Function(_ChangeDateThisYear value)? changeDateThisYear,
   }) {
     return changeDateThisMonth?.call(this);
   }
@@ -1174,22 +1158,19 @@ abstract class _ChangeDateThisMonth implements AnalyzeEvent {
 }
 
 /// @nodoc
-abstract class _$ChangeDateLastMonthCopyWith<$Res> {
-  factory _$ChangeDateLastMonthCopyWith(_ChangeDateLastMonth value,
-          $Res Function(_ChangeDateLastMonth) then) =
-      __$ChangeDateLastMonthCopyWithImpl<$Res>;
+abstract class _$$_ChangeDateLastMonthCopyWith<$Res> {
+  factory _$$_ChangeDateLastMonthCopyWith(_$_ChangeDateLastMonth value,
+          $Res Function(_$_ChangeDateLastMonth) then) =
+      __$$_ChangeDateLastMonthCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ChangeDateLastMonthCopyWithImpl<$Res>
-    extends _$AnalyzeEventCopyWithImpl<$Res>
-    implements _$ChangeDateLastMonthCopyWith<$Res> {
-  __$ChangeDateLastMonthCopyWithImpl(
-      _ChangeDateLastMonth _value, $Res Function(_ChangeDateLastMonth) _then)
-      : super(_value, (v) => _then(v as _ChangeDateLastMonth));
-
-  @override
-  _ChangeDateLastMonth get _value => super._value as _ChangeDateLastMonth;
+class __$$_ChangeDateLastMonthCopyWithImpl<$Res>
+    extends _$AnalyzeEventCopyWithImpl<$Res, _$_ChangeDateLastMonth>
+    implements _$$_ChangeDateLastMonthCopyWith<$Res> {
+  __$$_ChangeDateLastMonthCopyWithImpl(_$_ChangeDateLastMonth _value,
+      $Res Function(_$_ChangeDateLastMonth) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1205,7 +1186,7 @@ class _$_ChangeDateLastMonth implements _ChangeDateLastMonth {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ChangeDateLastMonth);
+        (other.runtimeType == runtimeType && other is _$_ChangeDateLastMonth);
   }
 
   @override
@@ -1230,15 +1211,15 @@ class _$_ChangeDateLastMonth implements _ChangeDateLastMonth {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialize,
-    TResult Function(int newSelectedChip)? changeDateScope,
-    TResult Function()? changeDateToday,
-    TResult Function()? changeDateYesterday,
-    TResult Function()? changeDateThisWeek,
-    TResult Function()? changeDateLastWeek,
-    TResult Function()? changeDateThisMonth,
-    TResult Function()? changeDateLastMonth,
-    TResult Function()? changeDateThisYear,
+    TResult? Function()? initialize,
+    TResult? Function(int newSelectedChip)? changeDateScope,
+    TResult? Function()? changeDateToday,
+    TResult? Function()? changeDateYesterday,
+    TResult? Function()? changeDateThisWeek,
+    TResult? Function()? changeDateLastWeek,
+    TResult? Function()? changeDateThisMonth,
+    TResult? Function()? changeDateLastMonth,
+    TResult? Function()? changeDateThisYear,
   }) {
     return changeDateLastMonth?.call();
   }
@@ -1282,15 +1263,15 @@ class _$_ChangeDateLastMonth implements _ChangeDateLastMonth {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_ChangeDateScope value)? changeDateScope,
-    TResult Function(_ChangeDateToday value)? changeDateToday,
-    TResult Function(_ChangeDateYesterday value)? changeDateYesterday,
-    TResult Function(ChangeDateThisWeek value)? changeDateThisWeek,
-    TResult Function(_ChangeDateLastWeek value)? changeDateLastWeek,
-    TResult Function(_ChangeDateThisMonth value)? changeDateThisMonth,
-    TResult Function(_ChangeDateLastMonth value)? changeDateLastMonth,
-    TResult Function(_ChangeDateThisYear value)? changeDateThisYear,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_ChangeDateScope value)? changeDateScope,
+    TResult? Function(_ChangeDateToday value)? changeDateToday,
+    TResult? Function(_ChangeDateYesterday value)? changeDateYesterday,
+    TResult? Function(ChangeDateThisWeek value)? changeDateThisWeek,
+    TResult? Function(_ChangeDateLastWeek value)? changeDateLastWeek,
+    TResult? Function(_ChangeDateThisMonth value)? changeDateThisMonth,
+    TResult? Function(_ChangeDateLastMonth value)? changeDateLastMonth,
+    TResult? Function(_ChangeDateThisYear value)? changeDateThisYear,
   }) {
     return changeDateLastMonth?.call(this);
   }
@@ -1321,22 +1302,19 @@ abstract class _ChangeDateLastMonth implements AnalyzeEvent {
 }
 
 /// @nodoc
-abstract class _$ChangeDateThisYearCopyWith<$Res> {
-  factory _$ChangeDateThisYearCopyWith(
-          _ChangeDateThisYear value, $Res Function(_ChangeDateThisYear) then) =
-      __$ChangeDateThisYearCopyWithImpl<$Res>;
+abstract class _$$_ChangeDateThisYearCopyWith<$Res> {
+  factory _$$_ChangeDateThisYearCopyWith(_$_ChangeDateThisYear value,
+          $Res Function(_$_ChangeDateThisYear) then) =
+      __$$_ChangeDateThisYearCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ChangeDateThisYearCopyWithImpl<$Res>
-    extends _$AnalyzeEventCopyWithImpl<$Res>
-    implements _$ChangeDateThisYearCopyWith<$Res> {
-  __$ChangeDateThisYearCopyWithImpl(
-      _ChangeDateThisYear _value, $Res Function(_ChangeDateThisYear) _then)
-      : super(_value, (v) => _then(v as _ChangeDateThisYear));
-
-  @override
-  _ChangeDateThisYear get _value => super._value as _ChangeDateThisYear;
+class __$$_ChangeDateThisYearCopyWithImpl<$Res>
+    extends _$AnalyzeEventCopyWithImpl<$Res, _$_ChangeDateThisYear>
+    implements _$$_ChangeDateThisYearCopyWith<$Res> {
+  __$$_ChangeDateThisYearCopyWithImpl(
+      _$_ChangeDateThisYear _value, $Res Function(_$_ChangeDateThisYear) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1352,7 +1330,7 @@ class _$_ChangeDateThisYear implements _ChangeDateThisYear {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ChangeDateThisYear);
+        (other.runtimeType == runtimeType && other is _$_ChangeDateThisYear);
   }
 
   @override
@@ -1377,15 +1355,15 @@ class _$_ChangeDateThisYear implements _ChangeDateThisYear {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialize,
-    TResult Function(int newSelectedChip)? changeDateScope,
-    TResult Function()? changeDateToday,
-    TResult Function()? changeDateYesterday,
-    TResult Function()? changeDateThisWeek,
-    TResult Function()? changeDateLastWeek,
-    TResult Function()? changeDateThisMonth,
-    TResult Function()? changeDateLastMonth,
-    TResult Function()? changeDateThisYear,
+    TResult? Function()? initialize,
+    TResult? Function(int newSelectedChip)? changeDateScope,
+    TResult? Function()? changeDateToday,
+    TResult? Function()? changeDateYesterday,
+    TResult? Function()? changeDateThisWeek,
+    TResult? Function()? changeDateLastWeek,
+    TResult? Function()? changeDateThisMonth,
+    TResult? Function()? changeDateLastMonth,
+    TResult? Function()? changeDateThisYear,
   }) {
     return changeDateThisYear?.call();
   }
@@ -1429,15 +1407,15 @@ class _$_ChangeDateThisYear implements _ChangeDateThisYear {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_ChangeDateScope value)? changeDateScope,
-    TResult Function(_ChangeDateToday value)? changeDateToday,
-    TResult Function(_ChangeDateYesterday value)? changeDateYesterday,
-    TResult Function(ChangeDateThisWeek value)? changeDateThisWeek,
-    TResult Function(_ChangeDateLastWeek value)? changeDateLastWeek,
-    TResult Function(_ChangeDateThisMonth value)? changeDateThisMonth,
-    TResult Function(_ChangeDateLastMonth value)? changeDateLastMonth,
-    TResult Function(_ChangeDateThisYear value)? changeDateThisYear,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_ChangeDateScope value)? changeDateScope,
+    TResult? Function(_ChangeDateToday value)? changeDateToday,
+    TResult? Function(_ChangeDateYesterday value)? changeDateYesterday,
+    TResult? Function(ChangeDateThisWeek value)? changeDateThisWeek,
+    TResult? Function(_ChangeDateLastWeek value)? changeDateLastWeek,
+    TResult? Function(_ChangeDateThisMonth value)? changeDateThisMonth,
+    TResult? Function(_ChangeDateLastMonth value)? changeDateLastMonth,
+    TResult? Function(_ChangeDateThisYear value)? changeDateThisYear,
   }) {
     return changeDateThisYear?.call(this);
   }
@@ -1486,7 +1464,8 @@ mixin _$AnalyzeState {
 abstract class $AnalyzeStateCopyWith<$Res> {
   factory $AnalyzeStateCopyWith(
           AnalyzeState value, $Res Function(AnalyzeState) then) =
-      _$AnalyzeStateCopyWithImpl<$Res>;
+      _$AnalyzeStateCopyWithImpl<$Res, AnalyzeState>;
+  @useResult
   $Res call(
       {bool isInitializing,
       bool isChangingDateScope,
@@ -1499,65 +1478,70 @@ abstract class $AnalyzeStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AnalyzeStateCopyWithImpl<$Res> implements $AnalyzeStateCopyWith<$Res> {
+class _$AnalyzeStateCopyWithImpl<$Res, $Val extends AnalyzeState>
+    implements $AnalyzeStateCopyWith<$Res> {
   _$AnalyzeStateCopyWithImpl(this._value, this._then);
 
-  final AnalyzeState _value;
   // ignore: unused_field
-  final $Res Function(AnalyzeState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isInitializing = freezed,
-    Object? isChangingDateScope = freezed,
-    Object? isAnalyzeEmpty = freezed,
-    Object? selectedChip = freezed,
-    Object? analyze = freezed,
-    Object? analyzeFailureOrSuccessOption = freezed,
+    Object? isInitializing = null,
+    Object? isChangingDateScope = null,
+    Object? isAnalyzeEmpty = null,
+    Object? selectedChip = null,
+    Object? analyze = null,
+    Object? analyzeFailureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
-      isInitializing: isInitializing == freezed
+      isInitializing: null == isInitializing
           ? _value.isInitializing
           : isInitializing // ignore: cast_nullable_to_non_nullable
               as bool,
-      isChangingDateScope: isChangingDateScope == freezed
+      isChangingDateScope: null == isChangingDateScope
           ? _value.isChangingDateScope
           : isChangingDateScope // ignore: cast_nullable_to_non_nullable
               as bool,
-      isAnalyzeEmpty: isAnalyzeEmpty == freezed
+      isAnalyzeEmpty: null == isAnalyzeEmpty
           ? _value.isAnalyzeEmpty
           : isAnalyzeEmpty // ignore: cast_nullable_to_non_nullable
               as bool,
-      selectedChip: selectedChip == freezed
+      selectedChip: null == selectedChip
           ? _value.selectedChip
           : selectedChip // ignore: cast_nullable_to_non_nullable
               as int,
-      analyze: analyze == freezed
+      analyze: null == analyze
           ? _value.analyze
           : analyze // ignore: cast_nullable_to_non_nullable
               as Analyze,
-      analyzeFailureOrSuccessOption: analyzeFailureOrSuccessOption == freezed
+      analyzeFailureOrSuccessOption: null == analyzeFailureOrSuccessOption
           ? _value.analyzeFailureOrSuccessOption
           : analyzeFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<AnalyzeFailure>,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $AnalyzeCopyWith<$Res> get analyze {
     return $AnalyzeCopyWith<$Res>(_value.analyze, (value) {
-      return _then(_value.copyWith(analyze: value));
+      return _then(_value.copyWith(analyze: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$AnalyzeStateCopyWith<$Res>
+abstract class _$$_AnalyzeStateCopyWith<$Res>
     implements $AnalyzeStateCopyWith<$Res> {
-  factory _$AnalyzeStateCopyWith(
-          _AnalyzeState value, $Res Function(_AnalyzeState) then) =
-      __$AnalyzeStateCopyWithImpl<$Res>;
+  factory _$$_AnalyzeStateCopyWith(
+          _$_AnalyzeState value, $Res Function(_$_AnalyzeState) then) =
+      __$$_AnalyzeStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool isInitializing,
       bool isChangingDateScope,
@@ -1571,46 +1555,45 @@ abstract class _$AnalyzeStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AnalyzeStateCopyWithImpl<$Res> extends _$AnalyzeStateCopyWithImpl<$Res>
-    implements _$AnalyzeStateCopyWith<$Res> {
-  __$AnalyzeStateCopyWithImpl(
-      _AnalyzeState _value, $Res Function(_AnalyzeState) _then)
-      : super(_value, (v) => _then(v as _AnalyzeState));
+class __$$_AnalyzeStateCopyWithImpl<$Res>
+    extends _$AnalyzeStateCopyWithImpl<$Res, _$_AnalyzeState>
+    implements _$$_AnalyzeStateCopyWith<$Res> {
+  __$$_AnalyzeStateCopyWithImpl(
+      _$_AnalyzeState _value, $Res Function(_$_AnalyzeState) _then)
+      : super(_value, _then);
 
-  @override
-  _AnalyzeState get _value => super._value as _AnalyzeState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isInitializing = freezed,
-    Object? isChangingDateScope = freezed,
-    Object? isAnalyzeEmpty = freezed,
-    Object? selectedChip = freezed,
-    Object? analyze = freezed,
-    Object? analyzeFailureOrSuccessOption = freezed,
+    Object? isInitializing = null,
+    Object? isChangingDateScope = null,
+    Object? isAnalyzeEmpty = null,
+    Object? selectedChip = null,
+    Object? analyze = null,
+    Object? analyzeFailureOrSuccessOption = null,
   }) {
-    return _then(_AnalyzeState(
-      isInitializing: isInitializing == freezed
+    return _then(_$_AnalyzeState(
+      isInitializing: null == isInitializing
           ? _value.isInitializing
           : isInitializing // ignore: cast_nullable_to_non_nullable
               as bool,
-      isChangingDateScope: isChangingDateScope == freezed
+      isChangingDateScope: null == isChangingDateScope
           ? _value.isChangingDateScope
           : isChangingDateScope // ignore: cast_nullable_to_non_nullable
               as bool,
-      isAnalyzeEmpty: isAnalyzeEmpty == freezed
+      isAnalyzeEmpty: null == isAnalyzeEmpty
           ? _value.isAnalyzeEmpty
           : isAnalyzeEmpty // ignore: cast_nullable_to_non_nullable
               as bool,
-      selectedChip: selectedChip == freezed
+      selectedChip: null == selectedChip
           ? _value.selectedChip
           : selectedChip // ignore: cast_nullable_to_non_nullable
               as int,
-      analyze: analyze == freezed
+      analyze: null == analyze
           ? _value.analyze
           : analyze // ignore: cast_nullable_to_non_nullable
               as Analyze,
-      analyzeFailureOrSuccessOption: analyzeFailureOrSuccessOption == freezed
+      analyzeFailureOrSuccessOption: null == analyzeFailureOrSuccessOption
           ? _value.analyzeFailureOrSuccessOption
           : analyzeFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<AnalyzeFailure>,
@@ -1651,35 +1634,37 @@ class _$_AnalyzeState implements _AnalyzeState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AnalyzeState &&
-            const DeepCollectionEquality()
-                .equals(other.isInitializing, isInitializing) &&
-            const DeepCollectionEquality()
-                .equals(other.isChangingDateScope, isChangingDateScope) &&
-            const DeepCollectionEquality()
-                .equals(other.isAnalyzeEmpty, isAnalyzeEmpty) &&
-            const DeepCollectionEquality()
-                .equals(other.selectedChip, selectedChip) &&
-            const DeepCollectionEquality().equals(other.analyze, analyze) &&
-            const DeepCollectionEquality().equals(
-                other.analyzeFailureOrSuccessOption,
-                analyzeFailureOrSuccessOption));
+            other is _$_AnalyzeState &&
+            (identical(other.isInitializing, isInitializing) ||
+                other.isInitializing == isInitializing) &&
+            (identical(other.isChangingDateScope, isChangingDateScope) ||
+                other.isChangingDateScope == isChangingDateScope) &&
+            (identical(other.isAnalyzeEmpty, isAnalyzeEmpty) ||
+                other.isAnalyzeEmpty == isAnalyzeEmpty) &&
+            (identical(other.selectedChip, selectedChip) ||
+                other.selectedChip == selectedChip) &&
+            (identical(other.analyze, analyze) || other.analyze == analyze) &&
+            (identical(other.analyzeFailureOrSuccessOption,
+                    analyzeFailureOrSuccessOption) ||
+                other.analyzeFailureOrSuccessOption ==
+                    analyzeFailureOrSuccessOption));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(isInitializing),
-      const DeepCollectionEquality().hash(isChangingDateScope),
-      const DeepCollectionEquality().hash(isAnalyzeEmpty),
-      const DeepCollectionEquality().hash(selectedChip),
-      const DeepCollectionEquality().hash(analyze),
-      const DeepCollectionEquality().hash(analyzeFailureOrSuccessOption));
+      isInitializing,
+      isChangingDateScope,
+      isAnalyzeEmpty,
+      selectedChip,
+      analyze,
+      analyzeFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
-  _$AnalyzeStateCopyWith<_AnalyzeState> get copyWith =>
-      __$AnalyzeStateCopyWithImpl<_AnalyzeState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_AnalyzeStateCopyWith<_$_AnalyzeState> get copyWith =>
+      __$$_AnalyzeStateCopyWithImpl<_$_AnalyzeState>(this, _$identity);
 }
 
 abstract class _AnalyzeState implements AnalyzeState {
@@ -1693,20 +1678,19 @@ abstract class _AnalyzeState implements AnalyzeState {
           analyzeFailureOrSuccessOption}) = _$_AnalyzeState;
 
   @override
-  bool get isInitializing => throw _privateConstructorUsedError;
+  bool get isInitializing;
   @override
-  bool get isChangingDateScope => throw _privateConstructorUsedError;
+  bool get isChangingDateScope;
   @override
-  bool get isAnalyzeEmpty => throw _privateConstructorUsedError;
+  bool get isAnalyzeEmpty;
   @override
-  int get selectedChip => throw _privateConstructorUsedError;
+  int get selectedChip;
   @override
-  Analyze get analyze => throw _privateConstructorUsedError;
+  Analyze get analyze;
   @override
-  Option<AnalyzeFailure> get analyzeFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<AnalyzeFailure> get analyzeFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
-  _$AnalyzeStateCopyWith<_AnalyzeState> get copyWith =>
+  _$$_AnalyzeStateCopyWith<_$_AnalyzeState> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'search_data_transfer_objects.dart';
 
@@ -27,59 +27,62 @@ mixin _$SearchNoteHistoryDTO {
 abstract class $SearchNoteHistoryDTOCopyWith<$Res> {
   factory $SearchNoteHistoryDTOCopyWith(SearchNoteHistoryDTO value,
           $Res Function(SearchNoteHistoryDTO) then) =
-      _$SearchNoteHistoryDTOCopyWithImpl<$Res>;
+      _$SearchNoteHistoryDTOCopyWithImpl<$Res, SearchNoteHistoryDTO>;
+  @useResult
   $Res call({String searchHistoryText});
 }
 
 /// @nodoc
-class _$SearchNoteHistoryDTOCopyWithImpl<$Res>
+class _$SearchNoteHistoryDTOCopyWithImpl<$Res,
+        $Val extends SearchNoteHistoryDTO>
     implements $SearchNoteHistoryDTOCopyWith<$Res> {
   _$SearchNoteHistoryDTOCopyWithImpl(this._value, this._then);
 
-  final SearchNoteHistoryDTO _value;
   // ignore: unused_field
-  final $Res Function(SearchNoteHistoryDTO) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? searchHistoryText = freezed,
+    Object? searchHistoryText = null,
   }) {
     return _then(_value.copyWith(
-      searchHistoryText: searchHistoryText == freezed
+      searchHistoryText: null == searchHistoryText
           ? _value.searchHistoryText
           : searchHistoryText // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$SearchNoteHistoryDTOCopyWith<$Res>
+abstract class _$$_SearchNoteHistoryDTOCopyWith<$Res>
     implements $SearchNoteHistoryDTOCopyWith<$Res> {
-  factory _$SearchNoteHistoryDTOCopyWith(_SearchNoteHistoryDTO value,
-          $Res Function(_SearchNoteHistoryDTO) then) =
-      __$SearchNoteHistoryDTOCopyWithImpl<$Res>;
+  factory _$$_SearchNoteHistoryDTOCopyWith(_$_SearchNoteHistoryDTO value,
+          $Res Function(_$_SearchNoteHistoryDTO) then) =
+      __$$_SearchNoteHistoryDTOCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String searchHistoryText});
 }
 
 /// @nodoc
-class __$SearchNoteHistoryDTOCopyWithImpl<$Res>
-    extends _$SearchNoteHistoryDTOCopyWithImpl<$Res>
-    implements _$SearchNoteHistoryDTOCopyWith<$Res> {
-  __$SearchNoteHistoryDTOCopyWithImpl(
-      _SearchNoteHistoryDTO _value, $Res Function(_SearchNoteHistoryDTO) _then)
-      : super(_value, (v) => _then(v as _SearchNoteHistoryDTO));
+class __$$_SearchNoteHistoryDTOCopyWithImpl<$Res>
+    extends _$SearchNoteHistoryDTOCopyWithImpl<$Res, _$_SearchNoteHistoryDTO>
+    implements _$$_SearchNoteHistoryDTOCopyWith<$Res> {
+  __$$_SearchNoteHistoryDTOCopyWithImpl(_$_SearchNoteHistoryDTO _value,
+      $Res Function(_$_SearchNoteHistoryDTO) _then)
+      : super(_value, _then);
 
-  @override
-  _SearchNoteHistoryDTO get _value => super._value as _SearchNoteHistoryDTO;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? searchHistoryText = freezed,
+    Object? searchHistoryText = null,
   }) {
-    return _then(_SearchNoteHistoryDTO(
-      searchHistoryText: searchHistoryText == freezed
+    return _then(_$_SearchNoteHistoryDTO(
+      searchHistoryText: null == searchHistoryText
           ? _value.searchHistoryText
           : searchHistoryText // ignore: cast_nullable_to_non_nullable
               as String,
@@ -104,19 +107,19 @@ class _$_SearchNoteHistoryDTO extends _SearchNoteHistoryDTO {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SearchNoteHistoryDTO &&
-            const DeepCollectionEquality()
-                .equals(other.searchHistoryText, searchHistoryText));
+            other is _$_SearchNoteHistoryDTO &&
+            (identical(other.searchHistoryText, searchHistoryText) ||
+                other.searchHistoryText == searchHistoryText));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(searchHistoryText));
+  int get hashCode => Object.hash(runtimeType, searchHistoryText);
 
   @JsonKey(ignore: true)
   @override
-  _$SearchNoteHistoryDTOCopyWith<_SearchNoteHistoryDTO> get copyWith =>
-      __$SearchNoteHistoryDTOCopyWithImpl<_SearchNoteHistoryDTO>(
+  @pragma('vm:prefer-inline')
+  _$$_SearchNoteHistoryDTOCopyWith<_$_SearchNoteHistoryDTO> get copyWith =>
+      __$$_SearchNoteHistoryDTOCopyWithImpl<_$_SearchNoteHistoryDTO>(
           this, _$identity);
 }
 
@@ -126,10 +129,10 @@ abstract class _SearchNoteHistoryDTO extends SearchNoteHistoryDTO {
   const _SearchNoteHistoryDTO._() : super._();
 
   @override
-  String get searchHistoryText => throw _privateConstructorUsedError;
+  String get searchHistoryText;
   @override
   @JsonKey(ignore: true)
-  _$SearchNoteHistoryDTOCopyWith<_SearchNoteHistoryDTO> get copyWith =>
+  _$$_SearchNoteHistoryDTOCopyWith<_$_SearchNoteHistoryDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -146,59 +149,62 @@ mixin _$SearchTimeHistoryDTO {
 abstract class $SearchTimeHistoryDTOCopyWith<$Res> {
   factory $SearchTimeHistoryDTOCopyWith(SearchTimeHistoryDTO value,
           $Res Function(SearchTimeHistoryDTO) then) =
-      _$SearchTimeHistoryDTOCopyWithImpl<$Res>;
+      _$SearchTimeHistoryDTOCopyWithImpl<$Res, SearchTimeHistoryDTO>;
+  @useResult
   $Res call({String searchHistoryText});
 }
 
 /// @nodoc
-class _$SearchTimeHistoryDTOCopyWithImpl<$Res>
+class _$SearchTimeHistoryDTOCopyWithImpl<$Res,
+        $Val extends SearchTimeHistoryDTO>
     implements $SearchTimeHistoryDTOCopyWith<$Res> {
   _$SearchTimeHistoryDTOCopyWithImpl(this._value, this._then);
 
-  final SearchTimeHistoryDTO _value;
   // ignore: unused_field
-  final $Res Function(SearchTimeHistoryDTO) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? searchHistoryText = freezed,
+    Object? searchHistoryText = null,
   }) {
     return _then(_value.copyWith(
-      searchHistoryText: searchHistoryText == freezed
+      searchHistoryText: null == searchHistoryText
           ? _value.searchHistoryText
           : searchHistoryText // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$SearchTimeHistoryDTOCopyWith<$Res>
+abstract class _$$_SearchTimeHistoryDTOCopyWith<$Res>
     implements $SearchTimeHistoryDTOCopyWith<$Res> {
-  factory _$SearchTimeHistoryDTOCopyWith(_SearchTimeHistoryDTO value,
-          $Res Function(_SearchTimeHistoryDTO) then) =
-      __$SearchTimeHistoryDTOCopyWithImpl<$Res>;
+  factory _$$_SearchTimeHistoryDTOCopyWith(_$_SearchTimeHistoryDTO value,
+          $Res Function(_$_SearchTimeHistoryDTO) then) =
+      __$$_SearchTimeHistoryDTOCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String searchHistoryText});
 }
 
 /// @nodoc
-class __$SearchTimeHistoryDTOCopyWithImpl<$Res>
-    extends _$SearchTimeHistoryDTOCopyWithImpl<$Res>
-    implements _$SearchTimeHistoryDTOCopyWith<$Res> {
-  __$SearchTimeHistoryDTOCopyWithImpl(
-      _SearchTimeHistoryDTO _value, $Res Function(_SearchTimeHistoryDTO) _then)
-      : super(_value, (v) => _then(v as _SearchTimeHistoryDTO));
+class __$$_SearchTimeHistoryDTOCopyWithImpl<$Res>
+    extends _$SearchTimeHistoryDTOCopyWithImpl<$Res, _$_SearchTimeHistoryDTO>
+    implements _$$_SearchTimeHistoryDTOCopyWith<$Res> {
+  __$$_SearchTimeHistoryDTOCopyWithImpl(_$_SearchTimeHistoryDTO _value,
+      $Res Function(_$_SearchTimeHistoryDTO) _then)
+      : super(_value, _then);
 
-  @override
-  _SearchTimeHistoryDTO get _value => super._value as _SearchTimeHistoryDTO;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? searchHistoryText = freezed,
+    Object? searchHistoryText = null,
   }) {
-    return _then(_SearchTimeHistoryDTO(
-      searchHistoryText: searchHistoryText == freezed
+    return _then(_$_SearchTimeHistoryDTO(
+      searchHistoryText: null == searchHistoryText
           ? _value.searchHistoryText
           : searchHistoryText // ignore: cast_nullable_to_non_nullable
               as String,
@@ -223,19 +229,19 @@ class _$_SearchTimeHistoryDTO extends _SearchTimeHistoryDTO {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SearchTimeHistoryDTO &&
-            const DeepCollectionEquality()
-                .equals(other.searchHistoryText, searchHistoryText));
+            other is _$_SearchTimeHistoryDTO &&
+            (identical(other.searchHistoryText, searchHistoryText) ||
+                other.searchHistoryText == searchHistoryText));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(searchHistoryText));
+  int get hashCode => Object.hash(runtimeType, searchHistoryText);
 
   @JsonKey(ignore: true)
   @override
-  _$SearchTimeHistoryDTOCopyWith<_SearchTimeHistoryDTO> get copyWith =>
-      __$SearchTimeHistoryDTOCopyWithImpl<_SearchTimeHistoryDTO>(
+  @pragma('vm:prefer-inline')
+  _$$_SearchTimeHistoryDTOCopyWith<_$_SearchTimeHistoryDTO> get copyWith =>
+      __$$_SearchTimeHistoryDTOCopyWithImpl<_$_SearchTimeHistoryDTO>(
           this, _$identity);
 }
 
@@ -245,9 +251,9 @@ abstract class _SearchTimeHistoryDTO extends SearchTimeHistoryDTO {
   const _SearchTimeHistoryDTO._() : super._();
 
   @override
-  String get searchHistoryText => throw _privateConstructorUsedError;
+  String get searchHistoryText;
   @override
   @JsonKey(ignore: true)
-  _$SearchTimeHistoryDTOCopyWith<_SearchTimeHistoryDTO> get copyWith =>
+  _$$_SearchTimeHistoryDTOCopyWith<_$_SearchTimeHistoryDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }

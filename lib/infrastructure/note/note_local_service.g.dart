@@ -2,11 +2,8 @@
 
 part of 'note_local_service.dart';
 
-// **************************************************************************
-// DaoGenerator
-// **************************************************************************
-
+// ignore_for_file: type=lint
 mixin _$NoteLocalServiceMixin on DatabaseAccessor<MyDatabase> {
-  $NoteTable get note => attachedDatabase.note;
   $TodoItemTable get todoItem => attachedDatabase.todoItem;
+  $NoteTable get note => attachedDatabase.note;
 }

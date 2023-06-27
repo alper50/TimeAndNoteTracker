@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'note_entity.dart';
 
@@ -28,7 +28,8 @@ mixin _$Note {
 /// @nodoc
 abstract class $NoteCopyWith<$Res> {
   factory $NoteCopyWith(Note value, $Res Function(Note) then) =
-      _$NoteCopyWithImpl<$Res>;
+      _$NoteCopyWithImpl<$Res, Note>;
+  @useResult
   $Res call(
       {UniqueId id,
       NoteBody noteEditorBody,
@@ -37,46 +38,50 @@ abstract class $NoteCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NoteCopyWithImpl<$Res> implements $NoteCopyWith<$Res> {
+class _$NoteCopyWithImpl<$Res, $Val extends Note>
+    implements $NoteCopyWith<$Res> {
   _$NoteCopyWithImpl(this._value, this._then);
 
-  final Note _value;
   // ignore: unused_field
-  final $Res Function(Note) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? noteEditorBody = freezed,
-    Object? lastUpdatedTime = freezed,
-    Object? createdTime = freezed,
+    Object? id = null,
+    Object? noteEditorBody = null,
+    Object? lastUpdatedTime = null,
+    Object? createdTime = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as UniqueId,
-      noteEditorBody: noteEditorBody == freezed
+      noteEditorBody: null == noteEditorBody
           ? _value.noteEditorBody
           : noteEditorBody // ignore: cast_nullable_to_non_nullable
               as NoteBody,
-      lastUpdatedTime: lastUpdatedTime == freezed
+      lastUpdatedTime: null == lastUpdatedTime
           ? _value.lastUpdatedTime
           : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      createdTime: createdTime == freezed
+      createdTime: null == createdTime
           ? _value.createdTime
           : createdTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
-  factory _$NoteCopyWith(_Note value, $Res Function(_Note) then) =
-      __$NoteCopyWithImpl<$Res>;
+abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
+  factory _$$_NoteCopyWith(_$_Note value, $Res Function(_$_Note) then) =
+      __$$_NoteCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {UniqueId id,
       NoteBody noteEditorBody,
@@ -85,35 +90,33 @@ abstract class _$NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res>
-    implements _$NoteCopyWith<$Res> {
-  __$NoteCopyWithImpl(_Note _value, $Res Function(_Note) _then)
-      : super(_value, (v) => _then(v as _Note));
+class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
+    implements _$$_NoteCopyWith<$Res> {
+  __$$_NoteCopyWithImpl(_$_Note _value, $Res Function(_$_Note) _then)
+      : super(_value, _then);
 
-  @override
-  _Note get _value => super._value as _Note;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? noteEditorBody = freezed,
-    Object? lastUpdatedTime = freezed,
-    Object? createdTime = freezed,
+    Object? id = null,
+    Object? noteEditorBody = null,
+    Object? lastUpdatedTime = null,
+    Object? createdTime = null,
   }) {
-    return _then(_Note(
-      id: id == freezed
+    return _then(_$_Note(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as UniqueId,
-      noteEditorBody: noteEditorBody == freezed
+      noteEditorBody: null == noteEditorBody
           ? _value.noteEditorBody
           : noteEditorBody // ignore: cast_nullable_to_non_nullable
               as NoteBody,
-      lastUpdatedTime: lastUpdatedTime == freezed
+      lastUpdatedTime: null == lastUpdatedTime
           ? _value.lastUpdatedTime
           : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      createdTime: createdTime == freezed
+      createdTime: null == createdTime
           ? _value.createdTime
           : createdTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -149,28 +152,25 @@ class _$_Note extends _Note {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Note &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality()
-                .equals(other.noteEditorBody, noteEditorBody) &&
-            const DeepCollectionEquality()
-                .equals(other.lastUpdatedTime, lastUpdatedTime) &&
-            const DeepCollectionEquality()
-                .equals(other.createdTime, createdTime));
+            other is _$_Note &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.noteEditorBody, noteEditorBody) ||
+                other.noteEditorBody == noteEditorBody) &&
+            (identical(other.lastUpdatedTime, lastUpdatedTime) ||
+                other.lastUpdatedTime == lastUpdatedTime) &&
+            (identical(other.createdTime, createdTime) ||
+                other.createdTime == createdTime));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(noteEditorBody),
-      const DeepCollectionEquality().hash(lastUpdatedTime),
-      const DeepCollectionEquality().hash(createdTime));
+      runtimeType, id, noteEditorBody, lastUpdatedTime, createdTime);
 
   @JsonKey(ignore: true)
   @override
-  _$NoteCopyWith<_Note> get copyWith =>
-      __$NoteCopyWithImpl<_Note>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_NoteCopyWith<_$_Note> get copyWith =>
+      __$$_NoteCopyWithImpl<_$_Note>(this, _$identity);
 }
 
 abstract class _Note extends Note {
@@ -182,14 +182,14 @@ abstract class _Note extends Note {
   const _Note._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  NoteBody get noteEditorBody => throw _privateConstructorUsedError;
+  NoteBody get noteEditorBody;
   @override
-  DateTime get lastUpdatedTime => throw _privateConstructorUsedError;
+  DateTime get lastUpdatedTime;
   @override
-  DateTime get createdTime => throw _privateConstructorUsedError;
+  DateTime get createdTime;
   @override
   @JsonKey(ignore: true)
-  _$NoteCopyWith<_Note> get copyWith => throw _privateConstructorUsedError;
+  _$$_NoteCopyWith<_$_Note> get copyWith => throw _privateConstructorUsedError;
 }

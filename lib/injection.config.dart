@@ -4,6 +4,11 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
+// ignore_for_file: unnecessary_lambdas
+// ignore_for_file: lines_longer_than_80_chars
+// coverage:ignore-file
+
+// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:drift/native.dart' as _i11;
 import 'package:firebase_auth/firebase_auth.dart' as _i3;
 import 'package:get_it/get_it.dart' as _i1;
@@ -55,14 +60,21 @@ import 'infrastructure/note/note_local_repository.dart' as _i27;
 import 'infrastructure/note/note_local_service.dart' as _i12;
 import 'infrastructure/settings/settings_local_service.dart' as _i15;
 import 'infrastructure/timer/time_local_repository.dart' as _i31;
-import 'infrastructure/timer/time_local_service.dart'
-    as _i18; // ignore_for_file: unnecessary_lambdas
+import 'infrastructure/timer/time_local_service.dart' as _i18;
 
+// ignore_for_file: unnecessary_lambdas
 // ignore_for_file: lines_longer_than_80_chars
-/// initializes the registration of provided dependencies inside of [GetIt]
-_i1.GetIt $initGetIt(_i1.GetIt get,
-    {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
-  final gh = _i2.GetItHelper(get, environment, environmentFilter);
+// initializes the registration of main-scope dependencies inside of GetIt
+_i1.GetIt $initGetIt(
+  _i1.GetIt getIt, {
+  String? environment,
+  _i2.EnvironmentFilter? environmentFilter,
+}) {
+  final gh = _i2.GetItHelper(
+    getIt,
+    environment,
+    environmentFilter,
+  );
   final infrastructureInjectableModule = _$InfrastructureInjectableModule();
   gh.lazySingleton<_i3.FirebaseAuth>(
       () => infrastructureInjectableModule.firebaseAuth);
@@ -72,74 +84,82 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i7.IInternetConnectionService>(
       () => _i8.InternetConnectionService());
   gh.factory<_i9.InternetConnectionBloc>(() => _i9.InternetConnectionBloc(
-      iInternetConnectionService: get<_i7.IInternetConnectionService>()));
+      iInternetConnectionService: gh<_i7.IInternetConnectionService>()));
   gh.lazySingleton<_i10.MyDatabase>(
-      () => _i10.MyDatabase(get<_i11.NativeDatabase>()));
+      () => _i10.MyDatabase(gh<_i11.NativeDatabase>()));
   gh.factory<_i11.NativeDatabase>(
       () => infrastructureInjectableModule.nativeDatabase);
   gh.lazySingleton<_i12.NoteLocalService>(
-      () => _i12.NoteLocalService(get<_i10.MyDatabase>()));
+      () => _i12.NoteLocalService(gh<_i10.MyDatabase>()));
   gh.lazySingleton<_i13.SearchLocalService>(
-      () => _i13.SearchLocalService(get<_i10.MyDatabase>()));
+      () => _i13.SearchLocalService(gh<_i10.MyDatabase>()));
   gh.lazySingleton<_i14.SearchService>(() => _i14.SearchService());
   gh.lazySingleton<_i15.SettingsLocalService>(
-      () => _i15.SettingsLocalService(get<_i10.MyDatabase>()));
+      () => _i15.SettingsLocalService(gh<_i10.MyDatabase>()));
   gh.lazySingleton<_i16.ThemeManager>(() => _i16.ThemeManager());
   gh.lazySingleton<_i17.TickerBackward>(() => _i17.TickerBackward());
   gh.lazySingleton<_i17.TickerForward>(() => _i17.TickerForward());
   gh.lazySingleton<_i18.TimeLocalService>(
-      () => _i18.TimeLocalService(get<_i10.MyDatabase>()));
+      () => _i18.TimeLocalService(gh<_i10.MyDatabase>()));
   gh.lazySingleton<_i19.AnalyzeLocalService>(
-      () => _i19.AnalyzeLocalService(get<_i10.MyDatabase>()));
+      () => _i19.AnalyzeLocalService(gh<_i10.MyDatabase>()));
   gh.lazySingleton<_i20.AuthLocalService>(
-      () => _i20.AuthLocalService(get<_i10.MyDatabase>()));
-  gh.lazySingleton<_i21.AuthRemoteService>(() =>
-      _i21.AuthRemoteService(get<_i3.FirebaseAuth>(), get<_i4.GoogleSignIn>()));
+      () => _i20.AuthLocalService(gh<_i10.MyDatabase>()));
+  gh.lazySingleton<_i21.AuthRemoteService>(() => _i21.AuthRemoteService(
+        gh<_i3.FirebaseAuth>(),
+        gh<_i4.GoogleSignIn>(),
+      ));
   gh.lazySingleton<_i22.IAnalyzeLocalRepository>(
-      () => _i23.AnalyzeLocalRepository(get<_i19.AnalyzeLocalService>()));
+      () => _i23.AnalyzeLocalRepository(gh<_i19.AnalyzeLocalService>()));
   gh.lazySingleton<_i24.IAuthRemoteRepository>(
-      () => _i25.AuthRemoteRepository(get<_i21.AuthRemoteService>()));
-  gh.lazySingleton<_i26.INoteLocalRepository>(() => _i27.NoteLocalRepository(
-      noteLocaleService: get<_i12.NoteLocalService>()));
+      () => _i25.AuthRemoteRepository(gh<_i21.AuthRemoteService>()));
+  gh.lazySingleton<_i26.INoteLocalRepository>(() =>
+      _i27.NoteLocalRepository(noteLocaleService: gh<_i12.NoteLocalService>()));
   gh.lazySingleton<_i28.ISearchLocalRepository>(
-      () => _i29.SearchLocalRepository(get<_i13.SearchLocalService>()));
+      () => _i29.SearchLocalRepository(gh<_i13.SearchLocalService>()));
   gh.lazySingleton<_i30.ITimeLocalRepository>(
-      () => _i31.TimeLocalRepository(get<_i18.TimeLocalService>()));
+      () => _i31.TimeLocalRepository(gh<_i18.TimeLocalService>()));
   gh.factory<_i32.NoteActionBloc>(
-      () => _i32.NoteActionBloc(get<_i26.INoteLocalRepository>()));
+      () => _i32.NoteActionBloc(gh<_i26.INoteLocalRepository>()));
   gh.factory<_i33.NoteFormBloc>(
-      () => _i33.NoteFormBloc(get<_i26.INoteLocalRepository>()));
+      () => _i33.NoteFormBloc(gh<_i26.INoteLocalRepository>()));
   gh.factory<_i34.NoteWatcherBloc>(
-      () => _i34.NoteWatcherBloc(get<_i26.INoteLocalRepository>()));
+      () => _i34.NoteWatcherBloc(gh<_i26.INoteLocalRepository>()));
   gh.factory<_i35.RegisterAndLoginBloc>(
-      () => _i35.RegisterAndLoginBloc(get<_i24.IAuthRemoteRepository>()));
+      () => _i35.RegisterAndLoginBloc(gh<_i24.IAuthRemoteRepository>()));
   gh.factory<_i36.SearchBloc>(() => _i36.SearchBloc(
-      noteLocalRepository: get<_i26.INoteLocalRepository>(),
-      searchLocalRepository: get<_i28.ISearchLocalRepository>(),
-      searchService: get<_i14.SearchService>(),
-      timeLocalRepository: get<_i30.ITimeLocalRepository>()));
+        noteLocalRepository: gh<_i26.INoteLocalRepository>(),
+        searchLocalRepository: gh<_i28.ISearchLocalRepository>(),
+        searchService: gh<_i14.SearchService>(),
+        timeLocalRepository: gh<_i30.ITimeLocalRepository>(),
+      ));
   gh.factory<_i37.SettingsBloc>(
-      () => _i37.SettingsBloc(get<_i24.IAuthRemoteRepository>()));
+      () => _i37.SettingsBloc(gh<_i24.IAuthRemoteRepository>()));
   gh.factory<_i38.ThemeBloc>(() => _i38.ThemeBloc(
-      get<_i16.ThemeManager>(), get<_i15.SettingsLocalService>()));
+        gh<_i16.ThemeManager>(),
+        gh<_i15.SettingsLocalService>(),
+      ));
   gh.factory<_i39.TimeActionBloc>(
-      () => _i39.TimeActionBloc(get<_i30.ITimeLocalRepository>()));
+      () => _i39.TimeActionBloc(gh<_i30.ITimeLocalRepository>()));
   gh.factory<_i40.TimeFormBloc>(
-      () => _i40.TimeFormBloc(get<_i30.ITimeLocalRepository>()));
+      () => _i40.TimeFormBloc(gh<_i30.ITimeLocalRepository>()));
   gh.factory<_i41.TimeTickerBloc>(() => _i41.TimeTickerBloc(
-      get<_i30.ITimeLocalRepository>(),
-      ticker: get<_i17.TickerForward>()));
+        gh<_i30.ITimeLocalRepository>(),
+        ticker: gh<_i17.TickerForward>(),
+      ));
   gh.factory<_i42.TimeWatcherBloc>(
-      () => _i42.TimeWatcherBloc(get<_i30.ITimeLocalRepository>()));
+      () => _i42.TimeWatcherBloc(gh<_i30.ITimeLocalRepository>()));
   gh.factory<_i43.VerifyEmailBloc>(
-      () => _i43.VerifyEmailBloc(get<_i24.IAuthRemoteRepository>()));
+      () => _i43.VerifyEmailBloc(gh<_i24.IAuthRemoteRepository>()));
   gh.factory<_i44.AnalyzeBloc>(
-      () => _i44.AnalyzeBloc(get<_i22.IAnalyzeLocalRepository>()));
+      () => _i44.AnalyzeBloc(gh<_i22.IAnalyzeLocalRepository>()));
   gh.factory<_i45.AuthBloc>(() => _i45.AuthBloc(
-      get<_i24.IAuthRemoteRepository>(), get<_i5.IAuthLocalRepository>()));
+        gh<_i24.IAuthRemoteRepository>(),
+        gh<_i5.IAuthLocalRepository>(),
+      ));
   gh.factory<_i46.ForgotPasswordBloc>(
-      () => _i46.ForgotPasswordBloc(get<_i24.IAuthRemoteRepository>()));
-  return get;
+      () => _i46.ForgotPasswordBloc(gh<_i24.IAuthRemoteRepository>()));
+  return getIt;
 }
 
 class _$InfrastructureInjectableModule

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'note_data_transfer_objects.dart';
 
@@ -28,7 +28,8 @@ mixin _$NoteDTO {
 /// @nodoc
 abstract class $NoteDTOCopyWith<$Res> {
   factory $NoteDTOCopyWith(NoteDTO value, $Res Function(NoteDTO) then) =
-      _$NoteDTOCopyWithImpl<$Res>;
+      _$NoteDTOCopyWithImpl<$Res, NoteDTO>;
+  @useResult
   $Res call(
       {String id,
       String noteEditorText,
@@ -37,46 +38,51 @@ abstract class $NoteDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NoteDTOCopyWithImpl<$Res> implements $NoteDTOCopyWith<$Res> {
+class _$NoteDTOCopyWithImpl<$Res, $Val extends NoteDTO>
+    implements $NoteDTOCopyWith<$Res> {
   _$NoteDTOCopyWithImpl(this._value, this._then);
 
-  final NoteDTO _value;
   // ignore: unused_field
-  final $Res Function(NoteDTO) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? noteEditorText = freezed,
-    Object? lastUpdatedTime = freezed,
-    Object? createdTime = freezed,
+    Object? id = null,
+    Object? noteEditorText = null,
+    Object? lastUpdatedTime = null,
+    Object? createdTime = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      noteEditorText: noteEditorText == freezed
+      noteEditorText: null == noteEditorText
           ? _value.noteEditorText
           : noteEditorText // ignore: cast_nullable_to_non_nullable
               as String,
-      lastUpdatedTime: lastUpdatedTime == freezed
+      lastUpdatedTime: null == lastUpdatedTime
           ? _value.lastUpdatedTime
           : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      createdTime: createdTime == freezed
+      createdTime: null == createdTime
           ? _value.createdTime
           : createdTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$NoteDTOCopyWith<$Res> implements $NoteDTOCopyWith<$Res> {
-  factory _$NoteDTOCopyWith(_NoteDTO value, $Res Function(_NoteDTO) then) =
-      __$NoteDTOCopyWithImpl<$Res>;
+abstract class _$$_NoteDTOCopyWith<$Res> implements $NoteDTOCopyWith<$Res> {
+  factory _$$_NoteDTOCopyWith(
+          _$_NoteDTO value, $Res Function(_$_NoteDTO) then) =
+      __$$_NoteDTOCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String id,
       String noteEditorText,
@@ -85,35 +91,34 @@ abstract class _$NoteDTOCopyWith<$Res> implements $NoteDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$NoteDTOCopyWithImpl<$Res> extends _$NoteDTOCopyWithImpl<$Res>
-    implements _$NoteDTOCopyWith<$Res> {
-  __$NoteDTOCopyWithImpl(_NoteDTO _value, $Res Function(_NoteDTO) _then)
-      : super(_value, (v) => _then(v as _NoteDTO));
+class __$$_NoteDTOCopyWithImpl<$Res>
+    extends _$NoteDTOCopyWithImpl<$Res, _$_NoteDTO>
+    implements _$$_NoteDTOCopyWith<$Res> {
+  __$$_NoteDTOCopyWithImpl(_$_NoteDTO _value, $Res Function(_$_NoteDTO) _then)
+      : super(_value, _then);
 
-  @override
-  _NoteDTO get _value => super._value as _NoteDTO;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? noteEditorText = freezed,
-    Object? lastUpdatedTime = freezed,
-    Object? createdTime = freezed,
+    Object? id = null,
+    Object? noteEditorText = null,
+    Object? lastUpdatedTime = null,
+    Object? createdTime = null,
   }) {
-    return _then(_NoteDTO(
-      id: id == freezed
+    return _then(_$_NoteDTO(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      noteEditorText: noteEditorText == freezed
+      noteEditorText: null == noteEditorText
           ? _value.noteEditorText
           : noteEditorText // ignore: cast_nullable_to_non_nullable
               as String,
-      lastUpdatedTime: lastUpdatedTime == freezed
+      lastUpdatedTime: null == lastUpdatedTime
           ? _value.lastUpdatedTime
           : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      createdTime: createdTime == freezed
+      createdTime: null == createdTime
           ? _value.createdTime
           : createdTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -149,28 +154,25 @@ class _$_NoteDTO extends _NoteDTO {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _NoteDTO &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality()
-                .equals(other.noteEditorText, noteEditorText) &&
-            const DeepCollectionEquality()
-                .equals(other.lastUpdatedTime, lastUpdatedTime) &&
-            const DeepCollectionEquality()
-                .equals(other.createdTime, createdTime));
+            other is _$_NoteDTO &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.noteEditorText, noteEditorText) ||
+                other.noteEditorText == noteEditorText) &&
+            (identical(other.lastUpdatedTime, lastUpdatedTime) ||
+                other.lastUpdatedTime == lastUpdatedTime) &&
+            (identical(other.createdTime, createdTime) ||
+                other.createdTime == createdTime));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(noteEditorText),
-      const DeepCollectionEquality().hash(lastUpdatedTime),
-      const DeepCollectionEquality().hash(createdTime));
+      runtimeType, id, noteEditorText, lastUpdatedTime, createdTime);
 
   @JsonKey(ignore: true)
   @override
-  _$NoteDTOCopyWith<_NoteDTO> get copyWith =>
-      __$NoteDTOCopyWithImpl<_NoteDTO>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_NoteDTOCopyWith<_$_NoteDTO> get copyWith =>
+      __$$_NoteDTOCopyWithImpl<_$_NoteDTO>(this, _$identity);
 }
 
 abstract class _NoteDTO extends NoteDTO {
@@ -182,16 +184,16 @@ abstract class _NoteDTO extends NoteDTO {
   const _NoteDTO._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get noteEditorText => throw _privateConstructorUsedError;
+  String get noteEditorText;
   @override
-  DateTime get lastUpdatedTime => throw _privateConstructorUsedError;
+  DateTime get lastUpdatedTime;
   @override
-  DateTime get createdTime => throw _privateConstructorUsedError;
+  DateTime get createdTime;
   @override
   @JsonKey(ignore: true)
-  _$NoteDTOCopyWith<_NoteDTO> get copyWith =>
+  _$$_NoteDTOCopyWith<_$_NoteDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -211,89 +213,93 @@ mixin _$TodoItemDTO {
 abstract class $TodoItemDTOCopyWith<$Res> {
   factory $TodoItemDTOCopyWith(
           TodoItemDTO value, $Res Function(TodoItemDTO) then) =
-      _$TodoItemDTOCopyWithImpl<$Res>;
+      _$TodoItemDTOCopyWithImpl<$Res, TodoItemDTO>;
+  @useResult
   $Res call(
       {String id, String todoText, bool isDone, DateTime lastUpdatedTime});
 }
 
 /// @nodoc
-class _$TodoItemDTOCopyWithImpl<$Res> implements $TodoItemDTOCopyWith<$Res> {
+class _$TodoItemDTOCopyWithImpl<$Res, $Val extends TodoItemDTO>
+    implements $TodoItemDTOCopyWith<$Res> {
   _$TodoItemDTOCopyWithImpl(this._value, this._then);
 
-  final TodoItemDTO _value;
   // ignore: unused_field
-  final $Res Function(TodoItemDTO) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? todoText = freezed,
-    Object? isDone = freezed,
-    Object? lastUpdatedTime = freezed,
+    Object? id = null,
+    Object? todoText = null,
+    Object? isDone = null,
+    Object? lastUpdatedTime = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      todoText: todoText == freezed
+      todoText: null == todoText
           ? _value.todoText
           : todoText // ignore: cast_nullable_to_non_nullable
               as String,
-      isDone: isDone == freezed
+      isDone: null == isDone
           ? _value.isDone
           : isDone // ignore: cast_nullable_to_non_nullable
               as bool,
-      lastUpdatedTime: lastUpdatedTime == freezed
+      lastUpdatedTime: null == lastUpdatedTime
           ? _value.lastUpdatedTime
           : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$TodoItemDTOCopyWith<$Res>
+abstract class _$$_TodoItemDTOCopyWith<$Res>
     implements $TodoItemDTOCopyWith<$Res> {
-  factory _$TodoItemDTOCopyWith(
-          _TodoItemDTO value, $Res Function(_TodoItemDTO) then) =
-      __$TodoItemDTOCopyWithImpl<$Res>;
+  factory _$$_TodoItemDTOCopyWith(
+          _$_TodoItemDTO value, $Res Function(_$_TodoItemDTO) then) =
+      __$$_TodoItemDTOCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String id, String todoText, bool isDone, DateTime lastUpdatedTime});
 }
 
 /// @nodoc
-class __$TodoItemDTOCopyWithImpl<$Res> extends _$TodoItemDTOCopyWithImpl<$Res>
-    implements _$TodoItemDTOCopyWith<$Res> {
-  __$TodoItemDTOCopyWithImpl(
-      _TodoItemDTO _value, $Res Function(_TodoItemDTO) _then)
-      : super(_value, (v) => _then(v as _TodoItemDTO));
+class __$$_TodoItemDTOCopyWithImpl<$Res>
+    extends _$TodoItemDTOCopyWithImpl<$Res, _$_TodoItemDTO>
+    implements _$$_TodoItemDTOCopyWith<$Res> {
+  __$$_TodoItemDTOCopyWithImpl(
+      _$_TodoItemDTO _value, $Res Function(_$_TodoItemDTO) _then)
+      : super(_value, _then);
 
-  @override
-  _TodoItemDTO get _value => super._value as _TodoItemDTO;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? todoText = freezed,
-    Object? isDone = freezed,
-    Object? lastUpdatedTime = freezed,
+    Object? id = null,
+    Object? todoText = null,
+    Object? isDone = null,
+    Object? lastUpdatedTime = null,
   }) {
-    return _then(_TodoItemDTO(
-      id: id == freezed
+    return _then(_$_TodoItemDTO(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      todoText: todoText == freezed
+      todoText: null == todoText
           ? _value.todoText
           : todoText // ignore: cast_nullable_to_non_nullable
               as String,
-      isDone: isDone == freezed
+      isDone: null == isDone
           ? _value.isDone
           : isDone // ignore: cast_nullable_to_non_nullable
               as bool,
-      lastUpdatedTime: lastUpdatedTime == freezed
+      lastUpdatedTime: null == lastUpdatedTime
           ? _value.lastUpdatedTime
           : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -329,26 +335,24 @@ class _$_TodoItemDTO extends _TodoItemDTO {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TodoItemDTO &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.todoText, todoText) &&
-            const DeepCollectionEquality().equals(other.isDone, isDone) &&
-            const DeepCollectionEquality()
-                .equals(other.lastUpdatedTime, lastUpdatedTime));
+            other is _$_TodoItemDTO &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.todoText, todoText) ||
+                other.todoText == todoText) &&
+            (identical(other.isDone, isDone) || other.isDone == isDone) &&
+            (identical(other.lastUpdatedTime, lastUpdatedTime) ||
+                other.lastUpdatedTime == lastUpdatedTime));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(todoText),
-      const DeepCollectionEquality().hash(isDone),
-      const DeepCollectionEquality().hash(lastUpdatedTime));
+  int get hashCode =>
+      Object.hash(runtimeType, id, todoText, isDone, lastUpdatedTime);
 
   @JsonKey(ignore: true)
   @override
-  _$TodoItemDTOCopyWith<_TodoItemDTO> get copyWith =>
-      __$TodoItemDTOCopyWithImpl<_TodoItemDTO>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_TodoItemDTOCopyWith<_$_TodoItemDTO> get copyWith =>
+      __$$_TodoItemDTOCopyWithImpl<_$_TodoItemDTO>(this, _$identity);
 }
 
 abstract class _TodoItemDTO extends TodoItemDTO {
@@ -360,15 +364,15 @@ abstract class _TodoItemDTO extends TodoItemDTO {
   const _TodoItemDTO._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get todoText => throw _privateConstructorUsedError;
+  String get todoText;
   @override
-  bool get isDone => throw _privateConstructorUsedError;
+  bool get isDone;
   @override
-  DateTime get lastUpdatedTime => throw _privateConstructorUsedError;
+  DateTime get lastUpdatedTime;
   @override
   @JsonKey(ignore: true)
-  _$TodoItemDTOCopyWith<_TodoItemDTO> get copyWith =>
+  _$$_TodoItemDTOCopyWith<_$_TodoItemDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }

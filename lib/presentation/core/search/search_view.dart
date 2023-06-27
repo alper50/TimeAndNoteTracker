@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:material_floating_search_bar/material_floating_search_bar.dart';
+import 'package:material_floating_search_bar_2/material_floating_search_bar_2.dart';
 import 'package:timenotetracker/application/core/searchBloc/search_bloc.dart';
 import 'package:timenotetracker/domain/core/search/i_search_service.dart';
 import 'package:timenotetracker/injection.dart';

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'note_form_bloc.dart';
 
@@ -26,10 +26,10 @@ mixin _$NoteFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Note? initialNote)? initialize,
-    TResult Function(Note noteToBeUpdated)? updateNote,
-    TResult Function()? createNote,
-    TResult Function(Document doc)? noteChanged,
+    TResult? Function(Note? initialNote)? initialize,
+    TResult? Function(Note noteToBeUpdated)? updateNote,
+    TResult? Function()? createNote,
+    TResult? Function(Document doc)? noteChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$NoteFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_UpdateNote value)? updateNote,
-    TResult Function(_CreateNote value)? createNote,
-    TResult Function(_NoteChanged value)? noteChanged,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_UpdateNote value)? updateNote,
+    TResult? Function(_CreateNote value)? createNote,
+    TResult? Function(_NoteChanged value)? noteChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,45 +72,46 @@ mixin _$NoteFormEvent {
 abstract class $NoteFormEventCopyWith<$Res> {
   factory $NoteFormEventCopyWith(
           NoteFormEvent value, $Res Function(NoteFormEvent) then) =
-      _$NoteFormEventCopyWithImpl<$Res>;
+      _$NoteFormEventCopyWithImpl<$Res, NoteFormEvent>;
 }
 
 /// @nodoc
-class _$NoteFormEventCopyWithImpl<$Res>
+class _$NoteFormEventCopyWithImpl<$Res, $Val extends NoteFormEvent>
     implements $NoteFormEventCopyWith<$Res> {
   _$NoteFormEventCopyWithImpl(this._value, this._then);
 
-  final NoteFormEvent _value;
   // ignore: unused_field
-  final $Res Function(NoteFormEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitializeCopyWith<$Res> {
-  factory _$InitializeCopyWith(
-          _Initialize value, $Res Function(_Initialize) then) =
-      __$InitializeCopyWithImpl<$Res>;
+abstract class _$$_InitializeCopyWith<$Res> {
+  factory _$$_InitializeCopyWith(
+          _$_Initialize value, $Res Function(_$_Initialize) then) =
+      __$$_InitializeCopyWithImpl<$Res>;
+  @useResult
   $Res call({Note? initialNote});
 
   $NoteCopyWith<$Res>? get initialNote;
 }
 
 /// @nodoc
-class __$InitializeCopyWithImpl<$Res> extends _$NoteFormEventCopyWithImpl<$Res>
-    implements _$InitializeCopyWith<$Res> {
-  __$InitializeCopyWithImpl(
-      _Initialize _value, $Res Function(_Initialize) _then)
-      : super(_value, (v) => _then(v as _Initialize));
+class __$$_InitializeCopyWithImpl<$Res>
+    extends _$NoteFormEventCopyWithImpl<$Res, _$_Initialize>
+    implements _$$_InitializeCopyWith<$Res> {
+  __$$_InitializeCopyWithImpl(
+      _$_Initialize _value, $Res Function(_$_Initialize) _then)
+      : super(_value, _then);
 
-  @override
-  _Initialize get _value => super._value as _Initialize;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? initialNote = freezed,
   }) {
-    return _then(_Initialize(
-      initialNote == freezed
+    return _then(_$_Initialize(
+      freezed == initialNote
           ? _value.initialNote
           : initialNote // ignore: cast_nullable_to_non_nullable
               as Note?,
@@ -118,6 +119,7 @@ class __$InitializeCopyWithImpl<$Res> extends _$NoteFormEventCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $NoteCopyWith<$Res>? get initialNote {
     if (_value.initialNote == null) {
       return null;
@@ -146,19 +148,19 @@ class _$_Initialize implements _Initialize {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Initialize &&
-            const DeepCollectionEquality()
-                .equals(other.initialNote, initialNote));
+            other is _$_Initialize &&
+            (identical(other.initialNote, initialNote) ||
+                other.initialNote == initialNote));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(initialNote));
+  int get hashCode => Object.hash(runtimeType, initialNote);
 
   @JsonKey(ignore: true)
   @override
-  _$InitializeCopyWith<_Initialize> get copyWith =>
-      __$InitializeCopyWithImpl<_Initialize>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_InitializeCopyWith<_$_Initialize> get copyWith =>
+      __$$_InitializeCopyWithImpl<_$_Initialize>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -174,10 +176,10 @@ class _$_Initialize implements _Initialize {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Note? initialNote)? initialize,
-    TResult Function(Note noteToBeUpdated)? updateNote,
-    TResult Function()? createNote,
-    TResult Function(Document doc)? noteChanged,
+    TResult? Function(Note? initialNote)? initialize,
+    TResult? Function(Note noteToBeUpdated)? updateNote,
+    TResult? Function()? createNote,
+    TResult? Function(Document doc)? noteChanged,
   }) {
     return initialize?.call(initialNote);
   }
@@ -211,10 +213,10 @@ class _$_Initialize implements _Initialize {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_UpdateNote value)? updateNote,
-    TResult Function(_CreateNote value)? createNote,
-    TResult Function(_NoteChanged value)? noteChanged,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_UpdateNote value)? updateNote,
+    TResult? Function(_CreateNote value)? createNote,
+    TResult? Function(_NoteChanged value)? noteChanged,
   }) {
     return initialize?.call(this);
   }
@@ -238,38 +240,38 @@ class _$_Initialize implements _Initialize {
 abstract class _Initialize implements NoteFormEvent {
   const factory _Initialize(final Note? initialNote) = _$_Initialize;
 
-  Note? get initialNote => throw _privateConstructorUsedError;
+  Note? get initialNote;
   @JsonKey(ignore: true)
-  _$InitializeCopyWith<_Initialize> get copyWith =>
+  _$$_InitializeCopyWith<_$_Initialize> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$UpdateNoteCopyWith<$Res> {
-  factory _$UpdateNoteCopyWith(
-          _UpdateNote value, $Res Function(_UpdateNote) then) =
-      __$UpdateNoteCopyWithImpl<$Res>;
+abstract class _$$_UpdateNoteCopyWith<$Res> {
+  factory _$$_UpdateNoteCopyWith(
+          _$_UpdateNote value, $Res Function(_$_UpdateNote) then) =
+      __$$_UpdateNoteCopyWithImpl<$Res>;
+  @useResult
   $Res call({Note noteToBeUpdated});
 
   $NoteCopyWith<$Res> get noteToBeUpdated;
 }
 
 /// @nodoc
-class __$UpdateNoteCopyWithImpl<$Res> extends _$NoteFormEventCopyWithImpl<$Res>
-    implements _$UpdateNoteCopyWith<$Res> {
-  __$UpdateNoteCopyWithImpl(
-      _UpdateNote _value, $Res Function(_UpdateNote) _then)
-      : super(_value, (v) => _then(v as _UpdateNote));
+class __$$_UpdateNoteCopyWithImpl<$Res>
+    extends _$NoteFormEventCopyWithImpl<$Res, _$_UpdateNote>
+    implements _$$_UpdateNoteCopyWith<$Res> {
+  __$$_UpdateNoteCopyWithImpl(
+      _$_UpdateNote _value, $Res Function(_$_UpdateNote) _then)
+      : super(_value, _then);
 
-  @override
-  _UpdateNote get _value => super._value as _UpdateNote;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? noteToBeUpdated = freezed,
+    Object? noteToBeUpdated = null,
   }) {
-    return _then(_UpdateNote(
-      noteToBeUpdated: noteToBeUpdated == freezed
+    return _then(_$_UpdateNote(
+      noteToBeUpdated: null == noteToBeUpdated
           ? _value.noteToBeUpdated
           : noteToBeUpdated // ignore: cast_nullable_to_non_nullable
               as Note,
@@ -277,6 +279,7 @@ class __$UpdateNoteCopyWithImpl<$Res> extends _$NoteFormEventCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $NoteCopyWith<$Res> get noteToBeUpdated {
     return $NoteCopyWith<$Res>(_value.noteToBeUpdated, (value) {
       return _then(_value.copyWith(noteToBeUpdated: value));
@@ -301,19 +304,19 @@ class _$_UpdateNote implements _UpdateNote {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UpdateNote &&
-            const DeepCollectionEquality()
-                .equals(other.noteToBeUpdated, noteToBeUpdated));
+            other is _$_UpdateNote &&
+            (identical(other.noteToBeUpdated, noteToBeUpdated) ||
+                other.noteToBeUpdated == noteToBeUpdated));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(noteToBeUpdated));
+  int get hashCode => Object.hash(runtimeType, noteToBeUpdated);
 
   @JsonKey(ignore: true)
   @override
-  _$UpdateNoteCopyWith<_UpdateNote> get copyWith =>
-      __$UpdateNoteCopyWithImpl<_UpdateNote>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_UpdateNoteCopyWith<_$_UpdateNote> get copyWith =>
+      __$$_UpdateNoteCopyWithImpl<_$_UpdateNote>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -329,10 +332,10 @@ class _$_UpdateNote implements _UpdateNote {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Note? initialNote)? initialize,
-    TResult Function(Note noteToBeUpdated)? updateNote,
-    TResult Function()? createNote,
-    TResult Function(Document doc)? noteChanged,
+    TResult? Function(Note? initialNote)? initialize,
+    TResult? Function(Note noteToBeUpdated)? updateNote,
+    TResult? Function()? createNote,
+    TResult? Function(Document doc)? noteChanged,
   }) {
     return updateNote?.call(noteToBeUpdated);
   }
@@ -366,10 +369,10 @@ class _$_UpdateNote implements _UpdateNote {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_UpdateNote value)? updateNote,
-    TResult Function(_CreateNote value)? createNote,
-    TResult Function(_NoteChanged value)? noteChanged,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_UpdateNote value)? updateNote,
+    TResult? Function(_CreateNote value)? createNote,
+    TResult? Function(_NoteChanged value)? noteChanged,
   }) {
     return updateNote?.call(this);
   }
@@ -394,28 +397,26 @@ abstract class _UpdateNote implements NoteFormEvent {
   const factory _UpdateNote({required final Note noteToBeUpdated}) =
       _$_UpdateNote;
 
-  Note get noteToBeUpdated => throw _privateConstructorUsedError;
+  Note get noteToBeUpdated;
   @JsonKey(ignore: true)
-  _$UpdateNoteCopyWith<_UpdateNote> get copyWith =>
+  _$$_UpdateNoteCopyWith<_$_UpdateNote> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$CreateNoteCopyWith<$Res> {
-  factory _$CreateNoteCopyWith(
-          _CreateNote value, $Res Function(_CreateNote) then) =
-      __$CreateNoteCopyWithImpl<$Res>;
+abstract class _$$_CreateNoteCopyWith<$Res> {
+  factory _$$_CreateNoteCopyWith(
+          _$_CreateNote value, $Res Function(_$_CreateNote) then) =
+      __$$_CreateNoteCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$CreateNoteCopyWithImpl<$Res> extends _$NoteFormEventCopyWithImpl<$Res>
-    implements _$CreateNoteCopyWith<$Res> {
-  __$CreateNoteCopyWithImpl(
-      _CreateNote _value, $Res Function(_CreateNote) _then)
-      : super(_value, (v) => _then(v as _CreateNote));
-
-  @override
-  _CreateNote get _value => super._value as _CreateNote;
+class __$$_CreateNoteCopyWithImpl<$Res>
+    extends _$NoteFormEventCopyWithImpl<$Res, _$_CreateNote>
+    implements _$$_CreateNoteCopyWith<$Res> {
+  __$$_CreateNoteCopyWithImpl(
+      _$_CreateNote _value, $Res Function(_$_CreateNote) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -431,7 +432,7 @@ class _$_CreateNote implements _CreateNote {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _CreateNote);
+        (other.runtimeType == runtimeType && other is _$_CreateNote);
   }
 
   @override
@@ -451,10 +452,10 @@ class _$_CreateNote implements _CreateNote {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Note? initialNote)? initialize,
-    TResult Function(Note noteToBeUpdated)? updateNote,
-    TResult Function()? createNote,
-    TResult Function(Document doc)? noteChanged,
+    TResult? Function(Note? initialNote)? initialize,
+    TResult? Function(Note noteToBeUpdated)? updateNote,
+    TResult? Function()? createNote,
+    TResult? Function(Document doc)? noteChanged,
   }) {
     return createNote?.call();
   }
@@ -488,10 +489,10 @@ class _$_CreateNote implements _CreateNote {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_UpdateNote value)? updateNote,
-    TResult Function(_CreateNote value)? createNote,
-    TResult Function(_NoteChanged value)? noteChanged,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_UpdateNote value)? updateNote,
+    TResult? Function(_CreateNote value)? createNote,
+    TResult? Function(_NoteChanged value)? noteChanged,
   }) {
     return createNote?.call(this);
   }
@@ -517,29 +518,29 @@ abstract class _CreateNote implements NoteFormEvent {
 }
 
 /// @nodoc
-abstract class _$NoteChangedCopyWith<$Res> {
-  factory _$NoteChangedCopyWith(
-          _NoteChanged value, $Res Function(_NoteChanged) then) =
-      __$NoteChangedCopyWithImpl<$Res>;
+abstract class _$$_NoteChangedCopyWith<$Res> {
+  factory _$$_NoteChangedCopyWith(
+          _$_NoteChanged value, $Res Function(_$_NoteChanged) then) =
+      __$$_NoteChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Document doc});
 }
 
 /// @nodoc
-class __$NoteChangedCopyWithImpl<$Res> extends _$NoteFormEventCopyWithImpl<$Res>
-    implements _$NoteChangedCopyWith<$Res> {
-  __$NoteChangedCopyWithImpl(
-      _NoteChanged _value, $Res Function(_NoteChanged) _then)
-      : super(_value, (v) => _then(v as _NoteChanged));
+class __$$_NoteChangedCopyWithImpl<$Res>
+    extends _$NoteFormEventCopyWithImpl<$Res, _$_NoteChanged>
+    implements _$$_NoteChangedCopyWith<$Res> {
+  __$$_NoteChangedCopyWithImpl(
+      _$_NoteChanged _value, $Res Function(_$_NoteChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _NoteChanged get _value => super._value as _NoteChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? doc = freezed,
+    Object? doc = null,
   }) {
-    return _then(_NoteChanged(
-      doc == freezed
+    return _then(_$_NoteChanged(
+      null == doc
           ? _value.doc
           : doc // ignore: cast_nullable_to_non_nullable
               as Document,
@@ -564,18 +565,18 @@ class _$_NoteChanged implements _NoteChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _NoteChanged &&
-            const DeepCollectionEquality().equals(other.doc, doc));
+            other is _$_NoteChanged &&
+            (identical(other.doc, doc) || other.doc == doc));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(doc));
+  int get hashCode => Object.hash(runtimeType, doc);
 
   @JsonKey(ignore: true)
   @override
-  _$NoteChangedCopyWith<_NoteChanged> get copyWith =>
-      __$NoteChangedCopyWithImpl<_NoteChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_NoteChangedCopyWith<_$_NoteChanged> get copyWith =>
+      __$$_NoteChangedCopyWithImpl<_$_NoteChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -591,10 +592,10 @@ class _$_NoteChanged implements _NoteChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Note? initialNote)? initialize,
-    TResult Function(Note noteToBeUpdated)? updateNote,
-    TResult Function()? createNote,
-    TResult Function(Document doc)? noteChanged,
+    TResult? Function(Note? initialNote)? initialize,
+    TResult? Function(Note noteToBeUpdated)? updateNote,
+    TResult? Function()? createNote,
+    TResult? Function(Document doc)? noteChanged,
   }) {
     return noteChanged?.call(doc);
   }
@@ -628,10 +629,10 @@ class _$_NoteChanged implements _NoteChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_UpdateNote value)? updateNote,
-    TResult Function(_CreateNote value)? createNote,
-    TResult Function(_NoteChanged value)? noteChanged,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_UpdateNote value)? updateNote,
+    TResult? Function(_CreateNote value)? createNote,
+    TResult? Function(_NoteChanged value)? noteChanged,
   }) {
     return noteChanged?.call(this);
   }
@@ -655,9 +656,9 @@ class _$_NoteChanged implements _NoteChanged {
 abstract class _NoteChanged implements NoteFormEvent {
   const factory _NoteChanged(final Document doc) = _$_NoteChanged;
 
-  Document get doc => throw _privateConstructorUsedError;
+  Document get doc;
   @JsonKey(ignore: true)
-  _$NoteChangedCopyWith<_NoteChanged> get copyWith =>
+  _$$_NoteChangedCopyWith<_$_NoteChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -675,12 +676,12 @@ mixin _$NoteFormState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(Note note)? loadSucces,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
-    TResult Function()? saveSucces,
-    TResult Function(NoteFailure noteFailure)? saveFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(Note note)? loadSucces,
+    TResult? Function(NoteFailure noteFailure)? loadFailure,
+    TResult? Function()? saveSucces,
+    TResult? Function(NoteFailure noteFailure)? saveFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -706,12 +707,12 @@ mixin _$NoteFormState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_LoadSucces value)? loadSucces,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_SaveSucces value)? saveSucces,
-    TResult Function(_SaveFailure value)? saveFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadSucces value)? loadSucces,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_SaveSucces value)? saveSucces,
+    TResult? Function(_SaveFailure value)? saveFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -731,33 +732,33 @@ mixin _$NoteFormState {
 abstract class $NoteFormStateCopyWith<$Res> {
   factory $NoteFormStateCopyWith(
           NoteFormState value, $Res Function(NoteFormState) then) =
-      _$NoteFormStateCopyWithImpl<$Res>;
+      _$NoteFormStateCopyWithImpl<$Res, NoteFormState>;
 }
 
 /// @nodoc
-class _$NoteFormStateCopyWithImpl<$Res>
+class _$NoteFormStateCopyWithImpl<$Res, $Val extends NoteFormState>
     implements $NoteFormStateCopyWith<$Res> {
   _$NoteFormStateCopyWithImpl(this._value, this._then);
 
-  final NoteFormState _value;
   // ignore: unused_field
-  final $Res Function(NoteFormState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$NoteFormStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$NoteFormStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -773,7 +774,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -795,12 +796,12 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(Note note)? loadSucces,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
-    TResult Function()? saveSucces,
-    TResult Function(NoteFailure noteFailure)? saveFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(Note note)? loadSucces,
+    TResult? Function(NoteFailure noteFailure)? loadFailure,
+    TResult? Function()? saveSucces,
+    TResult? Function(NoteFailure noteFailure)? saveFailure,
   }) {
     return initial?.call();
   }
@@ -838,12 +839,12 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_LoadSucces value)? loadSucces,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_SaveSucces value)? saveSucces,
-    TResult Function(_SaveFailure value)? saveFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadSucces value)? loadSucces,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_SaveSucces value)? saveSucces,
+    TResult? Function(_SaveFailure value)? saveFailure,
   }) {
     return initial?.call(this);
   }
@@ -871,19 +872,18 @@ abstract class _Initial implements NoteFormState {
 }
 
 /// @nodoc
-abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
-      __$LoadingCopyWithImpl<$Res>;
+abstract class _$$_LoadingCopyWith<$Res> {
+  factory _$$_LoadingCopyWith(
+          _$_Loading value, $Res Function(_$_Loading) then) =
+      __$$_LoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadingCopyWithImpl<$Res> extends _$NoteFormStateCopyWithImpl<$Res>
-    implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
-      : super(_value, (v) => _then(v as _Loading));
-
-  @override
-  _Loading get _value => super._value as _Loading;
+class __$$_LoadingCopyWithImpl<$Res>
+    extends _$NoteFormStateCopyWithImpl<$Res, _$_Loading>
+    implements _$$_LoadingCopyWith<$Res> {
+  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -899,7 +899,7 @@ class _$_Loading implements _Loading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Loading);
+        (other.runtimeType == runtimeType && other is _$_Loading);
   }
 
   @override
@@ -921,12 +921,12 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(Note note)? loadSucces,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
-    TResult Function()? saveSucces,
-    TResult Function(NoteFailure noteFailure)? saveFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(Note note)? loadSucces,
+    TResult? Function(NoteFailure noteFailure)? loadFailure,
+    TResult? Function()? saveSucces,
+    TResult? Function(NoteFailure noteFailure)? saveFailure,
   }) {
     return loading?.call();
   }
@@ -964,12 +964,12 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_LoadSucces value)? loadSucces,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_SaveSucces value)? saveSucces,
-    TResult Function(_SaveFailure value)? saveFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadSucces value)? loadSucces,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_SaveSucces value)? saveSucces,
+    TResult? Function(_SaveFailure value)? saveFailure,
   }) {
     return loading?.call(this);
   }
@@ -997,31 +997,31 @@ abstract class _Loading implements NoteFormState {
 }
 
 /// @nodoc
-abstract class _$LoadSuccesCopyWith<$Res> {
-  factory _$LoadSuccesCopyWith(
-          _LoadSucces value, $Res Function(_LoadSucces) then) =
-      __$LoadSuccesCopyWithImpl<$Res>;
+abstract class _$$_LoadSuccesCopyWith<$Res> {
+  factory _$$_LoadSuccesCopyWith(
+          _$_LoadSucces value, $Res Function(_$_LoadSucces) then) =
+      __$$_LoadSuccesCopyWithImpl<$Res>;
+  @useResult
   $Res call({Note note});
 
   $NoteCopyWith<$Res> get note;
 }
 
 /// @nodoc
-class __$LoadSuccesCopyWithImpl<$Res> extends _$NoteFormStateCopyWithImpl<$Res>
-    implements _$LoadSuccesCopyWith<$Res> {
-  __$LoadSuccesCopyWithImpl(
-      _LoadSucces _value, $Res Function(_LoadSucces) _then)
-      : super(_value, (v) => _then(v as _LoadSucces));
+class __$$_LoadSuccesCopyWithImpl<$Res>
+    extends _$NoteFormStateCopyWithImpl<$Res, _$_LoadSucces>
+    implements _$$_LoadSuccesCopyWith<$Res> {
+  __$$_LoadSuccesCopyWithImpl(
+      _$_LoadSucces _value, $Res Function(_$_LoadSucces) _then)
+      : super(_value, _then);
 
-  @override
-  _LoadSucces get _value => super._value as _LoadSucces;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? note = freezed,
+    Object? note = null,
   }) {
-    return _then(_LoadSucces(
-      note == freezed
+    return _then(_$_LoadSucces(
+      null == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
               as Note,
@@ -1029,6 +1029,7 @@ class __$LoadSuccesCopyWithImpl<$Res> extends _$NoteFormStateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $NoteCopyWith<$Res> get note {
     return $NoteCopyWith<$Res>(_value.note, (value) {
       return _then(_value.copyWith(note: value));
@@ -1053,18 +1054,18 @@ class _$_LoadSucces implements _LoadSucces {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LoadSucces &&
-            const DeepCollectionEquality().equals(other.note, note));
+            other is _$_LoadSucces &&
+            (identical(other.note, note) || other.note == note));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(note));
+  int get hashCode => Object.hash(runtimeType, note);
 
   @JsonKey(ignore: true)
   @override
-  _$LoadSuccesCopyWith<_LoadSucces> get copyWith =>
-      __$LoadSuccesCopyWithImpl<_LoadSucces>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_LoadSuccesCopyWith<_$_LoadSucces> get copyWith =>
+      __$$_LoadSuccesCopyWithImpl<_$_LoadSucces>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1082,12 +1083,12 @@ class _$_LoadSucces implements _LoadSucces {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(Note note)? loadSucces,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
-    TResult Function()? saveSucces,
-    TResult Function(NoteFailure noteFailure)? saveFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(Note note)? loadSucces,
+    TResult? Function(NoteFailure noteFailure)? loadFailure,
+    TResult? Function()? saveSucces,
+    TResult? Function(NoteFailure noteFailure)? saveFailure,
   }) {
     return loadSucces?.call(note);
   }
@@ -1125,12 +1126,12 @@ class _$_LoadSucces implements _LoadSucces {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_LoadSucces value)? loadSucces,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_SaveSucces value)? saveSucces,
-    TResult Function(_SaveFailure value)? saveFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadSucces value)? loadSucces,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_SaveSucces value)? saveSucces,
+    TResult? Function(_SaveFailure value)? saveFailure,
   }) {
     return loadSucces?.call(this);
   }
@@ -1156,38 +1157,38 @@ class _$_LoadSucces implements _LoadSucces {
 abstract class _LoadSucces implements NoteFormState {
   const factory _LoadSucces(final Note note) = _$_LoadSucces;
 
-  Note get note => throw _privateConstructorUsedError;
+  Note get note;
   @JsonKey(ignore: true)
-  _$LoadSuccesCopyWith<_LoadSucces> get copyWith =>
+  _$$_LoadSuccesCopyWith<_$_LoadSucces> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(
-          _LoadFailure value, $Res Function(_LoadFailure) then) =
-      __$LoadFailureCopyWithImpl<$Res>;
+abstract class _$$_LoadFailureCopyWith<$Res> {
+  factory _$$_LoadFailureCopyWith(
+          _$_LoadFailure value, $Res Function(_$_LoadFailure) then) =
+      __$$_LoadFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({NoteFailure noteFailure});
 
   $NoteFailureCopyWith<$Res> get noteFailure;
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$NoteFormStateCopyWithImpl<$Res>
-    implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(
-      _LoadFailure _value, $Res Function(_LoadFailure) _then)
-      : super(_value, (v) => _then(v as _LoadFailure));
+class __$$_LoadFailureCopyWithImpl<$Res>
+    extends _$NoteFormStateCopyWithImpl<$Res, _$_LoadFailure>
+    implements _$$_LoadFailureCopyWith<$Res> {
+  __$$_LoadFailureCopyWithImpl(
+      _$_LoadFailure _value, $Res Function(_$_LoadFailure) _then)
+      : super(_value, _then);
 
-  @override
-  _LoadFailure get _value => super._value as _LoadFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? noteFailure = freezed,
+    Object? noteFailure = null,
   }) {
-    return _then(_LoadFailure(
-      noteFailure == freezed
+    return _then(_$_LoadFailure(
+      null == noteFailure
           ? _value.noteFailure
           : noteFailure // ignore: cast_nullable_to_non_nullable
               as NoteFailure,
@@ -1195,6 +1196,7 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$NoteFormStateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $NoteFailureCopyWith<$Res> get noteFailure {
     return $NoteFailureCopyWith<$Res>(_value.noteFailure, (value) {
       return _then(_value.copyWith(noteFailure: value));
@@ -1219,19 +1221,19 @@ class _$_LoadFailure implements _LoadFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LoadFailure &&
-            const DeepCollectionEquality()
-                .equals(other.noteFailure, noteFailure));
+            other is _$_LoadFailure &&
+            (identical(other.noteFailure, noteFailure) ||
+                other.noteFailure == noteFailure));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(noteFailure));
+  int get hashCode => Object.hash(runtimeType, noteFailure);
 
   @JsonKey(ignore: true)
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
-      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
+      __$$_LoadFailureCopyWithImpl<_$_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1249,12 +1251,12 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(Note note)? loadSucces,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
-    TResult Function()? saveSucces,
-    TResult Function(NoteFailure noteFailure)? saveFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(Note note)? loadSucces,
+    TResult? Function(NoteFailure noteFailure)? loadFailure,
+    TResult? Function()? saveSucces,
+    TResult? Function(NoteFailure noteFailure)? saveFailure,
   }) {
     return loadFailure?.call(noteFailure);
   }
@@ -1292,12 +1294,12 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_LoadSucces value)? loadSucces,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_SaveSucces value)? saveSucces,
-    TResult Function(_SaveFailure value)? saveFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadSucces value)? loadSucces,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_SaveSucces value)? saveSucces,
+    TResult? Function(_SaveFailure value)? saveFailure,
   }) {
     return loadFailure?.call(this);
   }
@@ -1323,28 +1325,26 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements NoteFormState {
   const factory _LoadFailure(final NoteFailure noteFailure) = _$_LoadFailure;
 
-  NoteFailure get noteFailure => throw _privateConstructorUsedError;
+  NoteFailure get noteFailure;
   @JsonKey(ignore: true)
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+  _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SaveSuccesCopyWith<$Res> {
-  factory _$SaveSuccesCopyWith(
-          _SaveSucces value, $Res Function(_SaveSucces) then) =
-      __$SaveSuccesCopyWithImpl<$Res>;
+abstract class _$$_SaveSuccesCopyWith<$Res> {
+  factory _$$_SaveSuccesCopyWith(
+          _$_SaveSucces value, $Res Function(_$_SaveSucces) then) =
+      __$$_SaveSuccesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SaveSuccesCopyWithImpl<$Res> extends _$NoteFormStateCopyWithImpl<$Res>
-    implements _$SaveSuccesCopyWith<$Res> {
-  __$SaveSuccesCopyWithImpl(
-      _SaveSucces _value, $Res Function(_SaveSucces) _then)
-      : super(_value, (v) => _then(v as _SaveSucces));
-
-  @override
-  _SaveSucces get _value => super._value as _SaveSucces;
+class __$$_SaveSuccesCopyWithImpl<$Res>
+    extends _$NoteFormStateCopyWithImpl<$Res, _$_SaveSucces>
+    implements _$$_SaveSuccesCopyWith<$Res> {
+  __$$_SaveSuccesCopyWithImpl(
+      _$_SaveSucces _value, $Res Function(_$_SaveSucces) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1360,7 +1360,7 @@ class _$_SaveSucces implements _SaveSucces {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SaveSucces);
+        (other.runtimeType == runtimeType && other is _$_SaveSucces);
   }
 
   @override
@@ -1382,12 +1382,12 @@ class _$_SaveSucces implements _SaveSucces {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(Note note)? loadSucces,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
-    TResult Function()? saveSucces,
-    TResult Function(NoteFailure noteFailure)? saveFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(Note note)? loadSucces,
+    TResult? Function(NoteFailure noteFailure)? loadFailure,
+    TResult? Function()? saveSucces,
+    TResult? Function(NoteFailure noteFailure)? saveFailure,
   }) {
     return saveSucces?.call();
   }
@@ -1425,12 +1425,12 @@ class _$_SaveSucces implements _SaveSucces {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_LoadSucces value)? loadSucces,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_SaveSucces value)? saveSucces,
-    TResult Function(_SaveFailure value)? saveFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadSucces value)? loadSucces,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_SaveSucces value)? saveSucces,
+    TResult? Function(_SaveFailure value)? saveFailure,
   }) {
     return saveSucces?.call(this);
   }
@@ -1458,31 +1458,31 @@ abstract class _SaveSucces implements NoteFormState {
 }
 
 /// @nodoc
-abstract class _$SaveFailureCopyWith<$Res> {
-  factory _$SaveFailureCopyWith(
-          _SaveFailure value, $Res Function(_SaveFailure) then) =
-      __$SaveFailureCopyWithImpl<$Res>;
+abstract class _$$_SaveFailureCopyWith<$Res> {
+  factory _$$_SaveFailureCopyWith(
+          _$_SaveFailure value, $Res Function(_$_SaveFailure) then) =
+      __$$_SaveFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({NoteFailure noteFailure});
 
   $NoteFailureCopyWith<$Res> get noteFailure;
 }
 
 /// @nodoc
-class __$SaveFailureCopyWithImpl<$Res> extends _$NoteFormStateCopyWithImpl<$Res>
-    implements _$SaveFailureCopyWith<$Res> {
-  __$SaveFailureCopyWithImpl(
-      _SaveFailure _value, $Res Function(_SaveFailure) _then)
-      : super(_value, (v) => _then(v as _SaveFailure));
+class __$$_SaveFailureCopyWithImpl<$Res>
+    extends _$NoteFormStateCopyWithImpl<$Res, _$_SaveFailure>
+    implements _$$_SaveFailureCopyWith<$Res> {
+  __$$_SaveFailureCopyWithImpl(
+      _$_SaveFailure _value, $Res Function(_$_SaveFailure) _then)
+      : super(_value, _then);
 
-  @override
-  _SaveFailure get _value => super._value as _SaveFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? noteFailure = freezed,
+    Object? noteFailure = null,
   }) {
-    return _then(_SaveFailure(
-      noteFailure == freezed
+    return _then(_$_SaveFailure(
+      null == noteFailure
           ? _value.noteFailure
           : noteFailure // ignore: cast_nullable_to_non_nullable
               as NoteFailure,
@@ -1490,6 +1490,7 @@ class __$SaveFailureCopyWithImpl<$Res> extends _$NoteFormStateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $NoteFailureCopyWith<$Res> get noteFailure {
     return $NoteFailureCopyWith<$Res>(_value.noteFailure, (value) {
       return _then(_value.copyWith(noteFailure: value));
@@ -1514,19 +1515,19 @@ class _$_SaveFailure implements _SaveFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SaveFailure &&
-            const DeepCollectionEquality()
-                .equals(other.noteFailure, noteFailure));
+            other is _$_SaveFailure &&
+            (identical(other.noteFailure, noteFailure) ||
+                other.noteFailure == noteFailure));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(noteFailure));
+  int get hashCode => Object.hash(runtimeType, noteFailure);
 
   @JsonKey(ignore: true)
   @override
-  _$SaveFailureCopyWith<_SaveFailure> get copyWith =>
-      __$SaveFailureCopyWithImpl<_SaveFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_SaveFailureCopyWith<_$_SaveFailure> get copyWith =>
+      __$$_SaveFailureCopyWithImpl<_$_SaveFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1544,12 +1545,12 @@ class _$_SaveFailure implements _SaveFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(Note note)? loadSucces,
-    TResult Function(NoteFailure noteFailure)? loadFailure,
-    TResult Function()? saveSucces,
-    TResult Function(NoteFailure noteFailure)? saveFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(Note note)? loadSucces,
+    TResult? Function(NoteFailure noteFailure)? loadFailure,
+    TResult? Function()? saveSucces,
+    TResult? Function(NoteFailure noteFailure)? saveFailure,
   }) {
     return saveFailure?.call(noteFailure);
   }
@@ -1587,12 +1588,12 @@ class _$_SaveFailure implements _SaveFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_LoadSucces value)? loadSucces,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_SaveSucces value)? saveSucces,
-    TResult Function(_SaveFailure value)? saveFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadSucces value)? loadSucces,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_SaveSucces value)? saveSucces,
+    TResult? Function(_SaveFailure value)? saveFailure,
   }) {
     return saveFailure?.call(this);
   }
@@ -1618,8 +1619,8 @@ class _$_SaveFailure implements _SaveFailure {
 abstract class _SaveFailure implements NoteFormState {
   const factory _SaveFailure(final NoteFailure noteFailure) = _$_SaveFailure;
 
-  NoteFailure get noteFailure => throw _privateConstructorUsedError;
+  NoteFailure get noteFailure;
   @JsonKey(ignore: true)
-  _$SaveFailureCopyWith<_SaveFailure> get copyWith =>
+  _$$_SaveFailureCopyWith<_$_SaveFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'internet_connection_bloc.dart';
 
@@ -25,8 +25,8 @@ mixin _$InternetConnectionEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? startListeningConnection,
-    TResult Function(InternetConnectionStatus internetConnectionStatus)?
+    TResult? Function()? startListeningConnection,
+    TResult? Function(InternetConnectionStatus internetConnectionStatus)?
         listeningConnectionReceived,
   }) =>
       throw _privateConstructorUsedError;
@@ -48,8 +48,9 @@ mixin _$InternetConnectionEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_StartListeningConnection value)? startListeningConnection,
-    TResult Function(_ListeningConnectionReceived value)?
+    TResult? Function(_StartListeningConnection value)?
+        startListeningConnection,
+    TResult? Function(_ListeningConnectionReceived value)?
         listeningConnectionReceived,
   }) =>
       throw _privateConstructorUsedError;
@@ -67,37 +68,37 @@ mixin _$InternetConnectionEvent {
 abstract class $InternetConnectionEventCopyWith<$Res> {
   factory $InternetConnectionEventCopyWith(InternetConnectionEvent value,
           $Res Function(InternetConnectionEvent) then) =
-      _$InternetConnectionEventCopyWithImpl<$Res>;
+      _$InternetConnectionEventCopyWithImpl<$Res, InternetConnectionEvent>;
 }
 
 /// @nodoc
-class _$InternetConnectionEventCopyWithImpl<$Res>
+class _$InternetConnectionEventCopyWithImpl<$Res,
+        $Val extends InternetConnectionEvent>
     implements $InternetConnectionEventCopyWith<$Res> {
   _$InternetConnectionEventCopyWithImpl(this._value, this._then);
 
-  final InternetConnectionEvent _value;
   // ignore: unused_field
-  final $Res Function(InternetConnectionEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$StartListeningConnectionCopyWith<$Res> {
-  factory _$StartListeningConnectionCopyWith(_StartListeningConnection value,
-          $Res Function(_StartListeningConnection) then) =
-      __$StartListeningConnectionCopyWithImpl<$Res>;
+abstract class _$$_StartListeningConnectionCopyWith<$Res> {
+  factory _$$_StartListeningConnectionCopyWith(
+          _$_StartListeningConnection value,
+          $Res Function(_$_StartListeningConnection) then) =
+      __$$_StartListeningConnectionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$StartListeningConnectionCopyWithImpl<$Res>
-    extends _$InternetConnectionEventCopyWithImpl<$Res>
-    implements _$StartListeningConnectionCopyWith<$Res> {
-  __$StartListeningConnectionCopyWithImpl(_StartListeningConnection _value,
-      $Res Function(_StartListeningConnection) _then)
-      : super(_value, (v) => _then(v as _StartListeningConnection));
-
-  @override
-  _StartListeningConnection get _value =>
-      super._value as _StartListeningConnection;
+class __$$_StartListeningConnectionCopyWithImpl<$Res>
+    extends _$InternetConnectionEventCopyWithImpl<$Res,
+        _$_StartListeningConnection>
+    implements _$$_StartListeningConnectionCopyWith<$Res> {
+  __$$_StartListeningConnectionCopyWithImpl(_$_StartListeningConnection _value,
+      $Res Function(_$_StartListeningConnection) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -114,7 +115,7 @@ class _$_StartListeningConnection implements _StartListeningConnection {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _StartListeningConnection);
+            other is _$_StartListeningConnection);
   }
 
   @override
@@ -133,8 +134,8 @@ class _$_StartListeningConnection implements _StartListeningConnection {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? startListeningConnection,
-    TResult Function(InternetConnectionStatus internetConnectionStatus)?
+    TResult? Function()? startListeningConnection,
+    TResult? Function(InternetConnectionStatus internetConnectionStatus)?
         listeningConnectionReceived,
   }) {
     return startListeningConnection?.call();
@@ -168,8 +169,9 @@ class _$_StartListeningConnection implements _StartListeningConnection {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_StartListeningConnection value)? startListeningConnection,
-    TResult Function(_ListeningConnectionReceived value)?
+    TResult? Function(_StartListeningConnection value)?
+        startListeningConnection,
+    TResult? Function(_ListeningConnectionReceived value)?
         listeningConnectionReceived,
   }) {
     return startListeningConnection?.call(this);
@@ -195,33 +197,32 @@ abstract class _StartListeningConnection implements InternetConnectionEvent {
 }
 
 /// @nodoc
-abstract class _$ListeningConnectionReceivedCopyWith<$Res> {
-  factory _$ListeningConnectionReceivedCopyWith(
-          _ListeningConnectionReceived value,
-          $Res Function(_ListeningConnectionReceived) then) =
-      __$ListeningConnectionReceivedCopyWithImpl<$Res>;
+abstract class _$$_ListeningConnectionReceivedCopyWith<$Res> {
+  factory _$$_ListeningConnectionReceivedCopyWith(
+          _$_ListeningConnectionReceived value,
+          $Res Function(_$_ListeningConnectionReceived) then) =
+      __$$_ListeningConnectionReceivedCopyWithImpl<$Res>;
+  @useResult
   $Res call({InternetConnectionStatus internetConnectionStatus});
 }
 
 /// @nodoc
-class __$ListeningConnectionReceivedCopyWithImpl<$Res>
-    extends _$InternetConnectionEventCopyWithImpl<$Res>
-    implements _$ListeningConnectionReceivedCopyWith<$Res> {
-  __$ListeningConnectionReceivedCopyWithImpl(
-      _ListeningConnectionReceived _value,
-      $Res Function(_ListeningConnectionReceived) _then)
-      : super(_value, (v) => _then(v as _ListeningConnectionReceived));
+class __$$_ListeningConnectionReceivedCopyWithImpl<$Res>
+    extends _$InternetConnectionEventCopyWithImpl<$Res,
+        _$_ListeningConnectionReceived>
+    implements _$$_ListeningConnectionReceivedCopyWith<$Res> {
+  __$$_ListeningConnectionReceivedCopyWithImpl(
+      _$_ListeningConnectionReceived _value,
+      $Res Function(_$_ListeningConnectionReceived) _then)
+      : super(_value, _then);
 
-  @override
-  _ListeningConnectionReceived get _value =>
-      super._value as _ListeningConnectionReceived;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? internetConnectionStatus = freezed,
+    Object? internetConnectionStatus = null,
   }) {
-    return _then(_ListeningConnectionReceived(
-      internetConnectionStatus == freezed
+    return _then(_$_ListeningConnectionReceived(
+      null == internetConnectionStatus
           ? _value.internetConnectionStatus
           : internetConnectionStatus // ignore: cast_nullable_to_non_nullable
               as InternetConnectionStatus,
@@ -246,20 +247,21 @@ class _$_ListeningConnectionReceived implements _ListeningConnectionReceived {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ListeningConnectionReceived &&
-            const DeepCollectionEquality().equals(
-                other.internetConnectionStatus, internetConnectionStatus));
+            other is _$_ListeningConnectionReceived &&
+            (identical(
+                    other.internetConnectionStatus, internetConnectionStatus) ||
+                other.internetConnectionStatus == internetConnectionStatus));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(internetConnectionStatus));
+  int get hashCode => Object.hash(runtimeType, internetConnectionStatus);
 
   @JsonKey(ignore: true)
   @override
-  _$ListeningConnectionReceivedCopyWith<_ListeningConnectionReceived>
-      get copyWith => __$ListeningConnectionReceivedCopyWithImpl<
-          _ListeningConnectionReceived>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ListeningConnectionReceivedCopyWith<_$_ListeningConnectionReceived>
+      get copyWith => __$$_ListeningConnectionReceivedCopyWithImpl<
+          _$_ListeningConnectionReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -274,8 +276,8 @@ class _$_ListeningConnectionReceived implements _ListeningConnectionReceived {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? startListeningConnection,
-    TResult Function(InternetConnectionStatus internetConnectionStatus)?
+    TResult? Function()? startListeningConnection,
+    TResult? Function(InternetConnectionStatus internetConnectionStatus)?
         listeningConnectionReceived,
   }) {
     return listeningConnectionReceived?.call(internetConnectionStatus);
@@ -309,8 +311,9 @@ class _$_ListeningConnectionReceived implements _ListeningConnectionReceived {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_StartListeningConnection value)? startListeningConnection,
-    TResult Function(_ListeningConnectionReceived value)?
+    TResult? Function(_StartListeningConnection value)?
+        startListeningConnection,
+    TResult? Function(_ListeningConnectionReceived value)?
         listeningConnectionReceived,
   }) {
     return listeningConnectionReceived?.call(this);
@@ -336,10 +339,9 @@ abstract class _ListeningConnectionReceived implements InternetConnectionEvent {
           final InternetConnectionStatus internetConnectionStatus) =
       _$_ListeningConnectionReceived;
 
-  InternetConnectionStatus get internetConnectionStatus =>
-      throw _privateConstructorUsedError;
+  InternetConnectionStatus get internetConnectionStatus;
   @JsonKey(ignore: true)
-  _$ListeningConnectionReceivedCopyWith<_ListeningConnectionReceived>
+  _$$_ListeningConnectionReceivedCopyWith<_$_ListeningConnectionReceived>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -354,9 +356,9 @@ mixin _$InternetConnectionState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? connectionSucces,
-    TResult Function()? connectionFail,
+    TResult? Function()? initial,
+    TResult? Function()? connectionSucces,
+    TResult? Function()? connectionFail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -376,9 +378,9 @@ mixin _$InternetConnectionState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ConnectionSucces value)? connectionSucces,
-    TResult Function(_ConnectionFail value)? connectionFail,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ConnectionSucces value)? connectionSucces,
+    TResult? Function(_ConnectionFail value)? connectionFail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -395,34 +397,34 @@ mixin _$InternetConnectionState {
 abstract class $InternetConnectionStateCopyWith<$Res> {
   factory $InternetConnectionStateCopyWith(InternetConnectionState value,
           $Res Function(InternetConnectionState) then) =
-      _$InternetConnectionStateCopyWithImpl<$Res>;
+      _$InternetConnectionStateCopyWithImpl<$Res, InternetConnectionState>;
 }
 
 /// @nodoc
-class _$InternetConnectionStateCopyWithImpl<$Res>
+class _$InternetConnectionStateCopyWithImpl<$Res,
+        $Val extends InternetConnectionState>
     implements $InternetConnectionStateCopyWith<$Res> {
   _$InternetConnectionStateCopyWithImpl(this._value, this._then);
 
-  final InternetConnectionState _value;
   // ignore: unused_field
-  final $Res Function(InternetConnectionState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res>
-    extends _$InternetConnectionStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$InternetConnectionStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -438,7 +440,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -457,9 +459,9 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? connectionSucces,
-    TResult Function()? connectionFail,
+    TResult? Function()? initial,
+    TResult? Function()? connectionSucces,
+    TResult? Function()? connectionFail,
   }) {
     return initial?.call();
   }
@@ -491,9 +493,9 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ConnectionSucces value)? connectionSucces,
-    TResult Function(_ConnectionFail value)? connectionFail,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ConnectionSucces value)? connectionSucces,
+    TResult? Function(_ConnectionFail value)? connectionFail,
   }) {
     return initial?.call(this);
   }
@@ -518,22 +520,19 @@ abstract class _Initial implements InternetConnectionState {
 }
 
 /// @nodoc
-abstract class _$ConnectionSuccesCopyWith<$Res> {
-  factory _$ConnectionSuccesCopyWith(
-          _ConnectionSucces value, $Res Function(_ConnectionSucces) then) =
-      __$ConnectionSuccesCopyWithImpl<$Res>;
+abstract class _$$_ConnectionSuccesCopyWith<$Res> {
+  factory _$$_ConnectionSuccesCopyWith(
+          _$_ConnectionSucces value, $Res Function(_$_ConnectionSucces) then) =
+      __$$_ConnectionSuccesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ConnectionSuccesCopyWithImpl<$Res>
-    extends _$InternetConnectionStateCopyWithImpl<$Res>
-    implements _$ConnectionSuccesCopyWith<$Res> {
-  __$ConnectionSuccesCopyWithImpl(
-      _ConnectionSucces _value, $Res Function(_ConnectionSucces) _then)
-      : super(_value, (v) => _then(v as _ConnectionSucces));
-
-  @override
-  _ConnectionSucces get _value => super._value as _ConnectionSucces;
+class __$$_ConnectionSuccesCopyWithImpl<$Res>
+    extends _$InternetConnectionStateCopyWithImpl<$Res, _$_ConnectionSucces>
+    implements _$$_ConnectionSuccesCopyWith<$Res> {
+  __$$_ConnectionSuccesCopyWithImpl(
+      _$_ConnectionSucces _value, $Res Function(_$_ConnectionSucces) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -549,7 +548,7 @@ class _$_ConnectionSucces implements _ConnectionSucces {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ConnectionSucces);
+        (other.runtimeType == runtimeType && other is _$_ConnectionSucces);
   }
 
   @override
@@ -568,9 +567,9 @@ class _$_ConnectionSucces implements _ConnectionSucces {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? connectionSucces,
-    TResult Function()? connectionFail,
+    TResult? Function()? initial,
+    TResult? Function()? connectionSucces,
+    TResult? Function()? connectionFail,
   }) {
     return connectionSucces?.call();
   }
@@ -602,9 +601,9 @@ class _$_ConnectionSucces implements _ConnectionSucces {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ConnectionSucces value)? connectionSucces,
-    TResult Function(_ConnectionFail value)? connectionFail,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ConnectionSucces value)? connectionSucces,
+    TResult? Function(_ConnectionFail value)? connectionFail,
   }) {
     return connectionSucces?.call(this);
   }
@@ -629,22 +628,19 @@ abstract class _ConnectionSucces implements InternetConnectionState {
 }
 
 /// @nodoc
-abstract class _$ConnectionFailCopyWith<$Res> {
-  factory _$ConnectionFailCopyWith(
-          _ConnectionFail value, $Res Function(_ConnectionFail) then) =
-      __$ConnectionFailCopyWithImpl<$Res>;
+abstract class _$$_ConnectionFailCopyWith<$Res> {
+  factory _$$_ConnectionFailCopyWith(
+          _$_ConnectionFail value, $Res Function(_$_ConnectionFail) then) =
+      __$$_ConnectionFailCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ConnectionFailCopyWithImpl<$Res>
-    extends _$InternetConnectionStateCopyWithImpl<$Res>
-    implements _$ConnectionFailCopyWith<$Res> {
-  __$ConnectionFailCopyWithImpl(
-      _ConnectionFail _value, $Res Function(_ConnectionFail) _then)
-      : super(_value, (v) => _then(v as _ConnectionFail));
-
-  @override
-  _ConnectionFail get _value => super._value as _ConnectionFail;
+class __$$_ConnectionFailCopyWithImpl<$Res>
+    extends _$InternetConnectionStateCopyWithImpl<$Res, _$_ConnectionFail>
+    implements _$$_ConnectionFailCopyWith<$Res> {
+  __$$_ConnectionFailCopyWithImpl(
+      _$_ConnectionFail _value, $Res Function(_$_ConnectionFail) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -660,7 +656,7 @@ class _$_ConnectionFail implements _ConnectionFail {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ConnectionFail);
+        (other.runtimeType == runtimeType && other is _$_ConnectionFail);
   }
 
   @override
@@ -679,9 +675,9 @@ class _$_ConnectionFail implements _ConnectionFail {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? connectionSucces,
-    TResult Function()? connectionFail,
+    TResult? Function()? initial,
+    TResult? Function()? connectionSucces,
+    TResult? Function()? connectionFail,
   }) {
     return connectionFail?.call();
   }
@@ -713,9 +709,9 @@ class _$_ConnectionFail implements _ConnectionFail {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ConnectionSucces value)? connectionSucces,
-    TResult Function(_ConnectionFail value)? connectionFail,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ConnectionSucces value)? connectionSucces,
+    TResult? Function(_ConnectionFail value)? connectionFail,
   }) {
     return connectionFail?.call(this);
   }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'search_failure.dart';
 
@@ -24,7 +24,7 @@ mixin _$SearchFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(dynamic e)? unexpected,
+    TResult? Function(dynamic e)? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,7 +40,7 @@ mixin _$SearchFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
+    TResult? Function(_Unexpected value)? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,58 +59,61 @@ mixin _$SearchFailure {
 abstract class $SearchFailureCopyWith<$Res> {
   factory $SearchFailureCopyWith(
           SearchFailure value, $Res Function(SearchFailure) then) =
-      _$SearchFailureCopyWithImpl<$Res>;
+      _$SearchFailureCopyWithImpl<$Res, SearchFailure>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class _$SearchFailureCopyWithImpl<$Res>
+class _$SearchFailureCopyWithImpl<$Res, $Val extends SearchFailure>
     implements $SearchFailureCopyWith<$Res> {
   _$SearchFailureCopyWithImpl(this._value, this._then);
 
-  final SearchFailure _value;
   // ignore: unused_field
-  final $Res Function(SearchFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
     return _then(_value.copyWith(
-      e: e == freezed
+      e: freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$UnexpectedCopyWith<$Res>
+abstract class _$$_UnexpectedCopyWith<$Res>
     implements $SearchFailureCopyWith<$Res> {
-  factory _$UnexpectedCopyWith(
-          _Unexpected value, $Res Function(_Unexpected) then) =
-      __$UnexpectedCopyWithImpl<$Res>;
+  factory _$$_UnexpectedCopyWith(
+          _$_Unexpected value, $Res Function(_$_Unexpected) then) =
+      __$$_UnexpectedCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$UnexpectedCopyWithImpl<$Res> extends _$SearchFailureCopyWithImpl<$Res>
-    implements _$UnexpectedCopyWith<$Res> {
-  __$UnexpectedCopyWithImpl(
-      _Unexpected _value, $Res Function(_Unexpected) _then)
-      : super(_value, (v) => _then(v as _Unexpected));
+class __$$_UnexpectedCopyWithImpl<$Res>
+    extends _$SearchFailureCopyWithImpl<$Res, _$_Unexpected>
+    implements _$$_UnexpectedCopyWith<$Res> {
+  __$$_UnexpectedCopyWithImpl(
+      _$_Unexpected _value, $Res Function(_$_Unexpected) _then)
+      : super(_value, _then);
 
-  @override
-  _Unexpected get _value => super._value as _Unexpected;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_Unexpected(
-      e == freezed
+    return _then(_$_Unexpected(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -135,7 +138,7 @@ class _$_Unexpected implements _Unexpected {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Unexpected &&
+            other is _$_Unexpected &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -145,8 +148,9 @@ class _$_Unexpected implements _Unexpected {
 
   @JsonKey(ignore: true)
   @override
-  _$UnexpectedCopyWith<_Unexpected> get copyWith =>
-      __$UnexpectedCopyWithImpl<_Unexpected>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_UnexpectedCopyWith<_$_Unexpected> get copyWith =>
+      __$$_UnexpectedCopyWithImpl<_$_Unexpected>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -159,7 +163,7 @@ class _$_Unexpected implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(dynamic e)? unexpected,
+    TResult? Function(dynamic e)? unexpected,
   }) {
     return unexpected?.call(e);
   }
@@ -187,7 +191,7 @@ class _$_Unexpected implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
+    TResult? Function(_Unexpected value)? unexpected,
   }) {
     return unexpected?.call(this);
   }
@@ -209,9 +213,9 @@ abstract class _Unexpected implements SearchFailure {
   const factory _Unexpected(final dynamic e) = _$_Unexpected;
 
   @override
-  dynamic get e => throw _privateConstructorUsedError;
+  dynamic get e;
   @override
   @JsonKey(ignore: true)
-  _$UnexpectedCopyWith<_Unexpected> get copyWith =>
+  _$$_UnexpectedCopyWith<_$_Unexpected> get copyWith =>
       throw _privateConstructorUsedError;
 }

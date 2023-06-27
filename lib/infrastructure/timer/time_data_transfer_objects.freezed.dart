@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'time_data_transfer_objects.dart';
 
@@ -29,7 +29,8 @@ mixin _$TimeDTO {
 /// @nodoc
 abstract class $TimeDTOCopyWith<$Res> {
   factory $TimeDTOCopyWith(TimeDTO value, $Res Function(TimeDTO) then) =
-      _$TimeDTOCopyWithImpl<$Res>;
+      _$TimeDTOCopyWithImpl<$Res, TimeDTO>;
+  @useResult
   $Res call(
       {String id,
       int timeHeader,
@@ -39,51 +40,56 @@ abstract class $TimeDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TimeDTOCopyWithImpl<$Res> implements $TimeDTOCopyWith<$Res> {
+class _$TimeDTOCopyWithImpl<$Res, $Val extends TimeDTO>
+    implements $TimeDTOCopyWith<$Res> {
   _$TimeDTOCopyWithImpl(this._value, this._then);
 
-  final TimeDTO _value;
   // ignore: unused_field
-  final $Res Function(TimeDTO) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? timeHeader = freezed,
-    Object? timeBody = freezed,
-    Object? lastUpdatedTime = freezed,
-    Object? createdTime = freezed,
+    Object? id = null,
+    Object? timeHeader = null,
+    Object? timeBody = null,
+    Object? lastUpdatedTime = null,
+    Object? createdTime = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      timeHeader: timeHeader == freezed
+      timeHeader: null == timeHeader
           ? _value.timeHeader
           : timeHeader // ignore: cast_nullable_to_non_nullable
               as int,
-      timeBody: timeBody == freezed
+      timeBody: null == timeBody
           ? _value.timeBody
           : timeBody // ignore: cast_nullable_to_non_nullable
               as String,
-      lastUpdatedTime: lastUpdatedTime == freezed
+      lastUpdatedTime: null == lastUpdatedTime
           ? _value.lastUpdatedTime
           : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      createdTime: createdTime == freezed
+      createdTime: null == createdTime
           ? _value.createdTime
           : createdTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$TimeDTOCopyWith<$Res> implements $TimeDTOCopyWith<$Res> {
-  factory _$TimeDTOCopyWith(_TimeDTO value, $Res Function(_TimeDTO) then) =
-      __$TimeDTOCopyWithImpl<$Res>;
+abstract class _$$_TimeDTOCopyWith<$Res> implements $TimeDTOCopyWith<$Res> {
+  factory _$$_TimeDTOCopyWith(
+          _$_TimeDTO value, $Res Function(_$_TimeDTO) then) =
+      __$$_TimeDTOCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String id,
       int timeHeader,
@@ -93,40 +99,39 @@ abstract class _$TimeDTOCopyWith<$Res> implements $TimeDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$TimeDTOCopyWithImpl<$Res> extends _$TimeDTOCopyWithImpl<$Res>
-    implements _$TimeDTOCopyWith<$Res> {
-  __$TimeDTOCopyWithImpl(_TimeDTO _value, $Res Function(_TimeDTO) _then)
-      : super(_value, (v) => _then(v as _TimeDTO));
+class __$$_TimeDTOCopyWithImpl<$Res>
+    extends _$TimeDTOCopyWithImpl<$Res, _$_TimeDTO>
+    implements _$$_TimeDTOCopyWith<$Res> {
+  __$$_TimeDTOCopyWithImpl(_$_TimeDTO _value, $Res Function(_$_TimeDTO) _then)
+      : super(_value, _then);
 
-  @override
-  _TimeDTO get _value => super._value as _TimeDTO;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? timeHeader = freezed,
-    Object? timeBody = freezed,
-    Object? lastUpdatedTime = freezed,
-    Object? createdTime = freezed,
+    Object? id = null,
+    Object? timeHeader = null,
+    Object? timeBody = null,
+    Object? lastUpdatedTime = null,
+    Object? createdTime = null,
   }) {
-    return _then(_TimeDTO(
-      id: id == freezed
+    return _then(_$_TimeDTO(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      timeHeader: timeHeader == freezed
+      timeHeader: null == timeHeader
           ? _value.timeHeader
           : timeHeader // ignore: cast_nullable_to_non_nullable
               as int,
-      timeBody: timeBody == freezed
+      timeBody: null == timeBody
           ? _value.timeBody
           : timeBody // ignore: cast_nullable_to_non_nullable
               as String,
-      lastUpdatedTime: lastUpdatedTime == freezed
+      lastUpdatedTime: null == lastUpdatedTime
           ? _value.lastUpdatedTime
           : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      createdTime: createdTime == freezed
+      createdTime: null == createdTime
           ? _value.createdTime
           : createdTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -165,30 +170,27 @@ class _$_TimeDTO extends _TimeDTO {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TimeDTO &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality()
-                .equals(other.timeHeader, timeHeader) &&
-            const DeepCollectionEquality().equals(other.timeBody, timeBody) &&
-            const DeepCollectionEquality()
-                .equals(other.lastUpdatedTime, lastUpdatedTime) &&
-            const DeepCollectionEquality()
-                .equals(other.createdTime, createdTime));
+            other is _$_TimeDTO &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.timeHeader, timeHeader) ||
+                other.timeHeader == timeHeader) &&
+            (identical(other.timeBody, timeBody) ||
+                other.timeBody == timeBody) &&
+            (identical(other.lastUpdatedTime, lastUpdatedTime) ||
+                other.lastUpdatedTime == lastUpdatedTime) &&
+            (identical(other.createdTime, createdTime) ||
+                other.createdTime == createdTime));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(timeHeader),
-      const DeepCollectionEquality().hash(timeBody),
-      const DeepCollectionEquality().hash(lastUpdatedTime),
-      const DeepCollectionEquality().hash(createdTime));
+      runtimeType, id, timeHeader, timeBody, lastUpdatedTime, createdTime);
 
   @JsonKey(ignore: true)
   @override
-  _$TimeDTOCopyWith<_TimeDTO> get copyWith =>
-      __$TimeDTOCopyWithImpl<_TimeDTO>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_TimeDTOCopyWith<_$_TimeDTO> get copyWith =>
+      __$$_TimeDTOCopyWithImpl<_$_TimeDTO>(this, _$identity);
 }
 
 abstract class _TimeDTO extends TimeDTO {
@@ -201,17 +203,17 @@ abstract class _TimeDTO extends TimeDTO {
   const _TimeDTO._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  int get timeHeader => throw _privateConstructorUsedError;
+  int get timeHeader;
   @override
-  String get timeBody => throw _privateConstructorUsedError;
+  String get timeBody;
   @override
-  DateTime get lastUpdatedTime => throw _privateConstructorUsedError;
+  DateTime get lastUpdatedTime;
   @override
-  DateTime get createdTime => throw _privateConstructorUsedError;
+  DateTime get createdTime;
   @override
   @JsonKey(ignore: true)
-  _$TimeDTOCopyWith<_TimeDTO> get copyWith =>
+  _$$_TimeDTOCopyWith<_$_TimeDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }

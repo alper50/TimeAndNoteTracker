@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'time_form_bloc.dart';
 
@@ -24,8 +24,8 @@ mixin _$TimeFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Time? initialTime)? initialize,
-    TResult Function(Time timeToBeUpdated)? updateTime,
+    TResult? Function(Time? initialTime)? initialize,
+    TResult? Function(Time timeToBeUpdated)? updateTime,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,8 +43,8 @@ mixin _$TimeFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_UpdateTime value)? updateTime,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_UpdateTime value)? updateTime,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,45 +60,46 @@ mixin _$TimeFormEvent {
 abstract class $TimeFormEventCopyWith<$Res> {
   factory $TimeFormEventCopyWith(
           TimeFormEvent value, $Res Function(TimeFormEvent) then) =
-      _$TimeFormEventCopyWithImpl<$Res>;
+      _$TimeFormEventCopyWithImpl<$Res, TimeFormEvent>;
 }
 
 /// @nodoc
-class _$TimeFormEventCopyWithImpl<$Res>
+class _$TimeFormEventCopyWithImpl<$Res, $Val extends TimeFormEvent>
     implements $TimeFormEventCopyWith<$Res> {
   _$TimeFormEventCopyWithImpl(this._value, this._then);
 
-  final TimeFormEvent _value;
   // ignore: unused_field
-  final $Res Function(TimeFormEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitializeCopyWith<$Res> {
-  factory _$InitializeCopyWith(
-          _Initialize value, $Res Function(_Initialize) then) =
-      __$InitializeCopyWithImpl<$Res>;
+abstract class _$$_InitializeCopyWith<$Res> {
+  factory _$$_InitializeCopyWith(
+          _$_Initialize value, $Res Function(_$_Initialize) then) =
+      __$$_InitializeCopyWithImpl<$Res>;
+  @useResult
   $Res call({Time? initialTime});
 
   $TimeCopyWith<$Res>? get initialTime;
 }
 
 /// @nodoc
-class __$InitializeCopyWithImpl<$Res> extends _$TimeFormEventCopyWithImpl<$Res>
-    implements _$InitializeCopyWith<$Res> {
-  __$InitializeCopyWithImpl(
-      _Initialize _value, $Res Function(_Initialize) _then)
-      : super(_value, (v) => _then(v as _Initialize));
+class __$$_InitializeCopyWithImpl<$Res>
+    extends _$TimeFormEventCopyWithImpl<$Res, _$_Initialize>
+    implements _$$_InitializeCopyWith<$Res> {
+  __$$_InitializeCopyWithImpl(
+      _$_Initialize _value, $Res Function(_$_Initialize) _then)
+      : super(_value, _then);
 
-  @override
-  _Initialize get _value => super._value as _Initialize;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? initialTime = freezed,
   }) {
-    return _then(_Initialize(
-      initialTime == freezed
+    return _then(_$_Initialize(
+      freezed == initialTime
           ? _value.initialTime
           : initialTime // ignore: cast_nullable_to_non_nullable
               as Time?,
@@ -106,6 +107,7 @@ class __$InitializeCopyWithImpl<$Res> extends _$TimeFormEventCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TimeCopyWith<$Res>? get initialTime {
     if (_value.initialTime == null) {
       return null;
@@ -134,19 +136,19 @@ class _$_Initialize implements _Initialize {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Initialize &&
-            const DeepCollectionEquality()
-                .equals(other.initialTime, initialTime));
+            other is _$_Initialize &&
+            (identical(other.initialTime, initialTime) ||
+                other.initialTime == initialTime));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(initialTime));
+  int get hashCode => Object.hash(runtimeType, initialTime);
 
   @JsonKey(ignore: true)
   @override
-  _$InitializeCopyWith<_Initialize> get copyWith =>
-      __$InitializeCopyWithImpl<_Initialize>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_InitializeCopyWith<_$_Initialize> get copyWith =>
+      __$$_InitializeCopyWithImpl<_$_Initialize>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -160,8 +162,8 @@ class _$_Initialize implements _Initialize {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Time? initialTime)? initialize,
-    TResult Function(Time timeToBeUpdated)? updateTime,
+    TResult? Function(Time? initialTime)? initialize,
+    TResult? Function(Time timeToBeUpdated)? updateTime,
   }) {
     return initialize?.call(initialTime);
   }
@@ -191,8 +193,8 @@ class _$_Initialize implements _Initialize {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_UpdateTime value)? updateTime,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_UpdateTime value)? updateTime,
   }) {
     return initialize?.call(this);
   }
@@ -214,38 +216,38 @@ class _$_Initialize implements _Initialize {
 abstract class _Initialize implements TimeFormEvent {
   const factory _Initialize(final Time? initialTime) = _$_Initialize;
 
-  Time? get initialTime => throw _privateConstructorUsedError;
+  Time? get initialTime;
   @JsonKey(ignore: true)
-  _$InitializeCopyWith<_Initialize> get copyWith =>
+  _$$_InitializeCopyWith<_$_Initialize> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$UpdateTimeCopyWith<$Res> {
-  factory _$UpdateTimeCopyWith(
-          _UpdateTime value, $Res Function(_UpdateTime) then) =
-      __$UpdateTimeCopyWithImpl<$Res>;
+abstract class _$$_UpdateTimeCopyWith<$Res> {
+  factory _$$_UpdateTimeCopyWith(
+          _$_UpdateTime value, $Res Function(_$_UpdateTime) then) =
+      __$$_UpdateTimeCopyWithImpl<$Res>;
+  @useResult
   $Res call({Time timeToBeUpdated});
 
   $TimeCopyWith<$Res> get timeToBeUpdated;
 }
 
 /// @nodoc
-class __$UpdateTimeCopyWithImpl<$Res> extends _$TimeFormEventCopyWithImpl<$Res>
-    implements _$UpdateTimeCopyWith<$Res> {
-  __$UpdateTimeCopyWithImpl(
-      _UpdateTime _value, $Res Function(_UpdateTime) _then)
-      : super(_value, (v) => _then(v as _UpdateTime));
+class __$$_UpdateTimeCopyWithImpl<$Res>
+    extends _$TimeFormEventCopyWithImpl<$Res, _$_UpdateTime>
+    implements _$$_UpdateTimeCopyWith<$Res> {
+  __$$_UpdateTimeCopyWithImpl(
+      _$_UpdateTime _value, $Res Function(_$_UpdateTime) _then)
+      : super(_value, _then);
 
-  @override
-  _UpdateTime get _value => super._value as _UpdateTime;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? timeToBeUpdated = freezed,
+    Object? timeToBeUpdated = null,
   }) {
-    return _then(_UpdateTime(
-      timeToBeUpdated: timeToBeUpdated == freezed
+    return _then(_$_UpdateTime(
+      timeToBeUpdated: null == timeToBeUpdated
           ? _value.timeToBeUpdated
           : timeToBeUpdated // ignore: cast_nullable_to_non_nullable
               as Time,
@@ -253,6 +255,7 @@ class __$UpdateTimeCopyWithImpl<$Res> extends _$TimeFormEventCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TimeCopyWith<$Res> get timeToBeUpdated {
     return $TimeCopyWith<$Res>(_value.timeToBeUpdated, (value) {
       return _then(_value.copyWith(timeToBeUpdated: value));
@@ -277,19 +280,19 @@ class _$_UpdateTime implements _UpdateTime {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UpdateTime &&
-            const DeepCollectionEquality()
-                .equals(other.timeToBeUpdated, timeToBeUpdated));
+            other is _$_UpdateTime &&
+            (identical(other.timeToBeUpdated, timeToBeUpdated) ||
+                other.timeToBeUpdated == timeToBeUpdated));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(timeToBeUpdated));
+  int get hashCode => Object.hash(runtimeType, timeToBeUpdated);
 
   @JsonKey(ignore: true)
   @override
-  _$UpdateTimeCopyWith<_UpdateTime> get copyWith =>
-      __$UpdateTimeCopyWithImpl<_UpdateTime>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_UpdateTimeCopyWith<_$_UpdateTime> get copyWith =>
+      __$$_UpdateTimeCopyWithImpl<_$_UpdateTime>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -303,8 +306,8 @@ class _$_UpdateTime implements _UpdateTime {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Time? initialTime)? initialize,
-    TResult Function(Time timeToBeUpdated)? updateTime,
+    TResult? Function(Time? initialTime)? initialize,
+    TResult? Function(Time timeToBeUpdated)? updateTime,
   }) {
     return updateTime?.call(timeToBeUpdated);
   }
@@ -334,8 +337,8 @@ class _$_UpdateTime implements _UpdateTime {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_UpdateTime value)? updateTime,
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_UpdateTime value)? updateTime,
   }) {
     return updateTime?.call(this);
   }
@@ -358,9 +361,9 @@ abstract class _UpdateTime implements TimeFormEvent {
   const factory _UpdateTime({required final Time timeToBeUpdated}) =
       _$_UpdateTime;
 
-  Time get timeToBeUpdated => throw _privateConstructorUsedError;
+  Time get timeToBeUpdated;
   @JsonKey(ignore: true)
-  _$UpdateTimeCopyWith<_UpdateTime> get copyWith =>
+  _$$_UpdateTimeCopyWith<_$_UpdateTime> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -378,12 +381,12 @@ mixin _$TimeFormState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadingTime,
-    TResult Function(Time time)? loadTimeSucces,
-    TResult Function(TimeFailure timeFailure)? loadTimeFailure,
-    TResult Function()? updateTimeSucces,
-    TResult Function(TimeFailure timeFailure)? updateTimeFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loadingTime,
+    TResult? Function(Time time)? loadTimeSucces,
+    TResult? Function(TimeFailure timeFailure)? loadTimeFailure,
+    TResult? Function()? updateTimeSucces,
+    TResult? Function(TimeFailure timeFailure)? updateTimeFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -409,12 +412,12 @@ mixin _$TimeFormState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadingTime value)? loadingTime,
-    TResult Function(_LoadTimeSucces value)? loadTimeSucces,
-    TResult Function(_LoadTimeFailure value)? loadTimeFailure,
-    TResult Function(_UpdateTimeSucces value)? updateTimeSucces,
-    TResult Function(_UpdateTimeFailure value)? updateTimeFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingTime value)? loadingTime,
+    TResult? Function(_LoadTimeSucces value)? loadTimeSucces,
+    TResult? Function(_LoadTimeFailure value)? loadTimeFailure,
+    TResult? Function(_UpdateTimeSucces value)? updateTimeSucces,
+    TResult? Function(_UpdateTimeFailure value)? updateTimeFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -434,33 +437,33 @@ mixin _$TimeFormState {
 abstract class $TimeFormStateCopyWith<$Res> {
   factory $TimeFormStateCopyWith(
           TimeFormState value, $Res Function(TimeFormState) then) =
-      _$TimeFormStateCopyWithImpl<$Res>;
+      _$TimeFormStateCopyWithImpl<$Res, TimeFormState>;
 }
 
 /// @nodoc
-class _$TimeFormStateCopyWithImpl<$Res>
+class _$TimeFormStateCopyWithImpl<$Res, $Val extends TimeFormState>
     implements $TimeFormStateCopyWith<$Res> {
   _$TimeFormStateCopyWithImpl(this._value, this._then);
 
-  final TimeFormState _value;
   // ignore: unused_field
-  final $Res Function(TimeFormState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$TimeFormStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$TimeFormStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -476,7 +479,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -498,12 +501,12 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadingTime,
-    TResult Function(Time time)? loadTimeSucces,
-    TResult Function(TimeFailure timeFailure)? loadTimeFailure,
-    TResult Function()? updateTimeSucces,
-    TResult Function(TimeFailure timeFailure)? updateTimeFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loadingTime,
+    TResult? Function(Time time)? loadTimeSucces,
+    TResult? Function(TimeFailure timeFailure)? loadTimeFailure,
+    TResult? Function()? updateTimeSucces,
+    TResult? Function(TimeFailure timeFailure)? updateTimeFailure,
   }) {
     return initial?.call();
   }
@@ -541,12 +544,12 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadingTime value)? loadingTime,
-    TResult Function(_LoadTimeSucces value)? loadTimeSucces,
-    TResult Function(_LoadTimeFailure value)? loadTimeFailure,
-    TResult Function(_UpdateTimeSucces value)? updateTimeSucces,
-    TResult Function(_UpdateTimeFailure value)? updateTimeFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingTime value)? loadingTime,
+    TResult? Function(_LoadTimeSucces value)? loadTimeSucces,
+    TResult? Function(_LoadTimeFailure value)? loadTimeFailure,
+    TResult? Function(_UpdateTimeSucces value)? updateTimeSucces,
+    TResult? Function(_UpdateTimeFailure value)? updateTimeFailure,
   }) {
     return initial?.call(this);
   }
@@ -574,21 +577,19 @@ abstract class _Initial implements TimeFormState {
 }
 
 /// @nodoc
-abstract class _$LoadingTimeCopyWith<$Res> {
-  factory _$LoadingTimeCopyWith(
-          _LoadingTime value, $Res Function(_LoadingTime) then) =
-      __$LoadingTimeCopyWithImpl<$Res>;
+abstract class _$$_LoadingTimeCopyWith<$Res> {
+  factory _$$_LoadingTimeCopyWith(
+          _$_LoadingTime value, $Res Function(_$_LoadingTime) then) =
+      __$$_LoadingTimeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadingTimeCopyWithImpl<$Res> extends _$TimeFormStateCopyWithImpl<$Res>
-    implements _$LoadingTimeCopyWith<$Res> {
-  __$LoadingTimeCopyWithImpl(
-      _LoadingTime _value, $Res Function(_LoadingTime) _then)
-      : super(_value, (v) => _then(v as _LoadingTime));
-
-  @override
-  _LoadingTime get _value => super._value as _LoadingTime;
+class __$$_LoadingTimeCopyWithImpl<$Res>
+    extends _$TimeFormStateCopyWithImpl<$Res, _$_LoadingTime>
+    implements _$$_LoadingTimeCopyWith<$Res> {
+  __$$_LoadingTimeCopyWithImpl(
+      _$_LoadingTime _value, $Res Function(_$_LoadingTime) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -604,7 +605,7 @@ class _$_LoadingTime implements _LoadingTime {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _LoadingTime);
+        (other.runtimeType == runtimeType && other is _$_LoadingTime);
   }
 
   @override
@@ -626,12 +627,12 @@ class _$_LoadingTime implements _LoadingTime {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadingTime,
-    TResult Function(Time time)? loadTimeSucces,
-    TResult Function(TimeFailure timeFailure)? loadTimeFailure,
-    TResult Function()? updateTimeSucces,
-    TResult Function(TimeFailure timeFailure)? updateTimeFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loadingTime,
+    TResult? Function(Time time)? loadTimeSucces,
+    TResult? Function(TimeFailure timeFailure)? loadTimeFailure,
+    TResult? Function()? updateTimeSucces,
+    TResult? Function(TimeFailure timeFailure)? updateTimeFailure,
   }) {
     return loadingTime?.call();
   }
@@ -669,12 +670,12 @@ class _$_LoadingTime implements _LoadingTime {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadingTime value)? loadingTime,
-    TResult Function(_LoadTimeSucces value)? loadTimeSucces,
-    TResult Function(_LoadTimeFailure value)? loadTimeFailure,
-    TResult Function(_UpdateTimeSucces value)? updateTimeSucces,
-    TResult Function(_UpdateTimeFailure value)? updateTimeFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingTime value)? loadingTime,
+    TResult? Function(_LoadTimeSucces value)? loadTimeSucces,
+    TResult? Function(_LoadTimeFailure value)? loadTimeFailure,
+    TResult? Function(_UpdateTimeSucces value)? updateTimeSucces,
+    TResult? Function(_UpdateTimeFailure value)? updateTimeFailure,
   }) {
     return loadingTime?.call(this);
   }
@@ -702,32 +703,31 @@ abstract class _LoadingTime implements TimeFormState {
 }
 
 /// @nodoc
-abstract class _$LoadTimeSuccesCopyWith<$Res> {
-  factory _$LoadTimeSuccesCopyWith(
-          _LoadTimeSucces value, $Res Function(_LoadTimeSucces) then) =
-      __$LoadTimeSuccesCopyWithImpl<$Res>;
+abstract class _$$_LoadTimeSuccesCopyWith<$Res> {
+  factory _$$_LoadTimeSuccesCopyWith(
+          _$_LoadTimeSucces value, $Res Function(_$_LoadTimeSucces) then) =
+      __$$_LoadTimeSuccesCopyWithImpl<$Res>;
+  @useResult
   $Res call({Time time});
 
   $TimeCopyWith<$Res> get time;
 }
 
 /// @nodoc
-class __$LoadTimeSuccesCopyWithImpl<$Res>
-    extends _$TimeFormStateCopyWithImpl<$Res>
-    implements _$LoadTimeSuccesCopyWith<$Res> {
-  __$LoadTimeSuccesCopyWithImpl(
-      _LoadTimeSucces _value, $Res Function(_LoadTimeSucces) _then)
-      : super(_value, (v) => _then(v as _LoadTimeSucces));
+class __$$_LoadTimeSuccesCopyWithImpl<$Res>
+    extends _$TimeFormStateCopyWithImpl<$Res, _$_LoadTimeSucces>
+    implements _$$_LoadTimeSuccesCopyWith<$Res> {
+  __$$_LoadTimeSuccesCopyWithImpl(
+      _$_LoadTimeSucces _value, $Res Function(_$_LoadTimeSucces) _then)
+      : super(_value, _then);
 
-  @override
-  _LoadTimeSucces get _value => super._value as _LoadTimeSucces;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? time = freezed,
+    Object? time = null,
   }) {
-    return _then(_LoadTimeSucces(
-      time: time == freezed
+    return _then(_$_LoadTimeSucces(
+      time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as Time,
@@ -735,6 +735,7 @@ class __$LoadTimeSuccesCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TimeCopyWith<$Res> get time {
     return $TimeCopyWith<$Res>(_value.time, (value) {
       return _then(_value.copyWith(time: value));
@@ -759,18 +760,18 @@ class _$_LoadTimeSucces implements _LoadTimeSucces {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LoadTimeSucces &&
-            const DeepCollectionEquality().equals(other.time, time));
+            other is _$_LoadTimeSucces &&
+            (identical(other.time, time) || other.time == time));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
+  int get hashCode => Object.hash(runtimeType, time);
 
   @JsonKey(ignore: true)
   @override
-  _$LoadTimeSuccesCopyWith<_LoadTimeSucces> get copyWith =>
-      __$LoadTimeSuccesCopyWithImpl<_LoadTimeSucces>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_LoadTimeSuccesCopyWith<_$_LoadTimeSucces> get copyWith =>
+      __$$_LoadTimeSuccesCopyWithImpl<_$_LoadTimeSucces>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -788,12 +789,12 @@ class _$_LoadTimeSucces implements _LoadTimeSucces {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadingTime,
-    TResult Function(Time time)? loadTimeSucces,
-    TResult Function(TimeFailure timeFailure)? loadTimeFailure,
-    TResult Function()? updateTimeSucces,
-    TResult Function(TimeFailure timeFailure)? updateTimeFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loadingTime,
+    TResult? Function(Time time)? loadTimeSucces,
+    TResult? Function(TimeFailure timeFailure)? loadTimeFailure,
+    TResult? Function()? updateTimeSucces,
+    TResult? Function(TimeFailure timeFailure)? updateTimeFailure,
   }) {
     return loadTimeSucces?.call(time);
   }
@@ -831,12 +832,12 @@ class _$_LoadTimeSucces implements _LoadTimeSucces {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadingTime value)? loadingTime,
-    TResult Function(_LoadTimeSucces value)? loadTimeSucces,
-    TResult Function(_LoadTimeFailure value)? loadTimeFailure,
-    TResult Function(_UpdateTimeSucces value)? updateTimeSucces,
-    TResult Function(_UpdateTimeFailure value)? updateTimeFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingTime value)? loadingTime,
+    TResult? Function(_LoadTimeSucces value)? loadTimeSucces,
+    TResult? Function(_LoadTimeFailure value)? loadTimeFailure,
+    TResult? Function(_UpdateTimeSucces value)? updateTimeSucces,
+    TResult? Function(_UpdateTimeFailure value)? updateTimeFailure,
   }) {
     return loadTimeSucces?.call(this);
   }
@@ -862,39 +863,38 @@ class _$_LoadTimeSucces implements _LoadTimeSucces {
 abstract class _LoadTimeSucces implements TimeFormState {
   const factory _LoadTimeSucces({required final Time time}) = _$_LoadTimeSucces;
 
-  Time get time => throw _privateConstructorUsedError;
+  Time get time;
   @JsonKey(ignore: true)
-  _$LoadTimeSuccesCopyWith<_LoadTimeSucces> get copyWith =>
+  _$$_LoadTimeSuccesCopyWith<_$_LoadTimeSucces> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$LoadTimeFailureCopyWith<$Res> {
-  factory _$LoadTimeFailureCopyWith(
-          _LoadTimeFailure value, $Res Function(_LoadTimeFailure) then) =
-      __$LoadTimeFailureCopyWithImpl<$Res>;
+abstract class _$$_LoadTimeFailureCopyWith<$Res> {
+  factory _$$_LoadTimeFailureCopyWith(
+          _$_LoadTimeFailure value, $Res Function(_$_LoadTimeFailure) then) =
+      __$$_LoadTimeFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({TimeFailure timeFailure});
 
   $TimeFailureCopyWith<$Res> get timeFailure;
 }
 
 /// @nodoc
-class __$LoadTimeFailureCopyWithImpl<$Res>
-    extends _$TimeFormStateCopyWithImpl<$Res>
-    implements _$LoadTimeFailureCopyWith<$Res> {
-  __$LoadTimeFailureCopyWithImpl(
-      _LoadTimeFailure _value, $Res Function(_LoadTimeFailure) _then)
-      : super(_value, (v) => _then(v as _LoadTimeFailure));
+class __$$_LoadTimeFailureCopyWithImpl<$Res>
+    extends _$TimeFormStateCopyWithImpl<$Res, _$_LoadTimeFailure>
+    implements _$$_LoadTimeFailureCopyWith<$Res> {
+  __$$_LoadTimeFailureCopyWithImpl(
+      _$_LoadTimeFailure _value, $Res Function(_$_LoadTimeFailure) _then)
+      : super(_value, _then);
 
-  @override
-  _LoadTimeFailure get _value => super._value as _LoadTimeFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? timeFailure = freezed,
+    Object? timeFailure = null,
   }) {
-    return _then(_LoadTimeFailure(
-      timeFailure: timeFailure == freezed
+    return _then(_$_LoadTimeFailure(
+      timeFailure: null == timeFailure
           ? _value.timeFailure
           : timeFailure // ignore: cast_nullable_to_non_nullable
               as TimeFailure,
@@ -902,6 +902,7 @@ class __$LoadTimeFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TimeFailureCopyWith<$Res> get timeFailure {
     return $TimeFailureCopyWith<$Res>(_value.timeFailure, (value) {
       return _then(_value.copyWith(timeFailure: value));
@@ -926,19 +927,19 @@ class _$_LoadTimeFailure implements _LoadTimeFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LoadTimeFailure &&
-            const DeepCollectionEquality()
-                .equals(other.timeFailure, timeFailure));
+            other is _$_LoadTimeFailure &&
+            (identical(other.timeFailure, timeFailure) ||
+                other.timeFailure == timeFailure));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(timeFailure));
+  int get hashCode => Object.hash(runtimeType, timeFailure);
 
   @JsonKey(ignore: true)
   @override
-  _$LoadTimeFailureCopyWith<_LoadTimeFailure> get copyWith =>
-      __$LoadTimeFailureCopyWithImpl<_LoadTimeFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_LoadTimeFailureCopyWith<_$_LoadTimeFailure> get copyWith =>
+      __$$_LoadTimeFailureCopyWithImpl<_$_LoadTimeFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -956,12 +957,12 @@ class _$_LoadTimeFailure implements _LoadTimeFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadingTime,
-    TResult Function(Time time)? loadTimeSucces,
-    TResult Function(TimeFailure timeFailure)? loadTimeFailure,
-    TResult Function()? updateTimeSucces,
-    TResult Function(TimeFailure timeFailure)? updateTimeFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loadingTime,
+    TResult? Function(Time time)? loadTimeSucces,
+    TResult? Function(TimeFailure timeFailure)? loadTimeFailure,
+    TResult? Function()? updateTimeSucces,
+    TResult? Function(TimeFailure timeFailure)? updateTimeFailure,
   }) {
     return loadTimeFailure?.call(timeFailure);
   }
@@ -999,12 +1000,12 @@ class _$_LoadTimeFailure implements _LoadTimeFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadingTime value)? loadingTime,
-    TResult Function(_LoadTimeSucces value)? loadTimeSucces,
-    TResult Function(_LoadTimeFailure value)? loadTimeFailure,
-    TResult Function(_UpdateTimeSucces value)? updateTimeSucces,
-    TResult Function(_UpdateTimeFailure value)? updateTimeFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingTime value)? loadingTime,
+    TResult? Function(_LoadTimeSucces value)? loadTimeSucces,
+    TResult? Function(_LoadTimeFailure value)? loadTimeFailure,
+    TResult? Function(_UpdateTimeSucces value)? updateTimeSucces,
+    TResult? Function(_UpdateTimeFailure value)? updateTimeFailure,
   }) {
     return loadTimeFailure?.call(this);
   }
@@ -1031,29 +1032,26 @@ abstract class _LoadTimeFailure implements TimeFormState {
   const factory _LoadTimeFailure({required final TimeFailure timeFailure}) =
       _$_LoadTimeFailure;
 
-  TimeFailure get timeFailure => throw _privateConstructorUsedError;
+  TimeFailure get timeFailure;
   @JsonKey(ignore: true)
-  _$LoadTimeFailureCopyWith<_LoadTimeFailure> get copyWith =>
+  _$$_LoadTimeFailureCopyWith<_$_LoadTimeFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$UpdateTimeSuccesCopyWith<$Res> {
-  factory _$UpdateTimeSuccesCopyWith(
-          _UpdateTimeSucces value, $Res Function(_UpdateTimeSucces) then) =
-      __$UpdateTimeSuccesCopyWithImpl<$Res>;
+abstract class _$$_UpdateTimeSuccesCopyWith<$Res> {
+  factory _$$_UpdateTimeSuccesCopyWith(
+          _$_UpdateTimeSucces value, $Res Function(_$_UpdateTimeSucces) then) =
+      __$$_UpdateTimeSuccesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UpdateTimeSuccesCopyWithImpl<$Res>
-    extends _$TimeFormStateCopyWithImpl<$Res>
-    implements _$UpdateTimeSuccesCopyWith<$Res> {
-  __$UpdateTimeSuccesCopyWithImpl(
-      _UpdateTimeSucces _value, $Res Function(_UpdateTimeSucces) _then)
-      : super(_value, (v) => _then(v as _UpdateTimeSucces));
-
-  @override
-  _UpdateTimeSucces get _value => super._value as _UpdateTimeSucces;
+class __$$_UpdateTimeSuccesCopyWithImpl<$Res>
+    extends _$TimeFormStateCopyWithImpl<$Res, _$_UpdateTimeSucces>
+    implements _$$_UpdateTimeSuccesCopyWith<$Res> {
+  __$$_UpdateTimeSuccesCopyWithImpl(
+      _$_UpdateTimeSucces _value, $Res Function(_$_UpdateTimeSucces) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1069,7 +1067,7 @@ class _$_UpdateTimeSucces implements _UpdateTimeSucces {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _UpdateTimeSucces);
+        (other.runtimeType == runtimeType && other is _$_UpdateTimeSucces);
   }
 
   @override
@@ -1091,12 +1089,12 @@ class _$_UpdateTimeSucces implements _UpdateTimeSucces {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadingTime,
-    TResult Function(Time time)? loadTimeSucces,
-    TResult Function(TimeFailure timeFailure)? loadTimeFailure,
-    TResult Function()? updateTimeSucces,
-    TResult Function(TimeFailure timeFailure)? updateTimeFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loadingTime,
+    TResult? Function(Time time)? loadTimeSucces,
+    TResult? Function(TimeFailure timeFailure)? loadTimeFailure,
+    TResult? Function()? updateTimeSucces,
+    TResult? Function(TimeFailure timeFailure)? updateTimeFailure,
   }) {
     return updateTimeSucces?.call();
   }
@@ -1134,12 +1132,12 @@ class _$_UpdateTimeSucces implements _UpdateTimeSucces {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadingTime value)? loadingTime,
-    TResult Function(_LoadTimeSucces value)? loadTimeSucces,
-    TResult Function(_LoadTimeFailure value)? loadTimeFailure,
-    TResult Function(_UpdateTimeSucces value)? updateTimeSucces,
-    TResult Function(_UpdateTimeFailure value)? updateTimeFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingTime value)? loadingTime,
+    TResult? Function(_LoadTimeSucces value)? loadTimeSucces,
+    TResult? Function(_LoadTimeFailure value)? loadTimeFailure,
+    TResult? Function(_UpdateTimeSucces value)? updateTimeSucces,
+    TResult? Function(_UpdateTimeFailure value)? updateTimeFailure,
   }) {
     return updateTimeSucces?.call(this);
   }
@@ -1167,32 +1165,31 @@ abstract class _UpdateTimeSucces implements TimeFormState {
 }
 
 /// @nodoc
-abstract class _$UpdateTimeFailureCopyWith<$Res> {
-  factory _$UpdateTimeFailureCopyWith(
-          _UpdateTimeFailure value, $Res Function(_UpdateTimeFailure) then) =
-      __$UpdateTimeFailureCopyWithImpl<$Res>;
+abstract class _$$_UpdateTimeFailureCopyWith<$Res> {
+  factory _$$_UpdateTimeFailureCopyWith(_$_UpdateTimeFailure value,
+          $Res Function(_$_UpdateTimeFailure) then) =
+      __$$_UpdateTimeFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({TimeFailure timeFailure});
 
   $TimeFailureCopyWith<$Res> get timeFailure;
 }
 
 /// @nodoc
-class __$UpdateTimeFailureCopyWithImpl<$Res>
-    extends _$TimeFormStateCopyWithImpl<$Res>
-    implements _$UpdateTimeFailureCopyWith<$Res> {
-  __$UpdateTimeFailureCopyWithImpl(
-      _UpdateTimeFailure _value, $Res Function(_UpdateTimeFailure) _then)
-      : super(_value, (v) => _then(v as _UpdateTimeFailure));
+class __$$_UpdateTimeFailureCopyWithImpl<$Res>
+    extends _$TimeFormStateCopyWithImpl<$Res, _$_UpdateTimeFailure>
+    implements _$$_UpdateTimeFailureCopyWith<$Res> {
+  __$$_UpdateTimeFailureCopyWithImpl(
+      _$_UpdateTimeFailure _value, $Res Function(_$_UpdateTimeFailure) _then)
+      : super(_value, _then);
 
-  @override
-  _UpdateTimeFailure get _value => super._value as _UpdateTimeFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? timeFailure = freezed,
+    Object? timeFailure = null,
   }) {
-    return _then(_UpdateTimeFailure(
-      timeFailure: timeFailure == freezed
+    return _then(_$_UpdateTimeFailure(
+      timeFailure: null == timeFailure
           ? _value.timeFailure
           : timeFailure // ignore: cast_nullable_to_non_nullable
               as TimeFailure,
@@ -1200,6 +1197,7 @@ class __$UpdateTimeFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TimeFailureCopyWith<$Res> get timeFailure {
     return $TimeFailureCopyWith<$Res>(_value.timeFailure, (value) {
       return _then(_value.copyWith(timeFailure: value));
@@ -1224,19 +1222,20 @@ class _$_UpdateTimeFailure implements _UpdateTimeFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UpdateTimeFailure &&
-            const DeepCollectionEquality()
-                .equals(other.timeFailure, timeFailure));
+            other is _$_UpdateTimeFailure &&
+            (identical(other.timeFailure, timeFailure) ||
+                other.timeFailure == timeFailure));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(timeFailure));
+  int get hashCode => Object.hash(runtimeType, timeFailure);
 
   @JsonKey(ignore: true)
   @override
-  _$UpdateTimeFailureCopyWith<_UpdateTimeFailure> get copyWith =>
-      __$UpdateTimeFailureCopyWithImpl<_UpdateTimeFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_UpdateTimeFailureCopyWith<_$_UpdateTimeFailure> get copyWith =>
+      __$$_UpdateTimeFailureCopyWithImpl<_$_UpdateTimeFailure>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1254,12 +1253,12 @@ class _$_UpdateTimeFailure implements _UpdateTimeFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadingTime,
-    TResult Function(Time time)? loadTimeSucces,
-    TResult Function(TimeFailure timeFailure)? loadTimeFailure,
-    TResult Function()? updateTimeSucces,
-    TResult Function(TimeFailure timeFailure)? updateTimeFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loadingTime,
+    TResult? Function(Time time)? loadTimeSucces,
+    TResult? Function(TimeFailure timeFailure)? loadTimeFailure,
+    TResult? Function()? updateTimeSucces,
+    TResult? Function(TimeFailure timeFailure)? updateTimeFailure,
   }) {
     return updateTimeFailure?.call(timeFailure);
   }
@@ -1297,12 +1296,12 @@ class _$_UpdateTimeFailure implements _UpdateTimeFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadingTime value)? loadingTime,
-    TResult Function(_LoadTimeSucces value)? loadTimeSucces,
-    TResult Function(_LoadTimeFailure value)? loadTimeFailure,
-    TResult Function(_UpdateTimeSucces value)? updateTimeSucces,
-    TResult Function(_UpdateTimeFailure value)? updateTimeFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingTime value)? loadingTime,
+    TResult? Function(_LoadTimeSucces value)? loadTimeSucces,
+    TResult? Function(_LoadTimeFailure value)? loadTimeFailure,
+    TResult? Function(_UpdateTimeSucces value)? updateTimeSucces,
+    TResult? Function(_UpdateTimeFailure value)? updateTimeFailure,
   }) {
     return updateTimeFailure?.call(this);
   }
@@ -1329,8 +1328,8 @@ abstract class _UpdateTimeFailure implements TimeFormState {
   const factory _UpdateTimeFailure({required final TimeFailure timeFailure}) =
       _$_UpdateTimeFailure;
 
-  TimeFailure get timeFailure => throw _privateConstructorUsedError;
+  TimeFailure get timeFailure;
   @JsonKey(ignore: true)
-  _$UpdateTimeFailureCopyWith<_UpdateTimeFailure> get copyWith =>
+  _$$_UpdateTimeFailureCopyWith<_$_UpdateTimeFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
