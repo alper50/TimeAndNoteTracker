@@ -8,14 +8,14 @@ class InitializeApp{
     WidgetsFlutterBinding.ensureInitialized();
     configureDependencies();
     await initFirebase();
-    await initSentry();
+    // await initSentry();
   }
 
   static Future<void> initFirebase() async{
     await Firebase.initializeApp();
   }
 
-  static Future<void> initSentry() async{
-   await SentryManager.initializeSentry();
-  }
+  // static Future<void> initSentry() async{
+  //  await SentryManager.initializeSentry();
+  // }
 }

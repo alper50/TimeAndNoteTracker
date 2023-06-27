@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'verify_email_bloc.dart';
 
@@ -24,8 +24,8 @@ mixin _$VerifyEmailEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initalize,
-    TResult Function()? resendEmail,
+    TResult? Function()? initalize,
+    TResult? Function()? resendEmail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,8 +43,8 @@ mixin _$VerifyEmailEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Initial value)? initalize,
-    TResult Function(ResendEmail value)? resendEmail,
+    TResult? Function(Initial value)? initalize,
+    TResult? Function(ResendEmail value)? resendEmail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,33 +60,32 @@ mixin _$VerifyEmailEvent {
 abstract class $VerifyEmailEventCopyWith<$Res> {
   factory $VerifyEmailEventCopyWith(
           VerifyEmailEvent value, $Res Function(VerifyEmailEvent) then) =
-      _$VerifyEmailEventCopyWithImpl<$Res>;
+      _$VerifyEmailEventCopyWithImpl<$Res, VerifyEmailEvent>;
 }
 
 /// @nodoc
-class _$VerifyEmailEventCopyWithImpl<$Res>
+class _$VerifyEmailEventCopyWithImpl<$Res, $Val extends VerifyEmailEvent>
     implements $VerifyEmailEventCopyWith<$Res> {
   _$VerifyEmailEventCopyWithImpl(this._value, this._then);
 
-  final VerifyEmailEvent _value;
   // ignore: unused_field
-  final $Res Function(VerifyEmailEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $InitialCopyWith<$Res> {
-  factory $InitialCopyWith(Initial value, $Res Function(Initial) then) =
-      _$InitialCopyWithImpl<$Res>;
+abstract class _$$InitialCopyWith<$Res> {
+  factory _$$InitialCopyWith(_$Initial value, $Res Function(_$Initial) then) =
+      __$$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InitialCopyWithImpl<$Res> extends _$VerifyEmailEventCopyWithImpl<$Res>
-    implements $InitialCopyWith<$Res> {
-  _$InitialCopyWithImpl(Initial _value, $Res Function(Initial) _then)
-      : super(_value, (v) => _then(v as Initial));
-
-  @override
-  Initial get _value => super._value as Initial;
+class __$$InitialCopyWithImpl<$Res>
+    extends _$VerifyEmailEventCopyWithImpl<$Res, _$Initial>
+    implements _$$InitialCopyWith<$Res> {
+  __$$InitialCopyWithImpl(_$Initial _value, $Res Function(_$Initial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -102,7 +101,7 @@ class _$Initial implements Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Initial);
+        (other.runtimeType == runtimeType && other is _$Initial);
   }
 
   @override
@@ -120,8 +119,8 @@ class _$Initial implements Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initalize,
-    TResult Function()? resendEmail,
+    TResult? Function()? initalize,
+    TResult? Function()? resendEmail,
   }) {
     return initalize?.call();
   }
@@ -151,8 +150,8 @@ class _$Initial implements Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Initial value)? initalize,
-    TResult Function(ResendEmail value)? resendEmail,
+    TResult? Function(Initial value)? initalize,
+    TResult? Function(ResendEmail value)? resendEmail,
   }) {
     return initalize?.call(this);
   }
@@ -176,22 +175,19 @@ abstract class Initial implements VerifyEmailEvent {
 }
 
 /// @nodoc
-abstract class $ResendEmailCopyWith<$Res> {
-  factory $ResendEmailCopyWith(
-          ResendEmail value, $Res Function(ResendEmail) then) =
-      _$ResendEmailCopyWithImpl<$Res>;
+abstract class _$$ResendEmailCopyWith<$Res> {
+  factory _$$ResendEmailCopyWith(
+          _$ResendEmail value, $Res Function(_$ResendEmail) then) =
+      __$$ResendEmailCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ResendEmailCopyWithImpl<$Res>
-    extends _$VerifyEmailEventCopyWithImpl<$Res>
-    implements $ResendEmailCopyWith<$Res> {
-  _$ResendEmailCopyWithImpl(
-      ResendEmail _value, $Res Function(ResendEmail) _then)
-      : super(_value, (v) => _then(v as ResendEmail));
-
-  @override
-  ResendEmail get _value => super._value as ResendEmail;
+class __$$ResendEmailCopyWithImpl<$Res>
+    extends _$VerifyEmailEventCopyWithImpl<$Res, _$ResendEmail>
+    implements _$$ResendEmailCopyWith<$Res> {
+  __$$ResendEmailCopyWithImpl(
+      _$ResendEmail _value, $Res Function(_$ResendEmail) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -207,7 +203,7 @@ class _$ResendEmail implements ResendEmail {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is ResendEmail);
+        (other.runtimeType == runtimeType && other is _$ResendEmail);
   }
 
   @override
@@ -225,8 +221,8 @@ class _$ResendEmail implements ResendEmail {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initalize,
-    TResult Function()? resendEmail,
+    TResult? Function()? initalize,
+    TResult? Function()? resendEmail,
   }) {
     return resendEmail?.call();
   }
@@ -256,8 +252,8 @@ class _$ResendEmail implements ResendEmail {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Initial value)? initalize,
-    TResult Function(ResendEmail value)? resendEmail,
+    TResult? Function(Initial value)? initalize,
+    TResult? Function(ResendEmail value)? resendEmail,
   }) {
     return resendEmail?.call(this);
   }
@@ -297,7 +293,8 @@ mixin _$VerifyEmailState {
 abstract class $VerifyEmailStateCopyWith<$Res> {
   factory $VerifyEmailStateCopyWith(
           VerifyEmailState value, $Res Function(VerifyEmailState) then) =
-      _$VerifyEmailStateCopyWithImpl<$Res>;
+      _$VerifyEmailStateCopyWithImpl<$Res, VerifyEmailState>;
+  @useResult
   $Res call(
       {bool isVerifying,
       bool isSigninOut,
@@ -306,49 +303,52 @@ abstract class $VerifyEmailStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$VerifyEmailStateCopyWithImpl<$Res>
+class _$VerifyEmailStateCopyWithImpl<$Res, $Val extends VerifyEmailState>
     implements $VerifyEmailStateCopyWith<$Res> {
   _$VerifyEmailStateCopyWithImpl(this._value, this._then);
 
-  final VerifyEmailState _value;
   // ignore: unused_field
-  final $Res Function(VerifyEmailState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isVerifying = freezed,
-    Object? isSigninOut = freezed,
-    Object? canResend = freezed,
-    Object? verifyFailureOrSuccesOption = freezed,
+    Object? isVerifying = null,
+    Object? isSigninOut = null,
+    Object? canResend = null,
+    Object? verifyFailureOrSuccesOption = null,
   }) {
     return _then(_value.copyWith(
-      isVerifying: isVerifying == freezed
+      isVerifying: null == isVerifying
           ? _value.isVerifying
           : isVerifying // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSigninOut: isSigninOut == freezed
+      isSigninOut: null == isSigninOut
           ? _value.isSigninOut
           : isSigninOut // ignore: cast_nullable_to_non_nullable
               as bool,
-      canResend: canResend == freezed
+      canResend: null == canResend
           ? _value.canResend
           : canResend // ignore: cast_nullable_to_non_nullable
               as bool,
-      verifyFailureOrSuccesOption: verifyFailureOrSuccesOption == freezed
+      verifyFailureOrSuccesOption: null == verifyFailureOrSuccesOption
           ? _value.verifyFailureOrSuccesOption
           : verifyFailureOrSuccesOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, Unit>>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$VerifyEmailStateCopyWith<$Res>
+abstract class _$$_VerifyEmailStateCopyWith<$Res>
     implements $VerifyEmailStateCopyWith<$Res> {
-  factory _$VerifyEmailStateCopyWith(
-          _VerifyEmailState value, $Res Function(_VerifyEmailState) then) =
-      __$VerifyEmailStateCopyWithImpl<$Res>;
+  factory _$$_VerifyEmailStateCopyWith(
+          _$_VerifyEmailState value, $Res Function(_$_VerifyEmailState) then) =
+      __$$_VerifyEmailStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool isVerifying,
       bool isSigninOut,
@@ -357,37 +357,35 @@ abstract class _$VerifyEmailStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$VerifyEmailStateCopyWithImpl<$Res>
-    extends _$VerifyEmailStateCopyWithImpl<$Res>
-    implements _$VerifyEmailStateCopyWith<$Res> {
-  __$VerifyEmailStateCopyWithImpl(
-      _VerifyEmailState _value, $Res Function(_VerifyEmailState) _then)
-      : super(_value, (v) => _then(v as _VerifyEmailState));
+class __$$_VerifyEmailStateCopyWithImpl<$Res>
+    extends _$VerifyEmailStateCopyWithImpl<$Res, _$_VerifyEmailState>
+    implements _$$_VerifyEmailStateCopyWith<$Res> {
+  __$$_VerifyEmailStateCopyWithImpl(
+      _$_VerifyEmailState _value, $Res Function(_$_VerifyEmailState) _then)
+      : super(_value, _then);
 
-  @override
-  _VerifyEmailState get _value => super._value as _VerifyEmailState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isVerifying = freezed,
-    Object? isSigninOut = freezed,
-    Object? canResend = freezed,
-    Object? verifyFailureOrSuccesOption = freezed,
+    Object? isVerifying = null,
+    Object? isSigninOut = null,
+    Object? canResend = null,
+    Object? verifyFailureOrSuccesOption = null,
   }) {
-    return _then(_VerifyEmailState(
-      isVerifying: isVerifying == freezed
+    return _then(_$_VerifyEmailState(
+      isVerifying: null == isVerifying
           ? _value.isVerifying
           : isVerifying // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSigninOut: isSigninOut == freezed
+      isSigninOut: null == isSigninOut
           ? _value.isSigninOut
           : isSigninOut // ignore: cast_nullable_to_non_nullable
               as bool,
-      canResend: canResend == freezed
+      canResend: null == canResend
           ? _value.canResend
           : canResend // ignore: cast_nullable_to_non_nullable
               as bool,
-      verifyFailureOrSuccesOption: verifyFailureOrSuccesOption == freezed
+      verifyFailureOrSuccesOption: null == verifyFailureOrSuccesOption
           ? _value.verifyFailureOrSuccesOption
           : verifyFailureOrSuccesOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, Unit>>,
@@ -422,29 +420,28 @@ class _$_VerifyEmailState implements _VerifyEmailState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _VerifyEmailState &&
-            const DeepCollectionEquality()
-                .equals(other.isVerifying, isVerifying) &&
-            const DeepCollectionEquality()
-                .equals(other.isSigninOut, isSigninOut) &&
-            const DeepCollectionEquality().equals(other.canResend, canResend) &&
-            const DeepCollectionEquality().equals(
-                other.verifyFailureOrSuccesOption,
-                verifyFailureOrSuccesOption));
+            other is _$_VerifyEmailState &&
+            (identical(other.isVerifying, isVerifying) ||
+                other.isVerifying == isVerifying) &&
+            (identical(other.isSigninOut, isSigninOut) ||
+                other.isSigninOut == isSigninOut) &&
+            (identical(other.canResend, canResend) ||
+                other.canResend == canResend) &&
+            (identical(other.verifyFailureOrSuccesOption,
+                    verifyFailureOrSuccesOption) ||
+                other.verifyFailureOrSuccesOption ==
+                    verifyFailureOrSuccesOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(isVerifying),
-      const DeepCollectionEquality().hash(isSigninOut),
-      const DeepCollectionEquality().hash(canResend),
-      const DeepCollectionEquality().hash(verifyFailureOrSuccesOption));
+  int get hashCode => Object.hash(runtimeType, isVerifying, isSigninOut,
+      canResend, verifyFailureOrSuccesOption);
 
   @JsonKey(ignore: true)
   @override
-  _$VerifyEmailStateCopyWith<_VerifyEmailState> get copyWith =>
-      __$VerifyEmailStateCopyWithImpl<_VerifyEmailState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_VerifyEmailStateCopyWith<_$_VerifyEmailState> get copyWith =>
+      __$$_VerifyEmailStateCopyWithImpl<_$_VerifyEmailState>(this, _$identity);
 }
 
 abstract class _VerifyEmailState implements VerifyEmailState {
@@ -456,16 +453,15 @@ abstract class _VerifyEmailState implements VerifyEmailState {
           verifyFailureOrSuccesOption}) = _$_VerifyEmailState;
 
   @override
-  bool get isVerifying => throw _privateConstructorUsedError;
+  bool get isVerifying;
   @override
-  bool get isSigninOut => throw _privateConstructorUsedError;
+  bool get isSigninOut;
   @override
-  bool get canResend => throw _privateConstructorUsedError;
+  bool get canResend;
   @override
-  Option<Either<AuthFailure, Unit>> get verifyFailureOrSuccesOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<AuthFailure, Unit>> get verifyFailureOrSuccesOption;
   @override
   @JsonKey(ignore: true)
-  _$VerifyEmailStateCopyWith<_VerifyEmailState> get copyWith =>
+  _$$_VerifyEmailStateCopyWith<_$_VerifyEmailState> get copyWith =>
       throw _privateConstructorUsedError;
 }

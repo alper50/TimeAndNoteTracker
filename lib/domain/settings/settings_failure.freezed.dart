@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'settings_failure.dart';
 
@@ -25,9 +25,9 @@ mixin _$SettingsFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(dynamic e)? serverError,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? multipleRequest,
+    TResult? Function(dynamic e)? serverError,
+    TResult? Function()? emailAlreadyInUse,
+    TResult? Function()? multipleRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$SettingsFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError value)? serverError,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(MultipleRequest value)? multipleRequest,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult? Function(MultipleRequest value)? multipleRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,44 +66,44 @@ mixin _$SettingsFailure {
 abstract class $SettingsFailureCopyWith<$Res> {
   factory $SettingsFailureCopyWith(
           SettingsFailure value, $Res Function(SettingsFailure) then) =
-      _$SettingsFailureCopyWithImpl<$Res>;
+      _$SettingsFailureCopyWithImpl<$Res, SettingsFailure>;
 }
 
 /// @nodoc
-class _$SettingsFailureCopyWithImpl<$Res>
+class _$SettingsFailureCopyWithImpl<$Res, $Val extends SettingsFailure>
     implements $SettingsFailureCopyWith<$Res> {
   _$SettingsFailureCopyWithImpl(this._value, this._then);
 
-  final SettingsFailure _value;
   // ignore: unused_field
-  final $Res Function(SettingsFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $ServerErrorCopyWith<$Res> {
-  factory $ServerErrorCopyWith(
-          ServerError value, $Res Function(ServerError) then) =
-      _$ServerErrorCopyWithImpl<$Res>;
+abstract class _$$ServerErrorCopyWith<$Res> {
+  factory _$$ServerErrorCopyWith(
+          _$ServerError value, $Res Function(_$ServerError) then) =
+      __$$ServerErrorCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class _$ServerErrorCopyWithImpl<$Res>
-    extends _$SettingsFailureCopyWithImpl<$Res>
-    implements $ServerErrorCopyWith<$Res> {
-  _$ServerErrorCopyWithImpl(
-      ServerError _value, $Res Function(ServerError) _then)
-      : super(_value, (v) => _then(v as ServerError));
+class __$$ServerErrorCopyWithImpl<$Res>
+    extends _$SettingsFailureCopyWithImpl<$Res, _$ServerError>
+    implements _$$ServerErrorCopyWith<$Res> {
+  __$$ServerErrorCopyWithImpl(
+      _$ServerError _value, $Res Function(_$ServerError) _then)
+      : super(_value, _then);
 
-  @override
-  ServerError get _value => super._value as ServerError;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(ServerError(
-      e == freezed
+    return _then(_$ServerError(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -128,7 +128,7 @@ class _$ServerError implements ServerError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ServerError &&
+            other is _$ServerError &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -138,8 +138,9 @@ class _$ServerError implements ServerError {
 
   @JsonKey(ignore: true)
   @override
-  $ServerErrorCopyWith<ServerError> get copyWith =>
-      _$ServerErrorCopyWithImpl<ServerError>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ServerErrorCopyWith<_$ServerError> get copyWith =>
+      __$$ServerErrorCopyWithImpl<_$ServerError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -154,9 +155,9 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(dynamic e)? serverError,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? multipleRequest,
+    TResult? Function(dynamic e)? serverError,
+    TResult? Function()? emailAlreadyInUse,
+    TResult? Function()? multipleRequest,
   }) {
     return serverError?.call(e);
   }
@@ -188,9 +189,9 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError value)? serverError,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(MultipleRequest value)? multipleRequest,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult? Function(MultipleRequest value)? multipleRequest,
   }) {
     return serverError?.call(this);
   }
@@ -213,29 +214,26 @@ class _$ServerError implements ServerError {
 abstract class ServerError implements SettingsFailure {
   const factory ServerError(final dynamic e) = _$ServerError;
 
-  dynamic get e => throw _privateConstructorUsedError;
+  dynamic get e;
   @JsonKey(ignore: true)
-  $ServerErrorCopyWith<ServerError> get copyWith =>
+  _$$ServerErrorCopyWith<_$ServerError> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $EmailAlreadyInUseCopyWith<$Res> {
-  factory $EmailAlreadyInUseCopyWith(
-          EmailAlreadyInUse value, $Res Function(EmailAlreadyInUse) then) =
-      _$EmailAlreadyInUseCopyWithImpl<$Res>;
+abstract class _$$EmailAlreadyInUseCopyWith<$Res> {
+  factory _$$EmailAlreadyInUseCopyWith(
+          _$EmailAlreadyInUse value, $Res Function(_$EmailAlreadyInUse) then) =
+      __$$EmailAlreadyInUseCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$EmailAlreadyInUseCopyWithImpl<$Res>
-    extends _$SettingsFailureCopyWithImpl<$Res>
-    implements $EmailAlreadyInUseCopyWith<$Res> {
-  _$EmailAlreadyInUseCopyWithImpl(
-      EmailAlreadyInUse _value, $Res Function(EmailAlreadyInUse) _then)
-      : super(_value, (v) => _then(v as EmailAlreadyInUse));
-
-  @override
-  EmailAlreadyInUse get _value => super._value as EmailAlreadyInUse;
+class __$$EmailAlreadyInUseCopyWithImpl<$Res>
+    extends _$SettingsFailureCopyWithImpl<$Res, _$EmailAlreadyInUse>
+    implements _$$EmailAlreadyInUseCopyWith<$Res> {
+  __$$EmailAlreadyInUseCopyWithImpl(
+      _$EmailAlreadyInUse _value, $Res Function(_$EmailAlreadyInUse) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -251,7 +249,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is EmailAlreadyInUse);
+        (other.runtimeType == runtimeType && other is _$EmailAlreadyInUse);
   }
 
   @override
@@ -270,9 +268,9 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(dynamic e)? serverError,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? multipleRequest,
+    TResult? Function(dynamic e)? serverError,
+    TResult? Function()? emailAlreadyInUse,
+    TResult? Function()? multipleRequest,
   }) {
     return emailAlreadyInUse?.call();
   }
@@ -304,9 +302,9 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError value)? serverError,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(MultipleRequest value)? multipleRequest,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult? Function(MultipleRequest value)? multipleRequest,
   }) {
     return emailAlreadyInUse?.call(this);
   }
@@ -331,22 +329,19 @@ abstract class EmailAlreadyInUse implements SettingsFailure {
 }
 
 /// @nodoc
-abstract class $MultipleRequestCopyWith<$Res> {
-  factory $MultipleRequestCopyWith(
-          MultipleRequest value, $Res Function(MultipleRequest) then) =
-      _$MultipleRequestCopyWithImpl<$Res>;
+abstract class _$$MultipleRequestCopyWith<$Res> {
+  factory _$$MultipleRequestCopyWith(
+          _$MultipleRequest value, $Res Function(_$MultipleRequest) then) =
+      __$$MultipleRequestCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MultipleRequestCopyWithImpl<$Res>
-    extends _$SettingsFailureCopyWithImpl<$Res>
-    implements $MultipleRequestCopyWith<$Res> {
-  _$MultipleRequestCopyWithImpl(
-      MultipleRequest _value, $Res Function(MultipleRequest) _then)
-      : super(_value, (v) => _then(v as MultipleRequest));
-
-  @override
-  MultipleRequest get _value => super._value as MultipleRequest;
+class __$$MultipleRequestCopyWithImpl<$Res>
+    extends _$SettingsFailureCopyWithImpl<$Res, _$MultipleRequest>
+    implements _$$MultipleRequestCopyWith<$Res> {
+  __$$MultipleRequestCopyWithImpl(
+      _$MultipleRequest _value, $Res Function(_$MultipleRequest) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -362,7 +357,7 @@ class _$MultipleRequest implements MultipleRequest {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is MultipleRequest);
+        (other.runtimeType == runtimeType && other is _$MultipleRequest);
   }
 
   @override
@@ -381,9 +376,9 @@ class _$MultipleRequest implements MultipleRequest {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(dynamic e)? serverError,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? multipleRequest,
+    TResult? Function(dynamic e)? serverError,
+    TResult? Function()? emailAlreadyInUse,
+    TResult? Function()? multipleRequest,
   }) {
     return multipleRequest?.call();
   }
@@ -415,9 +410,9 @@ class _$MultipleRequest implements MultipleRequest {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError value)? serverError,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(MultipleRequest value)? multipleRequest,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult? Function(MultipleRequest value)? multipleRequest,
   }) {
     return multipleRequest?.call(this);
   }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'analyze_failure.dart';
 
@@ -24,8 +24,8 @@ mixin _$AnalyzeFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(dynamic e)? unexpected,
-    TResult Function()? changeDateScopeFailure,
+    TResult? Function(dynamic e)? unexpected,
+    TResult? Function()? changeDateScopeFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,8 +44,8 @@ mixin _$AnalyzeFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_ChangeDateScopeFailure value)? changeDateScopeFailure,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_ChangeDateScopeFailure value)? changeDateScopeFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,43 +61,44 @@ mixin _$AnalyzeFailure {
 abstract class $AnalyzeFailureCopyWith<$Res> {
   factory $AnalyzeFailureCopyWith(
           AnalyzeFailure value, $Res Function(AnalyzeFailure) then) =
-      _$AnalyzeFailureCopyWithImpl<$Res>;
+      _$AnalyzeFailureCopyWithImpl<$Res, AnalyzeFailure>;
 }
 
 /// @nodoc
-class _$AnalyzeFailureCopyWithImpl<$Res>
+class _$AnalyzeFailureCopyWithImpl<$Res, $Val extends AnalyzeFailure>
     implements $AnalyzeFailureCopyWith<$Res> {
   _$AnalyzeFailureCopyWithImpl(this._value, this._then);
 
-  final AnalyzeFailure _value;
   // ignore: unused_field
-  final $Res Function(AnalyzeFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$UnexpectedCopyWith<$Res> {
-  factory _$UnexpectedCopyWith(
-          _Unexpected value, $Res Function(_Unexpected) then) =
-      __$UnexpectedCopyWithImpl<$Res>;
+abstract class _$$_UnexpectedCopyWith<$Res> {
+  factory _$$_UnexpectedCopyWith(
+          _$_Unexpected value, $Res Function(_$_Unexpected) then) =
+      __$$_UnexpectedCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$UnexpectedCopyWithImpl<$Res> extends _$AnalyzeFailureCopyWithImpl<$Res>
-    implements _$UnexpectedCopyWith<$Res> {
-  __$UnexpectedCopyWithImpl(
-      _Unexpected _value, $Res Function(_Unexpected) _then)
-      : super(_value, (v) => _then(v as _Unexpected));
+class __$$_UnexpectedCopyWithImpl<$Res>
+    extends _$AnalyzeFailureCopyWithImpl<$Res, _$_Unexpected>
+    implements _$$_UnexpectedCopyWith<$Res> {
+  __$$_UnexpectedCopyWithImpl(
+      _$_Unexpected _value, $Res Function(_$_Unexpected) _then)
+      : super(_value, _then);
 
-  @override
-  _Unexpected get _value => super._value as _Unexpected;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_Unexpected(
-      e == freezed
+    return _then(_$_Unexpected(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -122,7 +123,7 @@ class _$_Unexpected implements _Unexpected {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Unexpected &&
+            other is _$_Unexpected &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -132,8 +133,9 @@ class _$_Unexpected implements _Unexpected {
 
   @JsonKey(ignore: true)
   @override
-  _$UnexpectedCopyWith<_Unexpected> get copyWith =>
-      __$UnexpectedCopyWithImpl<_Unexpected>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_UnexpectedCopyWith<_$_Unexpected> get copyWith =>
+      __$$_UnexpectedCopyWithImpl<_$_Unexpected>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -147,8 +149,8 @@ class _$_Unexpected implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(dynamic e)? unexpected,
-    TResult Function()? changeDateScopeFailure,
+    TResult? Function(dynamic e)? unexpected,
+    TResult? Function()? changeDateScopeFailure,
   }) {
     return unexpected?.call(e);
   }
@@ -179,8 +181,8 @@ class _$_Unexpected implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_ChangeDateScopeFailure value)? changeDateScopeFailure,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_ChangeDateScopeFailure value)? changeDateScopeFailure,
   }) {
     return unexpected?.call(this);
   }
@@ -202,29 +204,26 @@ class _$_Unexpected implements _Unexpected {
 abstract class _Unexpected implements AnalyzeFailure {
   const factory _Unexpected(final dynamic e) = _$_Unexpected;
 
-  dynamic get e => throw _privateConstructorUsedError;
+  dynamic get e;
   @JsonKey(ignore: true)
-  _$UnexpectedCopyWith<_Unexpected> get copyWith =>
+  _$$_UnexpectedCopyWith<_$_Unexpected> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ChangeDateScopeFailureCopyWith<$Res> {
-  factory _$ChangeDateScopeFailureCopyWith(_ChangeDateScopeFailure value,
-          $Res Function(_ChangeDateScopeFailure) then) =
-      __$ChangeDateScopeFailureCopyWithImpl<$Res>;
+abstract class _$$_ChangeDateScopeFailureCopyWith<$Res> {
+  factory _$$_ChangeDateScopeFailureCopyWith(_$_ChangeDateScopeFailure value,
+          $Res Function(_$_ChangeDateScopeFailure) then) =
+      __$$_ChangeDateScopeFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ChangeDateScopeFailureCopyWithImpl<$Res>
-    extends _$AnalyzeFailureCopyWithImpl<$Res>
-    implements _$ChangeDateScopeFailureCopyWith<$Res> {
-  __$ChangeDateScopeFailureCopyWithImpl(_ChangeDateScopeFailure _value,
-      $Res Function(_ChangeDateScopeFailure) _then)
-      : super(_value, (v) => _then(v as _ChangeDateScopeFailure));
-
-  @override
-  _ChangeDateScopeFailure get _value => super._value as _ChangeDateScopeFailure;
+class __$$_ChangeDateScopeFailureCopyWithImpl<$Res>
+    extends _$AnalyzeFailureCopyWithImpl<$Res, _$_ChangeDateScopeFailure>
+    implements _$$_ChangeDateScopeFailureCopyWith<$Res> {
+  __$$_ChangeDateScopeFailureCopyWithImpl(_$_ChangeDateScopeFailure _value,
+      $Res Function(_$_ChangeDateScopeFailure) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -240,7 +239,8 @@ class _$_ChangeDateScopeFailure implements _ChangeDateScopeFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ChangeDateScopeFailure);
+        (other.runtimeType == runtimeType &&
+            other is _$_ChangeDateScopeFailure);
   }
 
   @override
@@ -258,8 +258,8 @@ class _$_ChangeDateScopeFailure implements _ChangeDateScopeFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(dynamic e)? unexpected,
-    TResult Function()? changeDateScopeFailure,
+    TResult? Function(dynamic e)? unexpected,
+    TResult? Function()? changeDateScopeFailure,
   }) {
     return changeDateScopeFailure?.call();
   }
@@ -290,8 +290,8 @@ class _$_ChangeDateScopeFailure implements _ChangeDateScopeFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_ChangeDateScopeFailure value)? changeDateScopeFailure,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_ChangeDateScopeFailure value)? changeDateScopeFailure,
   }) {
     return changeDateScopeFailure?.call(this);
   }

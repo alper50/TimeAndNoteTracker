@@ -2,10 +2,7 @@
 
 part of 'search_local_service.dart';
 
-// **************************************************************************
-// DaoGenerator
-// **************************************************************************
-
+// ignore_for_file: type=lint
 mixin _$SearchLocalServiceMixin on DatabaseAccessor<MyDatabase> {
   $SearchNoteHistoryTable get searchNoteHistory =>
       attachedDatabase.searchNoteHistory;

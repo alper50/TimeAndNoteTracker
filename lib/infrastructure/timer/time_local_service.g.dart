@@ -2,10 +2,7 @@
 
 part of 'time_local_service.dart';
 
-// **************************************************************************
-// DaoGenerator
-// **************************************************************************
-
+// ignore_for_file: type=lint
 mixin _$TimeLocalServiceMixin on DatabaseAccessor<MyDatabase> {
   $TimeTableTable get timeTable => attachedDatabase.timeTable;
 }

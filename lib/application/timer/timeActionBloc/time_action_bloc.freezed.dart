@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'time_action_bloc.dart';
 
@@ -24,8 +24,8 @@ mixin _$TimeActionEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Time timeToBeDeleted)? deleteTimer,
-    TResult Function(Time timeToBeCreated)? createTimer,
+    TResult? Function(Time timeToBeDeleted)? deleteTimer,
+    TResult? Function(Time timeToBeCreated)? createTimer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,8 +43,8 @@ mixin _$TimeActionEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_DeleteTimer value)? deleteTimer,
-    TResult Function(_CreateTimer value)? createTimer,
+    TResult? Function(_DeleteTimer value)? deleteTimer,
+    TResult? Function(_CreateTimer value)? createTimer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,46 +60,46 @@ mixin _$TimeActionEvent {
 abstract class $TimeActionEventCopyWith<$Res> {
   factory $TimeActionEventCopyWith(
           TimeActionEvent value, $Res Function(TimeActionEvent) then) =
-      _$TimeActionEventCopyWithImpl<$Res>;
+      _$TimeActionEventCopyWithImpl<$Res, TimeActionEvent>;
 }
 
 /// @nodoc
-class _$TimeActionEventCopyWithImpl<$Res>
+class _$TimeActionEventCopyWithImpl<$Res, $Val extends TimeActionEvent>
     implements $TimeActionEventCopyWith<$Res> {
   _$TimeActionEventCopyWithImpl(this._value, this._then);
 
-  final TimeActionEvent _value;
   // ignore: unused_field
-  final $Res Function(TimeActionEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$DeleteTimerCopyWith<$Res> {
-  factory _$DeleteTimerCopyWith(
-          _DeleteTimer value, $Res Function(_DeleteTimer) then) =
-      __$DeleteTimerCopyWithImpl<$Res>;
+abstract class _$$_DeleteTimerCopyWith<$Res> {
+  factory _$$_DeleteTimerCopyWith(
+          _$_DeleteTimer value, $Res Function(_$_DeleteTimer) then) =
+      __$$_DeleteTimerCopyWithImpl<$Res>;
+  @useResult
   $Res call({Time timeToBeDeleted});
 
   $TimeCopyWith<$Res> get timeToBeDeleted;
 }
 
 /// @nodoc
-class __$DeleteTimerCopyWithImpl<$Res>
-    extends _$TimeActionEventCopyWithImpl<$Res>
-    implements _$DeleteTimerCopyWith<$Res> {
-  __$DeleteTimerCopyWithImpl(
-      _DeleteTimer _value, $Res Function(_DeleteTimer) _then)
-      : super(_value, (v) => _then(v as _DeleteTimer));
+class __$$_DeleteTimerCopyWithImpl<$Res>
+    extends _$TimeActionEventCopyWithImpl<$Res, _$_DeleteTimer>
+    implements _$$_DeleteTimerCopyWith<$Res> {
+  __$$_DeleteTimerCopyWithImpl(
+      _$_DeleteTimer _value, $Res Function(_$_DeleteTimer) _then)
+      : super(_value, _then);
 
-  @override
-  _DeleteTimer get _value => super._value as _DeleteTimer;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? timeToBeDeleted = freezed,
+    Object? timeToBeDeleted = null,
   }) {
-    return _then(_DeleteTimer(
-      timeToBeDeleted: timeToBeDeleted == freezed
+    return _then(_$_DeleteTimer(
+      timeToBeDeleted: null == timeToBeDeleted
           ? _value.timeToBeDeleted
           : timeToBeDeleted // ignore: cast_nullable_to_non_nullable
               as Time,
@@ -107,6 +107,7 @@ class __$DeleteTimerCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TimeCopyWith<$Res> get timeToBeDeleted {
     return $TimeCopyWith<$Res>(_value.timeToBeDeleted, (value) {
       return _then(_value.copyWith(timeToBeDeleted: value));
@@ -131,19 +132,19 @@ class _$_DeleteTimer implements _DeleteTimer {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DeleteTimer &&
-            const DeepCollectionEquality()
-                .equals(other.timeToBeDeleted, timeToBeDeleted));
+            other is _$_DeleteTimer &&
+            (identical(other.timeToBeDeleted, timeToBeDeleted) ||
+                other.timeToBeDeleted == timeToBeDeleted));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(timeToBeDeleted));
+  int get hashCode => Object.hash(runtimeType, timeToBeDeleted);
 
   @JsonKey(ignore: true)
   @override
-  _$DeleteTimerCopyWith<_DeleteTimer> get copyWith =>
-      __$DeleteTimerCopyWithImpl<_DeleteTimer>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_DeleteTimerCopyWith<_$_DeleteTimer> get copyWith =>
+      __$$_DeleteTimerCopyWithImpl<_$_DeleteTimer>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -157,8 +158,8 @@ class _$_DeleteTimer implements _DeleteTimer {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Time timeToBeDeleted)? deleteTimer,
-    TResult Function(Time timeToBeCreated)? createTimer,
+    TResult? Function(Time timeToBeDeleted)? deleteTimer,
+    TResult? Function(Time timeToBeCreated)? createTimer,
   }) {
     return deleteTimer?.call(timeToBeDeleted);
   }
@@ -188,8 +189,8 @@ class _$_DeleteTimer implements _DeleteTimer {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_DeleteTimer value)? deleteTimer,
-    TResult Function(_CreateTimer value)? createTimer,
+    TResult? Function(_DeleteTimer value)? deleteTimer,
+    TResult? Function(_CreateTimer value)? createTimer,
   }) {
     return deleteTimer?.call(this);
   }
@@ -212,39 +213,38 @@ abstract class _DeleteTimer implements TimeActionEvent {
   const factory _DeleteTimer({required final Time timeToBeDeleted}) =
       _$_DeleteTimer;
 
-  Time get timeToBeDeleted => throw _privateConstructorUsedError;
+  Time get timeToBeDeleted;
   @JsonKey(ignore: true)
-  _$DeleteTimerCopyWith<_DeleteTimer> get copyWith =>
+  _$$_DeleteTimerCopyWith<_$_DeleteTimer> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$CreateTimerCopyWith<$Res> {
-  factory _$CreateTimerCopyWith(
-          _CreateTimer value, $Res Function(_CreateTimer) then) =
-      __$CreateTimerCopyWithImpl<$Res>;
+abstract class _$$_CreateTimerCopyWith<$Res> {
+  factory _$$_CreateTimerCopyWith(
+          _$_CreateTimer value, $Res Function(_$_CreateTimer) then) =
+      __$$_CreateTimerCopyWithImpl<$Res>;
+  @useResult
   $Res call({Time timeToBeCreated});
 
   $TimeCopyWith<$Res> get timeToBeCreated;
 }
 
 /// @nodoc
-class __$CreateTimerCopyWithImpl<$Res>
-    extends _$TimeActionEventCopyWithImpl<$Res>
-    implements _$CreateTimerCopyWith<$Res> {
-  __$CreateTimerCopyWithImpl(
-      _CreateTimer _value, $Res Function(_CreateTimer) _then)
-      : super(_value, (v) => _then(v as _CreateTimer));
+class __$$_CreateTimerCopyWithImpl<$Res>
+    extends _$TimeActionEventCopyWithImpl<$Res, _$_CreateTimer>
+    implements _$$_CreateTimerCopyWith<$Res> {
+  __$$_CreateTimerCopyWithImpl(
+      _$_CreateTimer _value, $Res Function(_$_CreateTimer) _then)
+      : super(_value, _then);
 
-  @override
-  _CreateTimer get _value => super._value as _CreateTimer;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? timeToBeCreated = freezed,
+    Object? timeToBeCreated = null,
   }) {
-    return _then(_CreateTimer(
-      timeToBeCreated: timeToBeCreated == freezed
+    return _then(_$_CreateTimer(
+      timeToBeCreated: null == timeToBeCreated
           ? _value.timeToBeCreated
           : timeToBeCreated // ignore: cast_nullable_to_non_nullable
               as Time,
@@ -252,6 +252,7 @@ class __$CreateTimerCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TimeCopyWith<$Res> get timeToBeCreated {
     return $TimeCopyWith<$Res>(_value.timeToBeCreated, (value) {
       return _then(_value.copyWith(timeToBeCreated: value));
@@ -276,19 +277,19 @@ class _$_CreateTimer implements _CreateTimer {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CreateTimer &&
-            const DeepCollectionEquality()
-                .equals(other.timeToBeCreated, timeToBeCreated));
+            other is _$_CreateTimer &&
+            (identical(other.timeToBeCreated, timeToBeCreated) ||
+                other.timeToBeCreated == timeToBeCreated));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(timeToBeCreated));
+  int get hashCode => Object.hash(runtimeType, timeToBeCreated);
 
   @JsonKey(ignore: true)
   @override
-  _$CreateTimerCopyWith<_CreateTimer> get copyWith =>
-      __$CreateTimerCopyWithImpl<_CreateTimer>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_CreateTimerCopyWith<_$_CreateTimer> get copyWith =>
+      __$$_CreateTimerCopyWithImpl<_$_CreateTimer>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -302,8 +303,8 @@ class _$_CreateTimer implements _CreateTimer {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Time timeToBeDeleted)? deleteTimer,
-    TResult Function(Time timeToBeCreated)? createTimer,
+    TResult? Function(Time timeToBeDeleted)? deleteTimer,
+    TResult? Function(Time timeToBeCreated)? createTimer,
   }) {
     return createTimer?.call(timeToBeCreated);
   }
@@ -333,8 +334,8 @@ class _$_CreateTimer implements _CreateTimer {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_DeleteTimer value)? deleteTimer,
-    TResult Function(_CreateTimer value)? createTimer,
+    TResult? Function(_DeleteTimer value)? deleteTimer,
+    TResult? Function(_CreateTimer value)? createTimer,
   }) {
     return createTimer?.call(this);
   }
@@ -357,9 +358,9 @@ abstract class _CreateTimer implements TimeActionEvent {
   const factory _CreateTimer({required final Time timeToBeCreated}) =
       _$_CreateTimer;
 
-  Time get timeToBeCreated => throw _privateConstructorUsedError;
+  Time get timeToBeCreated;
   @JsonKey(ignore: true)
-  _$CreateTimerCopyWith<_CreateTimer> get copyWith =>
+  _$$_CreateTimerCopyWith<_$_CreateTimer> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -378,13 +379,13 @@ mixin _$TimeActionState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? deleteTimeLoading,
-    TResult Function(TimeFailure timeFailure)? deleteTimeFailure,
-    TResult Function()? deleteTimeSucces,
-    TResult Function()? createTimeLoading,
-    TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function(Time time)? createTimeSucces,
+    TResult? Function()? initial,
+    TResult? Function()? deleteTimeLoading,
+    TResult? Function(TimeFailure timeFailure)? deleteTimeFailure,
+    TResult? Function()? deleteTimeSucces,
+    TResult? Function()? createTimeLoading,
+    TResult? Function(TimeFailure timeFailure)? createTimeFailure,
+    TResult? Function(Time time)? createTimeSucces,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -412,13 +413,13 @@ mixin _$TimeActionState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_DeleteTimeLoading value)? deleteTimeLoading,
-    TResult Function(_DeleteTimeFailure value)? deleteTimeFailure,
-    TResult Function(_DeleteTimeSucces value)? deleteTimeSucces,
-    TResult Function(_CreateTimeLoading value)? createTimeLoading,
-    TResult Function(_CreateTimeFailure value)? createTimeFailure,
-    TResult Function(_CreateTimeSucces value)? createTimeSucces,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_DeleteTimeLoading value)? deleteTimeLoading,
+    TResult? Function(_DeleteTimeFailure value)? deleteTimeFailure,
+    TResult? Function(_DeleteTimeSucces value)? deleteTimeSucces,
+    TResult? Function(_CreateTimeLoading value)? createTimeLoading,
+    TResult? Function(_CreateTimeFailure value)? createTimeFailure,
+    TResult? Function(_CreateTimeSucces value)? createTimeSucces,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -439,33 +440,33 @@ mixin _$TimeActionState {
 abstract class $TimeActionStateCopyWith<$Res> {
   factory $TimeActionStateCopyWith(
           TimeActionState value, $Res Function(TimeActionState) then) =
-      _$TimeActionStateCopyWithImpl<$Res>;
+      _$TimeActionStateCopyWithImpl<$Res, TimeActionState>;
 }
 
 /// @nodoc
-class _$TimeActionStateCopyWithImpl<$Res>
+class _$TimeActionStateCopyWithImpl<$Res, $Val extends TimeActionState>
     implements $TimeActionStateCopyWith<$Res> {
   _$TimeActionStateCopyWithImpl(this._value, this._then);
 
-  final TimeActionState _value;
   // ignore: unused_field
-  final $Res Function(TimeActionState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$TimeActionStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$TimeActionStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -481,7 +482,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -504,13 +505,13 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? deleteTimeLoading,
-    TResult Function(TimeFailure timeFailure)? deleteTimeFailure,
-    TResult Function()? deleteTimeSucces,
-    TResult Function()? createTimeLoading,
-    TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function(Time time)? createTimeSucces,
+    TResult? Function()? initial,
+    TResult? Function()? deleteTimeLoading,
+    TResult? Function(TimeFailure timeFailure)? deleteTimeFailure,
+    TResult? Function()? deleteTimeSucces,
+    TResult? Function()? createTimeLoading,
+    TResult? Function(TimeFailure timeFailure)? createTimeFailure,
+    TResult? Function(Time time)? createTimeSucces,
   }) {
     return initial?.call();
   }
@@ -550,13 +551,13 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_DeleteTimeLoading value)? deleteTimeLoading,
-    TResult Function(_DeleteTimeFailure value)? deleteTimeFailure,
-    TResult Function(_DeleteTimeSucces value)? deleteTimeSucces,
-    TResult Function(_CreateTimeLoading value)? createTimeLoading,
-    TResult Function(_CreateTimeFailure value)? createTimeFailure,
-    TResult Function(_CreateTimeSucces value)? createTimeSucces,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_DeleteTimeLoading value)? deleteTimeLoading,
+    TResult? Function(_DeleteTimeFailure value)? deleteTimeFailure,
+    TResult? Function(_DeleteTimeSucces value)? deleteTimeSucces,
+    TResult? Function(_CreateTimeLoading value)? createTimeLoading,
+    TResult? Function(_CreateTimeFailure value)? createTimeFailure,
+    TResult? Function(_CreateTimeSucces value)? createTimeSucces,
   }) {
     return initial?.call(this);
   }
@@ -585,22 +586,19 @@ abstract class _Initial implements TimeActionState {
 }
 
 /// @nodoc
-abstract class _$DeleteTimeLoadingCopyWith<$Res> {
-  factory _$DeleteTimeLoadingCopyWith(
-          _DeleteTimeLoading value, $Res Function(_DeleteTimeLoading) then) =
-      __$DeleteTimeLoadingCopyWithImpl<$Res>;
+abstract class _$$_DeleteTimeLoadingCopyWith<$Res> {
+  factory _$$_DeleteTimeLoadingCopyWith(_$_DeleteTimeLoading value,
+          $Res Function(_$_DeleteTimeLoading) then) =
+      __$$_DeleteTimeLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DeleteTimeLoadingCopyWithImpl<$Res>
-    extends _$TimeActionStateCopyWithImpl<$Res>
-    implements _$DeleteTimeLoadingCopyWith<$Res> {
-  __$DeleteTimeLoadingCopyWithImpl(
-      _DeleteTimeLoading _value, $Res Function(_DeleteTimeLoading) _then)
-      : super(_value, (v) => _then(v as _DeleteTimeLoading));
-
-  @override
-  _DeleteTimeLoading get _value => super._value as _DeleteTimeLoading;
+class __$$_DeleteTimeLoadingCopyWithImpl<$Res>
+    extends _$TimeActionStateCopyWithImpl<$Res, _$_DeleteTimeLoading>
+    implements _$$_DeleteTimeLoadingCopyWith<$Res> {
+  __$$_DeleteTimeLoadingCopyWithImpl(
+      _$_DeleteTimeLoading _value, $Res Function(_$_DeleteTimeLoading) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -616,7 +614,7 @@ class _$_DeleteTimeLoading implements _DeleteTimeLoading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _DeleteTimeLoading);
+        (other.runtimeType == runtimeType && other is _$_DeleteTimeLoading);
   }
 
   @override
@@ -639,13 +637,13 @@ class _$_DeleteTimeLoading implements _DeleteTimeLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? deleteTimeLoading,
-    TResult Function(TimeFailure timeFailure)? deleteTimeFailure,
-    TResult Function()? deleteTimeSucces,
-    TResult Function()? createTimeLoading,
-    TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function(Time time)? createTimeSucces,
+    TResult? Function()? initial,
+    TResult? Function()? deleteTimeLoading,
+    TResult? Function(TimeFailure timeFailure)? deleteTimeFailure,
+    TResult? Function()? deleteTimeSucces,
+    TResult? Function()? createTimeLoading,
+    TResult? Function(TimeFailure timeFailure)? createTimeFailure,
+    TResult? Function(Time time)? createTimeSucces,
   }) {
     return deleteTimeLoading?.call();
   }
@@ -685,13 +683,13 @@ class _$_DeleteTimeLoading implements _DeleteTimeLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_DeleteTimeLoading value)? deleteTimeLoading,
-    TResult Function(_DeleteTimeFailure value)? deleteTimeFailure,
-    TResult Function(_DeleteTimeSucces value)? deleteTimeSucces,
-    TResult Function(_CreateTimeLoading value)? createTimeLoading,
-    TResult Function(_CreateTimeFailure value)? createTimeFailure,
-    TResult Function(_CreateTimeSucces value)? createTimeSucces,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_DeleteTimeLoading value)? deleteTimeLoading,
+    TResult? Function(_DeleteTimeFailure value)? deleteTimeFailure,
+    TResult? Function(_DeleteTimeSucces value)? deleteTimeSucces,
+    TResult? Function(_CreateTimeLoading value)? createTimeLoading,
+    TResult? Function(_CreateTimeFailure value)? createTimeFailure,
+    TResult? Function(_CreateTimeSucces value)? createTimeSucces,
   }) {
     return deleteTimeLoading?.call(this);
   }
@@ -720,32 +718,31 @@ abstract class _DeleteTimeLoading implements TimeActionState {
 }
 
 /// @nodoc
-abstract class _$DeleteTimeFailureCopyWith<$Res> {
-  factory _$DeleteTimeFailureCopyWith(
-          _DeleteTimeFailure value, $Res Function(_DeleteTimeFailure) then) =
-      __$DeleteTimeFailureCopyWithImpl<$Res>;
+abstract class _$$_DeleteTimeFailureCopyWith<$Res> {
+  factory _$$_DeleteTimeFailureCopyWith(_$_DeleteTimeFailure value,
+          $Res Function(_$_DeleteTimeFailure) then) =
+      __$$_DeleteTimeFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({TimeFailure timeFailure});
 
   $TimeFailureCopyWith<$Res> get timeFailure;
 }
 
 /// @nodoc
-class __$DeleteTimeFailureCopyWithImpl<$Res>
-    extends _$TimeActionStateCopyWithImpl<$Res>
-    implements _$DeleteTimeFailureCopyWith<$Res> {
-  __$DeleteTimeFailureCopyWithImpl(
-      _DeleteTimeFailure _value, $Res Function(_DeleteTimeFailure) _then)
-      : super(_value, (v) => _then(v as _DeleteTimeFailure));
+class __$$_DeleteTimeFailureCopyWithImpl<$Res>
+    extends _$TimeActionStateCopyWithImpl<$Res, _$_DeleteTimeFailure>
+    implements _$$_DeleteTimeFailureCopyWith<$Res> {
+  __$$_DeleteTimeFailureCopyWithImpl(
+      _$_DeleteTimeFailure _value, $Res Function(_$_DeleteTimeFailure) _then)
+      : super(_value, _then);
 
-  @override
-  _DeleteTimeFailure get _value => super._value as _DeleteTimeFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? timeFailure = freezed,
+    Object? timeFailure = null,
   }) {
-    return _then(_DeleteTimeFailure(
-      timeFailure: timeFailure == freezed
+    return _then(_$_DeleteTimeFailure(
+      timeFailure: null == timeFailure
           ? _value.timeFailure
           : timeFailure // ignore: cast_nullable_to_non_nullable
               as TimeFailure,
@@ -753,6 +750,7 @@ class __$DeleteTimeFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TimeFailureCopyWith<$Res> get timeFailure {
     return $TimeFailureCopyWith<$Res>(_value.timeFailure, (value) {
       return _then(_value.copyWith(timeFailure: value));
@@ -777,19 +775,20 @@ class _$_DeleteTimeFailure implements _DeleteTimeFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DeleteTimeFailure &&
-            const DeepCollectionEquality()
-                .equals(other.timeFailure, timeFailure));
+            other is _$_DeleteTimeFailure &&
+            (identical(other.timeFailure, timeFailure) ||
+                other.timeFailure == timeFailure));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(timeFailure));
+  int get hashCode => Object.hash(runtimeType, timeFailure);
 
   @JsonKey(ignore: true)
   @override
-  _$DeleteTimeFailureCopyWith<_DeleteTimeFailure> get copyWith =>
-      __$DeleteTimeFailureCopyWithImpl<_DeleteTimeFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_DeleteTimeFailureCopyWith<_$_DeleteTimeFailure> get copyWith =>
+      __$$_DeleteTimeFailureCopyWithImpl<_$_DeleteTimeFailure>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -808,13 +807,13 @@ class _$_DeleteTimeFailure implements _DeleteTimeFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? deleteTimeLoading,
-    TResult Function(TimeFailure timeFailure)? deleteTimeFailure,
-    TResult Function()? deleteTimeSucces,
-    TResult Function()? createTimeLoading,
-    TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function(Time time)? createTimeSucces,
+    TResult? Function()? initial,
+    TResult? Function()? deleteTimeLoading,
+    TResult? Function(TimeFailure timeFailure)? deleteTimeFailure,
+    TResult? Function()? deleteTimeSucces,
+    TResult? Function()? createTimeLoading,
+    TResult? Function(TimeFailure timeFailure)? createTimeFailure,
+    TResult? Function(Time time)? createTimeSucces,
   }) {
     return deleteTimeFailure?.call(timeFailure);
   }
@@ -854,13 +853,13 @@ class _$_DeleteTimeFailure implements _DeleteTimeFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_DeleteTimeLoading value)? deleteTimeLoading,
-    TResult Function(_DeleteTimeFailure value)? deleteTimeFailure,
-    TResult Function(_DeleteTimeSucces value)? deleteTimeSucces,
-    TResult Function(_CreateTimeLoading value)? createTimeLoading,
-    TResult Function(_CreateTimeFailure value)? createTimeFailure,
-    TResult Function(_CreateTimeSucces value)? createTimeSucces,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_DeleteTimeLoading value)? deleteTimeLoading,
+    TResult? Function(_DeleteTimeFailure value)? deleteTimeFailure,
+    TResult? Function(_DeleteTimeSucces value)? deleteTimeSucces,
+    TResult? Function(_CreateTimeLoading value)? createTimeLoading,
+    TResult? Function(_CreateTimeFailure value)? createTimeFailure,
+    TResult? Function(_CreateTimeSucces value)? createTimeSucces,
   }) {
     return deleteTimeFailure?.call(this);
   }
@@ -888,29 +887,26 @@ abstract class _DeleteTimeFailure implements TimeActionState {
   const factory _DeleteTimeFailure({required final TimeFailure timeFailure}) =
       _$_DeleteTimeFailure;
 
-  TimeFailure get timeFailure => throw _privateConstructorUsedError;
+  TimeFailure get timeFailure;
   @JsonKey(ignore: true)
-  _$DeleteTimeFailureCopyWith<_DeleteTimeFailure> get copyWith =>
+  _$$_DeleteTimeFailureCopyWith<_$_DeleteTimeFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DeleteTimeSuccesCopyWith<$Res> {
-  factory _$DeleteTimeSuccesCopyWith(
-          _DeleteTimeSucces value, $Res Function(_DeleteTimeSucces) then) =
-      __$DeleteTimeSuccesCopyWithImpl<$Res>;
+abstract class _$$_DeleteTimeSuccesCopyWith<$Res> {
+  factory _$$_DeleteTimeSuccesCopyWith(
+          _$_DeleteTimeSucces value, $Res Function(_$_DeleteTimeSucces) then) =
+      __$$_DeleteTimeSuccesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DeleteTimeSuccesCopyWithImpl<$Res>
-    extends _$TimeActionStateCopyWithImpl<$Res>
-    implements _$DeleteTimeSuccesCopyWith<$Res> {
-  __$DeleteTimeSuccesCopyWithImpl(
-      _DeleteTimeSucces _value, $Res Function(_DeleteTimeSucces) _then)
-      : super(_value, (v) => _then(v as _DeleteTimeSucces));
-
-  @override
-  _DeleteTimeSucces get _value => super._value as _DeleteTimeSucces;
+class __$$_DeleteTimeSuccesCopyWithImpl<$Res>
+    extends _$TimeActionStateCopyWithImpl<$Res, _$_DeleteTimeSucces>
+    implements _$$_DeleteTimeSuccesCopyWith<$Res> {
+  __$$_DeleteTimeSuccesCopyWithImpl(
+      _$_DeleteTimeSucces _value, $Res Function(_$_DeleteTimeSucces) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -926,7 +922,7 @@ class _$_DeleteTimeSucces implements _DeleteTimeSucces {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _DeleteTimeSucces);
+        (other.runtimeType == runtimeType && other is _$_DeleteTimeSucces);
   }
 
   @override
@@ -949,13 +945,13 @@ class _$_DeleteTimeSucces implements _DeleteTimeSucces {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? deleteTimeLoading,
-    TResult Function(TimeFailure timeFailure)? deleteTimeFailure,
-    TResult Function()? deleteTimeSucces,
-    TResult Function()? createTimeLoading,
-    TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function(Time time)? createTimeSucces,
+    TResult? Function()? initial,
+    TResult? Function()? deleteTimeLoading,
+    TResult? Function(TimeFailure timeFailure)? deleteTimeFailure,
+    TResult? Function()? deleteTimeSucces,
+    TResult? Function()? createTimeLoading,
+    TResult? Function(TimeFailure timeFailure)? createTimeFailure,
+    TResult? Function(Time time)? createTimeSucces,
   }) {
     return deleteTimeSucces?.call();
   }
@@ -995,13 +991,13 @@ class _$_DeleteTimeSucces implements _DeleteTimeSucces {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_DeleteTimeLoading value)? deleteTimeLoading,
-    TResult Function(_DeleteTimeFailure value)? deleteTimeFailure,
-    TResult Function(_DeleteTimeSucces value)? deleteTimeSucces,
-    TResult Function(_CreateTimeLoading value)? createTimeLoading,
-    TResult Function(_CreateTimeFailure value)? createTimeFailure,
-    TResult Function(_CreateTimeSucces value)? createTimeSucces,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_DeleteTimeLoading value)? deleteTimeLoading,
+    TResult? Function(_DeleteTimeFailure value)? deleteTimeFailure,
+    TResult? Function(_DeleteTimeSucces value)? deleteTimeSucces,
+    TResult? Function(_CreateTimeLoading value)? createTimeLoading,
+    TResult? Function(_CreateTimeFailure value)? createTimeFailure,
+    TResult? Function(_CreateTimeSucces value)? createTimeSucces,
   }) {
     return deleteTimeSucces?.call(this);
   }
@@ -1030,22 +1026,19 @@ abstract class _DeleteTimeSucces implements TimeActionState {
 }
 
 /// @nodoc
-abstract class _$CreateTimeLoadingCopyWith<$Res> {
-  factory _$CreateTimeLoadingCopyWith(
-          _CreateTimeLoading value, $Res Function(_CreateTimeLoading) then) =
-      __$CreateTimeLoadingCopyWithImpl<$Res>;
+abstract class _$$_CreateTimeLoadingCopyWith<$Res> {
+  factory _$$_CreateTimeLoadingCopyWith(_$_CreateTimeLoading value,
+          $Res Function(_$_CreateTimeLoading) then) =
+      __$$_CreateTimeLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$CreateTimeLoadingCopyWithImpl<$Res>
-    extends _$TimeActionStateCopyWithImpl<$Res>
-    implements _$CreateTimeLoadingCopyWith<$Res> {
-  __$CreateTimeLoadingCopyWithImpl(
-      _CreateTimeLoading _value, $Res Function(_CreateTimeLoading) _then)
-      : super(_value, (v) => _then(v as _CreateTimeLoading));
-
-  @override
-  _CreateTimeLoading get _value => super._value as _CreateTimeLoading;
+class __$$_CreateTimeLoadingCopyWithImpl<$Res>
+    extends _$TimeActionStateCopyWithImpl<$Res, _$_CreateTimeLoading>
+    implements _$$_CreateTimeLoadingCopyWith<$Res> {
+  __$$_CreateTimeLoadingCopyWithImpl(
+      _$_CreateTimeLoading _value, $Res Function(_$_CreateTimeLoading) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1061,7 +1054,7 @@ class _$_CreateTimeLoading implements _CreateTimeLoading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _CreateTimeLoading);
+        (other.runtimeType == runtimeType && other is _$_CreateTimeLoading);
   }
 
   @override
@@ -1084,13 +1077,13 @@ class _$_CreateTimeLoading implements _CreateTimeLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? deleteTimeLoading,
-    TResult Function(TimeFailure timeFailure)? deleteTimeFailure,
-    TResult Function()? deleteTimeSucces,
-    TResult Function()? createTimeLoading,
-    TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function(Time time)? createTimeSucces,
+    TResult? Function()? initial,
+    TResult? Function()? deleteTimeLoading,
+    TResult? Function(TimeFailure timeFailure)? deleteTimeFailure,
+    TResult? Function()? deleteTimeSucces,
+    TResult? Function()? createTimeLoading,
+    TResult? Function(TimeFailure timeFailure)? createTimeFailure,
+    TResult? Function(Time time)? createTimeSucces,
   }) {
     return createTimeLoading?.call();
   }
@@ -1130,13 +1123,13 @@ class _$_CreateTimeLoading implements _CreateTimeLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_DeleteTimeLoading value)? deleteTimeLoading,
-    TResult Function(_DeleteTimeFailure value)? deleteTimeFailure,
-    TResult Function(_DeleteTimeSucces value)? deleteTimeSucces,
-    TResult Function(_CreateTimeLoading value)? createTimeLoading,
-    TResult Function(_CreateTimeFailure value)? createTimeFailure,
-    TResult Function(_CreateTimeSucces value)? createTimeSucces,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_DeleteTimeLoading value)? deleteTimeLoading,
+    TResult? Function(_DeleteTimeFailure value)? deleteTimeFailure,
+    TResult? Function(_DeleteTimeSucces value)? deleteTimeSucces,
+    TResult? Function(_CreateTimeLoading value)? createTimeLoading,
+    TResult? Function(_CreateTimeFailure value)? createTimeFailure,
+    TResult? Function(_CreateTimeSucces value)? createTimeSucces,
   }) {
     return createTimeLoading?.call(this);
   }
@@ -1165,32 +1158,31 @@ abstract class _CreateTimeLoading implements TimeActionState {
 }
 
 /// @nodoc
-abstract class _$CreateTimeFailureCopyWith<$Res> {
-  factory _$CreateTimeFailureCopyWith(
-          _CreateTimeFailure value, $Res Function(_CreateTimeFailure) then) =
-      __$CreateTimeFailureCopyWithImpl<$Res>;
+abstract class _$$_CreateTimeFailureCopyWith<$Res> {
+  factory _$$_CreateTimeFailureCopyWith(_$_CreateTimeFailure value,
+          $Res Function(_$_CreateTimeFailure) then) =
+      __$$_CreateTimeFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({TimeFailure timeFailure});
 
   $TimeFailureCopyWith<$Res> get timeFailure;
 }
 
 /// @nodoc
-class __$CreateTimeFailureCopyWithImpl<$Res>
-    extends _$TimeActionStateCopyWithImpl<$Res>
-    implements _$CreateTimeFailureCopyWith<$Res> {
-  __$CreateTimeFailureCopyWithImpl(
-      _CreateTimeFailure _value, $Res Function(_CreateTimeFailure) _then)
-      : super(_value, (v) => _then(v as _CreateTimeFailure));
+class __$$_CreateTimeFailureCopyWithImpl<$Res>
+    extends _$TimeActionStateCopyWithImpl<$Res, _$_CreateTimeFailure>
+    implements _$$_CreateTimeFailureCopyWith<$Res> {
+  __$$_CreateTimeFailureCopyWithImpl(
+      _$_CreateTimeFailure _value, $Res Function(_$_CreateTimeFailure) _then)
+      : super(_value, _then);
 
-  @override
-  _CreateTimeFailure get _value => super._value as _CreateTimeFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? timeFailure = freezed,
+    Object? timeFailure = null,
   }) {
-    return _then(_CreateTimeFailure(
-      timeFailure: timeFailure == freezed
+    return _then(_$_CreateTimeFailure(
+      timeFailure: null == timeFailure
           ? _value.timeFailure
           : timeFailure // ignore: cast_nullable_to_non_nullable
               as TimeFailure,
@@ -1198,6 +1190,7 @@ class __$CreateTimeFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TimeFailureCopyWith<$Res> get timeFailure {
     return $TimeFailureCopyWith<$Res>(_value.timeFailure, (value) {
       return _then(_value.copyWith(timeFailure: value));
@@ -1222,19 +1215,20 @@ class _$_CreateTimeFailure implements _CreateTimeFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CreateTimeFailure &&
-            const DeepCollectionEquality()
-                .equals(other.timeFailure, timeFailure));
+            other is _$_CreateTimeFailure &&
+            (identical(other.timeFailure, timeFailure) ||
+                other.timeFailure == timeFailure));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(timeFailure));
+  int get hashCode => Object.hash(runtimeType, timeFailure);
 
   @JsonKey(ignore: true)
   @override
-  _$CreateTimeFailureCopyWith<_CreateTimeFailure> get copyWith =>
-      __$CreateTimeFailureCopyWithImpl<_CreateTimeFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_CreateTimeFailureCopyWith<_$_CreateTimeFailure> get copyWith =>
+      __$$_CreateTimeFailureCopyWithImpl<_$_CreateTimeFailure>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1253,13 +1247,13 @@ class _$_CreateTimeFailure implements _CreateTimeFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? deleteTimeLoading,
-    TResult Function(TimeFailure timeFailure)? deleteTimeFailure,
-    TResult Function()? deleteTimeSucces,
-    TResult Function()? createTimeLoading,
-    TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function(Time time)? createTimeSucces,
+    TResult? Function()? initial,
+    TResult? Function()? deleteTimeLoading,
+    TResult? Function(TimeFailure timeFailure)? deleteTimeFailure,
+    TResult? Function()? deleteTimeSucces,
+    TResult? Function()? createTimeLoading,
+    TResult? Function(TimeFailure timeFailure)? createTimeFailure,
+    TResult? Function(Time time)? createTimeSucces,
   }) {
     return createTimeFailure?.call(timeFailure);
   }
@@ -1299,13 +1293,13 @@ class _$_CreateTimeFailure implements _CreateTimeFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_DeleteTimeLoading value)? deleteTimeLoading,
-    TResult Function(_DeleteTimeFailure value)? deleteTimeFailure,
-    TResult Function(_DeleteTimeSucces value)? deleteTimeSucces,
-    TResult Function(_CreateTimeLoading value)? createTimeLoading,
-    TResult Function(_CreateTimeFailure value)? createTimeFailure,
-    TResult Function(_CreateTimeSucces value)? createTimeSucces,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_DeleteTimeLoading value)? deleteTimeLoading,
+    TResult? Function(_DeleteTimeFailure value)? deleteTimeFailure,
+    TResult? Function(_DeleteTimeSucces value)? deleteTimeSucces,
+    TResult? Function(_CreateTimeLoading value)? createTimeLoading,
+    TResult? Function(_CreateTimeFailure value)? createTimeFailure,
+    TResult? Function(_CreateTimeSucces value)? createTimeSucces,
   }) {
     return createTimeFailure?.call(this);
   }
@@ -1333,39 +1327,38 @@ abstract class _CreateTimeFailure implements TimeActionState {
   const factory _CreateTimeFailure({required final TimeFailure timeFailure}) =
       _$_CreateTimeFailure;
 
-  TimeFailure get timeFailure => throw _privateConstructorUsedError;
+  TimeFailure get timeFailure;
   @JsonKey(ignore: true)
-  _$CreateTimeFailureCopyWith<_CreateTimeFailure> get copyWith =>
+  _$$_CreateTimeFailureCopyWith<_$_CreateTimeFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$CreateTimeSuccesCopyWith<$Res> {
-  factory _$CreateTimeSuccesCopyWith(
-          _CreateTimeSucces value, $Res Function(_CreateTimeSucces) then) =
-      __$CreateTimeSuccesCopyWithImpl<$Res>;
+abstract class _$$_CreateTimeSuccesCopyWith<$Res> {
+  factory _$$_CreateTimeSuccesCopyWith(
+          _$_CreateTimeSucces value, $Res Function(_$_CreateTimeSucces) then) =
+      __$$_CreateTimeSuccesCopyWithImpl<$Res>;
+  @useResult
   $Res call({Time time});
 
   $TimeCopyWith<$Res> get time;
 }
 
 /// @nodoc
-class __$CreateTimeSuccesCopyWithImpl<$Res>
-    extends _$TimeActionStateCopyWithImpl<$Res>
-    implements _$CreateTimeSuccesCopyWith<$Res> {
-  __$CreateTimeSuccesCopyWithImpl(
-      _CreateTimeSucces _value, $Res Function(_CreateTimeSucces) _then)
-      : super(_value, (v) => _then(v as _CreateTimeSucces));
+class __$$_CreateTimeSuccesCopyWithImpl<$Res>
+    extends _$TimeActionStateCopyWithImpl<$Res, _$_CreateTimeSucces>
+    implements _$$_CreateTimeSuccesCopyWith<$Res> {
+  __$$_CreateTimeSuccesCopyWithImpl(
+      _$_CreateTimeSucces _value, $Res Function(_$_CreateTimeSucces) _then)
+      : super(_value, _then);
 
-  @override
-  _CreateTimeSucces get _value => super._value as _CreateTimeSucces;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? time = freezed,
+    Object? time = null,
   }) {
-    return _then(_CreateTimeSucces(
-      time: time == freezed
+    return _then(_$_CreateTimeSucces(
+      time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as Time,
@@ -1373,6 +1366,7 @@ class __$CreateTimeSuccesCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TimeCopyWith<$Res> get time {
     return $TimeCopyWith<$Res>(_value.time, (value) {
       return _then(_value.copyWith(time: value));
@@ -1397,18 +1391,18 @@ class _$_CreateTimeSucces implements _CreateTimeSucces {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CreateTimeSucces &&
-            const DeepCollectionEquality().equals(other.time, time));
+            other is _$_CreateTimeSucces &&
+            (identical(other.time, time) || other.time == time));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
+  int get hashCode => Object.hash(runtimeType, time);
 
   @JsonKey(ignore: true)
   @override
-  _$CreateTimeSuccesCopyWith<_CreateTimeSucces> get copyWith =>
-      __$CreateTimeSuccesCopyWithImpl<_CreateTimeSucces>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_CreateTimeSuccesCopyWith<_$_CreateTimeSucces> get copyWith =>
+      __$$_CreateTimeSuccesCopyWithImpl<_$_CreateTimeSucces>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1427,13 +1421,13 @@ class _$_CreateTimeSucces implements _CreateTimeSucces {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? deleteTimeLoading,
-    TResult Function(TimeFailure timeFailure)? deleteTimeFailure,
-    TResult Function()? deleteTimeSucces,
-    TResult Function()? createTimeLoading,
-    TResult Function(TimeFailure timeFailure)? createTimeFailure,
-    TResult Function(Time time)? createTimeSucces,
+    TResult? Function()? initial,
+    TResult? Function()? deleteTimeLoading,
+    TResult? Function(TimeFailure timeFailure)? deleteTimeFailure,
+    TResult? Function()? deleteTimeSucces,
+    TResult? Function()? createTimeLoading,
+    TResult? Function(TimeFailure timeFailure)? createTimeFailure,
+    TResult? Function(Time time)? createTimeSucces,
   }) {
     return createTimeSucces?.call(time);
   }
@@ -1473,13 +1467,13 @@ class _$_CreateTimeSucces implements _CreateTimeSucces {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_DeleteTimeLoading value)? deleteTimeLoading,
-    TResult Function(_DeleteTimeFailure value)? deleteTimeFailure,
-    TResult Function(_DeleteTimeSucces value)? deleteTimeSucces,
-    TResult Function(_CreateTimeLoading value)? createTimeLoading,
-    TResult Function(_CreateTimeFailure value)? createTimeFailure,
-    TResult Function(_CreateTimeSucces value)? createTimeSucces,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_DeleteTimeLoading value)? deleteTimeLoading,
+    TResult? Function(_DeleteTimeFailure value)? deleteTimeFailure,
+    TResult? Function(_DeleteTimeSucces value)? deleteTimeSucces,
+    TResult? Function(_CreateTimeLoading value)? createTimeLoading,
+    TResult? Function(_CreateTimeFailure value)? createTimeFailure,
+    TResult? Function(_CreateTimeSucces value)? createTimeSucces,
   }) {
     return createTimeSucces?.call(this);
   }
@@ -1507,8 +1501,8 @@ abstract class _CreateTimeSucces implements TimeActionState {
   const factory _CreateTimeSucces({required final Time time}) =
       _$_CreateTimeSucces;
 
-  Time get time => throw _privateConstructorUsedError;
+  Time get time;
   @JsonKey(ignore: true)
-  _$CreateTimeSuccesCopyWith<_CreateTimeSucces> get copyWith =>
+  _$$_CreateTimeSuccesCopyWith<_$_CreateTimeSucces> get copyWith =>
       throw _privateConstructorUsedError;
 }

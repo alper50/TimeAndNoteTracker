@@ -32,11 +32,12 @@ class MaterialAppWidget extends StatelessWidget {
         buildWhen: (prev, cur) => prev.themeMode.name != cur.themeMode.name,
         builder: (context, state) {
           return MaterialApp.router(
-            theme: state.themeMode.name=='dark' ||  state.themeMode.name=='systemDark'
+            theme: state.themeMode.name == 'dark' ||
+                    state.themeMode.name == 'systemDark'
                 ? MyThemeData.darktheme
                 : MyThemeData.lightheme,
-            builder: (context, widget) => ResponsiveWrapper.builder(
-              ClampingScrollWrapper.builder(
+            builder: (context, widget) => ResponsiveBreakpoints.builder(
+              child: ClampingScrollWrapper.builder(
                 context,
                 Column(
                   children: [
@@ -47,13 +48,10 @@ class MaterialAppWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              maxWidth: 1200,
-              minWidth: 480,
-              defaultScale: true,
               breakpoints: [
-                ResponsiveBreakpoint.resize(480, name: MOBILE),
-                ResponsiveBreakpoint.autoScale(800, name: TABLET),
-                ResponsiveBreakpoint.resize(1000, name: DESKTOP),
+                const Breakpoint(start: 0, end: 450, name: MOBILE),
+                const Breakpoint(start: 451, end: 800, name: TABLET),
+                const Breakpoint(start: 801, end: 1920, name: DESKTOP),
               ],
             ),
             routeInformationParser: _appRouter.defaultRouteParser(),

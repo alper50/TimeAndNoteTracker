@@ -3,7 +3,8 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  sentry_flutter
+  firebase_core
+  pasteboard
   sqlite3_flutter_libs
   url_launcher_windows
 )

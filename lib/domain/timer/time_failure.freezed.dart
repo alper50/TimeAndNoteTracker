@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'time_failure.dart';
 
@@ -24,8 +24,8 @@ mixin _$TimeFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(dynamic e)? unexpected,
-    TResult Function()? insufficientPermission,
+    TResult? Function(dynamic e)? unexpected,
+    TResult? Function()? insufficientPermission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,8 +44,8 @@ mixin _$TimeFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_InsufficientPermission value)? insufficientPermission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,42 +61,44 @@ mixin _$TimeFailure {
 abstract class $TimeFailureCopyWith<$Res> {
   factory $TimeFailureCopyWith(
           TimeFailure value, $Res Function(TimeFailure) then) =
-      _$TimeFailureCopyWithImpl<$Res>;
+      _$TimeFailureCopyWithImpl<$Res, TimeFailure>;
 }
 
 /// @nodoc
-class _$TimeFailureCopyWithImpl<$Res> implements $TimeFailureCopyWith<$Res> {
+class _$TimeFailureCopyWithImpl<$Res, $Val extends TimeFailure>
+    implements $TimeFailureCopyWith<$Res> {
   _$TimeFailureCopyWithImpl(this._value, this._then);
 
-  final TimeFailure _value;
   // ignore: unused_field
-  final $Res Function(TimeFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$UnexpectedCopyWith<$Res> {
-  factory _$UnexpectedCopyWith(
-          _Unexpected value, $Res Function(_Unexpected) then) =
-      __$UnexpectedCopyWithImpl<$Res>;
+abstract class _$$_UnexpectedCopyWith<$Res> {
+  factory _$$_UnexpectedCopyWith(
+          _$_Unexpected value, $Res Function(_$_Unexpected) then) =
+      __$$_UnexpectedCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$UnexpectedCopyWithImpl<$Res> extends _$TimeFailureCopyWithImpl<$Res>
-    implements _$UnexpectedCopyWith<$Res> {
-  __$UnexpectedCopyWithImpl(
-      _Unexpected _value, $Res Function(_Unexpected) _then)
-      : super(_value, (v) => _then(v as _Unexpected));
+class __$$_UnexpectedCopyWithImpl<$Res>
+    extends _$TimeFailureCopyWithImpl<$Res, _$_Unexpected>
+    implements _$$_UnexpectedCopyWith<$Res> {
+  __$$_UnexpectedCopyWithImpl(
+      _$_Unexpected _value, $Res Function(_$_Unexpected) _then)
+      : super(_value, _then);
 
-  @override
-  _Unexpected get _value => super._value as _Unexpected;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_Unexpected(
-      e == freezed
+    return _then(_$_Unexpected(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -121,7 +123,7 @@ class _$_Unexpected implements _Unexpected {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Unexpected &&
+            other is _$_Unexpected &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -131,8 +133,9 @@ class _$_Unexpected implements _Unexpected {
 
   @JsonKey(ignore: true)
   @override
-  _$UnexpectedCopyWith<_Unexpected> get copyWith =>
-      __$UnexpectedCopyWithImpl<_Unexpected>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_UnexpectedCopyWith<_$_Unexpected> get copyWith =>
+      __$$_UnexpectedCopyWithImpl<_$_Unexpected>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -146,8 +149,8 @@ class _$_Unexpected implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(dynamic e)? unexpected,
-    TResult Function()? insufficientPermission,
+    TResult? Function(dynamic e)? unexpected,
+    TResult? Function()? insufficientPermission,
   }) {
     return unexpected?.call(e);
   }
@@ -178,8 +181,8 @@ class _$_Unexpected implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_InsufficientPermission value)? insufficientPermission,
   }) {
     return unexpected?.call(this);
   }
@@ -201,29 +204,26 @@ class _$_Unexpected implements _Unexpected {
 abstract class _Unexpected implements TimeFailure {
   const factory _Unexpected(final dynamic e) = _$_Unexpected;
 
-  dynamic get e => throw _privateConstructorUsedError;
+  dynamic get e;
   @JsonKey(ignore: true)
-  _$UnexpectedCopyWith<_Unexpected> get copyWith =>
+  _$$_UnexpectedCopyWith<_$_Unexpected> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$InsufficientPermissionCopyWith<$Res> {
-  factory _$InsufficientPermissionCopyWith(_InsufficientPermission value,
-          $Res Function(_InsufficientPermission) then) =
-      __$InsufficientPermissionCopyWithImpl<$Res>;
+abstract class _$$_InsufficientPermissionCopyWith<$Res> {
+  factory _$$_InsufficientPermissionCopyWith(_$_InsufficientPermission value,
+          $Res Function(_$_InsufficientPermission) then) =
+      __$$_InsufficientPermissionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InsufficientPermissionCopyWithImpl<$Res>
-    extends _$TimeFailureCopyWithImpl<$Res>
-    implements _$InsufficientPermissionCopyWith<$Res> {
-  __$InsufficientPermissionCopyWithImpl(_InsufficientPermission _value,
-      $Res Function(_InsufficientPermission) _then)
-      : super(_value, (v) => _then(v as _InsufficientPermission));
-
-  @override
-  _InsufficientPermission get _value => super._value as _InsufficientPermission;
+class __$$_InsufficientPermissionCopyWithImpl<$Res>
+    extends _$TimeFailureCopyWithImpl<$Res, _$_InsufficientPermission>
+    implements _$$_InsufficientPermissionCopyWith<$Res> {
+  __$$_InsufficientPermissionCopyWithImpl(_$_InsufficientPermission _value,
+      $Res Function(_$_InsufficientPermission) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -239,7 +239,8 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _InsufficientPermission);
+        (other.runtimeType == runtimeType &&
+            other is _$_InsufficientPermission);
   }
 
   @override
@@ -257,8 +258,8 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(dynamic e)? unexpected,
-    TResult Function()? insufficientPermission,
+    TResult? Function(dynamic e)? unexpected,
+    TResult? Function()? insufficientPermission,
   }) {
     return insufficientPermission?.call();
   }
@@ -289,8 +290,8 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_InsufficientPermission value)? insufficientPermission,
   }) {
     return insufficientPermission?.call(this);
   }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'todo_item_entity.dart';
 
@@ -29,84 +29,90 @@ mixin _$TodoItem {
 /// @nodoc
 abstract class $TodoItemCopyWith<$Res> {
   factory $TodoItemCopyWith(TodoItem value, $Res Function(TodoItem) then) =
-      _$TodoItemCopyWithImpl<$Res>;
+      _$TodoItemCopyWithImpl<$Res, TodoItem>;
+  @useResult
   $Res call({UniqueId id, Todo todo, bool isDone, DateTime lastUpdatedTime});
 }
 
 /// @nodoc
-class _$TodoItemCopyWithImpl<$Res> implements $TodoItemCopyWith<$Res> {
+class _$TodoItemCopyWithImpl<$Res, $Val extends TodoItem>
+    implements $TodoItemCopyWith<$Res> {
   _$TodoItemCopyWithImpl(this._value, this._then);
 
-  final TodoItem _value;
   // ignore: unused_field
-  final $Res Function(TodoItem) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? todo = freezed,
-    Object? isDone = freezed,
-    Object? lastUpdatedTime = freezed,
+    Object? id = null,
+    Object? todo = null,
+    Object? isDone = null,
+    Object? lastUpdatedTime = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as UniqueId,
-      todo: todo == freezed
+      todo: null == todo
           ? _value.todo
           : todo // ignore: cast_nullable_to_non_nullable
               as Todo,
-      isDone: isDone == freezed
+      isDone: null == isDone
           ? _value.isDone
           : isDone // ignore: cast_nullable_to_non_nullable
               as bool,
-      lastUpdatedTime: lastUpdatedTime == freezed
+      lastUpdatedTime: null == lastUpdatedTime
           ? _value.lastUpdatedTime
           : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$TodoItemCopyWith<$Res> implements $TodoItemCopyWith<$Res> {
-  factory _$TodoItemCopyWith(_TodoItem value, $Res Function(_TodoItem) then) =
-      __$TodoItemCopyWithImpl<$Res>;
+abstract class _$$_TodoItemCopyWith<$Res> implements $TodoItemCopyWith<$Res> {
+  factory _$$_TodoItemCopyWith(
+          _$_TodoItem value, $Res Function(_$_TodoItem) then) =
+      __$$_TodoItemCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({UniqueId id, Todo todo, bool isDone, DateTime lastUpdatedTime});
 }
 
 /// @nodoc
-class __$TodoItemCopyWithImpl<$Res> extends _$TodoItemCopyWithImpl<$Res>
-    implements _$TodoItemCopyWith<$Res> {
-  __$TodoItemCopyWithImpl(_TodoItem _value, $Res Function(_TodoItem) _then)
-      : super(_value, (v) => _then(v as _TodoItem));
+class __$$_TodoItemCopyWithImpl<$Res>
+    extends _$TodoItemCopyWithImpl<$Res, _$_TodoItem>
+    implements _$$_TodoItemCopyWith<$Res> {
+  __$$_TodoItemCopyWithImpl(
+      _$_TodoItem _value, $Res Function(_$_TodoItem) _then)
+      : super(_value, _then);
 
-  @override
-  _TodoItem get _value => super._value as _TodoItem;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? todo = freezed,
-    Object? isDone = freezed,
-    Object? lastUpdatedTime = freezed,
+    Object? id = null,
+    Object? todo = null,
+    Object? isDone = null,
+    Object? lastUpdatedTime = null,
   }) {
-    return _then(_TodoItem(
-      id: id == freezed
+    return _then(_$_TodoItem(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as UniqueId,
-      todo: todo == freezed
+      todo: null == todo
           ? _value.todo
           : todo // ignore: cast_nullable_to_non_nullable
               as Todo,
-      isDone: isDone == freezed
+      isDone: null == isDone
           ? _value.isDone
           : isDone // ignore: cast_nullable_to_non_nullable
               as bool,
-      lastUpdatedTime: lastUpdatedTime == freezed
+      lastUpdatedTime: null == lastUpdatedTime
           ? _value.lastUpdatedTime
           : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -142,26 +148,23 @@ class _$_TodoItem extends _TodoItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TodoItem &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.todo, todo) &&
-            const DeepCollectionEquality().equals(other.isDone, isDone) &&
-            const DeepCollectionEquality()
-                .equals(other.lastUpdatedTime, lastUpdatedTime));
+            other is _$_TodoItem &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.todo, todo) || other.todo == todo) &&
+            (identical(other.isDone, isDone) || other.isDone == isDone) &&
+            (identical(other.lastUpdatedTime, lastUpdatedTime) ||
+                other.lastUpdatedTime == lastUpdatedTime));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(todo),
-      const DeepCollectionEquality().hash(isDone),
-      const DeepCollectionEquality().hash(lastUpdatedTime));
+  int get hashCode =>
+      Object.hash(runtimeType, id, todo, isDone, lastUpdatedTime);
 
   @JsonKey(ignore: true)
   @override
-  _$TodoItemCopyWith<_TodoItem> get copyWith =>
-      __$TodoItemCopyWithImpl<_TodoItem>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_TodoItemCopyWith<_$_TodoItem> get copyWith =>
+      __$$_TodoItemCopyWithImpl<_$_TodoItem>(this, _$identity);
 }
 
 abstract class _TodoItem extends TodoItem {
@@ -173,15 +176,15 @@ abstract class _TodoItem extends TodoItem {
   const _TodoItem._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  Todo get todo => throw _privateConstructorUsedError;
+  Todo get todo;
   @override
-  bool get isDone => throw _privateConstructorUsedError;
+  bool get isDone;
   @override
-  DateTime get lastUpdatedTime => throw _privateConstructorUsedError;
+  DateTime get lastUpdatedTime;
   @override
   @JsonKey(ignore: true)
-  _$TodoItemCopyWith<_TodoItem> get copyWith =>
+  _$$_TodoItemCopyWith<_$_TodoItem> get copyWith =>
       throw _privateConstructorUsedError;
 }

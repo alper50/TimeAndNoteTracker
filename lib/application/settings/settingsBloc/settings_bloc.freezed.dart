@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'settings_bloc.dart';
 
@@ -27,11 +27,11 @@ mixin _$SettingsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialize,
-    TResult Function(String email)? updateEmail,
-    TResult Function(String password)? updatePassword,
-    TResult Function(ThemeMode themeMode)? changeTheme,
-    TResult Function()? changeLanguage,
+    TResult? Function()? initialize,
+    TResult? Function(String email)? updateEmail,
+    TResult? Function(String password)? updatePassword,
+    TResult? Function(ThemeMode themeMode)? changeTheme,
+    TResult? Function()? changeLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,11 +55,11 @@ mixin _$SettingsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initialize,
-    TResult Function(_UpdateEmail value)? updateEmail,
-    TResult Function(_UpdatePassword value)? updatePassword,
-    TResult Function(_ChangeTheme value)? changeTheme,
-    TResult Function(_ChangeLanguage value)? changeLanguage,
+    TResult? Function(_Initial value)? initialize,
+    TResult? Function(_UpdateEmail value)? updateEmail,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_ChangeTheme value)? changeTheme,
+    TResult? Function(_ChangeLanguage value)? changeLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,33 +78,33 @@ mixin _$SettingsEvent {
 abstract class $SettingsEventCopyWith<$Res> {
   factory $SettingsEventCopyWith(
           SettingsEvent value, $Res Function(SettingsEvent) then) =
-      _$SettingsEventCopyWithImpl<$Res>;
+      _$SettingsEventCopyWithImpl<$Res, SettingsEvent>;
 }
 
 /// @nodoc
-class _$SettingsEventCopyWithImpl<$Res>
+class _$SettingsEventCopyWithImpl<$Res, $Val extends SettingsEvent>
     implements $SettingsEventCopyWith<$Res> {
   _$SettingsEventCopyWithImpl(this._value, this._then);
 
-  final SettingsEvent _value;
   // ignore: unused_field
-  final $Res Function(SettingsEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$SettingsEventCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -120,7 +120,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -141,11 +141,11 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialize,
-    TResult Function(String email)? updateEmail,
-    TResult Function(String password)? updatePassword,
-    TResult Function(ThemeMode themeMode)? changeTheme,
-    TResult Function()? changeLanguage,
+    TResult? Function()? initialize,
+    TResult? Function(String email)? updateEmail,
+    TResult? Function(String password)? updatePassword,
+    TResult? Function(ThemeMode themeMode)? changeTheme,
+    TResult? Function()? changeLanguage,
   }) {
     return initialize?.call();
   }
@@ -181,11 +181,11 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initialize,
-    TResult Function(_UpdateEmail value)? updateEmail,
-    TResult Function(_UpdatePassword value)? updatePassword,
-    TResult Function(_ChangeTheme value)? changeTheme,
-    TResult Function(_ChangeLanguage value)? changeLanguage,
+    TResult? Function(_Initial value)? initialize,
+    TResult? Function(_UpdateEmail value)? updateEmail,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_ChangeTheme value)? changeTheme,
+    TResult? Function(_ChangeLanguage value)? changeLanguage,
   }) {
     return initialize?.call(this);
   }
@@ -212,29 +212,29 @@ abstract class _Initial implements SettingsEvent {
 }
 
 /// @nodoc
-abstract class _$UpdateEmailCopyWith<$Res> {
-  factory _$UpdateEmailCopyWith(
-          _UpdateEmail value, $Res Function(_UpdateEmail) then) =
-      __$UpdateEmailCopyWithImpl<$Res>;
+abstract class _$$_UpdateEmailCopyWith<$Res> {
+  factory _$$_UpdateEmailCopyWith(
+          _$_UpdateEmail value, $Res Function(_$_UpdateEmail) then) =
+      __$$_UpdateEmailCopyWithImpl<$Res>;
+  @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class __$UpdateEmailCopyWithImpl<$Res> extends _$SettingsEventCopyWithImpl<$Res>
-    implements _$UpdateEmailCopyWith<$Res> {
-  __$UpdateEmailCopyWithImpl(
-      _UpdateEmail _value, $Res Function(_UpdateEmail) _then)
-      : super(_value, (v) => _then(v as _UpdateEmail));
+class __$$_UpdateEmailCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$_UpdateEmail>
+    implements _$$_UpdateEmailCopyWith<$Res> {
+  __$$_UpdateEmailCopyWithImpl(
+      _$_UpdateEmail _value, $Res Function(_$_UpdateEmail) _then)
+      : super(_value, _then);
 
-  @override
-  _UpdateEmail get _value => super._value as _UpdateEmail;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
+    Object? email = null,
   }) {
-    return _then(_UpdateEmail(
-      email: email == freezed
+    return _then(_$_UpdateEmail(
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
@@ -259,18 +259,18 @@ class _$_UpdateEmail implements _UpdateEmail {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UpdateEmail &&
-            const DeepCollectionEquality().equals(other.email, email));
+            other is _$_UpdateEmail &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
+  int get hashCode => Object.hash(runtimeType, email);
 
   @JsonKey(ignore: true)
   @override
-  _$UpdateEmailCopyWith<_UpdateEmail> get copyWith =>
-      __$UpdateEmailCopyWithImpl<_UpdateEmail>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_UpdateEmailCopyWith<_$_UpdateEmail> get copyWith =>
+      __$$_UpdateEmailCopyWithImpl<_$_UpdateEmail>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -287,11 +287,11 @@ class _$_UpdateEmail implements _UpdateEmail {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialize,
-    TResult Function(String email)? updateEmail,
-    TResult Function(String password)? updatePassword,
-    TResult Function(ThemeMode themeMode)? changeTheme,
-    TResult Function()? changeLanguage,
+    TResult? Function()? initialize,
+    TResult? Function(String email)? updateEmail,
+    TResult? Function(String password)? updatePassword,
+    TResult? Function(ThemeMode themeMode)? changeTheme,
+    TResult? Function()? changeLanguage,
   }) {
     return updateEmail?.call(email);
   }
@@ -327,11 +327,11 @@ class _$_UpdateEmail implements _UpdateEmail {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initialize,
-    TResult Function(_UpdateEmail value)? updateEmail,
-    TResult Function(_UpdatePassword value)? updatePassword,
-    TResult Function(_ChangeTheme value)? changeTheme,
-    TResult Function(_ChangeLanguage value)? changeLanguage,
+    TResult? Function(_Initial value)? initialize,
+    TResult? Function(_UpdateEmail value)? updateEmail,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_ChangeTheme value)? changeTheme,
+    TResult? Function(_ChangeLanguage value)? changeLanguage,
   }) {
     return updateEmail?.call(this);
   }
@@ -356,37 +356,36 @@ class _$_UpdateEmail implements _UpdateEmail {
 abstract class _UpdateEmail implements SettingsEvent {
   const factory _UpdateEmail({required final String email}) = _$_UpdateEmail;
 
-  String get email => throw _privateConstructorUsedError;
+  String get email;
   @JsonKey(ignore: true)
-  _$UpdateEmailCopyWith<_UpdateEmail> get copyWith =>
+  _$$_UpdateEmailCopyWith<_$_UpdateEmail> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$UpdatePasswordCopyWith<$Res> {
-  factory _$UpdatePasswordCopyWith(
-          _UpdatePassword value, $Res Function(_UpdatePassword) then) =
-      __$UpdatePasswordCopyWithImpl<$Res>;
+abstract class _$$_UpdatePasswordCopyWith<$Res> {
+  factory _$$_UpdatePasswordCopyWith(
+          _$_UpdatePassword value, $Res Function(_$_UpdatePassword) then) =
+      __$$_UpdatePasswordCopyWithImpl<$Res>;
+  @useResult
   $Res call({String password});
 }
 
 /// @nodoc
-class __$UpdatePasswordCopyWithImpl<$Res>
-    extends _$SettingsEventCopyWithImpl<$Res>
-    implements _$UpdatePasswordCopyWith<$Res> {
-  __$UpdatePasswordCopyWithImpl(
-      _UpdatePassword _value, $Res Function(_UpdatePassword) _then)
-      : super(_value, (v) => _then(v as _UpdatePassword));
+class __$$_UpdatePasswordCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$_UpdatePassword>
+    implements _$$_UpdatePasswordCopyWith<$Res> {
+  __$$_UpdatePasswordCopyWithImpl(
+      _$_UpdatePassword _value, $Res Function(_$_UpdatePassword) _then)
+      : super(_value, _then);
 
-  @override
-  _UpdatePassword get _value => super._value as _UpdatePassword;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? password = freezed,
+    Object? password = null,
   }) {
-    return _then(_UpdatePassword(
-      password: password == freezed
+    return _then(_$_UpdatePassword(
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
@@ -411,18 +410,19 @@ class _$_UpdatePassword implements _UpdatePassword {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UpdatePassword &&
-            const DeepCollectionEquality().equals(other.password, password));
+            other is _$_UpdatePassword &&
+            (identical(other.password, password) ||
+                other.password == password));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(password));
+  int get hashCode => Object.hash(runtimeType, password);
 
   @JsonKey(ignore: true)
   @override
-  _$UpdatePasswordCopyWith<_UpdatePassword> get copyWith =>
-      __$UpdatePasswordCopyWithImpl<_UpdatePassword>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_UpdatePasswordCopyWith<_$_UpdatePassword> get copyWith =>
+      __$$_UpdatePasswordCopyWithImpl<_$_UpdatePassword>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -439,11 +439,11 @@ class _$_UpdatePassword implements _UpdatePassword {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialize,
-    TResult Function(String email)? updateEmail,
-    TResult Function(String password)? updatePassword,
-    TResult Function(ThemeMode themeMode)? changeTheme,
-    TResult Function()? changeLanguage,
+    TResult? Function()? initialize,
+    TResult? Function(String email)? updateEmail,
+    TResult? Function(String password)? updatePassword,
+    TResult? Function(ThemeMode themeMode)? changeTheme,
+    TResult? Function()? changeLanguage,
   }) {
     return updatePassword?.call(password);
   }
@@ -479,11 +479,11 @@ class _$_UpdatePassword implements _UpdatePassword {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initialize,
-    TResult Function(_UpdateEmail value)? updateEmail,
-    TResult Function(_UpdatePassword value)? updatePassword,
-    TResult Function(_ChangeTheme value)? changeTheme,
-    TResult Function(_ChangeLanguage value)? changeLanguage,
+    TResult? Function(_Initial value)? initialize,
+    TResult? Function(_UpdateEmail value)? updateEmail,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_ChangeTheme value)? changeTheme,
+    TResult? Function(_ChangeLanguage value)? changeLanguage,
   }) {
     return updatePassword?.call(this);
   }
@@ -509,36 +509,36 @@ abstract class _UpdatePassword implements SettingsEvent {
   const factory _UpdatePassword({required final String password}) =
       _$_UpdatePassword;
 
-  String get password => throw _privateConstructorUsedError;
+  String get password;
   @JsonKey(ignore: true)
-  _$UpdatePasswordCopyWith<_UpdatePassword> get copyWith =>
+  _$$_UpdatePasswordCopyWith<_$_UpdatePassword> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ChangeThemeCopyWith<$Res> {
-  factory _$ChangeThemeCopyWith(
-          _ChangeTheme value, $Res Function(_ChangeTheme) then) =
-      __$ChangeThemeCopyWithImpl<$Res>;
+abstract class _$$_ChangeThemeCopyWith<$Res> {
+  factory _$$_ChangeThemeCopyWith(
+          _$_ChangeTheme value, $Res Function(_$_ChangeTheme) then) =
+      __$$_ChangeThemeCopyWithImpl<$Res>;
+  @useResult
   $Res call({ThemeMode themeMode});
 }
 
 /// @nodoc
-class __$ChangeThemeCopyWithImpl<$Res> extends _$SettingsEventCopyWithImpl<$Res>
-    implements _$ChangeThemeCopyWith<$Res> {
-  __$ChangeThemeCopyWithImpl(
-      _ChangeTheme _value, $Res Function(_ChangeTheme) _then)
-      : super(_value, (v) => _then(v as _ChangeTheme));
+class __$$_ChangeThemeCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$_ChangeTheme>
+    implements _$$_ChangeThemeCopyWith<$Res> {
+  __$$_ChangeThemeCopyWithImpl(
+      _$_ChangeTheme _value, $Res Function(_$_ChangeTheme) _then)
+      : super(_value, _then);
 
-  @override
-  _ChangeTheme get _value => super._value as _ChangeTheme;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? themeMode = freezed,
+    Object? themeMode = null,
   }) {
-    return _then(_ChangeTheme(
-      themeMode: themeMode == freezed
+    return _then(_$_ChangeTheme(
+      themeMode: null == themeMode
           ? _value.themeMode
           : themeMode // ignore: cast_nullable_to_non_nullable
               as ThemeMode,
@@ -563,18 +563,19 @@ class _$_ChangeTheme implements _ChangeTheme {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ChangeTheme &&
-            const DeepCollectionEquality().equals(other.themeMode, themeMode));
+            other is _$_ChangeTheme &&
+            (identical(other.themeMode, themeMode) ||
+                other.themeMode == themeMode));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(themeMode));
+  int get hashCode => Object.hash(runtimeType, themeMode);
 
   @JsonKey(ignore: true)
   @override
-  _$ChangeThemeCopyWith<_ChangeTheme> get copyWith =>
-      __$ChangeThemeCopyWithImpl<_ChangeTheme>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ChangeThemeCopyWith<_$_ChangeTheme> get copyWith =>
+      __$$_ChangeThemeCopyWithImpl<_$_ChangeTheme>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -591,11 +592,11 @@ class _$_ChangeTheme implements _ChangeTheme {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialize,
-    TResult Function(String email)? updateEmail,
-    TResult Function(String password)? updatePassword,
-    TResult Function(ThemeMode themeMode)? changeTheme,
-    TResult Function()? changeLanguage,
+    TResult? Function()? initialize,
+    TResult? Function(String email)? updateEmail,
+    TResult? Function(String password)? updatePassword,
+    TResult? Function(ThemeMode themeMode)? changeTheme,
+    TResult? Function()? changeLanguage,
   }) {
     return changeTheme?.call(themeMode);
   }
@@ -631,11 +632,11 @@ class _$_ChangeTheme implements _ChangeTheme {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initialize,
-    TResult Function(_UpdateEmail value)? updateEmail,
-    TResult Function(_UpdatePassword value)? updatePassword,
-    TResult Function(_ChangeTheme value)? changeTheme,
-    TResult Function(_ChangeLanguage value)? changeLanguage,
+    TResult? Function(_Initial value)? initialize,
+    TResult? Function(_UpdateEmail value)? updateEmail,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_ChangeTheme value)? changeTheme,
+    TResult? Function(_ChangeLanguage value)? changeLanguage,
   }) {
     return changeTheme?.call(this);
   }
@@ -661,29 +662,26 @@ abstract class _ChangeTheme implements SettingsEvent {
   const factory _ChangeTheme({required final ThemeMode themeMode}) =
       _$_ChangeTheme;
 
-  ThemeMode get themeMode => throw _privateConstructorUsedError;
+  ThemeMode get themeMode;
   @JsonKey(ignore: true)
-  _$ChangeThemeCopyWith<_ChangeTheme> get copyWith =>
+  _$$_ChangeThemeCopyWith<_$_ChangeTheme> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ChangeLanguageCopyWith<$Res> {
-  factory _$ChangeLanguageCopyWith(
-          _ChangeLanguage value, $Res Function(_ChangeLanguage) then) =
-      __$ChangeLanguageCopyWithImpl<$Res>;
+abstract class _$$_ChangeLanguageCopyWith<$Res> {
+  factory _$$_ChangeLanguageCopyWith(
+          _$_ChangeLanguage value, $Res Function(_$_ChangeLanguage) then) =
+      __$$_ChangeLanguageCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ChangeLanguageCopyWithImpl<$Res>
-    extends _$SettingsEventCopyWithImpl<$Res>
-    implements _$ChangeLanguageCopyWith<$Res> {
-  __$ChangeLanguageCopyWithImpl(
-      _ChangeLanguage _value, $Res Function(_ChangeLanguage) _then)
-      : super(_value, (v) => _then(v as _ChangeLanguage));
-
-  @override
-  _ChangeLanguage get _value => super._value as _ChangeLanguage;
+class __$$_ChangeLanguageCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$_ChangeLanguage>
+    implements _$$_ChangeLanguageCopyWith<$Res> {
+  __$$_ChangeLanguageCopyWithImpl(
+      _$_ChangeLanguage _value, $Res Function(_$_ChangeLanguage) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -699,7 +697,7 @@ class _$_ChangeLanguage implements _ChangeLanguage {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ChangeLanguage);
+        (other.runtimeType == runtimeType && other is _$_ChangeLanguage);
   }
 
   @override
@@ -720,11 +718,11 @@ class _$_ChangeLanguage implements _ChangeLanguage {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialize,
-    TResult Function(String email)? updateEmail,
-    TResult Function(String password)? updatePassword,
-    TResult Function(ThemeMode themeMode)? changeTheme,
-    TResult Function()? changeLanguage,
+    TResult? Function()? initialize,
+    TResult? Function(String email)? updateEmail,
+    TResult? Function(String password)? updatePassword,
+    TResult? Function(ThemeMode themeMode)? changeTheme,
+    TResult? Function()? changeLanguage,
   }) {
     return changeLanguage?.call();
   }
@@ -760,11 +758,11 @@ class _$_ChangeLanguage implements _ChangeLanguage {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initialize,
-    TResult Function(_UpdateEmail value)? updateEmail,
-    TResult Function(_UpdatePassword value)? updatePassword,
-    TResult Function(_ChangeTheme value)? changeTheme,
-    TResult Function(_ChangeLanguage value)? changeLanguage,
+    TResult? Function(_Initial value)? initialize,
+    TResult? Function(_UpdateEmail value)? updateEmail,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_ChangeTheme value)? changeTheme,
+    TResult? Function(_ChangeLanguage value)? changeLanguage,
   }) {
     return changeLanguage?.call(this);
   }
@@ -808,7 +806,8 @@ mixin _$SettingsState {
 abstract class $SettingsStateCopyWith<$Res> {
   factory $SettingsStateCopyWith(
           SettingsState value, $Res Function(SettingsState) then) =
-      _$SettingsStateCopyWithImpl<$Res>;
+      _$SettingsStateCopyWithImpl<$Res, SettingsState>;
+  @useResult
   $Res call(
       {EmailAddress email,
       String userName,
@@ -818,54 +817,57 @@ abstract class $SettingsStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SettingsStateCopyWithImpl<$Res>
+class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState>
     implements $SettingsStateCopyWith<$Res> {
   _$SettingsStateCopyWithImpl(this._value, this._then);
 
-  final SettingsState _value;
   // ignore: unused_field
-  final $Res Function(SettingsState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
-    Object? userName = freezed,
-    Object? themeMode = freezed,
-    Object? isInitializing = freezed,
-    Object? failure = freezed,
+    Object? email = null,
+    Object? userName = null,
+    Object? themeMode = null,
+    Object? isInitializing = null,
+    Object? failure = null,
   }) {
     return _then(_value.copyWith(
-      email: email == freezed
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as EmailAddress,
-      userName: userName == freezed
+      userName: null == userName
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
               as String,
-      themeMode: themeMode == freezed
+      themeMode: null == themeMode
           ? _value.themeMode
           : themeMode // ignore: cast_nullable_to_non_nullable
               as ThemeMode,
-      isInitializing: isInitializing == freezed
+      isInitializing: null == isInitializing
           ? _value.isInitializing
           : isInitializing // ignore: cast_nullable_to_non_nullable
               as bool,
-      failure: failure == freezed
+      failure: null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, SettingsFailure>>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$SettingsStateCopyWith<$Res>
+abstract class _$$_SettingsStateCopyWith<$Res>
     implements $SettingsStateCopyWith<$Res> {
-  factory _$SettingsStateCopyWith(
-          _SettingsState value, $Res Function(_SettingsState) then) =
-      __$SettingsStateCopyWithImpl<$Res>;
+  factory _$$_SettingsStateCopyWith(
+          _$_SettingsState value, $Res Function(_$_SettingsState) then) =
+      __$$_SettingsStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {EmailAddress email,
       String userName,
@@ -875,42 +877,40 @@ abstract class _$SettingsStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SettingsStateCopyWithImpl<$Res>
-    extends _$SettingsStateCopyWithImpl<$Res>
-    implements _$SettingsStateCopyWith<$Res> {
-  __$SettingsStateCopyWithImpl(
-      _SettingsState _value, $Res Function(_SettingsState) _then)
-      : super(_value, (v) => _then(v as _SettingsState));
+class __$$_SettingsStateCopyWithImpl<$Res>
+    extends _$SettingsStateCopyWithImpl<$Res, _$_SettingsState>
+    implements _$$_SettingsStateCopyWith<$Res> {
+  __$$_SettingsStateCopyWithImpl(
+      _$_SettingsState _value, $Res Function(_$_SettingsState) _then)
+      : super(_value, _then);
 
-  @override
-  _SettingsState get _value => super._value as _SettingsState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
-    Object? userName = freezed,
-    Object? themeMode = freezed,
-    Object? isInitializing = freezed,
-    Object? failure = freezed,
+    Object? email = null,
+    Object? userName = null,
+    Object? themeMode = null,
+    Object? isInitializing = null,
+    Object? failure = null,
   }) {
-    return _then(_SettingsState(
-      email: email == freezed
+    return _then(_$_SettingsState(
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as EmailAddress,
-      userName: userName == freezed
+      userName: null == userName
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
               as String,
-      themeMode: themeMode == freezed
+      themeMode: null == themeMode
           ? _value.themeMode
           : themeMode // ignore: cast_nullable_to_non_nullable
               as ThemeMode,
-      isInitializing: isInitializing == freezed
+      isInitializing: null == isInitializing
           ? _value.isInitializing
           : isInitializing // ignore: cast_nullable_to_non_nullable
               as bool,
-      failure: failure == freezed
+      failure: null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, SettingsFailure>>,
@@ -948,28 +948,26 @@ class _$_SettingsState implements _SettingsState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SettingsState &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.userName, userName) &&
-            const DeepCollectionEquality().equals(other.themeMode, themeMode) &&
-            const DeepCollectionEquality()
-                .equals(other.isInitializing, isInitializing) &&
-            const DeepCollectionEquality().equals(other.failure, failure));
+            other is _$_SettingsState &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.userName, userName) ||
+                other.userName == userName) &&
+            (identical(other.themeMode, themeMode) ||
+                other.themeMode == themeMode) &&
+            (identical(other.isInitializing, isInitializing) ||
+                other.isInitializing == isInitializing) &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(userName),
-      const DeepCollectionEquality().hash(themeMode),
-      const DeepCollectionEquality().hash(isInitializing),
-      const DeepCollectionEquality().hash(failure));
+      runtimeType, email, userName, themeMode, isInitializing, failure);
 
   @JsonKey(ignore: true)
   @override
-  _$SettingsStateCopyWith<_SettingsState> get copyWith =>
-      __$SettingsStateCopyWithImpl<_SettingsState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_SettingsStateCopyWith<_$_SettingsState> get copyWith =>
+      __$$_SettingsStateCopyWithImpl<_$_SettingsState>(this, _$identity);
 }
 
 abstract class _SettingsState implements SettingsState {
@@ -982,18 +980,17 @@ abstract class _SettingsState implements SettingsState {
           failure}) = _$_SettingsState;
 
   @override
-  EmailAddress get email => throw _privateConstructorUsedError;
+  EmailAddress get email;
   @override
-  String get userName => throw _privateConstructorUsedError;
+  String get userName;
   @override
-  ThemeMode get themeMode => throw _privateConstructorUsedError;
+  ThemeMode get themeMode;
   @override
-  bool get isInitializing => throw _privateConstructorUsedError;
+  bool get isInitializing;
   @override
-  Option<Either<AuthFailure, SettingsFailure>> get failure =>
-      throw _privateConstructorUsedError;
+  Option<Either<AuthFailure, SettingsFailure>> get failure;
   @override
   @JsonKey(ignore: true)
-  _$SettingsStateCopyWith<_SettingsState> get copyWith =>
+  _$$_SettingsStateCopyWith<_$_SettingsState> get copyWith =>
       throw _privateConstructorUsedError;
 }

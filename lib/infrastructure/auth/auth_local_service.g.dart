@@ -2,10 +2,7 @@
 
 part of 'auth_local_service.dart';
 
-// **************************************************************************
-// DaoGenerator
-// **************************************************************************
-
+// ignore_for_file: type=lint
 mixin _$AuthLocalServiceMixin on DatabaseAccessor<MyDatabase> {
   $AppInformationTable get appInformation => attachedDatabase.appInformation;
 }

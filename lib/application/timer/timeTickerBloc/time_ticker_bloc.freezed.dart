@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'time_ticker_bloc.dart';
 
@@ -27,11 +27,11 @@ mixin _$TimeTickerEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Time time)? started,
-    TResult Function()? paused,
-    TResult Function()? resumed,
-    TResult Function(Time time)? reset,
-    TResult Function(Time time)? ticked,
+    TResult? Function(Time time)? started,
+    TResult? Function()? paused,
+    TResult? Function()? resumed,
+    TResult? Function(Time time)? reset,
+    TResult? Function(Time time)? ticked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,11 +55,11 @@ mixin _$TimeTickerEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_Paused value)? paused,
-    TResult Function(_Resumed value)? resumed,
-    TResult Function(_Reset value)? reset,
-    TResult Function(_Ticked value)? ticked,
+    TResult? Function(_Started value)? started,
+    TResult? Function(_Paused value)? paused,
+    TResult? Function(_Resumed value)? resumed,
+    TResult? Function(_Reset value)? reset,
+    TResult? Function(_Ticked value)? ticked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,43 +78,45 @@ mixin _$TimeTickerEvent {
 abstract class $TimeTickerEventCopyWith<$Res> {
   factory $TimeTickerEventCopyWith(
           TimeTickerEvent value, $Res Function(TimeTickerEvent) then) =
-      _$TimeTickerEventCopyWithImpl<$Res>;
+      _$TimeTickerEventCopyWithImpl<$Res, TimeTickerEvent>;
 }
 
 /// @nodoc
-class _$TimeTickerEventCopyWithImpl<$Res>
+class _$TimeTickerEventCopyWithImpl<$Res, $Val extends TimeTickerEvent>
     implements $TimeTickerEventCopyWith<$Res> {
   _$TimeTickerEventCopyWithImpl(this._value, this._then);
 
-  final TimeTickerEvent _value;
   // ignore: unused_field
-  final $Res Function(TimeTickerEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$StartedCopyWith<$Res> {
-  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
-      __$StartedCopyWithImpl<$Res>;
+abstract class _$$_StartedCopyWith<$Res> {
+  factory _$$_StartedCopyWith(
+          _$_Started value, $Res Function(_$_Started) then) =
+      __$$_StartedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Time time});
 
   $TimeCopyWith<$Res> get time;
 }
 
 /// @nodoc
-class __$StartedCopyWithImpl<$Res> extends _$TimeTickerEventCopyWithImpl<$Res>
-    implements _$StartedCopyWith<$Res> {
-  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
-      : super(_value, (v) => _then(v as _Started));
+class __$$_StartedCopyWithImpl<$Res>
+    extends _$TimeTickerEventCopyWithImpl<$Res, _$_Started>
+    implements _$$_StartedCopyWith<$Res> {
+  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
+      : super(_value, _then);
 
-  @override
-  _Started get _value => super._value as _Started;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? time = freezed,
+    Object? time = null,
   }) {
-    return _then(_Started(
-      time: time == freezed
+    return _then(_$_Started(
+      time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as Time,
@@ -122,6 +124,7 @@ class __$StartedCopyWithImpl<$Res> extends _$TimeTickerEventCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TimeCopyWith<$Res> get time {
     return $TimeCopyWith<$Res>(_value.time, (value) {
       return _then(_value.copyWith(time: value));
@@ -146,18 +149,18 @@ class _$_Started implements _Started {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Started &&
-            const DeepCollectionEquality().equals(other.time, time));
+            other is _$_Started &&
+            (identical(other.time, time) || other.time == time));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
+  int get hashCode => Object.hash(runtimeType, time);
 
   @JsonKey(ignore: true)
   @override
-  _$StartedCopyWith<_Started> get copyWith =>
-      __$StartedCopyWithImpl<_Started>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_StartedCopyWith<_$_Started> get copyWith =>
+      __$$_StartedCopyWithImpl<_$_Started>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -174,11 +177,11 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Time time)? started,
-    TResult Function()? paused,
-    TResult Function()? resumed,
-    TResult Function(Time time)? reset,
-    TResult Function(Time time)? ticked,
+    TResult? Function(Time time)? started,
+    TResult? Function()? paused,
+    TResult? Function()? resumed,
+    TResult? Function(Time time)? reset,
+    TResult? Function(Time time)? ticked,
   }) {
     return started?.call(time);
   }
@@ -214,11 +217,11 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_Paused value)? paused,
-    TResult Function(_Resumed value)? resumed,
-    TResult Function(_Reset value)? reset,
-    TResult Function(_Ticked value)? ticked,
+    TResult? Function(_Started value)? started,
+    TResult? Function(_Paused value)? paused,
+    TResult? Function(_Resumed value)? resumed,
+    TResult? Function(_Reset value)? reset,
+    TResult? Function(_Ticked value)? ticked,
   }) {
     return started?.call(this);
   }
@@ -243,26 +246,24 @@ class _$_Started implements _Started {
 abstract class _Started implements TimeTickerEvent {
   const factory _Started({required final Time time}) = _$_Started;
 
-  Time get time => throw _privateConstructorUsedError;
+  Time get time;
   @JsonKey(ignore: true)
-  _$StartedCopyWith<_Started> get copyWith =>
+  _$$_StartedCopyWith<_$_Started> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$PausedCopyWith<$Res> {
-  factory _$PausedCopyWith(_Paused value, $Res Function(_Paused) then) =
-      __$PausedCopyWithImpl<$Res>;
+abstract class _$$_PausedCopyWith<$Res> {
+  factory _$$_PausedCopyWith(_$_Paused value, $Res Function(_$_Paused) then) =
+      __$$_PausedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$PausedCopyWithImpl<$Res> extends _$TimeTickerEventCopyWithImpl<$Res>
-    implements _$PausedCopyWith<$Res> {
-  __$PausedCopyWithImpl(_Paused _value, $Res Function(_Paused) _then)
-      : super(_value, (v) => _then(v as _Paused));
-
-  @override
-  _Paused get _value => super._value as _Paused;
+class __$$_PausedCopyWithImpl<$Res>
+    extends _$TimeTickerEventCopyWithImpl<$Res, _$_Paused>
+    implements _$$_PausedCopyWith<$Res> {
+  __$$_PausedCopyWithImpl(_$_Paused _value, $Res Function(_$_Paused) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -278,7 +279,7 @@ class _$_Paused implements _Paused {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Paused);
+        (other.runtimeType == runtimeType && other is _$_Paused);
   }
 
   @override
@@ -299,11 +300,11 @@ class _$_Paused implements _Paused {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Time time)? started,
-    TResult Function()? paused,
-    TResult Function()? resumed,
-    TResult Function(Time time)? reset,
-    TResult Function(Time time)? ticked,
+    TResult? Function(Time time)? started,
+    TResult? Function()? paused,
+    TResult? Function()? resumed,
+    TResult? Function(Time time)? reset,
+    TResult? Function(Time time)? ticked,
   }) {
     return paused?.call();
   }
@@ -339,11 +340,11 @@ class _$_Paused implements _Paused {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_Paused value)? paused,
-    TResult Function(_Resumed value)? resumed,
-    TResult Function(_Reset value)? reset,
-    TResult Function(_Ticked value)? ticked,
+    TResult? Function(_Started value)? started,
+    TResult? Function(_Paused value)? paused,
+    TResult? Function(_Resumed value)? resumed,
+    TResult? Function(_Reset value)? reset,
+    TResult? Function(_Ticked value)? ticked,
   }) {
     return paused?.call(this);
   }
@@ -370,19 +371,18 @@ abstract class _Paused implements TimeTickerEvent {
 }
 
 /// @nodoc
-abstract class _$ResumedCopyWith<$Res> {
-  factory _$ResumedCopyWith(_Resumed value, $Res Function(_Resumed) then) =
-      __$ResumedCopyWithImpl<$Res>;
+abstract class _$$_ResumedCopyWith<$Res> {
+  factory _$$_ResumedCopyWith(
+          _$_Resumed value, $Res Function(_$_Resumed) then) =
+      __$$_ResumedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ResumedCopyWithImpl<$Res> extends _$TimeTickerEventCopyWithImpl<$Res>
-    implements _$ResumedCopyWith<$Res> {
-  __$ResumedCopyWithImpl(_Resumed _value, $Res Function(_Resumed) _then)
-      : super(_value, (v) => _then(v as _Resumed));
-
-  @override
-  _Resumed get _value => super._value as _Resumed;
+class __$$_ResumedCopyWithImpl<$Res>
+    extends _$TimeTickerEventCopyWithImpl<$Res, _$_Resumed>
+    implements _$$_ResumedCopyWith<$Res> {
+  __$$_ResumedCopyWithImpl(_$_Resumed _value, $Res Function(_$_Resumed) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -398,7 +398,7 @@ class _$_Resumed implements _Resumed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Resumed);
+        (other.runtimeType == runtimeType && other is _$_Resumed);
   }
 
   @override
@@ -419,11 +419,11 @@ class _$_Resumed implements _Resumed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Time time)? started,
-    TResult Function()? paused,
-    TResult Function()? resumed,
-    TResult Function(Time time)? reset,
-    TResult Function(Time time)? ticked,
+    TResult? Function(Time time)? started,
+    TResult? Function()? paused,
+    TResult? Function()? resumed,
+    TResult? Function(Time time)? reset,
+    TResult? Function(Time time)? ticked,
   }) {
     return resumed?.call();
   }
@@ -459,11 +459,11 @@ class _$_Resumed implements _Resumed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_Paused value)? paused,
-    TResult Function(_Resumed value)? resumed,
-    TResult Function(_Reset value)? reset,
-    TResult Function(_Ticked value)? ticked,
+    TResult? Function(_Started value)? started,
+    TResult? Function(_Paused value)? paused,
+    TResult? Function(_Resumed value)? resumed,
+    TResult? Function(_Reset value)? reset,
+    TResult? Function(_Ticked value)? ticked,
   }) {
     return resumed?.call(this);
   }
@@ -490,29 +490,29 @@ abstract class _Resumed implements TimeTickerEvent {
 }
 
 /// @nodoc
-abstract class _$ResetCopyWith<$Res> {
-  factory _$ResetCopyWith(_Reset value, $Res Function(_Reset) then) =
-      __$ResetCopyWithImpl<$Res>;
+abstract class _$$_ResetCopyWith<$Res> {
+  factory _$$_ResetCopyWith(_$_Reset value, $Res Function(_$_Reset) then) =
+      __$$_ResetCopyWithImpl<$Res>;
+  @useResult
   $Res call({Time time});
 
   $TimeCopyWith<$Res> get time;
 }
 
 /// @nodoc
-class __$ResetCopyWithImpl<$Res> extends _$TimeTickerEventCopyWithImpl<$Res>
-    implements _$ResetCopyWith<$Res> {
-  __$ResetCopyWithImpl(_Reset _value, $Res Function(_Reset) _then)
-      : super(_value, (v) => _then(v as _Reset));
+class __$$_ResetCopyWithImpl<$Res>
+    extends _$TimeTickerEventCopyWithImpl<$Res, _$_Reset>
+    implements _$$_ResetCopyWith<$Res> {
+  __$$_ResetCopyWithImpl(_$_Reset _value, $Res Function(_$_Reset) _then)
+      : super(_value, _then);
 
-  @override
-  _Reset get _value => super._value as _Reset;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? time = freezed,
+    Object? time = null,
   }) {
-    return _then(_Reset(
-      time: time == freezed
+    return _then(_$_Reset(
+      time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as Time,
@@ -520,6 +520,7 @@ class __$ResetCopyWithImpl<$Res> extends _$TimeTickerEventCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TimeCopyWith<$Res> get time {
     return $TimeCopyWith<$Res>(_value.time, (value) {
       return _then(_value.copyWith(time: value));
@@ -544,18 +545,18 @@ class _$_Reset implements _Reset {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Reset &&
-            const DeepCollectionEquality().equals(other.time, time));
+            other is _$_Reset &&
+            (identical(other.time, time) || other.time == time));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
+  int get hashCode => Object.hash(runtimeType, time);
 
   @JsonKey(ignore: true)
   @override
-  _$ResetCopyWith<_Reset> get copyWith =>
-      __$ResetCopyWithImpl<_Reset>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ResetCopyWith<_$_Reset> get copyWith =>
+      __$$_ResetCopyWithImpl<_$_Reset>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -572,11 +573,11 @@ class _$_Reset implements _Reset {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Time time)? started,
-    TResult Function()? paused,
-    TResult Function()? resumed,
-    TResult Function(Time time)? reset,
-    TResult Function(Time time)? ticked,
+    TResult? Function(Time time)? started,
+    TResult? Function()? paused,
+    TResult? Function()? resumed,
+    TResult? Function(Time time)? reset,
+    TResult? Function(Time time)? ticked,
   }) {
     return reset?.call(time);
   }
@@ -612,11 +613,11 @@ class _$_Reset implements _Reset {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_Paused value)? paused,
-    TResult Function(_Resumed value)? resumed,
-    TResult Function(_Reset value)? reset,
-    TResult Function(_Ticked value)? ticked,
+    TResult? Function(_Started value)? started,
+    TResult? Function(_Paused value)? paused,
+    TResult? Function(_Resumed value)? resumed,
+    TResult? Function(_Reset value)? reset,
+    TResult? Function(_Ticked value)? ticked,
   }) {
     return reset?.call(this);
   }
@@ -641,35 +642,36 @@ class _$_Reset implements _Reset {
 abstract class _Reset implements TimeTickerEvent {
   const factory _Reset({required final Time time}) = _$_Reset;
 
-  Time get time => throw _privateConstructorUsedError;
+  Time get time;
   @JsonKey(ignore: true)
-  _$ResetCopyWith<_Reset> get copyWith => throw _privateConstructorUsedError;
+  _$$_ResetCopyWith<_$_Reset> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$TickedCopyWith<$Res> {
-  factory _$TickedCopyWith(_Ticked value, $Res Function(_Ticked) then) =
-      __$TickedCopyWithImpl<$Res>;
+abstract class _$$_TickedCopyWith<$Res> {
+  factory _$$_TickedCopyWith(_$_Ticked value, $Res Function(_$_Ticked) then) =
+      __$$_TickedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Time time});
 
   $TimeCopyWith<$Res> get time;
 }
 
 /// @nodoc
-class __$TickedCopyWithImpl<$Res> extends _$TimeTickerEventCopyWithImpl<$Res>
-    implements _$TickedCopyWith<$Res> {
-  __$TickedCopyWithImpl(_Ticked _value, $Res Function(_Ticked) _then)
-      : super(_value, (v) => _then(v as _Ticked));
+class __$$_TickedCopyWithImpl<$Res>
+    extends _$TimeTickerEventCopyWithImpl<$Res, _$_Ticked>
+    implements _$$_TickedCopyWith<$Res> {
+  __$$_TickedCopyWithImpl(_$_Ticked _value, $Res Function(_$_Ticked) _then)
+      : super(_value, _then);
 
-  @override
-  _Ticked get _value => super._value as _Ticked;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? time = freezed,
+    Object? time = null,
   }) {
-    return _then(_Ticked(
-      time: time == freezed
+    return _then(_$_Ticked(
+      time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as Time,
@@ -677,6 +679,7 @@ class __$TickedCopyWithImpl<$Res> extends _$TimeTickerEventCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TimeCopyWith<$Res> get time {
     return $TimeCopyWith<$Res>(_value.time, (value) {
       return _then(_value.copyWith(time: value));
@@ -701,18 +704,18 @@ class _$_Ticked implements _Ticked {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Ticked &&
-            const DeepCollectionEquality().equals(other.time, time));
+            other is _$_Ticked &&
+            (identical(other.time, time) || other.time == time));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
+  int get hashCode => Object.hash(runtimeType, time);
 
   @JsonKey(ignore: true)
   @override
-  _$TickedCopyWith<_Ticked> get copyWith =>
-      __$TickedCopyWithImpl<_Ticked>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_TickedCopyWith<_$_Ticked> get copyWith =>
+      __$$_TickedCopyWithImpl<_$_Ticked>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -729,11 +732,11 @@ class _$_Ticked implements _Ticked {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Time time)? started,
-    TResult Function()? paused,
-    TResult Function()? resumed,
-    TResult Function(Time time)? reset,
-    TResult Function(Time time)? ticked,
+    TResult? Function(Time time)? started,
+    TResult? Function()? paused,
+    TResult? Function()? resumed,
+    TResult? Function(Time time)? reset,
+    TResult? Function(Time time)? ticked,
   }) {
     return ticked?.call(time);
   }
@@ -769,11 +772,11 @@ class _$_Ticked implements _Ticked {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_Paused value)? paused,
-    TResult Function(_Resumed value)? resumed,
-    TResult Function(_Reset value)? reset,
-    TResult Function(_Ticked value)? ticked,
+    TResult? Function(_Started value)? started,
+    TResult? Function(_Paused value)? paused,
+    TResult? Function(_Resumed value)? resumed,
+    TResult? Function(_Reset value)? reset,
+    TResult? Function(_Ticked value)? ticked,
   }) {
     return ticked?.call(this);
   }
@@ -798,9 +801,10 @@ class _$_Ticked implements _Ticked {
 abstract class _Ticked implements TimeTickerEvent {
   const factory _Ticked({required final Time time}) = _$_Ticked;
 
-  Time get time => throw _privateConstructorUsedError;
+  Time get time;
   @JsonKey(ignore: true)
-  _$TickedCopyWith<_Ticked> get copyWith => throw _privateConstructorUsedError;
+  _$$_TickedCopyWith<_$_Ticked> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -816,10 +820,10 @@ mixin _$TimeTickerState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Time time)? initial,
-    TResult Function(Time time)? timeInPause,
-    TResult Function(Time time)? timeInProgress,
-    TResult Function(Time time)? timeCompleted,
+    TResult? Function(Time time)? initial,
+    TResult? Function(Time time)? timeInPause,
+    TResult? Function(Time time)? timeInProgress,
+    TResult? Function(Time time)? timeCompleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -841,10 +845,10 @@ mixin _$TimeTickerState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_TimeInPause value)? timeInPause,
-    TResult Function(_TimeInProgress value)? timeInProgress,
-    TResult Function(_TimeCompleted value)? timeCompleted,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_TimeInPause value)? timeInPause,
+    TResult? Function(_TimeInProgress value)? timeInProgress,
+    TResult? Function(_TimeCompleted value)? timeCompleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -866,47 +870,53 @@ mixin _$TimeTickerState {
 abstract class $TimeTickerStateCopyWith<$Res> {
   factory $TimeTickerStateCopyWith(
           TimeTickerState value, $Res Function(TimeTickerState) then) =
-      _$TimeTickerStateCopyWithImpl<$Res>;
+      _$TimeTickerStateCopyWithImpl<$Res, TimeTickerState>;
+  @useResult
   $Res call({Time time});
 
   $TimeCopyWith<$Res> get time;
 }
 
 /// @nodoc
-class _$TimeTickerStateCopyWithImpl<$Res>
+class _$TimeTickerStateCopyWithImpl<$Res, $Val extends TimeTickerState>
     implements $TimeTickerStateCopyWith<$Res> {
   _$TimeTickerStateCopyWithImpl(this._value, this._then);
 
-  final TimeTickerState _value;
   // ignore: unused_field
-  final $Res Function(TimeTickerState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? time = freezed,
+    Object? time = null,
   }) {
     return _then(_value.copyWith(
-      time: time == freezed
+      time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as Time,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TimeCopyWith<$Res> get time {
     return $TimeCopyWith<$Res>(_value.time, (value) {
-      return _then(_value.copyWith(time: value));
+      return _then(_value.copyWith(time: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res>
+abstract class _$$_InitialCopyWith<$Res>
     implements $TimeTickerStateCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Time time});
 
   @override
@@ -914,20 +924,19 @@ abstract class _$InitialCopyWith<$Res>
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$TimeTickerStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$TimeTickerStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 
-  @override
-  _Initial get _value => super._value as _Initial;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? time = freezed,
+    Object? time = null,
   }) {
-    return _then(_Initial(
-      time: time == freezed
+    return _then(_$_Initial(
+      time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as Time,
@@ -952,18 +961,18 @@ class _$_Initial implements _Initial {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Initial &&
-            const DeepCollectionEquality().equals(other.time, time));
+            other is _$_Initial &&
+            (identical(other.time, time) || other.time == time));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
+  int get hashCode => Object.hash(runtimeType, time);
 
   @JsonKey(ignore: true)
   @override
-  _$InitialCopyWith<_Initial> get copyWith =>
-      __$InitialCopyWithImpl<_Initial>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_InitialCopyWith<_$_Initial> get copyWith =>
+      __$$_InitialCopyWithImpl<_$_Initial>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -979,10 +988,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Time time)? initial,
-    TResult Function(Time time)? timeInPause,
-    TResult Function(Time time)? timeInProgress,
-    TResult Function(Time time)? timeCompleted,
+    TResult? Function(Time time)? initial,
+    TResult? Function(Time time)? timeInPause,
+    TResult? Function(Time time)? timeInProgress,
+    TResult? Function(Time time)? timeCompleted,
   }) {
     return initial?.call(time);
   }
@@ -1016,10 +1025,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_TimeInPause value)? timeInPause,
-    TResult Function(_TimeInProgress value)? timeInProgress,
-    TResult Function(_TimeCompleted value)? timeCompleted,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_TimeInPause value)? timeInPause,
+    TResult? Function(_TimeInProgress value)? timeInProgress,
+    TResult? Function(_TimeCompleted value)? timeCompleted,
   }) {
     return initial?.call(this);
   }
@@ -1044,20 +1053,21 @@ abstract class _Initial implements TimeTickerState {
   const factory _Initial({required final Time time}) = _$_Initial;
 
   @override
-  Time get time => throw _privateConstructorUsedError;
+  Time get time;
   @override
   @JsonKey(ignore: true)
-  _$InitialCopyWith<_Initial> get copyWith =>
+  _$$_InitialCopyWith<_$_Initial> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$TimeInPauseCopyWith<$Res>
+abstract class _$$_TimeInPauseCopyWith<$Res>
     implements $TimeTickerStateCopyWith<$Res> {
-  factory _$TimeInPauseCopyWith(
-          _TimeInPause value, $Res Function(_TimeInPause) then) =
-      __$TimeInPauseCopyWithImpl<$Res>;
+  factory _$$_TimeInPauseCopyWith(
+          _$_TimeInPause value, $Res Function(_$_TimeInPause) then) =
+      __$$_TimeInPauseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Time time});
 
   @override
@@ -1065,22 +1075,20 @@ abstract class _$TimeInPauseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TimeInPauseCopyWithImpl<$Res>
-    extends _$TimeTickerStateCopyWithImpl<$Res>
-    implements _$TimeInPauseCopyWith<$Res> {
-  __$TimeInPauseCopyWithImpl(
-      _TimeInPause _value, $Res Function(_TimeInPause) _then)
-      : super(_value, (v) => _then(v as _TimeInPause));
+class __$$_TimeInPauseCopyWithImpl<$Res>
+    extends _$TimeTickerStateCopyWithImpl<$Res, _$_TimeInPause>
+    implements _$$_TimeInPauseCopyWith<$Res> {
+  __$$_TimeInPauseCopyWithImpl(
+      _$_TimeInPause _value, $Res Function(_$_TimeInPause) _then)
+      : super(_value, _then);
 
-  @override
-  _TimeInPause get _value => super._value as _TimeInPause;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? time = freezed,
+    Object? time = null,
   }) {
-    return _then(_TimeInPause(
-      time: time == freezed
+    return _then(_$_TimeInPause(
+      time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as Time,
@@ -1105,18 +1113,18 @@ class _$_TimeInPause implements _TimeInPause {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TimeInPause &&
-            const DeepCollectionEquality().equals(other.time, time));
+            other is _$_TimeInPause &&
+            (identical(other.time, time) || other.time == time));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
+  int get hashCode => Object.hash(runtimeType, time);
 
   @JsonKey(ignore: true)
   @override
-  _$TimeInPauseCopyWith<_TimeInPause> get copyWith =>
-      __$TimeInPauseCopyWithImpl<_TimeInPause>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_TimeInPauseCopyWith<_$_TimeInPause> get copyWith =>
+      __$$_TimeInPauseCopyWithImpl<_$_TimeInPause>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1132,10 +1140,10 @@ class _$_TimeInPause implements _TimeInPause {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Time time)? initial,
-    TResult Function(Time time)? timeInPause,
-    TResult Function(Time time)? timeInProgress,
-    TResult Function(Time time)? timeCompleted,
+    TResult? Function(Time time)? initial,
+    TResult? Function(Time time)? timeInPause,
+    TResult? Function(Time time)? timeInProgress,
+    TResult? Function(Time time)? timeCompleted,
   }) {
     return timeInPause?.call(time);
   }
@@ -1169,10 +1177,10 @@ class _$_TimeInPause implements _TimeInPause {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_TimeInPause value)? timeInPause,
-    TResult Function(_TimeInProgress value)? timeInProgress,
-    TResult Function(_TimeCompleted value)? timeCompleted,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_TimeInPause value)? timeInPause,
+    TResult? Function(_TimeInProgress value)? timeInProgress,
+    TResult? Function(_TimeCompleted value)? timeCompleted,
   }) {
     return timeInPause?.call(this);
   }
@@ -1197,20 +1205,21 @@ abstract class _TimeInPause implements TimeTickerState {
   const factory _TimeInPause({required final Time time}) = _$_TimeInPause;
 
   @override
-  Time get time => throw _privateConstructorUsedError;
+  Time get time;
   @override
   @JsonKey(ignore: true)
-  _$TimeInPauseCopyWith<_TimeInPause> get copyWith =>
+  _$$_TimeInPauseCopyWith<_$_TimeInPause> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$TimeInProgressCopyWith<$Res>
+abstract class _$$_TimeInProgressCopyWith<$Res>
     implements $TimeTickerStateCopyWith<$Res> {
-  factory _$TimeInProgressCopyWith(
-          _TimeInProgress value, $Res Function(_TimeInProgress) then) =
-      __$TimeInProgressCopyWithImpl<$Res>;
+  factory _$$_TimeInProgressCopyWith(
+          _$_TimeInProgress value, $Res Function(_$_TimeInProgress) then) =
+      __$$_TimeInProgressCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Time time});
 
   @override
@@ -1218,22 +1227,20 @@ abstract class _$TimeInProgressCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TimeInProgressCopyWithImpl<$Res>
-    extends _$TimeTickerStateCopyWithImpl<$Res>
-    implements _$TimeInProgressCopyWith<$Res> {
-  __$TimeInProgressCopyWithImpl(
-      _TimeInProgress _value, $Res Function(_TimeInProgress) _then)
-      : super(_value, (v) => _then(v as _TimeInProgress));
+class __$$_TimeInProgressCopyWithImpl<$Res>
+    extends _$TimeTickerStateCopyWithImpl<$Res, _$_TimeInProgress>
+    implements _$$_TimeInProgressCopyWith<$Res> {
+  __$$_TimeInProgressCopyWithImpl(
+      _$_TimeInProgress _value, $Res Function(_$_TimeInProgress) _then)
+      : super(_value, _then);
 
-  @override
-  _TimeInProgress get _value => super._value as _TimeInProgress;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? time = freezed,
+    Object? time = null,
   }) {
-    return _then(_TimeInProgress(
-      time: time == freezed
+    return _then(_$_TimeInProgress(
+      time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as Time,
@@ -1258,18 +1265,18 @@ class _$_TimeInProgress implements _TimeInProgress {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TimeInProgress &&
-            const DeepCollectionEquality().equals(other.time, time));
+            other is _$_TimeInProgress &&
+            (identical(other.time, time) || other.time == time));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
+  int get hashCode => Object.hash(runtimeType, time);
 
   @JsonKey(ignore: true)
   @override
-  _$TimeInProgressCopyWith<_TimeInProgress> get copyWith =>
-      __$TimeInProgressCopyWithImpl<_TimeInProgress>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_TimeInProgressCopyWith<_$_TimeInProgress> get copyWith =>
+      __$$_TimeInProgressCopyWithImpl<_$_TimeInProgress>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1285,10 +1292,10 @@ class _$_TimeInProgress implements _TimeInProgress {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Time time)? initial,
-    TResult Function(Time time)? timeInPause,
-    TResult Function(Time time)? timeInProgress,
-    TResult Function(Time time)? timeCompleted,
+    TResult? Function(Time time)? initial,
+    TResult? Function(Time time)? timeInPause,
+    TResult? Function(Time time)? timeInProgress,
+    TResult? Function(Time time)? timeCompleted,
   }) {
     return timeInProgress?.call(time);
   }
@@ -1322,10 +1329,10 @@ class _$_TimeInProgress implements _TimeInProgress {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_TimeInPause value)? timeInPause,
-    TResult Function(_TimeInProgress value)? timeInProgress,
-    TResult Function(_TimeCompleted value)? timeCompleted,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_TimeInPause value)? timeInPause,
+    TResult? Function(_TimeInProgress value)? timeInProgress,
+    TResult? Function(_TimeCompleted value)? timeCompleted,
   }) {
     return timeInProgress?.call(this);
   }
@@ -1350,20 +1357,21 @@ abstract class _TimeInProgress implements TimeTickerState {
   const factory _TimeInProgress({required final Time time}) = _$_TimeInProgress;
 
   @override
-  Time get time => throw _privateConstructorUsedError;
+  Time get time;
   @override
   @JsonKey(ignore: true)
-  _$TimeInProgressCopyWith<_TimeInProgress> get copyWith =>
+  _$$_TimeInProgressCopyWith<_$_TimeInProgress> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$TimeCompletedCopyWith<$Res>
+abstract class _$$_TimeCompletedCopyWith<$Res>
     implements $TimeTickerStateCopyWith<$Res> {
-  factory _$TimeCompletedCopyWith(
-          _TimeCompleted value, $Res Function(_TimeCompleted) then) =
-      __$TimeCompletedCopyWithImpl<$Res>;
+  factory _$$_TimeCompletedCopyWith(
+          _$_TimeCompleted value, $Res Function(_$_TimeCompleted) then) =
+      __$$_TimeCompletedCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Time time});
 
   @override
@@ -1371,22 +1379,20 @@ abstract class _$TimeCompletedCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TimeCompletedCopyWithImpl<$Res>
-    extends _$TimeTickerStateCopyWithImpl<$Res>
-    implements _$TimeCompletedCopyWith<$Res> {
-  __$TimeCompletedCopyWithImpl(
-      _TimeCompleted _value, $Res Function(_TimeCompleted) _then)
-      : super(_value, (v) => _then(v as _TimeCompleted));
+class __$$_TimeCompletedCopyWithImpl<$Res>
+    extends _$TimeTickerStateCopyWithImpl<$Res, _$_TimeCompleted>
+    implements _$$_TimeCompletedCopyWith<$Res> {
+  __$$_TimeCompletedCopyWithImpl(
+      _$_TimeCompleted _value, $Res Function(_$_TimeCompleted) _then)
+      : super(_value, _then);
 
-  @override
-  _TimeCompleted get _value => super._value as _TimeCompleted;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? time = freezed,
+    Object? time = null,
   }) {
-    return _then(_TimeCompleted(
-      time: time == freezed
+    return _then(_$_TimeCompleted(
+      time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as Time,
@@ -1411,18 +1417,18 @@ class _$_TimeCompleted implements _TimeCompleted {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TimeCompleted &&
-            const DeepCollectionEquality().equals(other.time, time));
+            other is _$_TimeCompleted &&
+            (identical(other.time, time) || other.time == time));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
+  int get hashCode => Object.hash(runtimeType, time);
 
   @JsonKey(ignore: true)
   @override
-  _$TimeCompletedCopyWith<_TimeCompleted> get copyWith =>
-      __$TimeCompletedCopyWithImpl<_TimeCompleted>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_TimeCompletedCopyWith<_$_TimeCompleted> get copyWith =>
+      __$$_TimeCompletedCopyWithImpl<_$_TimeCompleted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1438,10 +1444,10 @@ class _$_TimeCompleted implements _TimeCompleted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Time time)? initial,
-    TResult Function(Time time)? timeInPause,
-    TResult Function(Time time)? timeInProgress,
-    TResult Function(Time time)? timeCompleted,
+    TResult? Function(Time time)? initial,
+    TResult? Function(Time time)? timeInPause,
+    TResult? Function(Time time)? timeInProgress,
+    TResult? Function(Time time)? timeCompleted,
   }) {
     return timeCompleted?.call(time);
   }
@@ -1475,10 +1481,10 @@ class _$_TimeCompleted implements _TimeCompleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_TimeInPause value)? timeInPause,
-    TResult Function(_TimeInProgress value)? timeInProgress,
-    TResult Function(_TimeCompleted value)? timeCompleted,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_TimeInPause value)? timeInPause,
+    TResult? Function(_TimeInProgress value)? timeInProgress,
+    TResult? Function(_TimeCompleted value)? timeCompleted,
   }) {
     return timeCompleted?.call(this);
   }
@@ -1503,9 +1509,9 @@ abstract class _TimeCompleted implements TimeTickerState {
   const factory _TimeCompleted({required final Time time}) = _$_TimeCompleted;
 
   @override
-  Time get time => throw _privateConstructorUsedError;
+  Time get time;
   @override
   @JsonKey(ignore: true)
-  _$TimeCompletedCopyWith<_TimeCompleted> get copyWith =>
+  _$$_TimeCompletedCopyWith<_$_TimeCompleted> get copyWith =>
       throw _privateConstructorUsedError;
 }

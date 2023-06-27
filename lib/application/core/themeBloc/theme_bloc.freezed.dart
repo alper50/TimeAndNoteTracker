@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'theme_bloc.dart';
 
@@ -28,12 +28,12 @@ mixin _$ThemeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchThemeModeStarted,
-    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
-    TResult Function()? setDarModeOn,
-    TResult Function()? setLightModeOn,
-    TResult Function()? setToSystemMode,
-    TResult Function()? initializeThemeMode,
+    TResult? Function()? watchThemeModeStarted,
+    TResult? Function(ThemeMode themeMode)? watchThemeModeReceived,
+    TResult? Function()? setDarModeOn,
+    TResult? Function()? setLightModeOn,
+    TResult? Function()? setToSystemMode,
+    TResult? Function()? initializeThemeMode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,12 +61,12 @@ mixin _$ThemeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_WatchThemeModeStarted value)? watchThemeModeStarted,
-    TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
-    TResult Function(_SetDarModeOn value)? setDarModeOn,
-    TResult Function(_SetLightModeOn value)? setLightModeOn,
-    TResult Function(_SetToSystemMode value)? setToSystemMode,
-    TResult Function(_InitializeThemeMode value)? initializeThemeMode,
+    TResult? Function(_WatchThemeModeStarted value)? watchThemeModeStarted,
+    TResult? Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
+    TResult? Function(_SetDarModeOn value)? setDarModeOn,
+    TResult? Function(_SetLightModeOn value)? setLightModeOn,
+    TResult? Function(_SetToSystemMode value)? setToSystemMode,
+    TResult? Function(_InitializeThemeMode value)? initializeThemeMode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -86,35 +86,34 @@ mixin _$ThemeEvent {
 abstract class $ThemeEventCopyWith<$Res> {
   factory $ThemeEventCopyWith(
           ThemeEvent value, $Res Function(ThemeEvent) then) =
-      _$ThemeEventCopyWithImpl<$Res>;
+      _$ThemeEventCopyWithImpl<$Res, ThemeEvent>;
 }
 
 /// @nodoc
-class _$ThemeEventCopyWithImpl<$Res> implements $ThemeEventCopyWith<$Res> {
+class _$ThemeEventCopyWithImpl<$Res, $Val extends ThemeEvent>
+    implements $ThemeEventCopyWith<$Res> {
   _$ThemeEventCopyWithImpl(this._value, this._then);
 
-  final ThemeEvent _value;
   // ignore: unused_field
-  final $Res Function(ThemeEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$WatchThemeModeStartedCopyWith<$Res> {
-  factory _$WatchThemeModeStartedCopyWith(_WatchThemeModeStarted value,
-          $Res Function(_WatchThemeModeStarted) then) =
-      __$WatchThemeModeStartedCopyWithImpl<$Res>;
+abstract class _$$_WatchThemeModeStartedCopyWith<$Res> {
+  factory _$$_WatchThemeModeStartedCopyWith(_$_WatchThemeModeStarted value,
+          $Res Function(_$_WatchThemeModeStarted) then) =
+      __$$_WatchThemeModeStartedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$WatchThemeModeStartedCopyWithImpl<$Res>
-    extends _$ThemeEventCopyWithImpl<$Res>
-    implements _$WatchThemeModeStartedCopyWith<$Res> {
-  __$WatchThemeModeStartedCopyWithImpl(_WatchThemeModeStarted _value,
-      $Res Function(_WatchThemeModeStarted) _then)
-      : super(_value, (v) => _then(v as _WatchThemeModeStarted));
-
-  @override
-  _WatchThemeModeStarted get _value => super._value as _WatchThemeModeStarted;
+class __$$_WatchThemeModeStartedCopyWithImpl<$Res>
+    extends _$ThemeEventCopyWithImpl<$Res, _$_WatchThemeModeStarted>
+    implements _$$_WatchThemeModeStartedCopyWith<$Res> {
+  __$$_WatchThemeModeStartedCopyWithImpl(_$_WatchThemeModeStarted _value,
+      $Res Function(_$_WatchThemeModeStarted) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -130,7 +129,7 @@ class _$_WatchThemeModeStarted implements _WatchThemeModeStarted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _WatchThemeModeStarted);
+        (other.runtimeType == runtimeType && other is _$_WatchThemeModeStarted);
   }
 
   @override
@@ -152,12 +151,12 @@ class _$_WatchThemeModeStarted implements _WatchThemeModeStarted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchThemeModeStarted,
-    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
-    TResult Function()? setDarModeOn,
-    TResult Function()? setLightModeOn,
-    TResult Function()? setToSystemMode,
-    TResult Function()? initializeThemeMode,
+    TResult? Function()? watchThemeModeStarted,
+    TResult? Function(ThemeMode themeMode)? watchThemeModeReceived,
+    TResult? Function()? setDarModeOn,
+    TResult? Function()? setLightModeOn,
+    TResult? Function()? setToSystemMode,
+    TResult? Function()? initializeThemeMode,
   }) {
     return watchThemeModeStarted?.call();
   }
@@ -197,12 +196,12 @@ class _$_WatchThemeModeStarted implements _WatchThemeModeStarted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_WatchThemeModeStarted value)? watchThemeModeStarted,
-    TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
-    TResult Function(_SetDarModeOn value)? setDarModeOn,
-    TResult Function(_SetLightModeOn value)? setLightModeOn,
-    TResult Function(_SetToSystemMode value)? setToSystemMode,
-    TResult Function(_InitializeThemeMode value)? initializeThemeMode,
+    TResult? Function(_WatchThemeModeStarted value)? watchThemeModeStarted,
+    TResult? Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
+    TResult? Function(_SetDarModeOn value)? setDarModeOn,
+    TResult? Function(_SetLightModeOn value)? setLightModeOn,
+    TResult? Function(_SetToSystemMode value)? setToSystemMode,
+    TResult? Function(_InitializeThemeMode value)? initializeThemeMode,
   }) {
     return watchThemeModeStarted?.call(this);
   }
@@ -230,30 +229,29 @@ abstract class _WatchThemeModeStarted implements ThemeEvent {
 }
 
 /// @nodoc
-abstract class _$WatchThemeModeReceivedCopyWith<$Res> {
-  factory _$WatchThemeModeReceivedCopyWith(_WatchThemeModeReceived value,
-          $Res Function(_WatchThemeModeReceived) then) =
-      __$WatchThemeModeReceivedCopyWithImpl<$Res>;
+abstract class _$$_WatchThemeModeReceivedCopyWith<$Res> {
+  factory _$$_WatchThemeModeReceivedCopyWith(_$_WatchThemeModeReceived value,
+          $Res Function(_$_WatchThemeModeReceived) then) =
+      __$$_WatchThemeModeReceivedCopyWithImpl<$Res>;
+  @useResult
   $Res call({ThemeMode themeMode});
 }
 
 /// @nodoc
-class __$WatchThemeModeReceivedCopyWithImpl<$Res>
-    extends _$ThemeEventCopyWithImpl<$Res>
-    implements _$WatchThemeModeReceivedCopyWith<$Res> {
-  __$WatchThemeModeReceivedCopyWithImpl(_WatchThemeModeReceived _value,
-      $Res Function(_WatchThemeModeReceived) _then)
-      : super(_value, (v) => _then(v as _WatchThemeModeReceived));
+class __$$_WatchThemeModeReceivedCopyWithImpl<$Res>
+    extends _$ThemeEventCopyWithImpl<$Res, _$_WatchThemeModeReceived>
+    implements _$$_WatchThemeModeReceivedCopyWith<$Res> {
+  __$$_WatchThemeModeReceivedCopyWithImpl(_$_WatchThemeModeReceived _value,
+      $Res Function(_$_WatchThemeModeReceived) _then)
+      : super(_value, _then);
 
-  @override
-  _WatchThemeModeReceived get _value => super._value as _WatchThemeModeReceived;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? themeMode = freezed,
+    Object? themeMode = null,
   }) {
-    return _then(_WatchThemeModeReceived(
-      themeMode: themeMode == freezed
+    return _then(_$_WatchThemeModeReceived(
+      themeMode: null == themeMode
           ? _value.themeMode
           : themeMode // ignore: cast_nullable_to_non_nullable
               as ThemeMode,
@@ -278,18 +276,19 @@ class _$_WatchThemeModeReceived implements _WatchThemeModeReceived {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _WatchThemeModeReceived &&
-            const DeepCollectionEquality().equals(other.themeMode, themeMode));
+            other is _$_WatchThemeModeReceived &&
+            (identical(other.themeMode, themeMode) ||
+                other.themeMode == themeMode));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(themeMode));
+  int get hashCode => Object.hash(runtimeType, themeMode);
 
   @JsonKey(ignore: true)
   @override
-  _$WatchThemeModeReceivedCopyWith<_WatchThemeModeReceived> get copyWith =>
-      __$WatchThemeModeReceivedCopyWithImpl<_WatchThemeModeReceived>(
+  @pragma('vm:prefer-inline')
+  _$$_WatchThemeModeReceivedCopyWith<_$_WatchThemeModeReceived> get copyWith =>
+      __$$_WatchThemeModeReceivedCopyWithImpl<_$_WatchThemeModeReceived>(
           this, _$identity);
 
   @override
@@ -308,12 +307,12 @@ class _$_WatchThemeModeReceived implements _WatchThemeModeReceived {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchThemeModeStarted,
-    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
-    TResult Function()? setDarModeOn,
-    TResult Function()? setLightModeOn,
-    TResult Function()? setToSystemMode,
-    TResult Function()? initializeThemeMode,
+    TResult? Function()? watchThemeModeStarted,
+    TResult? Function(ThemeMode themeMode)? watchThemeModeReceived,
+    TResult? Function()? setDarModeOn,
+    TResult? Function()? setLightModeOn,
+    TResult? Function()? setToSystemMode,
+    TResult? Function()? initializeThemeMode,
   }) {
     return watchThemeModeReceived?.call(themeMode);
   }
@@ -353,12 +352,12 @@ class _$_WatchThemeModeReceived implements _WatchThemeModeReceived {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_WatchThemeModeStarted value)? watchThemeModeStarted,
-    TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
-    TResult Function(_SetDarModeOn value)? setDarModeOn,
-    TResult Function(_SetLightModeOn value)? setLightModeOn,
-    TResult Function(_SetToSystemMode value)? setToSystemMode,
-    TResult Function(_InitializeThemeMode value)? initializeThemeMode,
+    TResult? Function(_WatchThemeModeStarted value)? watchThemeModeStarted,
+    TResult? Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
+    TResult? Function(_SetDarModeOn value)? setDarModeOn,
+    TResult? Function(_SetLightModeOn value)? setLightModeOn,
+    TResult? Function(_SetToSystemMode value)? setToSystemMode,
+    TResult? Function(_InitializeThemeMode value)? initializeThemeMode,
   }) {
     return watchThemeModeReceived?.call(this);
   }
@@ -385,28 +384,26 @@ abstract class _WatchThemeModeReceived implements ThemeEvent {
   const factory _WatchThemeModeReceived({required final ThemeMode themeMode}) =
       _$_WatchThemeModeReceived;
 
-  ThemeMode get themeMode => throw _privateConstructorUsedError;
+  ThemeMode get themeMode;
   @JsonKey(ignore: true)
-  _$WatchThemeModeReceivedCopyWith<_WatchThemeModeReceived> get copyWith =>
+  _$$_WatchThemeModeReceivedCopyWith<_$_WatchThemeModeReceived> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SetDarModeOnCopyWith<$Res> {
-  factory _$SetDarModeOnCopyWith(
-          _SetDarModeOn value, $Res Function(_SetDarModeOn) then) =
-      __$SetDarModeOnCopyWithImpl<$Res>;
+abstract class _$$_SetDarModeOnCopyWith<$Res> {
+  factory _$$_SetDarModeOnCopyWith(
+          _$_SetDarModeOn value, $Res Function(_$_SetDarModeOn) then) =
+      __$$_SetDarModeOnCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SetDarModeOnCopyWithImpl<$Res> extends _$ThemeEventCopyWithImpl<$Res>
-    implements _$SetDarModeOnCopyWith<$Res> {
-  __$SetDarModeOnCopyWithImpl(
-      _SetDarModeOn _value, $Res Function(_SetDarModeOn) _then)
-      : super(_value, (v) => _then(v as _SetDarModeOn));
-
-  @override
-  _SetDarModeOn get _value => super._value as _SetDarModeOn;
+class __$$_SetDarModeOnCopyWithImpl<$Res>
+    extends _$ThemeEventCopyWithImpl<$Res, _$_SetDarModeOn>
+    implements _$$_SetDarModeOnCopyWith<$Res> {
+  __$$_SetDarModeOnCopyWithImpl(
+      _$_SetDarModeOn _value, $Res Function(_$_SetDarModeOn) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -422,7 +419,7 @@ class _$_SetDarModeOn implements _SetDarModeOn {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SetDarModeOn);
+        (other.runtimeType == runtimeType && other is _$_SetDarModeOn);
   }
 
   @override
@@ -444,12 +441,12 @@ class _$_SetDarModeOn implements _SetDarModeOn {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchThemeModeStarted,
-    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
-    TResult Function()? setDarModeOn,
-    TResult Function()? setLightModeOn,
-    TResult Function()? setToSystemMode,
-    TResult Function()? initializeThemeMode,
+    TResult? Function()? watchThemeModeStarted,
+    TResult? Function(ThemeMode themeMode)? watchThemeModeReceived,
+    TResult? Function()? setDarModeOn,
+    TResult? Function()? setLightModeOn,
+    TResult? Function()? setToSystemMode,
+    TResult? Function()? initializeThemeMode,
   }) {
     return setDarModeOn?.call();
   }
@@ -489,12 +486,12 @@ class _$_SetDarModeOn implements _SetDarModeOn {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_WatchThemeModeStarted value)? watchThemeModeStarted,
-    TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
-    TResult Function(_SetDarModeOn value)? setDarModeOn,
-    TResult Function(_SetLightModeOn value)? setLightModeOn,
-    TResult Function(_SetToSystemMode value)? setToSystemMode,
-    TResult Function(_InitializeThemeMode value)? initializeThemeMode,
+    TResult? Function(_WatchThemeModeStarted value)? watchThemeModeStarted,
+    TResult? Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
+    TResult? Function(_SetDarModeOn value)? setDarModeOn,
+    TResult? Function(_SetLightModeOn value)? setLightModeOn,
+    TResult? Function(_SetToSystemMode value)? setToSystemMode,
+    TResult? Function(_InitializeThemeMode value)? initializeThemeMode,
   }) {
     return setDarModeOn?.call(this);
   }
@@ -522,21 +519,19 @@ abstract class _SetDarModeOn implements ThemeEvent {
 }
 
 /// @nodoc
-abstract class _$SetLightModeOnCopyWith<$Res> {
-  factory _$SetLightModeOnCopyWith(
-          _SetLightModeOn value, $Res Function(_SetLightModeOn) then) =
-      __$SetLightModeOnCopyWithImpl<$Res>;
+abstract class _$$_SetLightModeOnCopyWith<$Res> {
+  factory _$$_SetLightModeOnCopyWith(
+          _$_SetLightModeOn value, $Res Function(_$_SetLightModeOn) then) =
+      __$$_SetLightModeOnCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SetLightModeOnCopyWithImpl<$Res> extends _$ThemeEventCopyWithImpl<$Res>
-    implements _$SetLightModeOnCopyWith<$Res> {
-  __$SetLightModeOnCopyWithImpl(
-      _SetLightModeOn _value, $Res Function(_SetLightModeOn) _then)
-      : super(_value, (v) => _then(v as _SetLightModeOn));
-
-  @override
-  _SetLightModeOn get _value => super._value as _SetLightModeOn;
+class __$$_SetLightModeOnCopyWithImpl<$Res>
+    extends _$ThemeEventCopyWithImpl<$Res, _$_SetLightModeOn>
+    implements _$$_SetLightModeOnCopyWith<$Res> {
+  __$$_SetLightModeOnCopyWithImpl(
+      _$_SetLightModeOn _value, $Res Function(_$_SetLightModeOn) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -552,7 +547,7 @@ class _$_SetLightModeOn implements _SetLightModeOn {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SetLightModeOn);
+        (other.runtimeType == runtimeType && other is _$_SetLightModeOn);
   }
 
   @override
@@ -574,12 +569,12 @@ class _$_SetLightModeOn implements _SetLightModeOn {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchThemeModeStarted,
-    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
-    TResult Function()? setDarModeOn,
-    TResult Function()? setLightModeOn,
-    TResult Function()? setToSystemMode,
-    TResult Function()? initializeThemeMode,
+    TResult? Function()? watchThemeModeStarted,
+    TResult? Function(ThemeMode themeMode)? watchThemeModeReceived,
+    TResult? Function()? setDarModeOn,
+    TResult? Function()? setLightModeOn,
+    TResult? Function()? setToSystemMode,
+    TResult? Function()? initializeThemeMode,
   }) {
     return setLightModeOn?.call();
   }
@@ -619,12 +614,12 @@ class _$_SetLightModeOn implements _SetLightModeOn {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_WatchThemeModeStarted value)? watchThemeModeStarted,
-    TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
-    TResult Function(_SetDarModeOn value)? setDarModeOn,
-    TResult Function(_SetLightModeOn value)? setLightModeOn,
-    TResult Function(_SetToSystemMode value)? setToSystemMode,
-    TResult Function(_InitializeThemeMode value)? initializeThemeMode,
+    TResult? Function(_WatchThemeModeStarted value)? watchThemeModeStarted,
+    TResult? Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
+    TResult? Function(_SetDarModeOn value)? setDarModeOn,
+    TResult? Function(_SetLightModeOn value)? setLightModeOn,
+    TResult? Function(_SetToSystemMode value)? setToSystemMode,
+    TResult? Function(_InitializeThemeMode value)? initializeThemeMode,
   }) {
     return setLightModeOn?.call(this);
   }
@@ -652,22 +647,19 @@ abstract class _SetLightModeOn implements ThemeEvent {
 }
 
 /// @nodoc
-abstract class _$SetToSystemModeCopyWith<$Res> {
-  factory _$SetToSystemModeCopyWith(
-          _SetToSystemMode value, $Res Function(_SetToSystemMode) then) =
-      __$SetToSystemModeCopyWithImpl<$Res>;
+abstract class _$$_SetToSystemModeCopyWith<$Res> {
+  factory _$$_SetToSystemModeCopyWith(
+          _$_SetToSystemMode value, $Res Function(_$_SetToSystemMode) then) =
+      __$$_SetToSystemModeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SetToSystemModeCopyWithImpl<$Res>
-    extends _$ThemeEventCopyWithImpl<$Res>
-    implements _$SetToSystemModeCopyWith<$Res> {
-  __$SetToSystemModeCopyWithImpl(
-      _SetToSystemMode _value, $Res Function(_SetToSystemMode) _then)
-      : super(_value, (v) => _then(v as _SetToSystemMode));
-
-  @override
-  _SetToSystemMode get _value => super._value as _SetToSystemMode;
+class __$$_SetToSystemModeCopyWithImpl<$Res>
+    extends _$ThemeEventCopyWithImpl<$Res, _$_SetToSystemMode>
+    implements _$$_SetToSystemModeCopyWith<$Res> {
+  __$$_SetToSystemModeCopyWithImpl(
+      _$_SetToSystemMode _value, $Res Function(_$_SetToSystemMode) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -683,7 +675,7 @@ class _$_SetToSystemMode implements _SetToSystemMode {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SetToSystemMode);
+        (other.runtimeType == runtimeType && other is _$_SetToSystemMode);
   }
 
   @override
@@ -705,12 +697,12 @@ class _$_SetToSystemMode implements _SetToSystemMode {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchThemeModeStarted,
-    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
-    TResult Function()? setDarModeOn,
-    TResult Function()? setLightModeOn,
-    TResult Function()? setToSystemMode,
-    TResult Function()? initializeThemeMode,
+    TResult? Function()? watchThemeModeStarted,
+    TResult? Function(ThemeMode themeMode)? watchThemeModeReceived,
+    TResult? Function()? setDarModeOn,
+    TResult? Function()? setLightModeOn,
+    TResult? Function()? setToSystemMode,
+    TResult? Function()? initializeThemeMode,
   }) {
     return setToSystemMode?.call();
   }
@@ -750,12 +742,12 @@ class _$_SetToSystemMode implements _SetToSystemMode {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_WatchThemeModeStarted value)? watchThemeModeStarted,
-    TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
-    TResult Function(_SetDarModeOn value)? setDarModeOn,
-    TResult Function(_SetLightModeOn value)? setLightModeOn,
-    TResult Function(_SetToSystemMode value)? setToSystemMode,
-    TResult Function(_InitializeThemeMode value)? initializeThemeMode,
+    TResult? Function(_WatchThemeModeStarted value)? watchThemeModeStarted,
+    TResult? Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
+    TResult? Function(_SetDarModeOn value)? setDarModeOn,
+    TResult? Function(_SetLightModeOn value)? setLightModeOn,
+    TResult? Function(_SetToSystemMode value)? setToSystemMode,
+    TResult? Function(_InitializeThemeMode value)? initializeThemeMode,
   }) {
     return setToSystemMode?.call(this);
   }
@@ -783,22 +775,19 @@ abstract class _SetToSystemMode implements ThemeEvent {
 }
 
 /// @nodoc
-abstract class _$InitializeThemeModeCopyWith<$Res> {
-  factory _$InitializeThemeModeCopyWith(_InitializeThemeMode value,
-          $Res Function(_InitializeThemeMode) then) =
-      __$InitializeThemeModeCopyWithImpl<$Res>;
+abstract class _$$_InitializeThemeModeCopyWith<$Res> {
+  factory _$$_InitializeThemeModeCopyWith(_$_InitializeThemeMode value,
+          $Res Function(_$_InitializeThemeMode) then) =
+      __$$_InitializeThemeModeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitializeThemeModeCopyWithImpl<$Res>
-    extends _$ThemeEventCopyWithImpl<$Res>
-    implements _$InitializeThemeModeCopyWith<$Res> {
-  __$InitializeThemeModeCopyWithImpl(
-      _InitializeThemeMode _value, $Res Function(_InitializeThemeMode) _then)
-      : super(_value, (v) => _then(v as _InitializeThemeMode));
-
-  @override
-  _InitializeThemeMode get _value => super._value as _InitializeThemeMode;
+class __$$_InitializeThemeModeCopyWithImpl<$Res>
+    extends _$ThemeEventCopyWithImpl<$Res, _$_InitializeThemeMode>
+    implements _$$_InitializeThemeModeCopyWith<$Res> {
+  __$$_InitializeThemeModeCopyWithImpl(_$_InitializeThemeMode _value,
+      $Res Function(_$_InitializeThemeMode) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -814,7 +803,7 @@ class _$_InitializeThemeMode implements _InitializeThemeMode {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _InitializeThemeMode);
+        (other.runtimeType == runtimeType && other is _$_InitializeThemeMode);
   }
 
   @override
@@ -836,12 +825,12 @@ class _$_InitializeThemeMode implements _InitializeThemeMode {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchThemeModeStarted,
-    TResult Function(ThemeMode themeMode)? watchThemeModeReceived,
-    TResult Function()? setDarModeOn,
-    TResult Function()? setLightModeOn,
-    TResult Function()? setToSystemMode,
-    TResult Function()? initializeThemeMode,
+    TResult? Function()? watchThemeModeStarted,
+    TResult? Function(ThemeMode themeMode)? watchThemeModeReceived,
+    TResult? Function()? setDarModeOn,
+    TResult? Function()? setLightModeOn,
+    TResult? Function()? setToSystemMode,
+    TResult? Function()? initializeThemeMode,
   }) {
     return initializeThemeMode?.call();
   }
@@ -881,12 +870,12 @@ class _$_InitializeThemeMode implements _InitializeThemeMode {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_WatchThemeModeStarted value)? watchThemeModeStarted,
-    TResult Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
-    TResult Function(_SetDarModeOn value)? setDarModeOn,
-    TResult Function(_SetLightModeOn value)? setLightModeOn,
-    TResult Function(_SetToSystemMode value)? setToSystemMode,
-    TResult Function(_InitializeThemeMode value)? initializeThemeMode,
+    TResult? Function(_WatchThemeModeStarted value)? watchThemeModeStarted,
+    TResult? Function(_WatchThemeModeReceived value)? watchThemeModeReceived,
+    TResult? Function(_SetDarModeOn value)? setDarModeOn,
+    TResult? Function(_SetLightModeOn value)? setLightModeOn,
+    TResult? Function(_SetToSystemMode value)? setToSystemMode,
+    TResult? Function(_InitializeThemeMode value)? initializeThemeMode,
   }) {
     return initializeThemeMode?.call(this);
   }
@@ -926,56 +915,61 @@ mixin _$ThemeState {
 abstract class $ThemeStateCopyWith<$Res> {
   factory $ThemeStateCopyWith(
           ThemeState value, $Res Function(ThemeState) then) =
-      _$ThemeStateCopyWithImpl<$Res>;
+      _$ThemeStateCopyWithImpl<$Res, ThemeState>;
+  @useResult
   $Res call({ThemeMode themeMode});
 }
 
 /// @nodoc
-class _$ThemeStateCopyWithImpl<$Res> implements $ThemeStateCopyWith<$Res> {
+class _$ThemeStateCopyWithImpl<$Res, $Val extends ThemeState>
+    implements $ThemeStateCopyWith<$Res> {
   _$ThemeStateCopyWithImpl(this._value, this._then);
 
-  final ThemeState _value;
   // ignore: unused_field
-  final $Res Function(ThemeState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? themeMode = freezed,
+    Object? themeMode = null,
   }) {
     return _then(_value.copyWith(
-      themeMode: themeMode == freezed
+      themeMode: null == themeMode
           ? _value.themeMode
           : themeMode // ignore: cast_nullable_to_non_nullable
               as ThemeMode,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$ThemeStateCopyWith<$Res> implements $ThemeStateCopyWith<$Res> {
-  factory _$ThemeStateCopyWith(
-          _ThemeState value, $Res Function(_ThemeState) then) =
-      __$ThemeStateCopyWithImpl<$Res>;
+abstract class _$$_ThemeStateCopyWith<$Res>
+    implements $ThemeStateCopyWith<$Res> {
+  factory _$$_ThemeStateCopyWith(
+          _$_ThemeState value, $Res Function(_$_ThemeState) then) =
+      __$$_ThemeStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({ThemeMode themeMode});
 }
 
 /// @nodoc
-class __$ThemeStateCopyWithImpl<$Res> extends _$ThemeStateCopyWithImpl<$Res>
-    implements _$ThemeStateCopyWith<$Res> {
-  __$ThemeStateCopyWithImpl(
-      _ThemeState _value, $Res Function(_ThemeState) _then)
-      : super(_value, (v) => _then(v as _ThemeState));
+class __$$_ThemeStateCopyWithImpl<$Res>
+    extends _$ThemeStateCopyWithImpl<$Res, _$_ThemeState>
+    implements _$$_ThemeStateCopyWith<$Res> {
+  __$$_ThemeStateCopyWithImpl(
+      _$_ThemeState _value, $Res Function(_$_ThemeState) _then)
+      : super(_value, _then);
 
-  @override
-  _ThemeState get _value => super._value as _ThemeState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? themeMode = freezed,
+    Object? themeMode = null,
   }) {
-    return _then(_ThemeState(
-      themeMode: themeMode == freezed
+    return _then(_$_ThemeState(
+      themeMode: null == themeMode
           ? _value.themeMode
           : themeMode // ignore: cast_nullable_to_non_nullable
               as ThemeMode,
@@ -1000,18 +994,19 @@ class _$_ThemeState implements _ThemeState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ThemeState &&
-            const DeepCollectionEquality().equals(other.themeMode, themeMode));
+            other is _$_ThemeState &&
+            (identical(other.themeMode, themeMode) ||
+                other.themeMode == themeMode));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(themeMode));
+  int get hashCode => Object.hash(runtimeType, themeMode);
 
   @JsonKey(ignore: true)
   @override
-  _$ThemeStateCopyWith<_ThemeState> get copyWith =>
-      __$ThemeStateCopyWithImpl<_ThemeState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ThemeStateCopyWith<_$_ThemeState> get copyWith =>
+      __$$_ThemeStateCopyWithImpl<_$_ThemeState>(this, _$identity);
 }
 
 abstract class _ThemeState implements ThemeState {
@@ -1019,9 +1014,9 @@ abstract class _ThemeState implements ThemeState {
       _$_ThemeState;
 
   @override
-  ThemeMode get themeMode => throw _privateConstructorUsedError;
+  ThemeMode get themeMode;
   @override
   @JsonKey(ignore: true)
-  _$ThemeStateCopyWith<_ThemeState> get copyWith =>
+  _$$_ThemeStateCopyWith<_$_ThemeState> get copyWith =>
       throw _privateConstructorUsedError;
 }

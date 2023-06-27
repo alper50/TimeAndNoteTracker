@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'auth_bloc.dart';
 
@@ -27,11 +27,11 @@ mixin _$AuthEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? checkAuthentication,
-    TResult Function()? signOut,
-    TResult Function()? signOutWithDelete,
-    TResult Function()? checkEmailVerification,
-    TResult Function()? setOnboardInformation,
+    TResult? Function()? checkAuthentication,
+    TResult? Function()? signOut,
+    TResult? Function()? signOutWithDelete,
+    TResult? Function()? checkEmailVerification,
+    TResult? Function()? setOnboardInformation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,11 +57,11 @@ mixin _$AuthEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CheckAuthentication value)? checkAuthentication,
-    TResult Function(SignOut value)? signOut,
-    TResult Function(SignOutWithDelete value)? signOutWithDelete,
-    TResult Function(CheckEmailVerification value)? checkEmailVerification,
-    TResult Function(SetOnboardInformation value)? setOnboardInformation,
+    TResult? Function(CheckAuthentication value)? checkAuthentication,
+    TResult? Function(SignOut value)? signOut,
+    TResult? Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult? Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult? Function(SetOnboardInformation value)? setOnboardInformation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,35 +79,34 @@ mixin _$AuthEvent {
 /// @nodoc
 abstract class $AuthEventCopyWith<$Res> {
   factory $AuthEventCopyWith(AuthEvent value, $Res Function(AuthEvent) then) =
-      _$AuthEventCopyWithImpl<$Res>;
+      _$AuthEventCopyWithImpl<$Res, AuthEvent>;
 }
 
 /// @nodoc
-class _$AuthEventCopyWithImpl<$Res> implements $AuthEventCopyWith<$Res> {
+class _$AuthEventCopyWithImpl<$Res, $Val extends AuthEvent>
+    implements $AuthEventCopyWith<$Res> {
   _$AuthEventCopyWithImpl(this._value, this._then);
 
-  final AuthEvent _value;
   // ignore: unused_field
-  final $Res Function(AuthEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $CheckAuthenticationCopyWith<$Res> {
-  factory $CheckAuthenticationCopyWith(
-          CheckAuthentication value, $Res Function(CheckAuthentication) then) =
-      _$CheckAuthenticationCopyWithImpl<$Res>;
+abstract class _$$CheckAuthenticationCopyWith<$Res> {
+  factory _$$CheckAuthenticationCopyWith(_$CheckAuthentication value,
+          $Res Function(_$CheckAuthentication) then) =
+      __$$CheckAuthenticationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CheckAuthenticationCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res>
-    implements $CheckAuthenticationCopyWith<$Res> {
-  _$CheckAuthenticationCopyWithImpl(
-      CheckAuthentication _value, $Res Function(CheckAuthentication) _then)
-      : super(_value, (v) => _then(v as CheckAuthentication));
-
-  @override
-  CheckAuthentication get _value => super._value as CheckAuthentication;
+class __$$CheckAuthenticationCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$CheckAuthentication>
+    implements _$$CheckAuthenticationCopyWith<$Res> {
+  __$$CheckAuthenticationCopyWithImpl(
+      _$CheckAuthentication _value, $Res Function(_$CheckAuthentication) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -123,7 +122,7 @@ class _$CheckAuthentication implements CheckAuthentication {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is CheckAuthentication);
+        (other.runtimeType == runtimeType && other is _$CheckAuthentication);
   }
 
   @override
@@ -144,11 +143,11 @@ class _$CheckAuthentication implements CheckAuthentication {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? checkAuthentication,
-    TResult Function()? signOut,
-    TResult Function()? signOutWithDelete,
-    TResult Function()? checkEmailVerification,
-    TResult Function()? setOnboardInformation,
+    TResult? Function()? checkAuthentication,
+    TResult? Function()? signOut,
+    TResult? Function()? signOutWithDelete,
+    TResult? Function()? checkEmailVerification,
+    TResult? Function()? setOnboardInformation,
   }) {
     return checkAuthentication?.call();
   }
@@ -186,11 +185,11 @@ class _$CheckAuthentication implements CheckAuthentication {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CheckAuthentication value)? checkAuthentication,
-    TResult Function(SignOut value)? signOut,
-    TResult Function(SignOutWithDelete value)? signOutWithDelete,
-    TResult Function(CheckEmailVerification value)? checkEmailVerification,
-    TResult Function(SetOnboardInformation value)? setOnboardInformation,
+    TResult? Function(CheckAuthentication value)? checkAuthentication,
+    TResult? Function(SignOut value)? signOut,
+    TResult? Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult? Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult? Function(SetOnboardInformation value)? setOnboardInformation,
   }) {
     return checkAuthentication?.call(this);
   }
@@ -217,19 +216,17 @@ abstract class CheckAuthentication implements AuthEvent {
 }
 
 /// @nodoc
-abstract class $SignOutCopyWith<$Res> {
-  factory $SignOutCopyWith(SignOut value, $Res Function(SignOut) then) =
-      _$SignOutCopyWithImpl<$Res>;
+abstract class _$$SignOutCopyWith<$Res> {
+  factory _$$SignOutCopyWith(_$SignOut value, $Res Function(_$SignOut) then) =
+      __$$SignOutCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SignOutCopyWithImpl<$Res> extends _$AuthEventCopyWithImpl<$Res>
-    implements $SignOutCopyWith<$Res> {
-  _$SignOutCopyWithImpl(SignOut _value, $Res Function(SignOut) _then)
-      : super(_value, (v) => _then(v as SignOut));
-
-  @override
-  SignOut get _value => super._value as SignOut;
+class __$$SignOutCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$SignOut>
+    implements _$$SignOutCopyWith<$Res> {
+  __$$SignOutCopyWithImpl(_$SignOut _value, $Res Function(_$SignOut) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -245,7 +242,7 @@ class _$SignOut implements SignOut {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SignOut);
+        (other.runtimeType == runtimeType && other is _$SignOut);
   }
 
   @override
@@ -266,11 +263,11 @@ class _$SignOut implements SignOut {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? checkAuthentication,
-    TResult Function()? signOut,
-    TResult Function()? signOutWithDelete,
-    TResult Function()? checkEmailVerification,
-    TResult Function()? setOnboardInformation,
+    TResult? Function()? checkAuthentication,
+    TResult? Function()? signOut,
+    TResult? Function()? signOutWithDelete,
+    TResult? Function()? checkEmailVerification,
+    TResult? Function()? setOnboardInformation,
   }) {
     return signOut?.call();
   }
@@ -308,11 +305,11 @@ class _$SignOut implements SignOut {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CheckAuthentication value)? checkAuthentication,
-    TResult Function(SignOut value)? signOut,
-    TResult Function(SignOutWithDelete value)? signOutWithDelete,
-    TResult Function(CheckEmailVerification value)? checkEmailVerification,
-    TResult Function(SetOnboardInformation value)? setOnboardInformation,
+    TResult? Function(CheckAuthentication value)? checkAuthentication,
+    TResult? Function(SignOut value)? signOut,
+    TResult? Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult? Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult? Function(SetOnboardInformation value)? setOnboardInformation,
   }) {
     return signOut?.call(this);
   }
@@ -339,22 +336,19 @@ abstract class SignOut implements AuthEvent {
 }
 
 /// @nodoc
-abstract class $SignOutWithDeleteCopyWith<$Res> {
-  factory $SignOutWithDeleteCopyWith(
-          SignOutWithDelete value, $Res Function(SignOutWithDelete) then) =
-      _$SignOutWithDeleteCopyWithImpl<$Res>;
+abstract class _$$SignOutWithDeleteCopyWith<$Res> {
+  factory _$$SignOutWithDeleteCopyWith(
+          _$SignOutWithDelete value, $Res Function(_$SignOutWithDelete) then) =
+      __$$SignOutWithDeleteCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SignOutWithDeleteCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res>
-    implements $SignOutWithDeleteCopyWith<$Res> {
-  _$SignOutWithDeleteCopyWithImpl(
-      SignOutWithDelete _value, $Res Function(SignOutWithDelete) _then)
-      : super(_value, (v) => _then(v as SignOutWithDelete));
-
-  @override
-  SignOutWithDelete get _value => super._value as SignOutWithDelete;
+class __$$SignOutWithDeleteCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$SignOutWithDelete>
+    implements _$$SignOutWithDeleteCopyWith<$Res> {
+  __$$SignOutWithDeleteCopyWithImpl(
+      _$SignOutWithDelete _value, $Res Function(_$SignOutWithDelete) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -370,7 +364,7 @@ class _$SignOutWithDelete implements SignOutWithDelete {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SignOutWithDelete);
+        (other.runtimeType == runtimeType && other is _$SignOutWithDelete);
   }
 
   @override
@@ -391,11 +385,11 @@ class _$SignOutWithDelete implements SignOutWithDelete {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? checkAuthentication,
-    TResult Function()? signOut,
-    TResult Function()? signOutWithDelete,
-    TResult Function()? checkEmailVerification,
-    TResult Function()? setOnboardInformation,
+    TResult? Function()? checkAuthentication,
+    TResult? Function()? signOut,
+    TResult? Function()? signOutWithDelete,
+    TResult? Function()? checkEmailVerification,
+    TResult? Function()? setOnboardInformation,
   }) {
     return signOutWithDelete?.call();
   }
@@ -433,11 +427,11 @@ class _$SignOutWithDelete implements SignOutWithDelete {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CheckAuthentication value)? checkAuthentication,
-    TResult Function(SignOut value)? signOut,
-    TResult Function(SignOutWithDelete value)? signOutWithDelete,
-    TResult Function(CheckEmailVerification value)? checkEmailVerification,
-    TResult Function(SetOnboardInformation value)? setOnboardInformation,
+    TResult? Function(CheckAuthentication value)? checkAuthentication,
+    TResult? Function(SignOut value)? signOut,
+    TResult? Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult? Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult? Function(SetOnboardInformation value)? setOnboardInformation,
   }) {
     return signOutWithDelete?.call(this);
   }
@@ -464,22 +458,19 @@ abstract class SignOutWithDelete implements AuthEvent {
 }
 
 /// @nodoc
-abstract class $CheckEmailVerificationCopyWith<$Res> {
-  factory $CheckEmailVerificationCopyWith(CheckEmailVerification value,
-          $Res Function(CheckEmailVerification) then) =
-      _$CheckEmailVerificationCopyWithImpl<$Res>;
+abstract class _$$CheckEmailVerificationCopyWith<$Res> {
+  factory _$$CheckEmailVerificationCopyWith(_$CheckEmailVerification value,
+          $Res Function(_$CheckEmailVerification) then) =
+      __$$CheckEmailVerificationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CheckEmailVerificationCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res>
-    implements $CheckEmailVerificationCopyWith<$Res> {
-  _$CheckEmailVerificationCopyWithImpl(CheckEmailVerification _value,
-      $Res Function(CheckEmailVerification) _then)
-      : super(_value, (v) => _then(v as CheckEmailVerification));
-
-  @override
-  CheckEmailVerification get _value => super._value as CheckEmailVerification;
+class __$$CheckEmailVerificationCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$CheckEmailVerification>
+    implements _$$CheckEmailVerificationCopyWith<$Res> {
+  __$$CheckEmailVerificationCopyWithImpl(_$CheckEmailVerification _value,
+      $Res Function(_$CheckEmailVerification) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -495,7 +486,7 @@ class _$CheckEmailVerification implements CheckEmailVerification {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is CheckEmailVerification);
+        (other.runtimeType == runtimeType && other is _$CheckEmailVerification);
   }
 
   @override
@@ -516,11 +507,11 @@ class _$CheckEmailVerification implements CheckEmailVerification {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? checkAuthentication,
-    TResult Function()? signOut,
-    TResult Function()? signOutWithDelete,
-    TResult Function()? checkEmailVerification,
-    TResult Function()? setOnboardInformation,
+    TResult? Function()? checkAuthentication,
+    TResult? Function()? signOut,
+    TResult? Function()? signOutWithDelete,
+    TResult? Function()? checkEmailVerification,
+    TResult? Function()? setOnboardInformation,
   }) {
     return checkEmailVerification?.call();
   }
@@ -558,11 +549,11 @@ class _$CheckEmailVerification implements CheckEmailVerification {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CheckAuthentication value)? checkAuthentication,
-    TResult Function(SignOut value)? signOut,
-    TResult Function(SignOutWithDelete value)? signOutWithDelete,
-    TResult Function(CheckEmailVerification value)? checkEmailVerification,
-    TResult Function(SetOnboardInformation value)? setOnboardInformation,
+    TResult? Function(CheckAuthentication value)? checkAuthentication,
+    TResult? Function(SignOut value)? signOut,
+    TResult? Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult? Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult? Function(SetOnboardInformation value)? setOnboardInformation,
   }) {
     return checkEmailVerification?.call(this);
   }
@@ -589,22 +580,19 @@ abstract class CheckEmailVerification implements AuthEvent {
 }
 
 /// @nodoc
-abstract class $SetOnboardInformationCopyWith<$Res> {
-  factory $SetOnboardInformationCopyWith(SetOnboardInformation value,
-          $Res Function(SetOnboardInformation) then) =
-      _$SetOnboardInformationCopyWithImpl<$Res>;
+abstract class _$$SetOnboardInformationCopyWith<$Res> {
+  factory _$$SetOnboardInformationCopyWith(_$SetOnboardInformation value,
+          $Res Function(_$SetOnboardInformation) then) =
+      __$$SetOnboardInformationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SetOnboardInformationCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res>
-    implements $SetOnboardInformationCopyWith<$Res> {
-  _$SetOnboardInformationCopyWithImpl(
-      SetOnboardInformation _value, $Res Function(SetOnboardInformation) _then)
-      : super(_value, (v) => _then(v as SetOnboardInformation));
-
-  @override
-  SetOnboardInformation get _value => super._value as SetOnboardInformation;
+class __$$SetOnboardInformationCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$SetOnboardInformation>
+    implements _$$SetOnboardInformationCopyWith<$Res> {
+  __$$SetOnboardInformationCopyWithImpl(_$SetOnboardInformation _value,
+      $Res Function(_$SetOnboardInformation) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -620,7 +608,7 @@ class _$SetOnboardInformation implements SetOnboardInformation {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SetOnboardInformation);
+        (other.runtimeType == runtimeType && other is _$SetOnboardInformation);
   }
 
   @override
@@ -641,11 +629,11 @@ class _$SetOnboardInformation implements SetOnboardInformation {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? checkAuthentication,
-    TResult Function()? signOut,
-    TResult Function()? signOutWithDelete,
-    TResult Function()? checkEmailVerification,
-    TResult Function()? setOnboardInformation,
+    TResult? Function()? checkAuthentication,
+    TResult? Function()? signOut,
+    TResult? Function()? signOutWithDelete,
+    TResult? Function()? checkEmailVerification,
+    TResult? Function()? setOnboardInformation,
   }) {
     return setOnboardInformation?.call();
   }
@@ -683,11 +671,11 @@ class _$SetOnboardInformation implements SetOnboardInformation {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CheckAuthentication value)? checkAuthentication,
-    TResult Function(SignOut value)? signOut,
-    TResult Function(SignOutWithDelete value)? signOutWithDelete,
-    TResult Function(CheckEmailVerification value)? checkEmailVerification,
-    TResult Function(SetOnboardInformation value)? setOnboardInformation,
+    TResult? Function(CheckAuthentication value)? checkAuthentication,
+    TResult? Function(SignOut value)? signOut,
+    TResult? Function(SignOutWithDelete value)? signOutWithDelete,
+    TResult? Function(CheckEmailVerification value)? checkEmailVerification,
+    TResult? Function(SetOnboardInformation value)? setOnboardInformation,
   }) {
     return setOnboardInformation?.call(this);
   }
@@ -731,15 +719,15 @@ mixin _$AuthState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? emailNotVerified,
-    TResult Function()? unauthenticated,
-    TResult Function()? onboardNotShowed,
-    TResult Function(AuthFailure failure)? checkAuthenticationFailure,
-    TResult Function(AuthFailure? failure)? signOutFailure,
-    TResult Function(AuthFailure? failure)? signOutWithDeleteFailure,
-    TResult Function(AuthFailure? failure)? checkEmailVerificationFailure,
+    TResult? Function()? initial,
+    TResult? Function()? authenticated,
+    TResult? Function()? emailNotVerified,
+    TResult? Function()? unauthenticated,
+    TResult? Function()? onboardNotShowed,
+    TResult? Function(AuthFailure failure)? checkAuthenticationFailure,
+    TResult? Function(AuthFailure? failure)? signOutFailure,
+    TResult? Function(AuthFailure? failure)? signOutWithDeleteFailure,
+    TResult? Function(AuthFailure? failure)? checkEmailVerificationFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -774,16 +762,16 @@ mixin _$AuthState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthInitial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(EmailNotVerified value)? emailNotVerified,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(OnboardNotShowed value)? onboardNotShowed,
-    TResult Function(CheckAuthenticationFailure value)?
+    TResult? Function(AuthInitial value)? initial,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(EmailNotVerified value)? emailNotVerified,
+    TResult? Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(OnboardNotShowed value)? onboardNotShowed,
+    TResult? Function(CheckAuthenticationFailure value)?
         checkAuthenticationFailure,
-    TResult Function(SignOutFailure value)? signOutFailure,
-    TResult Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
-    TResult Function(CheckEmailVerificationFailure value)?
+    TResult? Function(SignOutFailure value)? signOutFailure,
+    TResult? Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
+    TResult? Function(CheckEmailVerificationFailure value)?
         checkEmailVerificationFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -808,34 +796,34 @@ mixin _$AuthState {
 /// @nodoc
 abstract class $AuthStateCopyWith<$Res> {
   factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) =
-      _$AuthStateCopyWithImpl<$Res>;
+      _$AuthStateCopyWithImpl<$Res, AuthState>;
 }
 
 /// @nodoc
-class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
+class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
+    implements $AuthStateCopyWith<$Res> {
   _$AuthStateCopyWithImpl(this._value, this._then);
 
-  final AuthState _value;
   // ignore: unused_field
-  final $Res Function(AuthState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $AuthInitialCopyWith<$Res> {
-  factory $AuthInitialCopyWith(
-          AuthInitial value, $Res Function(AuthInitial) then) =
-      _$AuthInitialCopyWithImpl<$Res>;
+abstract class _$$AuthInitialCopyWith<$Res> {
+  factory _$$AuthInitialCopyWith(
+          _$AuthInitial value, $Res Function(_$AuthInitial) then) =
+      __$$AuthInitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AuthInitialCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements $AuthInitialCopyWith<$Res> {
-  _$AuthInitialCopyWithImpl(
-      AuthInitial _value, $Res Function(AuthInitial) _then)
-      : super(_value, (v) => _then(v as AuthInitial));
-
-  @override
-  AuthInitial get _value => super._value as AuthInitial;
+class __$$AuthInitialCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$AuthInitial>
+    implements _$$AuthInitialCopyWith<$Res> {
+  __$$AuthInitialCopyWithImpl(
+      _$AuthInitial _value, $Res Function(_$AuthInitial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -851,7 +839,7 @@ class _$AuthInitial implements AuthInitial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is AuthInitial);
+        (other.runtimeType == runtimeType && other is _$AuthInitial);
   }
 
   @override
@@ -877,15 +865,15 @@ class _$AuthInitial implements AuthInitial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? emailNotVerified,
-    TResult Function()? unauthenticated,
-    TResult Function()? onboardNotShowed,
-    TResult Function(AuthFailure failure)? checkAuthenticationFailure,
-    TResult Function(AuthFailure? failure)? signOutFailure,
-    TResult Function(AuthFailure? failure)? signOutWithDeleteFailure,
-    TResult Function(AuthFailure? failure)? checkEmailVerificationFailure,
+    TResult? Function()? initial,
+    TResult? Function()? authenticated,
+    TResult? Function()? emailNotVerified,
+    TResult? Function()? unauthenticated,
+    TResult? Function()? onboardNotShowed,
+    TResult? Function(AuthFailure failure)? checkAuthenticationFailure,
+    TResult? Function(AuthFailure? failure)? signOutFailure,
+    TResult? Function(AuthFailure? failure)? signOutWithDeleteFailure,
+    TResult? Function(AuthFailure? failure)? checkEmailVerificationFailure,
   }) {
     return initial?.call();
   }
@@ -932,16 +920,16 @@ class _$AuthInitial implements AuthInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthInitial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(EmailNotVerified value)? emailNotVerified,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(OnboardNotShowed value)? onboardNotShowed,
-    TResult Function(CheckAuthenticationFailure value)?
+    TResult? Function(AuthInitial value)? initial,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(EmailNotVerified value)? emailNotVerified,
+    TResult? Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(OnboardNotShowed value)? onboardNotShowed,
+    TResult? Function(CheckAuthenticationFailure value)?
         checkAuthenticationFailure,
-    TResult Function(SignOutFailure value)? signOutFailure,
-    TResult Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
-    TResult Function(CheckEmailVerificationFailure value)?
+    TResult? Function(SignOutFailure value)? signOutFailure,
+    TResult? Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
+    TResult? Function(CheckEmailVerificationFailure value)?
         checkEmailVerificationFailure,
   }) {
     return initial?.call(this);
@@ -975,21 +963,19 @@ abstract class AuthInitial implements AuthState {
 }
 
 /// @nodoc
-abstract class $AuthenticatedCopyWith<$Res> {
-  factory $AuthenticatedCopyWith(
-          Authenticated value, $Res Function(Authenticated) then) =
-      _$AuthenticatedCopyWithImpl<$Res>;
+abstract class _$$AuthenticatedCopyWith<$Res> {
+  factory _$$AuthenticatedCopyWith(
+          _$Authenticated value, $Res Function(_$Authenticated) then) =
+      __$$AuthenticatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AuthenticatedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements $AuthenticatedCopyWith<$Res> {
-  _$AuthenticatedCopyWithImpl(
-      Authenticated _value, $Res Function(Authenticated) _then)
-      : super(_value, (v) => _then(v as Authenticated));
-
-  @override
-  Authenticated get _value => super._value as Authenticated;
+class __$$AuthenticatedCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$Authenticated>
+    implements _$$AuthenticatedCopyWith<$Res> {
+  __$$AuthenticatedCopyWithImpl(
+      _$Authenticated _value, $Res Function(_$Authenticated) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1005,7 +991,7 @@ class _$Authenticated implements Authenticated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Authenticated);
+        (other.runtimeType == runtimeType && other is _$Authenticated);
   }
 
   @override
@@ -1031,15 +1017,15 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? emailNotVerified,
-    TResult Function()? unauthenticated,
-    TResult Function()? onboardNotShowed,
-    TResult Function(AuthFailure failure)? checkAuthenticationFailure,
-    TResult Function(AuthFailure? failure)? signOutFailure,
-    TResult Function(AuthFailure? failure)? signOutWithDeleteFailure,
-    TResult Function(AuthFailure? failure)? checkEmailVerificationFailure,
+    TResult? Function()? initial,
+    TResult? Function()? authenticated,
+    TResult? Function()? emailNotVerified,
+    TResult? Function()? unauthenticated,
+    TResult? Function()? onboardNotShowed,
+    TResult? Function(AuthFailure failure)? checkAuthenticationFailure,
+    TResult? Function(AuthFailure? failure)? signOutFailure,
+    TResult? Function(AuthFailure? failure)? signOutWithDeleteFailure,
+    TResult? Function(AuthFailure? failure)? checkEmailVerificationFailure,
   }) {
     return authenticated?.call();
   }
@@ -1086,16 +1072,16 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthInitial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(EmailNotVerified value)? emailNotVerified,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(OnboardNotShowed value)? onboardNotShowed,
-    TResult Function(CheckAuthenticationFailure value)?
+    TResult? Function(AuthInitial value)? initial,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(EmailNotVerified value)? emailNotVerified,
+    TResult? Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(OnboardNotShowed value)? onboardNotShowed,
+    TResult? Function(CheckAuthenticationFailure value)?
         checkAuthenticationFailure,
-    TResult Function(SignOutFailure value)? signOutFailure,
-    TResult Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
-    TResult Function(CheckEmailVerificationFailure value)?
+    TResult? Function(SignOutFailure value)? signOutFailure,
+    TResult? Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
+    TResult? Function(CheckEmailVerificationFailure value)?
         checkEmailVerificationFailure,
   }) {
     return authenticated?.call(this);
@@ -1129,21 +1115,19 @@ abstract class Authenticated implements AuthState {
 }
 
 /// @nodoc
-abstract class $EmailNotVerifiedCopyWith<$Res> {
-  factory $EmailNotVerifiedCopyWith(
-          EmailNotVerified value, $Res Function(EmailNotVerified) then) =
-      _$EmailNotVerifiedCopyWithImpl<$Res>;
+abstract class _$$EmailNotVerifiedCopyWith<$Res> {
+  factory _$$EmailNotVerifiedCopyWith(
+          _$EmailNotVerified value, $Res Function(_$EmailNotVerified) then) =
+      __$$EmailNotVerifiedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$EmailNotVerifiedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements $EmailNotVerifiedCopyWith<$Res> {
-  _$EmailNotVerifiedCopyWithImpl(
-      EmailNotVerified _value, $Res Function(EmailNotVerified) _then)
-      : super(_value, (v) => _then(v as EmailNotVerified));
-
-  @override
-  EmailNotVerified get _value => super._value as EmailNotVerified;
+class __$$EmailNotVerifiedCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$EmailNotVerified>
+    implements _$$EmailNotVerifiedCopyWith<$Res> {
+  __$$EmailNotVerifiedCopyWithImpl(
+      _$EmailNotVerified _value, $Res Function(_$EmailNotVerified) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1159,7 +1143,7 @@ class _$EmailNotVerified implements EmailNotVerified {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is EmailNotVerified);
+        (other.runtimeType == runtimeType && other is _$EmailNotVerified);
   }
 
   @override
@@ -1185,15 +1169,15 @@ class _$EmailNotVerified implements EmailNotVerified {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? emailNotVerified,
-    TResult Function()? unauthenticated,
-    TResult Function()? onboardNotShowed,
-    TResult Function(AuthFailure failure)? checkAuthenticationFailure,
-    TResult Function(AuthFailure? failure)? signOutFailure,
-    TResult Function(AuthFailure? failure)? signOutWithDeleteFailure,
-    TResult Function(AuthFailure? failure)? checkEmailVerificationFailure,
+    TResult? Function()? initial,
+    TResult? Function()? authenticated,
+    TResult? Function()? emailNotVerified,
+    TResult? Function()? unauthenticated,
+    TResult? Function()? onboardNotShowed,
+    TResult? Function(AuthFailure failure)? checkAuthenticationFailure,
+    TResult? Function(AuthFailure? failure)? signOutFailure,
+    TResult? Function(AuthFailure? failure)? signOutWithDeleteFailure,
+    TResult? Function(AuthFailure? failure)? checkEmailVerificationFailure,
   }) {
     return emailNotVerified?.call();
   }
@@ -1240,16 +1224,16 @@ class _$EmailNotVerified implements EmailNotVerified {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthInitial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(EmailNotVerified value)? emailNotVerified,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(OnboardNotShowed value)? onboardNotShowed,
-    TResult Function(CheckAuthenticationFailure value)?
+    TResult? Function(AuthInitial value)? initial,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(EmailNotVerified value)? emailNotVerified,
+    TResult? Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(OnboardNotShowed value)? onboardNotShowed,
+    TResult? Function(CheckAuthenticationFailure value)?
         checkAuthenticationFailure,
-    TResult Function(SignOutFailure value)? signOutFailure,
-    TResult Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
-    TResult Function(CheckEmailVerificationFailure value)?
+    TResult? Function(SignOutFailure value)? signOutFailure,
+    TResult? Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
+    TResult? Function(CheckEmailVerificationFailure value)?
         checkEmailVerificationFailure,
   }) {
     return emailNotVerified?.call(this);
@@ -1283,21 +1267,19 @@ abstract class EmailNotVerified implements AuthState {
 }
 
 /// @nodoc
-abstract class $UnauthenticatedCopyWith<$Res> {
-  factory $UnauthenticatedCopyWith(
-          Unauthenticated value, $Res Function(Unauthenticated) then) =
-      _$UnauthenticatedCopyWithImpl<$Res>;
+abstract class _$$UnauthenticatedCopyWith<$Res> {
+  factory _$$UnauthenticatedCopyWith(
+          _$Unauthenticated value, $Res Function(_$Unauthenticated) then) =
+      __$$UnauthenticatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UnauthenticatedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements $UnauthenticatedCopyWith<$Res> {
-  _$UnauthenticatedCopyWithImpl(
-      Unauthenticated _value, $Res Function(Unauthenticated) _then)
-      : super(_value, (v) => _then(v as Unauthenticated));
-
-  @override
-  Unauthenticated get _value => super._value as Unauthenticated;
+class __$$UnauthenticatedCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$Unauthenticated>
+    implements _$$UnauthenticatedCopyWith<$Res> {
+  __$$UnauthenticatedCopyWithImpl(
+      _$Unauthenticated _value, $Res Function(_$Unauthenticated) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1313,7 +1295,7 @@ class _$Unauthenticated implements Unauthenticated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Unauthenticated);
+        (other.runtimeType == runtimeType && other is _$Unauthenticated);
   }
 
   @override
@@ -1339,15 +1321,15 @@ class _$Unauthenticated implements Unauthenticated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? emailNotVerified,
-    TResult Function()? unauthenticated,
-    TResult Function()? onboardNotShowed,
-    TResult Function(AuthFailure failure)? checkAuthenticationFailure,
-    TResult Function(AuthFailure? failure)? signOutFailure,
-    TResult Function(AuthFailure? failure)? signOutWithDeleteFailure,
-    TResult Function(AuthFailure? failure)? checkEmailVerificationFailure,
+    TResult? Function()? initial,
+    TResult? Function()? authenticated,
+    TResult? Function()? emailNotVerified,
+    TResult? Function()? unauthenticated,
+    TResult? Function()? onboardNotShowed,
+    TResult? Function(AuthFailure failure)? checkAuthenticationFailure,
+    TResult? Function(AuthFailure? failure)? signOutFailure,
+    TResult? Function(AuthFailure? failure)? signOutWithDeleteFailure,
+    TResult? Function(AuthFailure? failure)? checkEmailVerificationFailure,
   }) {
     return unauthenticated?.call();
   }
@@ -1394,16 +1376,16 @@ class _$Unauthenticated implements Unauthenticated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthInitial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(EmailNotVerified value)? emailNotVerified,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(OnboardNotShowed value)? onboardNotShowed,
-    TResult Function(CheckAuthenticationFailure value)?
+    TResult? Function(AuthInitial value)? initial,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(EmailNotVerified value)? emailNotVerified,
+    TResult? Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(OnboardNotShowed value)? onboardNotShowed,
+    TResult? Function(CheckAuthenticationFailure value)?
         checkAuthenticationFailure,
-    TResult Function(SignOutFailure value)? signOutFailure,
-    TResult Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
-    TResult Function(CheckEmailVerificationFailure value)?
+    TResult? Function(SignOutFailure value)? signOutFailure,
+    TResult? Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
+    TResult? Function(CheckEmailVerificationFailure value)?
         checkEmailVerificationFailure,
   }) {
     return unauthenticated?.call(this);
@@ -1437,21 +1419,19 @@ abstract class Unauthenticated implements AuthState {
 }
 
 /// @nodoc
-abstract class $OnboardNotShowedCopyWith<$Res> {
-  factory $OnboardNotShowedCopyWith(
-          OnboardNotShowed value, $Res Function(OnboardNotShowed) then) =
-      _$OnboardNotShowedCopyWithImpl<$Res>;
+abstract class _$$OnboardNotShowedCopyWith<$Res> {
+  factory _$$OnboardNotShowedCopyWith(
+          _$OnboardNotShowed value, $Res Function(_$OnboardNotShowed) then) =
+      __$$OnboardNotShowedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$OnboardNotShowedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements $OnboardNotShowedCopyWith<$Res> {
-  _$OnboardNotShowedCopyWithImpl(
-      OnboardNotShowed _value, $Res Function(OnboardNotShowed) _then)
-      : super(_value, (v) => _then(v as OnboardNotShowed));
-
-  @override
-  OnboardNotShowed get _value => super._value as OnboardNotShowed;
+class __$$OnboardNotShowedCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$OnboardNotShowed>
+    implements _$$OnboardNotShowedCopyWith<$Res> {
+  __$$OnboardNotShowedCopyWithImpl(
+      _$OnboardNotShowed _value, $Res Function(_$OnboardNotShowed) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1467,7 +1447,7 @@ class _$OnboardNotShowed implements OnboardNotShowed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is OnboardNotShowed);
+        (other.runtimeType == runtimeType && other is _$OnboardNotShowed);
   }
 
   @override
@@ -1493,15 +1473,15 @@ class _$OnboardNotShowed implements OnboardNotShowed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? emailNotVerified,
-    TResult Function()? unauthenticated,
-    TResult Function()? onboardNotShowed,
-    TResult Function(AuthFailure failure)? checkAuthenticationFailure,
-    TResult Function(AuthFailure? failure)? signOutFailure,
-    TResult Function(AuthFailure? failure)? signOutWithDeleteFailure,
-    TResult Function(AuthFailure? failure)? checkEmailVerificationFailure,
+    TResult? Function()? initial,
+    TResult? Function()? authenticated,
+    TResult? Function()? emailNotVerified,
+    TResult? Function()? unauthenticated,
+    TResult? Function()? onboardNotShowed,
+    TResult? Function(AuthFailure failure)? checkAuthenticationFailure,
+    TResult? Function(AuthFailure? failure)? signOutFailure,
+    TResult? Function(AuthFailure? failure)? signOutWithDeleteFailure,
+    TResult? Function(AuthFailure? failure)? checkEmailVerificationFailure,
   }) {
     return onboardNotShowed?.call();
   }
@@ -1548,16 +1528,16 @@ class _$OnboardNotShowed implements OnboardNotShowed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthInitial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(EmailNotVerified value)? emailNotVerified,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(OnboardNotShowed value)? onboardNotShowed,
-    TResult Function(CheckAuthenticationFailure value)?
+    TResult? Function(AuthInitial value)? initial,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(EmailNotVerified value)? emailNotVerified,
+    TResult? Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(OnboardNotShowed value)? onboardNotShowed,
+    TResult? Function(CheckAuthenticationFailure value)?
         checkAuthenticationFailure,
-    TResult Function(SignOutFailure value)? signOutFailure,
-    TResult Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
-    TResult Function(CheckEmailVerificationFailure value)?
+    TResult? Function(SignOutFailure value)? signOutFailure,
+    TResult? Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
+    TResult? Function(CheckEmailVerificationFailure value)?
         checkEmailVerificationFailure,
   }) {
     return onboardNotShowed?.call(this);
@@ -1591,33 +1571,33 @@ abstract class OnboardNotShowed implements AuthState {
 }
 
 /// @nodoc
-abstract class $CheckAuthenticationFailureCopyWith<$Res> {
-  factory $CheckAuthenticationFailureCopyWith(CheckAuthenticationFailure value,
-          $Res Function(CheckAuthenticationFailure) then) =
-      _$CheckAuthenticationFailureCopyWithImpl<$Res>;
+abstract class _$$CheckAuthenticationFailureCopyWith<$Res> {
+  factory _$$CheckAuthenticationFailureCopyWith(
+          _$CheckAuthenticationFailure value,
+          $Res Function(_$CheckAuthenticationFailure) then) =
+      __$$CheckAuthenticationFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({AuthFailure failure});
 
   $AuthFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
-class _$CheckAuthenticationFailureCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res>
-    implements $CheckAuthenticationFailureCopyWith<$Res> {
-  _$CheckAuthenticationFailureCopyWithImpl(CheckAuthenticationFailure _value,
-      $Res Function(CheckAuthenticationFailure) _then)
-      : super(_value, (v) => _then(v as CheckAuthenticationFailure));
+class __$$CheckAuthenticationFailureCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$CheckAuthenticationFailure>
+    implements _$$CheckAuthenticationFailureCopyWith<$Res> {
+  __$$CheckAuthenticationFailureCopyWithImpl(
+      _$CheckAuthenticationFailure _value,
+      $Res Function(_$CheckAuthenticationFailure) _then)
+      : super(_value, _then);
 
-  @override
-  CheckAuthenticationFailure get _value =>
-      super._value as CheckAuthenticationFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failure = freezed,
+    Object? failure = null,
   }) {
-    return _then(CheckAuthenticationFailure(
-      failure == freezed
+    return _then(_$CheckAuthenticationFailure(
+      null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as AuthFailure,
@@ -1625,6 +1605,7 @@ class _$CheckAuthenticationFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $AuthFailureCopyWith<$Res> get failure {
     return $AuthFailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
@@ -1649,20 +1630,19 @@ class _$CheckAuthenticationFailure implements CheckAuthenticationFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is CheckAuthenticationFailure &&
-            const DeepCollectionEquality().equals(other.failure, failure));
+            other is _$CheckAuthenticationFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
-  $CheckAuthenticationFailureCopyWith<CheckAuthenticationFailure>
-      get copyWith =>
-          _$CheckAuthenticationFailureCopyWithImpl<CheckAuthenticationFailure>(
-              this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$CheckAuthenticationFailureCopyWith<_$CheckAuthenticationFailure>
+      get copyWith => __$$CheckAuthenticationFailureCopyWithImpl<
+          _$CheckAuthenticationFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1684,15 +1664,15 @@ class _$CheckAuthenticationFailure implements CheckAuthenticationFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? emailNotVerified,
-    TResult Function()? unauthenticated,
-    TResult Function()? onboardNotShowed,
-    TResult Function(AuthFailure failure)? checkAuthenticationFailure,
-    TResult Function(AuthFailure? failure)? signOutFailure,
-    TResult Function(AuthFailure? failure)? signOutWithDeleteFailure,
-    TResult Function(AuthFailure? failure)? checkEmailVerificationFailure,
+    TResult? Function()? initial,
+    TResult? Function()? authenticated,
+    TResult? Function()? emailNotVerified,
+    TResult? Function()? unauthenticated,
+    TResult? Function()? onboardNotShowed,
+    TResult? Function(AuthFailure failure)? checkAuthenticationFailure,
+    TResult? Function(AuthFailure? failure)? signOutFailure,
+    TResult? Function(AuthFailure? failure)? signOutWithDeleteFailure,
+    TResult? Function(AuthFailure? failure)? checkEmailVerificationFailure,
   }) {
     return checkAuthenticationFailure?.call(failure);
   }
@@ -1739,16 +1719,16 @@ class _$CheckAuthenticationFailure implements CheckAuthenticationFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthInitial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(EmailNotVerified value)? emailNotVerified,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(OnboardNotShowed value)? onboardNotShowed,
-    TResult Function(CheckAuthenticationFailure value)?
+    TResult? Function(AuthInitial value)? initial,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(EmailNotVerified value)? emailNotVerified,
+    TResult? Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(OnboardNotShowed value)? onboardNotShowed,
+    TResult? Function(CheckAuthenticationFailure value)?
         checkAuthenticationFailure,
-    TResult Function(SignOutFailure value)? signOutFailure,
-    TResult Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
-    TResult Function(CheckEmailVerificationFailure value)?
+    TResult? Function(SignOutFailure value)? signOutFailure,
+    TResult? Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
+    TResult? Function(CheckEmailVerificationFailure value)?
         checkEmailVerificationFailure,
   }) {
     return checkAuthenticationFailure?.call(this);
@@ -1781,38 +1761,38 @@ abstract class CheckAuthenticationFailure implements AuthState {
   const factory CheckAuthenticationFailure(final AuthFailure failure) =
       _$CheckAuthenticationFailure;
 
-  AuthFailure get failure => throw _privateConstructorUsedError;
+  AuthFailure get failure;
   @JsonKey(ignore: true)
-  $CheckAuthenticationFailureCopyWith<CheckAuthenticationFailure>
+  _$$CheckAuthenticationFailureCopyWith<_$CheckAuthenticationFailure>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SignOutFailureCopyWith<$Res> {
-  factory $SignOutFailureCopyWith(
-          SignOutFailure value, $Res Function(SignOutFailure) then) =
-      _$SignOutFailureCopyWithImpl<$Res>;
+abstract class _$$SignOutFailureCopyWith<$Res> {
+  factory _$$SignOutFailureCopyWith(
+          _$SignOutFailure value, $Res Function(_$SignOutFailure) then) =
+      __$$SignOutFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({AuthFailure? failure});
 
   $AuthFailureCopyWith<$Res>? get failure;
 }
 
 /// @nodoc
-class _$SignOutFailureCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements $SignOutFailureCopyWith<$Res> {
-  _$SignOutFailureCopyWithImpl(
-      SignOutFailure _value, $Res Function(SignOutFailure) _then)
-      : super(_value, (v) => _then(v as SignOutFailure));
+class __$$SignOutFailureCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$SignOutFailure>
+    implements _$$SignOutFailureCopyWith<$Res> {
+  __$$SignOutFailureCopyWithImpl(
+      _$SignOutFailure _value, $Res Function(_$SignOutFailure) _then)
+      : super(_value, _then);
 
-  @override
-  SignOutFailure get _value => super._value as SignOutFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failure = freezed,
   }) {
-    return _then(SignOutFailure(
-      failure == freezed
+    return _then(_$SignOutFailure(
+      freezed == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as AuthFailure?,
@@ -1820,6 +1800,7 @@ class _$SignOutFailureCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $AuthFailureCopyWith<$Res>? get failure {
     if (_value.failure == null) {
       return null;
@@ -1848,18 +1829,18 @@ class _$SignOutFailure implements SignOutFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SignOutFailure &&
-            const DeepCollectionEquality().equals(other.failure, failure));
+            other is _$SignOutFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
-  $SignOutFailureCopyWith<SignOutFailure> get copyWith =>
-      _$SignOutFailureCopyWithImpl<SignOutFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SignOutFailureCopyWith<_$SignOutFailure> get copyWith =>
+      __$$SignOutFailureCopyWithImpl<_$SignOutFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1881,15 +1862,15 @@ class _$SignOutFailure implements SignOutFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? emailNotVerified,
-    TResult Function()? unauthenticated,
-    TResult Function()? onboardNotShowed,
-    TResult Function(AuthFailure failure)? checkAuthenticationFailure,
-    TResult Function(AuthFailure? failure)? signOutFailure,
-    TResult Function(AuthFailure? failure)? signOutWithDeleteFailure,
-    TResult Function(AuthFailure? failure)? checkEmailVerificationFailure,
+    TResult? Function()? initial,
+    TResult? Function()? authenticated,
+    TResult? Function()? emailNotVerified,
+    TResult? Function()? unauthenticated,
+    TResult? Function()? onboardNotShowed,
+    TResult? Function(AuthFailure failure)? checkAuthenticationFailure,
+    TResult? Function(AuthFailure? failure)? signOutFailure,
+    TResult? Function(AuthFailure? failure)? signOutWithDeleteFailure,
+    TResult? Function(AuthFailure? failure)? checkEmailVerificationFailure,
   }) {
     return signOutFailure?.call(failure);
   }
@@ -1936,16 +1917,16 @@ class _$SignOutFailure implements SignOutFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthInitial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(EmailNotVerified value)? emailNotVerified,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(OnboardNotShowed value)? onboardNotShowed,
-    TResult Function(CheckAuthenticationFailure value)?
+    TResult? Function(AuthInitial value)? initial,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(EmailNotVerified value)? emailNotVerified,
+    TResult? Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(OnboardNotShowed value)? onboardNotShowed,
+    TResult? Function(CheckAuthenticationFailure value)?
         checkAuthenticationFailure,
-    TResult Function(SignOutFailure value)? signOutFailure,
-    TResult Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
-    TResult Function(CheckEmailVerificationFailure value)?
+    TResult? Function(SignOutFailure value)? signOutFailure,
+    TResult? Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
+    TResult? Function(CheckEmailVerificationFailure value)?
         checkEmailVerificationFailure,
   }) {
     return signOutFailure?.call(this);
@@ -1977,40 +1958,38 @@ class _$SignOutFailure implements SignOutFailure {
 abstract class SignOutFailure implements AuthState {
   const factory SignOutFailure(final AuthFailure? failure) = _$SignOutFailure;
 
-  AuthFailure? get failure => throw _privateConstructorUsedError;
+  AuthFailure? get failure;
   @JsonKey(ignore: true)
-  $SignOutFailureCopyWith<SignOutFailure> get copyWith =>
+  _$$SignOutFailureCopyWith<_$SignOutFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SignOutWithDeleteFailureCopyWith<$Res> {
-  factory $SignOutWithDeleteFailureCopyWith(SignOutWithDeleteFailure value,
-          $Res Function(SignOutWithDeleteFailure) then) =
-      _$SignOutWithDeleteFailureCopyWithImpl<$Res>;
+abstract class _$$SignOutWithDeleteFailureCopyWith<$Res> {
+  factory _$$SignOutWithDeleteFailureCopyWith(_$SignOutWithDeleteFailure value,
+          $Res Function(_$SignOutWithDeleteFailure) then) =
+      __$$SignOutWithDeleteFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({AuthFailure? failure});
 
   $AuthFailureCopyWith<$Res>? get failure;
 }
 
 /// @nodoc
-class _$SignOutWithDeleteFailureCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res>
-    implements $SignOutWithDeleteFailureCopyWith<$Res> {
-  _$SignOutWithDeleteFailureCopyWithImpl(SignOutWithDeleteFailure _value,
-      $Res Function(SignOutWithDeleteFailure) _then)
-      : super(_value, (v) => _then(v as SignOutWithDeleteFailure));
+class __$$SignOutWithDeleteFailureCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$SignOutWithDeleteFailure>
+    implements _$$SignOutWithDeleteFailureCopyWith<$Res> {
+  __$$SignOutWithDeleteFailureCopyWithImpl(_$SignOutWithDeleteFailure _value,
+      $Res Function(_$SignOutWithDeleteFailure) _then)
+      : super(_value, _then);
 
-  @override
-  SignOutWithDeleteFailure get _value =>
-      super._value as SignOutWithDeleteFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failure = freezed,
   }) {
-    return _then(SignOutWithDeleteFailure(
-      failure == freezed
+    return _then(_$SignOutWithDeleteFailure(
+      freezed == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as AuthFailure?,
@@ -2018,6 +1997,7 @@ class _$SignOutWithDeleteFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $AuthFailureCopyWith<$Res>? get failure {
     if (_value.failure == null) {
       return null;
@@ -2046,19 +2026,20 @@ class _$SignOutWithDeleteFailure implements SignOutWithDeleteFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SignOutWithDeleteFailure &&
-            const DeepCollectionEquality().equals(other.failure, failure));
+            other is _$SignOutWithDeleteFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
-  $SignOutWithDeleteFailureCopyWith<SignOutWithDeleteFailure> get copyWith =>
-      _$SignOutWithDeleteFailureCopyWithImpl<SignOutWithDeleteFailure>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SignOutWithDeleteFailureCopyWith<_$SignOutWithDeleteFailure>
+      get copyWith =>
+          __$$SignOutWithDeleteFailureCopyWithImpl<_$SignOutWithDeleteFailure>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2080,15 +2061,15 @@ class _$SignOutWithDeleteFailure implements SignOutWithDeleteFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? emailNotVerified,
-    TResult Function()? unauthenticated,
-    TResult Function()? onboardNotShowed,
-    TResult Function(AuthFailure failure)? checkAuthenticationFailure,
-    TResult Function(AuthFailure? failure)? signOutFailure,
-    TResult Function(AuthFailure? failure)? signOutWithDeleteFailure,
-    TResult Function(AuthFailure? failure)? checkEmailVerificationFailure,
+    TResult? Function()? initial,
+    TResult? Function()? authenticated,
+    TResult? Function()? emailNotVerified,
+    TResult? Function()? unauthenticated,
+    TResult? Function()? onboardNotShowed,
+    TResult? Function(AuthFailure failure)? checkAuthenticationFailure,
+    TResult? Function(AuthFailure? failure)? signOutFailure,
+    TResult? Function(AuthFailure? failure)? signOutWithDeleteFailure,
+    TResult? Function(AuthFailure? failure)? checkEmailVerificationFailure,
   }) {
     return signOutWithDeleteFailure?.call(failure);
   }
@@ -2135,16 +2116,16 @@ class _$SignOutWithDeleteFailure implements SignOutWithDeleteFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthInitial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(EmailNotVerified value)? emailNotVerified,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(OnboardNotShowed value)? onboardNotShowed,
-    TResult Function(CheckAuthenticationFailure value)?
+    TResult? Function(AuthInitial value)? initial,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(EmailNotVerified value)? emailNotVerified,
+    TResult? Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(OnboardNotShowed value)? onboardNotShowed,
+    TResult? Function(CheckAuthenticationFailure value)?
         checkAuthenticationFailure,
-    TResult Function(SignOutFailure value)? signOutFailure,
-    TResult Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
-    TResult Function(CheckEmailVerificationFailure value)?
+    TResult? Function(SignOutFailure value)? signOutFailure,
+    TResult? Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
+    TResult? Function(CheckEmailVerificationFailure value)?
         checkEmailVerificationFailure,
   }) {
     return signOutWithDeleteFailure?.call(this);
@@ -2177,42 +2158,40 @@ abstract class SignOutWithDeleteFailure implements AuthState {
   const factory SignOutWithDeleteFailure(final AuthFailure? failure) =
       _$SignOutWithDeleteFailure;
 
-  AuthFailure? get failure => throw _privateConstructorUsedError;
+  AuthFailure? get failure;
   @JsonKey(ignore: true)
-  $SignOutWithDeleteFailureCopyWith<SignOutWithDeleteFailure> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SignOutWithDeleteFailureCopyWith<_$SignOutWithDeleteFailure>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CheckEmailVerificationFailureCopyWith<$Res> {
-  factory $CheckEmailVerificationFailureCopyWith(
-          CheckEmailVerificationFailure value,
-          $Res Function(CheckEmailVerificationFailure) then) =
-      _$CheckEmailVerificationFailureCopyWithImpl<$Res>;
+abstract class _$$CheckEmailVerificationFailureCopyWith<$Res> {
+  factory _$$CheckEmailVerificationFailureCopyWith(
+          _$CheckEmailVerificationFailure value,
+          $Res Function(_$CheckEmailVerificationFailure) then) =
+      __$$CheckEmailVerificationFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({AuthFailure? failure});
 
   $AuthFailureCopyWith<$Res>? get failure;
 }
 
 /// @nodoc
-class _$CheckEmailVerificationFailureCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res>
-    implements $CheckEmailVerificationFailureCopyWith<$Res> {
-  _$CheckEmailVerificationFailureCopyWithImpl(
-      CheckEmailVerificationFailure _value,
-      $Res Function(CheckEmailVerificationFailure) _then)
-      : super(_value, (v) => _then(v as CheckEmailVerificationFailure));
+class __$$CheckEmailVerificationFailureCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$CheckEmailVerificationFailure>
+    implements _$$CheckEmailVerificationFailureCopyWith<$Res> {
+  __$$CheckEmailVerificationFailureCopyWithImpl(
+      _$CheckEmailVerificationFailure _value,
+      $Res Function(_$CheckEmailVerificationFailure) _then)
+      : super(_value, _then);
 
-  @override
-  CheckEmailVerificationFailure get _value =>
-      super._value as CheckEmailVerificationFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failure = freezed,
   }) {
-    return _then(CheckEmailVerificationFailure(
-      failure == freezed
+    return _then(_$CheckEmailVerificationFailure(
+      freezed == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as AuthFailure?,
@@ -2220,6 +2199,7 @@ class _$CheckEmailVerificationFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $AuthFailureCopyWith<$Res>? get failure {
     if (_value.failure == null) {
       return null;
@@ -2248,19 +2228,19 @@ class _$CheckEmailVerificationFailure implements CheckEmailVerificationFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is CheckEmailVerificationFailure &&
-            const DeepCollectionEquality().equals(other.failure, failure));
+            other is _$CheckEmailVerificationFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
-  $CheckEmailVerificationFailureCopyWith<CheckEmailVerificationFailure>
-      get copyWith => _$CheckEmailVerificationFailureCopyWithImpl<
-          CheckEmailVerificationFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$CheckEmailVerificationFailureCopyWith<_$CheckEmailVerificationFailure>
+      get copyWith => __$$CheckEmailVerificationFailureCopyWithImpl<
+          _$CheckEmailVerificationFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2282,15 +2262,15 @@ class _$CheckEmailVerificationFailure implements CheckEmailVerificationFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? emailNotVerified,
-    TResult Function()? unauthenticated,
-    TResult Function()? onboardNotShowed,
-    TResult Function(AuthFailure failure)? checkAuthenticationFailure,
-    TResult Function(AuthFailure? failure)? signOutFailure,
-    TResult Function(AuthFailure? failure)? signOutWithDeleteFailure,
-    TResult Function(AuthFailure? failure)? checkEmailVerificationFailure,
+    TResult? Function()? initial,
+    TResult? Function()? authenticated,
+    TResult? Function()? emailNotVerified,
+    TResult? Function()? unauthenticated,
+    TResult? Function()? onboardNotShowed,
+    TResult? Function(AuthFailure failure)? checkAuthenticationFailure,
+    TResult? Function(AuthFailure? failure)? signOutFailure,
+    TResult? Function(AuthFailure? failure)? signOutWithDeleteFailure,
+    TResult? Function(AuthFailure? failure)? checkEmailVerificationFailure,
   }) {
     return checkEmailVerificationFailure?.call(failure);
   }
@@ -2337,16 +2317,16 @@ class _$CheckEmailVerificationFailure implements CheckEmailVerificationFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthInitial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(EmailNotVerified value)? emailNotVerified,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(OnboardNotShowed value)? onboardNotShowed,
-    TResult Function(CheckAuthenticationFailure value)?
+    TResult? Function(AuthInitial value)? initial,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(EmailNotVerified value)? emailNotVerified,
+    TResult? Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(OnboardNotShowed value)? onboardNotShowed,
+    TResult? Function(CheckAuthenticationFailure value)?
         checkAuthenticationFailure,
-    TResult Function(SignOutFailure value)? signOutFailure,
-    TResult Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
-    TResult Function(CheckEmailVerificationFailure value)?
+    TResult? Function(SignOutFailure value)? signOutFailure,
+    TResult? Function(SignOutWithDeleteFailure value)? signOutWithDeleteFailure,
+    TResult? Function(CheckEmailVerificationFailure value)?
         checkEmailVerificationFailure,
   }) {
     return checkEmailVerificationFailure?.call(this);
@@ -2379,8 +2359,8 @@ abstract class CheckEmailVerificationFailure implements AuthState {
   const factory CheckEmailVerificationFailure(final AuthFailure? failure) =
       _$CheckEmailVerificationFailure;
 
-  AuthFailure? get failure => throw _privateConstructorUsedError;
+  AuthFailure? get failure;
   @JsonKey(ignore: true)
-  $CheckEmailVerificationFailureCopyWith<CheckEmailVerificationFailure>
+  _$$CheckEmailVerificationFailureCopyWith<_$CheckEmailVerificationFailure>
       get copyWith => throw _privateConstructorUsedError;
 }

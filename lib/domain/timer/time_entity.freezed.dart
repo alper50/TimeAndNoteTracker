@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'time_entity.dart';
 
@@ -29,7 +29,8 @@ mixin _$Time {
 /// @nodoc
 abstract class $TimeCopyWith<$Res> {
   factory $TimeCopyWith(Time value, $Res Function(Time) then) =
-      _$TimeCopyWithImpl<$Res>;
+      _$TimeCopyWithImpl<$Res, Time>;
+  @useResult
   $Res call(
       {UniqueId id,
       TimeHeader timeHeader,
@@ -39,51 +40,55 @@ abstract class $TimeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TimeCopyWithImpl<$Res> implements $TimeCopyWith<$Res> {
+class _$TimeCopyWithImpl<$Res, $Val extends Time>
+    implements $TimeCopyWith<$Res> {
   _$TimeCopyWithImpl(this._value, this._then);
 
-  final Time _value;
   // ignore: unused_field
-  final $Res Function(Time) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? timeHeader = freezed,
-    Object? timeBody = freezed,
-    Object? lastUpdatedTime = freezed,
-    Object? createdTime = freezed,
+    Object? id = null,
+    Object? timeHeader = null,
+    Object? timeBody = null,
+    Object? lastUpdatedTime = null,
+    Object? createdTime = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as UniqueId,
-      timeHeader: timeHeader == freezed
+      timeHeader: null == timeHeader
           ? _value.timeHeader
           : timeHeader // ignore: cast_nullable_to_non_nullable
               as TimeHeader,
-      timeBody: timeBody == freezed
+      timeBody: null == timeBody
           ? _value.timeBody
           : timeBody // ignore: cast_nullable_to_non_nullable
               as TimeBody,
-      lastUpdatedTime: lastUpdatedTime == freezed
+      lastUpdatedTime: null == lastUpdatedTime
           ? _value.lastUpdatedTime
           : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      createdTime: createdTime == freezed
+      createdTime: null == createdTime
           ? _value.createdTime
           : createdTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$TimeCopyWith<$Res> implements $TimeCopyWith<$Res> {
-  factory _$TimeCopyWith(_Time value, $Res Function(_Time) then) =
-      __$TimeCopyWithImpl<$Res>;
+abstract class _$$_TimeCopyWith<$Res> implements $TimeCopyWith<$Res> {
+  factory _$$_TimeCopyWith(_$_Time value, $Res Function(_$_Time) then) =
+      __$$_TimeCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {UniqueId id,
       TimeHeader timeHeader,
@@ -93,40 +98,38 @@ abstract class _$TimeCopyWith<$Res> implements $TimeCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$TimeCopyWithImpl<$Res> extends _$TimeCopyWithImpl<$Res>
-    implements _$TimeCopyWith<$Res> {
-  __$TimeCopyWithImpl(_Time _value, $Res Function(_Time) _then)
-      : super(_value, (v) => _then(v as _Time));
+class __$$_TimeCopyWithImpl<$Res> extends _$TimeCopyWithImpl<$Res, _$_Time>
+    implements _$$_TimeCopyWith<$Res> {
+  __$$_TimeCopyWithImpl(_$_Time _value, $Res Function(_$_Time) _then)
+      : super(_value, _then);
 
-  @override
-  _Time get _value => super._value as _Time;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? timeHeader = freezed,
-    Object? timeBody = freezed,
-    Object? lastUpdatedTime = freezed,
-    Object? createdTime = freezed,
+    Object? id = null,
+    Object? timeHeader = null,
+    Object? timeBody = null,
+    Object? lastUpdatedTime = null,
+    Object? createdTime = null,
   }) {
-    return _then(_Time(
-      id: id == freezed
+    return _then(_$_Time(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as UniqueId,
-      timeHeader: timeHeader == freezed
+      timeHeader: null == timeHeader
           ? _value.timeHeader
           : timeHeader // ignore: cast_nullable_to_non_nullable
               as TimeHeader,
-      timeBody: timeBody == freezed
+      timeBody: null == timeBody
           ? _value.timeBody
           : timeBody // ignore: cast_nullable_to_non_nullable
               as TimeBody,
-      lastUpdatedTime: lastUpdatedTime == freezed
+      lastUpdatedTime: null == lastUpdatedTime
           ? _value.lastUpdatedTime
           : lastUpdatedTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      createdTime: createdTime == freezed
+      createdTime: null == createdTime
           ? _value.createdTime
           : createdTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -165,30 +168,27 @@ class _$_Time extends _Time {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Time &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality()
-                .equals(other.timeHeader, timeHeader) &&
-            const DeepCollectionEquality().equals(other.timeBody, timeBody) &&
-            const DeepCollectionEquality()
-                .equals(other.lastUpdatedTime, lastUpdatedTime) &&
-            const DeepCollectionEquality()
-                .equals(other.createdTime, createdTime));
+            other is _$_Time &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.timeHeader, timeHeader) ||
+                other.timeHeader == timeHeader) &&
+            (identical(other.timeBody, timeBody) ||
+                other.timeBody == timeBody) &&
+            (identical(other.lastUpdatedTime, lastUpdatedTime) ||
+                other.lastUpdatedTime == lastUpdatedTime) &&
+            (identical(other.createdTime, createdTime) ||
+                other.createdTime == createdTime));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(timeHeader),
-      const DeepCollectionEquality().hash(timeBody),
-      const DeepCollectionEquality().hash(lastUpdatedTime),
-      const DeepCollectionEquality().hash(createdTime));
+      runtimeType, id, timeHeader, timeBody, lastUpdatedTime, createdTime);
 
   @JsonKey(ignore: true)
   @override
-  _$TimeCopyWith<_Time> get copyWith =>
-      __$TimeCopyWithImpl<_Time>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_TimeCopyWith<_$_Time> get copyWith =>
+      __$$_TimeCopyWithImpl<_$_Time>(this, _$identity);
 }
 
 abstract class _Time extends Time {
@@ -201,16 +201,16 @@ abstract class _Time extends Time {
   const _Time._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  TimeHeader get timeHeader => throw _privateConstructorUsedError;
+  TimeHeader get timeHeader;
   @override
-  TimeBody get timeBody => throw _privateConstructorUsedError;
+  TimeBody get timeBody;
   @override
-  DateTime get lastUpdatedTime => throw _privateConstructorUsedError;
+  DateTime get lastUpdatedTime;
   @override
-  DateTime get createdTime => throw _privateConstructorUsedError;
+  DateTime get createdTime;
   @override
   @JsonKey(ignore: true)
-  _$TimeCopyWith<_Time> get copyWith => throw _privateConstructorUsedError;
+  _$$_TimeCopyWith<_$_Time> get copyWith => throw _privateConstructorUsedError;
 }

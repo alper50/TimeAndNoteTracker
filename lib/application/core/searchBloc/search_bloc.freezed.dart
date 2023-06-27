@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'search_bloc.dart';
 
@@ -29,12 +29,12 @@ mixin _$SearchEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String query)? queryChanged,
-    TResult Function(String query, SearchTables searchTable)? searchSubmitted,
-    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+    TResult? Function(String query)? queryChanged,
+    TResult? Function(String query, SearchTables searchTable)? searchSubmitted,
+    TResult? Function(String queryToBeDeleted, SearchTables searchTable)?
         deleteSearchHistory,
-    TResult Function(String queryToBeSelected)? selectSearchHistory,
-    TResult Function(SearchTables searchTable)? getSearchHistory,
+    TResult? Function(String queryToBeSelected)? selectSearchHistory,
+    TResult? Function(SearchTables searchTable)? getSearchHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,11 +59,11 @@ mixin _$SearchEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_QueryChanged value)? queryChanged,
-    TResult Function(_SearchSubmitted value)? searchSubmitted,
-    TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
-    TResult Function(_SelectSearchHistory value)? selectSearchHistory,
-    TResult Function(_GetSearchHistory value)? getSearchHistory,
+    TResult? Function(_QueryChanged value)? queryChanged,
+    TResult? Function(_SearchSubmitted value)? searchSubmitted,
+    TResult? Function(_DeleteSearchHistory value)? deleteSearchHistory,
+    TResult? Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult? Function(_GetSearchHistory value)? getSearchHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,42 +82,44 @@ mixin _$SearchEvent {
 abstract class $SearchEventCopyWith<$Res> {
   factory $SearchEventCopyWith(
           SearchEvent value, $Res Function(SearchEvent) then) =
-      _$SearchEventCopyWithImpl<$Res>;
+      _$SearchEventCopyWithImpl<$Res, SearchEvent>;
 }
 
 /// @nodoc
-class _$SearchEventCopyWithImpl<$Res> implements $SearchEventCopyWith<$Res> {
+class _$SearchEventCopyWithImpl<$Res, $Val extends SearchEvent>
+    implements $SearchEventCopyWith<$Res> {
   _$SearchEventCopyWithImpl(this._value, this._then);
 
-  final SearchEvent _value;
   // ignore: unused_field
-  final $Res Function(SearchEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$QueryChangedCopyWith<$Res> {
-  factory _$QueryChangedCopyWith(
-          _QueryChanged value, $Res Function(_QueryChanged) then) =
-      __$QueryChangedCopyWithImpl<$Res>;
+abstract class _$$_QueryChangedCopyWith<$Res> {
+  factory _$$_QueryChangedCopyWith(
+          _$_QueryChanged value, $Res Function(_$_QueryChanged) then) =
+      __$$_QueryChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String query});
 }
 
 /// @nodoc
-class __$QueryChangedCopyWithImpl<$Res> extends _$SearchEventCopyWithImpl<$Res>
-    implements _$QueryChangedCopyWith<$Res> {
-  __$QueryChangedCopyWithImpl(
-      _QueryChanged _value, $Res Function(_QueryChanged) _then)
-      : super(_value, (v) => _then(v as _QueryChanged));
+class __$$_QueryChangedCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$_QueryChanged>
+    implements _$$_QueryChangedCopyWith<$Res> {
+  __$$_QueryChangedCopyWithImpl(
+      _$_QueryChanged _value, $Res Function(_$_QueryChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _QueryChanged get _value => super._value as _QueryChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? query = freezed,
+    Object? query = null,
   }) {
-    return _then(_QueryChanged(
-      query: query == freezed
+    return _then(_$_QueryChanged(
+      query: null == query
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
               as String,
@@ -142,18 +144,18 @@ class _$_QueryChanged implements _QueryChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _QueryChanged &&
-            const DeepCollectionEquality().equals(other.query, query));
+            other is _$_QueryChanged &&
+            (identical(other.query, query) || other.query == query));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(query));
+  int get hashCode => Object.hash(runtimeType, query);
 
   @JsonKey(ignore: true)
   @override
-  _$QueryChangedCopyWith<_QueryChanged> get copyWith =>
-      __$QueryChangedCopyWithImpl<_QueryChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_QueryChangedCopyWith<_$_QueryChanged> get copyWith =>
+      __$$_QueryChangedCopyWithImpl<_$_QueryChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -172,12 +174,12 @@ class _$_QueryChanged implements _QueryChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String query)? queryChanged,
-    TResult Function(String query, SearchTables searchTable)? searchSubmitted,
-    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+    TResult? Function(String query)? queryChanged,
+    TResult? Function(String query, SearchTables searchTable)? searchSubmitted,
+    TResult? Function(String queryToBeDeleted, SearchTables searchTable)?
         deleteSearchHistory,
-    TResult Function(String queryToBeSelected)? selectSearchHistory,
-    TResult Function(SearchTables searchTable)? getSearchHistory,
+    TResult? Function(String queryToBeSelected)? selectSearchHistory,
+    TResult? Function(SearchTables searchTable)? getSearchHistory,
   }) {
     return queryChanged?.call(query);
   }
@@ -214,11 +216,11 @@ class _$_QueryChanged implements _QueryChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_QueryChanged value)? queryChanged,
-    TResult Function(_SearchSubmitted value)? searchSubmitted,
-    TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
-    TResult Function(_SelectSearchHistory value)? selectSearchHistory,
-    TResult Function(_GetSearchHistory value)? getSearchHistory,
+    TResult? Function(_QueryChanged value)? queryChanged,
+    TResult? Function(_SearchSubmitted value)? searchSubmitted,
+    TResult? Function(_DeleteSearchHistory value)? deleteSearchHistory,
+    TResult? Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult? Function(_GetSearchHistory value)? getSearchHistory,
   }) {
     return queryChanged?.call(this);
   }
@@ -243,42 +245,41 @@ class _$_QueryChanged implements _QueryChanged {
 abstract class _QueryChanged implements SearchEvent {
   const factory _QueryChanged({required final String query}) = _$_QueryChanged;
 
-  String get query => throw _privateConstructorUsedError;
+  String get query;
   @JsonKey(ignore: true)
-  _$QueryChangedCopyWith<_QueryChanged> get copyWith =>
+  _$$_QueryChangedCopyWith<_$_QueryChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SearchSubmittedCopyWith<$Res> {
-  factory _$SearchSubmittedCopyWith(
-          _SearchSubmitted value, $Res Function(_SearchSubmitted) then) =
-      __$SearchSubmittedCopyWithImpl<$Res>;
+abstract class _$$_SearchSubmittedCopyWith<$Res> {
+  factory _$$_SearchSubmittedCopyWith(
+          _$_SearchSubmitted value, $Res Function(_$_SearchSubmitted) then) =
+      __$$_SearchSubmittedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String query, SearchTables searchTable});
 }
 
 /// @nodoc
-class __$SearchSubmittedCopyWithImpl<$Res>
-    extends _$SearchEventCopyWithImpl<$Res>
-    implements _$SearchSubmittedCopyWith<$Res> {
-  __$SearchSubmittedCopyWithImpl(
-      _SearchSubmitted _value, $Res Function(_SearchSubmitted) _then)
-      : super(_value, (v) => _then(v as _SearchSubmitted));
+class __$$_SearchSubmittedCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$_SearchSubmitted>
+    implements _$$_SearchSubmittedCopyWith<$Res> {
+  __$$_SearchSubmittedCopyWithImpl(
+      _$_SearchSubmitted _value, $Res Function(_$_SearchSubmitted) _then)
+      : super(_value, _then);
 
-  @override
-  _SearchSubmitted get _value => super._value as _SearchSubmitted;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? query = freezed,
-    Object? searchTable = freezed,
+    Object? query = null,
+    Object? searchTable = null,
   }) {
-    return _then(_SearchSubmitted(
-      query: query == freezed
+    return _then(_$_SearchSubmitted(
+      query: null == query
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
               as String,
-      searchTable: searchTable == freezed
+      searchTable: null == searchTable
           ? _value.searchTable
           : searchTable // ignore: cast_nullable_to_non_nullable
               as SearchTables,
@@ -305,22 +306,20 @@ class _$_SearchSubmitted implements _SearchSubmitted {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SearchSubmitted &&
-            const DeepCollectionEquality().equals(other.query, query) &&
-            const DeepCollectionEquality()
-                .equals(other.searchTable, searchTable));
+            other is _$_SearchSubmitted &&
+            (identical(other.query, query) || other.query == query) &&
+            (identical(other.searchTable, searchTable) ||
+                other.searchTable == searchTable));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(query),
-      const DeepCollectionEquality().hash(searchTable));
+  int get hashCode => Object.hash(runtimeType, query, searchTable);
 
   @JsonKey(ignore: true)
   @override
-  _$SearchSubmittedCopyWith<_SearchSubmitted> get copyWith =>
-      __$SearchSubmittedCopyWithImpl<_SearchSubmitted>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_SearchSubmittedCopyWith<_$_SearchSubmitted> get copyWith =>
+      __$$_SearchSubmittedCopyWithImpl<_$_SearchSubmitted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -339,12 +338,12 @@ class _$_SearchSubmitted implements _SearchSubmitted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String query)? queryChanged,
-    TResult Function(String query, SearchTables searchTable)? searchSubmitted,
-    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+    TResult? Function(String query)? queryChanged,
+    TResult? Function(String query, SearchTables searchTable)? searchSubmitted,
+    TResult? Function(String queryToBeDeleted, SearchTables searchTable)?
         deleteSearchHistory,
-    TResult Function(String queryToBeSelected)? selectSearchHistory,
-    TResult Function(SearchTables searchTable)? getSearchHistory,
+    TResult? Function(String queryToBeSelected)? selectSearchHistory,
+    TResult? Function(SearchTables searchTable)? getSearchHistory,
   }) {
     return searchSubmitted?.call(query, searchTable);
   }
@@ -381,11 +380,11 @@ class _$_SearchSubmitted implements _SearchSubmitted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_QueryChanged value)? queryChanged,
-    TResult Function(_SearchSubmitted value)? searchSubmitted,
-    TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
-    TResult Function(_SelectSearchHistory value)? selectSearchHistory,
-    TResult Function(_GetSearchHistory value)? getSearchHistory,
+    TResult? Function(_QueryChanged value)? queryChanged,
+    TResult? Function(_SearchSubmitted value)? searchSubmitted,
+    TResult? Function(_DeleteSearchHistory value)? deleteSearchHistory,
+    TResult? Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult? Function(_GetSearchHistory value)? getSearchHistory,
   }) {
     return searchSubmitted?.call(this);
   }
@@ -412,43 +411,42 @@ abstract class _SearchSubmitted implements SearchEvent {
       {required final String query,
       required final SearchTables searchTable}) = _$_SearchSubmitted;
 
-  String get query => throw _privateConstructorUsedError;
-  SearchTables get searchTable => throw _privateConstructorUsedError;
+  String get query;
+  SearchTables get searchTable;
   @JsonKey(ignore: true)
-  _$SearchSubmittedCopyWith<_SearchSubmitted> get copyWith =>
+  _$$_SearchSubmittedCopyWith<_$_SearchSubmitted> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DeleteSearchHistoryCopyWith<$Res> {
-  factory _$DeleteSearchHistoryCopyWith(_DeleteSearchHistory value,
-          $Res Function(_DeleteSearchHistory) then) =
-      __$DeleteSearchHistoryCopyWithImpl<$Res>;
+abstract class _$$_DeleteSearchHistoryCopyWith<$Res> {
+  factory _$$_DeleteSearchHistoryCopyWith(_$_DeleteSearchHistory value,
+          $Res Function(_$_DeleteSearchHistory) then) =
+      __$$_DeleteSearchHistoryCopyWithImpl<$Res>;
+  @useResult
   $Res call({String queryToBeDeleted, SearchTables searchTable});
 }
 
 /// @nodoc
-class __$DeleteSearchHistoryCopyWithImpl<$Res>
-    extends _$SearchEventCopyWithImpl<$Res>
-    implements _$DeleteSearchHistoryCopyWith<$Res> {
-  __$DeleteSearchHistoryCopyWithImpl(
-      _DeleteSearchHistory _value, $Res Function(_DeleteSearchHistory) _then)
-      : super(_value, (v) => _then(v as _DeleteSearchHistory));
+class __$$_DeleteSearchHistoryCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$_DeleteSearchHistory>
+    implements _$$_DeleteSearchHistoryCopyWith<$Res> {
+  __$$_DeleteSearchHistoryCopyWithImpl(_$_DeleteSearchHistory _value,
+      $Res Function(_$_DeleteSearchHistory) _then)
+      : super(_value, _then);
 
-  @override
-  _DeleteSearchHistory get _value => super._value as _DeleteSearchHistory;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? queryToBeDeleted = freezed,
-    Object? searchTable = freezed,
+    Object? queryToBeDeleted = null,
+    Object? searchTable = null,
   }) {
-    return _then(_DeleteSearchHistory(
-      queryToBeDeleted: queryToBeDeleted == freezed
+    return _then(_$_DeleteSearchHistory(
+      queryToBeDeleted: null == queryToBeDeleted
           ? _value.queryToBeDeleted
           : queryToBeDeleted // ignore: cast_nullable_to_non_nullable
               as String,
-      searchTable: searchTable == freezed
+      searchTable: null == searchTable
           ? _value.searchTable
           : searchTable // ignore: cast_nullable_to_non_nullable
               as SearchTables,
@@ -476,23 +474,21 @@ class _$_DeleteSearchHistory implements _DeleteSearchHistory {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DeleteSearchHistory &&
-            const DeepCollectionEquality()
-                .equals(other.queryToBeDeleted, queryToBeDeleted) &&
-            const DeepCollectionEquality()
-                .equals(other.searchTable, searchTable));
+            other is _$_DeleteSearchHistory &&
+            (identical(other.queryToBeDeleted, queryToBeDeleted) ||
+                other.queryToBeDeleted == queryToBeDeleted) &&
+            (identical(other.searchTable, searchTable) ||
+                other.searchTable == searchTable));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(queryToBeDeleted),
-      const DeepCollectionEquality().hash(searchTable));
+  int get hashCode => Object.hash(runtimeType, queryToBeDeleted, searchTable);
 
   @JsonKey(ignore: true)
   @override
-  _$DeleteSearchHistoryCopyWith<_DeleteSearchHistory> get copyWith =>
-      __$DeleteSearchHistoryCopyWithImpl<_DeleteSearchHistory>(
+  @pragma('vm:prefer-inline')
+  _$$_DeleteSearchHistoryCopyWith<_$_DeleteSearchHistory> get copyWith =>
+      __$$_DeleteSearchHistoryCopyWithImpl<_$_DeleteSearchHistory>(
           this, _$identity);
 
   @override
@@ -512,12 +508,12 @@ class _$_DeleteSearchHistory implements _DeleteSearchHistory {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String query)? queryChanged,
-    TResult Function(String query, SearchTables searchTable)? searchSubmitted,
-    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+    TResult? Function(String query)? queryChanged,
+    TResult? Function(String query, SearchTables searchTable)? searchSubmitted,
+    TResult? Function(String queryToBeDeleted, SearchTables searchTable)?
         deleteSearchHistory,
-    TResult Function(String queryToBeSelected)? selectSearchHistory,
-    TResult Function(SearchTables searchTable)? getSearchHistory,
+    TResult? Function(String queryToBeSelected)? selectSearchHistory,
+    TResult? Function(SearchTables searchTable)? getSearchHistory,
   }) {
     return deleteSearchHistory?.call(queryToBeDeleted, searchTable);
   }
@@ -554,11 +550,11 @@ class _$_DeleteSearchHistory implements _DeleteSearchHistory {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_QueryChanged value)? queryChanged,
-    TResult Function(_SearchSubmitted value)? searchSubmitted,
-    TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
-    TResult Function(_SelectSearchHistory value)? selectSearchHistory,
-    TResult Function(_GetSearchHistory value)? getSearchHistory,
+    TResult? Function(_QueryChanged value)? queryChanged,
+    TResult? Function(_SearchSubmitted value)? searchSubmitted,
+    TResult? Function(_DeleteSearchHistory value)? deleteSearchHistory,
+    TResult? Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult? Function(_GetSearchHistory value)? getSearchHistory,
   }) {
     return deleteSearchHistory?.call(this);
   }
@@ -585,38 +581,37 @@ abstract class _DeleteSearchHistory implements SearchEvent {
       {required final String queryToBeDeleted,
       required final SearchTables searchTable}) = _$_DeleteSearchHistory;
 
-  String get queryToBeDeleted => throw _privateConstructorUsedError;
-  SearchTables get searchTable => throw _privateConstructorUsedError;
+  String get queryToBeDeleted;
+  SearchTables get searchTable;
   @JsonKey(ignore: true)
-  _$DeleteSearchHistoryCopyWith<_DeleteSearchHistory> get copyWith =>
+  _$$_DeleteSearchHistoryCopyWith<_$_DeleteSearchHistory> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SelectSearchHistoryCopyWith<$Res> {
-  factory _$SelectSearchHistoryCopyWith(_SelectSearchHistory value,
-          $Res Function(_SelectSearchHistory) then) =
-      __$SelectSearchHistoryCopyWithImpl<$Res>;
+abstract class _$$_SelectSearchHistoryCopyWith<$Res> {
+  factory _$$_SelectSearchHistoryCopyWith(_$_SelectSearchHistory value,
+          $Res Function(_$_SelectSearchHistory) then) =
+      __$$_SelectSearchHistoryCopyWithImpl<$Res>;
+  @useResult
   $Res call({String queryToBeSelected});
 }
 
 /// @nodoc
-class __$SelectSearchHistoryCopyWithImpl<$Res>
-    extends _$SearchEventCopyWithImpl<$Res>
-    implements _$SelectSearchHistoryCopyWith<$Res> {
-  __$SelectSearchHistoryCopyWithImpl(
-      _SelectSearchHistory _value, $Res Function(_SelectSearchHistory) _then)
-      : super(_value, (v) => _then(v as _SelectSearchHistory));
+class __$$_SelectSearchHistoryCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$_SelectSearchHistory>
+    implements _$$_SelectSearchHistoryCopyWith<$Res> {
+  __$$_SelectSearchHistoryCopyWithImpl(_$_SelectSearchHistory _value,
+      $Res Function(_$_SelectSearchHistory) _then)
+      : super(_value, _then);
 
-  @override
-  _SelectSearchHistory get _value => super._value as _SelectSearchHistory;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? queryToBeSelected = freezed,
+    Object? queryToBeSelected = null,
   }) {
-    return _then(_SelectSearchHistory(
-      queryToBeSelected: queryToBeSelected == freezed
+    return _then(_$_SelectSearchHistory(
+      queryToBeSelected: null == queryToBeSelected
           ? _value.queryToBeSelected
           : queryToBeSelected // ignore: cast_nullable_to_non_nullable
               as String,
@@ -641,19 +636,19 @@ class _$_SelectSearchHistory implements _SelectSearchHistory {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SelectSearchHistory &&
-            const DeepCollectionEquality()
-                .equals(other.queryToBeSelected, queryToBeSelected));
+            other is _$_SelectSearchHistory &&
+            (identical(other.queryToBeSelected, queryToBeSelected) ||
+                other.queryToBeSelected == queryToBeSelected));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(queryToBeSelected));
+  int get hashCode => Object.hash(runtimeType, queryToBeSelected);
 
   @JsonKey(ignore: true)
   @override
-  _$SelectSearchHistoryCopyWith<_SelectSearchHistory> get copyWith =>
-      __$SelectSearchHistoryCopyWithImpl<_SelectSearchHistory>(
+  @pragma('vm:prefer-inline')
+  _$$_SelectSearchHistoryCopyWith<_$_SelectSearchHistory> get copyWith =>
+      __$$_SelectSearchHistoryCopyWithImpl<_$_SelectSearchHistory>(
           this, _$identity);
 
   @override
@@ -673,12 +668,12 @@ class _$_SelectSearchHistory implements _SelectSearchHistory {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String query)? queryChanged,
-    TResult Function(String query, SearchTables searchTable)? searchSubmitted,
-    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+    TResult? Function(String query)? queryChanged,
+    TResult? Function(String query, SearchTables searchTable)? searchSubmitted,
+    TResult? Function(String queryToBeDeleted, SearchTables searchTable)?
         deleteSearchHistory,
-    TResult Function(String queryToBeSelected)? selectSearchHistory,
-    TResult Function(SearchTables searchTable)? getSearchHistory,
+    TResult? Function(String queryToBeSelected)? selectSearchHistory,
+    TResult? Function(SearchTables searchTable)? getSearchHistory,
   }) {
     return selectSearchHistory?.call(queryToBeSelected);
   }
@@ -715,11 +710,11 @@ class _$_SelectSearchHistory implements _SelectSearchHistory {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_QueryChanged value)? queryChanged,
-    TResult Function(_SearchSubmitted value)? searchSubmitted,
-    TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
-    TResult Function(_SelectSearchHistory value)? selectSearchHistory,
-    TResult Function(_GetSearchHistory value)? getSearchHistory,
+    TResult? Function(_QueryChanged value)? queryChanged,
+    TResult? Function(_SearchSubmitted value)? searchSubmitted,
+    TResult? Function(_DeleteSearchHistory value)? deleteSearchHistory,
+    TResult? Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult? Function(_GetSearchHistory value)? getSearchHistory,
   }) {
     return selectSearchHistory?.call(this);
   }
@@ -745,37 +740,36 @@ abstract class _SelectSearchHistory implements SearchEvent {
   const factory _SelectSearchHistory(
       {required final String queryToBeSelected}) = _$_SelectSearchHistory;
 
-  String get queryToBeSelected => throw _privateConstructorUsedError;
+  String get queryToBeSelected;
   @JsonKey(ignore: true)
-  _$SelectSearchHistoryCopyWith<_SelectSearchHistory> get copyWith =>
+  _$$_SelectSearchHistoryCopyWith<_$_SelectSearchHistory> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$GetSearchHistoryCopyWith<$Res> {
-  factory _$GetSearchHistoryCopyWith(
-          _GetSearchHistory value, $Res Function(_GetSearchHistory) then) =
-      __$GetSearchHistoryCopyWithImpl<$Res>;
+abstract class _$$_GetSearchHistoryCopyWith<$Res> {
+  factory _$$_GetSearchHistoryCopyWith(
+          _$_GetSearchHistory value, $Res Function(_$_GetSearchHistory) then) =
+      __$$_GetSearchHistoryCopyWithImpl<$Res>;
+  @useResult
   $Res call({SearchTables searchTable});
 }
 
 /// @nodoc
-class __$GetSearchHistoryCopyWithImpl<$Res>
-    extends _$SearchEventCopyWithImpl<$Res>
-    implements _$GetSearchHistoryCopyWith<$Res> {
-  __$GetSearchHistoryCopyWithImpl(
-      _GetSearchHistory _value, $Res Function(_GetSearchHistory) _then)
-      : super(_value, (v) => _then(v as _GetSearchHistory));
+class __$$_GetSearchHistoryCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$_GetSearchHistory>
+    implements _$$_GetSearchHistoryCopyWith<$Res> {
+  __$$_GetSearchHistoryCopyWithImpl(
+      _$_GetSearchHistory _value, $Res Function(_$_GetSearchHistory) _then)
+      : super(_value, _then);
 
-  @override
-  _GetSearchHistory get _value => super._value as _GetSearchHistory;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? searchTable = freezed,
+    Object? searchTable = null,
   }) {
-    return _then(_GetSearchHistory(
-      searchTable: searchTable == freezed
+    return _then(_$_GetSearchHistory(
+      searchTable: null == searchTable
           ? _value.searchTable
           : searchTable // ignore: cast_nullable_to_non_nullable
               as SearchTables,
@@ -800,19 +794,19 @@ class _$_GetSearchHistory implements _GetSearchHistory {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GetSearchHistory &&
-            const DeepCollectionEquality()
-                .equals(other.searchTable, searchTable));
+            other is _$_GetSearchHistory &&
+            (identical(other.searchTable, searchTable) ||
+                other.searchTable == searchTable));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(searchTable));
+  int get hashCode => Object.hash(runtimeType, searchTable);
 
   @JsonKey(ignore: true)
   @override
-  _$GetSearchHistoryCopyWith<_GetSearchHistory> get copyWith =>
-      __$GetSearchHistoryCopyWithImpl<_GetSearchHistory>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_GetSearchHistoryCopyWith<_$_GetSearchHistory> get copyWith =>
+      __$$_GetSearchHistoryCopyWithImpl<_$_GetSearchHistory>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -831,12 +825,12 @@ class _$_GetSearchHistory implements _GetSearchHistory {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String query)? queryChanged,
-    TResult Function(String query, SearchTables searchTable)? searchSubmitted,
-    TResult Function(String queryToBeDeleted, SearchTables searchTable)?
+    TResult? Function(String query)? queryChanged,
+    TResult? Function(String query, SearchTables searchTable)? searchSubmitted,
+    TResult? Function(String queryToBeDeleted, SearchTables searchTable)?
         deleteSearchHistory,
-    TResult Function(String queryToBeSelected)? selectSearchHistory,
-    TResult Function(SearchTables searchTable)? getSearchHistory,
+    TResult? Function(String queryToBeSelected)? selectSearchHistory,
+    TResult? Function(SearchTables searchTable)? getSearchHistory,
   }) {
     return getSearchHistory?.call(searchTable);
   }
@@ -873,11 +867,11 @@ class _$_GetSearchHistory implements _GetSearchHistory {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_QueryChanged value)? queryChanged,
-    TResult Function(_SearchSubmitted value)? searchSubmitted,
-    TResult Function(_DeleteSearchHistory value)? deleteSearchHistory,
-    TResult Function(_SelectSearchHistory value)? selectSearchHistory,
-    TResult Function(_GetSearchHistory value)? getSearchHistory,
+    TResult? Function(_QueryChanged value)? queryChanged,
+    TResult? Function(_SearchSubmitted value)? searchSubmitted,
+    TResult? Function(_DeleteSearchHistory value)? deleteSearchHistory,
+    TResult? Function(_SelectSearchHistory value)? selectSearchHistory,
+    TResult? Function(_GetSearchHistory value)? getSearchHistory,
   }) {
     return getSearchHistory?.call(this);
   }
@@ -903,9 +897,9 @@ abstract class _GetSearchHistory implements SearchEvent {
   const factory _GetSearchHistory({required final SearchTables searchTable}) =
       _$_GetSearchHistory;
 
-  SearchTables get searchTable => throw _privateConstructorUsedError;
+  SearchTables get searchTable;
   @JsonKey(ignore: true)
-  _$GetSearchHistoryCopyWith<_GetSearchHistory> get copyWith =>
+  _$$_GetSearchHistoryCopyWith<_$_GetSearchHistory> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -928,7 +922,8 @@ mixin _$SearchState {
 abstract class $SearchStateCopyWith<$Res> {
   factory $SearchStateCopyWith(
           SearchState value, $Res Function(SearchState) then) =
-      _$SearchStateCopyWithImpl<$Res>;
+      _$SearchStateCopyWithImpl<$Res, SearchState>;
+  @useResult
   $Res call(
       {String? selectedText,
       bool isSearchLoading,
@@ -938,53 +933,57 @@ abstract class $SearchStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SearchStateCopyWithImpl<$Res> implements $SearchStateCopyWith<$Res> {
+class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
+    implements $SearchStateCopyWith<$Res> {
   _$SearchStateCopyWithImpl(this._value, this._then);
 
-  final SearchState _value;
   // ignore: unused_field
-  final $Res Function(SearchState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? selectedText = freezed,
-    Object? isSearchLoading = freezed,
+    Object? isSearchLoading = null,
     Object? searchResult = freezed,
     Object? filteredSearchHistory = freezed,
-    Object? searchFailureOrSucces = freezed,
+    Object? searchFailureOrSucces = null,
   }) {
     return _then(_value.copyWith(
-      selectedText: selectedText == freezed
+      selectedText: freezed == selectedText
           ? _value.selectedText
           : selectedText // ignore: cast_nullable_to_non_nullable
               as String?,
-      isSearchLoading: isSearchLoading == freezed
+      isSearchLoading: null == isSearchLoading
           ? _value.isSearchLoading
           : isSearchLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      searchResult: searchResult == freezed
+      searchResult: freezed == searchResult
           ? _value.searchResult
           : searchResult // ignore: cast_nullable_to_non_nullable
               as Either<List<Note>, List<Time>>?,
-      filteredSearchHistory: filteredSearchHistory == freezed
+      filteredSearchHistory: freezed == filteredSearchHistory
           ? _value.filteredSearchHistory
           : filteredSearchHistory // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      searchFailureOrSucces: searchFailureOrSucces == freezed
+      searchFailureOrSucces: null == searchFailureOrSucces
           ? _value.searchFailureOrSucces
           : searchFailureOrSucces // ignore: cast_nullable_to_non_nullable
               as Option<Either<NoteFailure, TimeFailure>>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$SearchStateCopyWith<$Res>
+abstract class _$$_SearchStateCopyWith<$Res>
     implements $SearchStateCopyWith<$Res> {
-  factory _$SearchStateCopyWith(
-          _SearchState value, $Res Function(_SearchState) then) =
-      __$SearchStateCopyWithImpl<$Res>;
+  factory _$$_SearchStateCopyWith(
+          _$_SearchState value, $Res Function(_$_SearchState) then) =
+      __$$_SearchStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? selectedText,
       bool isSearchLoading,
@@ -994,41 +993,40 @@ abstract class _$SearchStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SearchStateCopyWithImpl<$Res> extends _$SearchStateCopyWithImpl<$Res>
-    implements _$SearchStateCopyWith<$Res> {
-  __$SearchStateCopyWithImpl(
-      _SearchState _value, $Res Function(_SearchState) _then)
-      : super(_value, (v) => _then(v as _SearchState));
+class __$$_SearchStateCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$_SearchState>
+    implements _$$_SearchStateCopyWith<$Res> {
+  __$$_SearchStateCopyWithImpl(
+      _$_SearchState _value, $Res Function(_$_SearchState) _then)
+      : super(_value, _then);
 
-  @override
-  _SearchState get _value => super._value as _SearchState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? selectedText = freezed,
-    Object? isSearchLoading = freezed,
+    Object? isSearchLoading = null,
     Object? searchResult = freezed,
     Object? filteredSearchHistory = freezed,
-    Object? searchFailureOrSucces = freezed,
+    Object? searchFailureOrSucces = null,
   }) {
-    return _then(_SearchState(
-      selectedText: selectedText == freezed
+    return _then(_$_SearchState(
+      selectedText: freezed == selectedText
           ? _value.selectedText
           : selectedText // ignore: cast_nullable_to_non_nullable
               as String?,
-      isSearchLoading: isSearchLoading == freezed
+      isSearchLoading: null == isSearchLoading
           ? _value.isSearchLoading
           : isSearchLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      searchResult: searchResult == freezed
+      searchResult: freezed == searchResult
           ? _value.searchResult
           : searchResult // ignore: cast_nullable_to_non_nullable
               as Either<List<Note>, List<Time>>?,
-      filteredSearchHistory: filteredSearchHistory == freezed
-          ? _value.filteredSearchHistory
+      filteredSearchHistory: freezed == filteredSearchHistory
+          ? _value._filteredSearchHistory
           : filteredSearchHistory // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      searchFailureOrSucces: searchFailureOrSucces == freezed
+      searchFailureOrSucces: null == searchFailureOrSucces
           ? _value.searchFailureOrSucces
           : searchFailureOrSucces // ignore: cast_nullable_to_non_nullable
               as Option<Either<NoteFailure, TimeFailure>>,
@@ -1058,6 +1056,8 @@ class _$_SearchState implements _SearchState {
   List<String>? get filteredSearchHistory {
     final value = _filteredSearchHistory;
     if (value == null) return null;
+    if (_filteredSearchHistory is EqualUnmodifiableListView)
+      return _filteredSearchHistory;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -1074,32 +1074,33 @@ class _$_SearchState implements _SearchState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SearchState &&
+            other is _$_SearchState &&
+            (identical(other.selectedText, selectedText) ||
+                other.selectedText == selectedText) &&
+            (identical(other.isSearchLoading, isSearchLoading) ||
+                other.isSearchLoading == isSearchLoading) &&
+            (identical(other.searchResult, searchResult) ||
+                other.searchResult == searchResult) &&
             const DeepCollectionEquality()
-                .equals(other.selectedText, selectedText) &&
-            const DeepCollectionEquality()
-                .equals(other.isSearchLoading, isSearchLoading) &&
-            const DeepCollectionEquality()
-                .equals(other.searchResult, searchResult) &&
-            const DeepCollectionEquality()
-                .equals(other.filteredSearchHistory, filteredSearchHistory) &&
-            const DeepCollectionEquality()
-                .equals(other.searchFailureOrSucces, searchFailureOrSucces));
+                .equals(other._filteredSearchHistory, _filteredSearchHistory) &&
+            (identical(other.searchFailureOrSucces, searchFailureOrSucces) ||
+                other.searchFailureOrSucces == searchFailureOrSucces));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(selectedText),
-      const DeepCollectionEquality().hash(isSearchLoading),
-      const DeepCollectionEquality().hash(searchResult),
-      const DeepCollectionEquality().hash(filteredSearchHistory),
-      const DeepCollectionEquality().hash(searchFailureOrSucces));
+      selectedText,
+      isSearchLoading,
+      searchResult,
+      const DeepCollectionEquality().hash(_filteredSearchHistory),
+      searchFailureOrSucces);
 
   @JsonKey(ignore: true)
   @override
-  _$SearchStateCopyWith<_SearchState> get copyWith =>
-      __$SearchStateCopyWithImpl<_SearchState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_SearchStateCopyWith<_$_SearchState> get copyWith =>
+      __$$_SearchStateCopyWithImpl<_$_SearchState>(this, _$identity);
 }
 
 abstract class _SearchState implements SearchState {
@@ -1112,19 +1113,17 @@ abstract class _SearchState implements SearchState {
           searchFailureOrSucces}) = _$_SearchState;
 
   @override
-  String? get selectedText => throw _privateConstructorUsedError;
+  String? get selectedText;
   @override
-  bool get isSearchLoading => throw _privateConstructorUsedError;
+  bool get isSearchLoading;
   @override
-  Either<List<Note>, List<Time>>? get searchResult =>
-      throw _privateConstructorUsedError;
+  Either<List<Note>, List<Time>>? get searchResult;
   @override
-  List<String>? get filteredSearchHistory => throw _privateConstructorUsedError;
+  List<String>? get filteredSearchHistory;
   @override
-  Option<Either<NoteFailure, TimeFailure>> get searchFailureOrSucces =>
-      throw _privateConstructorUsedError;
+  Option<Either<NoteFailure, TimeFailure>> get searchFailureOrSucces;
   @override
   @JsonKey(ignore: true)
-  _$SearchStateCopyWith<_SearchState> get copyWith =>
+  _$$_SearchStateCopyWith<_$_SearchState> get copyWith =>
       throw _privateConstructorUsedError;
 }
